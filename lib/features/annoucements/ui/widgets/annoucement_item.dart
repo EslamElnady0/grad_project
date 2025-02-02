@@ -12,7 +12,7 @@ class AnnoucementItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+      margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
         color: AppColors.white,
