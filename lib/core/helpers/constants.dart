@@ -4,6 +4,7 @@ import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/annoucements/ui/views/annoucements_body.dart';
 import 'package:grad_project/features/home/ui/models/drawer_item_model.dart';
 
+import '../../features/chat/ui/views/chat_outsider_body.dart';
 import '../../features/home/ui/models/bottom_nav_bar_item_model.dart';
 import '../../generated/l10n.dart';
 
@@ -91,7 +92,7 @@ class Constants {
   static List<Widget> homeBodies = [
     AnnoucementsBody(),
     Container(),
-    Container(),
+    ChatOutsiderBody(),
     Container()
   ];
 }
