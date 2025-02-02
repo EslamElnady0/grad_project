@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grad_project/features/home/ui/views/home_view.dart';
 
 import 'core/routes/app_router.dart';
 import 'core/theme/app_theme.dart';
@@ -22,15 +21,14 @@ class GradProjectStudentApp extends StatelessWidget {
       designSize: const Size(320, 812),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (context, child) => MaterialApp(
+      builder: (context, child) => MaterialApp.router(
         title: 'Grad Project Students',
         themeMode: ThemeMode.light,
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
-        initialRoute: HomeView.screenName,
-        locale: const Locale('ar'),
-        onGenerateRoute: AppRouter.onGenerateRoute,
+        locale: const Locale('en'),
+        routerConfig: AppRouter.router,
         localizationsDelegates: [
           S.delegate,
           GlobalMaterialLocalizations.delegate,
