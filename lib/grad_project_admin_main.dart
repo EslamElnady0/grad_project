@@ -22,14 +22,13 @@ class GradProjectAdminApp extends StatelessWidget {
       designSize: const Size(320, 812),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (context, child) => MaterialApp(
+      builder: (context, child) => MaterialApp.router(
         title: 'Grad Project Admin',
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
-        initialRoute: HomeView.screenName,
         locale: const Locale('en'),
-        onGenerateRoute: AppRouter.onGenerateRoute,
+        routerConfig: AppRouter.router,
         localizationsDelegates: [
           S.delegate,
           GlobalMaterialLocalizations.delegate,
