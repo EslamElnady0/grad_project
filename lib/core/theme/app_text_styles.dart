@@ -13,4 +13,9 @@ class AppTextStyles {
     color: AppColors.black,
     fontWeight: FontWeightHelper.regular,
   );
+  static TextStyle font24BlackSemiBold = TextStyle(
+    fontSize: 28.sp,
+    color: AppColors.black,
+    fontWeight: FontWeightHelper.semiBold,
+  );
 }
