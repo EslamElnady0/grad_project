@@ -22,6 +22,49 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "hello": MessageLookupByLibrary.simpleMessage("اهلا"),
+    "academicProgress": MessageLookupByLibrary.simpleMessage(
+      "التقدم الأكاديمي",
+    ),
+    "announcements": MessageLookupByLibrary.simpleMessage("الأخبار المعلنه"),
+    "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
+    "community": MessageLookupByLibrary.simpleMessage("المنتدي"),
+    "cooperateShareThoughts": MessageLookupByLibrary.simpleMessage(
+      "تعاون، شارك أفكارك، وتعلّم من زملائك بسهولة 📚",
+    ),
+    "courses": MessageLookupByLibrary.simpleMessage("المواد"),
+    "didntSreachYet": MessageLookupByLibrary.simpleMessage(
+      "🤔 لم تبحث عن شيء بعد! ",
+    ),
+    "discoverYourWay": MessageLookupByLibrary.simpleMessage(
+      "🔍 اكتشف طريقك بسهولة داخل الجامعة.",
+    ),
+    "eLearning": MessageLookupByLibrary.simpleMessage("التعليم الإلكتروني"),
+    "finalResults": MessageLookupByLibrary.simpleMessage("النتائج النهائية"),
+    "goLearnCommunicate": MessageLookupByLibrary.simpleMessage(
+      "تواصل. تعلّم. انطلق!",
+    ),
+    "internalMap": MessageLookupByLibrary.simpleMessage("الخريطة الداخلية"),
+    "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+    "mostSreached": MessageLookupByLibrary.simpleMessage(
+      "الاماكن الأكثر بحثاً!",
+    ),
+    "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+    "searchForBuilding": MessageLookupByLibrary.simpleMessage(
+      " ابحث عن مبني، مدرج، قاعة، الخ..!",
+    ),
+    "selectCources": MessageLookupByLibrary.simpleMessage(
+      "📚 يرجى اختيار المواد التي تود الاطلاع على منشوراتها وآخر مستجداتها!",
+    ),
+    "startWriting": MessageLookupByLibrary.simpleMessage(
+      "إبدأ في الكتابة الأن..",
+    ),
+    "timeSchedule": MessageLookupByLibrary.simpleMessage("الجدول الزمني"),
+    "weeklySchedule": MessageLookupByLibrary.simpleMessage("الجدول الإسبوعي"),
+    "writeYourPlace": MessageLookupByLibrary.simpleMessage(
+      "اكتب اسم المكان الذي تريد الوصول إليه.",
+    ),
+    "youCanJoinToChat": MessageLookupByLibrary.simpleMessage(
+      "👥 يمكنك الانضمام إلى المجموعة الخاصة بعامك الدراسي فقط للتواصل مع زملائك!",
+    ),
   };
 }

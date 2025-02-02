@@ -5,7 +5,6 @@ import 'package:grad_project/core/theme/app_text_styles.dart';
 import '../../../../core/helpers/app_assets.dart';
 import '../../../../core/routes/app_router.dart';
 
-
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
 
@@ -27,13 +26,16 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       children: [
         Center(
           child: SizedBox(
-            width:MediaQuery.of(context).size.width-80 ,
+            width: MediaQuery.of(context).size.width - 80,
             child: AspectRatio(
-              aspectRatio:2800/1979,
-              child: Image.asset(AppAssets.spalsh)),
+                aspectRatio: 2800 / 1979,
+                child: Image.asset(Assets.imagesLogo)),
           ),
         ),
-        Text("التعليم الالكتروني",style: AppTextStyles.font24BlackSemiBold,)
+        Text(
+          "التعليم الالكتروني",
+          style: AppTextStyles.font24BlackSemiBold,
+        )
       ],
     );
   }

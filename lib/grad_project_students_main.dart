@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'core/routes/app_router.dart';
 import 'core/theme/app_theme.dart';
 import 'generated/l10n.dart';
@@ -22,6 +23,7 @@ class GradProjectStudentApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) => MaterialApp.router(
         title: 'Grad Project Students',
+        themeMode: ThemeMode.light,
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,

@@ -4,16 +4,35 @@ import 'package:grad_project/core/helpers/font_weight_helper.dart';
 
 import 'app_colors.dart';
 
+class ChangaTextStyle extends TextStyle {
+  const ChangaTextStyle({
+    super.fontSize,
+    super.fontWeight,
+    super.fontStyle,
+    super.color,
+    super.letterSpacing,
+    super.height,
+    super.decoration,
+  }) : super(
+          fontFamily: 'Changa',
+        );
+}
+
 class AppTextStyles {
   const AppTextStyles._();
 
   //naming ==> fontSizeColorWeight
-  static TextStyle font14BlackRegular = TextStyle(
+  static TextStyle font14BlackRegular = ChangaTextStyle(
     fontSize: 14.sp,
     color: AppColors.black,
     fontWeight: FontWeightHelper.regular,
   );
-  static TextStyle font24BlackSemiBold = TextStyle(
+  static TextStyle font10greenRegular = ChangaTextStyle(
+    fontSize: 10.sp,
+    color: AppColors.primaryColordark,
+    fontWeight: FontWeightHelper.medium,
+  );
+  static TextStyle font24BlackSemiBold = ChangaTextStyle(
     fontSize: 28.sp,
     color: AppColors.black,
     fontWeight: FontWeightHelper.semiBold,
