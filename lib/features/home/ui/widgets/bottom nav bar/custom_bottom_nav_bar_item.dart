@@ -40,7 +40,7 @@ class CustomBottomNavBarItem extends StatelessWidget {
           vGap(9),
           Text(
             title,
-            style: AppTextStyles.font10greenRegular.copyWith(
+            style: AppTextStyles.font10greenMedium.copyWith(
               color: context.read<BottomNavBarCubit>().currentIndex == index
                   ? AppColors.primaryColordark
                   : AppColors.gray,

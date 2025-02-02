@@ -27,11 +27,42 @@ class AppTextStyles {
     color: AppColors.black,
     fontWeight: FontWeightHelper.regular,
   );
-  static TextStyle font10greenRegular = ChangaTextStyle(
+  static TextStyle font10greenMedium = ChangaTextStyle(
     fontSize: 10.sp,
     color: AppColors.primaryColordark,
     fontWeight: FontWeightHelper.medium,
   );
+  static TextStyle font12grayMedium = ChangaTextStyle(
+    fontSize: 12.sp,
+    color: AppColors.gray,
+    fontWeight: FontWeightHelper.medium,
+  );
+  static TextStyle font13BlackSemiBold = ChangaTextStyle(
+    fontSize: 13.sp,
+    color: AppColors.black,
+    fontWeight: FontWeightHelper.semiBold,
+  );
+  static TextStyle font9GrayMedium = ChangaTextStyle(
+    fontSize: 9.sp,
+    color: AppColors.gray,
+    fontWeight: FontWeightHelper.medium,
+  );
+  static TextStyle font9GraySemiBold = ChangaTextStyle(
+    fontSize: 9.sp,
+    color: AppColors.gray,
+    fontWeight: FontWeightHelper.semiBold,
+  );
+  static TextStyle font8GraySemiBold = ChangaTextStyle(
+    fontSize: 8.sp,
+    color: AppColors.gray,
+    fontWeight: FontWeightHelper.semiBold,
+  );
+  static TextStyle font10GraySemiBold = ChangaTextStyle(
+    fontSize: 10.sp,
+    color: AppColors.gray,
+    fontWeight: FontWeightHelper.semiBold,
+  );
+
   static TextStyle font24BlackSemiBold = ChangaTextStyle(
     fontSize: 28.sp,
     color: AppColors.black,
