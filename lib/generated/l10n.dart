@@ -55,9 +55,194 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `hello`
-  String get hello {
-    return Intl.message('hello', name: 'hello', desc: '', args: []);
+  /// `E-Learning`
+  String get eLearning {
+    return Intl.message('E-Learning', name: 'eLearning', desc: '', args: []);
+  }
+
+  /// `Weekly Schedule`
+  String get weeklySchedule {
+    return Intl.message(
+      'Weekly Schedule',
+      name: 'weeklySchedule',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Time Schedule`
+  String get timeSchedule {
+    return Intl.message(
+      'Time Schedule',
+      name: 'timeSchedule',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Internal Map`
+  String get internalMap {
+    return Intl.message(
+      'Internal Map',
+      name: 'internalMap',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Academic Progress`
+  String get academicProgress {
+    return Intl.message(
+      'Academic Progress',
+      name: 'academicProgress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Final Results`
+  String get finalResults {
+    return Intl.message(
+      'Final Results',
+      name: 'finalResults',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message('Profile', name: 'profile', desc: '', args: []);
+  }
+
+  /// `Logout`
+  String get logout {
+    return Intl.message('Logout', name: 'logout', desc: '', args: []);
+  }
+
+  /// `📚 Please select the courses you want to follow for updates and announcements!`
+  String get selectCources {
+    return Intl.message(
+      '📚 Please select the courses you want to follow for updates and announcements!',
+      name: 'selectCources',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Announcements`
+  String get announcements {
+    return Intl.message(
+      'Announcements',
+      name: 'announcements',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Courses`
+  String get courses {
+    return Intl.message('Courses', name: 'courses', desc: '', args: []);
+  }
+
+  /// `Chat`
+  String get chat {
+    return Intl.message('Chat', name: 'chat', desc: '', args: []);
+  }
+
+  /// `Community`
+  String get community {
+    return Intl.message('Community', name: 'community', desc: '', args: []);
+  }
+
+  /// `👥 You can join your academic year's private group to connect with your classmates!`
+  String get youCanJoinToChat {
+    return Intl.message(
+      '👥 You can join your academic year\'s private group to connect with your classmates!',
+      name: 'youCanJoinToChat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Connect. Learn. Go!`
+  String get goLearnCommunicate {
+    return Intl.message(
+      'Connect. Learn. Go!',
+      name: 'goLearnCommunicate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Collaborate, share your ideas, and learn from your peers easily 📚`
+  String get cooperateShareThoughts {
+    return Intl.message(
+      'Collaborate, share your ideas, and learn from your peers easily 📚',
+      name: 'cooperateShareThoughts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start writing now..`
+  String get startWriting {
+    return Intl.message(
+      'Start writing now..',
+      name: 'startWriting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `🔍 Easily discover your way around the university.`
+  String get discoverYourWay {
+    return Intl.message(
+      '🔍 Easily discover your way around the university.',
+      name: 'discoverYourWay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `🤔 You haven't searched for anything yet!`
+  String get didntSreachYet {
+    return Intl.message(
+      '🤔 You haven\'t searched for anything yet!',
+      name: 'didntSreachYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Write the name of the place you want to reach.`
+  String get writeYourPlace {
+    return Intl.message(
+      'Write the name of the place you want to reach.',
+      name: 'writeYourPlace',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search for a building, lecture hall, room, etc..!`
+  String get searchForBuilding {
+    return Intl.message(
+      'Search for a building, lecture hall, room, etc..!',
+      name: 'searchForBuilding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Most searched places!`
+  String get mostSreached {
+    return Intl.message(
+      'Most searched places!',
+      name: 'mostSreached',
+      desc: '',
+      args: [],
+    );
   }
 }
 
