@@ -14,8 +14,12 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScaffold(
       extendBody: true,
-      body:
-          Constants.homeBodies[context.read<BottomNavBarCubit>().currentIndex],
+      body: BlocBuilder<BottomNavBarCubit, BottomNavBarState>(
+        builder: (context, state) {
+          return Constants
+              .homeBodies[context.read<BottomNavBarCubit>().currentIndex];
+        },
+      ),
       bottomNavigationBar: CustomBottomNavigationBar(),
       drawer: CustomDrawer(),
     );
