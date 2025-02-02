@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
-import 'package:grad_project/features/annoucements/ui/widgets/annoucements_body.dart';
+import 'package:grad_project/features/annoucements/ui/views/annoucements_body.dart';
 
 import '../../features/home/ui/models/bottom_nav_bar_item_model.dart';
 import '../../generated/l10n.dart';
