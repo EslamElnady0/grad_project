@@ -21,7 +21,12 @@ class AnnoucementsBody extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: HomeScreensHeaderRow(),
+            child: HomeScreensHeaderRow(
+              onMenuTap: () {
+                Scaffold.of(context).openDrawer();
+              },
+              onSearchTap: () {},
+            ),
           ),
           vGap(12),
           Padding(

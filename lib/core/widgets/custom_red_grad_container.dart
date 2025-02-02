@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/core/helpers/constants.dart';
 
-import '../theme/app_colors.dart';
-
-class CustomDarkBlueContainer extends StatelessWidget {
+class CustomRedGradContainer extends StatelessWidget {
   final AlignmentGeometry? alignment;
   final EdgeInsetsGeometry? padding;
   final Color? color;
@@ -17,42 +16,39 @@ class CustomDarkBlueContainer extends StatelessWidget {
   final double? raduis;
   final AlignmentGeometry? transformAlignment;
   final Widget? child;
+
   final BorderRadiusGeometry? borderRadius;
   final Clip clipBehavior = Clip.none;
-
-  const CustomDarkBlueContainer(
-      {super.key,
-      this.alignment,
-      this.padding,
-      this.color,
-      this.decoration,
-      this.foregroundDecoration,
-      this.width,
-      this.height,
-      this.constraints,
-      this.margin,
-      this.transform,
-      this.transformAlignment,
-      this.child,
-      this.raduis,
-      this.borderRadius});
+  const CustomRedGradContainer({
+    super.key,
+    this.alignment,
+    this.padding,
+    this.color,
+    this.decoration,
+    this.foregroundDecoration,
+    this.width,
+    this.height,
+    this.constraints,
+    this.margin,
+    this.transform,
+    this.raduis,
+    this.transformAlignment,
+    this.child,
+    this.borderRadius,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: alignment,
       padding: padding,
-      color: color,
       decoration: decoration ??
           BoxDecoration(
-            color: AppColors.darkblue,
+            color: color,
+            gradient: Constants.secondaryGrad,
             borderRadius: borderRadius ?? BorderRadius.circular(raduis ?? 16.r),
           ),
-      foregroundDecoration: foregroundDecoration ??
-          BoxDecoration(
-            color: AppColors.black.withOpacity(0.2),
-            borderRadius: borderRadius ?? BorderRadius.circular(raduis ?? 16.r),
-          ),
+      foregroundDecoration: foregroundDecoration,
       width: width,
       height: height,
       constraints: constraints,
