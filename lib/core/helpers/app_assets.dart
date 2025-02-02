@@ -8,7 +8,7 @@ class Assets {
 
   /// Assets for imagesLogo
   /// assets/images/logo.png
-  static const String imagesLogo = "assets/images/logo.png";
+  static const String imagesLogo = "assets/images/splash.png";
 
   /// Assets for imagesSvgsAnnoucementIcon
   /// assets/images/svgs/annoucement_icon.svg

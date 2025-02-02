@@ -32,4 +32,9 @@ class AppTextStyles {
     color: AppColors.primaryColordark,
     fontWeight: FontWeightHelper.medium,
   );
+  static TextStyle font24BlackSemiBold = ChangaTextStyle(
+    fontSize: 28.sp,
+    color: AppColors.black,
+    fontWeight: FontWeightHelper.semiBold,
+  );
 }
