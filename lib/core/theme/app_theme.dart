@@ -22,7 +22,7 @@ class AppTheme {
   ).copyWith(
     visualDensity: VisualDensity.adaptivePlatformDensity,
     // primaryColor: AppColors.primaryRed,
-    // scaffoldBackgroundColor: AppColors.scaffoldBG,
+    scaffoldBackgroundColor: AppColors.backGround,
   );
 
   static final ThemeData darkTheme = ThemeData.dark(

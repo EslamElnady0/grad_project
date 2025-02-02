@@ -22,6 +22,47 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "hello": MessageLookupByLibrary.simpleMessage("hello"),
+    "academicProgress": MessageLookupByLibrary.simpleMessage(
+      "Academic Progress",
+    ),
+    "announcements": MessageLookupByLibrary.simpleMessage("Announcements"),
+    "chat": MessageLookupByLibrary.simpleMessage("Chat"),
+    "community": MessageLookupByLibrary.simpleMessage("Community"),
+    "cooperateShareThoughts": MessageLookupByLibrary.simpleMessage(
+      "Collaborate, share your ideas, and learn from your peers easily 📚",
+    ),
+    "courses": MessageLookupByLibrary.simpleMessage("Courses"),
+    "didntSreachYet": MessageLookupByLibrary.simpleMessage(
+      "🤔 You haven\'t searched for anything yet!",
+    ),
+    "discoverYourWay": MessageLookupByLibrary.simpleMessage(
+      "🔍 Easily discover your way around the university.",
+    ),
+    "eLearning": MessageLookupByLibrary.simpleMessage("E-Learning"),
+    "finalResults": MessageLookupByLibrary.simpleMessage("Final Results"),
+    "goLearnCommunicate": MessageLookupByLibrary.simpleMessage(
+      "Connect. Learn. Go!",
+    ),
+    "internalMap": MessageLookupByLibrary.simpleMessage("Internal Map"),
+    "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "mostSreached": MessageLookupByLibrary.simpleMessage(
+      "Most searched places!",
+    ),
+    "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "searchForBuilding": MessageLookupByLibrary.simpleMessage(
+      "Search for a building, lecture hall, room, etc..!",
+    ),
+    "selectCources": MessageLookupByLibrary.simpleMessage(
+      "📚 Please select the courses you want to follow for updates and announcements!",
+    ),
+    "startWriting": MessageLookupByLibrary.simpleMessage("Start writing now.."),
+    "timeSchedule": MessageLookupByLibrary.simpleMessage("Time Schedule"),
+    "weeklySchedule": MessageLookupByLibrary.simpleMessage("Weekly Schedule"),
+    "writeYourPlace": MessageLookupByLibrary.simpleMessage(
+      "Write the name of the place you want to reach.",
+    ),
+    "youCanJoinToChat": MessageLookupByLibrary.simpleMessage(
+      "👥 You can join your academic year\'s private group to connect with your classmates!",
+    ),
   };
 }
