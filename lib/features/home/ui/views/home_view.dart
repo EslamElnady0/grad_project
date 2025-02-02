@@ -4,6 +4,7 @@ import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/features/home/ui/cubit/bottom_nav_bar_cubit.dart';
 import 'package:grad_project/features/home/ui/widgets/bottom%20nav%20bar/custom_bottom_nav_bar.dart';
 import '../../../../core/widgets/custom_scaffold.dart';
+import '../widgets/drawer/custom_drawer.dart';
 
 class HomeView extends StatelessWidget {
   static const String screenName = "/home";
@@ -16,6 +17,7 @@ class HomeView extends StatelessWidget {
       body:
           Constants.homeBodies[context.read<BottomNavBarCubit>().currentIndex],
       bottomNavigationBar: CustomBottomNavigationBar(),
+      drawer: CustomDrawer(),
     );
   }
 }
