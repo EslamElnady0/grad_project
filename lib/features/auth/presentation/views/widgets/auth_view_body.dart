@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
+import 'package:grad_project/features/auth/presentation/forget_password_view.dart';
 import '../../../../../core/widgets/custom_logo.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
 
@@ -17,8 +19,7 @@ class _AuthViewBodyState extends State<AuthViewBody> {
 
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
-  late String email, userName, password;
-  late bool isTermsAccepted = false;
+  late String email, password;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -67,7 +68,10 @@ class _AuthViewBodyState extends State<AuthViewBody> {
               Align(
                 alignment: Alignment.centerLeft,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    
+                    GoRouter.of(context).go(ForgetPasswordView.routeName);
+                  },
                   child: Text(
                     'Forgot your password?',
                     textAlign: TextAlign.left,

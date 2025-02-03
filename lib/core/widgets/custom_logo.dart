@@ -13,7 +13,7 @@ class CustomLogo extends StatelessWidget {
         height: height,
         child: AspectRatio(
             aspectRatio: 2800 / 1979,
-            child: Image.asset(Assets.imagesLogo)),
+            child: Image.asset(Assets.imagesSplash)),
       ),
     );
   }

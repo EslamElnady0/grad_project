@@ -35,7 +35,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       onSaved: widget.onSaved,
       keyboardType: widget.textInputType,
       textAlign: TextAlign.end,
-      style: AppTextStyles.font10grayThin,
+      style: AppTextStyles.font10grayRegular,
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'هذا الحقل مطلوب';
@@ -44,7 +44,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       },
       decoration: InputDecoration(
         hintText: widget.hintText,
-        hintStyle: AppTextStyles.font10grayThin,
+        hintStyle: AppTextStyles.font10grayRegular,
         filled: true,
         fillColor: AppColors.white,
         border: _buildBorder(),
