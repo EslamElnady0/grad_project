@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
-import 'package:grad_project/features/home/ui/views/home_view.dart';
-import '../../../../core/helpers/app_assets.dart';
+import 'package:grad_project/features/auth/presentation/views/auth_view.dart';
+import '../../../../core/widgets/custom_logo.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -23,13 +24,8 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Center(
-          child: SizedBox(
-            width: MediaQuery.of(context).size.width - 80,
-            child: AspectRatio(
-                aspectRatio: 2800 / 1979,
-                child: Image.asset(Assets.imagesSplash)),
-          ),
+        CustomLogo(
+          height: 173.h,
         ),
         Text(
           "التعليم الالكتروني",
@@ -44,7 +40,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       Duration(milliseconds: 3000),
       () {
         // ignore: use_build_context_synchronously
-        GoRouter.of(context).go(HomeView.routeName);
+        GoRouter.of(context).go(AuthView.routeName);
       },
     );
   }

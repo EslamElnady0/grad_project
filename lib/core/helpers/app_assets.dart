@@ -6,6 +6,18 @@ class Assets {
   /// assets/images/avatar_doc.png
   static const String imagesAvatarDoc = "assets/images/avatar_doc.png";
 
+  /// Assets for imagesForget password1
+  /// assets/images/Forget password1.png
+  static const String imagesForgetpassword1 = "assets/images/Forget password1.png";
+
+  /// Assets for imagesForget password2
+  /// assets/images/Forget password2.png
+  static const String imagesForgetpassword2 = "assets/images/Forget password2.png";
+
+  /// Assets for imagesProtect
+  /// assets/images/protect.png
+  static const String imagesProtect = "assets/images/protect.png";
+
   /// Assets for imagesSplash
   /// assets/images/splash.png
   static const String imagesSplash = "assets/images/splash.png";
