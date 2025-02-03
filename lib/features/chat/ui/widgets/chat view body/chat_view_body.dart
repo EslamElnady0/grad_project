@@ -4,7 +4,7 @@ import 'package:grad_project/core/helpers/constants.dart';
 
 import '../../../../../core/helpers/spacing.dart';
 import 'chat_message_widget.dart';
-import '../chat view footer/chat_view_footer.dart';
+import '../../../../../core/widgets/text entry footer/text_entry_footer.dart';
 
 class ChatViewBody extends StatelessWidget {
   const ChatViewBody({super.key});
