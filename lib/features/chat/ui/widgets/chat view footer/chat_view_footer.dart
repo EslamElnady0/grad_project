@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
-import 'package:grad_project/features/chat/ui/widgets/chat%20view%20footer/chat_add_attachments_button.dart';
+import 'package:grad_project/core/widgets/add_attachments_button.dart';
 import 'package:grad_project/features/chat/ui/widgets/chat%20view%20footer/chat_send_button.dart';
 
 import 'chat_text_field.dart';
