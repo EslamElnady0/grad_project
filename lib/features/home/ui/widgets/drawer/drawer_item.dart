@@ -32,7 +32,15 @@ class DrawerItem extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10.r))
             : null,
         child: Row(children: [
-          SvgPicture.asset(iconPath),
+          SizedBox(
+            height: 22,
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: SvgPicture.asset(
+                iconPath,
+              ),
+            ),
+          ),
           hGap(12),
           Text(
             title,

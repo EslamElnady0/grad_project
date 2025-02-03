@@ -29,11 +29,13 @@ class ChatLevelsContainer extends StatelessWidget {
           Text(
             S.of(context).goLearnCommunicate,
             style: AppTextStyles.font16GrayMedium,
+            textAlign: TextAlign.center,
           ),
           vGap(10),
           Text(
             S.of(context).cooperateShareThoughts,
             style: AppTextStyles.font12grayMedium,
+            textAlign: TextAlign.center,
           ),
           vGap(20),
           Expanded(child: ChatLevelsListView()),

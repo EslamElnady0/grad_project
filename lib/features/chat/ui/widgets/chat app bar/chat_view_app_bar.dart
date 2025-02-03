@@ -22,6 +22,7 @@ class ChatViewAppBar extends StatelessWidget {
       child: Row(
         children: [
           SvgIconButton(
+              localized: true,
               iconPath: Assets.imagesSvgsBackButton,
               onPressed: () => GoRouter.of(context).pop()),
           hGap(10),
