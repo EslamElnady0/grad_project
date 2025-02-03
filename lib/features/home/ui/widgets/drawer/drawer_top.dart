@@ -25,7 +25,7 @@ class DrawerTop extends StatelessWidget {
           child: Column(
             children: [
               vGap(5),
-              Image.asset(Assets.imagesLogo, height: 105.h, width: 105.w),
+              Image.asset(Assets.imagesSplash, height: 105.h, width: 105.w),
               Text(
                 S.of(context).eLearning,
                 style: AppTextStyles.font16WhiteSemiBold,

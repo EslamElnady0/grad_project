@@ -3,9 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/font_weight_helper.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 
-import '../../../../core/helpers/app_assets.dart';
-import '../../../../core/helpers/spacing.dart';
-import '../../../../core/theme/app_text_styles.dart';
+import '../../../../../core/helpers/app_assets.dart';
+import '../../../../../core/helpers/spacing.dart';
+import '../../../../../core/theme/app_text_styles.dart';
 
 class ChatLevelsItem extends StatelessWidget {
   final void Function()? onTap;

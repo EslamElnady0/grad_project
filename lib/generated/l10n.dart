@@ -244,6 +244,16 @@ class S {
       args: [],
     );
   }
+
+  /// `students online now`
+  String get studentsOnlineNow {
+    return Intl.message(
+      'students online now',
+      name: 'studentsOnlineNow',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

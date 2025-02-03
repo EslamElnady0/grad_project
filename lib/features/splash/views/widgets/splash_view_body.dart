@@ -28,7 +28,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
             width: MediaQuery.of(context).size.width - 80,
             child: AspectRatio(
                 aspectRatio: 2800 / 1979,
-                child: Image.asset(Assets.imagesLogo)),
+                child: Image.asset(Assets.imagesSplash)),
           ),
         ),
         Text(
@@ -44,7 +44,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       Duration(milliseconds: 3000),
       () {
         // ignore: use_build_context_synchronously
-        GoRouter.of(context).go(HomeView.screenName);
+        GoRouter.of(context).go(HomeView.routeName);
       },
     );
   }

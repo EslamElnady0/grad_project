@@ -1,19 +1,30 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-
+  
   /// Assets for imagesAvatarDoc
   /// assets/images/avatar_doc.png
   static const String imagesAvatarDoc = "assets/images/avatar_doc.png";
 
-  /// Assets for imagesLogo
-  /// assets/images/logo.png
-  static const String imagesLogo = "assets/images/splash.png";
+  /// Assets for imagesSplash
+  /// assets/images/splash.png
+  static const String imagesSplash = "assets/images/splash.png";
+
+  /// Assets for imagesSvgsAddIcon
+  /// assets/images/svgs/add_icon.svg
+  static const String imagesSvgsAddIcon = "assets/images/svgs/add_icon.svg";
 
   /// Assets for imagesSvgsAnnoucementIcon
   /// assets/images/svgs/annoucement_icon.svg
-  static const String imagesSvgsAnnoucementIcon =
-      "assets/images/svgs/annoucement_icon.svg";
+  static const String imagesSvgsAnnoucementIcon = "assets/images/svgs/annoucement_icon.svg";
+
+  /// Assets for imagesSvgsAtIcon
+  /// assets/images/svgs/at_icon.svg
+  static const String imagesSvgsAtIcon = "assets/images/svgs/at_icon.svg";
+
+  /// Assets for imagesSvgsBackButton
+  /// assets/images/svgs/back_button.svg
+  static const String imagesSvgsBackButton = "assets/images/svgs/back_button.svg";
 
   /// Assets for imagesSvgsCalender
   /// assets/images/svgs/calender.svg
@@ -29,13 +40,11 @@ class Assets {
 
   /// Assets for imagesSvgsCommunityIcon
   /// assets/images/svgs/community_icon.svg
-  static const String imagesSvgsCommunityIcon =
-      "assets/images/svgs/community_icon.svg";
+  static const String imagesSvgsCommunityIcon = "assets/images/svgs/community_icon.svg";
 
   /// Assets for imagesSvgsCoursesIcon
   /// assets/images/svgs/courses_icon.svg
-  static const String imagesSvgsCoursesIcon =
-      "assets/images/svgs/courses_icon.svg";
+  static const String imagesSvgsCoursesIcon = "assets/images/svgs/courses_icon.svg";
 
   /// Assets for imagesSvgsEmojiIcon
   /// assets/images/svgs/emoji_icon.svg
@@ -51,8 +60,7 @@ class Assets {
 
   /// Assets for imagesSvgsMentionIcon
   /// assets/images/svgs/mention_icon.svg
-  static const String imagesSvgsMentionIcon =
-      "assets/images/svgs/mention_icon.svg";
+  static const String imagesSvgsMentionIcon = "assets/images/svgs/mention_icon.svg";
 
   /// Assets for imagesSvgsMenuIcon
   /// assets/images/svgs/menu_icon.svg
@@ -60,8 +68,7 @@ class Assets {
 
   /// Assets for imagesSvgsMoreOptionsIcon
   /// assets/images/svgs/more_options_icon.svg
-  static const String imagesSvgsMoreOptionsIcon =
-      "assets/images/svgs/more_options_icon.svg";
+  static const String imagesSvgsMoreOptionsIcon = "assets/images/svgs/more_options_icon.svg";
 
   /// Assets for imagesSvgsPerson
   /// assets/images/svgs/person.svg
@@ -69,8 +76,7 @@ class Assets {
 
   /// Assets for imagesSvgsSearchIcon
   /// assets/images/svgs/search_icon.svg
-  static const String imagesSvgsSearchIcon =
-      "assets/images/svgs/search_icon.svg";
+  static const String imagesSvgsSearchIcon = "assets/images/svgs/search_icon.svg";
 
   /// Assets for imagesSvgsSendIcon
   /// assets/images/svgs/send_icon.svg
@@ -86,6 +92,10 @@ class Assets {
 
   /// Assets for imagesSvgsTimeQuarter
   /// assets/images/svgs/time_quarter.svg
-  static const String imagesSvgsTimeQuarter =
-      "assets/images/svgs/time_quarter.svg";
+  static const String imagesSvgsTimeQuarter = "assets/images/svgs/time_quarter.svg";
+
+  /// Assets for imagesWhite
+  /// assets/images/white.png
+  static const String imagesWhite = "assets/images/white.png";
 }
+

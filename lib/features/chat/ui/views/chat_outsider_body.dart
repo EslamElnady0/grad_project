@@ -5,7 +5,7 @@ import '../../../../core/helpers/spacing.dart';
 import '../../../../generated/l10n.dart';
 import '../../../home/ui/widgets/home_screens_header_row.dart';
 import '../../../home/ui/widgets/title_text_widget.dart';
-import '../widgets/chat_levels_container.dart';
+import '../widgets/outsider chat view/chat_levels_container.dart';
 
 class ChatOutsiderBody extends StatelessWidget {
   const ChatOutsiderBody({super.key});

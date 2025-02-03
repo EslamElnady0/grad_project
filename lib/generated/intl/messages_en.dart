@@ -56,6 +56,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "📚 Please select the courses you want to follow for updates and announcements!",
     ),
     "startWriting": MessageLookupByLibrary.simpleMessage("Start writing now.."),
+    "studentsOnlineNow": MessageLookupByLibrary.simpleMessage(
+      "students online now",
+    ),
     "timeSchedule": MessageLookupByLibrary.simpleMessage("Time Schedule"),
     "weeklySchedule": MessageLookupByLibrary.simpleMessage("Weekly Schedule"),
     "writeYourPlace": MessageLookupByLibrary.simpleMessage(
