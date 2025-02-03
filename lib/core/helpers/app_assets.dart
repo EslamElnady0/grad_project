@@ -6,7 +6,6 @@ class Assets {
   /// assets/images/avatar_doc.png
   static const String imagesAvatarDoc = "assets/images/avatar_doc.png";
 
-<<<<<<< HEAD
   /// Assets for imagesForget password1
   /// assets/images/Forget password1.png
   static const String imagesForgetpassword1 = "assets/images/Forget password1.png";
@@ -22,21 +21,14 @@ class Assets {
   /// Assets for imagesSplash
   /// assets/images/splash.png
   static const String imagesSplash = "assets/images/splash.png";
-=======
-  /// Assets for imagesSplash
-  /// assets/images/splash.png
-  static const String imagesSplash = "assets/images/splash.png";
 
   /// Assets for imagesSvgsAddIcon
   /// assets/images/svgs/add_icon.svg
   static const String imagesSvgsAddIcon = "assets/images/svgs/add_icon.svg";
->>>>>>> a1eade4ea9ad163f52a625678cb808958c19ed1d
 
   /// Assets for imagesSvgsAnnoucementIcon
   /// assets/images/svgs/annoucement_icon.svg
   static const String imagesSvgsAnnoucementIcon = "assets/images/svgs/annoucement_icon.svg";
-<<<<<<< HEAD
-=======
 
   /// Assets for imagesSvgsAtIcon
   /// assets/images/svgs/at_icon.svg
@@ -45,7 +37,6 @@ class Assets {
   /// Assets for imagesSvgsBackButton
   /// assets/images/svgs/back_button.svg
   static const String imagesSvgsBackButton = "assets/images/svgs/back_button.svg";
->>>>>>> a1eade4ea9ad163f52a625678cb808958c19ed1d
 
   /// Assets for imagesSvgsCalender
   /// assets/images/svgs/calender.svg
@@ -122,12 +113,9 @@ class Assets {
   /// Assets for imagesSvgsTimeQuarter
   /// assets/images/svgs/time_quarter.svg
   static const String imagesSvgsTimeQuarter = "assets/images/svgs/time_quarter.svg";
-<<<<<<< HEAD
-=======
 
   /// Assets for imagesWhite
   /// assets/images/white.png
   static const String imagesWhite = "assets/images/white.png";
->>>>>>> a1eade4ea9ad163f52a625678cb808958c19ed1d
 }
 
