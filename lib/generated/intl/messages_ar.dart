@@ -58,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "startWriting": MessageLookupByLibrary.simpleMessage(
       "إبدأ في الكتابة الأن..",
     ),
+    "studentsOnlineNow": MessageLookupByLibrary.simpleMessage("طالب نشط الآن"),
     "timeSchedule": MessageLookupByLibrary.simpleMessage("الجدول الزمني"),
     "weeklySchedule": MessageLookupByLibrary.simpleMessage("الجدول الإسبوعي"),
     "writeYourPlace": MessageLookupByLibrary.simpleMessage(

@@ -7,7 +7,7 @@ import '../../../../core/widgets/custom_scaffold.dart';
 import '../widgets/drawer/custom_drawer.dart';
 
 class HomeView extends StatelessWidget {
-  static const String screenName = "/home";
+  static const String routeName = "/home";
   const HomeView({super.key});
 
   @override
