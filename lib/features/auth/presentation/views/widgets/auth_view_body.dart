@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/features/auth/presentation/forget_password_view.dart';
+import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/widgets/custom_logo.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
 
@@ -44,7 +45,7 @@ class _AuthViewBodyState extends State<AuthViewBody> {
               ),
               vGap(20),
               Divider(
-                color: Colors.grey,
+                color: AppColors.gray,
                 thickness: 2,
                 height: 20,
               ),
