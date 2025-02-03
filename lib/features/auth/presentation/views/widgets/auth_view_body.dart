@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
-import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import '../../../../../core/widgets/custom_logo.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
@@ -50,26 +49,37 @@ class _AuthViewBodyState extends State<AuthViewBody> {
               ),
               vGap(20),
               CustomTextFormField(
-                  onSaved: (value) {
-                    email = value!;
-                  },
+                onSaved: (value) {
+                  email = value!;
+                },
                 hintText: 'الايميل',
                 textInputType: TextInputType.emailAddress,
               ),
               vGap(10),
               CustomTextFormField(
-                      onSaved: (value) {
+                onSaved: (value) {
                   password = value!;
                 },
                 hintText: 'كلمة المرور',
                 textInputType: TextInputType.visiblePassword,
               ),
+              vGap(10),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Forgot your password?',
+                    textAlign: TextAlign.left,
+                    style: AppTextStyles.font12BlackSemiBold,
+                  ),
+                ),
+              ),
+              vGap(20),
               ElevatedButton(
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
-                      print(email);
-                      print(password);
                     } else {
                       setState(() {
                         autovalidateMode = AutovalidateMode.always;
@@ -77,6 +87,7 @@ class _AuthViewBodyState extends State<AuthViewBody> {
                     }
                   },
                   child: Text('تسجيل الدخول')),
+              vGap(20),
             ],
           ),
         ),
@@ -84,4 +95,3 @@ class _AuthViewBodyState extends State<AuthViewBody> {
     );
   }
 }
-

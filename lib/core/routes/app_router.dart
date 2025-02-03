@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../features/auth/presentation/views/auth_view.dart';
 import '../../features/splash/views/splash_view.dart';
 
