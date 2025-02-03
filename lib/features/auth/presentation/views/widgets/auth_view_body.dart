@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
+import 'package:grad_project/core/widgets/custom_text_button.dart';
 import 'package:grad_project/features/auth/presentation/forget_password_view.dart';
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/widgets/custom_logo.dart';
@@ -70,7 +71,6 @@ class _AuthViewBodyState extends State<AuthViewBody> {
                 alignment: Alignment.centerLeft,
                 child: TextButton(
                   onPressed: () {
-                    
                     GoRouter.of(context).go(ForgetPasswordView.routeName);
                   },
                   child: Text(
@@ -81,8 +81,9 @@ class _AuthViewBodyState extends State<AuthViewBody> {
                 ),
               ),
               vGap(20),
-              ElevatedButton(
-                  onPressed: () {
+              CustomTextButton(
+                  text: 'تسجيل الدخول',
+                  onTap: () {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
                     } else {
@@ -90,8 +91,7 @@ class _AuthViewBodyState extends State<AuthViewBody> {
                         autovalidateMode = AutovalidateMode.always;
                       });
                     }
-                  },
-                  child: Text('تسجيل الدخول')),
+                  }),
               vGap(20),
             ],
           ),

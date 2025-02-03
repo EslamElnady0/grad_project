@@ -5,6 +5,7 @@ import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_logo.dart';
+import 'package:grad_project/core/widgets/custom_text_button.dart';
 import 'package:grad_project/core/widgets/custom_text_form_field.dart';
 import 'package:grad_project/features/auth/presentation/views/confirm_account_view.dart';
 
@@ -61,8 +62,7 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
               textInputType: TextInputType.emailAddress,
             ),
             vGap(20),
-            ElevatedButton(
-                onPressed: () {
+         CustomTextButton(text: "تأكيد", onTap: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
                     GoRouter.of(context).push(ConfirmAccountView.routeName);
@@ -71,8 +71,7 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
                       autovalidateMode = AutovalidateMode.always;
                     });
                   }
-                },
-                child: Text('تسجيل الدخول')),
+                },) , vGap(40),
           ],
         ),
       ),
