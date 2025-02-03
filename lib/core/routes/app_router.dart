@@ -5,7 +5,7 @@ import '../../features/auth/presentation/views/auth_view.dart';
 import '../../features/splash/views/splash_view.dart';
 
 abstract class AppRouter {
-  static const kAuthView = '/authView';
+
 
   static final router = GoRouter(
     routes: [
@@ -14,7 +14,7 @@ abstract class AppRouter {
         builder: (context, state) => SplashView(),
       ),
       GoRoute(
-        path: kAuthView,
+        path: AuthView.routeName,
         builder: (context, state) => const AuthView(),
       ),
     ],

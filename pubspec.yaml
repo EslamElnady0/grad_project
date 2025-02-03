@@ -75,6 +75,16 @@ flutter:
         - asset: assets/fonts/Changa-Regular.ttf
         - asset: assets/fonts/Changa-Bold.ttf
           weight: 700
+        - asset: assets/fonts/Changa-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Changa-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Changa-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Changa-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Changa-ExtraBold.ttf
+          weight: 800
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
 flutter_intl:
