@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/helpers/app_assets.dart';
-import '../../../../../core/theme/app_colors.dart';
-import '../../../../../core/widgets/svg_icon_button.dart';
+import '../../helpers/app_assets.dart';
+import '../../theme/app_colors.dart';
+import '../svg_icon_button.dart';
 
 class MentionIconButton extends StatelessWidget {
   const MentionIconButton({super.key});
