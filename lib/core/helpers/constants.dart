@@ -94,7 +94,7 @@ class Constants {
       borderRadius: BorderRadius.circular(16.r),
       borderSide: BorderSide(
         color: AppColors.black,
-        width: 2,
+        width: 1.5,
       ));
   static List<Widget> homeBodies = [
     AnnoucementsBody(),
