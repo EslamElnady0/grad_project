@@ -56,6 +56,116 @@ class S {
   }
 
   /// `E-Learning`
+  String get app_title {
+    return Intl.message('E-Learning', name: 'app_title', desc: '', args: []);
+  }
+
+  /// `Welcome back!\nPlease log in to access your dashboard and stay productive.`
+  String get welcome_message {
+    return Intl.message(
+      'Welcome back!\nPlease log in to access your dashboard and stay productive.',
+      name: 'welcome_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message('Email', name: 'email', desc: '', args: []);
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message('Password', name: 'password', desc: '', args: []);
+  }
+
+  /// `Log In`
+  String get login {
+    return Intl.message('Log In', name: 'login', desc: '', args: []);
+  }
+
+  /// `Everything will return to its place!`
+  String get success_message {
+    return Intl.message(
+      'Everything will return to its place!',
+      name: 'success_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `🔑 It's okay! Just enter your email so we can recover your account and password!`
+  String get forgot_password_message {
+    return Intl.message(
+      '🔑 It\'s okay! Just enter your email so we can recover your account and password!',
+      name: 'forgot_password_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get confirm {
+    return Intl.message('Confirm', name: 'confirm', desc: '', args: []);
+  }
+
+  /// `Confirmation for security!`
+  String get security_confirmation {
+    return Intl.message(
+      'Confirmation for security!',
+      name: 'security_confirmation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verify your account!`
+  String get verify_account {
+    return Intl.message(
+      'Verify your account!',
+      name: 'verify_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the 6-digit code that was sent to you.`
+  String get enter_code {
+    return Intl.message(
+      'Enter the 6-digit code that was sent to you.',
+      name: 'enter_code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resend?`
+  String get resend {
+    return Intl.message('Resend?', name: 'resend', desc: '', args: []);
+  }
+
+  /// `This field is required`
+  String get field_is_required {
+    return Intl.message(
+      'This field is required',
+      name: 'field_is_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot your password?`
+  String get forgot_password {
+    return Intl.message(
+      'Forgot your password?',
+      name: 'forgot_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `E-Learning`
   String get eLearning {
     return Intl.message('E-Learning', name: 'eLearning', desc: '', args: []);
   }

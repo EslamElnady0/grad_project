@@ -68,24 +68,64 @@ class AppTextStyles {
     color: AppColors.black,
     fontWeight: FontWeightHelper.semiBold,
   );
-  static TextStyle font16WhiteSemiBold = ChangaTextStyle(
-    fontSize: 16.sp,
-    color: AppColors.white,
+  static TextStyle font12BlackMedium = ChangaTextStyle(
+    fontSize: 12.sp,
+    color: AppColors.black,
+    fontWeight: FontWeightHelper.medium,
+  );
+  static TextStyle font12BlackSemiBold = ChangaTextStyle(
+    fontSize: 12.sp,
+    color: AppColors.black,
     fontWeight: FontWeightHelper.semiBold,
+  );
+  static TextStyle font10grayRegular = ChangaTextStyle(
+    fontSize: 10.sp,
+    color: AppColors.gray,
+    fontWeight: FontWeightHelper.regular,
+  );
+  static TextStyle font24BlackBold = ChangaTextStyle(
+    fontSize: 24.sp,
+    color: AppColors.black,
+    fontWeight: FontWeightHelper.bold,
+  );
+  static TextStyle font16BlackMedium = ChangaTextStyle(
+    fontSize: 16.sp,
+    color: AppColors.black,
+    fontWeight: FontWeightHelper.medium,
   );
   static TextStyle font16BlackSemiBold = ChangaTextStyle(
     fontSize: 16.sp,
     color: AppColors.black,
     fontWeight: FontWeightHelper.semiBold,
   );
-  static TextStyle font16GrayMedium = ChangaTextStyle(
+  static TextStyle font12GrayMedium = ChangaTextStyle(
+    fontSize: 12.sp,
+    color: AppColors.gray,
+    fontWeight: FontWeightHelper.medium,
+  );
+  static TextStyle font16GrayBold = ChangaTextStyle(
+    fontSize: 16.sp,
+    color: AppColors.gray,
+    fontWeight: FontWeightHelper.bold,
+  );
+    static TextStyle font16GrayMedium = ChangaTextStyle(
     fontSize: 16.sp,
     color: AppColors.gray,
     fontWeight: FontWeightHelper.medium,
   );
-  static TextStyle font20DarkerBlueBold = ChangaTextStyle(
+      static TextStyle font20DarkerBlueBold = ChangaTextStyle(
     fontSize: 20.sp,
-    color: AppColors.darkerBlue,
+    color: AppColors.darkblue,
     fontWeight: FontWeightHelper.bold,
+  );
+      static TextStyle font16WhiteSemiBold = ChangaTextStyle(
+    fontSize: 16.sp,
+    color: AppColors.darkblue,
+    fontWeight: FontWeightHelper.semiBold,
+  );
+      static TextStyle font20WhiteSemiBold = ChangaTextStyle(
+    fontSize: 20.sp,
+    color: AppColors.white,
+    fontWeight: FontWeightHelper.semiBold,
   );
 }
