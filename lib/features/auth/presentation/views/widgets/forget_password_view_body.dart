@@ -5,8 +5,10 @@ import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_logo.dart';
+import 'package:grad_project/core/widgets/custom_text_button.dart';
 import 'package:grad_project/core/widgets/custom_text_form_field.dart';
 import 'package:grad_project/features/auth/presentation/views/confirm_account_view.dart';
+import 'package:grad_project/generated/l10n.dart';
 
 class ForgetPasswordViewBody extends StatefulWidget {
   const ForgetPasswordViewBody({super.key});
@@ -38,14 +40,14 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
             ),
             vGap(10),
             Text(
-              "كله هيرجع لمكانه!",
-              textDirection: TextDirection.rtl,
+             S.of(context).success_message,
+              textAlign: TextAlign.center,
               style: AppTextStyles.font24BlackBold,
             ),
             vGap(10),
             Text(
-              "🔑 مهمل بس ولا يهمك! اكتب إيميلك علشان نرجعلك حسابك وكلمة السر تاني!",
-              textDirection: TextDirection.rtl,
+              S.of(context).forgot_password_message,
+              textAlign: TextAlign.center,
               style: AppTextStyles.font12GrayMedium,
             ),
             vGap(16),
@@ -57,12 +59,11 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
               onSaved: (value) {
                 email = value!;
               },
-              hintText: 'الايميل',
+              hintText:S.of(context).email,
               textInputType: TextInputType.emailAddress,
             ),
             vGap(20),
-            ElevatedButton(
-                onPressed: () {
+         CustomTextButton(text: S.of(context).confirm, onTap: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
                     GoRouter.of(context).push(ConfirmAccountView.routeName);
@@ -71,8 +72,7 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
                       autovalidateMode = AutovalidateMode.always;
                     });
                   }
-                },
-                child: Text('تسجيل الدخول')),
+                },) , vGap(40),
           ],
         ),
       ),

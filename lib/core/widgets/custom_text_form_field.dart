@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../generated/l10n.dart';
+import '../helpers/localizationa.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
 
@@ -30,29 +32,44 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      obscureText: _isObscured,
-      onSaved: widget.onSaved,
-      keyboardType: widget.textInputType,
-      textAlign: TextAlign.end,
-      style: AppTextStyles.font10grayRegular,
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return 'هذا الحقل مطلوب';
-        }
-        return null;
-      },
-      decoration: InputDecoration(
-        hintText: widget.hintText,
-        hintStyle: AppTextStyles.font10grayRegular,
-        filled: true,
-        fillColor: AppColors.white,
-        border: _buildBorder(),
-        enabledBorder: _buildBorder(),
-        focusedBorder: _buildBorder(),
-        prefixIcon: _buildPrefixIcon(),
-        contentPadding:
-            const EdgeInsets.symmetric(vertical: 16, horizontal: 15),
+    bool isArabic = isArabicLocale(context);
+    
+    return Container(
+      decoration: BoxDecoration(
+        color: AppColors.white,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1), // Adjust shadow color
+            blurRadius: 10, // Softness of the shadow
+            spreadRadius: 1, // Size of the shadow
+            offset: Offset(0, 2), // Position of shadow
+          ),
+        ],
+      ),
+      child: TextFormField(
+        obscureText: _isObscured,
+        onSaved: widget.onSaved,
+        keyboardType: widget.textInputType,
+        textAlign: isArabic ? TextAlign.right : TextAlign.left,
+        style: AppTextStyles.font10grayRegular,
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return S.of(context).field_is_required;
+          }
+          return null;
+        },
+        decoration: InputDecoration(
+          hintText: widget.hintText,
+          hintStyle: AppTextStyles.font10grayRegular,
+          filled: true,
+          fillColor: Colors.transparent, // Make fillColor transparent
+          border: _buildBorder(),
+          enabledBorder: _buildBorder(),
+          focusedBorder: _buildBorder(),
+          suffixIcon: _buildPrefixIcon(),
+          contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 15),
+        ),
       ),
     );
   }
@@ -67,7 +84,10 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             _isObscured = !_isObscured;
           });
         },
-        child: Icon(Icons.lock_outline, color: AppColors.gray),
+        child: Icon(
+          _isObscured ? Icons.lock_outline : Icons.lock_open,
+          color: AppColors.gray,
+        ),
       );
     }
     return null;
@@ -78,5 +98,10 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       borderRadius: BorderRadius.circular(12),
       borderSide: BorderSide.none,
     );
+  }
+
+  bool isArabicLocale(BuildContext context) {
+    Locale locale = Localizations.localeOf(context);
+    return locale.languageCode == 'ar';
   }
 }

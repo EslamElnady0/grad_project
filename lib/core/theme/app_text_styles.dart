@@ -123,4 +123,9 @@ class AppTextStyles {
     color: AppColors.darkblue,
     fontWeight: FontWeightHelper.semiBold,
   );
+      static TextStyle font20WhiteSemiBold = ChangaTextStyle(
+    fontSize: 20.sp,
+    color: AppColors.white,
+    fontWeight: FontWeightHelper.semiBold,
+  );
 }

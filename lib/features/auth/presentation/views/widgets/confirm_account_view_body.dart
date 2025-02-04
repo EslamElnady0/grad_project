@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:grad_project/core/helpers/localizationa.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/features/auth/presentation/views/widgets/custom_pin_code_text_field.dart';
 
 import '../../../../../core/helpers/app_assets.dart';
 import '../../../../../core/widgets/custom_app_bar.dart';
+import '../../../../../generated/l10n.dart';
 
 class ConfirmAccountViewBody extends StatelessWidget {
   const ConfirmAccountViewBody({super.key});
@@ -18,20 +20,20 @@ class ConfirmAccountViewBody extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const CustomAppBar(),
+              CustomAppBar(
+                title: S.of(context).security_confirmation,
+              ),
               vGap(13),
               Text(
-                "أكد حسابك!",
+                S.of(context).verify_account,
                 style: AppTextStyles.font24BlackSemiBold,
-                textDirection: TextDirection.rtl,
               ),
               vGap(4),
               Image.asset(Assets.imagesProtect),
               vGap(14),
               Text(
-                "أدخل الكود المكون من 6 أرقام اللي اتبعت ليك.",
+                S.of(context).enter_code,
                 style: AppTextStyles.font12BlackMedium,
-                textDirection: TextDirection.rtl,
               ),
               vGap(8),
               Text(
@@ -43,10 +45,13 @@ class ConfirmAccountViewBody extends StatelessWidget {
               vGap(12),
               Align(
                 alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text("إعادة الإرسال؟",
-                      style: AppTextStyles.font16GrayBold),
+                child: Align(
+                  alignment: isArabicLocale(context) ? Alignment.centerRight: Alignment.centerLeft ,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text(S.of(context).resend,
+                        style: AppTextStyles.font16GrayBold),
+                  ),
                 ),
               ),
             ],
