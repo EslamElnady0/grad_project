@@ -26,8 +26,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Academic Progress",
     ),
     "announcements": MessageLookupByLibrary.simpleMessage("Announcements"),
+    "app_title": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "chat": MessageLookupByLibrary.simpleMessage("Chat"),
     "community": MessageLookupByLibrary.simpleMessage("Community"),
+    "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
     "cooperateShareThoughts": MessageLookupByLibrary.simpleMessage(
       "Collaborate, share your ideas, and learn from your peers easily 📚",
     ),
@@ -39,18 +41,37 @@ class MessageLookup extends MessageLookupByLibrary {
       "🔍 Easily discover your way around the university.",
     ),
     "eLearning": MessageLookupByLibrary.simpleMessage("E-Learning"),
+    "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "enter_code": MessageLookupByLibrary.simpleMessage(
+      "Enter the 6-digit code that was sent to you.",
+    ),
+    "field_is_required": MessageLookupByLibrary.simpleMessage(
+      "This field is required",
+    ),
     "finalResults": MessageLookupByLibrary.simpleMessage("Final Results"),
+    "forgot_password": MessageLookupByLibrary.simpleMessage(
+      "Forgot your password?",
+    ),
+    "forgot_password_message": MessageLookupByLibrary.simpleMessage(
+      "🔑 It\'s okay! Just enter your email so we can recover your account and password!",
+    ),
     "goLearnCommunicate": MessageLookupByLibrary.simpleMessage(
       "Connect. Learn. Go!",
     ),
     "internalMap": MessageLookupByLibrary.simpleMessage("Internal Map"),
+    "login": MessageLookupByLibrary.simpleMessage("Log In"),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "mostSreached": MessageLookupByLibrary.simpleMessage(
       "Most searched places!",
     ),
+    "password": MessageLookupByLibrary.simpleMessage("Password"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "resend": MessageLookupByLibrary.simpleMessage("Resend?"),
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       "Search for a building, lecture hall, room, etc..!",
+    ),
+    "security_confirmation": MessageLookupByLibrary.simpleMessage(
+      "Confirmation for security!",
     ),
     "selectCources": MessageLookupByLibrary.simpleMessage(
       "📚 Please select the courses you want to follow for updates and announcements!",
@@ -59,8 +80,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage(
       "students online now",
     ),
+    "success_message": MessageLookupByLibrary.simpleMessage(
+      "Everything will return to its place!",
+    ),
     "timeSchedule": MessageLookupByLibrary.simpleMessage("Time Schedule"),
+    "verify_account": MessageLookupByLibrary.simpleMessage(
+      "Verify your account!",
+    ),
     "weeklySchedule": MessageLookupByLibrary.simpleMessage("Weekly Schedule"),
+    "welcome_message": MessageLookupByLibrary.simpleMessage(
+      "Welcome back!\nPlease log in to access your dashboard and stay productive.",
+    ),
     "writeYourPlace": MessageLookupByLibrary.simpleMessage(
       "Write the name of the place you want to reach.",
     ),

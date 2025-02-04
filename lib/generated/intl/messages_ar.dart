@@ -26,8 +26,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "التقدم الأكاديمي",
     ),
     "announcements": MessageLookupByLibrary.simpleMessage("الأخبار المعلنه"),
+    "app_title": MessageLookupByLibrary.simpleMessage("التعليم الالكتروني"),
     "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
     "community": MessageLookupByLibrary.simpleMessage("المنتدي"),
+    "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
     "cooperateShareThoughts": MessageLookupByLibrary.simpleMessage(
       "تعاون، شارك أفكارك، وتعلّم من زملائك بسهولة 📚",
     ),
@@ -39,18 +41,37 @@ class MessageLookup extends MessageLookupByLibrary {
       "🔍 اكتشف طريقك بسهولة داخل الجامعة.",
     ),
     "eLearning": MessageLookupByLibrary.simpleMessage("التعليم الإلكتروني"),
+    "email": MessageLookupByLibrary.simpleMessage("الإيميل"),
+    "enter_code": MessageLookupByLibrary.simpleMessage(
+      "أدخل الكود المكون من 6 أرقام اللي اتبعت ليك.",
+    ),
+    "field_is_required": MessageLookupByLibrary.simpleMessage(
+      "هذا الحقل مطلوب",
+    ),
     "finalResults": MessageLookupByLibrary.simpleMessage("النتائج النهائية"),
+    "forgot_password": MessageLookupByLibrary.simpleMessage(
+      "هل نسيت كلمة السر؟",
+    ),
+    "forgot_password_message": MessageLookupByLibrary.simpleMessage(
+      "🔑 مهمل بس ولا يهمك! اكتب إيميلك علشان نرجعلك حسابك وكلمة السر تاني!",
+    ),
     "goLearnCommunicate": MessageLookupByLibrary.simpleMessage(
       "تواصل. تعلّم. انطلق!",
     ),
     "internalMap": MessageLookupByLibrary.simpleMessage("الخريطة الداخلية"),
+    "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "mostSreached": MessageLookupByLibrary.simpleMessage(
       "الاماكن الأكثر بحثاً!",
     ),
+    "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+    "resend": MessageLookupByLibrary.simpleMessage("إعادة الإرسال؟"),
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       " ابحث عن مبني، مدرج، قاعة، الخ..!",
+    ),
+    "security_confirmation": MessageLookupByLibrary.simpleMessage(
+      "تاكيد للأمان!",
     ),
     "selectCources": MessageLookupByLibrary.simpleMessage(
       "📚 يرجى اختيار المواد التي تود الاطلاع على منشوراتها وآخر مستجداتها!",
@@ -59,8 +80,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "إبدأ في الكتابة الأن..",
     ),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage("طالب نشط الآن"),
+    "success_message": MessageLookupByLibrary.simpleMessage(
+      "كله هيرجع لمكانه!",
+    ),
     "timeSchedule": MessageLookupByLibrary.simpleMessage("الجدول الزمني"),
+    "verify_account": MessageLookupByLibrary.simpleMessage("أكد حسابك!"),
     "weeklySchedule": MessageLookupByLibrary.simpleMessage("الجدول الإسبوعي"),
+    "welcome_message": MessageLookupByLibrary.simpleMessage(
+      "أهلاً وسهلاً بعودتك!\nمن فضلك سجّل دخولك للوصول إلى لوحة التحكم الخاصة بك وابقَ منتجاً.",
+    ),
     "writeYourPlace": MessageLookupByLibrary.simpleMessage(
       "اكتب اسم المكان الذي تريد الوصول إليه.",
     ),

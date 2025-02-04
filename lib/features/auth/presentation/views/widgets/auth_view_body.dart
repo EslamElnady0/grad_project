@@ -4,10 +4,12 @@ import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_text_button.dart';
-import 'package:grad_project/features/auth/presentation/forget_password_view.dart';
+import 'package:grad_project/features/auth/presentation/views/forget_password_view.dart';
+import '../../../../../core/helpers/localizationa.dart';
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/widgets/custom_logo.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
+import '../../../../../generated/l10n.dart';
 
 class AuthViewBody extends StatefulWidget {
   const AuthViewBody({super.key});
@@ -39,8 +41,7 @@ class _AuthViewBodyState extends State<AuthViewBody> {
               ),
               vGap(8),
               Text(
-                "أهلاً وسهلاً بعودتك!\nمن فضلك سجّل دخولك للوصول إلى لوحة التحكم الخاصة بك وابقَ منتجاً.",
-                textDirection: TextDirection.rtl,
+                S.of(context).welcome_message,
                 textAlign: TextAlign.center,
                 style: AppTextStyles.font12BlackMedium,
               ),
@@ -55,7 +56,7 @@ class _AuthViewBodyState extends State<AuthViewBody> {
                 onSaved: (value) {
                   email = value!;
                 },
-                hintText: 'الايميل',
+                hintText: S.of(context).email,
                 textInputType: TextInputType.emailAddress,
               ),
               vGap(10),
@@ -63,26 +64,27 @@ class _AuthViewBodyState extends State<AuthViewBody> {
                 onSaved: (value) {
                   password = value!;
                 },
-                hintText: 'كلمة المرور',
+                hintText: S.of(context).password,
                 textInputType: TextInputType.visiblePassword,
               ),
               vGap(10),
               Align(
-                alignment: Alignment.centerLeft,
+                alignment: isArabicLocale(context)
+                    ? Alignment.centerRight
+                    : Alignment.centerLeft,
                 child: TextButton(
                   onPressed: () {
                     GoRouter.of(context).go(ForgetPasswordView.routeName);
                   },
                   child: Text(
-                    'Forgot your password?',
-                    textAlign: TextAlign.left,
+                    S.of(context).forgot_password,
                     style: AppTextStyles.font12BlackSemiBold,
                   ),
                 ),
               ),
               vGap(20),
               CustomTextButton(
-                  text: 'تسجيل الدخول',
+                  text: S.of(context).login,
                   onTap: () {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
