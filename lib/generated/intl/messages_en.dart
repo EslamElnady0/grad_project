@@ -28,7 +28,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "announcements": MessageLookupByLibrary.simpleMessage("Announcements"),
     "app_title": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "chat": MessageLookupByLibrary.simpleMessage("Chat"),
+    "classes": MessageLookupByLibrary.simpleMessage("Classes:"),
     "community": MessageLookupByLibrary.simpleMessage("Community"),
+    "completed": MessageLookupByLibrary.simpleMessage("Completed"),
     "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
     "cooperateShareThoughts": MessageLookupByLibrary.simpleMessage(
       "Collaborate, share your ideas, and learn from your peers easily 📚",
@@ -58,13 +60,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "goLearnCommunicate": MessageLookupByLibrary.simpleMessage(
       "Connect. Learn. Go!",
     ),
+    "in_progress": MessageLookupByLibrary.simpleMessage("In Progress"),
     "internalMap": MessageLookupByLibrary.simpleMessage("Internal Map"),
     "login": MessageLookupByLibrary.simpleMessage("Log In"),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "mostSreached": MessageLookupByLibrary.simpleMessage(
       "Most searched places!",
     ),
+    "not_started": MessageLookupByLibrary.simpleMessage("Not Started"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "resend": MessageLookupByLibrary.simpleMessage("Resend?"),
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
@@ -76,10 +81,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectCources": MessageLookupByLibrary.simpleMessage(
       "📚 Please select the courses you want to follow for updates and announcements!",
     ),
+    "select_subjects": MessageLookupByLibrary.simpleMessage(
+      "📚 Please select the subjects you want to check for posts and updates!",
+    ),
+    "semester_1": MessageLookupByLibrary.simpleMessage("First Semester"),
+    "semester_2": MessageLookupByLibrary.simpleMessage("Second Semester"),
     "startWriting": MessageLookupByLibrary.simpleMessage("Start writing now.."),
+    "status": MessageLookupByLibrary.simpleMessage("Status:"),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage(
       "students online now",
     ),
+    "study": MessageLookupByLibrary.simpleMessage("Study"),
     "success_message": MessageLookupByLibrary.simpleMessage(
       "Everything will return to its place!",
     ),

@@ -28,7 +28,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "announcements": MessageLookupByLibrary.simpleMessage("الأخبار المعلنه"),
     "app_title": MessageLookupByLibrary.simpleMessage("التعليم الالكتروني"),
     "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
+    "classes": MessageLookupByLibrary.simpleMessage("الفصول:"),
     "community": MessageLookupByLibrary.simpleMessage("المنتدي"),
+    "completed": MessageLookupByLibrary.simpleMessage("المكتملة"),
     "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
     "cooperateShareThoughts": MessageLookupByLibrary.simpleMessage(
       "تعاون، شارك أفكارك، وتعلّم من زملائك بسهولة 📚",
@@ -58,12 +60,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "goLearnCommunicate": MessageLookupByLibrary.simpleMessage(
       "تواصل. تعلّم. انطلق!",
     ),
+    "in_progress": MessageLookupByLibrary.simpleMessage("قيد التنفيذ"),
     "internalMap": MessageLookupByLibrary.simpleMessage("الخريطة الداخلية"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "mostSreached": MessageLookupByLibrary.simpleMessage(
       "الاماكن الأكثر بحثاً!",
     ),
+    "not_started": MessageLookupByLibrary.simpleMessage("لم يبدأ"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "resend": MessageLookupByLibrary.simpleMessage("إعادة الإرسال؟"),
@@ -76,10 +80,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectCources": MessageLookupByLibrary.simpleMessage(
       "📚 يرجى اختيار المواد التي تود الاطلاع على منشوراتها وآخر مستجداتها!",
     ),
+    "select_subjects": MessageLookupByLibrary.simpleMessage(
+      "📚 يرجى اختيار المواد التي تود الاطلاع على منشوراتها وآخر مستجداتها!",
+    ),
+    "semester_1": MessageLookupByLibrary.simpleMessage("الفصل الدراسي الأول"),
+    "semester_2": MessageLookupByLibrary.simpleMessage("الفصل الدراسي الثاني"),
     "startWriting": MessageLookupByLibrary.simpleMessage(
       "إبدأ في الكتابة الأن..",
     ),
+    "status": MessageLookupByLibrary.simpleMessage("الحالة:"),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage("طالب نشط الآن"),
+    "study": MessageLookupByLibrary.simpleMessage("دراسة"),
     "success_message": MessageLookupByLibrary.simpleMessage(
       "كله هيرجع لمكانه!",
     ),
