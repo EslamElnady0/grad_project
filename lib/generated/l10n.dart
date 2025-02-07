@@ -424,6 +424,11 @@ class S {
   String get not_started {
     return Intl.message('Not Started', name: 'not_started', desc: '', args: []);
   }
+
+  /// `Study`
+  String get study {
+    return Intl.message('Study', name: 'study', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

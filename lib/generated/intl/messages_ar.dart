@@ -90,6 +90,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "status": MessageLookupByLibrary.simpleMessage("الحالة:"),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage("طالب نشط الآن"),
+    "study": MessageLookupByLibrary.simpleMessage("دراسة"),
     "success_message": MessageLookupByLibrary.simpleMessage(
       "كله هيرجع لمكانه!",
     ),

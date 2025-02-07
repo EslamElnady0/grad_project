@@ -91,6 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage(
       "students online now",
     ),
+    "study": MessageLookupByLibrary.simpleMessage("Study"),
     "success_message": MessageLookupByLibrary.simpleMessage(
       "Everything will return to its place!",
     ),

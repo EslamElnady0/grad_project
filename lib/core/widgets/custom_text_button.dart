@@ -10,6 +10,7 @@ import '../theme/app_colors.dart';
 
 class CustomTextButton extends StatelessWidget {
   final String text;
+  final double? width;
   final VoidCallback onTap;
   final Widget? child;
   final TextStyle? style;
@@ -18,7 +19,7 @@ class CustomTextButton extends StatelessWidget {
       required this.text,
       required this.onTap,
       this.style,
-      this.child});
+      this.child, this.width});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class CustomTextButton extends StatelessWidget {
           BoxShadow(
               offset: const Offset(0, 4),
               blurRadius: 14,
-              color: AppColors.black.withOpacity(0.5)),
+              color: AppColors.black.withOpacity(0.25)),
         ],
       ),
       child: InnerShadow(
@@ -42,7 +43,7 @@ class CustomTextButton extends StatelessWidget {
         child: GestureDetector(
           onTap: onTap,
           child: Container(
-            width: double.infinity,
+            width:  width ?? double.infinity,
             padding: EdgeInsets.symmetric(vertical: 12.h),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16.r),

@@ -44,5 +44,7 @@
   "semester_1": "First Semester",
   "in_progress": "In Progress",
   "pending": "Pending",
-  "not_started": "Not Started"
+  "not_started": "Not Started",
+  "study": "Study"
+
 }

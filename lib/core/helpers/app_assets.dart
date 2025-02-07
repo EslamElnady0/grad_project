@@ -8,11 +8,11 @@ class Assets {
 
   /// Assets for imagesForget password1
   /// assets/images/Forget password1.png
-  static const String imagesForgetpassword1 = "assets/images/Forget password1.png";
+  static const String imagesForgetpassword1 = "assets/images/Forgetpassword1.png";
 
   /// Assets for imagesForget password2
   /// assets/images/Forget password2.png
-  static const String imagesForgetpassword2 = "assets/images/Forget password2.png";
+  static const String imagesForgetpassword2 = "assets/images/Forgetpassword2.png";
 
   /// Assets for imagesProtect
   /// assets/images/protect.png
@@ -21,6 +21,10 @@ class Assets {
   /// Assets for imagesSplash
   /// assets/images/splash.png
   static const String imagesSplash = "assets/images/splash.png";
+
+  /// Assets for imagesSubject
+  /// assets/images/subject.png
+  static const String imagesSubject = "assets/images/subject.png";
 
   /// Assets for imagesSvgsAddIcon
   /// assets/images/svgs/add_icon.svg
@@ -101,6 +105,10 @@ class Assets {
   /// Assets for imagesSvgsSendIcon
   /// assets/images/svgs/send_icon.svg
   static const String imagesSvgsSendIcon = "assets/images/svgs/send_icon.svg";
+
+  /// Assets for imagesSvgsStarIcon
+  /// assets/images/svgs/star_icon.svg
+  static const String imagesSvgsStarIcon = "assets/images/svgs/star_icon.svg";
 
   /// Assets for imagesSvgsTime
   /// assets/images/svgs/time.svg
