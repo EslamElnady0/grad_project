@@ -12,11 +12,11 @@ abstract class AppRouter {
   static final router = GoRouter(
     routes: [
       GoRoute(
-        path: "/",
+        path: "/d",
         builder: (context, state) => const SplashView(),
       ),
       GoRoute(
-        path: HomeView.routeName,
+        path: "/",
         builder: (context, state) => BlocProvider(
           create: (context) => BottomNavBarCubit(),
           child: const HomeView(),

@@ -4,6 +4,7 @@ import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/annoucements/ui/views/annoucements_body.dart';
 import 'package:grad_project/features/home/ui/models/drawer_item_model.dart';
+import 'package:grad_project/features/subjects/presentation/views/subjects_view.dart';
 
 import '../../features/chat/ui/views/chat_outsider_body.dart';
 import '../../features/home/ui/models/bottom_nav_bar_item_model.dart';
@@ -98,7 +99,7 @@ class Constants {
       ));
   static List<Widget> homeBodies = [
     AnnoucementsBody(),
-    Container(),
+    SubjectsView(),
     ChatOutsiderBody(),
     Container()
   ];

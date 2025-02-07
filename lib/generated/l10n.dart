@@ -170,6 +170,16 @@ class S {
     return Intl.message('E-Learning', name: 'eLearning', desc: '', args: []);
   }
 
+  /// `📚 Please select the subjects you want to check for posts and updates!`
+  String get select_subjects {
+    return Intl.message(
+      '📚 Please select the subjects you want to check for posts and updates!',
+      name: 'select_subjects',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Weekly Schedule`
   String get weeklySchedule {
     return Intl.message(
@@ -363,6 +373,56 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `Status:`
+  String get status {
+    return Intl.message('Status:', name: 'status', desc: '', args: []);
+  }
+
+  /// `Classes:`
+  String get classes {
+    return Intl.message('Classes:', name: 'classes', desc: '', args: []);
+  }
+
+  /// `Completed`
+  String get completed {
+    return Intl.message('Completed', name: 'completed', desc: '', args: []);
+  }
+
+  /// `Second Semester`
+  String get semester_2 {
+    return Intl.message(
+      'Second Semester',
+      name: 'semester_2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `First Semester`
+  String get semester_1 {
+    return Intl.message(
+      'First Semester',
+      name: 'semester_1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `In Progress`
+  String get in_progress {
+    return Intl.message('In Progress', name: 'in_progress', desc: '', args: []);
+  }
+
+  /// `Pending`
+  String get pending {
+    return Intl.message('Pending', name: 'pending', desc: '', args: []);
+  }
+
+  /// `Not Started`
+  String get not_started {
+    return Intl.message('Not Started', name: 'not_started', desc: '', args: []);
   }
 }
 
