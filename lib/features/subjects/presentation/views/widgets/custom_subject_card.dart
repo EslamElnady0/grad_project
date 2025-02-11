@@ -35,8 +35,13 @@ class CustomSubjectCard extends StatelessWidget {
           ]),
         ),
         Container(
-          color: AppColors.white,
-          padding: EdgeInsets.symmetric(horizontal: 15.w),
+        decoration: BoxDecoration(
+              color: AppColors.white,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(22.r),
+                bottomRight: Radius.circular(22.r),
+              ),
+        ),
           child: Column(
             children: [
               vGap(12),
@@ -44,49 +49,55 @@ class CustomSubjectCard extends StatelessWidget {
                 alignment: isArabicLocale(context)
                     ? Alignment.topRight
                     : Alignment.topLeft,
-                child: Text(
-                  "البرمجة كائنية التوجه “OOP”",
-                  textAlign: TextAlign.start,
-                  style: AppTextStyles.font20DarkerBlueBold,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15.w),
+                  child: Text(
+                    "البرمجة كائنية التوجه “OOP”",
+                    textAlign: TextAlign.start,
+                    style: AppTextStyles.font20DarkerBlueBold,
+                  ),
                 ),
               ),
               Align(
                 alignment: isArabicLocale(context)
                     ? Alignment.topLeft
                     : Alignment.topRight,
-                child: Text(
-                  "د. أحمد المنوفي",
-                  textAlign: TextAlign.start,
-                  style: AppTextStyles.font16GrayMedium,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15.w),
+                  child: Text(
+                    "د. أحمد المنوفي",
+                    textAlign: TextAlign.start,
+                    style: AppTextStyles.font16GrayMedium,
+                  ),
                 ),
               ),
               vGap(12),
               Divider(
                 color: AppColors.gray,
-                thickness: 2,
+                thickness: 1,
                 height: 20,
               ),
               vGap(12),
-              Row(children: [
-                CustomTextButton(
-                    width: 120.w,
-                    text: S.of(context).study,
-                    onTap: () {}),
-                Spacer(),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 12, vertical: 16),
-                  decoration: BoxDecoration(
-                    color: AppColors.veryLightCyan,
-                    borderRadius:
-                        BorderRadius.circular(16), // تدوير الزوايا
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15.w),
+                child: Row(children: [
+                  CustomTextButton(
+                      width: 120.w, text: S.of(context).study, onTap: () {}),
+                  Spacer(),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 12, vertical: 16),
+                    decoration: BoxDecoration(
+                      color: AppColors.veryLightCyan,
+                      borderRadius: BorderRadius.circular(16), // تدوير الزوايا
+                    ),
+                    child: Text(
+                      '85% مكتمل',
+                      style: AppTextStyles.font16GreenSemiBold,
+                    ),
                   ),
-                  child: Text(
-                    '85% مكتمل',
-                    style:AppTextStyles.font16GreenSemiBold, 
-                  ),
-                ),
-              ]),
+                ]),
+              ),
               vGap(18),
             ],
           ),
