@@ -45,6 +45,8 @@
   "in_progress": "In Progress",
   "pending": "Pending",
   "not_started": "Not Started",
-  "study": "Study"
+  "study": "Study",
+  "forum_welcome_message": "💬 Welcome to the Q&A forum!\nAsk your questions, share your knowledge by answering others' questions, and benefit from your peers' experiences here!"
+
 
 }

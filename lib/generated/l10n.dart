@@ -429,6 +429,16 @@ class S {
   String get study {
     return Intl.message('Study', name: 'study', desc: '', args: []);
   }
+
+  /// `💬 Welcome to the Q&A forum!\nAsk your questions, share your knowledge by answering others' questions, and benefit from your peers' experiences here!`
+  String get forum_welcome_message {
+    return Intl.message(
+      '💬 Welcome to the Q&A forum!\nAsk your questions, share your knowledge by answering others\' questions, and benefit from your peers\' experiences here!',
+      name: 'forum_welcome_message',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

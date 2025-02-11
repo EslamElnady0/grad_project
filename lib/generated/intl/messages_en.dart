@@ -57,6 +57,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "forgot_password_message": MessageLookupByLibrary.simpleMessage(
       "🔑 It\'s okay! Just enter your email so we can recover your account and password!",
     ),
+    "forum_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "💬 Welcome to the Q&A forum!\nAsk your questions, share your knowledge by answering others\' questions, and benefit from your peers\' experiences here!",
+    ),
     "goLearnCommunicate": MessageLookupByLibrary.simpleMessage(
       "Connect. Learn. Go!",
     ),

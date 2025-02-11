@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/annoucements/ui/views/annoucements_body.dart';
+import 'package:grad_project/features/forum/presentation/views/forum_views.dart';
 import 'package:grad_project/features/home/ui/models/drawer_item_model.dart';
 import 'package:grad_project/features/subjects/presentation/views/subjects_view.dart';
 
@@ -101,7 +102,7 @@ class Constants {
     AnnoucementsBody(),
     SubjectsView(),
     ChatOutsiderBody(),
-    Container()
+    ForumViews()
   ];
   static const List<Map<String, dynamic>> dummyMessages = [
     {
