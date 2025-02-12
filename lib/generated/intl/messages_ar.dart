@@ -25,7 +25,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "التقدم الأكاديمي",
     ),
+    "add_your_question": MessageLookupByLibrary.simpleMessage("أضف سؤالك !"),
     "announcements": MessageLookupByLibrary.simpleMessage("الأخبار المعلنه"),
+    "answer": MessageLookupByLibrary.simpleMessage("إجابة"),
     "app_title": MessageLookupByLibrary.simpleMessage("التعليم الالكتروني"),
     "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
     "classes": MessageLookupByLibrary.simpleMessage("الفصول:"),
@@ -50,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "field_is_required": MessageLookupByLibrary.simpleMessage(
       "هذا الحقل مطلوب",
     ),
+    "filter": MessageLookupByLibrary.simpleMessage("تصفية"),
     "finalResults": MessageLookupByLibrary.simpleMessage("النتائج النهائية"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة السر؟",
@@ -57,10 +60,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "forgot_password_message": MessageLookupByLibrary.simpleMessage(
       "🔑 مهمل بس ولا يهمك! اكتب إيميلك علشان نرجعلك حسابك وكلمة السر تاني!",
     ),
+    "forum_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "💬 مرحباً بك في منتدى الأسئلة والإجابات!\nاطرح أسئلتك، وشارك معرفتك بالإجابة على أسئلة الآخرين، واستفد من خبرات زملائك هنا!",
+    ),
     "goLearnCommunicate": MessageLookupByLibrary.simpleMessage(
       "تواصل. تعلّم. انطلق!",
     ),
     "in_progress": MessageLookupByLibrary.simpleMessage("قيد التنفيذ"),
+    "interested": MessageLookupByLibrary.simpleMessage("مهتم"),
     "internalMap": MessageLookupByLibrary.simpleMessage("الخريطة الداخلية"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
@@ -70,6 +77,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "not_started": MessageLookupByLibrary.simpleMessage("لم يبدأ"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+    "question_statistics": MessageLookupByLibrary.simpleMessage(
+      "إحصائيات هذا السؤال",
+    ),
     "resend": MessageLookupByLibrary.simpleMessage("إعادة الإرسال؟"),
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       " ابحث عن مبني، مدرج، قاعة، الخ..!",
@@ -96,6 +106,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "timeSchedule": MessageLookupByLibrary.simpleMessage("الجدول الزمني"),
     "verify_account": MessageLookupByLibrary.simpleMessage("أكد حسابك!"),
+    "view": MessageLookupByLibrary.simpleMessage("مشاهدة"),
+    "view_answers": MessageLookupByLibrary.simpleMessage("عرض الإجابات"),
     "weeklySchedule": MessageLookupByLibrary.simpleMessage("الجدول الإسبوعي"),
     "welcome_message": MessageLookupByLibrary.simpleMessage(
       "أهلاً وسهلاً بعودتك!\nمن فضلك سجّل دخولك للوصول إلى لوحة التحكم الخاصة بك وابقَ منتجاً.",

@@ -118,6 +118,11 @@ class AppTextStyles {
     color: AppColors.primaryColordark,
     fontWeight: FontWeightHelper.semiBold,
   );
+  static TextStyle font16DarkerBlueSemiBold = ChangaTextStyle(
+    fontSize: 16.sp,
+    color: AppColors.darkblue,
+    fontWeight: FontWeightHelper.semiBold,
+  );
   static TextStyle font20DarkerBlueBold = ChangaTextStyle(
     fontSize: 20.sp,
     color: AppColors.darkblue,
@@ -125,13 +130,18 @@ class AppTextStyles {
   );
   static TextStyle font16WhiteSemiBold = ChangaTextStyle(
     fontSize: 16.sp,
-    color: AppColors.darkblue,
+    color: AppColors.white,
     fontWeight: FontWeightHelper.semiBold,
   );
   static TextStyle font20WhiteSemiBold = ChangaTextStyle(
     fontSize: 20.sp,
     color: AppColors.white,
     fontWeight: FontWeightHelper.semiBold,
+  );
+  static TextStyle font12WhiteMedium = ChangaTextStyle(
+    fontSize: 12.sp,
+    color: AppColors.white,
+    fontWeight: FontWeightHelper.medium,
   );
   static TextStyle font10grayMedium = ChangaTextStyle(
     fontSize: 10.sp,

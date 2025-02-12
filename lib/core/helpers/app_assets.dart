@@ -6,12 +6,12 @@ class Assets {
   /// assets/images/avatar_doc.png
   static const String imagesAvatarDoc = "assets/images/avatar_doc.png";
 
-  /// Assets for imagesForget password1
-  /// assets/images/Forget password1.png
+  /// Assets for imagesForgetpassword1
+  /// assets/images/Forgetpassword1.png
   static const String imagesForgetpassword1 = "assets/images/Forgetpassword1.png";
 
-  /// Assets for imagesForget password2
-  /// assets/images/Forget password2.png
+  /// Assets for imagesForgetpassword2
+  /// assets/images/Forgetpassword2.png
   static const String imagesForgetpassword2 = "assets/images/Forgetpassword2.png";
 
   /// Assets for imagesProtect
@@ -34,6 +34,10 @@ class Assets {
   /// assets/images/svgs/annoucement_icon.svg
   static const String imagesSvgsAnnoucementIcon = "assets/images/svgs/annoucement_icon.svg";
 
+  /// Assets for imagesSvgsAnswers
+  /// assets/images/svgs/answers.svg
+  static const String imagesSvgsAnswers = "assets/images/svgs/answers.svg";
+
   /// Assets for imagesSvgsAtIcon
   /// assets/images/svgs/at_icon.svg
   static const String imagesSvgsAtIcon = "assets/images/svgs/at_icon.svg";
@@ -45,6 +49,10 @@ class Assets {
   /// Assets for imagesSvgsCalender
   /// assets/images/svgs/calender.svg
   static const String imagesSvgsCalender = "assets/images/svgs/calender.svg";
+
+  /// Assets for imagesSvgsChart
+  /// assets/images/svgs/chart.svg
+  static const String imagesSvgsChart = "assets/images/svgs/chart.svg";
 
   /// Assets for imagesSvgsChatIcon
   /// assets/images/svgs/chat_icon.svg
@@ -73,6 +81,10 @@ class Assets {
   /// Assets for imagesSvgsGradHat
   /// assets/images/svgs/grad_hat.svg
   static const String imagesSvgsGradHat = "assets/images/svgs/grad_hat.svg";
+
+  /// Assets for imagesSvgsLike
+  /// assets/images/svgs/like.svg
+  static const String imagesSvgsLike = "assets/images/svgs/like.svg";
 
   /// Assets for imagesSvgsLogOut
   /// assets/images/svgs/log_out.svg
@@ -121,6 +133,10 @@ class Assets {
   /// Assets for imagesSvgsTimeQuarter
   /// assets/images/svgs/time_quarter.svg
   static const String imagesSvgsTimeQuarter = "assets/images/svgs/time_quarter.svg";
+
+  /// Assets for imagesSvgsVisibility
+  /// assets/images/svgs/visibility.svg
+  static const String imagesSvgsVisibility = "assets/images/svgs/visibility.svg";
 
   /// Assets for imagesWhite
   /// assets/images/white.png

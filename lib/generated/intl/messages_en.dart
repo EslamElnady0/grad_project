@@ -25,7 +25,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "Academic Progress",
     ),
+    "add_your_question": MessageLookupByLibrary.simpleMessage(
+      "Add your question!",
+    ),
     "announcements": MessageLookupByLibrary.simpleMessage("Announcements"),
+    "answer": MessageLookupByLibrary.simpleMessage("Answer"),
     "app_title": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "chat": MessageLookupByLibrary.simpleMessage("Chat"),
     "classes": MessageLookupByLibrary.simpleMessage("Classes:"),
@@ -50,6 +54,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "field_is_required": MessageLookupByLibrary.simpleMessage(
       "This field is required",
     ),
+    "filter": MessageLookupByLibrary.simpleMessage("Filter"),
     "finalResults": MessageLookupByLibrary.simpleMessage("Final Results"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "Forgot your password?",
@@ -57,10 +62,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "forgot_password_message": MessageLookupByLibrary.simpleMessage(
       "🔑 It\'s okay! Just enter your email so we can recover your account and password!",
     ),
+    "forum_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "💬 Welcome to the Q&A forum!\nAsk your questions, share your knowledge by answering others\' questions, and benefit from your peers\' experiences here!",
+    ),
     "goLearnCommunicate": MessageLookupByLibrary.simpleMessage(
       "Connect. Learn. Go!",
     ),
     "in_progress": MessageLookupByLibrary.simpleMessage("In Progress"),
+    "interested": MessageLookupByLibrary.simpleMessage("like"),
     "internalMap": MessageLookupByLibrary.simpleMessage("Internal Map"),
     "login": MessageLookupByLibrary.simpleMessage("Log In"),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
@@ -71,6 +80,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "question_statistics": MessageLookupByLibrary.simpleMessage(
+      "Question statistics",
+    ),
     "resend": MessageLookupByLibrary.simpleMessage("Resend?"),
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       "Search for a building, lecture hall, room, etc..!",
@@ -99,6 +111,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "verify_account": MessageLookupByLibrary.simpleMessage(
       "Verify your account!",
     ),
+    "view": MessageLookupByLibrary.simpleMessage("View"),
+    "view_answers": MessageLookupByLibrary.simpleMessage("View answers"),
     "weeklySchedule": MessageLookupByLibrary.simpleMessage("Weekly Schedule"),
     "welcome_message": MessageLookupByLibrary.simpleMessage(
       "Welcome back!\nPlease log in to access your dashboard and stay productive.",

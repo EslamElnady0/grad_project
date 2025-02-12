@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 
-import '../../../../core/helpers/app_assets.dart';
+import '../helpers/app_assets.dart';
 
 class DoctorInfoSection extends StatelessWidget {
   const DoctorInfoSection({super.key});

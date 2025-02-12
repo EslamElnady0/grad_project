@@ -429,6 +429,66 @@ class S {
   String get study {
     return Intl.message('Study', name: 'study', desc: '', args: []);
   }
+
+  /// `💬 Welcome to the Q&A forum!\nAsk your questions, share your knowledge by answering others' questions, and benefit from your peers' experiences here!`
+  String get forum_welcome_message {
+    return Intl.message(
+      '💬 Welcome to the Q&A forum!\nAsk your questions, share your knowledge by answering others\' questions, and benefit from your peers\' experiences here!',
+      name: 'forum_welcome_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add your question!`
+  String get add_your_question {
+    return Intl.message(
+      'Add your question!',
+      name: 'add_your_question',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Filter`
+  String get filter {
+    return Intl.message('Filter', name: 'filter', desc: '', args: []);
+  }
+
+  /// `View answers`
+  String get view_answers {
+    return Intl.message(
+      'View answers',
+      name: 'view_answers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `like`
+  String get interested {
+    return Intl.message('like', name: 'interested', desc: '', args: []);
+  }
+
+  /// `Question statistics`
+  String get question_statistics {
+    return Intl.message(
+      'Question statistics',
+      name: 'question_statistics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Answer`
+  String get answer {
+    return Intl.message('Answer', name: 'answer', desc: '', args: []);
+  }
+
+  /// `View`
+  String get view {
+    return Intl.message('View', name: 'view', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
