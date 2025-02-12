@@ -48,5 +48,11 @@
   "study": "Study",
   "forum_welcome_message": "💬 Welcome to the Q&A forum!\nAsk your questions, share your knowledge by answering others' questions, and benefit from your peers' experiences here!",
   "add_your_question": "Add your question!",
-  "filter": "Filter"
+  "filter": "Filter",
+  "view_answers": "View answers",
+"interested": "like",
+"question_statistics": "Question statistics",
+"answer": "Answer",
+"view": "View"
+
 }

@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Add your question!",
     ),
     "announcements": MessageLookupByLibrary.simpleMessage("Announcements"),
+    "answer": MessageLookupByLibrary.simpleMessage("Answer"),
     "app_title": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "chat": MessageLookupByLibrary.simpleMessage("Chat"),
     "classes": MessageLookupByLibrary.simpleMessage("Classes:"),
@@ -68,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Connect. Learn. Go!",
     ),
     "in_progress": MessageLookupByLibrary.simpleMessage("In Progress"),
+    "interested": MessageLookupByLibrary.simpleMessage("like"),
     "internalMap": MessageLookupByLibrary.simpleMessage("Internal Map"),
     "login": MessageLookupByLibrary.simpleMessage("Log In"),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
@@ -78,6 +80,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "question_statistics": MessageLookupByLibrary.simpleMessage(
+      "Question statistics",
+    ),
     "resend": MessageLookupByLibrary.simpleMessage("Resend?"),
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       "Search for a building, lecture hall, room, etc..!",
@@ -106,6 +111,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "verify_account": MessageLookupByLibrary.simpleMessage(
       "Verify your account!",
     ),
+    "view": MessageLookupByLibrary.simpleMessage("View"),
+    "view_answers": MessageLookupByLibrary.simpleMessage("View answers"),
     "weeklySchedule": MessageLookupByLibrary.simpleMessage("Weekly Schedule"),
     "welcome_message": MessageLookupByLibrary.simpleMessage(
       "Welcome back!\nPlease log in to access your dashboard and stay productive.",

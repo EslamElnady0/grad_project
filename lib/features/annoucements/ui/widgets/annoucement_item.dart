@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import '../../../../core/theme/app_colors.dart';
-import 'annoucement_header.dart';
+import '../../../../core/widgets/item_header.dart';
 
 class AnnoucementItem extends StatelessWidget {
   const AnnoucementItem({super.key});
@@ -28,7 +28,7 @@ class AnnoucementItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AnnoucementHeader(),
+          ItemHeader(),
           vGap(12),
           Text(
             "📢 إعلان هام",

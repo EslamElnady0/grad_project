@@ -454,6 +454,41 @@ class S {
   String get filter {
     return Intl.message('Filter', name: 'filter', desc: '', args: []);
   }
+
+  /// `View answers`
+  String get view_answers {
+    return Intl.message(
+      'View answers',
+      name: 'view_answers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `like`
+  String get interested {
+    return Intl.message('like', name: 'interested', desc: '', args: []);
+  }
+
+  /// `Question statistics`
+  String get question_statistics {
+    return Intl.message(
+      'Question statistics',
+      name: 'question_statistics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Answer`
+  String get answer {
+    return Intl.message('Answer', name: 'answer', desc: '', args: []);
+  }
+
+  /// `View`
+  String get view {
+    return Intl.message('View', name: 'view', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
