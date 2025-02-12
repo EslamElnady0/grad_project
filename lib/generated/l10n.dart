@@ -439,6 +439,21 @@ class S {
       args: [],
     );
   }
+
+  /// `Add your question!`
+  String get add_your_question {
+    return Intl.message(
+      'Add your question!',
+      name: 'add_your_question',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Filter`
+  String get filter {
+    return Intl.message('Filter', name: 'filter', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

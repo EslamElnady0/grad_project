@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "التقدم الأكاديمي",
     ),
+    "add_your_question": MessageLookupByLibrary.simpleMessage("أضف سؤالك !"),
     "announcements": MessageLookupByLibrary.simpleMessage("الأخبار المعلنه"),
     "app_title": MessageLookupByLibrary.simpleMessage("التعليم الالكتروني"),
     "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
@@ -50,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "field_is_required": MessageLookupByLibrary.simpleMessage(
       "هذا الحقل مطلوب",
     ),
+    "filter": MessageLookupByLibrary.simpleMessage("تصفية"),
     "finalResults": MessageLookupByLibrary.simpleMessage("النتائج النهائية"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة السر؟",

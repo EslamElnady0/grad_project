@@ -25,6 +25,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "Academic Progress",
     ),
+    "add_your_question": MessageLookupByLibrary.simpleMessage(
+      "Add your question!",
+    ),
     "announcements": MessageLookupByLibrary.simpleMessage("Announcements"),
     "app_title": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "chat": MessageLookupByLibrary.simpleMessage("Chat"),
@@ -50,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "field_is_required": MessageLookupByLibrary.simpleMessage(
       "This field is required",
     ),
+    "filter": MessageLookupByLibrary.simpleMessage("Filter"),
     "finalResults": MessageLookupByLibrary.simpleMessage("Final Results"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "Forgot your password?",
