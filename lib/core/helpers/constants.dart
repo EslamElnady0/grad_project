@@ -12,6 +12,7 @@ import '../../features/chat/ui/views/chat_outsider_body.dart';
 import '../../features/home/ui/models/bottom_nav_bar_item_model.dart';
 import '../../features/map/presentation/views/internal_map_view.dart';
 import '../../generated/l10n.dart';
+import '../widgets/decorated_input_border.dart';
 
 class Constants {
   const Constants._();
@@ -101,6 +102,17 @@ class Constants {
       borderSide: BorderSide(
         color: AppColors.black,
         width: 1.5,
+      ));
+
+  static DecoratedInputBorder shadowedInputBorder = DecoratedInputBorder(
+      shadow: BoxShadow(
+          offset: Offset(0, 1),
+          blurRadius: 16,
+          spreadRadius: 1,
+          color: AppColors.black.withOpacity(0.15)),
+      child: OutlineInputBorder(
+        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.circular(12),
       ));
   static List<Widget> homeBodies = [
     AnnoucementsBody(),

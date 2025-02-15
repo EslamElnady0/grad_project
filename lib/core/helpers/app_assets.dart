@@ -14,6 +14,10 @@ class Assets {
   /// assets/images/Forgetpassword2.png
   static const String imagesForgetpassword2 = "assets/images/Forgetpassword2.png";
 
+  /// Assets for imagesMapTrail
+  /// assets/images/map_trail.png
+  static const String imagesMapTrail = "assets/images/map_trail.png";
+
   /// Assets for imagesProtect
   /// assets/images/protect.png
   static const String imagesProtect = "assets/images/protect.png";
