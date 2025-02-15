@@ -17,39 +17,41 @@ class InternalMapViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-      child: Column(
-        children: [
-          CustomInnerScreensAppBar(
-            title: S.of(context).internalMap,
-          ),
-          vGap(10),
-          TitleTextWidget(text: S.of(context).discoverYourWay),
-          vGap(16),
-          Text(
-            S.of(context).didntSreachYet,
-            style: AppTextStyles.font15BlackSemiBold,
-            textAlign: TextAlign.center,
-            maxLines: 3,
-          ),
-          vGap(22),
-          Image.asset(
-            Assets.imagesMapTrail,
-            height: 156.h,
-          ),
-          vGap(22),
-          Text(
-            S.of(context).writeYourPlace,
-            style: AppTextStyles.font15BlackSemiBold,
-            textAlign: TextAlign.center,
-            maxLines: 3,
-          ),
-          vGap(16),
-          CustomSearchTextField(
-            hintText: S.of(context).searchForBuilding,
-          ),
-          vGap(16),
-          MostSearchedPlacesWidget(),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            CustomInnerScreensAppBar(
+              title: S.of(context).internalMap,
+            ),
+            vGap(10),
+            TitleTextWidget(text: S.of(context).discoverYourWay),
+            vGap(16),
+            Text(
+              S.of(context).didntSreachYet,
+              style: AppTextStyles.font15BlackSemiBold,
+              textAlign: TextAlign.center,
+              maxLines: 3,
+            ),
+            vGap(22),
+            Image.asset(
+              Assets.imagesMapTrail,
+              height: 156.h,
+            ),
+            vGap(22),
+            Text(
+              S.of(context).writeYourPlace,
+              style: AppTextStyles.font15BlackSemiBold,
+              textAlign: TextAlign.center,
+              maxLines: 3,
+            ),
+            vGap(16),
+            CustomSearchTextField(
+              hintText: S.of(context).searchForBuilding,
+            ),
+            vGap(16),
+            MostSearchedPlacesWidget(),
+          ],
+        ),
       ),
     );
   }

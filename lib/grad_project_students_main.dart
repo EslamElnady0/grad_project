@@ -27,7 +27,7 @@ class GradProjectStudentApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
-        locale: const Locale('en'),
+        locale: const Locale('ar'),
         routerConfig: AppRouter.router,
         localizationsDelegates: [
           S.delegate,

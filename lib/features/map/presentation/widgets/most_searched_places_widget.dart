@@ -20,7 +20,7 @@ class MostSearchedPlacesWidget extends StatelessWidget {
       SizedBox(
         width: double.infinity,
         child: Wrap(
-          spacing: 10.w,
+          spacing: 8.w,
           runSpacing: 10.h,
           crossAxisAlignment: WrapCrossAlignment.start,
           children: [

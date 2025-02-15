@@ -495,10 +495,10 @@ class S {
     return Intl.message('Start', name: 'start', desc: '', args: []);
   }
 
-  /// `Where am I now?`
+  /// `🗺️ Where am I now?`
   String get whereAmINow {
     return Intl.message(
-      'Where am I now?',
+      '🗺️ Where am I now?',
       name: 'whereAmINow',
       desc: '',
       args: [],
