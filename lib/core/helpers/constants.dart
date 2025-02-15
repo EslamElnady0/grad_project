@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/annoucements/ui/views/annoucements_body.dart';
@@ -9,6 +10,7 @@ import 'package:grad_project/features/subjects/presentation/views/subjects_view.
 
 import '../../features/chat/ui/views/chat_outsider_body.dart';
 import '../../features/home/ui/models/bottom_nav_bar_item_model.dart';
+import '../../features/map/presentation/views/internal_map_view.dart';
 import '../../generated/l10n.dart';
 
 class Constants {
@@ -67,7 +69,9 @@ class Constants {
       DrawerItemModel(
         title: S.of(context).internalMap,
         iconPath: Assets.imagesSvgsTime,
-        onTap: () {},
+        onTap: () {
+          GoRouter.of(context).go(InternalMapView.routeName);
+        },
       ),
       DrawerItemModel(
         title: S.of(context).academicProgress,

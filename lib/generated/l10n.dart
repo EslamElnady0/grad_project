@@ -489,6 +489,11 @@ class S {
   String get view {
     return Intl.message('View', name: 'view', desc: '', args: []);
   }
+
+  /// `Start`
+  String get start {
+    return Intl.message('Start', name: 'start', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

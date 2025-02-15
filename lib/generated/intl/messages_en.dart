@@ -98,6 +98,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "semester_1": MessageLookupByLibrary.simpleMessage("First Semester"),
     "semester_2": MessageLookupByLibrary.simpleMessage("Second Semester"),
+    "start": MessageLookupByLibrary.simpleMessage("Start"),
     "startWriting": MessageLookupByLibrary.simpleMessage("Start writing now.."),
     "status": MessageLookupByLibrary.simpleMessage("Status:"),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage(

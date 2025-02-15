@@ -95,6 +95,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "semester_1": MessageLookupByLibrary.simpleMessage("الفصل الدراسي الأول"),
     "semester_2": MessageLookupByLibrary.simpleMessage("الفصل الدراسي الثاني"),
+    "start": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "startWriting": MessageLookupByLibrary.simpleMessage(
       "إبدأ في الكتابة الأن..",
     ),
