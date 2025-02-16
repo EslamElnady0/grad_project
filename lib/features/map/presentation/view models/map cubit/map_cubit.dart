@@ -8,4 +8,11 @@ class MapCubit extends Cubit<MapState> {
   MapCubit() : super(MapInitial());
   late TextEditingController mapTextEditingController;
   late FocusNode mapTextFocusNode;
+
+  @override
+  Future<void> close() {
+    mapTextEditingController.dispose();
+    mapTextFocusNode.dispose();
+    return super.close();
+  }
 }

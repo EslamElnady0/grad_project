@@ -26,13 +26,6 @@ class _InternalMapViewBodyState extends State<InternalMapViewBody> {
   }
 
   @override
-  void dispose() {
-    context.read<MapCubit>().mapTextEditingController.dispose();
-    context.read<MapCubit>().mapTextFocusNode.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
