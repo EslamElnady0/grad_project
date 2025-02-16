@@ -8,11 +8,22 @@ import 'package:grad_project/core/widgets/svg_icon_button.dart';
 
 class CustomSearchTextField extends StatelessWidget {
   final String hintText;
-  const CustomSearchTextField({super.key, required this.hintText});
+  final FocusNode? focusNode;
+  final TextEditingController controller;
+  final void Function(String)? onChanged;
+  const CustomSearchTextField(
+      {super.key,
+      required this.hintText,
+      this.focusNode,
+      required this.controller,
+      this.onChanged});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onChanged: onChanged,
+      focusNode: focusNode,
+      controller: controller,
       style: AppTextStyles.font12BlackSemiBold,
       decoration: InputDecoration(
           prefixIcon: Padding(
