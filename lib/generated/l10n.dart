@@ -504,6 +504,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Where are you going boss?`
+  String get whereAreYouGoingBoss {
+    return Intl.message(
+      'Where are you going boss?',
+      name: 'whereAreYouGoingBoss',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

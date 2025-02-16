@@ -114,6 +114,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "أهلاً وسهلاً بعودتك!\nمن فضلك سجّل دخولك للوصول إلى لوحة التحكم الخاصة بك وابقَ منتجاً.",
     ),
     "whereAmINow": MessageLookupByLibrary.simpleMessage("🗺️  أين أنا الآن؟"),
+    "whereAreYouGoingBoss": MessageLookupByLibrary.simpleMessage(
+      "إلي اين انت ذاهب يمدير!",
+    ),
     "writeYourPlace": MessageLookupByLibrary.simpleMessage(
       "اكتب اسم المكان الذي تريد الوصول إليه.",
     ),

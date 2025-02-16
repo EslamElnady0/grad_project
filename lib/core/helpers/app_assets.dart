@@ -14,6 +14,10 @@ class Assets {
   /// assets/images/Forgetpassword2.png
   static const String imagesForgetpassword2 = "assets/images/Forgetpassword2.png";
 
+  /// Assets for imagesMapPlaceHolder
+  /// assets/images/map_place_holder.png
+  static const String imagesMapPlaceHolder = "assets/images/map_place_holder.png";
+
   /// Assets for imagesMapTrail
   /// assets/images/map_trail.png
   static const String imagesMapTrail = "assets/images/map_trail.png";
@@ -42,6 +46,10 @@ class Assets {
   /// assets/images/svgs/answers.svg
   static const String imagesSvgsAnswers = "assets/images/svgs/answers.svg";
 
+  /// Assets for imagesSvgsArrowUpArrowDownIcon
+  /// assets/images/svgs/arrow_up_arrow_down_icon.svg
+  static const String imagesSvgsArrowUpArrowDownIcon = "assets/images/svgs/arrow_up_arrow_down_icon.svg";
+
   /// Assets for imagesSvgsAtIcon
   /// assets/images/svgs/at_icon.svg
   static const String imagesSvgsAtIcon = "assets/images/svgs/at_icon.svg";
@@ -61,6 +69,10 @@ class Assets {
   /// Assets for imagesSvgsChatIcon
   /// assets/images/svgs/chat_icon.svg
   static const String imagesSvgsChatIcon = "assets/images/svgs/chat_icon.svg";
+
+  /// Assets for imagesSvgsCircleIcon
+  /// assets/images/svgs/circle_icon.svg
+  static const String imagesSvgsCircleIcon = "assets/images/svgs/circle_icon.svg";
 
   /// Assets for imagesSvgsCloseX
   /// assets/images/svgs/close_x.svg
@@ -89,6 +101,10 @@ class Assets {
   /// Assets for imagesSvgsLike
   /// assets/images/svgs/like.svg
   static const String imagesSvgsLike = "assets/images/svgs/like.svg";
+
+  /// Assets for imagesSvgsLocationIcon
+  /// assets/images/svgs/location_icon.svg
+  static const String imagesSvgsLocationIcon = "assets/images/svgs/location_icon.svg";
 
   /// Assets for imagesSvgsLogOut
   /// assets/images/svgs/log_out.svg
@@ -125,6 +141,10 @@ class Assets {
   /// Assets for imagesSvgsStarIcon
   /// assets/images/svgs/star_icon.svg
   static const String imagesSvgsStarIcon = "assets/images/svgs/star_icon.svg";
+
+  /// Assets for imagesSvgsThreeDotsIcon
+  /// assets/images/svgs/three_dots_icon.svg
+  static const String imagesSvgsThreeDotsIcon = "assets/images/svgs/three_dots_icon.svg";
 
   /// Assets for imagesSvgsTime
   /// assets/images/svgs/time.svg

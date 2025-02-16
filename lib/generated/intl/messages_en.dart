@@ -119,6 +119,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Welcome back!\nPlease log in to access your dashboard and stay productive.",
     ),
     "whereAmINow": MessageLookupByLibrary.simpleMessage("🗺️ Where am I now?"),
+    "whereAreYouGoingBoss": MessageLookupByLibrary.simpleMessage(
+      "Where are you going boss?",
+    ),
     "writeYourPlace": MessageLookupByLibrary.simpleMessage(
       "Write the name of the place you want to reach.",
     ),
