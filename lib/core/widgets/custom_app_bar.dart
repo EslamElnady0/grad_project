@@ -27,7 +27,7 @@ class CustomAppBar extends StatelessWidget {
                 style: AppTextStyles.font16BlackMedium,
               ),
             ),
-            SizedBox(width: 35), 
+            SizedBox(width: 35),
           ],
         ),
         Divider(

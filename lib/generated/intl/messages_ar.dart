@@ -95,6 +95,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "semester_1": MessageLookupByLibrary.simpleMessage("الفصل الدراسي الأول"),
     "semester_2": MessageLookupByLibrary.simpleMessage("الفصل الدراسي الثاني"),
+    "start": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "startWriting": MessageLookupByLibrary.simpleMessage(
       "إبدأ في الكتابة الأن..",
     ),
@@ -111,6 +112,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "weeklySchedule": MessageLookupByLibrary.simpleMessage("الجدول الإسبوعي"),
     "welcome_message": MessageLookupByLibrary.simpleMessage(
       "أهلاً وسهلاً بعودتك!\nمن فضلك سجّل دخولك للوصول إلى لوحة التحكم الخاصة بك وابقَ منتجاً.",
+    ),
+    "whereAmINow": MessageLookupByLibrary.simpleMessage("🗺️  أين أنا الآن؟"),
+    "whereAreYouGoingBoss": MessageLookupByLibrary.simpleMessage(
+      "إلي اين انت ذاهب يمدير!",
     ),
     "writeYourPlace": MessageLookupByLibrary.simpleMessage(
       "اكتب اسم المكان الذي تريد الوصول إليه.",

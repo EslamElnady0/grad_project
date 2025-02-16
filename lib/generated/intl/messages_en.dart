@@ -98,6 +98,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "semester_1": MessageLookupByLibrary.simpleMessage("First Semester"),
     "semester_2": MessageLookupByLibrary.simpleMessage("Second Semester"),
+    "start": MessageLookupByLibrary.simpleMessage("Start"),
     "startWriting": MessageLookupByLibrary.simpleMessage("Start writing now.."),
     "status": MessageLookupByLibrary.simpleMessage("Status:"),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage(
@@ -116,6 +117,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "weeklySchedule": MessageLookupByLibrary.simpleMessage("Weekly Schedule"),
     "welcome_message": MessageLookupByLibrary.simpleMessage(
       "Welcome back!\nPlease log in to access your dashboard and stay productive.",
+    ),
+    "whereAmINow": MessageLookupByLibrary.simpleMessage("🗺️ Where am I now?"),
+    "whereAreYouGoingBoss": MessageLookupByLibrary.simpleMessage(
+      "Where are you going boss?",
     ),
     "writeYourPlace": MessageLookupByLibrary.simpleMessage(
       "Write the name of the place you want to reach.",
