@@ -71,7 +71,7 @@ class Constants {
         title: S.of(context).internalMap,
         iconPath: Assets.imagesSvgsTime,
         onTap: () {
-          GoRouter.of(context).go(InternalMapView.routeName);
+          GoRouter.of(context).push(InternalMapView.routeName);
         },
       ),
       DrawerItemModel(

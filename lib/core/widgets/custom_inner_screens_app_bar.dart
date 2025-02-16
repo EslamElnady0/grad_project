@@ -30,7 +30,7 @@ class CustomInnerScreensAppBar extends StatelessWidget {
               child: SvgIconButton(
                   localized: true,
                   iconPath: Assets.imagesSvgsBackButton,
-                  onPressed: () => context.pop()),
+                  onPressed: () => GoRouter.of(context).pop()),
             ),
           ],
         ),
