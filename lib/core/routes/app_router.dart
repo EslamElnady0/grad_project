@@ -17,7 +17,7 @@ abstract class AppRouter {
         builder: (context, state) => const SplashView(),
       ),
       GoRoute(
-        path: HomeView.routeName,
+        path: "/",
         builder: (context, state) => BlocProvider(
           create: (context) => BottomNavBarCubit(),
           child: const HomeView(),
@@ -40,7 +40,7 @@ abstract class AppRouter {
         builder: (context, state) => const ConfirmAccountView(),
       ),
       GoRoute(
-        path: "/",
+        path: InternalMapView.routeName,
         builder: (context, state) => const InternalMapView(),
       ),
     ],

@@ -40,9 +40,9 @@ class _InternalMapRebuildBodyState extends State<InternalMapRebuildBody> {
         BlocBuilder<MapCubit, MapState>(
           builder: (context, state) {
             if (state is MapInitial) {
-              return MapSearchBody();
+              return MostSearchedPlacesWidget();
             }
-            return MostSearchedPlacesWidget();
+            return MapSearchBody();
           },
         ),
       ],
