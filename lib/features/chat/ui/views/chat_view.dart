@@ -14,14 +14,14 @@ class ChatView extends StatelessWidget {
     return CustomScaffold(
       body: Column(
         children: [
-          ChatViewAppBar(),
+          const ChatViewAppBar(),
           Padding(
             padding: EdgeInsets.symmetric(
               horizontal: 18.w,
             ),
-            child: Divider(),
+            child: const Divider(),
           ),
-          Expanded(child: ChatViewBody()),
+          const Expanded(child: ChatViewBody()),
         ],
       ),
     );

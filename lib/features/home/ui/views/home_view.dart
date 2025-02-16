@@ -20,8 +20,8 @@ class HomeView extends StatelessWidget {
               .homeBodies[context.read<BottomNavBarCubit>().currentIndex];
         },
       ),
-      bottomNavigationBar: CustomBottomNavigationBar(),
-      drawer: CustomDrawer(),
+      bottomNavigationBar: const CustomBottomNavigationBar(),
+      drawer: const CustomDrawer(),
     );
   }
 }

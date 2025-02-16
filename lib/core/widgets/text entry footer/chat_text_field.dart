@@ -28,8 +28,8 @@ class ChatTextField extends StatelessWidget {
           border: Constants.inputBorder,
           enabledBorder: Constants.inputBorder,
           focusedBorder: Constants.inputBorder,
-          prefixIcon: EmojiPickerIconButton(),
-          suffixIcon: MentionIconButton()),
+          prefixIcon: const EmojiPickerIconButton(),
+          suffixIcon: const MentionIconButton()),
     );
   }
 }

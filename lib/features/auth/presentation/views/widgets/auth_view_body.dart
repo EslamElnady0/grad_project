@@ -47,7 +47,7 @@ class _AuthViewBodyState extends State<AuthViewBody> {
                 style: AppTextStyles.font12BlackMedium,
               ),
               vGap(20),
-              Divider(
+              const Divider(
                 color: AppColors.gray,
                 thickness: 2,
                 height: 20,

@@ -29,7 +29,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
           height: 173.h,
         ),
         Text(
-         S.of(context).app_title,
+          S.of(context).app_title,
           style: AppTextStyles.font24BlackSemiBold,
         )
       ],
@@ -38,7 +38,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
   void executeNavigation() {
     Future.delayed(
-      Duration(milliseconds: 3000),
+      const Duration(milliseconds: 3000),
       () {
         // ignore: use_build_context_synchronously
         GoRouter.of(context).go(AuthView.routeName);

@@ -24,7 +24,7 @@ class QuizAdvicesSection extends StatelessWidget {
         vGap(12),
         ListView.separated(
             shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             padding: EdgeInsets.zero,
             itemBuilder: (context, index) {
               return QuizAdviceItem(

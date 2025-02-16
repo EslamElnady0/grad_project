@@ -9,9 +9,9 @@ class EmojiPickerIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(5),
-      margin: EdgeInsets.all(11),
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.all(5),
+      margin: const EdgeInsets.all(11),
+      decoration: const BoxDecoration(
           shape: BoxShape.circle, gradient: Constants.secondaryGrad),
       child:
           SvgIconButton(iconPath: Assets.imagesSvgsEmojiIcon, onPressed: () {}),

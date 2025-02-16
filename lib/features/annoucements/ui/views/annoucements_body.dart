@@ -38,10 +38,10 @@ class AnnoucementsBody extends StatelessWidget {
           vGap(12),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: CoursesAnnoucementFilter(),
+            child: const CoursesAnnoucementFilter(),
           ),
           vGap(12),
-          Expanded(child: AnnoucementsListView()),
+          const Expanded(child: AnnoucementsListView()),
         ],
       ),
     );

@@ -36,7 +36,7 @@ class MostSearchedPlacesWidget extends StatelessWidget {
             MostSearchedPlaceItem(
               title: S.of(context).whereAmINow,
             ),
-            MostSearchedPlaceItem(
+            const MostSearchedPlaceItem(
               title: "dfjghhffgshdjfgsddfhjdsfgjsdhfsdjhg",
             ),
             MostSearchedPlaceItem(

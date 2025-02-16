@@ -14,7 +14,7 @@ class DoctorInfoSection extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: 20.r,
-          backgroundImage: AssetImage(Assets.imagesAvatarDoc),
+          backgroundImage: const AssetImage(Assets.imagesAvatarDoc),
         ),
         hGap(8),
         Column(

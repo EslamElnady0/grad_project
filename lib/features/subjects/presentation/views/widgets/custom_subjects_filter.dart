@@ -60,7 +60,7 @@ class CustomSupjectsFilter extends StatelessWidget {
                 style: AppTextStyles.font12GrayMedium,
               ),
               vGap(8),
-              StatusDropdown()
+              const StatusDropdown()
             ],
           ),
         ],
@@ -68,4 +68,3 @@ class CustomSupjectsFilter extends StatelessWidget {
     );
   }
 }
-

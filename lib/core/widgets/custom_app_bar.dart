@@ -14,7 +14,7 @@ class CustomAppBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back,
                 color: AppColors.black,
               ),
@@ -27,10 +27,10 @@ class CustomAppBar extends StatelessWidget {
                 style: AppTextStyles.font16BlackMedium,
               ),
             ),
-            SizedBox(width: 35),
+            const SizedBox(width: 35),
           ],
         ),
-        Divider(
+        const Divider(
           color: AppColors.gray,
           thickness: 1,
           height: 0,

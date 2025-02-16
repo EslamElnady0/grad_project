@@ -13,13 +13,14 @@ class CustomWhiteDropShadowedContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         width: width ?? double.infinity,
-        padding: padding ?? EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+        padding:
+            padding ?? const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
         decoration: BoxDecoration(
             color: AppColors.white,
             borderRadius: BorderRadius.circular(8),
             boxShadow: [
               BoxShadow(
-                  offset: Offset(0, 0.32),
+                  offset: const Offset(0, 0.32),
                   blurRadius: 5.15,
                   spreadRadius: 0.32,
                   color: AppColors.black.withOpacity(0.15))

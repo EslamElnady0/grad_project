@@ -29,7 +29,7 @@ class ChatViewBody extends StatelessWidget {
             separatorBuilder: (context, index) => vGap(12),
           ),
         ),
-        ChatViewFooter(),
+        const ChatViewFooter(),
       ],
     );
   }

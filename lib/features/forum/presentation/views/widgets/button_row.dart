@@ -20,7 +20,7 @@ class ButtonRow extends StatelessWidget {
           onPressed: () {},
           style: OutlinedButton.styleFrom(
             foregroundColor: AppColors.darkblue,
-            side: BorderSide(color: AppColors.darkblue, width: 3),
+            side: const BorderSide(color: AppColors.darkblue, width: 3),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
@@ -30,7 +30,7 @@ class ButtonRow extends StatelessWidget {
               style: AppTextStyles.font16DarkerBlueSemiBold
                   .copyWith(fontSize: 14.sp)),
         ),
-        Spacer(),
+        const Spacer(),
         ElevatedButton.icon(
           onPressed: () {
             showStatsDialog(context);
@@ -47,24 +47,20 @@ class ButtonRow extends StatelessWidget {
               style:
                   AppTextStyles.font16WhiteSemiBold.copyWith(fontSize: 14.sp)),
         ),
-        Spacer(),
+        const Spacer(),
         Container(
           decoration: BoxDecoration(
-            gradient: LinearGradient(
+            gradient: const LinearGradient(
               colors: [AppColors.redDark, AppColors.redlight],
               begin: Alignment.bottomCenter,
               end: Alignment.topCenter,
             ),
             borderRadius: BorderRadius.circular(12),
           ),
-          padding: EdgeInsets.all(12),
+          padding: const EdgeInsets.all(12),
           child: SvgPicture.asset(Assets.imagesSvgsChart),
         ),
-
-
       ],
     );
   }
 }
-
-

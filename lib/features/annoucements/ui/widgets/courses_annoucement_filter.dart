@@ -13,13 +13,13 @@ class CoursesAnnoucementFilter extends StatelessWidget {
     return CustomDarkBlueContainer(
       width: 375.w,
       height: 55.h,
-      foregroundDecoration: BoxDecoration(),
+      foregroundDecoration: const BoxDecoration(),
       alignment: Alignment.center,
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
       child: ListView.separated(
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return CoursesFilterItem(
+            return const CoursesFilterItem(
               title: "Data",
             );
           },

@@ -121,14 +121,14 @@ class Constants {
 
   static OutlineInputBorder inputBorder = OutlineInputBorder(
       borderRadius: BorderRadius.circular(16.r),
-      borderSide: BorderSide(
+      borderSide: const BorderSide(
         color: AppColors.black,
         width: 1.5,
       ));
 
   static DecoratedInputBorder shadowedInputBorder = DecoratedInputBorder(
       shadow: BoxShadow(
-          offset: Offset(0, 1),
+          offset: const Offset(0, 1),
           blurRadius: 16,
           spreadRadius: 1,
           color: AppColors.black.withOpacity(0.15)),
@@ -137,10 +137,10 @@ class Constants {
         borderRadius: BorderRadius.circular(12),
       ));
   static List<Widget> homeBodies = [
-    AnnoucementsBody(),
-    SubjectsView(),
-    ChatOutsiderBody(),
-    ForumViews()
+    const AnnoucementsBody(),
+    const SubjectsView(),
+    const ChatOutsiderBody(),
+    const ForumViews()
   ];
   static const List<Map<String, dynamic>> dummyMessages = [
     {

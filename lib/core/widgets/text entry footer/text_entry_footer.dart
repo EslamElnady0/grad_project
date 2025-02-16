@@ -15,7 +15,7 @@ class ChatViewFooter extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
       decoration: BoxDecoration(boxShadow: [
         BoxShadow(
-          color: Color(0xff112316).withOpacity(0.15),
+          color: const Color(0xff112316).withOpacity(0.15),
           spreadRadius: 1,
           blurRadius: 16,
           offset: const Offset(0, 1),
@@ -23,11 +23,11 @@ class ChatViewFooter extends StatelessWidget {
       ]),
       child: Row(
         children: [
-          ChatAddAttachmentsButton(),
+          const ChatAddAttachmentsButton(),
           hGap(8),
-          Expanded(child: ChatTextField()),
+          const Expanded(child: ChatTextField()),
           hGap(8),
-          ChatSendButton()
+          const ChatSendButton()
         ],
       ),
     );

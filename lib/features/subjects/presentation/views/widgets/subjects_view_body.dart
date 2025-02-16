@@ -38,12 +38,12 @@ class SubjectsViewBody extends StatelessWidget {
               vGap(12),
             ],
           )),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: CustomSupjectsFilter(),
           ),
- SliverList(
+          SliverList(
             delegate: SliverChildBuilderDelegate(
-              (context, index) => CustomSubjectCard(),
+              (context, index) => const CustomSubjectCard(),
               childCount: 10,
             ),
           ),

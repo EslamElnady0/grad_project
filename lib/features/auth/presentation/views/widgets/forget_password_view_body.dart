@@ -27,7 +27,7 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         child: Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Form(
         key: formKey,
         autovalidateMode: autovalidateMode,
@@ -40,7 +40,7 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
             ),
             vGap(10),
             Text(
-             S.of(context).success_message,
+              S.of(context).success_message,
               textAlign: TextAlign.center,
               style: AppTextStyles.font24BlackBold,
             ),
@@ -59,20 +59,24 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
               onSaved: (value) {
                 email = value!;
               },
-              hintText:S.of(context).email,
+              hintText: S.of(context).email,
               textInputType: TextInputType.emailAddress,
             ),
             vGap(20),
-         CustomTextButton(text: S.of(context).confirm, onTap: () {
-                  if (formKey.currentState!.validate()) {
-                    formKey.currentState!.save();
-                    GoRouter.of(context).push(ConfirmAccountView.routeName);
-                  } else {
-                    setState(() {
-                      autovalidateMode = AutovalidateMode.always;
-                    });
-                  }
-                },) , vGap(40),
+            CustomTextButton(
+              text: S.of(context).confirm,
+              onTap: () {
+                if (formKey.currentState!.validate()) {
+                  formKey.currentState!.save();
+                  GoRouter.of(context).push(ConfirmAccountView.routeName);
+                } else {
+                  setState(() {
+                    autovalidateMode = AutovalidateMode.always;
+                  });
+                }
+              },
+            ),
+            vGap(40),
           ],
         ),
       ),

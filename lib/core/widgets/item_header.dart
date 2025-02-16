@@ -11,8 +11,8 @@ class ItemHeader extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        DoctorInfoSection(),
-        Spacer(),
+        const DoctorInfoSection(),
+        const Spacer(),
         Text(
           "1/11/2024",
           style: AppTextStyles.font10GraySemiBold,

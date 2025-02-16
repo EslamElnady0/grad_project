@@ -8,8 +8,8 @@ class ForumViews extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScaffold(
-      body: const ForumViewsBody(),
+    return const CustomScaffold(
+      body: ForumViewsBody(),
     );
   }
 }

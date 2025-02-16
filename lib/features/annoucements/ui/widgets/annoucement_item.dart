@@ -19,16 +19,16 @@ class AnnoucementItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(16.r),
         boxShadow: [
           BoxShadow(
-              offset: Offset(0, 1),
+              offset: const Offset(0, 1),
               blurRadius: 5.r,
               spreadRadius: 3,
-              color: Color(0xff112316).withOpacity(0.15)),
+              color: const Color(0xff112316).withOpacity(0.15)),
         ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ItemHeader(),
+          const ItemHeader(),
           vGap(12),
           Text(
             "📢 إعلان هام",
@@ -49,7 +49,7 @@ class AnnoucementItem extends StatelessWidget {
                 style: AppTextStyles.font10greenMedium
                     .copyWith(color: AppColors.black),
               ),
-              Spacer(),
+              const Spacer(),
               Text(
                 "126",
                 style: AppTextStyles.font9GraySemiBold,

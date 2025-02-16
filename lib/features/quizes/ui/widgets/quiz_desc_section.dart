@@ -25,7 +25,7 @@ class QuizDescSection extends StatelessWidget {
                 "يركز الاختبار على قدرة الطالب على إنشاء الدوال واستخدامها داخل الفئات (Classes) بشكل فعال، مع فهم كيفية تمرير البيانات (Parameters) وإرجاع القيم (Return Values).",
                 style: AppTextStyles.font10BlackMedium,
               ),
-              Divider(),
+              const Divider(),
               Text(
                 "يبدأ في : الخميس 31 أكتوبر 2024 ، الساعة 12:59 صباحاً\nالموعد النهائي : الخميس 31 أكتوبر 2024 ، الساعة 01:14 صباحاً",
                 style: AppTextStyles.font8BlackSemiBold,

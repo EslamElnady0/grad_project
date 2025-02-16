@@ -23,7 +23,7 @@ class QuizLabelWidget extends StatelessWidget {
             color: Colors.grey.withOpacity(0.3),
             blurRadius: 5,
             spreadRadius: 1,
-            offset: Offset(0, 3),
+            offset: const Offset(0, 3),
           ),
         ],
       ),
@@ -40,7 +40,7 @@ class QuizLabelWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
                   child: SvgPicture.asset(
                     Assets.imagesSvgsQuizIcon,
                     width: 25,
@@ -69,7 +69,7 @@ class QuizLabelWidget extends StatelessWidget {
           OutlinedButton(
             onPressed: () {},
             style: OutlinedButton.styleFrom(
-              side: BorderSide(
+              side: const BorderSide(
                 color: Colors.black,
               ),
               shape: RoundedRectangleBorder(

@@ -39,14 +39,14 @@ class ForumViewsBody extends StatelessWidget {
                     primaryButton: true,
                     text: S.of(context).add_your_question,
                     onTap: () {},
-                    icon: Icon(Icons.add),
+                    icon: const Icon(Icons.add),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   CustomTextAndIconButton(
                     primaryButton: false,
                     text: S.of(context).filter,
                     onTap: () {},
-                    icon: Icon(Icons.tune),
+                    icon: const Icon(Icons.tune),
                   ),
                 ]),
                 vGap(8),
@@ -58,7 +58,7 @@ class ForumViewsBody extends StatelessWidget {
       ),
       SliverList(
         delegate: SliverChildBuilderDelegate(
-          (context, index) => CustomForumItem(),
+          (context, index) => const CustomForumItem(),
           childCount: 10,
         ),
       ),

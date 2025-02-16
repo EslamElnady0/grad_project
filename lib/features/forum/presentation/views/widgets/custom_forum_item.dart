@@ -12,28 +12,27 @@ class CustomForumItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-     padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.0.w),
       child: Column(
         children: [
           Container(
             width: double.infinity,
-        
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
             decoration: BoxDecoration(
               color: AppColors.white,
               borderRadius: BorderRadius.circular(16.r),
               boxShadow: [
                 BoxShadow(
-                    offset: Offset(0, 1),
+                    offset: const Offset(0, 1),
                     blurRadius: 5.r,
                     spreadRadius: 3,
-                    color: Color(0xff112316).withOpacity(0.15)),
+                    color: const Color(0xff112316).withOpacity(0.15)),
               ],
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                ItemHeader(),
+                const ItemHeader(),
                 vGap(12),
                 Text(
                   "📢 إعلان هام",
@@ -55,8 +54,8 @@ class CustomForumItem extends StatelessWidget {
             ),
           ),
           vGap(8),
-          ButtonRow(),
-          Divider(
+          const ButtonRow(),
+          const Divider(
             endIndent: 80,
             indent: 80,
             color: AppColors.gray,

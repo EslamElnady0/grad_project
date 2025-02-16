@@ -8,8 +8,8 @@ class AuthView extends StatelessWidget {
   static const String routeName = '/auth';
   @override
   Widget build(BuildContext context) {
-    return CustomScaffold(
-      body: const AuthViewBody(),
+    return const CustomScaffold(
+      body: AuthViewBody(),
     );
   }
 }

@@ -32,9 +32,9 @@ class QuizDetailsViewBody extends StatelessWidget {
                 children: [
                   TitleTextWidget(text: S.of(context).testYourKnowledge),
                   vGap(10),
-                  QuizLabelWidget(),
+                  const QuizLabelWidget(),
                   vGap(16),
-                  QuizDescSection(),
+                  const QuizDescSection(),
                   vGap(16),
                   Align(
                       alignment: AlignmentDirectional.centerEnd,
@@ -43,9 +43,9 @@ class QuizDetailsViewBody extends StatelessWidget {
                           onTap: () {
                             GoRouter.of(context).push(QuizView.routeName);
                           })),
-                  QuizDetailsSection(),
+                  const QuizDetailsSection(),
                   vGap(12),
-                  QuizAdvicesSection(),
+                  const QuizAdvicesSection(),
                   vGap(16),
                   Text(
                     S.of(context).goodLuck,

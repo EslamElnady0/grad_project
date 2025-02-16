@@ -35,7 +35,7 @@ class ChatOutsiderBody extends StatelessWidget {
             ),
           ),
           vGap(20),
-          Expanded(child: ChatLevelsContainer()),
+          const Expanded(child: ChatLevelsContainer()),
         ],
       ),
     );

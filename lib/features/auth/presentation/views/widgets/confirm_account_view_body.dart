@@ -41,12 +41,14 @@ class ConfirmAccountViewBody extends StatelessWidget {
                 style: AppTextStyles.font12GrayMedium,
               ),
               vGap(24),
-              CustomPinCodeTextField(),
+              const CustomPinCodeTextField(),
               vGap(12),
               Align(
                 alignment: Alignment.centerRight,
                 child: Align(
-                  alignment: isArabicLocale(context) ? Alignment.centerRight: Alignment.centerLeft ,
+                  alignment: isArabicLocale(context)
+                      ? Alignment.centerRight
+                      : Alignment.centerLeft,
                   child: TextButton(
                     onPressed: () {},
                     child: Text(S.of(context).resend,
@@ -61,5 +63,3 @@ class ConfirmAccountViewBody extends StatelessWidget {
     );
   }
 }
-
-

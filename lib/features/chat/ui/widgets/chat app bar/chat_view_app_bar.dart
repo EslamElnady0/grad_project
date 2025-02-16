@@ -16,7 +16,7 @@ class ChatViewAppBar extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(left: 18.w, right: 18.w, top: 10.h, bottom: 5.h),
       alignment: Alignment.center,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: AppColors.backGround,
       ),
       child: Row(
@@ -27,7 +27,7 @@ class ChatViewAppBar extends StatelessWidget {
               onPressed: () => GoRouter.of(context).pop()),
           hGap(10),
           CircleAvatar(
-            backgroundImage: AssetImage(Assets.imagesAvatarDoc),
+            backgroundImage: const AssetImage(Assets.imagesAvatarDoc),
             radius: 20.r,
           ),
           hGap(10),
@@ -49,7 +49,7 @@ class ChatViewAppBar extends StatelessWidget {
                   ]))
             ],
           ),
-          Spacer(),
+          const Spacer(),
           SvgIconButton(
               iconPath: Assets.imagesSvgsSearchIcon, onPressed: () {}),
           hGap(20),
