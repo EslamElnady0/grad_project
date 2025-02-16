@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'core/cubits/bloc_observer.dart';
 import 'core/routes/app_router.dart';
 import 'core/theme/app_theme.dart';
 import 'generated/l10n.dart';
@@ -8,6 +10,7 @@ import 'generated/l10n.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
+  Bloc.observer = GradBlocObserver();
   runApp(GradProjectAdminApp());
 }
 
