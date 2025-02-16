@@ -45,6 +45,10 @@ abstract class AppRouter {
         builder: (context, state) => const InternalMapView(),
       ),
       GoRoute(
+        path: QuizDetailsView.routeName,
+        builder: (context, state) => const QuizDetailsView(),
+      ),
+      GoRoute(
         path: "/",
         builder: (context, state) => const QuizDetailsView(),
       ),
