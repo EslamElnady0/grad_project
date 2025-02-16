@@ -30,7 +30,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "answer": MessageLookupByLibrary.simpleMessage("إجابة"),
     "app_title": MessageLookupByLibrary.simpleMessage("التعليم الالكتروني"),
     "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
+    "classWork": MessageLookupByLibrary.simpleMessage("أعمال السنة"),
     "classes": MessageLookupByLibrary.simpleMessage("الفصول:"),
+    "classification": MessageLookupByLibrary.simpleMessage("التصنيف"),
+    "clearAnswerSelection": MessageLookupByLibrary.simpleMessage(
+      "حذف تحديد الإجابة",
+    ),
     "community": MessageLookupByLibrary.simpleMessage("المنتدي"),
     "completed": MessageLookupByLibrary.simpleMessage("المكتملة"),
     "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
@@ -41,9 +46,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
       "🤔 لم تبحث عن شيء بعد! ",
     ),
+    "didntStartYet": MessageLookupByLibrary.simpleMessage("لم يبدأ بعد"),
     "discoverYourWay": MessageLookupByLibrary.simpleMessage(
       "🔍 اكتشف طريقك بسهولة داخل الجامعة.",
     ),
+    "done": MessageLookupByLibrary.simpleMessage("تم"),
     "eLearning": MessageLookupByLibrary.simpleMessage("التعليم الإلكتروني"),
     "email": MessageLookupByLibrary.simpleMessage("الإيميل"),
     "enter_code": MessageLookupByLibrary.simpleMessage(
@@ -66,21 +73,47 @@ class MessageLookup extends MessageLookupByLibrary {
     "goLearnCommunicate": MessageLookupByLibrary.simpleMessage(
       "تواصل. تعلّم. انطلق!",
     ),
+    "goodLuck": MessageLookupByLibrary.simpleMessage("بالتوفيق! 🍀"),
     "in_progress": MessageLookupByLibrary.simpleMessage("قيد التنفيذ"),
     "interested": MessageLookupByLibrary.simpleMessage("مهتم"),
     "internalMap": MessageLookupByLibrary.simpleMessage("الخريطة الداخلية"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+    "manageTime": MessageLookupByLibrary.simpleMessage("⏰ نظم وقتك جيدًا"),
+    "minute": MessageLookupByLibrary.simpleMessage("دقيقة"),
     "mostSreached": MessageLookupByLibrary.simpleMessage(
       "الاماكن الأكثر بحثاً!",
     ),
+    "next": MessageLookupByLibrary.simpleMessage("التالي"),
     "not_started": MessageLookupByLibrary.simpleMessage("لم يبدأ"),
+    "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
+      "المرات المسموح بها",
+    ),
+    "once": MessageLookupByLibrary.simpleMessage("مرة واحدة"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "pending": MessageLookupByLibrary.simpleMessage("معلق"),
+    "prepareWell": MessageLookupByLibrary.simpleMessage("📚 استعد مسبقًا"),
+    "previous": MessageLookupByLibrary.simpleMessage("السابق"),
     "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "question_statistics": MessageLookupByLibrary.simpleMessage(
       "إحصائيات هذا السؤال",
     ),
+    "quiz": MessageLookupByLibrary.simpleMessage("اختبار"),
+    "quizAdvices": MessageLookupByLibrary.simpleMessage("نصائح للاختبار"),
+    "quizDesc": MessageLookupByLibrary.simpleMessage("وصف الاختبار"),
+    "quizDetails": MessageLookupByLibrary.simpleMessage("تفاصيل الاختبار"),
+    "quizDuration": MessageLookupByLibrary.simpleMessage("مدة الاختبار"),
+    "quizNavigation": MessageLookupByLibrary.simpleMessage(
+      "التنقل في الاختبار",
+    ),
+    "quizState": MessageLookupByLibrary.simpleMessage("حالة الاختبار"),
+    "readCarefully": MessageLookupByLibrary.simpleMessage(
+      "🔍 اقرأ الأسئلة بتركيز",
+    ),
     "resend": MessageLookupByLibrary.simpleMessage("إعادة الإرسال؟"),
+    "reviewTopics": MessageLookupByLibrary.simpleMessage(
+      "خصص وقتًا للمراجعة وفهم المواضيع الرئيسية.",
+    ),
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       " ابحث عن مبني، مدرج، قاعة، الخ..!",
     ),
@@ -96,16 +129,32 @@ class MessageLookup extends MessageLookupByLibrary {
     "semester_1": MessageLookupByLibrary.simpleMessage("الفصل الدراسي الأول"),
     "semester_2": MessageLookupByLibrary.simpleMessage("الفصل الدراسي الثاني"),
     "start": MessageLookupByLibrary.simpleMessage("ابدأ"),
+    "startNow": MessageLookupByLibrary.simpleMessage("ابدأ الآن!"),
     "startWriting": MessageLookupByLibrary.simpleMessage(
       "إبدأ في الكتابة الأن..",
     ),
     "status": MessageLookupByLibrary.simpleMessage("الحالة:"),
+    "stayCalm": MessageLookupByLibrary.simpleMessage("😌 استرخِ وابقَ هادئًا"),
+    "stayConfident": MessageLookupByLibrary.simpleMessage(
+      "تنفّس بعمق وثق بقدراتك!",
+    ),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage("طالب نشط الآن"),
     "study": MessageLookupByLibrary.simpleMessage("دراسة"),
+    "submitAndFinish": MessageLookupByLibrary.simpleMessage("الإنهاء والتقديم"),
     "success_message": MessageLookupByLibrary.simpleMessage(
       "كله هيرجع لمكانه!",
     ),
+    "testYourKnowledge": MessageLookupByLibrary.simpleMessage(
+      "📋 اختبر معلوماتك، واستعد للامتحان من خلال الإجابة على الأسئلة المخصصة!",
+    ),
+    "timeManagement": MessageLookupByLibrary.simpleMessage(
+      "قسّم وقت الاختبار بين الأسئلة، ولا تقضِ وقتًا طويلًا على سؤال واحد.",
+    ),
+    "timeRemaining": MessageLookupByLibrary.simpleMessage("الوقت المتبقي"),
     "timeSchedule": MessageLookupByLibrary.simpleMessage("الجدول الزمني"),
+    "understandBeforeAnswering": MessageLookupByLibrary.simpleMessage(
+      "تأكد من فهم السؤال جيدًا قبل البدء بالإجابة.",
+    ),
     "verify_account": MessageLookupByLibrary.simpleMessage("أكد حسابك!"),
     "view": MessageLookupByLibrary.simpleMessage("مشاهدة"),
     "view_answers": MessageLookupByLibrary.simpleMessage("عرض الإجابات"),

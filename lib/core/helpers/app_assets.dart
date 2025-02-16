@@ -38,6 +38,10 @@ class Assets {
   /// assets/images/svgs/add_icon.svg
   static const String imagesSvgsAddIcon = "assets/images/svgs/add_icon.svg";
 
+  /// Assets for imagesSvgsAlignmentRightIcon
+  /// assets/images/svgs/alignment_right_icon.svg
+  static const String imagesSvgsAlignmentRightIcon = "assets/images/svgs/alignment_right_icon.svg";
+
   /// Assets for imagesSvgsAnnoucementIcon
   /// assets/images/svgs/annoucement_icon.svg
   static const String imagesSvgsAnnoucementIcon = "assets/images/svgs/annoucement_icon.svg";
@@ -86,9 +90,21 @@ class Assets {
   /// assets/images/svgs/courses_icon.svg
   static const String imagesSvgsCoursesIcon = "assets/images/svgs/courses_icon.svg";
 
+  /// Assets for imagesSvgsDetailedMenuIcon
+  /// assets/images/svgs/detailed_menu_icon.svg
+  static const String imagesSvgsDetailedMenuIcon = "assets/images/svgs/detailed_menu_icon.svg";
+
   /// Assets for imagesSvgsEmojiIcon
   /// assets/images/svgs/emoji_icon.svg
   static const String imagesSvgsEmojiIcon = "assets/images/svgs/emoji_icon.svg";
+
+  /// Assets for imagesSvgsEyeCrossedIcon
+  /// assets/images/svgs/eye_crossed_icon.svg
+  static const String imagesSvgsEyeCrossedIcon = "assets/images/svgs/eye_crossed_icon.svg";
+
+  /// Assets for imagesSvgsEyeIcon
+  /// assets/images/svgs/eye_icon.svg
+  static const String imagesSvgsEyeIcon = "assets/images/svgs/eye_icon.svg";
 
   /// Assets for imagesSvgsFilesIcon
   /// assets/images/svgs/files_icon.svg
@@ -129,6 +145,10 @@ class Assets {
   /// Assets for imagesSvgsPicturesIcon
   /// assets/images/svgs/pictures_icon.svg
   static const String imagesSvgsPicturesIcon = "assets/images/svgs/pictures_icon.svg";
+
+  /// Assets for imagesSvgsQuizIcon
+  /// assets/images/svgs/quiz_icon.svg
+  static const String imagesSvgsQuizIcon = "assets/images/svgs/quiz_icon.svg";
 
   /// Assets for imagesSvgsSearchIcon
   /// assets/images/svgs/search_icon.svg
