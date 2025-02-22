@@ -1,16 +1,21 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/helpers/localizationa.dart';
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/theme/app_text_styles.dart';
 
 class ScheduleCard extends StatelessWidget {
   final String day;
   final List<Map<String, String>> dayData;
-  final int currentIndex ;
+  final int currentIndex;
   final int lengthOfList;
-  const ScheduleCard({super.key, required this.day, required this.dayData, required this.currentIndex, required this.lengthOfList});
+  const ScheduleCard(
+      {super.key,
+      required this.day,
+      required this.dayData,
+      required this.currentIndex,
+      required this.lengthOfList});
 
   @override
   Widget build(BuildContext context) {
@@ -20,13 +25,21 @@ class ScheduleCard extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
-  
         borderRadius: BorderRadius.only(
-        
-          topLeft: currentIndex == 0 ? Radius.circular(16.r) : Radius.zero,
-         bottomLeft: currentIndex == lengthOfList - 1 ? Radius.circular(16.r) : Radius.zero,
-
+          topLeft: currentIndex == 0 && isArabicLocale(context)
+              ? Radius.circular(16.r)
+              : Radius.zero,
+          bottomLeft:
+              currentIndex == lengthOfList - 1 && isArabicLocale(context)
+                  ? Radius.circular(16.r)
+                  : Radius.zero,
+          topRight: currentIndex == 0 && !isArabicLocale(context)
+              ? Radius.circular(16.r)
+              : Radius.zero,
+          bottomRight:
+              currentIndex == lengthOfList - 1 && !isArabicLocale(context)
+                  ? Radius.circular(16.r)
+                  : Radius.zero,
         ),
         boxShadow: [
           BoxShadow(
@@ -41,15 +54,24 @@ class ScheduleCard extends StatelessWidget {
           Container(
             width: 110.w,
             height: tableHeight,
-            
             alignment: Alignment.center,
             decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-        
-          topRight: currentIndex == 0 ? Radius.circular(16.r) : Radius.zero,
-         bottomRight: currentIndex == lengthOfList - 1 ? Radius.circular(16.r) : Radius.zero,
-
-        ),
+              borderRadius: BorderRadius.only(
+                topRight: currentIndex == 0 && isArabicLocale(context)
+                    ? Radius.circular(16.r)
+                    : Radius.zero,
+                bottomRight:
+                    currentIndex == lengthOfList - 1 && isArabicLocale(context)
+                        ? Radius.circular(16.r)
+                        : Radius.zero,
+                topLeft: currentIndex == 0 && !isArabicLocale(context)
+                    ? Radius.circular(16.r)
+                    : Radius.zero,
+                bottomLeft:
+                    currentIndex == lengthOfList - 1 && !isArabicLocale(context)
+                        ? Radius.circular(16.r)
+                        : Radius.zero,
+              ),
               gradient: LinearGradient(
                 colors: [
                   AppColors.primaryColorlight,
@@ -59,12 +81,10 @@ class ScheduleCard extends StatelessWidget {
                 end: Alignment.bottomCenter,
               ),
             ),
-            child: Text(
-              day,
-              style: AppTextStyles.font14WhiteSemiBold
-            ),
+            child: Text(day, style: AppTextStyles.font14WhiteSemiBold),
           ),
-          SizedBox(
+          Container(
+            color: Colors.white,
             width: 840.w,
             child: Table(
               border: TableBorder.symmetric(

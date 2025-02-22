@@ -514,6 +514,81 @@ class S {
       args: [],
     );
   }
+
+  /// `All Days`
+  String get all_days {
+    return Intl.message('All Days', name: 'all_days', desc: '', args: []);
+  }
+
+  /// `Saturday`
+  String get saturday {
+    return Intl.message('Saturday', name: 'saturday', desc: '', args: []);
+  }
+
+  /// `Sunday`
+  String get sunday {
+    return Intl.message('Sunday', name: 'sunday', desc: '', args: []);
+  }
+
+  /// `Monday`
+  String get monday {
+    return Intl.message('Monday', name: 'monday', desc: '', args: []);
+  }
+
+  /// `Tuesday`
+  String get tuesday {
+    return Intl.message('Tuesday', name: 'tuesday', desc: '', args: []);
+  }
+
+  /// `Wednesday`
+  String get wednesday {
+    return Intl.message('Wednesday', name: 'wednesday', desc: '', args: []);
+  }
+
+  /// `Thursday`
+  String get thursday {
+    return Intl.message('Thursday', name: 'thursday', desc: '', args: []);
+  }
+
+  /// `Days`
+  String get days {
+    return Intl.message('Days', name: 'days', desc: '', args: []);
+  }
+
+  /// `Subject Name`
+  String get subject_name {
+    return Intl.message(
+      'Subject Name',
+      name: 'subject_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Time`
+  String get time {
+    return Intl.message('Time', name: 'time', desc: '', args: []);
+  }
+
+  /// `Type`
+  String get type {
+    return Intl.message('Type', name: 'type', desc: '', args: []);
+  }
+
+  /// `Teacher`
+  String get teacher {
+    return Intl.message('Teacher', name: 'teacher', desc: '', args: []);
+  }
+
+  /// `Place`
+  String get place {
+    return Intl.message('Place', name: 'place', desc: '', args: []);
+  }
+
+  /// `status`
+  String get condition {
+    return Intl.message('status', name: 'condition', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

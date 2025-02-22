@@ -43,6 +43,7 @@ class SubjectsViewBody extends StatelessWidget {
           ),
  SliverList(
             delegate: SliverChildBuilderDelegate(
+              
               (context, index) => CustomSubjectCard(),
               childCount: 10,
             ),
