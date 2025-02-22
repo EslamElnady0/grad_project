@@ -222,3 +222,138 @@ class Constants {
     },
   ];
 }
+
+final Map<String, List<Map<String, String>>> scheduleData = {
+  'السبت': [
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    },
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    }
+  ],
+  "الاحد": [
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    }
+  ],
+  "الاثنين": [
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    },
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    },
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    }
+  ],
+  "الثلاثاء": [
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    },
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    },
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    }
+  ],
+  "الاربعاء": [
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    },
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    },
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    }
+  ],
+  "الخميس": [
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    },
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    },
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    }
+  ]
+};

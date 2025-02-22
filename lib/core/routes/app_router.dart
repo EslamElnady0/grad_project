@@ -5,6 +5,7 @@ import 'package:grad_project/features/auth/presentation/views/confirm_account_vi
 import 'package:grad_project/features/chat/ui/views/chat_view.dart';
 import 'package:grad_project/features/map/presentation/views/internal_map_view.dart';
 import 'package:grad_project/features/splash/views/splash_view.dart';
+import 'package:grad_project/features/weekly_schedule/ui/views/screens/weekly_schedule_view.dart';
 import '../../features/auth/presentation/views/auth_view.dart';
 import '../../features/home/ui/cubit/bottom_nav_bar_cubit.dart';
 import '../../features/home/ui/views/home_view.dart';
@@ -17,7 +18,7 @@ abstract class AppRouter {
         builder: (context, state) => const SplashView(),
       ),
       GoRoute(
-        path: "/",
+        path: HomeView.routeName,
         builder: (context, state) => BlocProvider(
           create: (context) => BottomNavBarCubit(),
           child: const HomeView(),
@@ -43,6 +44,10 @@ abstract class AppRouter {
         path: InternalMapView.routeName,
         builder: (context, state) => const InternalMapView(),
       ),
+      GoRoute(
+        path: "/",
+        builder: (context, state) => const WeeklyScheduleView(),
+        )
     ],
   );
 }

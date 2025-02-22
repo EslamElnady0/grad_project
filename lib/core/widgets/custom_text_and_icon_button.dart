@@ -27,6 +27,11 @@ class CustomTextAndIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                colors: [AppColors.primaryColorlight, AppColors.primaryColordark],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
         boxShadow: [
           BoxShadow(
             offset: const Offset(0, 4),
@@ -35,15 +40,7 @@ class CustomTextAndIconButton extends StatelessWidget {
           ),
         ],
       ),
-      child: InnerShadow(
-               shadows: [
-          BoxShadow(
-            offset: const Offset(0, 4),
-            blurRadius: 13,
-            color: primaryButton?  AppColors.black.withOpacity(0.25):AppColors.white.withOpacity(0.05),
-          )
-        ],
-        child: GestureDetector(
+      child: GestureDetector(
           onTap: onTap,
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 15.w),
@@ -69,7 +66,7 @@ class CustomTextAndIconButton extends StatelessWidget {
             ),
           ),
         ),
-      ),
+      
     );
   }
 }
