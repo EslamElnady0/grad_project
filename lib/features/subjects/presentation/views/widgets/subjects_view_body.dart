@@ -41,9 +41,8 @@ class SubjectsViewBody extends StatelessWidget {
           SliverToBoxAdapter(
             child: CustomSupjectsFilter(),
           ),
- SliverList(
+          SliverList(
             delegate: SliverChildBuilderDelegate(
-              
               (context, index) => CustomSubjectCard(),
               childCount: 10,
             ),

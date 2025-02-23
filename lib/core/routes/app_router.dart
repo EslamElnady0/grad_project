@@ -14,7 +14,7 @@ abstract class AppRouter {
   static final router = GoRouter(
     routes: [
       GoRoute(
-        path: "/d",
+        path: "/",
         builder: (context, state) => const SplashView(),
       ),
       GoRoute(
@@ -45,7 +45,7 @@ abstract class AppRouter {
         builder: (context, state) => const InternalMapView(),
       ),
       GoRoute(
-        path: "/",
+        path: WeeklyScheduleView.routeName,
         builder: (context, state) => const WeeklyScheduleView(),
         )
     ],

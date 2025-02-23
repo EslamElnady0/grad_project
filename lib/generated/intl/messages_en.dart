@@ -66,7 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "🔑 It\'s okay! Just enter your email so we can recover your account and password!",
     ),
     "forum_welcome_message": MessageLookupByLibrary.simpleMessage(
-      "💬 Welcome to the Q&A forum!\nAsk your questions, share your knowledge by answering others\' questions, and benefit from your peers\' experiences here!",
+      "💬 Welcome to the Q&A forum! Ask your questions, share your knowledge by answering others\' questions, and benefit from your peers\' experiences here!",
     ),
     "goLearnCommunicate": MessageLookupByLibrary.simpleMessage(
       "Connect. Learn. Go!",
@@ -90,6 +90,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "resend": MessageLookupByLibrary.simpleMessage("Resend?"),
     "saturday": MessageLookupByLibrary.simpleMessage("Saturday"),
+    "schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "📅 Welcome to the Weekly Schedule page! Select the days you want to view to easily track your lecture and practical session timings.",
+    ),
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       "Search for a building, lecture hall, room, etc..!",
     ),
@@ -129,6 +132,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "view_answers": MessageLookupByLibrary.simpleMessage("View answers"),
     "wednesday": MessageLookupByLibrary.simpleMessage("Wednesday"),
     "weeklySchedule": MessageLookupByLibrary.simpleMessage("Weekly Schedule"),
+    "weekly_schedule": MessageLookupByLibrary.simpleMessage("Weekly Schedule"),
     "welcome_message": MessageLookupByLibrary.simpleMessage(
       "Welcome back!\nPlease log in to access your dashboard and stay productive.",
     ),

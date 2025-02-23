@@ -46,7 +46,7 @@
   "pending": "Pending",
   "not_started": "Not Started",
   "study": "Study",
-  "forum_welcome_message": "💬 Welcome to the Q&A forum!\nAsk your questions, share your knowledge by answering others' questions, and benefit from your peers' experiences here!",
+  "forum_welcome_message": "💬 Welcome to the Q&A forum! Ask your questions, share your knowledge by answering others' questions, and benefit from your peers' experiences here!",
   "add_your_question": "Add your question!",
   "filter": "Filter",
   "view_answers": "View answers",
@@ -70,5 +70,7 @@
   "type": "Type",
   "teacher": "Teacher",
   "place": "Place",
-  "condition":"status"
+  "condition":"status",
+   "weekly_schedule": "Weekly Schedule",
+   "schedule_welcome_message": "📅 Welcome to the Weekly Schedule page! Select the days you want to view to easily track your lecture and practical session timings."
 }

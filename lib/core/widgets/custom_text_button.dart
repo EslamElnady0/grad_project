@@ -26,7 +26,10 @@ class CustomTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: width ?? double.infinity,
+          padding: EdgeInsets.symmetric(vertical: 12.h),
       decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16.r),
         gradient: LinearGradient(
           colors: [AppColors.primaryColorlight, AppColors.primaryColordark],
           begin: Alignment.topCenter,
@@ -41,17 +44,8 @@ class CustomTextButton extends StatelessWidget {
       ),
       child: GestureDetector(
         onTap: onTap,
-        child: Container(
-          width: width ?? double.infinity,
-          padding: EdgeInsets.symmetric(vertical: 12.h),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16.r),
-            color: AppColors.primaryColordark,
-          ),
-          alignment: Alignment.center,
-          child: Center(
-            child: Text(text, style: AppTextStyles.font20WhiteSemiBold),
-          ),
+        child: Center(
+          child: Text(text, style: AppTextStyles.font20WhiteSemiBold),
         ),
       ),
     );

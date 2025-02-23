@@ -430,10 +430,10 @@ class S {
     return Intl.message('Study', name: 'study', desc: '', args: []);
   }
 
-  /// `💬 Welcome to the Q&A forum!\nAsk your questions, share your knowledge by answering others' questions, and benefit from your peers' experiences here!`
+  /// `💬 Welcome to the Q&A forum! Ask your questions, share your knowledge by answering others' questions, and benefit from your peers' experiences here!`
   String get forum_welcome_message {
     return Intl.message(
-      '💬 Welcome to the Q&A forum!\nAsk your questions, share your knowledge by answering others\' questions, and benefit from your peers\' experiences here!',
+      '💬 Welcome to the Q&A forum! Ask your questions, share your knowledge by answering others\' questions, and benefit from your peers\' experiences here!',
       name: 'forum_welcome_message',
       desc: '',
       args: [],
@@ -588,6 +588,26 @@ class S {
   /// `status`
   String get condition {
     return Intl.message('status', name: 'condition', desc: '', args: []);
+  }
+
+  /// `Weekly Schedule`
+  String get weekly_schedule {
+    return Intl.message(
+      'Weekly Schedule',
+      name: 'weekly_schedule',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `📅 Welcome to the Weekly Schedule page! Select the days you want to view to easily track your lecture and practical session timings.`
+  String get schedule_welcome_message {
+    return Intl.message(
+      '📅 Welcome to the Weekly Schedule page! Select the days you want to view to easily track your lecture and practical session timings.',
+      name: 'schedule_welcome_message',
+      desc: '',
+      args: [],
+    );
   }
 }
 

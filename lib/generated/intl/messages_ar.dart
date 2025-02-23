@@ -64,7 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "🔑 مهمل بس ولا يهمك! اكتب إيميلك علشان نرجعلك حسابك وكلمة السر تاني!",
     ),
     "forum_welcome_message": MessageLookupByLibrary.simpleMessage(
-      "💬 مرحباً بك في منتدى الأسئلة والإجابات!\nاطرح أسئلتك، وشارك معرفتك بالإجابة على أسئلة الآخرين، واستفد من خبرات زملائك هنا!",
+      "💬 مرحباً بك في منتدى الأسئلة والإجابات!اطرح أسئلتك، وشارك معرفتك بالإجابة على أسئلة الآخرين، واستفد من خبرات زملائك هنا!",
     ),
     "goLearnCommunicate": MessageLookupByLibrary.simpleMessage(
       "تواصل. تعلّم. انطلق!",
@@ -87,6 +87,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "resend": MessageLookupByLibrary.simpleMessage("إعادة الإرسال؟"),
     "saturday": MessageLookupByLibrary.simpleMessage("السبت"),
+    "schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "📅 مرحباً بك في صفحة الجدول الأسبوعي! حدد الأيام التي ترغب في عرض جدولها لتتابع مواعيد محاضراتك وجلساتك العملية بسهولة.",
+    ),
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       " ابحث عن مبني، مدرج، قاعة، الخ..!",
     ),
@@ -124,6 +127,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "view_answers": MessageLookupByLibrary.simpleMessage("عرض الإجابات"),
     "wednesday": MessageLookupByLibrary.simpleMessage("الأربعاء"),
     "weeklySchedule": MessageLookupByLibrary.simpleMessage("الجدول الإسبوعي"),
+    "weekly_schedule": MessageLookupByLibrary.simpleMessage("الجدول الاسبوعي"),
     "welcome_message": MessageLookupByLibrary.simpleMessage(
       "أهلاً وسهلاً بعودتك!\nمن فضلك سجّل دخولك للوصول إلى لوحة التحكم الخاصة بك وابقَ منتجاً.",
     ),
