@@ -70,7 +70,12 @@
   "type": "Type",
   "teacher": "Teacher",
   "place": "Place",
-  "condition":"status",
-   "weekly_schedule": "Weekly Schedule",
-   "schedule_welcome_message": "📅 Welcome to the Weekly Schedule page! Select the days you want to view to easily track your lecture and practical session timings."
+  "condition": "status",
+  "weekly_schedule": "Weekly Schedule",
+  "schedule_welcome_message": "📅 Welcome to the Weekly Schedule page! Select the days you want to view to easily track your lecture and practical session timings.",
+  "material": "Material",
+  "material_description": "🎓📚 Everything you need for your course in one place: lectures, sections, assignments, quizzes, videos, midterms, and final exams!",
+  "complete": "complete",
+    "open":"open",
+  "download":"download"
 }

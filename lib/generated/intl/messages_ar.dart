@@ -33,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
     "classes": MessageLookupByLibrary.simpleMessage("الفصول:"),
     "community": MessageLookupByLibrary.simpleMessage("المنتدي"),
+    "complete": MessageLookupByLibrary.simpleMessage("إكتمل"),
     "completed": MessageLookupByLibrary.simpleMessage("المكتملة"),
     "condition": MessageLookupByLibrary.simpleMessage("الحالة"),
     "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
@@ -47,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "discoverYourWay": MessageLookupByLibrary.simpleMessage(
       "🔍 اكتشف طريقك بسهولة داخل الجامعة.",
     ),
+    "download": MessageLookupByLibrary.simpleMessage("تحميل"),
     "eLearning": MessageLookupByLibrary.simpleMessage("التعليم الإلكتروني"),
     "email": MessageLookupByLibrary.simpleMessage("الإيميل"),
     "enter_code": MessageLookupByLibrary.simpleMessage(
@@ -74,11 +76,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "internalMap": MessageLookupByLibrary.simpleMessage("الخريطة الداخلية"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+    "material": MessageLookupByLibrary.simpleMessage("ماتريال"),
+    "material_description": MessageLookupByLibrary.simpleMessage(
+      "🎓📚 كل اللي محتاجه لمادتك في مكان واحد: محاضرات، سكاشن، اسايمنتات، كويزات، فيديوهات، ميدتيرم، وامتحانات نهائية!",
+    ),
     "monday": MessageLookupByLibrary.simpleMessage("الإثنين"),
     "mostSreached": MessageLookupByLibrary.simpleMessage(
       "الاماكن الأكثر بحثاً!",
     ),
     "not_started": MessageLookupByLibrary.simpleMessage("لم يبدأ"),
+    "open": MessageLookupByLibrary.simpleMessage("فتح"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "place": MessageLookupByLibrary.simpleMessage("المكان"),
     "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),

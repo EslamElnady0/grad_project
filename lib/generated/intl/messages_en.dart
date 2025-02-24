@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "chat": MessageLookupByLibrary.simpleMessage("Chat"),
     "classes": MessageLookupByLibrary.simpleMessage("Classes:"),
     "community": MessageLookupByLibrary.simpleMessage("Community"),
+    "complete": MessageLookupByLibrary.simpleMessage("complete"),
     "completed": MessageLookupByLibrary.simpleMessage("Completed"),
     "condition": MessageLookupByLibrary.simpleMessage("status"),
     "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
@@ -49,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "discoverYourWay": MessageLookupByLibrary.simpleMessage(
       "🔍 Easily discover your way around the university.",
     ),
+    "download": MessageLookupByLibrary.simpleMessage("download"),
     "eLearning": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "enter_code": MessageLookupByLibrary.simpleMessage(
@@ -76,11 +78,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "internalMap": MessageLookupByLibrary.simpleMessage("Internal Map"),
     "login": MessageLookupByLibrary.simpleMessage("Log In"),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "material": MessageLookupByLibrary.simpleMessage("Material"),
+    "material_description": MessageLookupByLibrary.simpleMessage(
+      "🎓📚 Everything you need for your course in one place: lectures, sections, assignments, quizzes, videos, midterms, and final exams!",
+    ),
     "monday": MessageLookupByLibrary.simpleMessage("Monday"),
     "mostSreached": MessageLookupByLibrary.simpleMessage(
       "Most searched places!",
     ),
     "not_started": MessageLookupByLibrary.simpleMessage("Not Started"),
+    "open": MessageLookupByLibrary.simpleMessage("open"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "place": MessageLookupByLibrary.simpleMessage("Place"),

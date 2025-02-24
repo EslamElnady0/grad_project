@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/widgets/custom_text_and_icon_button.dart';
 import 'package:grad_project/features/forum/presentation/views/widgets/custom_forum_item.dart';
 import '../../../../../core/helpers/spacing.dart';
@@ -39,14 +40,14 @@ class ForumViewsBody extends StatelessWidget {
                     primaryButton: true,
                     text: S.of(context).add_your_question,
                     onTap: () {},
-                    icon: Icon(Icons.add),
+                    icon: Icon(Icons.add,color: AppColors.white,size: 14.sp,),
                   ),
                   Spacer(),
                   CustomTextAndIconButton(
                     primaryButton: false,
                     text: S.of(context).filter,
                     onTap: () {},
-                    icon: Icon(Icons.tune),
+                    icon: Icon(Icons.tune,color:AppColors.white,size: 14.sp),
                   ),
                 ]),
                 vGap(8),

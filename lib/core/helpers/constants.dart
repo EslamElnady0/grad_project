@@ -6,7 +6,7 @@ import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/annoucements/ui/views/annoucements_body.dart';
 import 'package:grad_project/features/forum/presentation/views/forum_views.dart';
 import 'package:grad_project/features/home/ui/models/drawer_item_model.dart';
-import 'package:grad_project/features/subjects/presentation/views/subjects_view.dart';
+import 'package:grad_project/features/subjects/presentation/views/screens/subjects_view.dart';
 
 import '../../features/chat/ui/views/chat_outsider_body.dart';
 import '../../features/home/ui/models/bottom_nav_bar_item_model.dart';
@@ -281,7 +281,6 @@ final Map<String, List<Map<String, String>>> scheduleData = {
       'status': 'في وقتها',
     }
   ],
-  
   "الاربعاء": [
     {
       'subject': 'Data Structure',
@@ -334,4 +333,103 @@ final Map<String, List<Map<String, String>>> scheduleData = {
       'status': 'في وقتها',
     }
   ]
+};
+
+Map<String, List<Map<String, String>>> materialData = {
+  "الأسبوع الأول": [
+    {
+      "fileName": "Lecture 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/lecture1"
+    },
+    {
+      "fileName": "Section 1",
+      "fileType": "pdf",
+      "status": "not complete",
+      "link": "https://example.com/section1"
+    },
+    {
+      "fileName": "Introduction OOP",
+      "fileType": "video",
+      "status": "complete",
+      "link": "https://example.com/introduction-oop"
+    },
+    {
+      "fileName": "Assignment 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/assignment1"
+    },
+    {
+      "fileName": "Quiz lec 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/quiz1"
+    }
+  ],
+  "الاسبوع الثاني": [
+    {
+      "fileName": "Lecture 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/lecture1"
+    },
+    {
+      "fileName": "Section 1",
+      "fileType": "pdf",
+      "status": "not complete",
+      "link": "https://example.com/section1"
+    },
+    {
+      "fileName": "Introduction OOP",
+      "fileType": "video",
+      "status": "complete",
+      "link": "https://example.com/introduction-oop"
+    },
+    {
+      "fileName": "Assignment 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/assignment1"
+    },
+    {
+      "fileName": "Quiz lec 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/quiz1"
+    }
+  ],
+ "الاسبوع الثالث": [
+    {
+      "fileName": "Lecture 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/lecture1"
+    },
+    {
+      "fileName": "Section 1",
+      "fileType": "pdf",
+      "status": "not complete",
+      "link": "https://example.com/section1"
+    },
+    {
+      "fileName": "Introduction OOP",
+      "fileType": "video",
+      "status": "complete",
+      "link": "https://example.com/introduction-oop"
+    },
+    {
+      "fileName": "Assignment 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/assignment1"
+    },
+    {
+      "fileName": "Quiz lec 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/quiz1"
+    }
+  ],
 };

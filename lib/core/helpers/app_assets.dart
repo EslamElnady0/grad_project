@@ -70,6 +70,10 @@ class Assets {
   /// assets/images/svgs/chat_icon.svg
   static const String imagesSvgsChatIcon = "assets/images/svgs/chat_icon.svg";
 
+  /// Assets for imagesSvgsCheck
+  /// assets/images/svgs/check.svg
+  static const String imagesSvgsCheck = "assets/images/svgs/check.svg";
+
   /// Assets for imagesSvgsCircleIcon
   /// assets/images/svgs/circle_icon.svg
   static const String imagesSvgsCircleIcon = "assets/images/svgs/circle_icon.svg";
@@ -85,6 +89,10 @@ class Assets {
   /// Assets for imagesSvgsCoursesIcon
   /// assets/images/svgs/courses_icon.svg
   static const String imagesSvgsCoursesIcon = "assets/images/svgs/courses_icon.svg";
+
+  /// Assets for imagesSvgsDewenloadIcon
+  /// assets/images/svgs/dewenload_icon.svg
+  static const String imagesSvgsDewenloadIcon = "assets/images/svgs/dewenload_icon.svg";
 
   /// Assets for imagesSvgsEmojiIcon
   /// assets/images/svgs/emoji_icon.svg
@@ -122,6 +130,14 @@ class Assets {
   /// assets/images/svgs/more_options_icon.svg
   static const String imagesSvgsMoreOptionsIcon = "assets/images/svgs/more_options_icon.svg";
 
+  /// Assets for imagesSvgsOpenIcon
+  /// assets/images/svgs/open_icon.svg
+  static const String imagesSvgsOpenIcon = "assets/images/svgs/open_icon.svg";
+
+  /// Assets for imagesSvgsPdfIcon
+  /// assets/images/svgs/pdf_icon.svg
+  static const String imagesSvgsPdfIcon = "assets/images/svgs/pdf_icon.svg";
+
   /// Assets for imagesSvgsPerson
   /// assets/images/svgs/person.svg
   static const String imagesSvgsPerson = "assets/images/svgs/person.svg";
@@ -157,6 +173,10 @@ class Assets {
   /// Assets for imagesSvgsTimeQuarter
   /// assets/images/svgs/time_quarter.svg
   static const String imagesSvgsTimeQuarter = "assets/images/svgs/time_quarter.svg";
+
+  /// Assets for imagesSvgsVideoIcon
+  /// assets/images/svgs/video_icon.svg
+  static const String imagesSvgsVideoIcon = "assets/images/svgs/video_icon.svg";
 
   /// Assets for imagesSvgsVisibility
   /// assets/images/svgs/visibility.svg

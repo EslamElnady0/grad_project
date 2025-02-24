@@ -6,6 +6,7 @@ import 'package:grad_project/features/forum/presentation/views/widgets/show_stat
 import '../../../../../core/helpers/app_assets.dart';
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/theme/app_text_styles.dart';
+import '../../../../../core/widgets/custom_icon_button.dart';
 import '../../../../../generated/l10n.dart';
 
 class ButtonRow extends StatelessWidget {
@@ -48,20 +49,9 @@ class ButtonRow extends StatelessWidget {
                   AppTextStyles.font16WhiteSemiBold.copyWith(fontSize: 14.sp)),
         ),
         Spacer(),
-        GestureDetector(
-          onTap: () =>            showStatsDialog(context),
-          child: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [AppColors.redDark, AppColors.redlight],
-                begin: Alignment.bottomCenter,
-                end: Alignment.topCenter,
-              ),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            padding: EdgeInsets.all(12),
-            child: SvgPicture.asset(Assets.imagesSvgsChart),
-          ),
+       CustomIconButton(
+        icon: SvgPicture.asset(Assets.imagesSvgsChart),
+          onTap:() {showStatsDialog(context);} ,
         ),
 
 
@@ -69,5 +59,3 @@ class ButtonRow extends StatelessWidget {
     );
   }
 }
-
-

@@ -5,6 +5,7 @@ import 'package:grad_project/features/auth/presentation/views/confirm_account_vi
 import 'package:grad_project/features/chat/ui/views/chat_view.dart';
 import 'package:grad_project/features/map/presentation/views/internal_map_view.dart';
 import 'package:grad_project/features/splash/views/splash_view.dart';
+import 'package:grad_project/features/subjects/presentation/views/screens/materials_view.dart';
 import 'package:grad_project/features/weekly_schedule/ui/views/screens/weekly_schedule_view.dart';
 import '../../features/auth/presentation/views/auth_view.dart';
 import '../../features/home/ui/cubit/bottom_nav_bar_cubit.dart';
@@ -14,7 +15,7 @@ abstract class AppRouter {
   static final router = GoRouter(
     routes: [
       GoRoute(
-        path: "/",
+        path: "/b",
         builder: (context, state) => const SplashView(),
       ),
       GoRoute(
@@ -47,6 +48,10 @@ abstract class AppRouter {
       GoRoute(
         path: WeeklyScheduleView.routeName,
         builder: (context, state) => const WeeklyScheduleView(),
+        ),
+      GoRoute(
+        path:"/",
+        builder: (context, state) => const MaterialsView(),
         )
     ],
   );
