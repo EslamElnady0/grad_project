@@ -1,6 +1,5 @@
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
-import 'package:grad_project/core/widgets/inner_shadow.dart';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../theme/app_colors.dart';
+
 class CustomTextAndIconButton extends StatelessWidget {
   final String text;
   final Icon icon;
@@ -20,13 +20,21 @@ class CustomTextAndIconButton extends StatelessWidget {
     required this.text,
     required this.onTap,
     required this.icon,
-    this.style, required this.primaryButton,
+    this.style,
+    required this.primaryButton,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 15.w),
       decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12.r),
+        gradient: LinearGradient(
+          colors: [AppColors.primaryColorlight, AppColors.primaryColordark],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
         boxShadow: [
           BoxShadow(
             offset: const Offset(0, 4),
@@ -35,42 +43,17 @@ class CustomTextAndIconButton extends StatelessWidget {
           ),
         ],
       ),
-      child: InnerShadow(
-               shadows: [
-          BoxShadow(
-            offset: const Offset(0, 4),
-            blurRadius: 13,
-            color: primaryButton?  AppColors.black.withOpacity(0.25):AppColors.white.withOpacity(0.05),
-          )
-        ],
-        child: GestureDetector(
-          onTap: onTap,
-          child: Container(
-            padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 15.w),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12.r),
-              color:primaryButton? AppColors.primaryColordark:AppColors.darkblue,
-              boxShadow: [
-                BoxShadow(
-                  offset: const Offset(0, 4),
-                  blurRadius: 13,
-                  color: AppColors.black.withOpacity(0.2),
-                ),
-              ],
-            ),
-            alignment: Alignment.center,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(icon.icon, color: AppColors.white, size:14.sp ),
-                hGap(5),
-                Text(text, style: style ?? AppTextStyles.font12WhiteMedium),
-              ],
-            ),
-          ),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(icon.icon, color: AppColors.white, size: 14.sp),
+            hGap(5),
+            Text(text, style: style ?? AppTextStyles.font12WhiteMedium),
+          ],
         ),
       ),
     );
   }
 }
-

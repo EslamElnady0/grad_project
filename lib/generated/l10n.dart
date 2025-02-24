@@ -430,10 +430,10 @@ class S {
     return Intl.message('Study', name: 'study', desc: '', args: []);
   }
 
-  /// `💬 Welcome to the Q&A forum!\nAsk your questions, share your knowledge by answering others' questions, and benefit from your peers' experiences here!`
+  /// `💬 Welcome to the Q&A forum! Ask your questions, share your knowledge by answering others' questions, and benefit from your peers' experiences here!`
   String get forum_welcome_message {
     return Intl.message(
-      '💬 Welcome to the Q&A forum!\nAsk your questions, share your knowledge by answering others\' questions, and benefit from your peers\' experiences here!',
+      '💬 Welcome to the Q&A forum! Ask your questions, share your knowledge by answering others\' questions, and benefit from your peers\' experiences here!',
       name: 'forum_welcome_message',
       desc: '',
       args: [],
@@ -510,6 +510,101 @@ class S {
     return Intl.message(
       'Where are you going boss?',
       name: 'whereAreYouGoingBoss',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All Days`
+  String get all_days {
+    return Intl.message('All Days', name: 'all_days', desc: '', args: []);
+  }
+
+  /// `Saturday`
+  String get saturday {
+    return Intl.message('Saturday', name: 'saturday', desc: '', args: []);
+  }
+
+  /// `Sunday`
+  String get sunday {
+    return Intl.message('Sunday', name: 'sunday', desc: '', args: []);
+  }
+
+  /// `Monday`
+  String get monday {
+    return Intl.message('Monday', name: 'monday', desc: '', args: []);
+  }
+
+  /// `Tuesday`
+  String get tuesday {
+    return Intl.message('Tuesday', name: 'tuesday', desc: '', args: []);
+  }
+
+  /// `Wednesday`
+  String get wednesday {
+    return Intl.message('Wednesday', name: 'wednesday', desc: '', args: []);
+  }
+
+  /// `Thursday`
+  String get thursday {
+    return Intl.message('Thursday', name: 'thursday', desc: '', args: []);
+  }
+
+  /// `Days`
+  String get days {
+    return Intl.message('Days', name: 'days', desc: '', args: []);
+  }
+
+  /// `Subject Name`
+  String get subject_name {
+    return Intl.message(
+      'Subject Name',
+      name: 'subject_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Time`
+  String get time {
+    return Intl.message('Time', name: 'time', desc: '', args: []);
+  }
+
+  /// `Type`
+  String get type {
+    return Intl.message('Type', name: 'type', desc: '', args: []);
+  }
+
+  /// `Teacher`
+  String get teacher {
+    return Intl.message('Teacher', name: 'teacher', desc: '', args: []);
+  }
+
+  /// `Place`
+  String get place {
+    return Intl.message('Place', name: 'place', desc: '', args: []);
+  }
+
+  /// `status`
+  String get condition {
+    return Intl.message('status', name: 'condition', desc: '', args: []);
+  }
+
+  /// `Weekly Schedule`
+  String get weekly_schedule {
+    return Intl.message(
+      'Weekly Schedule',
+      name: 'weekly_schedule',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `📅 Welcome to the Weekly Schedule page! Select the days you want to view to easily track your lecture and practical session timings.`
+  String get schedule_welcome_message {
+    return Intl.message(
+      '📅 Welcome to the Weekly Schedule page! Select the days you want to view to easily track your lecture and practical session timings.',
+      name: 'schedule_welcome_message',
       desc: '',
       args: [],
     );

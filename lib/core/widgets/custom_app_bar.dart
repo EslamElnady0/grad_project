@@ -13,12 +13,15 @@ class CustomAppBar extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            IconButton(
-              icon: Icon(
-                Icons.arrow_back,
-                color: AppColors.black,
+            SizedBox(
+              width: 35,
+              child: IconButton(
+                icon: Icon(
+                  Icons.arrow_back,
+                  color: AppColors.black,
+                ),
+                onPressed: () => Navigator.pop(context),
               ),
-              onPressed: () => Navigator.pop(context),
             ),
             Expanded(
               child: Text(

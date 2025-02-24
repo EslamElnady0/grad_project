@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "add_your_question": MessageLookupByLibrary.simpleMessage(
       "Add your question!",
     ),
+    "all_days": MessageLookupByLibrary.simpleMessage("All Days"),
     "announcements": MessageLookupByLibrary.simpleMessage("Announcements"),
     "answer": MessageLookupByLibrary.simpleMessage("Answer"),
     "app_title": MessageLookupByLibrary.simpleMessage("E-Learning"),
@@ -35,11 +36,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "classes": MessageLookupByLibrary.simpleMessage("Classes:"),
     "community": MessageLookupByLibrary.simpleMessage("Community"),
     "completed": MessageLookupByLibrary.simpleMessage("Completed"),
+    "condition": MessageLookupByLibrary.simpleMessage("status"),
     "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
     "cooperateShareThoughts": MessageLookupByLibrary.simpleMessage(
       "Collaborate, share your ideas, and learn from your peers easily 📚",
     ),
     "courses": MessageLookupByLibrary.simpleMessage("Courses"),
+    "days": MessageLookupByLibrary.simpleMessage("Days"),
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
       "🤔 You haven\'t searched for anything yet!",
     ),
@@ -63,7 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "🔑 It\'s okay! Just enter your email so we can recover your account and password!",
     ),
     "forum_welcome_message": MessageLookupByLibrary.simpleMessage(
-      "💬 Welcome to the Q&A forum!\nAsk your questions, share your knowledge by answering others\' questions, and benefit from your peers\' experiences here!",
+      "💬 Welcome to the Q&A forum! Ask your questions, share your knowledge by answering others\' questions, and benefit from your peers\' experiences here!",
     ),
     "goLearnCommunicate": MessageLookupByLibrary.simpleMessage(
       "Connect. Learn. Go!",
@@ -73,17 +76,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "internalMap": MessageLookupByLibrary.simpleMessage("Internal Map"),
     "login": MessageLookupByLibrary.simpleMessage("Log In"),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "monday": MessageLookupByLibrary.simpleMessage("Monday"),
     "mostSreached": MessageLookupByLibrary.simpleMessage(
       "Most searched places!",
     ),
     "not_started": MessageLookupByLibrary.simpleMessage("Not Started"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
+    "place": MessageLookupByLibrary.simpleMessage("Place"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "question_statistics": MessageLookupByLibrary.simpleMessage(
       "Question statistics",
     ),
     "resend": MessageLookupByLibrary.simpleMessage("Resend?"),
+    "saturday": MessageLookupByLibrary.simpleMessage("Saturday"),
+    "schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "📅 Welcome to the Weekly Schedule page! Select the days you want to view to easily track your lecture and practical session timings.",
+    ),
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       "Search for a building, lecture hall, room, etc..!",
     ),
@@ -105,16 +114,25 @@ class MessageLookup extends MessageLookupByLibrary {
       "students online now",
     ),
     "study": MessageLookupByLibrary.simpleMessage("Study"),
+    "subject_name": MessageLookupByLibrary.simpleMessage("Subject Name"),
     "success_message": MessageLookupByLibrary.simpleMessage(
       "Everything will return to its place!",
     ),
+    "sunday": MessageLookupByLibrary.simpleMessage("Sunday"),
+    "teacher": MessageLookupByLibrary.simpleMessage("Teacher"),
+    "thursday": MessageLookupByLibrary.simpleMessage("Thursday"),
+    "time": MessageLookupByLibrary.simpleMessage("Time"),
     "timeSchedule": MessageLookupByLibrary.simpleMessage("Time Schedule"),
+    "tuesday": MessageLookupByLibrary.simpleMessage("Tuesday"),
+    "type": MessageLookupByLibrary.simpleMessage("Type"),
     "verify_account": MessageLookupByLibrary.simpleMessage(
       "Verify your account!",
     ),
     "view": MessageLookupByLibrary.simpleMessage("View"),
     "view_answers": MessageLookupByLibrary.simpleMessage("View answers"),
+    "wednesday": MessageLookupByLibrary.simpleMessage("Wednesday"),
     "weeklySchedule": MessageLookupByLibrary.simpleMessage("Weekly Schedule"),
+    "weekly_schedule": MessageLookupByLibrary.simpleMessage("Weekly Schedule"),
     "welcome_message": MessageLookupByLibrary.simpleMessage(
       "Welcome back!\nPlease log in to access your dashboard and stay productive.",
     ),

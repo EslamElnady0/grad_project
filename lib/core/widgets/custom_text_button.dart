@@ -10,6 +10,7 @@ import '../theme/app_colors.dart';
 
 class CustomTextButton extends StatelessWidget {
   final String text;
+  final bool? isRed;
   final double? width;
   final VoidCallback onTap;
   final Widget? child;
@@ -19,12 +20,21 @@ class CustomTextButton extends StatelessWidget {
       required this.text,
       required this.onTap,
       this.style,
-      this.child, this.width});
+      this.child,
+      this.width, this.isRed});
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: width ?? double.infinity,
+          padding: EdgeInsets.symmetric(vertical: 12.h),
       decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16.r),
+        gradient: LinearGradient(
+          colors: [AppColors.primaryColorlight, AppColors.primaryColordark],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
         boxShadow: [
           BoxShadow(
               offset: const Offset(0, 4),
@@ -32,28 +42,10 @@ class CustomTextButton extends StatelessWidget {
               color: AppColors.black.withOpacity(0.25)),
         ],
       ),
-      child: InnerShadow(
-        shadows: [
-          BoxShadow(
-            offset: const Offset(0, 4),
-            blurRadius: 13,
-            color: AppColors.black.withOpacity(0.25),
-          )
-        ],
-        child: GestureDetector(
-          onTap: onTap,
-          child: Container(
-            width:  width ?? double.infinity,
-            padding: EdgeInsets.symmetric(vertical: 12.h),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16.r),
-              color: AppColors.primaryColordark,
-            ),
-            alignment: Alignment.center,
-            child: Center(
-              child: Text(text, style: AppTextStyles.font20WhiteSemiBold),
-            ),
-          ),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Center(
+          child: Text(text, style: AppTextStyles.font20WhiteSemiBold),
         ),
       ),
     );
