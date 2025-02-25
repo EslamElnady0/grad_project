@@ -16,11 +16,11 @@ abstract class AppRouter {
   static final router = GoRouter(
     routes: [
       GoRoute(
-        path: "/",
+        path: "/a",
         builder: (context, state) => const SplashView(),
       ),
       GoRoute(
-        path: HomeView.routeName,
+        path: "/",
         builder: (context, state) => BlocProvider(
           create: (context) => BottomNavBarCubit(),
           child: const HomeView(),
@@ -55,7 +55,7 @@ abstract class AppRouter {
         builder: (context, state) => const QuizDetailsView(),
       ),
       GoRoute(
-        path: "/",
+        path: QuizView.routeName,
         builder: (context, state) => const QuizView(),
       ),
     ],
