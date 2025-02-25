@@ -7,6 +7,7 @@ import 'package:grad_project/features/map/presentation/views/internal_map_view.d
 import 'package:grad_project/features/quizes/ui/views/quiz_details_view.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_view.dart';
 import 'package:grad_project/features/splash/views/splash_view.dart';
+import 'package:grad_project/features/weekly_schedule/ui/views/screens/weekly_schedule_view.dart';
 import '../../features/auth/presentation/views/auth_view.dart';
 import '../../features/home/ui/cubit/bottom_nav_bar_cubit.dart';
 import '../../features/home/ui/views/home_view.dart';
@@ -15,11 +16,11 @@ abstract class AppRouter {
   static final router = GoRouter(
     routes: [
       GoRoute(
-        path: "/d",
+        path: "/",
         builder: (context, state) => const SplashView(),
       ),
       GoRoute(
-        path: "/aa",
+        path: HomeView.routeName,
         builder: (context, state) => BlocProvider(
           create: (context) => BottomNavBarCubit(),
           child: const HomeView(),
@@ -44,6 +45,10 @@ abstract class AppRouter {
       GoRoute(
         path: InternalMapView.routeName,
         builder: (context, state) => const InternalMapView(),
+      ),
+      GoRoute(
+        path: WeeklyScheduleView.routeName,
+        builder: (context, state) => const WeeklyScheduleView(),
       ),
       GoRoute(
         path: QuizDetailsView.routeName,

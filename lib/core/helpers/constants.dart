@@ -12,6 +12,7 @@ import 'package:grad_project/features/subjects/presentation/views/subjects_view.
 import '../../features/chat/ui/views/chat_outsider_body.dart';
 import '../../features/home/ui/models/bottom_nav_bar_item_model.dart';
 import '../../features/map/presentation/views/internal_map_view.dart';
+import '../../features/weekly_schedule/ui/views/screens/weekly_schedule_view.dart';
 import '../../generated/l10n.dart';
 import '../widgets/decorated_input_border.dart';
 
@@ -61,7 +62,9 @@ class Constants {
       DrawerItemModel(
         title: S.of(context).weeklySchedule,
         iconPath: Assets.imagesSvgsCalender,
-        onTap: () {},
+        onTap: () {
+          GoRouter.of(context).push(WeeklyScheduleView.routeName);
+        },
       ),
       DrawerItemModel(
         title: S.of(context).timeSchedule,
@@ -256,3 +259,113 @@ class Constants {
     "D)",
   ];
 }
+
+final Map<String, List<Map<String, String>>> scheduleData = {
+  'السبت': [
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    },
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    }
+  ],
+  "الاحد": [
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    }
+  ],
+  "الاثنين": [
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    },
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    },
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    }
+  ],
+  
+  "الاربعاء": [
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    },
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    },
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    }
+  ],
+  "الخميس": [
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    },
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    },
+    {
+      'subject': 'Data Structure',
+      'time': '9:11',
+      'type': 'محاضرة',
+      'teacher': 'م/ رافت شنب',
+      'place': 'معمل 2',
+      'status': 'في وقتها',
+    }
+  ]
+};
