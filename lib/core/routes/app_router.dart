@@ -5,6 +5,7 @@ import 'package:grad_project/features/auth/presentation/views/confirm_account_vi
 import 'package:grad_project/features/chat/ui/views/chat_view.dart';
 import 'package:grad_project/features/map/presentation/views/internal_map_view.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_details_view.dart';
+import 'package:grad_project/features/quizes/ui/views/quiz_view.dart';
 import 'package:grad_project/features/splash/views/splash_view.dart';
 import '../../features/auth/presentation/views/auth_view.dart';
 import '../../features/home/ui/cubit/bottom_nav_bar_cubit.dart';
@@ -50,7 +51,7 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: "/",
-        builder: (context, state) => const QuizDetailsView(),
+        builder: (context, state) => const QuizView(),
       ),
     ],
   );
