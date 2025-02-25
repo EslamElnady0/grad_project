@@ -243,4 +243,16 @@ class Constants {
       "isMe": false
     },
   ];
+  static const List<String> dummyAnswers = [
+    "To allow multiple inheritance",
+    "To hide the internal state of an object and protect it from unauthorized access",
+    "To increase the speed of code execution",
+    "To provide a way to write code without any classes",
+  ];
+  static const List<String> dummyChoices = [
+    "A)",
+    "B)",
+    "C)",
+    "D)",
+  ];
 }
