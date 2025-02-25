@@ -1,22 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
+import 'package:grad_project/features/quizes/ui/cubit/quiz_cubit.dart';
 import 'package:grad_project/features/quizes/ui/widgets/custom_mcq_choice_widget.dart';
 
 import '../../../../core/theme/app_colors.dart';
 
-class CustomQuestionWidget extends StatefulWidget {
+class CustomQuestionWidget extends StatelessWidget {
   const CustomQuestionWidget({super.key});
 
-  @override
-  State<CustomQuestionWidget> createState() => _CustomQuestionWidgetState();
-}
-
-class _CustomQuestionWidgetState extends State<CustomQuestionWidget> {
-  String selectedChoice = Constants.dummyChoices[0];
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,14 +42,14 @@ class _CustomQuestionWidgetState extends State<CustomQuestionWidget> {
                 padding: EdgeInsets.zero,
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
-                  return CustomMcqChoiceWidget(
-                    index: index,
-                    choice: Constants.dummyChoices[index],
-                    isSelected: selectedChoice == Constants.dummyChoices[index],
-                    onTap: () {
-                      setState(() {
-                        selectedChoice = Constants.dummyChoices[index];
-                      });
+                  return BlocBuilder<QuizCubit, QuizState>(
+                    builder: (context, state) {
+                      return CustomMcqChoiceWidget(
+                        index: index,
+                        choice: Constants.dummyChoices[index],
+                        isSelected: context.read<QuizCubit>().selectedAnswer ==
+                            Constants.dummyChoices[index],
+                      );
                     },
                   );
                 },
