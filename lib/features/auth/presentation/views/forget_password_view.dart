@@ -4,10 +4,10 @@ import 'package:grad_project/features/auth/presentation/views/widgets/forget_pas
 
 class ForgetPasswordView extends StatelessWidget {
   const ForgetPasswordView({super.key});
-static const String routeName = '/forget-password';
+  static const String routeName = '/forget-password';
   @override
   Widget build(BuildContext context) {
-    return CustomScaffold(
+    return const CustomScaffold(
       body: ForgetPasswordViewBody(),
     );
   }

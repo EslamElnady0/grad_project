@@ -11,8 +11,8 @@ class MentionIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(8),
-      margin: EdgeInsets.all(11),
+      padding: const EdgeInsets.all(8),
+      margin: const EdgeInsets.all(11),
       decoration: BoxDecoration(
           border: Border.all(color: AppColors.black),
           color: Colors.white,

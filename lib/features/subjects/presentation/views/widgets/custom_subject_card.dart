@@ -35,13 +35,13 @@ class CustomSubjectCard extends StatelessWidget {
           ]),
         ),
         Container(
-        decoration: BoxDecoration(
-              color: AppColors.white,
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(22.r),
-                bottomRight: Radius.circular(22.r),
-              ),
-        ),
+          decoration: BoxDecoration(
+            color: AppColors.white,
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(22.r),
+              bottomRight: Radius.circular(22.r),
+            ),
+          ),
           child: Column(
             children: [
               vGap(12),
@@ -72,7 +72,7 @@ class CustomSubjectCard extends StatelessWidget {
                 ),
               ),
               vGap(12),
-              Divider(
+              const Divider(
                 color: AppColors.gray,
                 thickness: 1,
                 height: 20,
@@ -83,7 +83,7 @@ class CustomSubjectCard extends StatelessWidget {
                 child: Row(children: [
                   CustomTextButton(
                       width: 120.w, text: S.of(context).study, onTap: () {}),
-                  Spacer(),
+                  const Spacer(),
                   Container(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 12, vertical: 16),

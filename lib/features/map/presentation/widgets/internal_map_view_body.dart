@@ -38,7 +38,7 @@ class _InternalMapViewBodyState extends State<InternalMapViewBody> {
             vGap(10),
             TitleTextWidget(text: S.of(context).discoverYourWay),
             vGap(16),
-            InternalMapRebuildBody(),
+            const InternalMapRebuildBody(),
           ],
         ),
       ),

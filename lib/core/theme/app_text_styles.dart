@@ -52,6 +52,11 @@ class AppTextStyles {
     color: AppColors.black,
     fontWeight: FontWeightHelper.semiBold,
   );
+  static TextStyle font13WhiteBold = ChangaTextStyle(
+    fontSize: 13.sp,
+    color: AppColors.white,
+    fontWeight: FontWeightHelper.bold,
+  );
   static TextStyle font9GrayMedium = ChangaTextStyle(
     fontSize: 9.sp,
     color: AppColors.gray,
@@ -65,6 +70,11 @@ class AppTextStyles {
   static TextStyle font8GraySemiBold = ChangaTextStyle(
     fontSize: 8.sp,
     color: AppColors.gray,
+    fontWeight: FontWeightHelper.semiBold,
+  );
+  static TextStyle font8BlackSemiBold = ChangaTextStyle(
+    fontSize: 8.sp,
+    color: AppColors.black,
     fontWeight: FontWeightHelper.semiBold,
   );
   static TextStyle font10GraySemiBold = ChangaTextStyle(
@@ -88,10 +98,20 @@ class AppTextStyles {
     color: AppColors.black,
     fontWeight: FontWeightHelper.semiBold,
   );
+  static TextStyle font22GreenSemiBold = ChangaTextStyle(
+    fontSize: 22.sp,
+    color: AppColors.primaryColordark,
+    fontWeight: FontWeightHelper.semiBold,
+  );
   static TextStyle font10grayRegular = ChangaTextStyle(
     fontSize: 10.sp,
     color: AppColors.gray,
     fontWeight: FontWeightHelper.regular,
+  );
+  static TextStyle font10BlackMedium = ChangaTextStyle(
+    fontSize: 10.sp,
+    color: AppColors.black,
+    fontWeight: FontWeightHelper.medium,
   );
   static TextStyle font24BlackBold = ChangaTextStyle(
     fontSize: 24.sp,
@@ -157,6 +177,11 @@ class AppTextStyles {
     fontSize: 12.sp,
     color: AppColors.white,
     fontWeight: FontWeightHelper.medium,
+  );
+  static TextStyle font12WhiteSemiBold = ChangaTextStyle(
+    fontSize: 12.sp,
+    color: AppColors.white,
+    fontWeight: FontWeightHelper.semiBold,
   );
   static TextStyle font10grayMedium = ChangaTextStyle(
     fontSize: 10.sp,

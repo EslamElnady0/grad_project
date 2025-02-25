@@ -18,7 +18,7 @@ class ChatLevelsContainer extends StatelessWidget {
           borderRadius: BorderRadius.circular(24.r),
           boxShadow: [
             BoxShadow(
-              color: Color(0xff112316).withOpacity(0.15),
+              color: const Color(0xff112316).withOpacity(0.15),
               spreadRadius: 1,
               blurRadius: 16,
               offset: const Offset(0, 1),
@@ -38,7 +38,7 @@ class ChatLevelsContainer extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           vGap(20),
-          Expanded(child: ChatLevelsListView()),
+          const Expanded(child: ChatLevelsListView()),
         ],
       ),
     );

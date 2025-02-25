@@ -17,7 +17,7 @@ void showStatsDialog(BuildContext context) {
         ),
         backgroundColor: Colors.transparent,
         child: Container(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: AppColors.darkblue,
             borderRadius: BorderRadius.circular(24),
@@ -27,7 +27,7 @@ void showStatsDialog(BuildContext context) {
             children: [
               Text(S.of(context).question_statistics,
                   style: AppTextStyles.font16GrayBold),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               _buildStatRow(
                   Assets.imagesSvgsLike, S.of(context).interested, "69"),
               _buildStatRow(
@@ -44,7 +44,7 @@ void showStatsDialog(BuildContext context) {
 
 Widget _buildStatRow(String icon, String label, String value) {
   return Padding(
-    padding: EdgeInsets.symmetric(vertical: 8),
+    padding: const EdgeInsets.symmetric(vertical: 8),
     child: Row(
       children: [
         Row(

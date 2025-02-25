@@ -11,7 +11,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
   Bloc.observer = GradBlocObserver();
-  runApp(GradProjectAdminApp());
+  runApp(const GradProjectAdminApp());
 }
 
 class GradProjectAdminApp extends StatelessWidget {
@@ -30,7 +30,7 @@ class GradProjectAdminApp extends StatelessWidget {
         darkTheme: AppTheme.darkTheme,
         locale: const Locale('en'),
         routerConfig: AppRouter.router,
-        localizationsDelegates: [
+        localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,

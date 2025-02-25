@@ -4,6 +4,8 @@ import 'package:grad_project/features/auth/presentation/views/forget_password_vi
 import 'package:grad_project/features/auth/presentation/views/confirm_account_view.dart';
 import 'package:grad_project/features/chat/ui/views/chat_view.dart';
 import 'package:grad_project/features/map/presentation/views/internal_map_view.dart';
+import 'package:grad_project/features/quizes/ui/views/quiz_details_view.dart';
+import 'package:grad_project/features/quizes/ui/views/quiz_view.dart';
 import 'package:grad_project/features/splash/views/splash_view.dart';
 import 'package:grad_project/features/weekly_schedule/ui/views/screens/weekly_schedule_view.dart';
 import '../../features/auth/presentation/views/auth_view.dart';
@@ -14,11 +16,11 @@ abstract class AppRouter {
   static final router = GoRouter(
     routes: [
       GoRoute(
-        path: "/",
+        path: "/a",
         builder: (context, state) => const SplashView(),
       ),
       GoRoute(
-        path: HomeView.routeName,
+        path: "/",
         builder: (context, state) => BlocProvider(
           create: (context) => BottomNavBarCubit(),
           child: const HomeView(),
@@ -47,7 +49,15 @@ abstract class AppRouter {
       GoRoute(
         path: WeeklyScheduleView.routeName,
         builder: (context, state) => const WeeklyScheduleView(),
-        )
+      ),
+      GoRoute(
+        path: QuizDetailsView.routeName,
+        builder: (context, state) => const QuizDetailsView(),
+      ),
+      GoRoute(
+        path: QuizView.routeName,
+        builder: (context, state) => const QuizView(),
+      ),
     ],
   );
 }

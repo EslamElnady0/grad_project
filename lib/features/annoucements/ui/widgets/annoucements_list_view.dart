@@ -9,6 +9,7 @@ class AnnoucementsListView extends StatelessWidget {
     return ListView.builder(
         padding: EdgeInsets.zero,
         itemBuilder: (context, index) {
+          // ignore: prefer_const_constructors
           return AnnoucementItem();
         },
         itemCount: 10);

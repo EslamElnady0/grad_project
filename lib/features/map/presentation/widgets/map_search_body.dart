@@ -45,7 +45,7 @@ class MapSearchBody extends StatelessWidget {
               Row(children: [
                 hGap(3.5),
                 SvgPicture.asset(Assets.imagesSvgsThreeDotsIcon),
-                Spacer(),
+                const Spacer(),
                 SvgPicture.asset(Assets.imagesSvgsArrowUpArrowDownIcon),
               ]),
               vGap(10),

@@ -515,6 +515,246 @@ class S {
     );
   }
 
+  /// `📋 Test your knowledge and prepare for the exam by answering the customized questions!`
+  String get testYourKnowledge {
+    return Intl.message(
+      '📋 Test your knowledge and prepare for the exam by answering the customized questions!',
+      name: 'testYourKnowledge',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quiz`
+  String get quiz {
+    return Intl.message('Quiz', name: 'quiz', desc: '', args: []);
+  }
+
+  /// `Quiz Description`
+  String get quizDesc {
+    return Intl.message(
+      'Quiz Description',
+      name: 'quizDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start Now!`
+  String get startNow {
+    return Intl.message('Start Now!', name: 'startNow', desc: '', args: []);
+  }
+
+  /// `Quiz Details`
+  String get quizDetails {
+    return Intl.message(
+      'Quiz Details',
+      name: 'quizDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quiz Status`
+  String get quizState {
+    return Intl.message('Quiz Status', name: 'quizState', desc: '', args: []);
+  }
+
+  /// `Category`
+  String get classification {
+    return Intl.message('Category', name: 'classification', desc: '', args: []);
+  }
+
+  /// `Quiz Duration`
+  String get quizDuration {
+    return Intl.message(
+      'Quiz Duration',
+      name: 'quizDuration',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Not Started Yet`
+  String get didntStartYet {
+    return Intl.message(
+      'Not Started Yet',
+      name: 'didntStartYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Classwork`
+  String get classWork {
+    return Intl.message('Classwork', name: 'classWork', desc: '', args: []);
+  }
+
+  /// `Minute`
+  String get minute {
+    return Intl.message('Minute', name: 'minute', desc: '', args: []);
+  }
+
+  /// `Once`
+  String get once {
+    return Intl.message('Once', name: 'once', desc: '', args: []);
+  }
+
+  /// `Allowed Attempts`
+  String get numOfTimesAllowed {
+    return Intl.message(
+      'Allowed Attempts',
+      name: 'numOfTimesAllowed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quiz Tips`
+  String get quizAdvices {
+    return Intl.message('Quiz Tips', name: 'quizAdvices', desc: '', args: []);
+  }
+
+  /// `📚 Prepare in Advance`
+  String get prepareWell {
+    return Intl.message(
+      '📚 Prepare in Advance',
+      name: 'prepareWell',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set aside time to review and understand key topics.`
+  String get reviewTopics {
+    return Intl.message(
+      'Set aside time to review and understand key topics.',
+      name: 'reviewTopics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `⏰ Manage Your Time`
+  String get manageTime {
+    return Intl.message(
+      '⏰ Manage Your Time',
+      name: 'manageTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Divide your time wisely between questions, and don’t spend too long on one.`
+  String get timeManagement {
+    return Intl.message(
+      'Divide your time wisely between questions, and don’t spend too long on one.',
+      name: 'timeManagement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `🔍 Read Questions Carefully`
+  String get readCarefully {
+    return Intl.message(
+      '🔍 Read Questions Carefully',
+      name: 'readCarefully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Make sure you fully understand the question before answering.`
+  String get understandBeforeAnswering {
+    return Intl.message(
+      'Make sure you fully understand the question before answering.',
+      name: 'understandBeforeAnswering',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `😌 Stay Calm and Focused`
+  String get stayCalm {
+    return Intl.message(
+      '😌 Stay Calm and Focused',
+      name: 'stayCalm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Take deep breaths and trust your abilities!`
+  String get stayConfident {
+    return Intl.message(
+      'Take deep breaths and trust your abilities!',
+      name: 'stayConfident',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Good Luck! 🍀`
+  String get goodLuck {
+    return Intl.message('Good Luck! 🍀', name: 'goodLuck', desc: '', args: []);
+  }
+
+  /// `Time Remaining`
+  String get timeRemaining {
+    return Intl.message(
+      'Time Remaining',
+      name: 'timeRemaining',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clear Answer Selection`
+  String get clearAnswerSelection {
+    return Intl.message(
+      'Clear Answer Selection',
+      name: 'clearAnswerSelection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get next {
+    return Intl.message('Next', name: 'next', desc: '', args: []);
+  }
+
+  /// `Previous`
+  String get previous {
+    return Intl.message('Previous', name: 'previous', desc: '', args: []);
+  }
+
+  /// `Submit & Finish`
+  String get submitAndFinish {
+    return Intl.message(
+      'Submit & Finish',
+      name: 'submitAndFinish',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quiz Navigation`
+  String get quizNavigation {
+    return Intl.message(
+      'Quiz Navigation',
+      name: 'quizNavigation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Done`
+  String get done {
+    return Intl.message('Done', name: 'done', desc: '', args: []);
+  }
+
   /// `All Days`
   String get all_days {
     return Intl.message('All Days', name: 'all_days', desc: '', args: []);

@@ -21,7 +21,7 @@ class _InternalMapRebuildBodyState extends State<InternalMapRebuildBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        if (!isTyping) DidntSearchYetWidget(),
+        if (!isTyping) const DidntSearchYetWidget(),
         CustomSearchTextField(
           hintText: S.of(context).searchForBuilding,
           onChanged: (p0) {
@@ -40,9 +40,9 @@ class _InternalMapRebuildBodyState extends State<InternalMapRebuildBody> {
         BlocBuilder<MapCubit, MapState>(
           builder: (context, state) {
             if (state is MapInitial) {
-              return MostSearchedPlacesWidget();
+              return const MostSearchedPlacesWidget();
             }
-            return MapSearchBody();
+            return const MapSearchBody();
           },
         ),
       ],

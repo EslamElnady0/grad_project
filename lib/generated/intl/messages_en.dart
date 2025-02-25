@@ -33,7 +33,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "answer": MessageLookupByLibrary.simpleMessage("Answer"),
     "app_title": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "chat": MessageLookupByLibrary.simpleMessage("Chat"),
+    "classWork": MessageLookupByLibrary.simpleMessage("Classwork"),
     "classes": MessageLookupByLibrary.simpleMessage("Classes:"),
+    "classification": MessageLookupByLibrary.simpleMessage("Category"),
+    "clearAnswerSelection": MessageLookupByLibrary.simpleMessage(
+      "Clear Answer Selection",
+    ),
     "community": MessageLookupByLibrary.simpleMessage("Community"),
     "completed": MessageLookupByLibrary.simpleMessage("Completed"),
     "condition": MessageLookupByLibrary.simpleMessage("status"),
@@ -46,9 +51,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
       "🤔 You haven\'t searched for anything yet!",
     ),
+    "didntStartYet": MessageLookupByLibrary.simpleMessage("Not Started Yet"),
     "discoverYourWay": MessageLookupByLibrary.simpleMessage(
       "🔍 Easily discover your way around the university.",
     ),
+    "done": MessageLookupByLibrary.simpleMessage("Done"),
     "eLearning": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "enter_code": MessageLookupByLibrary.simpleMessage(
@@ -71,24 +78,49 @@ class MessageLookup extends MessageLookupByLibrary {
     "goLearnCommunicate": MessageLookupByLibrary.simpleMessage(
       "Connect. Learn. Go!",
     ),
+    "goodLuck": MessageLookupByLibrary.simpleMessage("Good Luck! 🍀"),
     "in_progress": MessageLookupByLibrary.simpleMessage("In Progress"),
     "interested": MessageLookupByLibrary.simpleMessage("like"),
     "internalMap": MessageLookupByLibrary.simpleMessage("Internal Map"),
     "login": MessageLookupByLibrary.simpleMessage("Log In"),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "manageTime": MessageLookupByLibrary.simpleMessage("⏰ Manage Your Time"),
+    "minute": MessageLookupByLibrary.simpleMessage("Minute"),
     "monday": MessageLookupByLibrary.simpleMessage("Monday"),
     "mostSreached": MessageLookupByLibrary.simpleMessage(
       "Most searched places!",
     ),
+    "next": MessageLookupByLibrary.simpleMessage("Next"),
     "not_started": MessageLookupByLibrary.simpleMessage("Not Started"),
+    "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
+      "Allowed Attempts",
+    ),
+    "once": MessageLookupByLibrary.simpleMessage("Once"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "place": MessageLookupByLibrary.simpleMessage("Place"),
+    "prepareWell": MessageLookupByLibrary.simpleMessage(
+      "📚 Prepare in Advance",
+    ),
+    "previous": MessageLookupByLibrary.simpleMessage("Previous"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "question_statistics": MessageLookupByLibrary.simpleMessage(
       "Question statistics",
     ),
+    "quiz": MessageLookupByLibrary.simpleMessage("Quiz"),
+    "quizAdvices": MessageLookupByLibrary.simpleMessage("Quiz Tips"),
+    "quizDesc": MessageLookupByLibrary.simpleMessage("Quiz Description"),
+    "quizDetails": MessageLookupByLibrary.simpleMessage("Quiz Details"),
+    "quizDuration": MessageLookupByLibrary.simpleMessage("Quiz Duration"),
+    "quizNavigation": MessageLookupByLibrary.simpleMessage("Quiz Navigation"),
+    "quizState": MessageLookupByLibrary.simpleMessage("Quiz Status"),
+    "readCarefully": MessageLookupByLibrary.simpleMessage(
+      "🔍 Read Questions Carefully",
+    ),
     "resend": MessageLookupByLibrary.simpleMessage("Resend?"),
+    "reviewTopics": MessageLookupByLibrary.simpleMessage(
+      "Set aside time to review and understand key topics.",
+    ),
     "saturday": MessageLookupByLibrary.simpleMessage("Saturday"),
     "schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
       "📅 Welcome to the Weekly Schedule page! Select the days you want to view to easily track your lecture and practical session timings.",
@@ -108,23 +140,41 @@ class MessageLookup extends MessageLookupByLibrary {
     "semester_1": MessageLookupByLibrary.simpleMessage("First Semester"),
     "semester_2": MessageLookupByLibrary.simpleMessage("Second Semester"),
     "start": MessageLookupByLibrary.simpleMessage("Start"),
+    "startNow": MessageLookupByLibrary.simpleMessage("Start Now!"),
     "startWriting": MessageLookupByLibrary.simpleMessage("Start writing now.."),
     "status": MessageLookupByLibrary.simpleMessage("Status:"),
+    "stayCalm": MessageLookupByLibrary.simpleMessage(
+      "😌 Stay Calm and Focused",
+    ),
+    "stayConfident": MessageLookupByLibrary.simpleMessage(
+      "Take deep breaths and trust your abilities!",
+    ),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage(
       "students online now",
     ),
     "study": MessageLookupByLibrary.simpleMessage("Study"),
     "subject_name": MessageLookupByLibrary.simpleMessage("Subject Name"),
+    "submitAndFinish": MessageLookupByLibrary.simpleMessage("Submit & Finish"),
     "success_message": MessageLookupByLibrary.simpleMessage(
       "Everything will return to its place!",
     ),
     "sunday": MessageLookupByLibrary.simpleMessage("Sunday"),
     "teacher": MessageLookupByLibrary.simpleMessage("Teacher"),
+    "testYourKnowledge": MessageLookupByLibrary.simpleMessage(
+      "📋 Test your knowledge and prepare for the exam by answering the customized questions!",
+    ),
     "thursday": MessageLookupByLibrary.simpleMessage("Thursday"),
     "time": MessageLookupByLibrary.simpleMessage("Time"),
+    "timeManagement": MessageLookupByLibrary.simpleMessage(
+      "Divide your time wisely between questions, and don’t spend too long on one.",
+    ),
+    "timeRemaining": MessageLookupByLibrary.simpleMessage("Time Remaining"),
     "timeSchedule": MessageLookupByLibrary.simpleMessage("Time Schedule"),
     "tuesday": MessageLookupByLibrary.simpleMessage("Tuesday"),
     "type": MessageLookupByLibrary.simpleMessage("Type"),
+    "understandBeforeAnswering": MessageLookupByLibrary.simpleMessage(
+      "Make sure you fully understand the question before answering.",
+    ),
     "verify_account": MessageLookupByLibrary.simpleMessage(
       "Verify your account!",
     ),

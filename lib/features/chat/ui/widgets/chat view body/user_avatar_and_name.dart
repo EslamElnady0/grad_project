@@ -23,10 +23,10 @@ class UserAvatarAndName extends StatelessWidget {
               vGap(4),
               CircleAvatar(
                 radius: 18.r,
-                backgroundImage: AssetImage(Assets.imagesAvatarDoc),
+                backgroundImage: const AssetImage(Assets.imagesAvatarDoc),
               ),
             ],
           )
-        : SizedBox.shrink();
+        : const SizedBox.shrink();
   }
 }

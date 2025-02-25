@@ -35,7 +35,7 @@ class ChatLevelsItem extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 22.r,
-                  backgroundImage: AssetImage(Assets.imagesAvatarDoc),
+                  backgroundImage: const AssetImage(Assets.imagesAvatarDoc),
                 ),
                 hGap(15),
                 Text(

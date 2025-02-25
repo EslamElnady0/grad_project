@@ -32,7 +32,8 @@ class CustomSearchTextField extends StatelessWidget {
           prefixIcon: Padding(
             padding: EdgeInsets.all(12.r),
             child: SvgIconButton(
-                colorFilter: ColorFilter.mode(AppColors.gray, BlendMode.srcIn),
+                colorFilter:
+                    const ColorFilter.mode(AppColors.gray, BlendMode.srcIn),
                 iconPath: Assets.imagesSvgsSearchIcon,
                 onPressed: () {}),
           ),

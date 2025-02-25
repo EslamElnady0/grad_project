@@ -18,7 +18,7 @@ class CustomSecondaryGradientButton extends StatelessWidget {
     return InnerShadow(
       shadows: [
         BoxShadow(
-            offset: Offset(-1, -1),
+            offset: const Offset(-1, -1),
             blurRadius: 12.3,
             color: AppColors.black.withOpacity(0.25))
       ],

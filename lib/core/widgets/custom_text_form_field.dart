@@ -63,7 +63,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
 
   Widget? _buildPrefixIcon() {
     if (widget.textInputType == TextInputType.emailAddress) {
-      return Icon(Icons.email_outlined, color: AppColors.gray);
+      return const Icon(Icons.email_outlined, color: AppColors.gray);
     } else if (widget.textInputType == TextInputType.visiblePassword) {
       return GestureDetector(
         onTap: () {
@@ -90,7 +90,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         color: Colors.black.withOpacity(0.1), // Adjust shadow color
         blurRadius: 10, // Softness of the shadow
         spreadRadius: 1, // Size of the shadow
-        offset: Offset(0, 2), // Position of shadow
+        offset: const Offset(0, 2), // Position of shadow
       ),
     );
   }

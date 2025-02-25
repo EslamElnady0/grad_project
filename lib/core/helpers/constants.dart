@@ -6,6 +6,7 @@ import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/annoucements/ui/views/annoucements_body.dart';
 import 'package:grad_project/features/forum/presentation/views/forum_views.dart';
 import 'package:grad_project/features/home/ui/models/drawer_item_model.dart';
+import 'package:grad_project/features/quizes/ui/models/quiz_advice_model.dart';
 import 'package:grad_project/features/subjects/presentation/views/subjects_view.dart';
 
 import '../../features/chat/ui/views/chat_outsider_body.dart';
@@ -100,16 +101,37 @@ class Constants {
     ];
   }
 
+  static List<QuizAdviceModel> localizedQuizAdviceList(context) {
+    return [
+      QuizAdviceModel(
+        title: S.of(context).prepareWell,
+        description: S.of(context).reviewTopics,
+      ),
+      QuizAdviceModel(
+        title: S.of(context).manageTime,
+        description: S.of(context).timeManagement,
+      ),
+      QuizAdviceModel(
+        title: S.of(context).readCarefully,
+        description: S.of(context).understandBeforeAnswering,
+      ),
+      QuizAdviceModel(
+        title: S.of(context).stayCalm,
+        description: S.of(context).stayConfident,
+      ),
+    ];
+  }
+
   static OutlineInputBorder inputBorder = OutlineInputBorder(
       borderRadius: BorderRadius.circular(16.r),
-      borderSide: BorderSide(
+      borderSide: const BorderSide(
         color: AppColors.black,
         width: 1.5,
       ));
 
   static DecoratedInputBorder shadowedInputBorder = DecoratedInputBorder(
       shadow: BoxShadow(
-          offset: Offset(0, 1),
+          offset: const Offset(0, 1),
           blurRadius: 16,
           spreadRadius: 1,
           color: AppColors.black.withOpacity(0.15)),
@@ -118,10 +140,10 @@ class Constants {
         borderRadius: BorderRadius.circular(12),
       ));
   static List<Widget> homeBodies = [
-    AnnoucementsBody(),
-    SubjectsView(),
-    ChatOutsiderBody(),
-    ForumViews()
+    const AnnoucementsBody(),
+    const SubjectsView(),
+    const ChatOutsiderBody(),
+    const ForumViews()
   ];
   static const List<Map<String, dynamic>> dummyMessages = [
     {
@@ -223,6 +245,18 @@ class Constants {
       "message": "أنا عندي فكرة 🌟 ليه ما نعملش تطبيق لإدارة المهام؟",
       "isMe": false
     },
+  ];
+  static const List<String> dummyAnswers = [
+    "To allow multiple inheritance",
+    "To hide the internal state of an object and protect it from unauthorized access",
+    "To increase the speed of code execution",
+    "To provide a way to write code without any classes",
+  ];
+  static const List<String> dummyChoices = [
+    "A)",
+    "B)",
+    "C)",
+    "D)",
   ];
 }
 

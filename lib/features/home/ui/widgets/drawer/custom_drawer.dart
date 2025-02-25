@@ -14,9 +14,9 @@ class CustomDrawer extends StatelessWidget {
       backgroundColor: AppColors.backGround,
       child: Column(
         children: [
-          DrawerTop(),
+          const DrawerTop(),
           vGap(12),
-          Expanded(child: DrawerItemsListView()),
+          const Expanded(child: DrawerItemsListView()),
         ],
       ),
     );
