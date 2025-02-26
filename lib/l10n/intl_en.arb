@@ -103,5 +103,8 @@
 "condition":"status",
  "weekly_schedule": "Weekly Schedule",
  "schedule_welcome_message": "📅 Welcome to the Weekly Schedule page! Select the days you want to view to easily track your lecture and practical session timings.",
- "profile_welcome_message":"👤Welcome to the profile page! 📝 Here you can review and update your personal information."
+ "profile_welcome_message":"👤Welcome to the profile page! 📝 Here you can review and update your personal information.",
+ "profile_picture" :"Profile Picture",
+ "Group":"Group",
+ "Section":"Section"
 }

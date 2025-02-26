@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
+import 'package:grad_project/features/profile/presentation/views/widgets/profile_card.dart';
 import 'package:grad_project/generated/l10n.dart';
 
 class ProfileViewBody extends StatelessWidget {
@@ -18,9 +20,12 @@ class ProfileViewBody extends StatelessWidget {
           ),
           TitleTextWidget(
             text: S.of(context).profile_welcome_message,
-          )
+          ),
+          vGap(10),
+          const ProfileCard()
         ],
       ),
     );
   }
 }
+

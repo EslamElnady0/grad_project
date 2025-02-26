@@ -859,6 +859,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Profile Picture`
+  String get profile_picture {
+    return Intl.message(
+      'Profile Picture',
+      name: 'profile_picture',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Group`
+  String get Group {
+    return Intl.message('Group', name: 'Group', desc: '', args: []);
+  }
+
+  /// `Section`
+  String get Section {
+    return Intl.message('Section', name: 'Section', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

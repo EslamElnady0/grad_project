@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "Group": MessageLookupByLibrary.simpleMessage("مجموعة"),
+    "Section": MessageLookupByLibrary.simpleMessage("سكشن"),
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "التقدم الأكاديمي",
     ),
@@ -100,6 +102,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "prepareWell": MessageLookupByLibrary.simpleMessage("📚 استعد مسبقًا"),
     "previous": MessageLookupByLibrary.simpleMessage("السابق"),
     "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+    "profile_picture": MessageLookupByLibrary.simpleMessage("الصورة الشخصية"),
     "profile_welcome_message": MessageLookupByLibrary.simpleMessage(
       "👤 مرحباً بك في صفحة البروفايل! 📝 هنا يمكنك مراجعة وتحديث معلوماتك الشخصية.",
     ),
