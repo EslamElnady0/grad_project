@@ -104,6 +104,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "previous": MessageLookupByLibrary.simpleMessage("Previous"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "profile_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "👤Welcome to the profile page! 📝 Here you can review and update your personal information.",
+    ),
     "question_statistics": MessageLookupByLibrary.simpleMessage(
       "Question statistics",
     ),

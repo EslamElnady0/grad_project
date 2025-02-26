@@ -849,6 +849,16 @@ class S {
       args: [],
     );
   }
+
+  /// `👤Welcome to the profile page! 📝 Here you can review and update your personal information.`
+  String get profile_welcome_message {
+    return Intl.message(
+      '👤Welcome to the profile page! 📝 Here you can review and update your personal information.',
+      name: 'profile_welcome_message',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

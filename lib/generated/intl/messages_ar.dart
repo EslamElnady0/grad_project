@@ -100,6 +100,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "prepareWell": MessageLookupByLibrary.simpleMessage("📚 استعد مسبقًا"),
     "previous": MessageLookupByLibrary.simpleMessage("السابق"),
     "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+    "profile_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "👤 مرحباً بك في صفحة البروفايل! 📝 هنا يمكنك مراجعة وتحديث معلوماتك الشخصية.",
+    ),
     "question_statistics": MessageLookupByLibrary.simpleMessage(
       "إحصائيات هذا السؤال",
     ),
