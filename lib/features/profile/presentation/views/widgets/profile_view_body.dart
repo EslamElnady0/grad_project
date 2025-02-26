@@ -22,7 +22,8 @@ class ProfileViewBody extends StatelessWidget {
             text: S.of(context).profile_welcome_message,
           ),
           vGap(10),
-          const ProfileCard()
+          const ProfileCard(),
+          
         ],
       ),
     );
