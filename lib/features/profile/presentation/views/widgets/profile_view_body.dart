@@ -19,46 +19,38 @@ class ProfileViewBody extends StatelessWidget {
     List<String> info = Constants.info;
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 10.h),
-      child: CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(
-            child: CustomInnerScreensAppBar(
-              title: S.of(context).profile,
-            ),
+      child: SingleChildScrollView(
+        child: Column(children: [
+          CustomInnerScreensAppBar(
+            title: S.of(context).profile,
           ),
-          SliverToBoxAdapter(
-            child: TitleTextWidget(
-              text: S.of(context).profile_welcome_message,
-            ),
+          TitleTextWidget(
+            text: S.of(context).profile_welcome_message,
           ),
-          SliverToBoxAdapter(child: vGap(10)),
-          const SliverToBoxAdapter(child: ProfileCard()),
-          const SliverToBoxAdapter(
-            child: Divider(
-              height: 30,
-              color: AppColors.gray,
-              indent: 70,
-              endIndent: 70,
-            ),
+          vGap(10),
+          const ProfileCard(),
+          const Divider(
+            height: 30,
+            color: AppColors.gray,
+            indent: 70,
+            endIndent: 70,
           ),
-          SliverToBoxAdapter(
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: AppColors.darkblue,
-              ),
-              height: 50,
-              child: Center(
-                child: Text(
-                  S.of(context).main_info,
-                  style: AppTextStyles.font13WhiteBold,
-                ),
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: AppColors.darkblue,
+            ),
+            height: 50,
+            child: Center(
+              child: Text(
+                S.of(context).main_info,
+                style: AppTextStyles.font13WhiteBold,
               ),
             ),
           ),
-          SliverToBoxAdapter(child: vGap(10)),
+          vGap(20),
           InfoWidgetListView(labels: labels, info: info)
-        ],
+        ]),
       ),
     );
   }
