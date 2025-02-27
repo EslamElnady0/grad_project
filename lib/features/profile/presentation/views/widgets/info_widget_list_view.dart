@@ -15,28 +15,31 @@ class InfoWidgetListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverList(
-        delegate: SliverChildBuilderDelegate((context, index) {
-          if (index == 3&& index + 1 < labels.length) {
-            return Column(
-              children: [
-                DoubleInfoWidget(
-                    label1: labels[index],
-                    content1: info[index],
-                    label2: labels[index + 1],
-                    content2: info[index + 1]),
-              vGap(10),],
-            );
-          } else if (index == 4) {
-            return vGap(10);
-          } else {
-            return Column(
-              children: [
-                InfoWidget(label: labels[index], content: info[index]),vGap(10),
-              ],
-            );
-          }
-        },
-        childCount: labels.length),);
+    return ListView.separated(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemBuilder: (context, index) {
+        if (index == 3 && index + 1 < labels.length) {
+          return Column(
+            children: [
+              DoubleInfoWidget(
+                  label1: labels[index],
+                  content1: info[index],
+                  label2: labels[index + 1],
+                  content2: info[index + 1]),
+            ],
+          );
+        } else if (index == 4) {
+          return const SizedBox.shrink();
+        } else {
+          return InfoWidget(label: labels[index], content: info[index]);
+        }
+      },
+      itemCount: labels.length,
+      separatorBuilder: (BuildContext context, int index) {
+        if (index == 3) return const SizedBox.shrink();
+        return vGap(10);
+      },
+    );
   }
 }
