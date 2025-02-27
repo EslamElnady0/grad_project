@@ -6,6 +6,7 @@ import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/annoucements/ui/views/annoucements_body.dart';
 import 'package:grad_project/features/forum/presentation/views/forum_views.dart';
 import 'package:grad_project/features/home/ui/models/drawer_item_model.dart';
+import 'package:grad_project/features/profile/presentation/views/profile_view.dart';
 import 'package:grad_project/features/quizes/ui/models/quiz_advice_model.dart';
 import 'package:grad_project/features/subjects/presentation/views/subjects_view.dart';
 
@@ -91,7 +92,9 @@ class Constants {
       DrawerItemModel(
         title: S.of(context).profile,
         iconPath: Assets.imagesSvgsPerson,
-        onTap: () {},
+        onTap: () {
+          GoRouter.of(context).push(ProfileView.routeName);
+        },
       ),
       DrawerItemModel(
         title: S.of(context).logout,
@@ -258,6 +261,15 @@ class Constants {
     "C)",
     "D)",
   ];
+
+  static const List<String> info = [
+  "إسلام إيهاب محمد لطفي",
+  "علوم حاسب (CS)",
+  "الرابعة",
+  "A",
+  "6",
+  "B-"
+];
 }
 
 final Map<String, List<Map<String, String>>> scheduleData = {
@@ -315,7 +327,6 @@ final Map<String, List<Map<String, String>>> scheduleData = {
       'status': 'في وقتها',
     }
   ],
-  
   "الاربعاء": [
     {
       'subject': 'Data Structure',

@@ -849,6 +849,81 @@ class S {
       args: [],
     );
   }
+
+  /// `👤Welcome to the profile page! 📝 Here you can review and update your personal information.`
+  String get profile_welcome_message {
+    return Intl.message(
+      '👤Welcome to the profile page! 📝 Here you can review and update your personal information.',
+      name: 'profile_welcome_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile Picture`
+  String get profile_picture {
+    return Intl.message(
+      'Profile Picture',
+      name: 'profile_picture',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Group`
+  String get Group {
+    return Intl.message('Group', name: 'Group', desc: '', args: []);
+  }
+
+  /// `Section`
+  String get Section {
+    return Intl.message('Section', name: 'Section', desc: '', args: []);
+  }
+
+  /// `Main information`
+  String get main_info {
+    return Intl.message(
+      'Main information',
+      name: 'main_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message('Name', name: 'name', desc: '', args: []);
+  }
+
+  /// `College`
+  String get college {
+    return Intl.message('College', name: 'college', desc: '', args: []);
+  }
+
+  /// `Level`
+  String get level {
+    return Intl.message('Level', name: 'level', desc: '', args: []);
+  }
+
+  /// `Group`
+  String get group {
+    return Intl.message('Group', name: 'group', desc: '', args: []);
+  }
+
+  /// `Section`
+  String get section {
+    return Intl.message('Section', name: 'section', desc: '', args: []);
+  }
+
+  /// `Overall Grade`
+  String get Overall_Grade {
+    return Intl.message(
+      'Overall Grade',
+      name: 'Overall_Grade',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
