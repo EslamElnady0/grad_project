@@ -261,6 +261,15 @@ class Constants {
     "C)",
     "D)",
   ];
+
+  static const List<String> info = [
+  "إسلام إيهاب محمد لطفي",
+  "علوم حاسب (CS)",
+  "الرابعة",
+  "A",
+  "6",
+  "B-"
+];
 }
 
 final Map<String, List<Map<String, String>>> scheduleData = {

@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "Group": MessageLookupByLibrary.simpleMessage("مجموعة"),
+    "Overall_Grade": MessageLookupByLibrary.simpleMessage("تقدير تراكمي"),
     "Section": MessageLookupByLibrary.simpleMessage("سكشن"),
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "التقدم الأكاديمي",
@@ -39,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "clearAnswerSelection": MessageLookupByLibrary.simpleMessage(
       "حذف تحديد الإجابة",
     ),
+    "college": MessageLookupByLibrary.simpleMessage("الكلية"),
     "community": MessageLookupByLibrary.simpleMessage("المنتدي"),
     "completed": MessageLookupByLibrary.simpleMessage("المكتملة"),
     "condition": MessageLookupByLibrary.simpleMessage("الحالة"),
@@ -79,17 +81,21 @@ class MessageLookup extends MessageLookupByLibrary {
       "تواصل. تعلّم. انطلق!",
     ),
     "goodLuck": MessageLookupByLibrary.simpleMessage("بالتوفيق! 🍀"),
+    "group": MessageLookupByLibrary.simpleMessage("مجموعة"),
     "in_progress": MessageLookupByLibrary.simpleMessage("قيد التنفيذ"),
     "interested": MessageLookupByLibrary.simpleMessage("مهتم"),
     "internalMap": MessageLookupByLibrary.simpleMessage("الخريطة الداخلية"),
+    "level": MessageLookupByLibrary.simpleMessage("الفرقة"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+    "main_info": MessageLookupByLibrary.simpleMessage("المعلومات الأساسية"),
     "manageTime": MessageLookupByLibrary.simpleMessage("⏰ نظم وقتك جيدًا"),
     "minute": MessageLookupByLibrary.simpleMessage("دقيقة"),
     "monday": MessageLookupByLibrary.simpleMessage("الإثنين"),
     "mostSreached": MessageLookupByLibrary.simpleMessage(
       "الاماكن الأكثر بحثاً!",
     ),
+    "name": MessageLookupByLibrary.simpleMessage("الإسم"),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
     "not_started": MessageLookupByLibrary.simpleMessage("لم يبدأ"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
@@ -132,6 +138,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       " ابحث عن مبني، مدرج، قاعة، الخ..!",
     ),
+    "section": MessageLookupByLibrary.simpleMessage("سكشن"),
     "security_confirmation": MessageLookupByLibrary.simpleMessage(
       "تاكيد للأمان!",
     ),

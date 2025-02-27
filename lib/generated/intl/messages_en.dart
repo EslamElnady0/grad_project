@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "Group": MessageLookupByLibrary.simpleMessage("Group"),
+    "Overall_Grade": MessageLookupByLibrary.simpleMessage("Overall Grade"),
     "Section": MessageLookupByLibrary.simpleMessage("Section"),
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "Academic Progress",
@@ -41,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "clearAnswerSelection": MessageLookupByLibrary.simpleMessage(
       "Clear Answer Selection",
     ),
+    "college": MessageLookupByLibrary.simpleMessage("College"),
     "community": MessageLookupByLibrary.simpleMessage("Community"),
     "completed": MessageLookupByLibrary.simpleMessage("Completed"),
     "condition": MessageLookupByLibrary.simpleMessage("status"),
@@ -81,17 +83,21 @@ class MessageLookup extends MessageLookupByLibrary {
       "Connect. Learn. Go!",
     ),
     "goodLuck": MessageLookupByLibrary.simpleMessage("Good Luck! 🍀"),
+    "group": MessageLookupByLibrary.simpleMessage("Group"),
     "in_progress": MessageLookupByLibrary.simpleMessage("In Progress"),
     "interested": MessageLookupByLibrary.simpleMessage("like"),
     "internalMap": MessageLookupByLibrary.simpleMessage("Internal Map"),
+    "level": MessageLookupByLibrary.simpleMessage("Level"),
     "login": MessageLookupByLibrary.simpleMessage("Log In"),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "main_info": MessageLookupByLibrary.simpleMessage("Main information"),
     "manageTime": MessageLookupByLibrary.simpleMessage("⏰ Manage Your Time"),
     "minute": MessageLookupByLibrary.simpleMessage("Minute"),
     "monday": MessageLookupByLibrary.simpleMessage("Monday"),
     "mostSreached": MessageLookupByLibrary.simpleMessage(
       "Most searched places!",
     ),
+    "name": MessageLookupByLibrary.simpleMessage("Name"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
     "not_started": MessageLookupByLibrary.simpleMessage("Not Started"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
@@ -134,6 +140,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       "Search for a building, lecture hall, room, etc..!",
     ),
+    "section": MessageLookupByLibrary.simpleMessage("Section"),
     "security_confirmation": MessageLookupByLibrary.simpleMessage(
       "Confirmation for security!",
     ),

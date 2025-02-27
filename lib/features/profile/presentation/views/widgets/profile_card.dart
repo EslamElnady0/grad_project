@@ -15,8 +15,7 @@ class ProfileCard extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
-          color: AppColors.darkblue,
-          borderRadius: BorderRadius.circular(15)),
+          color: AppColors.darkblue, borderRadius: BorderRadius.circular(15)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -32,7 +31,7 @@ class ProfileCard extends StatelessWidget {
             textAlign: TextAlign.center,
             text: TextSpan(
               style: AppTextStyles.font14WhiteSemiBold,
-              children: const[
+              children: const [
                 TextSpan(text: "إسلام إيهاب محمد لطفي\n"),
                 TextSpan(text: "(123456789)")
               ],

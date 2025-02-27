@@ -879,6 +879,51 @@ class S {
   String get Section {
     return Intl.message('Section', name: 'Section', desc: '', args: []);
   }
+
+  /// `Main information`
+  String get main_info {
+    return Intl.message(
+      'Main information',
+      name: 'main_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message('Name', name: 'name', desc: '', args: []);
+  }
+
+  /// `College`
+  String get college {
+    return Intl.message('College', name: 'college', desc: '', args: []);
+  }
+
+  /// `Level`
+  String get level {
+    return Intl.message('Level', name: 'level', desc: '', args: []);
+  }
+
+  /// `Group`
+  String get group {
+    return Intl.message('Group', name: 'group', desc: '', args: []);
+  }
+
+  /// `Section`
+  String get section {
+    return Intl.message('Section', name: 'section', desc: '', args: []);
+  }
+
+  /// `Overall Grade`
+  String get Overall_Grade {
+    return Intl.message(
+      'Overall Grade',
+      name: 'Overall_Grade',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
