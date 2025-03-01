@@ -939,6 +939,26 @@ class S {
   String get percentage {
     return Intl.message('Percentage', name: 'percentage', desc: '', args: []);
   }
+
+  /// `First Semester`
+  String get first_semester {
+    return Intl.message(
+      'First Semester',
+      name: 'first_semester',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Second Semester`
+  String get second_semester {
+    return Intl.message(
+      'Second Semester',
+      name: 'second_semester',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

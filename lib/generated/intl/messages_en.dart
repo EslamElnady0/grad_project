@@ -73,6 +73,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "filter": MessageLookupByLibrary.simpleMessage("Filter"),
     "finalResults": MessageLookupByLibrary.simpleMessage("Final Results"),
+    "first_semester": MessageLookupByLibrary.simpleMessage("First Semester"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "Forgot your password?",
     ),
@@ -144,6 +145,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       "Search for a building, lecture hall, room, etc..!",
     ),
+    "second_semester": MessageLookupByLibrary.simpleMessage("Second Semester"),
     "section": MessageLookupByLibrary.simpleMessage("Section"),
     "security_confirmation": MessageLookupByLibrary.simpleMessage(
       "Confirmation for security!",

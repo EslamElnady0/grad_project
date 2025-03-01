@@ -94,6 +94,10 @@ class Assets {
   /// assets/images/svgs/detailed_menu_icon.svg
   static const String imagesSvgsDetailedMenuIcon = "assets/images/svgs/detailed_menu_icon.svg";
 
+  /// Assets for imagesSvgsDropdown
+  /// assets/images/svgs/dropdown.svg
+  static const String imagesSvgsDropdown = "assets/images/svgs/dropdown.svg";
+
   /// Assets for imagesSvgsEditPictureIcon
   /// assets/images/svgs/Edit_picture_icon.svg
   static const String imagesSvgsEditPictureIcon = "assets/images/svgs/Edit_picture_icon.svg";

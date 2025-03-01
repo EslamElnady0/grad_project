@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
+import 'package:grad_project/features/academic_progress/presentation/views/widgets/custom_drop_down_button.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/widgets/custom_percent_indicator.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/widgets/green_dot.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
@@ -15,7 +16,7 @@ class AcademicProgressViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: 22.w,
+        horizontal: 20.w,
         vertical: 10.h,
       ),
       child: SingleChildScrollView(
@@ -38,6 +39,12 @@ class AcademicProgressViewBody extends StatelessWidget {
                   style: AppTextStyles.font16BlackSemiBold,
                 ),
               ],
+            ),
+            vGap(15),
+            Row(
+              children: [
+                CustomDropDownButton()
+              ],
             )
           ],
         ),
@@ -45,3 +52,6 @@ class AcademicProgressViewBody extends StatelessWidget {
     );
   }
 }
+
+
+

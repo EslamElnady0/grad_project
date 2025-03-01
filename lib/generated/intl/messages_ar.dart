@@ -71,6 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "filter": MessageLookupByLibrary.simpleMessage("تصفية"),
     "finalResults": MessageLookupByLibrary.simpleMessage("النتائج النهائية"),
+    "first_semester": MessageLookupByLibrary.simpleMessage("ترم أول"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة السر؟",
     ),
@@ -142,6 +143,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       " ابحث عن مبني، مدرج، قاعة، الخ..!",
     ),
+    "second_semester": MessageLookupByLibrary.simpleMessage("ترم ثاني"),
     "section": MessageLookupByLibrary.simpleMessage("سكشن"),
     "security_confirmation": MessageLookupByLibrary.simpleMessage(
       "تاكيد للأمان!",
