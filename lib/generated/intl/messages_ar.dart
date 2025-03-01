@@ -107,6 +107,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "once": MessageLookupByLibrary.simpleMessage("مرة واحدة"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "pending": MessageLookupByLibrary.simpleMessage("معلق"),
+    "percentage": MessageLookupByLibrary.simpleMessage("النسبة المئوية"),
     "place": MessageLookupByLibrary.simpleMessage("المكان"),
     "prepareWell": MessageLookupByLibrary.simpleMessage("📚 استعد مسبقًا"),
     "previous": MessageLookupByLibrary.simpleMessage("السابق"),

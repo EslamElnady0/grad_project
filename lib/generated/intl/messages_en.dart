@@ -109,6 +109,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "once": MessageLookupByLibrary.simpleMessage("Once"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
+    "percentage": MessageLookupByLibrary.simpleMessage("Percentage"),
     "place": MessageLookupByLibrary.simpleMessage("Place"),
     "prepareWell": MessageLookupByLibrary.simpleMessage(
       "📚 Prepare in Advance",

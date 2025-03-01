@@ -934,6 +934,11 @@ class S {
       args: [],
     );
   }
+
+  /// `Percentage`
+  String get percentage {
+    return Intl.message('Percentage', name: 'percentage', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

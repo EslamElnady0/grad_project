@@ -15,16 +15,23 @@ class CustomPercentIndicator extends StatelessWidget {
       child: CircularPercentIndicator(
         radius: 50.0,
         lineWidth: 10.0,
-        percent: 0.25, // 25%
-        center: const Text("25%",
-            style: TextStyle(
-                fontSize: 23,
-                fontWeight: FontWeight.w400,
-                color: AppColors.primaryColordark)),
-        progressColor: AppColors.primaryColordark,
+        percent: .4,
+        center: const Text(
+          "40%",
+          style: TextStyle(
+            fontSize: 23,
+            fontWeight: FontWeight.w400,
+            color: AppColors.primaryColordark,
+          ),
+        ),
         backgroundColor: Colors.transparent,
         fillColor: AppColors.lightGreen,
         circularStrokeCap: CircularStrokeCap.round,
+        linearGradient: const LinearGradient(
+          colors: [AppColors.primaryColordark, AppColors.primaryColorlight],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
       ),
     );
   }
