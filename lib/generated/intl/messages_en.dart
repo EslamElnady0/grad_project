@@ -28,6 +28,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "Academic Progress",
     ),
+    "academic_progress_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "🎓Find out your academic level with ease. Details of your grades and ranking are at your fingertips!",
+    ),
     "add_your_question": MessageLookupByLibrary.simpleMessage(
       "Add your question!",
     ),

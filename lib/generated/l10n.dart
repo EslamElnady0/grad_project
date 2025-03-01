@@ -924,6 +924,16 @@ class S {
       args: [],
     );
   }
+
+  /// `🎓Find out your academic level with ease. Details of your grades and ranking are at your fingertips!`
+  String get academic_progress_welcome_message {
+    return Intl.message(
+      '🎓Find out your academic level with ease. Details of your grades and ranking are at your fingertips!',
+      name: 'academic_progress_welcome_message',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

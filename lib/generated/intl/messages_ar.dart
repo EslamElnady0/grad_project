@@ -28,6 +28,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "التقدم الأكاديمي",
     ),
+    "academic_progress_welcome_message": MessageLookupByLibrary.simpleMessage(
+      " !تعرّف على مستواك الأكاديمي بكل سهولة تفاصيل درجاتك وترتيبك في متناول يدك🎓",
+    ),
     "add_your_question": MessageLookupByLibrary.simpleMessage("أضف سؤالك !"),
     "all_days": MessageLookupByLibrary.simpleMessage("كل الأيام"),
     "announcements": MessageLookupByLibrary.simpleMessage("الأخبار المعلنه"),

@@ -113,5 +113,6 @@
     "level":"الفرقة",
     "group":"مجموعة",
     "section":"سكشن",
-    "Overall_Grade":"تقدير تراكمي"
+    "Overall_Grade":"تقدير تراكمي",
+    "academic_progress_welcome_message":" !تعرّف على مستواك الأكاديمي بكل سهولة تفاصيل درجاتك وترتيبك في متناول يدك🎓"
 }
