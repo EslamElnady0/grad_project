@@ -17,7 +17,7 @@ import '../../features/subjects/presentation/views/materials_view.dart';
 
 abstract class AppRouter {
   static final router = GoRouter(
-    initialLocation:AnswersView.routeName,
+    initialLocation:HomeView.routeName,
     routes: [
       GoRoute(
         path: SplashView.routeName,
@@ -73,7 +73,7 @@ abstract class AppRouter {
       GoRoute(
         path: AnswersView.routeName,
         builder: (context, state) => const AnswersView()
-      )
+      ),
     ],
   );
 }

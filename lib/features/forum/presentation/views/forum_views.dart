@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grad_project/core/widgets/custom_scaffold.dart';
 import 'widgets/forum_view_body.dart';
 
 class ForumViews extends StatelessWidget {
@@ -6,6 +7,8 @@ class ForumViews extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ForumViewsBody();
+    return const CustomScaffold(
+      body: ForumViewsBody(),
+    );
   }
 }
