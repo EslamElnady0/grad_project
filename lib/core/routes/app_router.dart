@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:grad_project/features/auth/presentation/views/forget_password_view.dart';
 import 'package:grad_project/features/auth/presentation/views/confirm_account_view.dart';
 import 'package:grad_project/features/chat/ui/views/chat_view.dart';
+import 'package:grad_project/features/forum/presentation/views/answers_view.dart';
 import 'package:grad_project/features/map/presentation/views/internal_map_view.dart';
 import 'package:grad_project/features/profile/presentation/views/profile_view.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_details_view.dart';
@@ -68,7 +69,11 @@ abstract class AppRouter {
       GoRoute(
         path: MaterialsView.routeName,
         builder: (context, state) => const MaterialsView()
-      )
+      ),
+      GoRoute(
+        path: AnswersView.routeName,
+        builder: (context, state) => const AnswersView()
+      ),
     ],
   );
 }

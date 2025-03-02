@@ -28,7 +28,10 @@ class AnnoucementItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const ItemHeader(),
+        const ItemHeader(
+                  name: "أ.د. أحمد المنوفي",
+                  specialization:  "أستاذ ودكتور مادة OOP" ,
+                ),
           vGap(12),
           Text(
             "📢 إعلان هام",

@@ -22,6 +22,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "Answers": MessageLookupByLibrary.simpleMessage("الإجابات"),
+    "Answers_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "هنا يمكنك استعراض جميع الإجابات المقدمة للسؤال. اقرأ آراء زملائك واقتراحاتهم!",
+    ),
     "Group": MessageLookupByLibrary.simpleMessage("مجموعة"),
     "Overall_Grade": MessageLookupByLibrary.simpleMessage("تقدير تراكمي"),
     "Section": MessageLookupByLibrary.simpleMessage("سكشن"),
