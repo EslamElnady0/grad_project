@@ -122,5 +122,7 @@
   "lectures": "Lectures",
   "sections": "Sections",
   "assignment": "Assignment",
-  "all":"all"
+  "all":"all",
+  "Answers_welcome_message": "هنا يمكنك استعراض جميع الإجابات المقدمة للسؤال. اقرأ آراء زملائك واقتراحاتهم!",
+  "Answers": "الإجابات"
 }

@@ -974,6 +974,21 @@ class S {
   String get all {
     return Intl.message('all', name: 'all', desc: '', args: []);
   }
+
+  /// `هنا يمكنك استعراض جميع الإجابات المقدمة للسؤال. اقرأ آراء زملائك واقتراحاتهم!`
+  String get Answers_welcome_message {
+    return Intl.message(
+      'هنا يمكنك استعراض جميع الإجابات المقدمة للسؤال. اقرأ آراء زملائك واقتراحاتهم!',
+      name: 'Answers_welcome_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `الإجابات`
+  String get Answers {
+    return Intl.message('الإجابات', name: 'Answers', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
