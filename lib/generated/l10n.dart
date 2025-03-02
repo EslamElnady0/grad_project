@@ -924,6 +924,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Material`
+  String get material {
+    return Intl.message('Material', name: 'material', desc: '', args: []);
+  }
+
+  /// `🎓📚 Everything you need for your course in one place: lectures, sections, assignments, quizzes, videos, midterms, and final exams!`
+  String get material_description {
+    return Intl.message(
+      '🎓📚 Everything you need for your course in one place: lectures, sections, assignments, quizzes, videos, midterms, and final exams!',
+      name: 'material_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `complete`
+  String get complete {
+    return Intl.message('complete', name: 'complete', desc: '', args: []);
+  }
+
+  /// `open`
+  String get open {
+    return Intl.message('open', name: 'open', desc: '', args: []);
+  }
+
+  /// `download`
+  String get download {
+    return Intl.message('download', name: 'download', desc: '', args: []);
+  }
+
+  /// `Lectures`
+  String get lectures {
+    return Intl.message('Lectures', name: 'lectures', desc: '', args: []);
+  }
+
+  /// `Sections`
+  String get sections {
+    return Intl.message('Sections', name: 'sections', desc: '', args: []);
+  }
+
+  /// `Assignment`
+  String get assignment {
+    return Intl.message('Assignment', name: 'assignment', desc: '', args: []);
+  }
+
+  /// `all`
+  String get all {
+    return Intl.message('all', name: 'all', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
