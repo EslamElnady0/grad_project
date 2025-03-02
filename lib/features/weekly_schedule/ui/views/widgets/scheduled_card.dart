@@ -72,7 +72,7 @@ class ScheduleCard extends StatelessWidget {
                         ? Radius.circular(16.r)
                         : Radius.zero,
               ),
-              gradient: LinearGradient(
+              gradient:const LinearGradient(
                 colors: [
                   AppColors.primaryColorlight,
                   AppColors.primaryColordark
@@ -87,8 +87,8 @@ class ScheduleCard extends StatelessWidget {
             color: Colors.white,
             width: 840.w,
             child: Table(
-              border: TableBorder.symmetric(
-                inside: const BorderSide(
+              border:const TableBorder.symmetric(
+                inside:  BorderSide(
                   color: AppColors.gray,
                   width: 1,
                 ),

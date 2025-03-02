@@ -18,7 +18,7 @@ class WeeklyScheduleFilter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> filterDays = [...days];
-    filterDays.insert(0, S.of(context).all_days); // Add "All Days" at index 0
+    filterDays.insert(0, S.of(context).all_days); 
 
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
@@ -32,7 +32,7 @@ class WeeklyScheduleFilter extends StatelessWidget {
                 isPressed: selectedDays.contains(filterDays[index]),
                 onTap: () => toggleSelection(filterDays[index]),
               ),
-              const SizedBox(width: 12), // Space between items
+              const SizedBox(width: 12), 
             ],
           ),
         ),

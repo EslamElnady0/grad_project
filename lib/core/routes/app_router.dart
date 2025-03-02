@@ -12,16 +12,18 @@ import 'package:grad_project/features/weekly_schedule/ui/views/screens/weekly_sc
 import '../../features/auth/presentation/views/auth_view.dart';
 import '../../features/home/ui/cubit/bottom_nav_bar_cubit.dart';
 import '../../features/home/ui/views/home_view.dart';
+import '../../features/subjects/presentation/views/materials_view.dart';
 
 abstract class AppRouter {
   static final router = GoRouter(
+    initialLocation:HomeView.routeName,
     routes: [
       GoRoute(
-        path: "/a",
+        path: SplashView.routeName,
         builder: (context, state) => const SplashView(),
       ),
       GoRoute(
-        path: "/",
+        path: HomeView.routeName ,
         builder: (context, state) => BlocProvider(
           create: (context) => BottomNavBarCubit(),
           child: const HomeView(),
@@ -62,6 +64,10 @@ abstract class AppRouter {
       GoRoute(
         path: ProfileView.routeName,
         builder: (context, state) => const ProfileView(),
+      ),
+      GoRoute(
+        path: MaterialsView.routeName,
+        builder: (context, state) => const MaterialsView()
       )
     ],
   );

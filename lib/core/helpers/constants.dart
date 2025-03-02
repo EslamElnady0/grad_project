@@ -272,6 +272,106 @@ class Constants {
 ];
 }
 
+Map<String, List<Map<String, String>>> materialData = {
+  "الأسبوع الأول": [
+    {
+      "fileName": "Lecture 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/lecture1"
+    },
+    {
+      "fileName": "Section 1",
+      "fileType": "pdf",
+      "status": "not complete",
+      "link": "https://example.com/section1"
+    },
+    {
+      "fileName": "Introduction OOP",
+      "fileType": "video",
+      "status": "complete",
+      "link": "https://example.com/introduction-oop"
+    },
+    {
+      "fileName": "Assignment 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/assignment1"
+    },
+    {
+      "fileName": "Quiz lec 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/quiz1"
+    }
+  ],
+  "الاسبوع الثاني": [
+    {
+      "fileName": "Lecture 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/lecture1"
+    },
+    {
+      "fileName": "Section 1",
+      "fileType": "pdf",
+      "status": "not complete",
+      "link": "https://example.com/section1"
+    },
+    {
+      "fileName": "Introduction OOP",
+      "fileType": "video",
+      "status": "complete",
+      "link": "https://example.com/introduction-oop"
+    },
+    {
+      "fileName": "Assignment 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/assignment1"
+    },
+    {
+      "fileName": "Quiz lec 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/quiz1"
+    }
+  ],
+ "الاسبوع الثالث": [
+    {
+      "fileName": "Lecture 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/lecture1"
+    },
+    {
+      "fileName": "Section 1",
+      "fileType": "pdf",
+      "status": "not complete",
+      "link": "https://example.com/section1"
+    },
+    {
+      "fileName": "Introduction OOP",
+      "fileType": "video",
+      "status": "complete",
+      "link": "https://example.com/introduction-oop"
+    },
+    {
+      "fileName": "Assignment 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/assignment1"
+    },
+    {
+      "fileName": "Quiz lec 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/quiz1"
+    }
+  ],
+};
+
+
 final Map<String, List<Map<String, String>>> scheduleData = {
   'السبت': [
     {
@@ -379,4 +479,7 @@ final Map<String, List<Map<String, String>>> scheduleData = {
       'status': 'في وقتها',
     }
   ]
+
+
+  
 };

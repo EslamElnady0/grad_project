@@ -45,19 +45,19 @@ class ButtonRow extends StatelessWidget {
               style:
                   AppTextStyles.font16WhiteSemiBold.copyWith(fontSize: 14.sp)),
         ),
-        Spacer(),
+     const   Spacer(),
         GestureDetector(
           onTap: () => showStatsDialog(context),
           child: Container(
             decoration: BoxDecoration(
-              gradient: LinearGradient(
+              gradient:const LinearGradient(
                 colors: [AppColors.redDark, AppColors.redlight],
                 begin: Alignment.bottomCenter,
                 end: Alignment.topCenter,
               ),
               borderRadius: BorderRadius.circular(12),
             ),
-            padding: EdgeInsets.all(12),
+            padding:const EdgeInsets.all(12),
             child: SvgPicture.asset(Assets.imagesSvgsChart),
           ),
         ),

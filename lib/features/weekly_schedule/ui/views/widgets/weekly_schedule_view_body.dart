@@ -55,7 +55,7 @@ class WeeklyScheduleViewBody extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        ScheduleHeader(),
+                      const  ScheduleHeader(),
                         vGap(10),
                         SizedBox(
                           width: 950.w,
@@ -63,7 +63,7 @@ class WeeklyScheduleViewBody extends StatelessWidget {
                             scrollDirection: Axis.vertical,
                             shrinkWrap: true,
                             itemCount: filteredDays.length,
-                            physics: NeverScrollableScrollPhysics(),
+                            physics:const NeverScrollableScrollPhysics(),
                             itemBuilder: (context, index) {
                               String day = filteredDays[index];
                               List<Map<String, String>> dayData = scheduleData[day]!;
