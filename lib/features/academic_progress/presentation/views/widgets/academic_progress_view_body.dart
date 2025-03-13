@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
-import 'package:grad_project/features/academic_progress/presentation/views/widgets/custom_drop_down_button.dart';
+import 'package:grad_project/core/widgets/custom_drop_down_button.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/widgets/custom_percent_indicator.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/widgets/green_dot.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
@@ -16,7 +16,7 @@ class AcademicProgressViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: 20.w,
+        horizontal: 10.w,
         vertical: 10.h,
       ),
       child: SingleChildScrollView(
@@ -43,7 +43,33 @@ class AcademicProgressViewBody extends StatelessWidget {
             vGap(15),
             Row(
               children: [
-                CustomDropDownButton()
+                CustomDropDownButton(
+                  values: [
+                    S.of(context).first_semester,
+                    S.of(context).second_semester,
+                  ],
+                ),
+                hGap(15),
+                Container(
+                  height: 48,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12)),
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  child: Row(
+                    children: [
+                      Text(
+                        "${S.of(context).number_of_subjects}: 6",
+                        style: AppTextStyles.font14BlackSemiBold,
+                      ),
+                      hGap(10),
+                      Text(
+                        "${S.of(context).total}: 500",
+                        style: AppTextStyles.font14BlackSemiBold,
+                      ),
+                    ],
+                  ),
+                )
               ],
             )
           ],
@@ -52,6 +78,3 @@ class AcademicProgressViewBody extends StatelessWidget {
     );
   }
 }
-
-
-

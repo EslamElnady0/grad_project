@@ -8,8 +8,10 @@ import 'package:grad_project/generated/l10n.dart';
 
 class CustomDropDownButton extends StatelessWidget {
   const CustomDropDownButton({
-    super.key,
+    super.key, required this.values,
   });
+
+  final List<String> values;
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +28,7 @@ class CustomDropDownButton extends StatelessWidget {
             padding: const EdgeInsets.only(right: 12),
             child: SvgPicture.asset(Assets.imagesSvgsDropdown),
           ),
-          items: [
-            customDropDownMenuItem(
-                value: S.of(context).first_semester),
-            customDropDownMenuItem(
-                value: S.of(context).second_semester)
-          ],
+          items: customDropDownMenuItems(values: values),
           onChanged: (value) {
             value = value;
           },
@@ -41,13 +38,15 @@ class CustomDropDownButton extends StatelessWidget {
   }
 }
 
-DropdownMenuItem<String> customDropDownMenuItem(
-    {required String value, context}) {
-  return DropdownMenuItem(
-    value: value,
-    child: Text(
-      value,
-      style: AppTextStyles.font12WhiteSemiBold,
-    ),
-  );
+List<DropdownMenuItem<String>> customDropDownMenuItems(
+    {required List<String> values}) {
+  return values
+      .map((value) => DropdownMenuItem(
+            value: value,
+            child: Text(
+              value,
+              style: AppTextStyles.font12WhiteSemiBold,
+            ),
+          ))
+      .toList();
 }

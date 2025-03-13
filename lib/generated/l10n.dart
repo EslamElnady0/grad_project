@@ -940,24 +940,39 @@ class S {
     return Intl.message('Percentage', name: 'percentage', desc: '', args: []);
   }
 
-  /// `First Semester`
+  /// `1st Semester`
   String get first_semester {
     return Intl.message(
-      'First Semester',
+      '1st Semester',
       name: 'first_semester',
       desc: '',
       args: [],
     );
   }
 
-  /// `Second Semester`
+  /// `2nd Semester`
   String get second_semester {
     return Intl.message(
-      'Second Semester',
+      '2nd Semester',
       name: 'second_semester',
       desc: '',
       args: [],
     );
+  }
+
+  /// `Subjects count`
+  String get number_of_subjects {
+    return Intl.message(
+      'Subjects count',
+      name: 'number_of_subjects',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total`
+  String get total {
+    return Intl.message('Total', name: 'total', desc: '', args: []);
   }
 }
 

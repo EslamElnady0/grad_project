@@ -105,6 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
       "المرات المسموح بها",
     ),
+    "number_of_subjects": MessageLookupByLibrary.simpleMessage("عدد المواد"),
     "once": MessageLookupByLibrary.simpleMessage("مرة واحدة"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "pending": MessageLookupByLibrary.simpleMessage("معلق"),
@@ -185,6 +186,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "timeRemaining": MessageLookupByLibrary.simpleMessage("الوقت المتبقي"),
     "timeSchedule": MessageLookupByLibrary.simpleMessage("الجدول الزمني"),
+    "total": MessageLookupByLibrary.simpleMessage("المجموع"),
     "tuesday": MessageLookupByLibrary.simpleMessage("الثلاثاء"),
     "type": MessageLookupByLibrary.simpleMessage("النوع"),
     "understandBeforeAnswering": MessageLookupByLibrary.simpleMessage(

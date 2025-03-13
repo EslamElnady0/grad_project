@@ -73,7 +73,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "filter": MessageLookupByLibrary.simpleMessage("Filter"),
     "finalResults": MessageLookupByLibrary.simpleMessage("Final Results"),
-    "first_semester": MessageLookupByLibrary.simpleMessage("First Semester"),
+    "first_semester": MessageLookupByLibrary.simpleMessage("1st Semester"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "Forgot your password?",
     ),
@@ -106,6 +106,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "not_started": MessageLookupByLibrary.simpleMessage("Not Started"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
       "Allowed Attempts",
+    ),
+    "number_of_subjects": MessageLookupByLibrary.simpleMessage(
+      "Subjects count",
     ),
     "once": MessageLookupByLibrary.simpleMessage("Once"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
@@ -145,7 +148,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       "Search for a building, lecture hall, room, etc..!",
     ),
-    "second_semester": MessageLookupByLibrary.simpleMessage("Second Semester"),
+    "second_semester": MessageLookupByLibrary.simpleMessage("2nd Semester"),
     "section": MessageLookupByLibrary.simpleMessage("Section"),
     "security_confirmation": MessageLookupByLibrary.simpleMessage(
       "Confirmation for security!",
@@ -189,6 +192,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "timeRemaining": MessageLookupByLibrary.simpleMessage("Time Remaining"),
     "timeSchedule": MessageLookupByLibrary.simpleMessage("Time Schedule"),
+    "total": MessageLookupByLibrary.simpleMessage("Total"),
     "tuesday": MessageLookupByLibrary.simpleMessage("Tuesday"),
     "type": MessageLookupByLibrary.simpleMessage("Type"),
     "understandBeforeAnswering": MessageLookupByLibrary.simpleMessage(

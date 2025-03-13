@@ -116,6 +116,8 @@
 "Overall_Grade":"Overall Grade",
 "academic_progress_welcome_message":"🎓Find out your academic level with ease. Details of your grades and ranking are at your fingertips!",
 "percentage": "Percentage",
-"first_semester": "First Semester",
-"second_semester": "Second Semester"
+"first_semester": "1st Semester",
+"second_semester": "2nd Semester",
+"number_of_subjects":"Subjects count",
+"total":"Total"
 }
