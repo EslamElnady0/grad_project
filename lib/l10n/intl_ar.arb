@@ -119,5 +119,11 @@
     "first_semester": "ترم أول",
     "second_semester": "ترم ثاني",
     "number_of_subjects":"عدد المواد",
-    "total":"المجموع"
+    "total":"المجموع",
+    "subject":"المادة",
+    "attendance":"الحضور",
+    "assignments":"التكاليف",
+    "midterm":"الميدتيرم",
+    "class_work":"أعمال الفصل",
+    "final_exam":"الإختبار النهائي"
 }

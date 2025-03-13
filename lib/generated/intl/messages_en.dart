@@ -38,8 +38,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "announcements": MessageLookupByLibrary.simpleMessage("Announcements"),
     "answer": MessageLookupByLibrary.simpleMessage("Answer"),
     "app_title": MessageLookupByLibrary.simpleMessage("E-Learning"),
+    "assignments": MessageLookupByLibrary.simpleMessage("Assignments"),
+    "attendance": MessageLookupByLibrary.simpleMessage("Attendance"),
     "chat": MessageLookupByLibrary.simpleMessage("Chat"),
     "classWork": MessageLookupByLibrary.simpleMessage("Classwork"),
+    "class_work": MessageLookupByLibrary.simpleMessage("Classwork"),
     "classes": MessageLookupByLibrary.simpleMessage("Classes:"),
     "classification": MessageLookupByLibrary.simpleMessage("Category"),
     "clearAnswerSelection": MessageLookupByLibrary.simpleMessage(
@@ -73,6 +76,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "filter": MessageLookupByLibrary.simpleMessage("Filter"),
     "finalResults": MessageLookupByLibrary.simpleMessage("Final Results"),
+    "final_exam": MessageLookupByLibrary.simpleMessage("Final exam"),
     "first_semester": MessageLookupByLibrary.simpleMessage("1st Semester"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "Forgot your password?",
@@ -96,6 +100,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "main_info": MessageLookupByLibrary.simpleMessage("Main information"),
     "manageTime": MessageLookupByLibrary.simpleMessage("⏰ Manage Your Time"),
+    "midterm": MessageLookupByLibrary.simpleMessage("Midterm"),
     "minute": MessageLookupByLibrary.simpleMessage("Minute"),
     "monday": MessageLookupByLibrary.simpleMessage("Monday"),
     "mostSreached": MessageLookupByLibrary.simpleMessage(
@@ -175,6 +180,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "students online now",
     ),
     "study": MessageLookupByLibrary.simpleMessage("Study"),
+    "subject": MessageLookupByLibrary.simpleMessage("Subject"),
     "subject_name": MessageLookupByLibrary.simpleMessage("Subject Name"),
     "submitAndFinish": MessageLookupByLibrary.simpleMessage("Submit & Finish"),
     "success_message": MessageLookupByLibrary.simpleMessage(

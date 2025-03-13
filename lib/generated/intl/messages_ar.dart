@@ -36,8 +36,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "announcements": MessageLookupByLibrary.simpleMessage("الأخبار المعلنه"),
     "answer": MessageLookupByLibrary.simpleMessage("إجابة"),
     "app_title": MessageLookupByLibrary.simpleMessage("التعليم الالكتروني"),
+    "assignments": MessageLookupByLibrary.simpleMessage("التكاليف"),
+    "attendance": MessageLookupByLibrary.simpleMessage("الحضور"),
     "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
     "classWork": MessageLookupByLibrary.simpleMessage("أعمال السنة"),
+    "class_work": MessageLookupByLibrary.simpleMessage("أعمال الفصل"),
     "classes": MessageLookupByLibrary.simpleMessage("الفصول:"),
     "classification": MessageLookupByLibrary.simpleMessage("التصنيف"),
     "clearAnswerSelection": MessageLookupByLibrary.simpleMessage(
@@ -71,6 +74,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "filter": MessageLookupByLibrary.simpleMessage("تصفية"),
     "finalResults": MessageLookupByLibrary.simpleMessage("النتائج النهائية"),
+    "final_exam": MessageLookupByLibrary.simpleMessage("الإختبار النهائي"),
     "first_semester": MessageLookupByLibrary.simpleMessage("ترم أول"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة السر؟",
@@ -94,6 +98,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "main_info": MessageLookupByLibrary.simpleMessage("المعلومات الأساسية"),
     "manageTime": MessageLookupByLibrary.simpleMessage("⏰ نظم وقتك جيدًا"),
+    "midterm": MessageLookupByLibrary.simpleMessage("الميدتيرم"),
     "minute": MessageLookupByLibrary.simpleMessage("دقيقة"),
     "monday": MessageLookupByLibrary.simpleMessage("الإثنين"),
     "mostSreached": MessageLookupByLibrary.simpleMessage(
@@ -169,6 +174,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage("طالب نشط الآن"),
     "study": MessageLookupByLibrary.simpleMessage("دراسة"),
+    "subject": MessageLookupByLibrary.simpleMessage("المادة"),
     "subject_name": MessageLookupByLibrary.simpleMessage("اسم المادة"),
     "submitAndFinish": MessageLookupByLibrary.simpleMessage("الإنهاء والتقديم"),
     "success_message": MessageLookupByLibrary.simpleMessage(

@@ -974,6 +974,36 @@ class S {
   String get total {
     return Intl.message('Total', name: 'total', desc: '', args: []);
   }
+
+  /// `Subject`
+  String get subject {
+    return Intl.message('Subject', name: 'subject', desc: '', args: []);
+  }
+
+  /// `Attendance`
+  String get attendance {
+    return Intl.message('Attendance', name: 'attendance', desc: '', args: []);
+  }
+
+  /// `Assignments`
+  String get assignments {
+    return Intl.message('Assignments', name: 'assignments', desc: '', args: []);
+  }
+
+  /// `Midterm`
+  String get midterm {
+    return Intl.message('Midterm', name: 'midterm', desc: '', args: []);
+  }
+
+  /// `Classwork`
+  String get class_work {
+    return Intl.message('Classwork', name: 'class_work', desc: '', args: []);
+  }
+
+  /// `Final exam`
+  String get final_exam {
+    return Intl.message('Final exam', name: 'final_exam', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
