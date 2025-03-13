@@ -3,8 +3,8 @@ import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 
-class LabelsLIstView extends StatelessWidget {
-  const LabelsLIstView({
+class LabelsListView extends StatelessWidget {
+  const LabelsListView({
     super.key,
     required this.labels,
   });

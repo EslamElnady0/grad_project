@@ -6,7 +6,7 @@ import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
 import 'package:grad_project/core/widgets/custom_drop_down_button.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/widgets/custom_percent_indicator.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/widgets/green_dot.dart';
-import 'package:grad_project/features/academic_progress/presentation/views/widgets/labels_lisview.dart';
+import 'package:grad_project/features/academic_progress/presentation/views/widgets/labels_listview.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
 import 'package:grad_project/generated/l10n.dart';
 
@@ -74,7 +74,7 @@ class AcademicProgressViewBody extends StatelessWidget {
               ],
             ),
             vGap(15),
-            LabelsLIstView(
+            LabelsListView(
               labels: [
                 S.of(context).subject,
                 S.of(context).attendance,
