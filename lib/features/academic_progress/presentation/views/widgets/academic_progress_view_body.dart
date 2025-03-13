@@ -65,7 +65,7 @@ class AcademicProgressViewBody extends StatelessWidget {
                       ),
                       hGap(10),
                       Text(
-                        "${S.of(context).total}: 500",
+                        "${S.of(context).total}: 689",
                         style: AppTextStyles.font14BlackSemiBold,
                       ),
                     ],

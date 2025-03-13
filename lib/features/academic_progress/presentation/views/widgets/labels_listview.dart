@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
-import 'package:grad_project/core/theme/app_text_styles.dart';
+import 'package:grad_project/features/academic_progress/presentation/views/widgets/label_widget.dart';
 
 class LabelsListView extends StatelessWidget {
   const LabelsListView({
@@ -18,21 +17,7 @@ class LabelsListView extends StatelessWidget {
       height: 60,
       child: ListView.separated(
         itemBuilder: (BuildContext context, int index) {
-          return Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            decoration: BoxDecoration(
-                gradient: Constants.secondaryGrad,
-                borderRadius: BorderRadius.circular(12)),
-            child: Center(
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Text(
-                  labels[index],
-                  style: AppTextStyles.font14WhiteSemiBold,
-                ),
-              ),
-            ),
-          );
+          return LabelWidget(labels: labels, index: index);
         },
         separatorBuilder: (BuildContext context, int index) {
           return hGap(15);
