@@ -15,14 +15,16 @@ class CustomTextAndIconButton extends StatelessWidget {
   final VoidCallback onTap;
   final TextStyle? style;
   final double? width;
-
+  final Color? color;
   const CustomTextAndIconButton({
     super.key,
     required this.text,
     required this.onTap,
     required this.icon,
     this.style,
-    required this.primaryButton, this.width,
+    this.color,
+    required this.primaryButton,
+    this.width,
   });
 
   @override
@@ -31,21 +33,24 @@ class CustomTextAndIconButton extends StatelessWidget {
       width: width,
       padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 15.w),
       decoration: BoxDecoration(
+        color: color,
         borderRadius: BorderRadius.circular(12.r),
-        gradient: primaryButton
-            ? LinearGradient(
-                colors: [
-                  AppColors.primaryColorlight,
-                  AppColors.primaryColordark
-                ],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              )
-            : LinearGradient(
-                colors: [AppColors.redlight, AppColors.redDark],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
+        gradient: color == null
+            ? (primaryButton
+                ? const LinearGradient(
+                    colors: [
+                      AppColors.primaryColorlight,
+                      AppColors.primaryColordark
+                    ],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  )
+                : const LinearGradient(
+                    colors: [AppColors.redlight, AppColors.redDark],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  ))
+            : null,
         boxShadow: [
           BoxShadow(
             offset: const Offset(0, 4),
