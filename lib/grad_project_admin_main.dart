@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/core/flavors/flavors_functions.dart';
+import 'package:grad_project/core/routes/admin_router.dart';
 import 'core/cubits/bloc_observer.dart';
-import 'core/routes/app_router.dart';
 import 'core/theme/app_theme.dart';
 import 'generated/l10n.dart';
 
@@ -11,6 +12,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
   Bloc.observer = GradBlocObserver();
+  FlavorsFunctions.setupAdminFlover();
   runApp(const GradProjectAdminApp());
 }
 
@@ -29,7 +31,7 @@ class GradProjectAdminApp extends StatelessWidget {
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
         locale: const Locale('en'),
-        routerConfig: AppRouter.router,
+        routerConfig:AdminRouter.router,
         localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,

@@ -19,7 +19,6 @@ import '../widgets/decorated_input_border.dart';
 
 class Constants {
   const Constants._();
-
   static const LinearGradient primaryGrad = LinearGradient(
     colors: [AppColors.primaryColorlight, AppColors.primaryColordark],
     begin: Alignment.topCenter,
