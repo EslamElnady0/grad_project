@@ -32,6 +32,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "التقدم الأكاديمي",
     ),
+    "add_new": MessageLookupByLibrary.simpleMessage(" إضافة جديد"),
+    "add_new_news": MessageLookupByLibrary.simpleMessage(
+      "🆕 أضف خبرًا جديدًا لإبقاء طلابك على اطلاع دائم بكل التحديثات والمستجدات",
+    ),
+    "add_news": MessageLookupByLibrary.simpleMessage("أضف خبر !"),
     "add_your_question": MessageLookupByLibrary.simpleMessage("أضف سؤالك !"),
     "all": MessageLookupByLibrary.simpleMessage("الكل"),
     "all_days": MessageLookupByLibrary.simpleMessage("كل الأيام"),
@@ -39,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "answer": MessageLookupByLibrary.simpleMessage("إجابة"),
     "app_title": MessageLookupByLibrary.simpleMessage("التعليم الالكتروني"),
     "assignment": MessageLookupByLibrary.simpleMessage("المهمة"),
+    "assignments": MessageLookupByLibrary.simpleMessage("التكاليف"),
     "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
     "classWork": MessageLookupByLibrary.simpleMessage("أعمال السنة"),
     "classes": MessageLookupByLibrary.simpleMessage("الفصول:"),
@@ -55,7 +61,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "cooperateShareThoughts": MessageLookupByLibrary.simpleMessage(
       "تعاون، شارك أفكارك، وتعلّم من زملائك بسهولة 📚",
     ),
+    "course_management_center": MessageLookupByLibrary.simpleMessage(
+      "👨‍🏫 مركز إدارة المواد الدراسية الخاصة بك بكل سهولة، من الطلاب إلى المحاضرات والكويزات!",
+    ),
     "courses": MessageLookupByLibrary.simpleMessage("المواد"),
+    "create_and_manage_news": MessageLookupByLibrary.simpleMessage(
+      "📰 أنشئ وأدر الأخبار والإعلانات الهامة لموادك الدراسية بسهولة، وأبقى طلابك على اطلاع دائم!",
+    ),
+    "dashboard": MessageLookupByLibrary.simpleMessage("لوحة التحكم"),
     "days": MessageLookupByLibrary.simpleMessage("الأيام"),
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
       "🤔 لم تبحث عن شيء بعد! ",
@@ -109,6 +122,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "الاماكن الأكثر بحثاً!",
     ),
     "name": MessageLookupByLibrary.simpleMessage("الإسم"),
+    "news": MessageLookupByLibrary.simpleMessage("الأخبار"),
+    "news_content": MessageLookupByLibrary.simpleMessage("محتوي الخبر"),
+    "news_content_description": MessageLookupByLibrary.simpleMessage(
+      "أضف تفاصيل الخبر لتوضيح المعلومات للطلاب!",
+    ),
+    "news_title": MessageLookupByLibrary.simpleMessage("عنوان الخبر"),
+    "news_title_description": MessageLookupByLibrary.simpleMessage(
+      "قم بإضافة عنوان واضح ومباشر يُلخص الخبر بدقة!",
+    ),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
     "not_started": MessageLookupByLibrary.simpleMessage("لم يبدأ"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
@@ -126,6 +148,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "profile_welcome_message": MessageLookupByLibrary.simpleMessage(
       "👤 مرحباً بك في صفحة البروفايل! 📝 هنا يمكنك مراجعة وتحديث معلوماتك الشخصية.",
     ),
+    "publish": MessageLookupByLibrary.simpleMessage("نشر !"),
+    "publish_time_description": MessageLookupByLibrary.simpleMessage(
+      "تحديد موعد لنشر الخبر كخبر علني !",
+    ),
     "question_statistics": MessageLookupByLibrary.simpleMessage(
       "إحصائيات هذا السؤال",
     ),
@@ -138,6 +164,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "التنقل في الاختبار",
     ),
     "quizState": MessageLookupByLibrary.simpleMessage("حالة الاختبار"),
+    "quizzes": MessageLookupByLibrary.simpleMessage("الكويزات"),
     "readCarefully": MessageLookupByLibrary.simpleMessage(
       "🔍 اقرأ الأسئلة بتركيز",
     ),
@@ -146,6 +173,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "خصص وقتًا للمراجعة وفهم المواضيع الرئيسية.",
     ),
     "saturday": MessageLookupByLibrary.simpleMessage("السبت"),
+    "schedule_publish_time": MessageLookupByLibrary.simpleMessage(
+      "ضبط موعد للنشر",
+    ),
     "schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
       "📅 مرحباً بك في صفحة الجدول الأسبوعي! حدد الأيام التي ترغب في عرض جدولها لتتابع مواعيد محاضراتك وجلساتك العملية بسهولة.",
     ),
@@ -177,6 +207,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage("طالب نشط الآن"),
     "study": MessageLookupByLibrary.simpleMessage("دراسة"),
+    "study_level": MessageLookupByLibrary.simpleMessage("الفرقة الدراسية"),
+    "subject": MessageLookupByLibrary.simpleMessage("المادة الدراسية"),
     "subject_name": MessageLookupByLibrary.simpleMessage("اسم المادة"),
     "submitAndFinish": MessageLookupByLibrary.simpleMessage("الإنهاء والتقديم"),
     "success_message": MessageLookupByLibrary.simpleMessage(
@@ -202,6 +234,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "verify_account": MessageLookupByLibrary.simpleMessage("أكد حسابك!"),
     "view": MessageLookupByLibrary.simpleMessage("مشاهدة"),
     "view_answers": MessageLookupByLibrary.simpleMessage("عرض الإجابات"),
+    "view_curriculum": MessageLookupByLibrary.simpleMessage(
+      "عرض المنهج الدراسي",
+    ),
+    "view_registered_students": MessageLookupByLibrary.simpleMessage(
+      "عرض الطلاب المسجلين",
+    ),
     "wednesday": MessageLookupByLibrary.simpleMessage("الأربعاء"),
     "weeklySchedule": MessageLookupByLibrary.simpleMessage("الجدول الإسبوعي"),
     "weekly_schedule": MessageLookupByLibrary.simpleMessage("الجدول الاسبوعي"),

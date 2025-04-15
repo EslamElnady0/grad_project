@@ -8,8 +8,8 @@ import '../../cubit/bottom_nav_bar_cubit.dart';
 import '../../models/bottom_nav_bar_item_model.dart';
 import 'custom_bottom_nav_bar_item.dart';
 
-class CustomBottomNavigationBar extends StatelessWidget {
-  const CustomBottomNavigationBar({super.key});
+class CustomStudentBottomNavigationBar extends StatelessWidget {
+  const CustomStudentBottomNavigationBar({super.key});
 
   @override
   Widget build(BuildContext context) {

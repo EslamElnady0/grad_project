@@ -16,6 +16,8 @@ class AppColors {
   static const Color blackText = Color(0xFF171725);
   static const Color lightGrayText = Color(0xFFDADADA);
   static const Color primaryColorlight = Color(0xFF1CD064);
+  static const Color lightGreen = Color(0xFFA9FFC8);
+  static const Color veryLightGreen = Color(0xFFD9F3E8);
   static const Color primaryColordark = Color(0xFF1DA152);
   static const Color redlight = Color(0xFFFF3D60);
   static const Color redDark = Color(0xFFB82D42);
