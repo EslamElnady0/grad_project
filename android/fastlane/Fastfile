@@ -18,7 +18,7 @@ platform :android do
 
     desc "this lane uploads doctor build to app testers"
     lane :uploadDoctor do |options|
-       # sh "flutter build apk --flavor doctor --release --target lib/grad_project_admin_main.dart"
+        sh "flutter build apk --flavor doctor --release --target lib/grad_project_admin_main.dart"
         firebase_app_distribution(
             service_credentials_file: "firebase-distribution-key.json",
             app: "1:759640137262:android:9d9cb5bd7b6c528c8809bf",
