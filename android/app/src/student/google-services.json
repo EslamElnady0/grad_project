@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "782616837172",
+    "project_id": "grad-proj-fab75",
+    "storage_bucket": "grad-proj-fab75.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782616837172:android:0c87ce65de6d8330429e61",
+        "android_client_info": {
+          "package_name": "com.grad.zaguni"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwYmOoSCaJEfk6TXK8eMYKicg-8X9NVow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

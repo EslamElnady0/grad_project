@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -6,6 +7,7 @@ import 'package:grad_project/core/flavors/flavors_functions.dart';
 import 'package:grad_project/core/routes/admin_router.dart';
 import 'core/cubits/bloc_observer.dart';
 import 'core/theme/app_theme.dart';
+import 'firebase_options_doctor.dart';
 import 'generated/l10n.dart';
 
 Future<void> main() async {
@@ -13,6 +15,9 @@ Future<void> main() async {
   await ScreenUtil.ensureScreenSize();
   Bloc.observer = GradBlocObserver();
   FlavorsFunctions.setupAdminFlover();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const GradProjectAdminApp());
 }
 
