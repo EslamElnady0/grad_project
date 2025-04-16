@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
+import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_text_form_field.dart';
 
@@ -26,7 +27,8 @@ class CustomTitleAndTextField extends StatelessWidget {
       children: [
         Text(
           title,
-          style: AppTextStyles.font16BlackSemiBold,
+          style: AppTextStyles.font16BlackSemiBold
+              .copyWith(color: AppColors.darkerBlue),
         ),
         vGap(10),
         CustomTextFormField(
