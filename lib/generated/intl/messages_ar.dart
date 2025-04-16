@@ -32,7 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "التقدم الأكاديمي",
     ),
-    "add_new": MessageLookupByLibrary.simpleMessage(" إضافة جديد"),
+    "add_new": MessageLookupByLibrary.simpleMessage(" إضافة خبر جديد"),
     "add_new_news": MessageLookupByLibrary.simpleMessage(
       "🆕 أضف خبرًا جديدًا لإبقاء طلابك على اطلاع دائم بكل التحديثات والمستجدات",
     ),

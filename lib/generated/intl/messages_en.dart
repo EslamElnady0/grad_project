@@ -32,7 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "Academic Progress",
     ),
-    "add_new": MessageLookupByLibrary.simpleMessage("Add New"),
+    "add_new": MessageLookupByLibrary.simpleMessage("Add New Annoucement"),
     "add_new_news": MessageLookupByLibrary.simpleMessage(
       "🆕 Add a new news item to keep your students updated with all the latest news and updates",
     ),
@@ -125,13 +125,13 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "news": MessageLookupByLibrary.simpleMessage("News"),
-    "news_content": MessageLookupByLibrary.simpleMessage("News Content"),
+    "news_content": MessageLookupByLibrary.simpleMessage("Annoucement Content"),
     "news_content_description": MessageLookupByLibrary.simpleMessage(
-      "Add the news details to clarify the information for students!",
+      "Add the Annoucement details to clarify the information for students!",
     ),
-    "news_title": MessageLookupByLibrary.simpleMessage("News Title"),
+    "news_title": MessageLookupByLibrary.simpleMessage("Annoucement Title"),
     "news_title_description": MessageLookupByLibrary.simpleMessage(
-      "Add a clear and direct title that summarizes the news accurately!",
+      "Add a clear and direct title that summarizes the Annoucement accurately!",
     ),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
     "not_started": MessageLookupByLibrary.simpleMessage("Not Started"),
@@ -154,7 +154,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "publish": MessageLookupByLibrary.simpleMessage("Publish!"),
     "publish_time_description": MessageLookupByLibrary.simpleMessage(
-      "Set a time to publish the news as a public announcement!",
+      "Set a time to publish the Annoucement as a public announcement!",
     ),
     "question_statistics": MessageLookupByLibrary.simpleMessage(
       "Question statistics",

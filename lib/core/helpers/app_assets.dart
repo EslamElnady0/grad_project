@@ -142,6 +142,10 @@ class Assets {
   /// assets/images/svgs/grad_hat.svg
   static const String imagesSvgsGradHat = "assets/images/svgs/grad_hat.svg";
 
+  /// Assets for imagesSvgsIosArrowIcon
+  /// assets/images/svgs/ios_arrow_icon.svg
+  static const String imagesSvgsIosArrowIcon = "assets/images/svgs/ios_arrow_icon.svg";
+
   /// Assets for imagesSvgsLike
   /// assets/images/svgs/like.svg
   static const String imagesSvgsLike = "assets/images/svgs/like.svg";

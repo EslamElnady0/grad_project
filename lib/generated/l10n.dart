@@ -1035,9 +1035,14 @@ class S {
     );
   }
 
-  /// `Add New`
+  /// `Add New Annoucement`
   String get add_new {
-    return Intl.message('Add New', name: 'add_new', desc: '', args: []);
+    return Intl.message(
+      'Add New Annoucement',
+      name: 'add_new',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `🆕 Add a new news item to keep your students updated with all the latest news and updates`
@@ -1050,35 +1055,40 @@ class S {
     );
   }
 
-  /// `News Title`
+  /// `Annoucement Title`
   String get news_title {
-    return Intl.message('News Title', name: 'news_title', desc: '', args: []);
+    return Intl.message(
+      'Annoucement Title',
+      name: 'news_title',
+      desc: '',
+      args: [],
+    );
   }
 
-  /// `Add a clear and direct title that summarizes the news accurately!`
+  /// `Add a clear and direct title that summarizes the Annoucement accurately!`
   String get news_title_description {
     return Intl.message(
-      'Add a clear and direct title that summarizes the news accurately!',
+      'Add a clear and direct title that summarizes the Annoucement accurately!',
       name: 'news_title_description',
       desc: '',
       args: [],
     );
   }
 
-  /// `News Content`
+  /// `Annoucement Content`
   String get news_content {
     return Intl.message(
-      'News Content',
+      'Annoucement Content',
       name: 'news_content',
       desc: '',
       args: [],
     );
   }
 
-  /// `Add the news details to clarify the information for students!`
+  /// `Add the Annoucement details to clarify the information for students!`
   String get news_content_description {
     return Intl.message(
-      'Add the news details to clarify the information for students!',
+      'Add the Annoucement details to clarify the information for students!',
       name: 'news_content_description',
       desc: '',
       args: [],
@@ -1105,10 +1115,10 @@ class S {
     );
   }
 
-  /// `Set a time to publish the news as a public announcement!`
+  /// `Set a time to publish the Annoucement as a public announcement!`
   String get publish_time_description {
     return Intl.message(
-      'Set a time to publish the news as a public announcement!',
+      'Set a time to publish the Annoucement as a public announcement!',
       name: 'publish_time_description',
       desc: '',
       args: [],

@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:grad_project/features/annoucements/ui/views/add_annoucement_view.dart';
 import 'package:grad_project/features/auth/presentation/views/forget_password_view.dart';
 import 'package:grad_project/features/auth/presentation/views/confirm_account_view.dart';
 import 'package:grad_project/features/chat/ui/views/chat_view.dart';
@@ -67,6 +68,9 @@ abstract class AdminRouter {
       GoRoute(
           path: AnswersView.routeName,
           builder: (context, state) => const AnswersView()),
+      GoRoute(
+          path: AddAnnoucementView.routeName,
+          builder: (context, state) => const AddAnnoucementView()),
     ],
   );
 }
