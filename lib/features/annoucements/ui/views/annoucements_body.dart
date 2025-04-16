@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/core/flavors/flavors_functions.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
-
 import '../../../../generated/l10n.dart';
+import '../widgets/admin_add_annoucement_row.dart';
 import '../widgets/courses_annoucement_filter.dart';
 import '../../../home/ui/widgets/home_screens_header_row.dart';
 import '../../../home/ui/widgets/title_text_widget.dart';
@@ -32,7 +33,9 @@ class AnnoucementsBody extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 36.w),
             child: TitleTextWidget(
-              text: S.of(context).selectCources,
+              text: FlavorsFunctions.isStudent()
+                  ? S.of(context).selectCources
+                  : S.of(context).create_and_manage_news,
             ),
           ),
           vGap(12),
@@ -41,6 +44,9 @@ class AnnoucementsBody extends StatelessWidget {
             child: const CoursesAnnoucementFilter(),
           ),
           vGap(12),
+          FlavorsFunctions.isAdmin()
+              ? const AdminAddAnnoucementRow()
+              : const SizedBox.shrink(),
           const Expanded(child: AnnoucementsListView()),
         ],
       ),
