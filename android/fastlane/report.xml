@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.0010128">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.0008638">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: shorebird release android --flavor doctor --target ./lib/grad_project_admin_main.dart --artifact=apk" time="199.902991">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="3: firebase_app_distribution" time="99.0762669">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>
