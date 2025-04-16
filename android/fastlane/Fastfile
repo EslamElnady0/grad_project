@@ -1,0 +1,48 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+platform :android do
+
+    desc "this lane uploads doctor build to app testers"
+    lane :uploadDoctor do |options|
+        sh "flutter build apk --flavor doctor --release --target lib/grad_project_admin_main.dart"
+        firebase_app_distribution(
+            service_credentials_file: "firebase-distribution-key.json",
+            app: "1:759640137262:android:9d9cb5bd7b6c528c8809bf",
+            android_artifact_type: "APK",
+            android_artifact_path: "../build/app/outputs/flutter-apk/app-doctor-release.apk",
+            testers: "eslamelnady254@gmail.com"
+            release_notes: options[:message] || "Default release note",
+            )
+    end 
+end
+
+default_platform(:android)
+platform :android do
+
+    desc "this lane uploads student build to app testers"
+    lane :uploadStudent do |options|
+        sh "flutter build apk --flavor student --release --target lib/grad_project_students_main.dart"
+        firebase_app_distribution(
+            service_credentials_file: "firebase-distribution-key.json",
+            app: "1:759640137262:android:5b0ddcab071f1c648809bf",
+            android_artifact_type: "APK",
+            android_artifact_path: "../build/app/outputs/flutter-apk/app-student-release.apk",
+            testers: "eslamelnady254@gmail.com"
+            release_notes: options[:message] || "Default release note",
+            )
+    end 
+end

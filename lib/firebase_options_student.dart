@@ -26,7 +26,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -50,19 +53,10 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDwYmOoSCaJEfk6TXK8eMYKicg-8X9NVow',
-    appId: '1:782616837172:android:0c87ce65de6d8330429e61',
-    messagingSenderId: '782616837172',
-    projectId: 'grad-proj-fab75',
-    storageBucket: 'grad-proj-fab75.firebasestorage.app',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBC97Ey3NDnLXOq5gbk2-eBKuhlR3VEWew',
-    appId: '1:782616837172:ios:0389f7d3ee1ece80429e61',
-    messagingSenderId: '782616837172',
-    projectId: 'grad-proj-fab75',
-    storageBucket: 'grad-proj-fab75.firebasestorage.app',
-    iosBundleId: 'com.grad.zaguni',
+    apiKey: 'AIzaSyDmW3_W5AktBI0k6u-cD8DDEtcrWsKkvvw',
+    appId: '1:759640137262:android:5b0ddcab071f1c648809bf',
+    messagingSenderId: '759640137262',
+    projectId: 'grad-proj-doctor',
+    storageBucket: 'grad-proj-doctor.firebasestorage.app',
   );
 }

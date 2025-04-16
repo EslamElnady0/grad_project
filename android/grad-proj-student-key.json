@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "grad-proj-fab75",
+  "private_key_id": "d6c726de061a9dd84fd1e94b68fc100254329671",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDlVSlZPpAUXM7e\nOuj+xYt1K3jjLINlVxKv4U19hyZobtsQ8vObAxdidNL5UkkygndA1aVykR9xNwVc\nOwP0bLGiBhhdF+AiN/wmKf+WQ850zSyLMdeQQAsO8uDuvGccVCj4t9zO9frQ449B\nxr86VBteJho2VJP9W0RZZ0rmtR4UgrMcf1TH9+yTSjlhrReVGIX+1B0HNRg9uSHO\nIjFD7ntGmXzaugBvt/4vgCZR6RyJatYFZN/wsfgNLY6SnzLp2UJs9yt4JuSfpZNb\nEAfDrPJfh9oD7LrXSpit+z7nNkEDy2VQFsz2pyw/vuDWsAHAyrNx3riC6EqS9GKZ\nHCcrrQjhAgMBAAECggEAEWwfrjbUCvqlVqRivgmI7OJcFo9zqK0YRNdYzpAIFB1T\n3tzuMoO7cOXk1JRymM0+PQ/eDVmcFLr0LnZnTa2SQyJeaHgfYB92Xvndf8TFTaym\nqn54shiYySPHgIDnU8jLAguJ0V6blZIBeKLzin1dmjtKeNUtFwLU1aFEw0kq21jm\nZxtMQ1Npoae13/XWetbDjW0BSvtCMAFr9thVxgvbi3aE1T0nl7Hl1so/Z9fSiRJW\n0TtvmAdtTG6wjsuw7fVTTDrxfs/OpeRbhDICrdQSIKB2n9aiByAoH0IfXW18aSIK\nxOeaugANeg/GY1euRh7yP6N17OrqLp0b5GzI8+noDwKBgQD63THmizFzsJujB1UZ\n4jjhLxmMct2kBXYfWqFtvai+1+jTq7rWYWr8bW/EEAvJAxjZ3K/0LLqSV9P00LgN\nvX+XVJGhhxF07J38lXU+TyC5/cwmOKInvTtSut7RbU416i0G5afsRonfmBQbgVpa\nMpBNTBxcif6wkD63G07WjZubwwKBgQDqBx5LvzZ/EbqMiCvwDi3JfyvlK7idudiG\nb2iQzpw92e98kvY+UEdblWlwDupBZ8jcGuEmK1CZQwgwl4fQV/KqY8Vnb5k2m15g\nzDpBuI1I/yTLskWeo+041X2OzzUZ3jMKGiJAAsv9/RWnUzkRocFpUFtH22yTDPPX\nlI/2eNlSiwKBgAduB61RUAyiHWntrKqQlaitsW8Ec+YIt1/kWkWayWWllWK3glgZ\nGIcTYq0G4KJ6cgD51UhBDuGIsmFc0SavBxlfStTi4DR7UY6KiqdmxoxbpPE42iyd\nISWpHTJMr3VPUzgSEzAfQrQZl/bclOV4++ceKvTerWljTEg2Cda26PXrAoGBAL4H\nybH4Mmg8HR6/8+2ZldRoT1xnhCGPJyMClAYBvxz6Ol0NeKZgyZC0Ykl70vwJKjCQ\nIwK7aVcJ9zx9zup+f62cFk9Hb0HIJ3qyWxvCn/cGNvqwZ5fJxHbB5JJx7sxygT9S\nuT0BCGPVfh/AlDadAlBhz70pj6BYhCgpmjypJM7BAoGBAMmSkykQ/VNfB2X3hcZS\nMYyx2tpmI8VKSw54xQhu9QAn7O3nLVcTQ8QHFTWASP782Qys19i9bx5snUDfw1yk\ndHNeXerwHiarawjF4gq7Hka+i5JffqI22vXDmnWu2JkrGne6wktqQJfLV0lw+f4G\nnpG3/suO332b/kjgyIaan4wL\n-----END PRIVATE KEY-----\n",
+  "client_email": "grad-proj-student@grad-proj-fab75.iam.gserviceaccount.com",
+  "client_id": "114770617033423147736",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/grad-proj-student%40grad-proj-fab75.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

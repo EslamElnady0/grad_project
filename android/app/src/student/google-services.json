@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "782616837172",
-    "project_id": "grad-proj-fab75",
-    "storage_bucket": "grad-proj-fab75.firebasestorage.app"
+    "project_number": "759640137262",
+    "project_id": "grad-proj-doctor",
+    "storage_bucket": "grad-proj-doctor.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:782616837172:android:0c87ce65de6d8330429e61",
+        "mobilesdk_app_id": "1:759640137262:android:5b0ddcab071f1c648809bf",
         "android_client_info": {
           "package_name": "com.grad.zaguni"
         }
@@ -15,7 +15,26 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDwYmOoSCaJEfk6TXK8eMYKicg-8X9NVow"
+          "current_key": "AIzaSyDmW3_W5AktBI0k6u-cD8DDEtcrWsKkvvw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759640137262:android:9d9cb5bd7b6c528c8809bf",
+        "android_client_info": {
+          "package_name": "com.grad.zaguni.doctor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmW3_W5AktBI0k6u-cD8DDEtcrWsKkvvw"
         }
       ],
       "services": {
