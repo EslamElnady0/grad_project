@@ -20,7 +20,8 @@ class DisplayAndDropDownButton extends StatelessWidget {
         children: [
           Text(
             title,
-            style: AppTextStyles.font14BlackBold,
+            style: AppTextStyles.font14BlackBold
+                .copyWith(color: AppColors.darkerBlue),
           ),
           vGap(12),
           Container(
