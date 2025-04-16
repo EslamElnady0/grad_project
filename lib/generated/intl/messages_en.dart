@@ -32,6 +32,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "Academic Progress",
     ),
+    "add_new": MessageLookupByLibrary.simpleMessage("Add New Annoucement"),
+    "add_new_news": MessageLookupByLibrary.simpleMessage(
+      "🆕 Add a new news item to keep your students updated with all the latest news and updates",
+    ),
+    "add_news": MessageLookupByLibrary.simpleMessage("Add News!"),
     "add_your_question": MessageLookupByLibrary.simpleMessage(
       "Add your question!",
     ),
@@ -41,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "answer": MessageLookupByLibrary.simpleMessage("Answer"),
     "app_title": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "assignment": MessageLookupByLibrary.simpleMessage("Assignment"),
+    "assignments": MessageLookupByLibrary.simpleMessage("Assignments"),
     "chat": MessageLookupByLibrary.simpleMessage("Chat"),
     "classWork": MessageLookupByLibrary.simpleMessage("Classwork"),
     "classes": MessageLookupByLibrary.simpleMessage("Classes:"),
@@ -57,7 +63,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "cooperateShareThoughts": MessageLookupByLibrary.simpleMessage(
       "Collaborate, share your ideas, and learn from your peers easily 📚",
     ),
+    "course_management_center": MessageLookupByLibrary.simpleMessage(
+      "👨‍🏫 Easily manage your courses, from students to lectures and quizzes!",
+    ),
     "courses": MessageLookupByLibrary.simpleMessage("Courses"),
+    "create_and_manage_news": MessageLookupByLibrary.simpleMessage(
+      "📰 Create and manage important news and announcements for your courses easily, and keep your students updated!",
+    ),
+    "dashboard": MessageLookupByLibrary.simpleMessage("Dashboard"),
     "days": MessageLookupByLibrary.simpleMessage("Days"),
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
       "🤔 You haven\'t searched for anything yet!",
@@ -111,6 +124,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "Most searched places!",
     ),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
+    "news": MessageLookupByLibrary.simpleMessage("News"),
+    "news_content": MessageLookupByLibrary.simpleMessage("Annoucement Content"),
+    "news_content_description": MessageLookupByLibrary.simpleMessage(
+      "Add the Annoucement details to clarify the information for students!",
+    ),
+    "news_title": MessageLookupByLibrary.simpleMessage("Annoucement Title"),
+    "news_title_description": MessageLookupByLibrary.simpleMessage(
+      "Add a clear and direct title that summarizes the Annoucement accurately!",
+    ),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
     "not_started": MessageLookupByLibrary.simpleMessage("Not Started"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
@@ -130,6 +152,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "profile_welcome_message": MessageLookupByLibrary.simpleMessage(
       "👤Welcome to the profile page! 📝 Here you can review and update your personal information.",
     ),
+    "publish": MessageLookupByLibrary.simpleMessage("Publish!"),
+    "publish_time_description": MessageLookupByLibrary.simpleMessage(
+      "Set a time to publish the Annoucement as a public announcement!",
+    ),
     "question_statistics": MessageLookupByLibrary.simpleMessage(
       "Question statistics",
     ),
@@ -140,6 +166,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "quizDuration": MessageLookupByLibrary.simpleMessage("Quiz Duration"),
     "quizNavigation": MessageLookupByLibrary.simpleMessage("Quiz Navigation"),
     "quizState": MessageLookupByLibrary.simpleMessage("Quiz Status"),
+    "quizzes": MessageLookupByLibrary.simpleMessage("Quizzes"),
     "readCarefully": MessageLookupByLibrary.simpleMessage(
       "🔍 Read Questions Carefully",
     ),
@@ -148,6 +175,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Set aside time to review and understand key topics.",
     ),
     "saturday": MessageLookupByLibrary.simpleMessage("Saturday"),
+    "schedule_publish_time": MessageLookupByLibrary.simpleMessage(
+      "Set Publish Time",
+    ),
     "schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
       "📅 Welcome to the Weekly Schedule page! Select the days you want to view to easily track your lecture and practical session timings.",
     ),
@@ -181,6 +211,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "students online now",
     ),
     "study": MessageLookupByLibrary.simpleMessage("Study"),
+    "study_level": MessageLookupByLibrary.simpleMessage("Study Level"),
+    "subject": MessageLookupByLibrary.simpleMessage("Subject"),
     "subject_name": MessageLookupByLibrary.simpleMessage("Subject Name"),
     "submitAndFinish": MessageLookupByLibrary.simpleMessage("Submit & Finish"),
     "success_message": MessageLookupByLibrary.simpleMessage(
@@ -208,6 +240,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "view": MessageLookupByLibrary.simpleMessage("View"),
     "view_answers": MessageLookupByLibrary.simpleMessage("View answers"),
+    "view_curriculum": MessageLookupByLibrary.simpleMessage("View Curriculum"),
+    "view_registered_students": MessageLookupByLibrary.simpleMessage(
+      "View Registered Students",
+    ),
     "wednesday": MessageLookupByLibrary.simpleMessage("Wednesday"),
     "weeklySchedule": MessageLookupByLibrary.simpleMessage("Weekly Schedule"),
     "weekly_schedule": MessageLookupByLibrary.simpleMessage("Weekly Schedule"),

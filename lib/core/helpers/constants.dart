@@ -57,6 +57,32 @@ class Constants {
     ];
   }
 
+  static List<BottomNavBarItemModel> adminBottomNavBarItemsLocalized(
+      BuildContext context) {
+    return [
+      BottomNavBarItemModel(
+        title: S.of(context).dashboard,
+        iconPath: Assets.imagesSvgsDashboardIcon,
+      ),
+      BottomNavBarItemModel(
+        title: S.of(context).news,
+        iconPath: Assets.imagesSvgsCoursesIcon,
+      ),
+      BottomNavBarItemModel(
+        title: "",
+        iconPath: Assets.imagesSvgsAnnoucementIcon,
+      ),
+      BottomNavBarItemModel(
+        title: S.of(context).quizzes,
+        iconPath: Assets.imagesSvgsCommunityIcon,
+      ),
+      BottomNavBarItemModel(
+        title: S.of(context).assignments,
+        iconPath: Assets.imagesSvgsAssignmentsIcon,
+      ),
+    ];
+  }
+
   static List<DrawerItemModel> drawerItemsLocalized(BuildContext context) {
     return [
       DrawerItemModel(
@@ -146,6 +172,13 @@ class Constants {
     const SubjectsView(),
     const ChatOutsiderBody(),
     const ForumViews()
+  ];
+  static List<Widget> adminHomeBodies = [
+    const Column(),
+    const AnnoucementsBody(),
+    const Column(),
+    const Column(),
+    const Column()
   ];
   static const List<Map<String, dynamic>> dummyMessages = [
     {
@@ -262,13 +295,13 @@ class Constants {
   ];
 
   static const List<String> info = [
-  "إسلام إيهاب محمد لطفي",
-  "علوم حاسب (CS)",
-  "الرابعة",
-  "A",
-  "6",
-  "B-"
-];
+    "إسلام إيهاب محمد لطفي",
+    "علوم حاسب (CS)",
+    "الرابعة",
+    "A",
+    "6",
+    "B-"
+  ];
 }
 
 Map<String, List<Map<String, String>>> materialData = {
@@ -336,7 +369,7 @@ Map<String, List<Map<String, String>>> materialData = {
       "link": "https://example.com/quiz1"
     }
   ],
- "الاسبوع الثالث": [
+  "الاسبوع الثالث": [
     {
       "fileName": "Lecture 1",
       "fileType": "pdf",
@@ -369,7 +402,6 @@ Map<String, List<Map<String, String>>> materialData = {
     }
   ],
 };
-
 
 final Map<String, List<Map<String, String>>> scheduleData = {
   'السبت': [
@@ -478,7 +510,4 @@ final Map<String, List<Map<String, String>>> scheduleData = {
       'status': 'في وقتها',
     }
   ]
-
-
-  
 };

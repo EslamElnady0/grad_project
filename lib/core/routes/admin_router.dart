@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:grad_project/features/annoucements/ui/views/add_annoucement_view.dart';
 import 'package:grad_project/features/auth/presentation/views/forget_password_view.dart';
 import 'package:grad_project/features/auth/presentation/views/confirm_account_view.dart';
 import 'package:grad_project/features/chat/ui/views/chat_view.dart';
@@ -16,10 +17,10 @@ import '../../features/subjects/presentation/views/materials_view.dart';
 
 abstract class AdminRouter {
   static final router = GoRouter(
-    initialLocation:AuthView.routeName,
+    initialLocation: HomeView.routeName,
     routes: [
       GoRoute(
-        path: HomeView.routeName ,
+        path: HomeView.routeName,
         builder: (context, state) => BlocProvider(
           create: (context) => BottomNavBarCubit(),
           child: const HomeView(),
@@ -62,13 +63,14 @@ abstract class AdminRouter {
         builder: (context, state) => const ProfileView(),
       ),
       GoRoute(
-        path: MaterialsView.routeName,
-        builder: (context, state) => const MaterialsView()
-      ),
+          path: MaterialsView.routeName,
+          builder: (context, state) => const MaterialsView()),
       GoRoute(
-        path: AnswersView.routeName,
-        builder: (context, state) => const AnswersView()
-      ),
+          path: AnswersView.routeName,
+          builder: (context, state) => const AnswersView()),
+      GoRoute(
+          path: AddAnnoucementView.routeName,
+          builder: (context, state) => const AddAnnoucementView()),
     ],
   );
 }

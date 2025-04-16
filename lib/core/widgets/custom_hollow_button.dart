@@ -4,12 +4,16 @@ class CustomHollowButton extends StatelessWidget {
   final Widget child;
   final Color borderColor;
   final VoidCallback onPressed;
+  final double? borderWidth;
+  final EdgeInsetsGeometry? padding;
 
   const CustomHollowButton({
     super.key,
     required this.child,
     required this.borderColor,
     required this.onPressed,
+    this.borderWidth,
+    this.padding,
   });
 
   @override
@@ -17,7 +21,8 @@ class CustomHollowButton extends StatelessWidget {
     return OutlinedButton(
       onPressed: onPressed,
       style: OutlinedButton.styleFrom(
-        side: BorderSide(color: borderColor, width: 1.5),
+        padding: padding,
+        side: BorderSide(color: borderColor, width: borderWidth ?? 1.5),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
