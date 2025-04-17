@@ -1140,6 +1140,16 @@ class S {
     );
   }
 
+  /// `📚 Full control over your courses, from adding lectures to tracking student progress and managing quizzes and assignments!`
+  String get full_control_over_courses {
+    return Intl.message(
+      '📚 Full control over your courses, from adding lectures to tracking student progress and managing quizzes and assignments!',
+      name: 'full_control_over_courses',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `View Curriculum`
   String get view_curriculum {
     return Intl.message(

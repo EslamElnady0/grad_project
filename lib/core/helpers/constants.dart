@@ -7,6 +7,7 @@ import 'package:grad_project/features/academic_progress/presentation/views/acade
 import 'package:grad_project/features/annoucements/ui/views/annoucements_body.dart';
 import 'package:grad_project/features/forum/presentation/views/forum_views.dart';
 import 'package:grad_project/features/home/ui/models/drawer_item_model.dart';
+import 'package:grad_project/features/lecture_manager/ui/screens/lecture_manager_view.dart';
 import 'package:grad_project/features/profile/presentation/views/profile_view.dart';
 import 'package:grad_project/features/quizes/ui/models/quiz_advice_model.dart';
 import 'package:grad_project/features/subjects/presentation/views/subjects_view.dart';
@@ -179,7 +180,7 @@ class Constants {
   static List<Widget> adminHomeBodies = [
     const Column(),
     const AnnoucementsBody(),
-    const Column(),
+    const LectureManagerView(),
     const Column(),
     const Column()
   ];
