@@ -221,5 +221,7 @@
 "assignments":"Assignments",
 "midterm":"Midterm",
 "class_work":"Classwork",
-"final_exam":"Final exam"
+"final_exam":"Final exam",  "qr_attendance": "QR attendance",
+"add_courses": "Add courses",
+"update_lecture_status": "Update lecture status"
 }

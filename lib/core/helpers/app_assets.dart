@@ -2,6 +2,10 @@
 class Assets {
   Assets._();
   
+  /// Assets for imagesAddLecture
+  /// assets/images/addLecture.png
+  static const String imagesAddLecture = "assets/images/addLecture.png";
+
   /// Assets for imagesAvatarDoc
   /// assets/images/avatar_doc.png
   static const String imagesAvatarDoc = "assets/images/avatar_doc.png";
@@ -30,6 +34,10 @@ class Assets {
   /// assets/images/protect.png
   static const String imagesProtect = "assets/images/protect.png";
 
+  /// Assets for imagesQr
+  /// assets/images/qr.png
+  static const String imagesQr = "assets/images/qr.png";
+
   /// Assets for imagesSplash
   /// assets/images/splash.png
   static const String imagesSplash = "assets/images/splash.png";
@@ -37,6 +45,10 @@ class Assets {
   /// Assets for imagesSplashIcon
   /// assets/images/splash_icon.png
   static const String imagesSplashIcon = "assets/images/splash_icon.png";
+
+  /// Assets for imagesStateUpdate
+  /// assets/images/stateUpdate.png
+  static const String imagesStateUpdate = "assets/images/stateUpdate.png";
 
   /// Assets for imagesSubject
   /// assets/images/subject.png
