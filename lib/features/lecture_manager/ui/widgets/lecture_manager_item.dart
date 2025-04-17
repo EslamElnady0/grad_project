@@ -1,6 +1,8 @@
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:grad_project/features/lecture_manager/ui/screens/qr_attendance_view.dart';
 
 import '../../../../core/helpers/app_assets.dart';
 import '../../../../core/helpers/localizationa.dart';
@@ -74,7 +76,9 @@ class LectureManagerItem extends StatelessWidget {
                   CustomTextAndIconButton(
                       text: S.of(context).qr_attendance,
                       width: double.infinity,
-                      onTap: () {},
+                      onTap: () {
+                        GoRouter.of(context).push(QrAttendanceView.routeName);
+                      },
                       icon: Image.asset(Assets.imagesQr),
                       primaryButton: true),
                   vGap(12),

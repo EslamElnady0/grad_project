@@ -1184,6 +1184,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Number of students:`
+  String get students_count {
+    return Intl.message(
+      'Number of students:',
+      name: 'students_count',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

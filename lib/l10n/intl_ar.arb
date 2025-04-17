@@ -149,4 +149,6 @@
 , "qr_attendance": "تسجيل حضور “QR”",
 "add_courses": "إضافة مواد دراسية",
 "update_lecture_status": "تحديث حالة المحاضرة"
+, "students_count": "عدد الطلاب:"
+
 }

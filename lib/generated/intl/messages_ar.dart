@@ -211,6 +211,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تنفّس بعمق وثق بقدراتك!",
     ),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage("طالب نشط الآن"),
+    "students_count": MessageLookupByLibrary.simpleMessage("عدد الطلاب:"),
     "study": MessageLookupByLibrary.simpleMessage("دراسة"),
     "study_level": MessageLookupByLibrary.simpleMessage("الفرقة الدراسية"),
     "subject": MessageLookupByLibrary.simpleMessage("المادة الدراسية"),

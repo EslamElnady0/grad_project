@@ -145,8 +145,9 @@
   "publish": "Publish!",
   "view_registered_students": "View Registered Students",
   "view_curriculum": "View Curriculum",
-  "full_control_over_courses": "📚 Full control over your courses, from adding lectures to tracking student progress and managing quizzes and assignments!"
-,  "qr_attendance": "QR attendance",
-"add_courses": "Add courses",
-"update_lecture_status": "Update lecture status"
+  "full_control_over_courses": "📚 Full control over your courses, from adding lectures to tracking student progress and managing quizzes and assignments!",
+  "qr_attendance": "QR attendance",
+  "add_courses": "Add courses",
+  "update_lecture_status": "Update lecture status",
+  "students_count": "Number of students:"
 }
