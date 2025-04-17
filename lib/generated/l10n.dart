@@ -1149,6 +1149,76 @@ class S {
       args: [],
     );
   }
+
+  /// `🎓Find out your academic level with ease. Details of your grades and ranking are at your fingertips!`
+  String get academic_progress_welcome_message {
+    return Intl.message(
+      '🎓Find out your academic level with ease. Details of your grades and ranking are at your fingertips!',
+      name: 'academic_progress_welcome_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Percentage`
+  String get percentage {
+    return Intl.message('Percentage', name: 'percentage', desc: '', args: []);
+  }
+
+  /// `1st Semester`
+  String get first_semester {
+    return Intl.message(
+      '1st Semester',
+      name: 'first_semester',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `2nd Semester`
+  String get second_semester {
+    return Intl.message(
+      '2nd Semester',
+      name: 'second_semester',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subjects count`
+  String get number_of_subjects {
+    return Intl.message(
+      'Subjects count',
+      name: 'number_of_subjects',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total`
+  String get total {
+    return Intl.message('Total', name: 'total', desc: '', args: []);
+  }
+
+  /// `Attendance`
+  String get attendance {
+    return Intl.message('Attendance', name: 'attendance', desc: '', args: []);
+  }
+
+  /// `Midterm`
+  String get midterm {
+    return Intl.message('Midterm', name: 'midterm', desc: '', args: []);
+  }
+
+  /// `Classwork`
+  String get class_work {
+    return Intl.message('Classwork', name: 'class_work', desc: '', args: []);
+  }
+
+  /// `Final exam`
+  String get final_exam {
+    return Intl.message('Final exam', name: 'final_exam', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

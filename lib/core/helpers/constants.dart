@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
+import 'package:grad_project/features/academic_progress/presentation/views/academic_progress_view.dart';
 import 'package:grad_project/features/annoucements/ui/views/annoucements_body.dart';
 import 'package:grad_project/features/forum/presentation/views/forum_views.dart';
 import 'package:grad_project/features/home/ui/models/drawer_item_model.dart';
@@ -107,7 +108,9 @@ class Constants {
       DrawerItemModel(
         title: S.of(context).academicProgress,
         iconPath: Assets.imagesSvgsTimeCheck,
-        onTap: () {},
+        onTap: () {
+          GoRouter.of(context).push(AcademicProgressView.routeName);
+        },
       ),
       DrawerItemModel(
         title: S.of(context).finalResults,

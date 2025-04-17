@@ -32,6 +32,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "Academic Progress",
     ),
+    "academic_progress_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "🎓Find out your academic level with ease. Details of your grades and ranking are at your fingertips!",
+    ),
     "add_new": MessageLookupByLibrary.simpleMessage("Add New Annoucement"),
     "add_new_news": MessageLookupByLibrary.simpleMessage(
       "🆕 Add a new news item to keep your students updated with all the latest news and updates",
@@ -47,8 +50,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "app_title": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "assignment": MessageLookupByLibrary.simpleMessage("Assignment"),
     "assignments": MessageLookupByLibrary.simpleMessage("Assignments"),
+    "assignments": MessageLookupByLibrary.simpleMessage("Assignments"),
+    "attendance": MessageLookupByLibrary.simpleMessage("Attendance"),
     "chat": MessageLookupByLibrary.simpleMessage("Chat"),
     "classWork": MessageLookupByLibrary.simpleMessage("Classwork"),
+    "class_work": MessageLookupByLibrary.simpleMessage("Classwork"),
     "classes": MessageLookupByLibrary.simpleMessage("Classes:"),
     "classification": MessageLookupByLibrary.simpleMessage("Category"),
     "clearAnswerSelection": MessageLookupByLibrary.simpleMessage(
@@ -91,6 +97,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "filter": MessageLookupByLibrary.simpleMessage("Filter"),
     "finalResults": MessageLookupByLibrary.simpleMessage("Final Results"),
+    "final_exam": MessageLookupByLibrary.simpleMessage("Final exam"),
+    "first_semester": MessageLookupByLibrary.simpleMessage("1st Semester"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "Forgot your password?",
     ),
@@ -118,6 +126,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "material_description": MessageLookupByLibrary.simpleMessage(
       "🎓📚 Everything you need for your course in one place: lectures, sections, assignments, quizzes, videos, midterms, and final exams!",
     ),
+    "midterm": MessageLookupByLibrary.simpleMessage("Midterm"),
     "minute": MessageLookupByLibrary.simpleMessage("Minute"),
     "monday": MessageLookupByLibrary.simpleMessage("Monday"),
     "mostSreached": MessageLookupByLibrary.simpleMessage(
@@ -138,10 +147,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
       "Allowed Attempts",
     ),
+    "number_of_subjects": MessageLookupByLibrary.simpleMessage(
+      "Subjects count",
+    ),
     "once": MessageLookupByLibrary.simpleMessage("Once"),
     "open": MessageLookupByLibrary.simpleMessage("open"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
+    "percentage": MessageLookupByLibrary.simpleMessage("Percentage"),
     "place": MessageLookupByLibrary.simpleMessage("Place"),
     "prepareWell": MessageLookupByLibrary.simpleMessage(
       "📚 Prepare in Advance",
@@ -184,6 +197,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       "Search for a building, lecture hall, room, etc..!",
     ),
+    "second_semester": MessageLookupByLibrary.simpleMessage("2nd Semester"),
     "section": MessageLookupByLibrary.simpleMessage("Section"),
     "sections": MessageLookupByLibrary.simpleMessage("Sections"),
     "security_confirmation": MessageLookupByLibrary.simpleMessage(
@@ -213,6 +227,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "study": MessageLookupByLibrary.simpleMessage("Study"),
     "study_level": MessageLookupByLibrary.simpleMessage("Study Level"),
     "subject": MessageLookupByLibrary.simpleMessage("Subject"),
+    "subject": MessageLookupByLibrary.simpleMessage("Subject"),
     "subject_name": MessageLookupByLibrary.simpleMessage("Subject Name"),
     "submitAndFinish": MessageLookupByLibrary.simpleMessage("Submit & Finish"),
     "success_message": MessageLookupByLibrary.simpleMessage(
@@ -230,6 +245,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "timeRemaining": MessageLookupByLibrary.simpleMessage("Time Remaining"),
     "timeSchedule": MessageLookupByLibrary.simpleMessage("Time Schedule"),
+    "total": MessageLookupByLibrary.simpleMessage("Total"),
     "tuesday": MessageLookupByLibrary.simpleMessage("Tuesday"),
     "type": MessageLookupByLibrary.simpleMessage("Type"),
     "understandBeforeAnswering": MessageLookupByLibrary.simpleMessage(
