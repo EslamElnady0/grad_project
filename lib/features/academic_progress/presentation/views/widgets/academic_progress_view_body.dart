@@ -78,7 +78,7 @@ class AcademicProgressViewBody extends StatelessWidget {
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: SizedBox(
-                width: 665.w,
+                width: 670.w,
                 child: Column(
                   children: [
                     LabelsListView(
