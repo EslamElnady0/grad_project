@@ -16,9 +16,9 @@ class CustomAppBar extends StatelessWidget {
             SizedBox(
               width: 35,
               child: IconButton(
-                icon: Icon(
+                icon:const Icon(
                   Icons.arrow_back,
-                  color: AppColors.black,
+                  color: AppColors.blackLight,
                 ),
                 onPressed: () => Navigator.pop(context),
               ),
@@ -27,7 +27,7 @@ class CustomAppBar extends StatelessWidget {
               child: Text(
                 title,
                 textAlign: TextAlign.center,
-                style: AppTextStyles.font16BlackMedium,
+                style: AppTextStyles.font16BlackMedium.copyWith(color: AppColors.blackLight),  
               ),
             ),
             const SizedBox(width: 35),

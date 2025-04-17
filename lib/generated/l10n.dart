@@ -925,6 +925,231 @@ class S {
     );
   }
 
+  /// `Material`
+  String get material {
+    return Intl.message('Material', name: 'material', desc: '', args: []);
+  }
+
+  /// `🎓📚 Everything you need for your course in one place: lectures, sections, assignments, quizzes, videos, midterms, and final exams!`
+  String get material_description {
+    return Intl.message(
+      '🎓📚 Everything you need for your course in one place: lectures, sections, assignments, quizzes, videos, midterms, and final exams!',
+      name: 'material_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `complete`
+  String get complete {
+    return Intl.message('complete', name: 'complete', desc: '', args: []);
+  }
+
+  /// `open`
+  String get open {
+    return Intl.message('open', name: 'open', desc: '', args: []);
+  }
+
+  /// `download`
+  String get download {
+    return Intl.message('download', name: 'download', desc: '', args: []);
+  }
+
+  /// `Lectures`
+  String get lectures {
+    return Intl.message('Lectures', name: 'lectures', desc: '', args: []);
+  }
+
+  /// `Sections`
+  String get sections {
+    return Intl.message('Sections', name: 'sections', desc: '', args: []);
+  }
+
+  /// `Assignment`
+  String get assignment {
+    return Intl.message('Assignment', name: 'assignment', desc: '', args: []);
+  }
+
+  /// `all`
+  String get all {
+    return Intl.message('all', name: 'all', desc: '', args: []);
+  }
+
+  /// `هنا يمكنك استعراض جميع الإجابات المقدمة للسؤال. اقرأ آراء زملائك واقتراحاتهم!`
+  String get Answers_welcome_message {
+    return Intl.message(
+      'هنا يمكنك استعراض جميع الإجابات المقدمة للسؤال. اقرأ آراء زملائك واقتراحاتهم!',
+      name: 'Answers_welcome_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `الإجابات`
+  String get Answers {
+    return Intl.message('الإجابات', name: 'Answers', desc: '', args: []);
+  }
+
+  /// `Dashboard`
+  String get dashboard {
+    return Intl.message('Dashboard', name: 'dashboard', desc: '', args: []);
+  }
+
+  /// `News`
+  String get news {
+    return Intl.message('News', name: 'news', desc: '', args: []);
+  }
+
+  /// `Quizzes`
+  String get quizzes {
+    return Intl.message('Quizzes', name: 'quizzes', desc: '', args: []);
+  }
+
+  /// `Assignments`
+  String get assignments {
+    return Intl.message('Assignments', name: 'assignments', desc: '', args: []);
+  }
+
+  /// `Add News!`
+  String get add_news {
+    return Intl.message('Add News!', name: 'add_news', desc: '', args: []);
+  }
+
+  /// `📰 Create and manage important news and announcements for your courses easily, and keep your students updated!`
+  String get create_and_manage_news {
+    return Intl.message(
+      '📰 Create and manage important news and announcements for your courses easily, and keep your students updated!',
+      name: 'create_and_manage_news',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `👨‍🏫 Easily manage your courses, from students to lectures and quizzes!`
+  String get course_management_center {
+    return Intl.message(
+      '👨‍🏫 Easily manage your courses, from students to lectures and quizzes!',
+      name: 'course_management_center',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add New Annoucement`
+  String get add_new {
+    return Intl.message(
+      'Add New Annoucement',
+      name: 'add_new',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `🆕 Add a new news item to keep your students updated with all the latest news and updates`
+  String get add_new_news {
+    return Intl.message(
+      '🆕 Add a new news item to keep your students updated with all the latest news and updates',
+      name: 'add_new_news',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Annoucement Title`
+  String get news_title {
+    return Intl.message(
+      'Annoucement Title',
+      name: 'news_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add a clear and direct title that summarizes the Annoucement accurately!`
+  String get news_title_description {
+    return Intl.message(
+      'Add a clear and direct title that summarizes the Annoucement accurately!',
+      name: 'news_title_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Annoucement Content`
+  String get news_content {
+    return Intl.message(
+      'Annoucement Content',
+      name: 'news_content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add the Annoucement details to clarify the information for students!`
+  String get news_content_description {
+    return Intl.message(
+      'Add the Annoucement details to clarify the information for students!',
+      name: 'news_content_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Study Level`
+  String get study_level {
+    return Intl.message('Study Level', name: 'study_level', desc: '', args: []);
+  }
+
+  /// `Subject`
+  String get subject {
+    return Intl.message('Subject', name: 'subject', desc: '', args: []);
+  }
+
+  /// `Set Publish Time`
+  String get schedule_publish_time {
+    return Intl.message(
+      'Set Publish Time',
+      name: 'schedule_publish_time',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set a time to publish the Annoucement as a public announcement!`
+  String get publish_time_description {
+    return Intl.message(
+      'Set a time to publish the Annoucement as a public announcement!',
+      name: 'publish_time_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Publish!`
+  String get publish {
+    return Intl.message('Publish!', name: 'publish', desc: '', args: []);
+  }
+
+  /// `View Registered Students`
+  String get view_registered_students {
+    return Intl.message(
+      'View Registered Students',
+      name: 'view_registered_students',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View Curriculum`
+  String get view_curriculum {
+    return Intl.message(
+      'View Curriculum',
+      name: 'view_curriculum',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `🎓Find out your academic level with ease. Details of your grades and ranking are at your fingertips!`
   String get academic_progress_welcome_message {
     return Intl.message(

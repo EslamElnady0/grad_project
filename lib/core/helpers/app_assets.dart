@@ -6,6 +6,10 @@ class Assets {
   /// assets/images/avatar_doc.png
   static const String imagesAvatarDoc = "assets/images/avatar_doc.png";
 
+  /// Assets for imagesBottomNavBarBg
+  /// assets/images/bottom_nav_bar_bg.png
+  static const String imagesBottomNavBarBg = "assets/images/bottom_nav_bar_bg.png";
+
   /// Assets for imagesForgetpassword1
   /// assets/images/Forgetpassword1.png
   static const String imagesForgetpassword1 = "assets/images/Forgetpassword1.png";
@@ -29,6 +33,10 @@ class Assets {
   /// Assets for imagesSplash
   /// assets/images/splash.png
   static const String imagesSplash = "assets/images/splash.png";
+
+  /// Assets for imagesSplashIcon
+  /// assets/images/splash_icon.png
+  static const String imagesSplashIcon = "assets/images/splash_icon.png";
 
   /// Assets for imagesSubject
   /// assets/images/subject.png
@@ -54,6 +62,10 @@ class Assets {
   /// assets/images/svgs/arrow_up_arrow_down_icon.svg
   static const String imagesSvgsArrowUpArrowDownIcon = "assets/images/svgs/arrow_up_arrow_down_icon.svg";
 
+  /// Assets for imagesSvgsAssignmentsIcon
+  /// assets/images/svgs/assignments_icon.svg
+  static const String imagesSvgsAssignmentsIcon = "assets/images/svgs/assignments_icon.svg";
+
   /// Assets for imagesSvgsAtIcon
   /// assets/images/svgs/at_icon.svg
   static const String imagesSvgsAtIcon = "assets/images/svgs/at_icon.svg";
@@ -74,6 +86,10 @@ class Assets {
   /// assets/images/svgs/chat_icon.svg
   static const String imagesSvgsChatIcon = "assets/images/svgs/chat_icon.svg";
 
+  /// Assets for imagesSvgsCheck
+  /// assets/images/svgs/check.svg
+  static const String imagesSvgsCheck = "assets/images/svgs/check.svg";
+
   /// Assets for imagesSvgsCircleIcon
   /// assets/images/svgs/circle_icon.svg
   static const String imagesSvgsCircleIcon = "assets/images/svgs/circle_icon.svg";
@@ -90,9 +106,17 @@ class Assets {
   /// assets/images/svgs/courses_icon.svg
   static const String imagesSvgsCoursesIcon = "assets/images/svgs/courses_icon.svg";
 
+  /// Assets for imagesSvgsDashboardIcon
+  /// assets/images/svgs/dashboard_icon.svg
+  static const String imagesSvgsDashboardIcon = "assets/images/svgs/dashboard_icon.svg";
+
   /// Assets for imagesSvgsDetailedMenuIcon
   /// assets/images/svgs/detailed_menu_icon.svg
   static const String imagesSvgsDetailedMenuIcon = "assets/images/svgs/detailed_menu_icon.svg";
+
+  /// Assets for imagesSvgsDewenloadIcon
+  /// assets/images/svgs/dewenload_icon.svg
+  static const String imagesSvgsDewenloadIcon = "assets/images/svgs/dewenload_icon.svg";
 
   /// Assets for imagesSvgsDropdown
   /// assets/images/svgs/dropdown.svg
@@ -122,6 +146,10 @@ class Assets {
   /// assets/images/svgs/grad_hat.svg
   static const String imagesSvgsGradHat = "assets/images/svgs/grad_hat.svg";
 
+  /// Assets for imagesSvgsIosArrowIcon
+  /// assets/images/svgs/ios_arrow_icon.svg
+  static const String imagesSvgsIosArrowIcon = "assets/images/svgs/ios_arrow_icon.svg";
+
   /// Assets for imagesSvgsLike
   /// assets/images/svgs/like.svg
   static const String imagesSvgsLike = "assets/images/svgs/like.svg";
@@ -145,6 +173,18 @@ class Assets {
   /// Assets for imagesSvgsMoreOptionsIcon
   /// assets/images/svgs/more_options_icon.svg
   static const String imagesSvgsMoreOptionsIcon = "assets/images/svgs/more_options_icon.svg";
+
+  /// Assets for imagesSvgsOpenIcon
+  /// assets/images/svgs/open_icon.svg
+  static const String imagesSvgsOpenIcon = "assets/images/svgs/open_icon.svg";
+
+  /// Assets for imagesSvgsPaperIcon
+  /// assets/images/svgs/paper_icon.svg
+  static const String imagesSvgsPaperIcon = "assets/images/svgs/paper_icon.svg";
+
+  /// Assets for imagesSvgsPdfIcon
+  /// assets/images/svgs/pdf_icon.svg
+  static const String imagesSvgsPdfIcon = "assets/images/svgs/pdf_icon.svg";
 
   /// Assets for imagesSvgsPerson
   /// assets/images/svgs/person.svg
@@ -189,6 +229,10 @@ class Assets {
   /// Assets for imagesSvgsTimeQuarter
   /// assets/images/svgs/time_quarter.svg
   static const String imagesSvgsTimeQuarter = "assets/images/svgs/time_quarter.svg";
+
+  /// Assets for imagesSvgsVideoIcon
+  /// assets/images/svgs/video_icon.svg
+  static const String imagesSvgsVideoIcon = "assets/images/svgs/video_icon.svg";
 
   /// Assets for imagesSvgsVisibility
   /// assets/images/svgs/visibility.svg

@@ -20,7 +20,6 @@ import '../widgets/decorated_input_border.dart';
 
 class Constants {
   const Constants._();
-
   static const LinearGradient primaryGrad = LinearGradient(
     colors: [AppColors.primaryColorlight, AppColors.primaryColordark],
     begin: Alignment.topCenter,
@@ -55,6 +54,32 @@ class Constants {
       BottomNavBarItemModel(
         title: S.of(context).community,
         iconPath: Assets.imagesSvgsCommunityIcon,
+      ),
+    ];
+  }
+
+  static List<BottomNavBarItemModel> adminBottomNavBarItemsLocalized(
+      BuildContext context) {
+    return [
+      BottomNavBarItemModel(
+        title: S.of(context).dashboard,
+        iconPath: Assets.imagesSvgsDashboardIcon,
+      ),
+      BottomNavBarItemModel(
+        title: S.of(context).news,
+        iconPath: Assets.imagesSvgsCoursesIcon,
+      ),
+      BottomNavBarItemModel(
+        title: "",
+        iconPath: Assets.imagesSvgsAnnoucementIcon,
+      ),
+      BottomNavBarItemModel(
+        title: S.of(context).quizzes,
+        iconPath: Assets.imagesSvgsCommunityIcon,
+      ),
+      BottomNavBarItemModel(
+        title: S.of(context).assignments,
+        iconPath: Assets.imagesSvgsAssignmentsIcon,
       ),
     ];
   }
@@ -150,6 +175,13 @@ class Constants {
     const SubjectsView(),
     const ChatOutsiderBody(),
     const ForumViews()
+  ];
+  static List<Widget> adminHomeBodies = [
+    const Column(),
+    const AnnoucementsBody(),
+    const Column(),
+    const Column(),
+    const Column()
   ];
   static const List<Map<String, dynamic>> dummyMessages = [
     {
@@ -274,6 +306,105 @@ class Constants {
     "B-"
   ];
 }
+
+Map<String, List<Map<String, String>>> materialData = {
+  "الأسبوع الأول": [
+    {
+      "fileName": "Lecture 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/lecture1"
+    },
+    {
+      "fileName": "Section 1",
+      "fileType": "pdf",
+      "status": "not complete",
+      "link": "https://example.com/section1"
+    },
+    {
+      "fileName": "Introduction OOP",
+      "fileType": "video",
+      "status": "complete",
+      "link": "https://example.com/introduction-oop"
+    },
+    {
+      "fileName": "Assignment 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/assignment1"
+    },
+    {
+      "fileName": "Quiz lec 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/quiz1"
+    }
+  ],
+  "الاسبوع الثاني": [
+    {
+      "fileName": "Lecture 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/lecture1"
+    },
+    {
+      "fileName": "Section 1",
+      "fileType": "pdf",
+      "status": "not complete",
+      "link": "https://example.com/section1"
+    },
+    {
+      "fileName": "Introduction OOP",
+      "fileType": "video",
+      "status": "complete",
+      "link": "https://example.com/introduction-oop"
+    },
+    {
+      "fileName": "Assignment 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/assignment1"
+    },
+    {
+      "fileName": "Quiz lec 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/quiz1"
+    }
+  ],
+  "الاسبوع الثالث": [
+    {
+      "fileName": "Lecture 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/lecture1"
+    },
+    {
+      "fileName": "Section 1",
+      "fileType": "pdf",
+      "status": "not complete",
+      "link": "https://example.com/section1"
+    },
+    {
+      "fileName": "Introduction OOP",
+      "fileType": "video",
+      "status": "complete",
+      "link": "https://example.com/introduction-oop"
+    },
+    {
+      "fileName": "Assignment 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/assignment1"
+    },
+    {
+      "fileName": "Quiz lec 1",
+      "fileType": "pdf",
+      "status": "complete",
+      "link": "https://example.com/quiz1"
+    }
+  ],
+};
 
 final Map<String, List<Map<String, String>>> scheduleData = {
   'السبت': [

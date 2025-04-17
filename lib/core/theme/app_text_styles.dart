@@ -27,6 +27,16 @@ class AppTextStyles {
     color: AppColors.black,
     fontWeight: FontWeightHelper.regular,
   );
+  static TextStyle font14BlackBold = ChangaTextStyle(
+    fontSize: 14.sp,
+    color: AppColors.black,
+    fontWeight: FontWeightHelper.bold,
+  );
+  static TextStyle font13BlackBold = ChangaTextStyle(
+    fontSize: 13.sp,
+    color: AppColors.black,
+    fontWeight: FontWeightHelper.bold,
+  );
   static TextStyle font14WhiteBold = ChangaTextStyle(
     fontSize: 14.sp,
     color: AppColors.white,
@@ -128,6 +138,11 @@ class AppTextStyles {
     color: AppColors.black,
     fontWeight: FontWeightHelper.semiBold,
   );
+  static TextStyle font16BlackBold = ChangaTextStyle(
+    fontSize: 16.sp,
+    color: AppColors.black,
+    fontWeight: FontWeightHelper.bold,
+  );
   static TextStyle font15BlackSemiBold = ChangaTextStyle(
     fontSize: 15.sp,
     color: AppColors.black,
@@ -202,6 +217,36 @@ class AppTextStyles {
     fontSize: 20.sp,
     color: AppColors.white,
     fontWeight: FontWeightHelper.semiBold,
+  );
+  static TextStyle font15BlackBold = ChangaTextStyle(
+    fontSize: 15.sp,
+    color: AppColors.black,
+    fontWeight: FontWeightHelper.bold,
+  );
+  static TextStyle font8DarkBlueSemiBold = ChangaTextStyle(
+    fontSize: 8.sp,
+    color: AppColors.darkblue,
+    fontWeight: FontWeightHelper.semiBold,
+  );
+  static TextStyle font13DarkBlueBold = ChangaTextStyle(
+    fontSize: 13.sp,
+    color: AppColors.darkblue,
+    fontWeight: FontWeightHelper.bold,
+  );
+  static TextStyle font8WhiteSemiBold = ChangaTextStyle(
+    fontSize: 8.sp,
+    color: AppColors.white,
+    fontWeight: FontWeightHelper.semiBold,
+  );
+  static TextStyle font10BlackSemiBold = ChangaTextStyle(
+    fontSize: 10.sp,
+    color: AppColors.black,
+    fontWeight: FontWeightHelper.semiBold,
+  );
+  static TextStyle font16WhiteBold = ChangaTextStyle(
+    fontSize: 16.sp,
+    color: AppColors.white,
+    fontWeight: FontWeightHelper.bold,
   );
   static TextStyle font14BlackSemiBold = ChangaTextStyle(
     fontSize: 14.sp,

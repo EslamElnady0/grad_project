@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:grad_project/features/forum/presentation/views/answers_view.dart';
 import 'package:grad_project/features/forum/presentation/views/widgets/show_state_dialog.dart';
 
 import '../../../../../core/helpers/app_assets.dart';
@@ -32,7 +34,9 @@ class ButtonRow extends StatelessWidget {
         ),
         const Spacer(),
         ElevatedButton.icon(
-          onPressed: () {},
+          onPressed: () {
+            GoRouter.of(context).push(AnswersView.routeName);
+          },
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.darkblue,
             foregroundColor: AppColors.white,
@@ -45,19 +49,19 @@ class ButtonRow extends StatelessWidget {
               style:
                   AppTextStyles.font16WhiteSemiBold.copyWith(fontSize: 14.sp)),
         ),
-        Spacer(),
+     const   Spacer(),
         GestureDetector(
           onTap: () => showStatsDialog(context),
           child: Container(
             decoration: BoxDecoration(
-              gradient: LinearGradient(
+              gradient:const LinearGradient(
                 colors: [AppColors.redDark, AppColors.redlight],
                 begin: Alignment.bottomCenter,
                 end: Alignment.topCenter,
               ),
               borderRadius: BorderRadius.circular(12),
             ),
-            padding: EdgeInsets.all(12),
+            padding:const EdgeInsets.all(12),
             child: SvgPicture.asset(Assets.imagesSvgsChart),
           ),
         ),

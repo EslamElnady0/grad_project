@@ -11,10 +11,18 @@ class CustomTextFormField extends StatefulWidget {
     required this.hintText,
     required this.textInputType,
     this.onSaved,
+    this.prefixIcon,
+    this.controller,
+    this.maxLines,
+    this.alignLabelWithHint,
   });
 
   final String hintText;
+  final Widget? prefixIcon;
+  final TextEditingController? controller;
   final TextInputType textInputType;
+  final int? maxLines;
+  final bool? alignLabelWithHint;
   final void Function(String?)? onSaved;
 
   @override
@@ -38,6 +46,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       obscureText: _isObscured,
       onSaved: widget.onSaved,
       keyboardType: widget.textInputType,
+      maxLines: widget.maxLines,
       textAlign: isArabic ? TextAlign.right : TextAlign.left,
       style: AppTextStyles.font10grayRegular,
       validator: (value) {
@@ -47,7 +56,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         return null;
       },
       decoration: InputDecoration(
+        prefixIcon: widget.prefixIcon,
         hintText: widget.hintText,
+        alignLabelWithHint: widget.alignLabelWithHint,
         hintStyle: AppTextStyles.font10grayRegular,
         filled: true,
         fillColor: Colors.transparent, // Make fillColor transparent
