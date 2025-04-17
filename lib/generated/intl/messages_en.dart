@@ -32,6 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "Academic Progress",
     ),
+    "add_courses": MessageLookupByLibrary.simpleMessage("Add courses"),
     "add_new": MessageLookupByLibrary.simpleMessage("Add New Annoucement"),
     "add_new_news": MessageLookupByLibrary.simpleMessage(
       "🆕 Add a new news item to keep your students updated with all the latest news and updates",
@@ -159,6 +160,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "publish_time_description": MessageLookupByLibrary.simpleMessage(
       "Set a time to publish the Annoucement as a public announcement!",
     ),
+    "qr_attendance": MessageLookupByLibrary.simpleMessage("QR attendance"),
     "question_statistics": MessageLookupByLibrary.simpleMessage(
       "Question statistics",
     ),
@@ -237,6 +239,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "type": MessageLookupByLibrary.simpleMessage("Type"),
     "understandBeforeAnswering": MessageLookupByLibrary.simpleMessage(
       "Make sure you fully understand the question before answering.",
+    ),
+    "update_lecture_status": MessageLookupByLibrary.simpleMessage(
+      "Update lecture status",
     ),
     "verify_account": MessageLookupByLibrary.simpleMessage(
       "Verify your account!",

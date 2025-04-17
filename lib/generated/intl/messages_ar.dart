@@ -32,6 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "التقدم الأكاديمي",
     ),
+    "add_courses": MessageLookupByLibrary.simpleMessage("إضافة مواد دراسية"),
     "add_new": MessageLookupByLibrary.simpleMessage(" إضافة خبر جديد"),
     "add_new_news": MessageLookupByLibrary.simpleMessage(
       "🆕 أضف خبرًا جديدًا لإبقاء طلابك على اطلاع دائم بكل التحديثات والمستجدات",
@@ -155,6 +156,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "publish_time_description": MessageLookupByLibrary.simpleMessage(
       "تحديد موعد لنشر الخبر كخبر علني !",
     ),
+    "qr_attendance": MessageLookupByLibrary.simpleMessage("تسجيل حضور “QR”"),
     "question_statistics": MessageLookupByLibrary.simpleMessage(
       "إحصائيات هذا السؤال",
     ),
@@ -233,6 +235,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "type": MessageLookupByLibrary.simpleMessage("النوع"),
     "understandBeforeAnswering": MessageLookupByLibrary.simpleMessage(
       "تأكد من فهم السؤال جيدًا قبل البدء بالإجابة.",
+    ),
+    "update_lecture_status": MessageLookupByLibrary.simpleMessage(
+      "تحديث حالة المحاضرة",
     ),
     "verify_account": MessageLookupByLibrary.simpleMessage("أكد حسابك!"),
     "view": MessageLookupByLibrary.simpleMessage("مشاهدة"),
