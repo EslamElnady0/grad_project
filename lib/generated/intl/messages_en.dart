@@ -100,6 +100,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "forum_welcome_message": MessageLookupByLibrary.simpleMessage(
       "💬 Welcome to the Q&A forum! Ask your questions, share your knowledge by answering others\' questions, and benefit from your peers\' experiences here!",
     ),
+    "full_control_over_courses": MessageLookupByLibrary.simpleMessage(
+      "📚 Full control over your courses, from adding lectures to tracking student progress and managing quizzes and assignments!",
+    ),
     "goLearnCommunicate": MessageLookupByLibrary.simpleMessage(
       "Connect. Learn. Go!",
     ),
