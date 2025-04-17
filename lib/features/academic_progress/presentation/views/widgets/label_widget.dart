@@ -14,17 +14,16 @@ class LabelWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      width: 90,
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
       decoration: BoxDecoration(
           gradient: Constants.secondaryGrad,
           borderRadius: BorderRadius.circular(12)),
       child: Center(
-        child: FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Text(
-            labels[index],
-            style: AppTextStyles.font14WhiteSemiBold,
-          ),
+        child: Text(
+          textAlign: TextAlign.center,
+          labels[index],
+          style: AppTextStyles.font12WhiteSemiBold,
         ),
       ),
     );

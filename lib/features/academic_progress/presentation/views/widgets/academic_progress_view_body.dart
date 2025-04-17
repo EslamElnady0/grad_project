@@ -5,8 +5,9 @@ import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
 import 'package:grad_project/core/widgets/custom_drop_down_button.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/widgets/custom_percent_indicator.dart';
+import 'package:grad_project/features/academic_progress/presentation/views/widgets/degrees_listview.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/widgets/green_dot.dart';
-import 'package:grad_project/features/academic_progress/presentation/views/widgets/labels_listview.dart';
+import 'package:grad_project/features/academic_progress/presentation/views/widgets/labels_list_view.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
 import 'package:grad_project/generated/l10n.dart';
 
@@ -56,7 +57,7 @@ class AcademicProgressViewBody extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(12)),
-                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
                   child: Row(
                     children: [
                       Text(
@@ -74,17 +75,37 @@ class AcademicProgressViewBody extends StatelessWidget {
               ],
             ),
             vGap(15),
-            LabelsListView(
-              labels: [
-                S.of(context).subject,
-                S.of(context).attendance,
-                S.of(context).assignments,
-                S.of(context).midterm,
-                S.of(context).classWork,
-                S.of(context).final_exam,
-                S.of(context).total
-              ],
-            )
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: SizedBox(
+                width: 665.w,
+                child: Column(
+                  children: [
+                    LabelsListView(
+                      labels: [
+                        S.of(context).subject,
+                        S.of(context).attendance,
+                        S.of(context).assignments,
+                        S.of(context).midterm,
+                        S.of(context).classWork,
+                        S.of(context).final_exam,
+                        S.of(context).total
+                      ],
+                    ),
+                    vGap(10),
+                    Column(
+                      children: List.generate(
+                        7,
+                        (index) => Padding(
+                          padding: const EdgeInsets.only(bottom: 10),
+                          child: const DegreesListView(),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
