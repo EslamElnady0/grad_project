@@ -1200,20 +1200,12 @@ class S {
     return Intl.message('Total', name: 'total', desc: '', args: []);
   }
 
-  /// `Subject`
-  String get subject {
-    return Intl.message('Subject', name: 'subject', desc: '', args: []);
-  }
 
   /// `Attendance`
   String get attendance {
     return Intl.message('Attendance', name: 'attendance', desc: '', args: []);
   }
 
-  /// `Assignments`
-  String get assignments {
-    return Intl.message('Assignments', name: 'assignments', desc: '', args: []);
-  }
 
   /// `Midterm`
   String get midterm {
