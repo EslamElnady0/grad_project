@@ -46,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "app_title": MessageLookupByLibrary.simpleMessage("التعليم الالكتروني"),
     "assignment": MessageLookupByLibrary.simpleMessage("المهمة"),
     "assignments": MessageLookupByLibrary.simpleMessage("التكاليف"),
+    "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
     "classWork": MessageLookupByLibrary.simpleMessage("أعمال السنة"),
     "classes": MessageLookupByLibrary.simpleMessage("الفصول:"),
@@ -140,11 +141,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
       "المرات المسموح بها",
     ),
+    "on_time": MessageLookupByLibrary.simpleMessage("في موعدها (تلقائي)."),
     "once": MessageLookupByLibrary.simpleMessage("مرة واحدة"),
     "open": MessageLookupByLibrary.simpleMessage("فتح"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "pending": MessageLookupByLibrary.simpleMessage("معلق"),
     "place": MessageLookupByLibrary.simpleMessage("المكان"),
+    "postponed": MessageLookupByLibrary.simpleMessage("مؤجلة."),
     "prepareWell": MessageLookupByLibrary.simpleMessage("📚 استعد مسبقًا"),
     "previous": MessageLookupByLibrary.simpleMessage("السابق"),
     "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
@@ -239,6 +242,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "update_lecture_status": MessageLookupByLibrary.simpleMessage(
       "تحديث حالة المحاضرة",
+    ),
+    "update_lecture_status_description": MessageLookupByLibrary.simpleMessage(
+      "اختر حالة المحاضرة الحالية بناءً على وضعها الحالي..",
+    ),
+    "update_lecture_status_title": MessageLookupByLibrary.simpleMessage(
+      "📅 تحديث حالة المحاضرة!",
     ),
     "verify_account": MessageLookupByLibrary.simpleMessage("أكد حسابك!"),
     "view": MessageLookupByLibrary.simpleMessage("مشاهدة"),

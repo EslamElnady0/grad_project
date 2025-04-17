@@ -48,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "app_title": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "assignment": MessageLookupByLibrary.simpleMessage("Assignment"),
     "assignments": MessageLookupByLibrary.simpleMessage("Assignments"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "chat": MessageLookupByLibrary.simpleMessage("Chat"),
     "classWork": MessageLookupByLibrary.simpleMessage("Classwork"),
     "classes": MessageLookupByLibrary.simpleMessage("Classes:"),
@@ -142,11 +143,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
       "Allowed Attempts",
     ),
+    "on_time": MessageLookupByLibrary.simpleMessage("On time (automatic)."),
     "once": MessageLookupByLibrary.simpleMessage("Once"),
     "open": MessageLookupByLibrary.simpleMessage("open"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "place": MessageLookupByLibrary.simpleMessage("Place"),
+    "postponed": MessageLookupByLibrary.simpleMessage("Postponed."),
     "prepareWell": MessageLookupByLibrary.simpleMessage(
       "📚 Prepare in Advance",
     ),
@@ -245,6 +248,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "update_lecture_status": MessageLookupByLibrary.simpleMessage(
       "Update lecture status",
+    ),
+    "update_lecture_status_description": MessageLookupByLibrary.simpleMessage(
+      "Select the current lecture status based on its actual situation..",
+    ),
+    "update_lecture_status_title": MessageLookupByLibrary.simpleMessage(
+      "📅 Update lecture status!",
     ),
     "verify_account": MessageLookupByLibrary.simpleMessage(
       "Verify your account!",

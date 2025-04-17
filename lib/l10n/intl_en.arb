@@ -149,5 +149,10 @@
   "qr_attendance": "QR attendance",
   "add_courses": "Add courses",
   "update_lecture_status": "Update lecture status",
-  "students_count": "Number of students:"
+  "students_count": "Number of students:",
+  "cancel": "Cancel",
+  "update_lecture_status_title": "📅 Update lecture status!",
+  "update_lecture_status_description": "Select the current lecture status based on its actual situation..",
+  "on_time": "On time (automatic).",
+  "postponed": "Postponed."
 }
