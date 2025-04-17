@@ -1264,6 +1264,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+  }
+
+  /// `📅 Update lecture status!`
+  String get update_lecture_status_title {
+    return Intl.message(
+      '📅 Update lecture status!',
+      name: 'update_lecture_status_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select the current lecture status based on its actual situation..`
+  String get update_lecture_status_description {
+    return Intl.message(
+      'Select the current lecture status based on its actual situation..',
+      name: 'update_lecture_status_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `On time (automatic).`
+  String get on_time {
+    return Intl.message(
+      'On time (automatic).',
+      name: 'on_time',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Postponed.`
+  String get postponed {
+    return Intl.message('Postponed.', name: 'postponed', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

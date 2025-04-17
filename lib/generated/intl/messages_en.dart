@@ -52,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "assignment": MessageLookupByLibrary.simpleMessage("Assignment"),
     "assignments": MessageLookupByLibrary.simpleMessage("Assignments"),
     "attendance": MessageLookupByLibrary.simpleMessage("Attendance"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "chat": MessageLookupByLibrary.simpleMessage("Chat"),
     "classWork": MessageLookupByLibrary.simpleMessage("Classwork"),
     "class_work": MessageLookupByLibrary.simpleMessage("Classwork"),
@@ -153,12 +154,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "number_of_subjects": MessageLookupByLibrary.simpleMessage(
       "Subjects count",
     ),
+    "on_time": MessageLookupByLibrary.simpleMessage("On time (automatic)."),
     "once": MessageLookupByLibrary.simpleMessage("Once"),
     "open": MessageLookupByLibrary.simpleMessage("open"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "percentage": MessageLookupByLibrary.simpleMessage("Percentage"),
     "place": MessageLookupByLibrary.simpleMessage("Place"),
+    "postponed": MessageLookupByLibrary.simpleMessage("Postponed."),
     "prepareWell": MessageLookupByLibrary.simpleMessage(
       "📚 Prepare in Advance",
     ),
@@ -257,6 +260,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "update_lecture_status": MessageLookupByLibrary.simpleMessage(
       "Update lecture status",
+    ),
+    "update_lecture_status_description": MessageLookupByLibrary.simpleMessage(
+      "Select the current lecture status based on its actual situation..",
+    ),
+    "update_lecture_status_title": MessageLookupByLibrary.simpleMessage(
+      "📅 Update lecture status!",
     ),
     "verify_account": MessageLookupByLibrary.simpleMessage(
       "Verify your account!",

@@ -178,6 +178,11 @@ class AppTextStyles {
     color: AppColors.darkblue,
     fontWeight: FontWeightHelper.semiBold,
   );
+  static TextStyle font16DarkerBlueBold = ChangaTextStyle(
+    fontSize: 16.sp,
+    color: AppColors.darkblue,
+    fontWeight: FontWeightHelper.bold,
+  );
   static TextStyle font20DarkerBlueBold = ChangaTextStyle(
     fontSize: 20.sp,
     color: AppColors.darkblue,
@@ -197,6 +202,16 @@ class AppTextStyles {
     fontSize: 12.sp,
     color: AppColors.white,
     fontWeight: FontWeightHelper.medium,
+  );
+  static TextStyle font12DarkBlueMedium = ChangaTextStyle(
+    fontSize: 12.sp,
+    color: AppColors.darkblue,
+    fontWeight: FontWeightHelper.medium,
+  );
+  static TextStyle font12DarkBlueSemiBold = ChangaTextStyle(
+    fontSize: 12.sp,
+    color: AppColors.darkblue,
+    fontWeight: FontWeightHelper.semiBold,
   );
   static TextStyle font12WhiteSemiBold = ChangaTextStyle(
     fontSize: 12.sp,

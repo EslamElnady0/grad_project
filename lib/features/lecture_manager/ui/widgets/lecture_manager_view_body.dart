@@ -45,3 +45,5 @@ class LectureManagerViewBody extends StatelessWidget {
     );
   }
 }
+
+ 
