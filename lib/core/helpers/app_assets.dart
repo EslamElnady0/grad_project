@@ -38,6 +38,10 @@ class Assets {
   /// assets/images/qr.png
   static const String imagesQr = "assets/images/qr.png";
 
+  /// Assets for imagesQrCode
+  /// assets/images/qr_code.png
+  static const String imagesQrCode = "assets/images/qr_code.png";
+
   /// Assets for imagesSplash
   /// assets/images/splash.png
   static const String imagesSplash = "assets/images/splash.png";

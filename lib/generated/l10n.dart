@@ -28,9 +28,10 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -1004,11 +1005,6 @@ class S {
     return Intl.message('Quizzes', name: 'quizzes', desc: '', args: []);
   }
 
-  /// `Assignments`
-  String get assignments {
-    return Intl.message('Assignments', name: 'assignments', desc: '', args: []);
-  }
-
   /// `Add News!`
   String get add_news {
     return Intl.message('Add News!', name: 'add_news', desc: '', args: []);
@@ -1097,11 +1093,6 @@ class S {
   /// `Study Level`
   String get study_level {
     return Intl.message('Study Level', name: 'study_level', desc: '', args: []);
-  }
-
-  /// `Subject`
-  String get subject {
-    return Intl.message('Subject', name: 'subject', desc: '', args: []);
   }
 
   /// `Set Publish Time`
@@ -1209,9 +1200,19 @@ class S {
     return Intl.message('Total', name: 'total', desc: '', args: []);
   }
 
+  /// `Subject`
+  String get subject {
+    return Intl.message('Subject', name: 'subject', desc: '', args: []);
+  }
+
   /// `Attendance`
   String get attendance {
     return Intl.message('Attendance', name: 'attendance', desc: '', args: []);
+  }
+
+  /// `Assignments`
+  String get assignments {
+    return Intl.message('Assignments', name: 'assignments', desc: '', args: []);
   }
 
   /// `Midterm`
@@ -1249,6 +1250,16 @@ class S {
     return Intl.message(
       'Update lecture status',
       name: 'update_lecture_status',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No. of students`
+  String get students_count {
+    return Intl.message(
+      'No. of students',
+      name: 'students_count',
       desc: '',
       args: [],
     );

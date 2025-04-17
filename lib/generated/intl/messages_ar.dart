@@ -32,15 +32,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "التقدم الأكاديمي",
     ),
+    "academic_progress_welcome_message": MessageLookupByLibrary.simpleMessage(
+      " !تعرّف على مستواك الأكاديمي بكل سهولة تفاصيل درجاتك وترتيبك في متناول يدك🎓",
+    ),
     "add_courses": MessageLookupByLibrary.simpleMessage("إضافة مواد دراسية"),
     "add_new": MessageLookupByLibrary.simpleMessage(" إضافة خبر جديد"),
     "add_new_news": MessageLookupByLibrary.simpleMessage(
       "🆕 أضف خبرًا جديدًا لإبقاء طلابك على اطلاع دائم بكل التحديثات والمستجدات",
     ),
     "add_news": MessageLookupByLibrary.simpleMessage("أضف خبر !"),
-    "academic_progress_welcome_message": MessageLookupByLibrary.simpleMessage(
-      " !تعرّف على مستواك الأكاديمي بكل سهولة تفاصيل درجاتك وترتيبك في متناول يدك🎓",
-    ),
     "add_your_question": MessageLookupByLibrary.simpleMessage("أضف سؤالك !"),
     "all": MessageLookupByLibrary.simpleMessage("الكل"),
     "all_days": MessageLookupByLibrary.simpleMessage("كل الأيام"),
@@ -48,7 +48,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "answer": MessageLookupByLibrary.simpleMessage("إجابة"),
     "app_title": MessageLookupByLibrary.simpleMessage("التعليم الالكتروني"),
     "assignment": MessageLookupByLibrary.simpleMessage("المهمة"),
-    "assignments": MessageLookupByLibrary.simpleMessage("التكاليف"),
     "assignments": MessageLookupByLibrary.simpleMessage("التكاليف"),
     "attendance": MessageLookupByLibrary.simpleMessage("الحضور"),
     "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
@@ -223,10 +222,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "تنفّس بعمق وثق بقدراتك!",
     ),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage("طالب نشط الآن"),
+    "students_count": MessageLookupByLibrary.simpleMessage("عدد الطلاب:"),
     "study": MessageLookupByLibrary.simpleMessage("دراسة"),
     "study_level": MessageLookupByLibrary.simpleMessage("الفرقة الدراسية"),
     "subject": MessageLookupByLibrary.simpleMessage("المادة الدراسية"),
-    "subject": MessageLookupByLibrary.simpleMessage("المادة"),
     "subject_name": MessageLookupByLibrary.simpleMessage("اسم المادة"),
     "submitAndFinish": MessageLookupByLibrary.simpleMessage("الإنهاء والتقديم"),
     "success_message": MessageLookupByLibrary.simpleMessage(
