@@ -63,6 +63,7 @@ class CustomTextAndIconButton extends StatelessWidget {
         onTap: onTap,
         child: Row(
           mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment:MainAxisAlignment.center ,
           children: [
             icon,
             hGap(5),

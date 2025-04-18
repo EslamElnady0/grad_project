@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:grad_project/features/academic_progress/presentation/views/academic_progress_view.dart';
 import 'package:grad_project/features/auth/presentation/views/forget_password_view.dart';
 import 'package:grad_project/features/auth/presentation/views/confirm_account_view.dart';
 import 'package:grad_project/features/chat/ui/views/chat_view.dart';
@@ -62,10 +61,6 @@ abstract class StudentRouter {
       GoRoute(
         path: ProfileView.routeName,
         builder: (context, state) => const ProfileView(),
-      ),
-      GoRoute(
-        path: AcademicProgressView.routeName,
-        builder: (context, state) => const AcademicProgressView(),
       ),
       GoRoute(
         path: MaterialsView.routeName,
