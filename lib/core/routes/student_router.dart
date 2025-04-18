@@ -9,6 +9,7 @@ import 'package:grad_project/features/map/presentation/views/internal_map_view.d
 import 'package:grad_project/features/profile/presentation/views/profile_view.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_details_view.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_view.dart';
+import 'package:grad_project/features/time_schedule/presentation/views/time_schedule_view.dart';
 import 'package:grad_project/features/weekly_schedule/ui/views/screens/weekly_schedule_view.dart';
 import '../../features/auth/presentation/views/auth_view.dart';
 import '../../features/home/ui/cubit/bottom_nav_bar_cubit.dart';
@@ -75,6 +76,10 @@ abstract class StudentRouter {
         path: AnswersView.routeName,
         builder: (context, state) => const AnswersView()
       ),
+      GoRoute(
+        path: TimeScheduleView.routeName,
+        builder: (context, state) => const TimeScheduleView()
+      )
     ],
   );
 }

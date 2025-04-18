@@ -4,7 +4,7 @@ import 'package:grad_project/features/time_schedule/presentation/views/widgets/t
 
 class TimeScheduleView extends StatelessWidget {
   const TimeScheduleView({super.key});
-
+static const String routeName = '/Time-Schedule-view';
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
