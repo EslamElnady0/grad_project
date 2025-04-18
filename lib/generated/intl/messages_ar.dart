@@ -50,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "assignment": MessageLookupByLibrary.simpleMessage("المهمة"),
     "assignments": MessageLookupByLibrary.simpleMessage("التكاليف"),
     "attendance": MessageLookupByLibrary.simpleMessage("الحضور"),
+    "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
     "classWork": MessageLookupByLibrary.simpleMessage("أعمال السنة"),
     "class_work": MessageLookupByLibrary.simpleMessage("أعمال الفصل"),
@@ -149,12 +150,16 @@ class MessageLookup extends MessageLookupByLibrary {
       "المرات المسموح بها",
     ),
     "number_of_subjects": MessageLookupByLibrary.simpleMessage("عدد المواد"),
+    "on_time": MessageLookupByLibrary.simpleMessage(
+      "في الوقت المحدد (تلقائي).",
+    ),
     "once": MessageLookupByLibrary.simpleMessage("مرة واحدة"),
     "open": MessageLookupByLibrary.simpleMessage("فتح"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "pending": MessageLookupByLibrary.simpleMessage("معلق"),
     "percentage": MessageLookupByLibrary.simpleMessage("النسبة المئوية"),
     "place": MessageLookupByLibrary.simpleMessage("المكان"),
+    "postponed": MessageLookupByLibrary.simpleMessage("مؤجل."),
     "prepareWell": MessageLookupByLibrary.simpleMessage("📚 استعد مسبقًا"),
     "previous": MessageLookupByLibrary.simpleMessage("السابق"),
     "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
@@ -251,6 +256,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "update_lecture_status": MessageLookupByLibrary.simpleMessage(
       "تحديث حالة المحاضرة",
+    ),
+    "update_lecture_status_description": MessageLookupByLibrary.simpleMessage(
+      "حدد الحالة الحالية للمحاضرة بناءً على وضعها الفعلي..",
+    ),
+    "update_lecture_status_title": MessageLookupByLibrary.simpleMessage(
+      "📅تحديث حالة المحاضرة!",
     ),
     "verify_account": MessageLookupByLibrary.simpleMessage("أكد حسابك!"),
     "view": MessageLookupByLibrary.simpleMessage("مشاهدة"),
