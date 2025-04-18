@@ -2,10 +2,6 @@
 class Assets {
   Assets._();
   
-  /// Assets for imagesAddLecture
-  /// assets/images/addLecture.png
-  static const String imagesAddLecture = "assets/images/addLecture.png";
-
   /// Assets for imagesAvatarDoc
   /// assets/images/avatar_doc.png
   static const String imagesAvatarDoc = "assets/images/avatar_doc.png";
@@ -34,14 +30,6 @@ class Assets {
   /// assets/images/protect.png
   static const String imagesProtect = "assets/images/protect.png";
 
-  /// Assets for imagesQr
-  /// assets/images/qr.png
-  static const String imagesQr = "assets/images/qr.png";
-
-  /// Assets for imagesQrCode
-  /// assets/images/qr_code.png
-  static const String imagesQrCode = "assets/images/qr_code.png";
-
   /// Assets for imagesSplash
   /// assets/images/splash.png
   static const String imagesSplash = "assets/images/splash.png";
@@ -49,10 +37,6 @@ class Assets {
   /// Assets for imagesSplashIcon
   /// assets/images/splash_icon.png
   static const String imagesSplashIcon = "assets/images/splash_icon.png";
-
-  /// Assets for imagesStateUpdate
-  /// assets/images/stateUpdate.png
-  static const String imagesStateUpdate = "assets/images/stateUpdate.png";
 
   /// Assets for imagesSubject
   /// assets/images/subject.png
@@ -133,6 +117,10 @@ class Assets {
   /// Assets for imagesSvgsDewenloadIcon
   /// assets/images/svgs/dewenload_icon.svg
   static const String imagesSvgsDewenloadIcon = "assets/images/svgs/dewenload_icon.svg";
+
+  /// Assets for imagesSvgsDropdown
+  /// assets/images/svgs/dropdown.svg
+  static const String imagesSvgsDropdown = "assets/images/svgs/dropdown.svg";
 
   /// Assets for imagesSvgsEditPictureIcon
   /// assets/images/svgs/Edit_picture_icon.svg

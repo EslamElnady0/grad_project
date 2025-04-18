@@ -1150,89 +1150,74 @@ class S {
     );
   }
 
-  /// `📚 Full control over your courses, from adding lectures to tracking student progress and managing quizzes and assignments!`
-  String get full_control_over_courses {
+  /// `🎓Find out your academic level with ease. Details of your grades and ranking are at your fingertips!`
+  String get academic_progress_welcome_message {
     return Intl.message(
-      '📚 Full control over your courses, from adding lectures to tracking student progress and managing quizzes and assignments!',
-      name: 'full_control_over_courses',
+      '🎓Find out your academic level with ease. Details of your grades and ranking are at your fingertips!',
+      name: 'academic_progress_welcome_message',
       desc: '',
       args: [],
     );
   }
 
-  /// `QR attendance`
-  String get qr_attendance {
+  /// `Percentage`
+  String get percentage {
+    return Intl.message('Percentage', name: 'percentage', desc: '', args: []);
+  }
+
+  /// `1st Semester`
+  String get first_semester {
     return Intl.message(
-      'QR attendance',
-      name: 'qr_attendance',
+      '1st Semester',
+      name: 'first_semester',
       desc: '',
       args: [],
     );
   }
 
-  /// `Add courses`
-  String get add_courses {
-    return Intl.message('Add courses', name: 'add_courses', desc: '', args: []);
-  }
-
-  /// `Update lecture status`
-  String get update_lecture_status {
+  /// `2nd Semester`
+  String get second_semester {
     return Intl.message(
-      'Update lecture status',
-      name: 'update_lecture_status',
+      '2nd Semester',
+      name: 'second_semester',
       desc: '',
       args: [],
     );
   }
 
-  /// `Number of students:`
-  String get students_count {
+  /// `Subjects count`
+  String get number_of_subjects {
     return Intl.message(
-      'Number of students:',
-      name: 'students_count',
+      'Subjects count',
+      name: 'number_of_subjects',
       desc: '',
       args: [],
     );
   }
 
-  /// `Cancel`
-  String get cancel {
-    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+  /// `Total`
+  String get total {
+    return Intl.message('Total', name: 'total', desc: '', args: []);
   }
 
-  /// `📅 Update lecture status!`
-  String get update_lecture_status_title {
-    return Intl.message(
-      '📅 Update lecture status!',
-      name: 'update_lecture_status_title',
-      desc: '',
-      args: [],
-    );
+  /// `Attendance`
+  String get attendance {
+    return Intl.message('Attendance', name: 'attendance', desc: '', args: []);
   }
 
-  /// `Select the current lecture status based on its actual situation..`
-  String get update_lecture_status_description {
-    return Intl.message(
-      'Select the current lecture status based on its actual situation..',
-      name: 'update_lecture_status_description',
-      desc: '',
-      args: [],
-    );
+  /// `Midterm`
+  String get midterm {
+    return Intl.message('Midterm', name: 'midterm', desc: '', args: []);
   }
 
-  /// `On time (automatic).`
-  String get on_time {
-    return Intl.message(
-      'On time (automatic).',
-      name: 'on_time',
-      desc: '',
-      args: [],
-    );
+  /// `Classwork`
+  String get class_work {
+    return Intl.message('Classwork', name: 'class_work', desc: '', args: []);
   }
 
-  /// `Postponed.`
-  String get postponed {
-    return Intl.message('Postponed.', name: 'postponed', desc: '', args: []);
+  /// `Final exam`
+  String get final_exam {
+    return Intl.message('Final exam', name: 'final_exam', desc: '', args: []);
   }
 }
 

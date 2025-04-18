@@ -32,12 +32,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "التقدم الأكاديمي",
     ),
-    "add_courses": MessageLookupByLibrary.simpleMessage("إضافة مواد دراسية"),
     "add_new": MessageLookupByLibrary.simpleMessage(" إضافة خبر جديد"),
     "add_new_news": MessageLookupByLibrary.simpleMessage(
       "🆕 أضف خبرًا جديدًا لإبقاء طلابك على اطلاع دائم بكل التحديثات والمستجدات",
     ),
     "add_news": MessageLookupByLibrary.simpleMessage("أضف خبر !"),
+    "academic_progress_welcome_message": MessageLookupByLibrary.simpleMessage(
+      " !تعرّف على مستواك الأكاديمي بكل سهولة تفاصيل درجاتك وترتيبك في متناول يدك🎓",
+    ),
     "add_your_question": MessageLookupByLibrary.simpleMessage("أضف سؤالك !"),
     "all": MessageLookupByLibrary.simpleMessage("الكل"),
     "all_days": MessageLookupByLibrary.simpleMessage("كل الأيام"),
@@ -46,9 +48,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "app_title": MessageLookupByLibrary.simpleMessage("التعليم الالكتروني"),
     "assignment": MessageLookupByLibrary.simpleMessage("المهمة"),
     "assignments": MessageLookupByLibrary.simpleMessage("التكاليف"),
-    "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
+    "assignments": MessageLookupByLibrary.simpleMessage("التكاليف"),
+    "attendance": MessageLookupByLibrary.simpleMessage("الحضور"),
     "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
     "classWork": MessageLookupByLibrary.simpleMessage("أعمال السنة"),
+    "class_work": MessageLookupByLibrary.simpleMessage("أعمال الفصل"),
     "classes": MessageLookupByLibrary.simpleMessage("الفصول:"),
     "classification": MessageLookupByLibrary.simpleMessage("التصنيف"),
     "clearAnswerSelection": MessageLookupByLibrary.simpleMessage(
@@ -91,6 +95,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "filter": MessageLookupByLibrary.simpleMessage("تصفية"),
     "finalResults": MessageLookupByLibrary.simpleMessage("النتائج النهائية"),
+    "final_exam": MessageLookupByLibrary.simpleMessage("الإختبار النهائي"),
+    "first_semester": MessageLookupByLibrary.simpleMessage("ترم أول"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة السر؟",
     ),
@@ -99,9 +105,6 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "forum_welcome_message": MessageLookupByLibrary.simpleMessage(
       "💬 مرحباً بك في منتدى الأسئلة والإجابات!اطرح أسئلتك، وشارك معرفتك بالإجابة على أسئلة الآخرين، واستفد من خبرات زملائك هنا!",
-    ),
-    "full_control_over_courses": MessageLookupByLibrary.simpleMessage(
-      "📚 تحكم كامل بموادك الدراسية، من إضافة المحاضرات إلى متابعة تقدم الطلاب وإدارة الكويزات والأسايمنتات!",
     ),
     "goLearnCommunicate": MessageLookupByLibrary.simpleMessage(
       "تواصل. تعلّم. انطلق!",
@@ -121,6 +124,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "material_description": MessageLookupByLibrary.simpleMessage(
       "🎓📚 كل اللي محتاجه لمادتك في مكان واحد: محاضرات، سكاشن، اسايمنتات، كويزات، فيديوهات، ميدتيرم، وامتحانات نهائية!",
     ),
+    "midterm": MessageLookupByLibrary.simpleMessage("الميدتيرم"),
     "minute": MessageLookupByLibrary.simpleMessage("دقيقة"),
     "monday": MessageLookupByLibrary.simpleMessage("الإثنين"),
     "mostSreached": MessageLookupByLibrary.simpleMessage(
@@ -141,13 +145,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
       "المرات المسموح بها",
     ),
-    "on_time": MessageLookupByLibrary.simpleMessage("في موعدها (تلقائي)."),
+    "number_of_subjects": MessageLookupByLibrary.simpleMessage("عدد المواد"),
     "once": MessageLookupByLibrary.simpleMessage("مرة واحدة"),
     "open": MessageLookupByLibrary.simpleMessage("فتح"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "pending": MessageLookupByLibrary.simpleMessage("معلق"),
+    "percentage": MessageLookupByLibrary.simpleMessage("النسبة المئوية"),
     "place": MessageLookupByLibrary.simpleMessage("المكان"),
-    "postponed": MessageLookupByLibrary.simpleMessage("مؤجلة."),
     "prepareWell": MessageLookupByLibrary.simpleMessage("📚 استعد مسبقًا"),
     "previous": MessageLookupByLibrary.simpleMessage("السابق"),
     "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
@@ -159,7 +163,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "publish_time_description": MessageLookupByLibrary.simpleMessage(
       "تحديد موعد لنشر الخبر كخبر علني !",
     ),
-    "qr_attendance": MessageLookupByLibrary.simpleMessage("تسجيل حضور “QR”"),
     "question_statistics": MessageLookupByLibrary.simpleMessage(
       "إحصائيات هذا السؤال",
     ),
@@ -190,6 +193,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       " ابحث عن مبني، مدرج، قاعة، الخ..!",
     ),
+    "second_semester": MessageLookupByLibrary.simpleMessage("ترم ثاني"),
     "section": MessageLookupByLibrary.simpleMessage("سكشن"),
     "sections": MessageLookupByLibrary.simpleMessage("سكشن"),
     "security_confirmation": MessageLookupByLibrary.simpleMessage(
@@ -214,10 +218,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "تنفّس بعمق وثق بقدراتك!",
     ),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage("طالب نشط الآن"),
-    "students_count": MessageLookupByLibrary.simpleMessage("عدد الطلاب:"),
     "study": MessageLookupByLibrary.simpleMessage("دراسة"),
     "study_level": MessageLookupByLibrary.simpleMessage("الفرقة الدراسية"),
     "subject": MessageLookupByLibrary.simpleMessage("المادة الدراسية"),
+    "subject": MessageLookupByLibrary.simpleMessage("المادة"),
     "subject_name": MessageLookupByLibrary.simpleMessage("اسم المادة"),
     "submitAndFinish": MessageLookupByLibrary.simpleMessage("الإنهاء والتقديم"),
     "success_message": MessageLookupByLibrary.simpleMessage(
@@ -235,19 +239,11 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "timeRemaining": MessageLookupByLibrary.simpleMessage("الوقت المتبقي"),
     "timeSchedule": MessageLookupByLibrary.simpleMessage("الجدول الزمني"),
+    "total": MessageLookupByLibrary.simpleMessage("المجموع"),
     "tuesday": MessageLookupByLibrary.simpleMessage("الثلاثاء"),
     "type": MessageLookupByLibrary.simpleMessage("النوع"),
     "understandBeforeAnswering": MessageLookupByLibrary.simpleMessage(
       "تأكد من فهم السؤال جيدًا قبل البدء بالإجابة.",
-    ),
-    "update_lecture_status": MessageLookupByLibrary.simpleMessage(
-      "تحديث حالة المحاضرة",
-    ),
-    "update_lecture_status_description": MessageLookupByLibrary.simpleMessage(
-      "اختر حالة المحاضرة الحالية بناءً على وضعها الحالي..",
-    ),
-    "update_lecture_status_title": MessageLookupByLibrary.simpleMessage(
-      "📅 تحديث حالة المحاضرة!",
     ),
     "verify_account": MessageLookupByLibrary.simpleMessage("أكد حسابك!"),
     "view": MessageLookupByLibrary.simpleMessage("مشاهدة"),
