@@ -11,7 +11,8 @@ import 'core/routes/student_router.dart';
 import 'core/theme/app_theme.dart';
 import 'firebase_options_student.dart';
 import 'generated/l10n.dart';
-
+ 
+ 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
