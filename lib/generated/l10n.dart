@@ -1005,11 +1005,6 @@ class S {
     return Intl.message('Quizzes', name: 'quizzes', desc: '', args: []);
   }
 
-  /// `Assignments`
-  String get assignments {
-    return Intl.message('Assignments', name: 'assignments', desc: '', args: []);
-  }
-
   /// `Add News!`
   String get add_news {
     return Intl.message('Add News!', name: 'add_news', desc: '', args: []);
@@ -1100,11 +1095,6 @@ class S {
     return Intl.message('Study Level', name: 'study_level', desc: '', args: []);
   }
 
-  /// `Subject`
-  String get subject {
-    return Intl.message('Subject', name: 'subject', desc: '', args: []);
-  }
-
   /// `Set Publish Time`
   String get schedule_publish_time {
     return Intl.message(
@@ -1135,6 +1125,16 @@ class S {
     return Intl.message(
       'View Registered Students',
       name: 'view_registered_students',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `📚 Full control over your courses, from adding lectures to tracking student progress and managing quizzes and assignments!`
+  String get full_control_over_courses {
+    return Intl.message(
+      '📚 Full control over your courses, from adding lectures to tracking student progress and managing quizzes and assignments!',
+      name: 'full_control_over_courses',
       desc: '',
       args: [],
     );
@@ -1200,9 +1200,19 @@ class S {
     return Intl.message('Total', name: 'total', desc: '', args: []);
   }
 
+  /// `Subject`
+  String get subject {
+    return Intl.message('Subject', name: 'subject', desc: '', args: []);
+  }
+
   /// `Attendance`
   String get attendance {
     return Intl.message('Attendance', name: 'attendance', desc: '', args: []);
+  }
+
+  /// `Assignments`
+  String get assignments {
+    return Intl.message('Assignments', name: 'assignments', desc: '', args: []);
   }
 
   /// `Midterm`
@@ -1218,6 +1228,81 @@ class S {
   /// `Final exam`
   String get final_exam {
     return Intl.message('Final exam', name: 'final_exam', desc: '', args: []);
+  }
+
+  /// `QR attendance`
+  String get qr_attendance {
+    return Intl.message(
+      'QR attendance',
+      name: 'qr_attendance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add courses`
+  String get add_courses {
+    return Intl.message('Add courses', name: 'add_courses', desc: '', args: []);
+  }
+
+  /// `Update lecture status`
+  String get update_lecture_status {
+    return Intl.message(
+      'Update lecture status',
+      name: 'update_lecture_status',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No. of students`
+  String get students_count {
+    return Intl.message(
+      'No. of students',
+      name: 'students_count',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+  }
+
+  /// `📅 Update lecture status!`
+  String get update_lecture_status_title {
+    return Intl.message(
+      '📅 Update lecture status!',
+      name: 'update_lecture_status_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select the current lecture status based on its actual situation..`
+  String get update_lecture_status_description {
+    return Intl.message(
+      'Select the current lecture status based on its actual situation..',
+      name: 'update_lecture_status_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `On time (automatic).`
+  String get on_time {
+    return Intl.message(
+      'On time (automatic).',
+      name: 'on_time',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Postponed.`
+  String get postponed {
+    return Intl.message('Postponed.', name: 'postponed', desc: '', args: []);
   }
 }
 

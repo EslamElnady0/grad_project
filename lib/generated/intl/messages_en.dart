@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "academic_progress_welcome_message": MessageLookupByLibrary.simpleMessage(
       "🎓Find out your academic level with ease. Details of your grades and ranking are at your fingertips!",
     ),
+    "add_courses": MessageLookupByLibrary.simpleMessage("Add courses"),
     "add_new": MessageLookupByLibrary.simpleMessage("Add New Annoucement"),
     "add_new_news": MessageLookupByLibrary.simpleMessage(
       "🆕 Add a new news item to keep your students updated with all the latest news and updates",
@@ -50,8 +51,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "app_title": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "assignment": MessageLookupByLibrary.simpleMessage("Assignment"),
     "assignments": MessageLookupByLibrary.simpleMessage("Assignments"),
-    "assignments": MessageLookupByLibrary.simpleMessage("Assignments"),
     "attendance": MessageLookupByLibrary.simpleMessage("Attendance"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "chat": MessageLookupByLibrary.simpleMessage("Chat"),
     "classWork": MessageLookupByLibrary.simpleMessage("Classwork"),
     "class_work": MessageLookupByLibrary.simpleMessage("Classwork"),
@@ -108,6 +109,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "forum_welcome_message": MessageLookupByLibrary.simpleMessage(
       "💬 Welcome to the Q&A forum! Ask your questions, share your knowledge by answering others\' questions, and benefit from your peers\' experiences here!",
     ),
+    "full_control_over_courses": MessageLookupByLibrary.simpleMessage(
+      "📚 Full control over your courses, from adding lectures to tracking student progress and managing quizzes and assignments!",
+    ),
     "goLearnCommunicate": MessageLookupByLibrary.simpleMessage(
       "Connect. Learn. Go!",
     ),
@@ -150,12 +154,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "number_of_subjects": MessageLookupByLibrary.simpleMessage(
       "Subjects count",
     ),
+    "on_time": MessageLookupByLibrary.simpleMessage("On time (automatic)."),
     "once": MessageLookupByLibrary.simpleMessage("Once"),
     "open": MessageLookupByLibrary.simpleMessage("open"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "percentage": MessageLookupByLibrary.simpleMessage("Percentage"),
     "place": MessageLookupByLibrary.simpleMessage("Place"),
+    "postponed": MessageLookupByLibrary.simpleMessage("Postponed."),
     "prepareWell": MessageLookupByLibrary.simpleMessage(
       "📚 Prepare in Advance",
     ),
@@ -169,6 +175,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "publish_time_description": MessageLookupByLibrary.simpleMessage(
       "Set a time to publish the Annoucement as a public announcement!",
     ),
+    "qr_attendance": MessageLookupByLibrary.simpleMessage("QR attendance"),
     "question_statistics": MessageLookupByLibrary.simpleMessage(
       "Question statistics",
     ),
@@ -224,9 +231,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage(
       "students online now",
     ),
+    "students_count": MessageLookupByLibrary.simpleMessage("No. of students"),
     "study": MessageLookupByLibrary.simpleMessage("Study"),
     "study_level": MessageLookupByLibrary.simpleMessage("Study Level"),
-    "subject": MessageLookupByLibrary.simpleMessage("Subject"),
     "subject": MessageLookupByLibrary.simpleMessage("Subject"),
     "subject_name": MessageLookupByLibrary.simpleMessage("Subject Name"),
     "submitAndFinish": MessageLookupByLibrary.simpleMessage("Submit & Finish"),
@@ -250,6 +257,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "type": MessageLookupByLibrary.simpleMessage("Type"),
     "understandBeforeAnswering": MessageLookupByLibrary.simpleMessage(
       "Make sure you fully understand the question before answering.",
+    ),
+    "update_lecture_status": MessageLookupByLibrary.simpleMessage(
+      "Update lecture status",
+    ),
+    "update_lecture_status_description": MessageLookupByLibrary.simpleMessage(
+      "Select the current lecture status based on its actual situation..",
+    ),
+    "update_lecture_status_title": MessageLookupByLibrary.simpleMessage(
+      "📅 Update lecture status!",
     ),
     "verify_account": MessageLookupByLibrary.simpleMessage(
       "Verify your account!",
