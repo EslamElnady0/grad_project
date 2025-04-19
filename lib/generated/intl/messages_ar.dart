@@ -35,6 +35,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "academic_progress_welcome_message": MessageLookupByLibrary.simpleMessage(
       " !تعرّف على مستواك الأكاديمي بكل سهولة تفاصيل درجاتك وترتيبك في متناول يدك🎓",
     ),
+    "add_course_content_description": MessageLookupByLibrary.simpleMessage(
+      "📚 قم بإضافة مواد دراسية جديدة وإدارة تفاصيلها بكل سهولة!",
+    ),
+    "add_course_content_title": MessageLookupByLibrary.simpleMessage(
+      "إضافة محتوى دراسي",
+    ),
     "add_courses": MessageLookupByLibrary.simpleMessage("إضافة مواد دراسية"),
     "add_new": MessageLookupByLibrary.simpleMessage(" إضافة خبر جديد"),
     "add_new_news": MessageLookupByLibrary.simpleMessage(

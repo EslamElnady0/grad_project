@@ -1304,6 +1304,26 @@ class S {
   String get postponed {
     return Intl.message('Postponed.', name: 'postponed', desc: '', args: []);
   }
+
+  /// `Add Course Content`
+  String get add_course_content_title {
+    return Intl.message(
+      'Add Course Content',
+      name: 'add_course_content_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `📚 Add new study materials and manage their details with ease!`
+  String get add_course_content_description {
+    return Intl.message(
+      '📚 Add new study materials and manage their details with ease!',
+      name: 'add_course_content_description',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
