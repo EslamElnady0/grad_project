@@ -58,6 +58,14 @@ class Assets {
   /// assets/images/subject.png
   static const String imagesSubject = "assets/images/subject.png";
 
+  /// Assets for imagesSubjectC
+  /// assets/images/subject_c.png
+  static const String imagesSubjectC = "assets/images/subject_c.png";
+
+  /// Assets for imagesSubjectCutImage
+  /// assets/images/subject_cut_image.png
+  static const String imagesSubjectCutImage = "assets/images/subject_cut_image.png";
+
   /// Assets for imagesSvgsAddIcon
   /// assets/images/svgs/add_icon.svg
   static const String imagesSvgsAddIcon = "assets/images/svgs/add_icon.svg";
@@ -237,6 +245,10 @@ class Assets {
   /// Assets for imagesSvgsThreeDotsIcon
   /// assets/images/svgs/three_dots_icon.svg
   static const String imagesSvgsThreeDotsIcon = "assets/images/svgs/three_dots_icon.svg";
+
+  /// Assets for imagesSvgsThreeLinesVerticalIcon
+  /// assets/images/svgs/three_lines_vertical_icon.svg
+  static const String imagesSvgsThreeLinesVerticalIcon = "assets/images/svgs/three_lines_vertical_icon.svg";
 
   /// Assets for imagesSvgsTime
   /// assets/images/svgs/time.svg

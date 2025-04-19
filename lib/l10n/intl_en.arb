@@ -169,6 +169,7 @@
   "forum_management": "Forum Management",
   "final_grades": "Final Grades",
   "registered_students": "Registered Students",
+  "registered_students_count": "No. of registered students:",
   "registered_students_description": "👥 View a list of all students registered in the course with details like name and academic number.",
   "search_placeholder": "Enter the student’s name or ID number...",
   "materials_center": "👨‍🏫 Easily manage your course materials—from students to lectures and quizzes!"

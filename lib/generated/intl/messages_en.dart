@@ -200,6 +200,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "registered_students": MessageLookupByLibrary.simpleMessage(
       "Registered Students",
     ),
+    "registered_students_count": MessageLookupByLibrary.simpleMessage(
+      "No. of registered students:",
+    ),
     "registered_students_description": MessageLookupByLibrary.simpleMessage(
       "👥 View a list of all students registered in the course with details like name and academic number.",
     ),

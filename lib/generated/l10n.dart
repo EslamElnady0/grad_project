@@ -1345,6 +1345,16 @@ class S {
     );
   }
 
+  /// `No. of registered students:`
+  String get registered_students_count {
+    return Intl.message(
+      'No. of registered students:',
+      name: 'registered_students_count',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `👥 View a list of all students registered in the course with details like name and academic number.`
   String get registered_students_description {
     return Intl.message(
