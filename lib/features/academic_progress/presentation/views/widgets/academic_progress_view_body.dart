@@ -18,7 +18,7 @@ class AcademicProgressViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: 10.w,
+        horizontal: 16.w,
         vertical: 10.h,
       ),
       child: SingleChildScrollView(
@@ -44,8 +44,10 @@ class AcademicProgressViewBody extends StatelessWidget {
             ),
             vGap(15),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CustomDropDownButton(
+                  initialValue: S.of(context).first_semester,
                   values: [
                     S.of(context).first_semester,
                     S.of(context).second_semester,

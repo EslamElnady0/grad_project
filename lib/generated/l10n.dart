@@ -1304,6 +1304,56 @@ class S {
   String get postponed {
     return Intl.message('Postponed.', name: 'postponed', desc: '', args: []);
   }
+
+  /// `Welcome! Here you can view the upcoming quiz dates and submit the fees for each subject.⏰`
+  String get time_schedule_welcome_message {
+    return Intl.message(
+      'Welcome! Here you can view the upcoming quiz dates and submit the fees for each subject.⏰',
+      name: 'time_schedule_welcome_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search by activity type or name`
+  String get search_for_task {
+    return Intl.message(
+      'Search by activity type or name',
+      name: 'search_for_task',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next Seven Days`
+  String get next_seven_days {
+    return Intl.message(
+      'Next Seven Days',
+      name: 'next_seven_days',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quiz Details`
+  String get quiz_details {
+    return Intl.message(
+      'Quiz Details',
+      name: 'quiz_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add to send`
+  String get add_to_send {
+    return Intl.message('Add to send', name: 'add_to_send', desc: '', args: []);
+  }
+
+  /// `sent`
+  String get sent {
+    return Intl.message('sent', name: 'sent', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

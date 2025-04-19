@@ -164,5 +164,11 @@
   "update_lecture_status_title": "📅 Update lecture status!",
   "update_lecture_status_description": "Select the current lecture status based on its actual situation..",
   "on_time": "On time (automatic).",
-  "postponed": "Postponed."
+  "postponed": "Postponed.",
+  "time_schedule_welcome_message":"Welcome! Here you can view the upcoming quiz dates and submit the fees for each subject.⏰",
+  "search_for_task":"Search by activity type or name",
+  "next_seven_days":"Next Seven Days",
+  "quiz_details":"Quiz Details",
+  "add_to_send":"Add to send",
+  "sent":"sent"
 }

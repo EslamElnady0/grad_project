@@ -41,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "🆕 Add a new news item to keep your students updated with all the latest news and updates",
     ),
     "add_news": MessageLookupByLibrary.simpleMessage("Add News!"),
+    "add_to_send": MessageLookupByLibrary.simpleMessage("Add to send"),
     "add_your_question": MessageLookupByLibrary.simpleMessage(
       "Add your question!",
     ),
@@ -147,6 +148,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Add a clear and direct title that summarizes the Annoucement accurately!",
     ),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
+    "next_seven_days": MessageLookupByLibrary.simpleMessage("Next Seven Days"),
     "not_started": MessageLookupByLibrary.simpleMessage("Not Started"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
       "Allowed Attempts",
@@ -186,6 +188,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "quizDuration": MessageLookupByLibrary.simpleMessage("Quiz Duration"),
     "quizNavigation": MessageLookupByLibrary.simpleMessage("Quiz Navigation"),
     "quizState": MessageLookupByLibrary.simpleMessage("Quiz Status"),
+    "quiz_details": MessageLookupByLibrary.simpleMessage("Quiz Details"),
     "quizzes": MessageLookupByLibrary.simpleMessage("Quizzes"),
     "readCarefully": MessageLookupByLibrary.simpleMessage(
       "🔍 Read Questions Carefully",
@@ -204,6 +207,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       "Search for a building, lecture hall, room, etc..!",
     ),
+    "search_for_task": MessageLookupByLibrary.simpleMessage(
+      "Search by activity type or name",
+    ),
     "second_semester": MessageLookupByLibrary.simpleMessage("2nd Semester"),
     "section": MessageLookupByLibrary.simpleMessage("Section"),
     "sections": MessageLookupByLibrary.simpleMessage("Sections"),
@@ -218,6 +224,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "semester_1": MessageLookupByLibrary.simpleMessage("First Semester"),
     "semester_2": MessageLookupByLibrary.simpleMessage("Second Semester"),
+    "sent": MessageLookupByLibrary.simpleMessage("sent"),
     "start": MessageLookupByLibrary.simpleMessage("Start"),
     "startNow": MessageLookupByLibrary.simpleMessage("Start Now!"),
     "startWriting": MessageLookupByLibrary.simpleMessage("Start writing now.."),
@@ -252,6 +259,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "timeRemaining": MessageLookupByLibrary.simpleMessage("Time Remaining"),
     "timeSchedule": MessageLookupByLibrary.simpleMessage("Time Schedule"),
+    "time_schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "Welcome! Here you can view the upcoming quiz dates and submit the fees for each subject.⏰",
+    ),
     "total": MessageLookupByLibrary.simpleMessage("Total"),
     "tuesday": MessageLookupByLibrary.simpleMessage("Tuesday"),
     "type": MessageLookupByLibrary.simpleMessage("Type"),

@@ -7,7 +7,7 @@ class TimeScheduleView extends StatelessWidget {
 static const String routeName = '/Time-Schedule-view';
   @override
   Widget build(BuildContext context) {
-    return CustomScaffold(
+    return const CustomScaffold(
       body: TimeScheduleViewBody(),
     );
   }
