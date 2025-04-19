@@ -17,7 +17,10 @@ class CustomMiddleBottomNavBarItem extends StatelessWidget {
     return Align(
       alignment: Alignment.bottomCenter,
       child: Padding(
-        padding: EdgeInsetsDirectional.only(bottom: 12.h, start: 8.5.w),
+        padding: EdgeInsets.only(
+          bottom: 12.h,
+          right: 8.5.w,
+        ),
         child: GestureDetector(
           onTap: () {
             context.read<BottomNavBarCubit>().changeIndex(index);

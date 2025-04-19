@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:grad_project/core/flavors/flavors_functions.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/widgets/custom_red_grad_container.dart';
@@ -26,11 +27,7 @@ class DrawerItem extends StatelessWidget {
       child: CustomRedGradContainer(
         padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
         raduis: 10,
-        decoration: index == 6
-            ? BoxDecoration(
-                color: AppColors.darkerBlue,
-                borderRadius: BorderRadius.circular(10.r))
-            : null,
+        decoration: _buildBoxDecoration(),
         child: Row(children: [
           SizedBox(
             height: 22,
@@ -49,5 +46,22 @@ class DrawerItem extends StatelessWidget {
         ]),
       ),
     );
+  }
+
+  Decoration? _buildBoxDecoration() {
+    if (FlavorsFunctions.isStudent()) {
+      return index == 6
+          ? BoxDecoration(
+              color: AppColors.darkerBlue,
+              borderRadius: BorderRadius.circular(10.r))
+          : null;
+    } else if (FlavorsFunctions.isAdmin()) {
+      return index == 5
+          ? BoxDecoration(
+              color: AppColors.darkerBlue,
+              borderRadius: BorderRadius.circular(10.r))
+          : null;
+    }
+    return null;
   }
 }

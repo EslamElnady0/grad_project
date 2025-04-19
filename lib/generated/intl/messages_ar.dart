@@ -97,6 +97,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "filter": MessageLookupByLibrary.simpleMessage("تصفية"),
     "finalResults": MessageLookupByLibrary.simpleMessage("النتائج النهائية"),
     "final_exam": MessageLookupByLibrary.simpleMessage("الإختبار النهائي"),
+    "final_grades": MessageLookupByLibrary.simpleMessage("الدرجات النهائية"),
     "first_semester": MessageLookupByLibrary.simpleMessage("ترم أول"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة السر؟",
@@ -104,6 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "forgot_password_message": MessageLookupByLibrary.simpleMessage(
       "🔑 مهمل بس ولا يهمك! اكتب إيميلك علشان نرجعلك حسابك وكلمة السر تاني!",
     ),
+    "forum_management": MessageLookupByLibrary.simpleMessage("إدارة المنتدي"),
     "forum_welcome_message": MessageLookupByLibrary.simpleMessage(
       "💬 مرحباً بك في منتدى الأسئلة والإجابات!اطرح أسئلتك، وشارك معرفتك بالإجابة على أسئلة الآخرين، واستفد من خبرات زملائك هنا!",
     ),
@@ -127,6 +129,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "material": MessageLookupByLibrary.simpleMessage("ماتريال"),
     "material_description": MessageLookupByLibrary.simpleMessage(
       "🎓📚 كل اللي محتاجه لمادتك في مكان واحد: محاضرات، سكاشن، اسايمنتات، كويزات، فيديوهات، ميدتيرم، وامتحانات نهائية!",
+    ),
+    "materials_center": MessageLookupByLibrary.simpleMessage(
+      "👨‍🏫 مركز إدارة المواد الدراسية الخاصة بك بكل سهولة، من الطلاب إلى المحاضرات والكويزات!",
     ),
     "midterm": MessageLookupByLibrary.simpleMessage("الميدتيرم"),
     "minute": MessageLookupByLibrary.simpleMessage("دقيقة"),
@@ -188,6 +193,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "readCarefully": MessageLookupByLibrary.simpleMessage(
       "🔍 اقرأ الأسئلة بتركيز",
     ),
+    "registered_students": MessageLookupByLibrary.simpleMessage(
+      "الطلاب المسجلين",
+    ),
+    "registered_students_count": MessageLookupByLibrary.simpleMessage(
+      "عدد الطلاب المسجلين بالمادة:",
+    ),
+    "registered_students_description": MessageLookupByLibrary.simpleMessage(
+      "👥 استعرض قائمة جميع الطلاب المسجلين في المادة مع تفاصيل مثل الاسم، الرقم الأكاديمي،",
+    ),
     "resend": MessageLookupByLibrary.simpleMessage("إعادة الإرسال؟"),
     "reviewTopics": MessageLookupByLibrary.simpleMessage(
       "خصص وقتًا للمراجعة وفهم المواضيع الرئيسية.",
@@ -201,6 +215,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       " ابحث عن مبني، مدرج، قاعة، الخ..!",
+    ),
+    "search_placeholder": MessageLookupByLibrary.simpleMessage(
+      "أدخل اسم الطالب أو رقم هويته..",
     ),
     "second_semester": MessageLookupByLibrary.simpleMessage("ترم ثاني"),
     "section": MessageLookupByLibrary.simpleMessage("سكشن"),
@@ -228,6 +245,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage("طالب نشط الآن"),
     "students_count": MessageLookupByLibrary.simpleMessage("عدد الطلاب:"),
+    "students_management": MessageLookupByLibrary.simpleMessage("إدارة الطلاب"),
     "study": MessageLookupByLibrary.simpleMessage("دراسة"),
     "study_level": MessageLookupByLibrary.simpleMessage("الفرقة الدراسية"),
     "subject": MessageLookupByLibrary.simpleMessage("المادة الدراسية"),
