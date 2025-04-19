@@ -5,6 +5,7 @@ import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/academic_progress_view.dart';
 import 'package:grad_project/features/annoucements/ui/views/annoucements_body.dart';
+import 'package:grad_project/features/dashboard/ui/views/dashboard_body.dart';
 import 'package:grad_project/features/forum/presentation/views/forum_views.dart';
 import 'package:grad_project/features/home/ui/models/drawer_item_model.dart';
 import 'package:grad_project/features/lecture_manager/ui/screens/lecture_manager_view.dart';
@@ -136,6 +137,50 @@ class Constants {
     ];
   }
 
+  static List<DrawerItemModel> doctorDrawerItemsLocalized(
+      BuildContext context) {
+    return [
+      DrawerItemModel(
+        title: S.of(context).students_management,
+        iconPath: Assets.imagesSvgsTwoPersonsIcon,
+        onTap: () {
+          // GoRouter.of(context).push(WeeklyScheduleView.routeName);
+        },
+      ),
+      DrawerItemModel(
+        title: S.of(context).forum_management,
+        iconPath: Assets.imagesSvgsCommentBubbleIcon,
+        onTap: () {},
+      ),
+      DrawerItemModel(
+        title: S.of(context).weekly_schedule,
+        iconPath: Assets.imagesSvgsTimeQuarter,
+        onTap: () {
+          // GoRouter.of(context).push(InternalMapView.routeName);
+        },
+      ),
+      DrawerItemModel(
+        title: S.of(context).finalResults,
+        iconPath: Assets.imagesSvgsTimeCheck,
+        onTap: () {
+          // GoRouter.of(context).push(AcademicProgressView.routeName);
+        },
+      ),
+      DrawerItemModel(
+        title: S.of(context).profile,
+        iconPath: Assets.imagesSvgsPerson,
+        onTap: () {
+          //   GoRouter.of(context).push(ProfileView.routeName);
+        },
+      ),
+      DrawerItemModel(
+        title: S.of(context).logout,
+        iconPath: Assets.imagesSvgsLogOut,
+        onTap: () {},
+      ),
+    ];
+  }
+
   static List<QuizAdviceModel> localizedQuizAdviceList(context) {
     return [
       QuizAdviceModel(
@@ -181,7 +226,7 @@ class Constants {
     const ForumViews()
   ];
   static List<Widget> adminHomeBodies = [
-    const Column(),
+    const DashboardBody(),
     const AnnoucementsBody(),
     const LectureManagerView(),
     const Column(),

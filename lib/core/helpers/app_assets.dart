@@ -58,6 +58,14 @@ class Assets {
   /// assets/images/subject.png
   static const String imagesSubject = "assets/images/subject.png";
 
+  /// Assets for imagesSubjectC
+  /// assets/images/subject_c.png
+  static const String imagesSubjectC = "assets/images/subject_c.png";
+
+  /// Assets for imagesSubjectCutImage
+  /// assets/images/subject_cut_image.png
+  static const String imagesSubjectCutImage = "assets/images/subject_cut_image.png";
+
   /// Assets for imagesSvgsAddIcon
   /// assets/images/svgs/add_icon.svg
   static const String imagesSvgsAddIcon = "assets/images/svgs/add_icon.svg";
@@ -113,6 +121,10 @@ class Assets {
   /// Assets for imagesSvgsCloseX
   /// assets/images/svgs/close_x.svg
   static const String imagesSvgsCloseX = "assets/images/svgs/close_x.svg";
+
+  /// Assets for imagesSvgsCommentBubbleIcon
+  /// assets/images/svgs/comment_bubble_icon.svg
+  static const String imagesSvgsCommentBubbleIcon = "assets/images/svgs/comment_bubble_icon.svg";
 
   /// Assets for imagesSvgsCommunityIcon
   /// assets/images/svgs/community_icon.svg
@@ -234,6 +246,10 @@ class Assets {
   /// assets/images/svgs/three_dots_icon.svg
   static const String imagesSvgsThreeDotsIcon = "assets/images/svgs/three_dots_icon.svg";
 
+  /// Assets for imagesSvgsThreeLinesVerticalIcon
+  /// assets/images/svgs/three_lines_vertical_icon.svg
+  static const String imagesSvgsThreeLinesVerticalIcon = "assets/images/svgs/three_lines_vertical_icon.svg";
+
   /// Assets for imagesSvgsTime
   /// assets/images/svgs/time.svg
   static const String imagesSvgsTime = "assets/images/svgs/time.svg";
@@ -245,6 +261,10 @@ class Assets {
   /// Assets for imagesSvgsTimeQuarter
   /// assets/images/svgs/time_quarter.svg
   static const String imagesSvgsTimeQuarter = "assets/images/svgs/time_quarter.svg";
+
+  /// Assets for imagesSvgsTwoPersonsIcon
+  /// assets/images/svgs/two_persons_icon.svg
+  static const String imagesSvgsTwoPersonsIcon = "assets/images/svgs/two_persons_icon.svg";
 
   /// Assets for imagesSvgsVideoIcon
   /// assets/images/svgs/video_icon.svg

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
+import 'package:grad_project/core/helpers/localizationa.dart';
 import '../../../../../core/helpers/constants.dart';
 import '../../../../../core/helpers/spacing.dart';
 import '../../cubit/bottom_nav_bar_cubit.dart';
@@ -44,7 +45,7 @@ class CustomAdminBottomNavigationBar extends StatelessWidget {
                     index: 3,
                     iconPath: adminBottomNavBarItems[3].iconPath,
                   ),
-                  hGap(20),
+                  isArabicLocale(context) ? hGap(20) : hGap(15),
                   CustomBottomNavBarItem(
                     title: adminBottomNavBarItems[4].title,
                     index: 4,
