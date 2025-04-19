@@ -1304,6 +1304,76 @@ class S {
   String get postponed {
     return Intl.message('Postponed.', name: 'postponed', desc: '', args: []);
   }
+
+  /// `Students Management`
+  String get students_management {
+    return Intl.message(
+      'Students Management',
+      name: 'students_management',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forum Management`
+  String get forum_management {
+    return Intl.message(
+      'Forum Management',
+      name: 'forum_management',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Final Grades`
+  String get final_grades {
+    return Intl.message(
+      'Final Grades',
+      name: 'final_grades',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Registered Students`
+  String get registered_students {
+    return Intl.message(
+      'Registered Students',
+      name: 'registered_students',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `👥 View a list of all students registered in the course with details like name and academic number.`
+  String get registered_students_description {
+    return Intl.message(
+      '👥 View a list of all students registered in the course with details like name and academic number.',
+      name: 'registered_students_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the student’s name or ID number...`
+  String get search_placeholder {
+    return Intl.message(
+      'Enter the student’s name or ID number...',
+      name: 'search_placeholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `👨‍🏫 Easily manage your course materials—from students to lectures and quizzes!`
+  String get materials_center {
+    return Intl.message(
+      '👨‍🏫 Easily manage your course materials—from students to lectures and quizzes!',
+      name: 'materials_center',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

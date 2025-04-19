@@ -114,6 +114,10 @@ class Assets {
   /// assets/images/svgs/close_x.svg
   static const String imagesSvgsCloseX = "assets/images/svgs/close_x.svg";
 
+  /// Assets for imagesSvgsCommentBubbleIcon
+  /// assets/images/svgs/comment_bubble_icon.svg
+  static const String imagesSvgsCommentBubbleIcon = "assets/images/svgs/comment_bubble_icon.svg";
+
   /// Assets for imagesSvgsCommunityIcon
   /// assets/images/svgs/community_icon.svg
   static const String imagesSvgsCommunityIcon = "assets/images/svgs/community_icon.svg";
@@ -245,6 +249,10 @@ class Assets {
   /// Assets for imagesSvgsTimeQuarter
   /// assets/images/svgs/time_quarter.svg
   static const String imagesSvgsTimeQuarter = "assets/images/svgs/time_quarter.svg";
+
+  /// Assets for imagesSvgsTwoPersonsIcon
+  /// assets/images/svgs/two_persons_icon.svg
+  static const String imagesSvgsTwoPersonsIcon = "assets/images/svgs/two_persons_icon.svg";
 
   /// Assets for imagesSvgsVideoIcon
   /// assets/images/svgs/video_icon.svg

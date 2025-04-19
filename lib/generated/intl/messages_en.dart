@@ -99,12 +99,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "filter": MessageLookupByLibrary.simpleMessage("Filter"),
     "finalResults": MessageLookupByLibrary.simpleMessage("Final Results"),
     "final_exam": MessageLookupByLibrary.simpleMessage("Final exam"),
+    "final_grades": MessageLookupByLibrary.simpleMessage("Final Grades"),
     "first_semester": MessageLookupByLibrary.simpleMessage("1st Semester"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "Forgot your password?",
     ),
     "forgot_password_message": MessageLookupByLibrary.simpleMessage(
       "🔑 It\'s okay! Just enter your email so we can recover your account and password!",
+    ),
+    "forum_management": MessageLookupByLibrary.simpleMessage(
+      "Forum Management",
     ),
     "forum_welcome_message": MessageLookupByLibrary.simpleMessage(
       "💬 Welcome to the Q&A forum! Ask your questions, share your knowledge by answering others\' questions, and benefit from your peers\' experiences here!",
@@ -129,6 +133,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "material": MessageLookupByLibrary.simpleMessage("Material"),
     "material_description": MessageLookupByLibrary.simpleMessage(
       "🎓📚 Everything you need for your course in one place: lectures, sections, assignments, quizzes, videos, midterms, and final exams!",
+    ),
+    "materials_center": MessageLookupByLibrary.simpleMessage(
+      "👨‍🏫 Easily manage your course materials—from students to lectures and quizzes!",
     ),
     "midterm": MessageLookupByLibrary.simpleMessage("Midterm"),
     "minute": MessageLookupByLibrary.simpleMessage("Minute"),
@@ -190,6 +197,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "readCarefully": MessageLookupByLibrary.simpleMessage(
       "🔍 Read Questions Carefully",
     ),
+    "registered_students": MessageLookupByLibrary.simpleMessage(
+      "Registered Students",
+    ),
+    "registered_students_description": MessageLookupByLibrary.simpleMessage(
+      "👥 View a list of all students registered in the course with details like name and academic number.",
+    ),
     "resend": MessageLookupByLibrary.simpleMessage("Resend?"),
     "reviewTopics": MessageLookupByLibrary.simpleMessage(
       "Set aside time to review and understand key topics.",
@@ -203,6 +216,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       "Search for a building, lecture hall, room, etc..!",
+    ),
+    "search_placeholder": MessageLookupByLibrary.simpleMessage(
+      "Enter the student’s name or ID number...",
     ),
     "second_semester": MessageLookupByLibrary.simpleMessage("2nd Semester"),
     "section": MessageLookupByLibrary.simpleMessage("Section"),
@@ -232,6 +248,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "students online now",
     ),
     "students_count": MessageLookupByLibrary.simpleMessage("No. of students"),
+    "students_management": MessageLookupByLibrary.simpleMessage(
+      "Students Management",
+    ),
     "study": MessageLookupByLibrary.simpleMessage("Study"),
     "study_level": MessageLookupByLibrary.simpleMessage("Study Level"),
     "subject": MessageLookupByLibrary.simpleMessage("Subject"),
