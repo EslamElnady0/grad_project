@@ -159,14 +159,14 @@ class Constants {
         title: S.of(context).finalResults,
         iconPath: Assets.imagesSvgsTimeCheck,
         onTap: () {
-          GoRouter.of(context).push(AcademicProgressView.routeName);
+          // GoRouter.of(context).push(AcademicProgressView.routeName);
         },
       ),
       DrawerItemModel(
         title: S.of(context).profile,
         iconPath: Assets.imagesSvgsPerson,
         onTap: () {
-          GoRouter.of(context).push(ProfileView.routeName);
+          //   GoRouter.of(context).push(ProfileView.routeName);
         },
       ),
       DrawerItemModel(
