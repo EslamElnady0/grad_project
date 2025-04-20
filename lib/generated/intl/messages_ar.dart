@@ -41,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "🆕 أضف خبرًا جديدًا لإبقاء طلابك على اطلاع دائم بكل التحديثات والمستجدات",
     ),
     "add_news": MessageLookupByLibrary.simpleMessage("أضف خبر !"),
+    "add_to_send": MessageLookupByLibrary.simpleMessage("إضافة للإرسال"),
     "add_your_question": MessageLookupByLibrary.simpleMessage("أضف سؤالك !"),
     "all": MessageLookupByLibrary.simpleMessage("الكل"),
     "all_days": MessageLookupByLibrary.simpleMessage("كل الأيام"),
@@ -150,6 +151,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "قم بإضافة عنوان واضح ومباشر يُلخص الخبر بدقة!",
     ),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
+    "next_seven_days": MessageLookupByLibrary.simpleMessage(
+      "الأيام السبعة القادمة",
+    ),
     "not_started": MessageLookupByLibrary.simpleMessage("لم يبدأ"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
       "المرات المسموح بها",
@@ -219,6 +223,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "search_placeholder": MessageLookupByLibrary.simpleMessage(
       "أدخل اسم الطالب أو رقم هويته..",
     ),
+    "search_for_task": MessageLookupByLibrary.simpleMessage(
+      "البحث حسب نوع النشاط او الاسم",
+    ),
     "second_semester": MessageLookupByLibrary.simpleMessage("ترم ثاني"),
     "section": MessageLookupByLibrary.simpleMessage("سكشن"),
     "sections": MessageLookupByLibrary.simpleMessage("سكشن"),
@@ -233,6 +240,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "semester_1": MessageLookupByLibrary.simpleMessage("الفصل الدراسي الأول"),
     "semester_2": MessageLookupByLibrary.simpleMessage("الفصل الدراسي الثاني"),
+    "sent": MessageLookupByLibrary.simpleMessage("تم الإرسال"),
     "start": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "startNow": MessageLookupByLibrary.simpleMessage("ابدأ الآن!"),
     "startWriting": MessageLookupByLibrary.simpleMessage(
@@ -266,6 +274,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "timeRemaining": MessageLookupByLibrary.simpleMessage("الوقت المتبقي"),
     "timeSchedule": MessageLookupByLibrary.simpleMessage("الجدول الزمني"),
+    "time_schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "مرحباً بك!هنا يمكنك الاطلاع على مواعيد الكويزات القادمة وتسليم التكاليف لكل مادة.⏰",
+    ),
     "total": MessageLookupByLibrary.simpleMessage("المجموع"),
     "tuesday": MessageLookupByLibrary.simpleMessage("الثلاثاء"),
     "type": MessageLookupByLibrary.simpleMessage("النوع"),

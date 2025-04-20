@@ -283,4 +283,9 @@ class AppTextStyles {
     color: AppColors.black,
     fontWeight: FontWeightHelper.semiBold,
   );
+  static TextStyle font14DarkBlueMedium = ChangaTextStyle(
+    fontSize: 14.sp,
+    color: AppColors.darkblue,
+    fontWeight: FontWeightHelper.medium,
+  );
 }

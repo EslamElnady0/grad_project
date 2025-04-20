@@ -12,6 +12,7 @@ import 'package:grad_project/features/lecture_manager/ui/screens/lecture_manager
 import 'package:grad_project/features/profile/presentation/views/profile_view.dart';
 import 'package:grad_project/features/quizes/ui/models/quiz_advice_model.dart';
 import 'package:grad_project/features/subjects/presentation/views/subjects_view.dart';
+import 'package:grad_project/features/time_schedule/presentation/views/time_schedule_view.dart';
 
 import '../../features/chat/ui/views/chat_outsider_body.dart';
 import '../../features/home/ui/models/bottom_nav_bar_item_model.dart';
@@ -98,7 +99,9 @@ class Constants {
       DrawerItemModel(
         title: S.of(context).timeSchedule,
         iconPath: Assets.imagesSvgsTimeQuarter,
-        onTap: () {},
+        onTap: () {
+          GoRouter.of(context).push(TimeScheduleView.routeName);
+        },
       ),
       DrawerItemModel(
         title: S.of(context).internalMap,
