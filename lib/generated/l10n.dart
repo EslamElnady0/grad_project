@@ -1434,6 +1434,16 @@ class S {
   String get sent {
     return Intl.message('sent', name: 'sent', desc: '', args: []);
   }
+
+  /// `📊 Welcome to the final results page! Here you can easily and clearly review your academic performance and grades in various courses. We wish you all the best and success!`
+  String get final_results_welcome_message {
+    return Intl.message(
+      '📊 Welcome to the final results page! Here you can easily and clearly review your academic performance and grades in various courses. We wish you all the best and success!',
+      name: 'final_results_welcome_message',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

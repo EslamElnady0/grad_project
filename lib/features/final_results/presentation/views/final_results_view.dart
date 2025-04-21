@@ -4,7 +4,7 @@ import 'package:grad_project/features/final_results/presentation/views/widgets/f
 
 class FinalResultsView extends StatelessWidget {
   const FinalResultsView({super.key});
-
+  static const String routeName = '/final-results-view';
   @override
   Widget build(BuildContext context) {
     return const CustomScaffold(

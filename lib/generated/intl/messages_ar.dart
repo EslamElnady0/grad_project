@@ -99,6 +99,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "finalResults": MessageLookupByLibrary.simpleMessage("النتائج النهائية"),
     "final_exam": MessageLookupByLibrary.simpleMessage("الإختبار النهائي"),
     "final_grades": MessageLookupByLibrary.simpleMessage("الدرجات النهائية"),
+    "final_results_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "📊 مرحباً بك في صفحة النتائج النهائية! هنا يمكنك الاطلاع على أدائك الأكاديمي ومعرفة درجاتك في المقررات المختلفة بكل سهولة ووضوح. نتمنى لك كل التوفيق والنجاح!",
+    ),
     "first_semester": MessageLookupByLibrary.simpleMessage("ترم أول"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة السر؟",
@@ -220,11 +223,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       " ابحث عن مبني، مدرج، قاعة، الخ..!",
     ),
-    "search_placeholder": MessageLookupByLibrary.simpleMessage(
-      "أدخل اسم الطالب أو رقم هويته..",
-    ),
     "search_for_task": MessageLookupByLibrary.simpleMessage(
       "البحث حسب نوع النشاط او الاسم",
+    ),
+    "search_placeholder": MessageLookupByLibrary.simpleMessage(
+      "أدخل اسم الطالب أو رقم هويته..",
     ),
     "second_semester": MessageLookupByLibrary.simpleMessage("ترم ثاني"),
     "section": MessageLookupByLibrary.simpleMessage("سكشن"),

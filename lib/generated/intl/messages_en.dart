@@ -101,6 +101,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "finalResults": MessageLookupByLibrary.simpleMessage("Final Results"),
     "final_exam": MessageLookupByLibrary.simpleMessage("Final exam"),
     "final_grades": MessageLookupByLibrary.simpleMessage("Final Grades"),
+    "final_results_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "📊 Welcome to the final results page! Here you can easily and clearly review your academic performance and grades in various courses. We wish you all the best and success!",
+    ),
     "first_semester": MessageLookupByLibrary.simpleMessage("1st Semester"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "Forgot your password?",
@@ -223,11 +226,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       "Search for a building, lecture hall, room, etc..!",
     ),
-    "search_placeholder": MessageLookupByLibrary.simpleMessage(
-      "Enter the student’s name or ID number...",
-    ),
     "search_for_task": MessageLookupByLibrary.simpleMessage(
       "Search by activity type or name",
+    ),
+    "search_placeholder": MessageLookupByLibrary.simpleMessage(
+      "Enter the student’s name or ID number...",
     ),
     "second_semester": MessageLookupByLibrary.simpleMessage("2nd Semester"),
     "section": MessageLookupByLibrary.simpleMessage("Section"),
