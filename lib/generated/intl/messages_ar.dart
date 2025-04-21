@@ -35,6 +35,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "academic_progress_welcome_message": MessageLookupByLibrary.simpleMessage(
       " !تعرّف على مستواك الأكاديمي بكل سهولة تفاصيل درجاتك وترتيبك في متناول يدك🎓",
     ),
+    "addLink": MessageLookupByLibrary.simpleMessage("إضافة رابط"),
+    "addStudyContent": MessageLookupByLibrary.simpleMessage(
+      "إضافة محتوى دراسي",
+    ),
+    "addStudyContentSubtitle": MessageLookupByLibrary.simpleMessage(
+      "📚 قم بإضافة مواد دراسية جديدة وإدارة تفاصيلها بكل سهولة!",
+    ),
     "add_courses": MessageLookupByLibrary.simpleMessage("إضافة مواد دراسية"),
     "add_new": MessageLookupByLibrary.simpleMessage(" إضافة خبر جديد"),
     "add_new_news": MessageLookupByLibrary.simpleMessage(
@@ -121,6 +128,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "in_progress": MessageLookupByLibrary.simpleMessage("قيد التنفيذ"),
     "interested": MessageLookupByLibrary.simpleMessage("مهتم"),
     "internalMap": MessageLookupByLibrary.simpleMessage("الخريطة الداخلية"),
+    "lectureDescription": MessageLookupByLibrary.simpleMessage("وصف المحاضرة"),
+    "lectureDescriptionHint": MessageLookupByLibrary.simpleMessage(
+      "مختصرًا حول محتوى المحاضرة وأهدافها التعليمية!",
+    ),
+    "lectureTitle": MessageLookupByLibrary.simpleMessage("عنوان المحاضرة"),
+    "lectureTitleHint": MessageLookupByLibrary.simpleMessage(
+      "أدخل عنوانًا واضحًا يعكس موضوع المحاضرة بدقة!",
+    ),
     "lectures": MessageLookupByLibrary.simpleMessage("المحاضرات"),
     "level": MessageLookupByLibrary.simpleMessage("الفرقة"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
@@ -168,6 +183,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pending": MessageLookupByLibrary.simpleMessage("معلق"),
     "percentage": MessageLookupByLibrary.simpleMessage("النسبة المئوية"),
     "place": MessageLookupByLibrary.simpleMessage("المكان"),
+    "pleaseEnterRequiredFields": MessageLookupByLibrary.simpleMessage(
+      "من فضلك ادخل الحقول المطلوبة",
+    ),
     "postponed": MessageLookupByLibrary.simpleMessage("مؤجل."),
     "prepareWell": MessageLookupByLibrary.simpleMessage("📚 استعد مسبقًا"),
     "previous": MessageLookupByLibrary.simpleMessage("السابق"),
@@ -220,11 +238,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       " ابحث عن مبني، مدرج، قاعة، الخ..!",
     ),
-    "search_placeholder": MessageLookupByLibrary.simpleMessage(
-      "أدخل اسم الطالب أو رقم هويته..",
-    ),
     "search_for_task": MessageLookupByLibrary.simpleMessage(
       "البحث حسب نوع النشاط او الاسم",
+    ),
+    "search_placeholder": MessageLookupByLibrary.simpleMessage(
+      "أدخل اسم الطالب أو رقم هويته..",
     ),
     "second_semester": MessageLookupByLibrary.simpleMessage("ترم ثاني"),
     "section": MessageLookupByLibrary.simpleMessage("سكشن"),
@@ -292,6 +310,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "update_lecture_status_title": MessageLookupByLibrary.simpleMessage(
       "📅تحديث حالة المحاضرة!",
     ),
+    "uploadFile": MessageLookupByLibrary.simpleMessage("رفع فايل"),
+    "uploadMedia": MessageLookupByLibrary.simpleMessage("رفع فيديو أو صورة"),
     "verify_account": MessageLookupByLibrary.simpleMessage("أكد حسابك!"),
     "view": MessageLookupByLibrary.simpleMessage("مشاهدة"),
     "view_answers": MessageLookupByLibrary.simpleMessage("عرض الإجابات"),

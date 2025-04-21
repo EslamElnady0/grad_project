@@ -22,6 +22,14 @@ class Assets {
   /// assets/images/Forgetpassword2.png
   static const String imagesForgetpassword2 = "assets/images/Forgetpassword2.png";
 
+  /// Assets for imagesLecDescrebtion
+  /// assets/images/lec_descrebtion.png
+  static const String imagesLecDescrebtion = "assets/images/lec_descrebtion.png";
+
+  /// Assets for imagesLecTilte
+  /// assets/images/lec_tilte.png
+  static const String imagesLecTilte = "assets/images/lec_tilte.png";
+
   /// Assets for imagesMapPlaceHolder
   /// assets/images/map_place_holder.png
   static const String imagesMapPlaceHolder = "assets/images/map_place_holder.png";
@@ -69,6 +77,10 @@ class Assets {
   /// Assets for imagesSvgsAddIcon
   /// assets/images/svgs/add_icon.svg
   static const String imagesSvgsAddIcon = "assets/images/svgs/add_icon.svg";
+
+  /// Assets for imagesSvgsAddLink
+  /// assets/images/svgs/add_link.svg
+  static const String imagesSvgsAddLink = "assets/images/svgs/add_link.svg";
 
   /// Assets for imagesSvgsAlignmentRightIcon
   /// assets/images/svgs/alignment_right_icon.svg
@@ -265,6 +277,10 @@ class Assets {
   /// Assets for imagesSvgsTwoPersonsIcon
   /// assets/images/svgs/two_persons_icon.svg
   static const String imagesSvgsTwoPersonsIcon = "assets/images/svgs/two_persons_icon.svg";
+
+  /// Assets for imagesSvgsUpload
+  /// assets/images/svgs/upload.svg
+  static const String imagesSvgsUpload = "assets/images/svgs/upload.svg";
 
   /// Assets for imagesSvgsVideoIcon
   /// assets/images/svgs/video_icon.svg

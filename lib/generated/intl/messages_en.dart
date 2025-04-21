@@ -35,6 +35,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "academic_progress_welcome_message": MessageLookupByLibrary.simpleMessage(
       "🎓Find out your academic level with ease. Details of your grades and ranking are at your fingertips!",
     ),
+    "addLink": MessageLookupByLibrary.simpleMessage("Add Link"),
+    "addStudyContent": MessageLookupByLibrary.simpleMessage(
+      "Add Study Content",
+    ),
+    "addStudyContentSubtitle": MessageLookupByLibrary.simpleMessage(
+      "📚 Easily add new study materials and manage their details!",
+    ),
     "add_courses": MessageLookupByLibrary.simpleMessage("Add courses"),
     "add_new": MessageLookupByLibrary.simpleMessage("Add New Annoucement"),
     "add_new_news": MessageLookupByLibrary.simpleMessage(
@@ -125,6 +132,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "in_progress": MessageLookupByLibrary.simpleMessage("In Progress"),
     "interested": MessageLookupByLibrary.simpleMessage("like"),
     "internalMap": MessageLookupByLibrary.simpleMessage("Internal Map"),
+    "lectureDescription": MessageLookupByLibrary.simpleMessage(
+      "Lecture Description",
+    ),
+    "lectureDescriptionHint": MessageLookupByLibrary.simpleMessage(
+      "A brief summary of the lecture content and its educational objectives!",
+    ),
+    "lectureTitle": MessageLookupByLibrary.simpleMessage("Lecture Title"),
+    "lectureTitleHint": MessageLookupByLibrary.simpleMessage(
+      "Enter a clear title that accurately reflects the lecture topic!",
+    ),
     "lectures": MessageLookupByLibrary.simpleMessage("Lectures"),
     "level": MessageLookupByLibrary.simpleMessage("Level"),
     "login": MessageLookupByLibrary.simpleMessage("Log In"),
@@ -170,6 +187,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "percentage": MessageLookupByLibrary.simpleMessage("Percentage"),
     "place": MessageLookupByLibrary.simpleMessage("Place"),
+    "pleaseEnterRequiredFields": MessageLookupByLibrary.simpleMessage(
+      "Please enter the required fields",
+    ),
     "postponed": MessageLookupByLibrary.simpleMessage("Postponed."),
     "prepareWell": MessageLookupByLibrary.simpleMessage(
       "📚 Prepare in Advance",
@@ -223,11 +243,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       "Search for a building, lecture hall, room, etc..!",
     ),
-    "search_placeholder": MessageLookupByLibrary.simpleMessage(
-      "Enter the student’s name or ID number...",
-    ),
     "search_for_task": MessageLookupByLibrary.simpleMessage(
       "Search by activity type or name",
+    ),
+    "search_placeholder": MessageLookupByLibrary.simpleMessage(
+      "Enter the student’s name or ID number...",
     ),
     "second_semester": MessageLookupByLibrary.simpleMessage("2nd Semester"),
     "section": MessageLookupByLibrary.simpleMessage("Section"),
@@ -298,6 +318,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "update_lecture_status_title": MessageLookupByLibrary.simpleMessage(
       "📅 Update lecture status!",
+    ),
+    "uploadFile": MessageLookupByLibrary.simpleMessage("Upload File"),
+    "uploadMedia": MessageLookupByLibrary.simpleMessage(
+      "Upload Video or Image",
     ),
     "verify_account": MessageLookupByLibrary.simpleMessage(
       "Verify your account!",

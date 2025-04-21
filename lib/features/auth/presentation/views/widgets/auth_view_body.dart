@@ -85,6 +85,7 @@ class _AuthViewBodyState extends State<AuthViewBody> {
               ),
               vGap(20),
               CustomTextButton(
+                primary: true,
                   text: S.of(context).login,
                   onTap: () {
                     if (formKey.currentState!.validate()) {

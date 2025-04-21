@@ -14,11 +14,12 @@ import 'package:grad_project/features/weekly_schedule/ui/views/screens/weekly_sc
 import '../../features/auth/presentation/views/auth_view.dart';
 import '../../features/home/ui/cubit/bottom_nav_bar_cubit.dart';
 import '../../features/home/ui/views/home_view.dart';
+import '../../features/lecture_manager/ui/screens/add_lecture_view.dart';
 import '../../features/subjects/presentation/views/materials_view.dart';
 
 abstract class AdminRouter {
   static final router = GoRouter(
-    initialLocation: HomeView.routeName,
+    initialLocation: AddLectureView.routeName,
     routes: [
       GoRoute(
         path: HomeView.routeName,
@@ -75,6 +76,9 @@ abstract class AdminRouter {
       GoRoute(
           path: QrAttendanceView.routeName,
           builder: (context, state) => const QrAttendanceView()),
+      GoRoute(
+          path: AddLectureView.routeName,
+          builder: (context, state) => const AddLectureView()),
     ],
   );
 }

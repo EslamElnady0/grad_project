@@ -64,6 +64,7 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
             ),
             vGap(20),
             CustomTextButton(
+               primary: true,
               text: S.of(context).confirm,
               onTap: () {
                 if (formKey.currentState!.validate()) {
