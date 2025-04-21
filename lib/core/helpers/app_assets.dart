@@ -87,8 +87,8 @@ class Assets {
   static const String imagesSvgsArrowDown = "assets/images/svgs/arrow_down.svg";
 
   /// Assets for imagesSvgsArrowLeft
-  /// assets/images/svgs/Arrow_left.svg
-  static const String imagesSvgsArrowLeft = "assets/images/svgs/Arrow_left.svg";
+  /// assets/images/svgs/arrow_left.svg
+  static const String imagesSvgsArrowLeft = "assets/images/svgs/arrow_left.svg";
 
   /// Assets for imagesSvgsArrowUpArrowDownIcon
   /// assets/images/svgs/arrow_up_arrow_down_icon.svg
