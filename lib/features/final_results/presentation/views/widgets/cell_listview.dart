@@ -14,7 +14,8 @@ class CourseCellListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 55,
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      height: 60,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: AppColors.white,

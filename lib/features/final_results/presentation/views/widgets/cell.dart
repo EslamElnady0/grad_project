@@ -12,7 +12,8 @@ class Cell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),      color: AppColors.white,
+        borderRadius: BorderRadius.circular(12),
+        color: AppColors.white,
       ),
       padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
       width: 150,
@@ -20,6 +21,8 @@ class Cell extends StatelessWidget {
         child: Text(
           content,
           style: AppTextStyles.font16BlackSemiBold,
+          maxLines: 3,
+          textAlign: TextAlign.center,
         ),
       ),
     );

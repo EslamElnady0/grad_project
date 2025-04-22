@@ -84,6 +84,7 @@ class AcademicProgressViewBody extends StatelessWidget {
               child: SizedBox(
                 width: 730.w,
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     LabelsListView(
                       labels: [
