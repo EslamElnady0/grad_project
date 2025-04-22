@@ -191,5 +191,6 @@
   "pleaseEnterRequiredFields": "Please enter the required fields",
     
   "clickheretoaddmorefiles": "Click here to add more files",
-  "noFilesUploaded": "No files uploaded yet"
+  "noFilesUploaded": "No files uploaded yet",
+  "addLinkDescrebtion": "Add a link to the study material."
 }

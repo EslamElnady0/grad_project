@@ -22,14 +22,6 @@ class Assets {
   /// assets/images/Forgetpassword2.png
   static const String imagesForgetpassword2 = "assets/images/Forgetpassword2.png";
 
-  /// Assets for imagesLecDescrebtion
-  /// assets/images/lec_descrebtion.png
-  static const String imagesLecDescrebtion = "assets/images/lec_descrebtion.png";
-
-  /// Assets for imagesLecTilte
-  /// assets/images/lec_tilte.png
-  static const String imagesLecTilte = "assets/images/lec_tilte.png";
-
   /// Assets for imagesMapPlaceHolder
   /// assets/images/map_place_holder.png
   static const String imagesMapPlaceHolder = "assets/images/map_place_holder.png";
@@ -189,6 +181,14 @@ class Assets {
   /// Assets for imagesSvgsIosArrowIcon
   /// assets/images/svgs/ios_arrow_icon.svg
   static const String imagesSvgsIosArrowIcon = "assets/images/svgs/ios_arrow_icon.svg";
+
+  /// Assets for imagesSvgsLecDesc
+  /// assets/images/svgs/lec_desc.svg
+  static const String imagesSvgsLecDesc = "assets/images/svgs/lec_desc.svg";
+
+  /// Assets for imagesSvgsLecTilte
+  /// assets/images/svgs/lec_tilte.svg
+  static const String imagesSvgsLecTilte = "assets/images/svgs/lec_tilte.svg";
 
   /// Assets for imagesSvgsLike
   /// assets/images/svgs/like.svg

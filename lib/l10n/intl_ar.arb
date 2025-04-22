@@ -190,5 +190,6 @@
   "uploadFiles": "رفع الملفات",
   "pleaseEnterRequiredFields": "من فضلك ادخل الحقول المطلوبة",
   "clickheretoaddmorefiles":"اضعط هنا لإضافة المزيد من الملفات",
-  "noFilesUploaded": "لم يتم رفع أي ملفات بعد"
-}
+  "noFilesUploaded": "لم يتم رفع أي ملفات بعد",
+  "addLinkDescrebtion": "قم بإضافة رابط مباشر للمحتوى او المصدر!"
+}  

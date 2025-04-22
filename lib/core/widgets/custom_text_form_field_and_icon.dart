@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../generated/l10n.dart';
 
@@ -34,10 +35,12 @@ class CustomTextFormFieldAndicon extends StatelessWidget {
       maxLines: maxLines,
       keyboardType: keyboardType,
       decoration: InputDecoration(
-        prefixIcon: Image.asset(
+        prefixIcon: SvgPicture.asset(
           icon,
-          width: 20,
+          fit: BoxFit.none,
+          width: 10,
           height: 20,
+          color: AppColors.gray
         ),
         hintText: hintText,
         hintStyle: AppTextStyles.font12GrayMedium,

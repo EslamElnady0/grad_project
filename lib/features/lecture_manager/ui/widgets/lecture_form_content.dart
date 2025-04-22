@@ -24,6 +24,7 @@ class LectureFormContent extends StatefulWidget {
 
 class _LectureFormContentState extends State<LectureFormContent> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  bool clickAddLink = false;
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   @override
   Widget build(BuildContext context) {
@@ -41,7 +42,7 @@ class _LectureFormContentState extends State<LectureFormContent> {
           vGap(5),
           CustomTextFormFieldAndicon(
             hintText: S.of(context).lectureTitleHint,
-            icon: Assets.imagesLecTilte,
+            icon: Assets.imagesSvgsLecTilte
           ),
           vGap(5),
           Text(
@@ -52,7 +53,7 @@ class _LectureFormContentState extends State<LectureFormContent> {
           vGap(5),
           CustomTextFormFieldAndicon(
             hintText: S.of(context).lectureDescriptionHint,
-            icon: Assets.imagesLecDescrebtion,
+            icon: Assets.imagesSvgsLecDesc,
             maxLines: 5,
           ),
           vGap(12),
@@ -70,15 +71,30 @@ class _LectureFormContentState extends State<LectureFormContent> {
           CustomOutlinedButton(
             title: S.of(context).addLink,
             icon: SvgPicture.asset(Assets.imagesSvgsAddLink),
-            onPressed: () {},
+            onPressed: () {
+              setState(() {
+                clickAddLink = !clickAddLink;
+              });
+            },
           ),
+          vGap(12),
+      clickAddLink?    Text( 
+            S.of(context).addLink,
+            textAlign: TextAlign.start,
+            style: AppTextStyles.font16DarkerBlueSemiBold,
+          ) : Container(),
+        clickAddLink ? vGap(5) : Container(),
+            clickAddLink? CustomTextFormFieldAndicon(
+            hintText: S.of(context).addLinkDescrebtion,
+            icon: Assets.imagesSvgsAddLink,
+          ) : Container(),
           vGap(12),
           Align(
             alignment: Alignment.centerLeft,
             child: CustomTextButton(
               primary: false,
               width: 100.w,
-            fontSize: 18,
+              fontSize: 18,
               text: S.of(context).publish,
               onTap: () {
                 if (formKey.currentState!.validate()) {

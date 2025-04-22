@@ -1539,6 +1539,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Add a link to the study material.`
+  String get addLinkDescrebtion {
+    return Intl.message(
+      'Add a link to the study material.',
+      name: 'addLinkDescrebtion',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -36,6 +36,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "🎓Find out your academic level with ease. Details of your grades and ranking are at your fingertips!",
     ),
     "addLink": MessageLookupByLibrary.simpleMessage("Add Link"),
+    "addLinkDescrebtion": MessageLookupByLibrary.simpleMessage(
+      "Add a link to the study material.",
+    ),
     "addStudyContent": MessageLookupByLibrary.simpleMessage(
       "Add Study Content",
     ),
