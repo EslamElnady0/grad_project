@@ -1,29 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:grad_project/core/helpers/constants.dart';
-import 'package:grad_project/core/theme/app_text_styles.dart';
 
 class LabelWidget extends StatelessWidget {
-  const LabelWidget({
-    super.key,
-    required this.labels,
-    required this.index,
-  });
+  const LabelWidget(
+      {super.key,
+      required this.label,
+      this.gradient,
+      this.color,
+      required this.textStyle, required this.width});
 
-  final List<String> labels;
-  final int index;
+  final String label;
+  final LinearGradient? gradient;
+  final Color? color;
+  final TextStyle textStyle;
+  final double width;
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 90,
+      width: width,
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
       decoration: BoxDecoration(
-          gradient: Constants.secondaryGrad,
+          gradient: gradient,
+          color: color,
           borderRadius: BorderRadius.circular(12)),
       child: Center(
         child: Text(
           textAlign: TextAlign.center,
-          labels[index],
-          style: AppTextStyles.font12WhiteSemiBold,
+          label,
+          style: textStyle,
         ),
       ),
     );

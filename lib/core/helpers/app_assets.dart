@@ -86,6 +86,14 @@ class Assets {
   /// assets/images/svgs/answers.svg
   static const String imagesSvgsAnswers = "assets/images/svgs/answers.svg";
 
+  /// Assets for imagesSvgsArrowDown
+  /// assets/images/svgs/arrow_down.svg
+  static const String imagesSvgsArrowDown = "assets/images/svgs/arrow_down.svg";
+
+  /// Assets for imagesSvgsArrowLeft
+  /// assets/images/svgs/arrow_left.svg
+  static const String imagesSvgsArrowLeft = "assets/images/svgs/arrow_left.svg";
+
   /// Assets for imagesSvgsArrowUpArrowDownIcon
   /// assets/images/svgs/arrow_up_arrow_down_icon.svg
   static const String imagesSvgsArrowUpArrowDownIcon = "assets/images/svgs/arrow_up_arrow_down_icon.svg";

@@ -6,6 +6,7 @@ import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/academic_progress_view.dart';
 import 'package:grad_project/features/annoucements/ui/views/annoucements_body.dart';
 import 'package:grad_project/features/dashboard/ui/views/dashboard_body.dart';
+import 'package:grad_project/features/final_results/presentation/views/final_results_view.dart';
 import 'package:grad_project/features/forum/presentation/views/forum_views.dart';
 import 'package:grad_project/features/home/ui/models/drawer_item_model.dart';
 import 'package:grad_project/features/lecture_manager/ui/screens/lecture_manager_view.dart';
@@ -121,7 +122,9 @@ class Constants {
       DrawerItemModel(
         title: S.of(context).finalResults,
         iconPath: Assets.imagesSvgsGradHat,
-        onTap: () {},
+        onTap: () {
+          GoRouter.of(context).push(FinalResultsView.routeName);
+        },
       ),
       DrawerItemModel(
         title: S.of(context).profile,

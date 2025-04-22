@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
@@ -7,9 +8,10 @@ import 'package:grad_project/core/widgets/custom_drop_down_button.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/widgets/custom_percent_indicator.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/widgets/degrees_listview.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/widgets/green_dot.dart';
-import 'package:grad_project/features/academic_progress/presentation/views/widgets/labels_list_view.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
 import 'package:grad_project/generated/l10n.dart';
+
+import '../../../../../core/widgets/labels_list_view.dart';
 
 class AcademicProgressViewBody extends StatelessWidget {
   const AcademicProgressViewBody({super.key});
@@ -80,7 +82,7 @@ class AcademicProgressViewBody extends StatelessWidget {
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: SizedBox(
-                width: 670.w,
+                width: 730.w,
                 child: Column(
                   children: [
                     LabelsListView(
@@ -93,14 +95,17 @@ class AcademicProgressViewBody extends StatelessWidget {
                         S.of(context).final_exam,
                         S.of(context).total
                       ],
+                      textStyle: AppTextStyles.font12WhiteSemiBold,
+                      gradient: Constants.secondaryGrad,
+                      width: 100,
                     ),
                     vGap(10),
                     Column(
                       children: List.generate(
                         7,
-                        (index) => Padding(
-                          padding: const EdgeInsets.only(bottom: 10),
-                          child: const DegreesListView(),
+                        (index) => const Padding(
+                          padding: EdgeInsets.only(bottom: 10),
+                          child: DegreesListView(),
                         ),
                       ),
                     )

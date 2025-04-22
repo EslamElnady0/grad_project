@@ -4,6 +4,7 @@ import 'package:grad_project/features/academic_progress/presentation/views/acade
 import 'package:grad_project/features/auth/presentation/views/forget_password_view.dart';
 import 'package:grad_project/features/auth/presentation/views/confirm_account_view.dart';
 import 'package:grad_project/features/chat/ui/views/chat_view.dart';
+import 'package:grad_project/features/final_results/presentation/views/final_results_view.dart';
 import 'package:grad_project/features/forum/presentation/views/answers_view.dart';
 import 'package:grad_project/features/map/presentation/views/internal_map_view.dart';
 import 'package:grad_project/features/profile/presentation/views/profile_view.dart';
@@ -79,6 +80,10 @@ abstract class StudentRouter {
       GoRoute(
         path: TimeScheduleView.routeName,
         builder: (context, state) => const TimeScheduleView()
+      ),
+      GoRoute(
+        path: FinalResultsView.routeName,
+        builder: (context, state) => const FinalResultsView()
       )
     ],
   );

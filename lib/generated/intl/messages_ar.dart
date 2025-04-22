@@ -82,9 +82,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "cooperateShareThoughts": MessageLookupByLibrary.simpleMessage(
       "تعاون، شارك أفكارك، وتعلّم من زملائك بسهولة 📚",
     ),
+    "course_code": MessageLookupByLibrary.simpleMessage("كود المقرر"),
     "course_management_center": MessageLookupByLibrary.simpleMessage(
       "👨‍🏫 مركز إدارة المواد الدراسية الخاصة بك بكل سهولة، من الطلاب إلى المحاضرات والكويزات!",
     ),
+    "course_name": MessageLookupByLibrary.simpleMessage("اسم المادة"),
+    "course_status": MessageLookupByLibrary.simpleMessage("موقف المادة"),
     "courses": MessageLookupByLibrary.simpleMessage("المواد"),
     "create_and_manage_news": MessageLookupByLibrary.simpleMessage(
       "📰 أنشئ وأدر الأخبار والإعلانات الهامة لموادك الدراسية بسهولة، وأبقى طلابك على اطلاع دائم!",
@@ -112,6 +115,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "finalResults": MessageLookupByLibrary.simpleMessage("النتائج النهائية"),
     "final_exam": MessageLookupByLibrary.simpleMessage("الإختبار النهائي"),
     "final_grades": MessageLookupByLibrary.simpleMessage("الدرجات النهائية"),
+    "final_results_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "📊 مرحباً بك في صفحة النتائج النهائية! هنا يمكنك الاطلاع على أدائك الأكاديمي ومعرفة درجاتك في المقررات المختلفة بكل سهولة ووضوح. نتمنى لك كل التوفيق والنجاح!",
+    ),
     "first_semester": MessageLookupByLibrary.simpleMessage("ترم أول"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة السر؟",
@@ -130,6 +136,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تواصل. تعلّم. انطلق!",
     ),
     "goodLuck": MessageLookupByLibrary.simpleMessage("بالتوفيق! 🍀"),
+    "grade": MessageLookupByLibrary.simpleMessage("التقدير"),
     "group": MessageLookupByLibrary.simpleMessage("مجموعة"),
     "in_progress": MessageLookupByLibrary.simpleMessage("قيد التنفيذ"),
     "interested": MessageLookupByLibrary.simpleMessage("مهتم"),
