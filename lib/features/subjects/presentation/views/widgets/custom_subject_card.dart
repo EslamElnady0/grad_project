@@ -88,6 +88,7 @@ class CustomSubjectCard extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 15.w),
                   child: Row(children: [
                     CustomTextButton(
+                       primary: true,
                         width: 120.w, text: S.of(context).study, onTap: () {}),
                     const Spacer(),
                     Container(

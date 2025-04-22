@@ -35,6 +35,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "academic_progress_welcome_message": MessageLookupByLibrary.simpleMessage(
       " !تعرّف على مستواك الأكاديمي بكل سهولة تفاصيل درجاتك وترتيبك في متناول يدك🎓",
     ),
+    "addLink": MessageLookupByLibrary.simpleMessage("إضافة رابط"),
+    "addLinkDescrebtion": MessageLookupByLibrary.simpleMessage(
+      "قم بإضافة رابط مباشر للمحتوى او المصدر!",
+    ),
+    "addStudyContent": MessageLookupByLibrary.simpleMessage(
+      "إضافة محتوى دراسي",
+    ),
+    "addStudyContentSubtitle": MessageLookupByLibrary.simpleMessage(
+      "📚 قم بإضافة مواد دراسية جديدة وإدارة تفاصيلها بكل سهولة!",
+    ),
     "add_courses": MessageLookupByLibrary.simpleMessage("إضافة مواد دراسية"),
     "add_new": MessageLookupByLibrary.simpleMessage(" إضافة خبر جديد"),
     "add_new_news": MessageLookupByLibrary.simpleMessage(
@@ -59,6 +69,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "classification": MessageLookupByLibrary.simpleMessage("التصنيف"),
     "clearAnswerSelection": MessageLookupByLibrary.simpleMessage(
       "حذف تحديد الإجابة",
+    ),
+    "clickheretoaddmorefiles": MessageLookupByLibrary.simpleMessage(
+      "اضعط هنا لإضافة المزيد من الملفات",
     ),
     "college": MessageLookupByLibrary.simpleMessage("الكلية"),
     "community": MessageLookupByLibrary.simpleMessage("المنتدي"),
@@ -128,6 +141,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "in_progress": MessageLookupByLibrary.simpleMessage("قيد التنفيذ"),
     "interested": MessageLookupByLibrary.simpleMessage("مهتم"),
     "internalMap": MessageLookupByLibrary.simpleMessage("الخريطة الداخلية"),
+    "lectureDescription": MessageLookupByLibrary.simpleMessage("وصف المحاضرة"),
+    "lectureDescriptionHint": MessageLookupByLibrary.simpleMessage(
+      "مختصرًا حول محتوى المحاضرة وأهدافها التعليمية!",
+    ),
+    "lectureTitle": MessageLookupByLibrary.simpleMessage("عنوان المحاضرة"),
+    "lectureTitleHint": MessageLookupByLibrary.simpleMessage(
+      "أدخل عنوانًا واضحًا يعكس موضوع المحاضرة بدقة!",
+    ),
     "lectures": MessageLookupByLibrary.simpleMessage("المحاضرات"),
     "level": MessageLookupByLibrary.simpleMessage("الفرقة"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
@@ -161,6 +182,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "next_seven_days": MessageLookupByLibrary.simpleMessage(
       "الأيام السبعة القادمة",
     ),
+    "noFilesUploaded": MessageLookupByLibrary.simpleMessage(
+      "لم يتم رفع أي ملفات بعد",
+    ),
     "not_started": MessageLookupByLibrary.simpleMessage("لم يبدأ"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
       "المرات المسموح بها",
@@ -175,6 +199,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pending": MessageLookupByLibrary.simpleMessage("معلق"),
     "percentage": MessageLookupByLibrary.simpleMessage("النسبة المئوية"),
     "place": MessageLookupByLibrary.simpleMessage("المكان"),
+    "pleaseEnterRequiredFields": MessageLookupByLibrary.simpleMessage(
+      "من فضلك ادخل الحقول المطلوبة",
+    ),
     "postponed": MessageLookupByLibrary.simpleMessage("مؤجل."),
     "prepareWell": MessageLookupByLibrary.simpleMessage("📚 استعد مسبقًا"),
     "previous": MessageLookupByLibrary.simpleMessage("السابق"),
@@ -299,6 +326,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "update_lecture_status_title": MessageLookupByLibrary.simpleMessage(
       "📅تحديث حالة المحاضرة!",
     ),
+    "uploadFiles": MessageLookupByLibrary.simpleMessage("رفع الملفات"),
     "verify_account": MessageLookupByLibrary.simpleMessage("أكد حسابك!"),
     "view": MessageLookupByLibrary.simpleMessage("مشاهدة"),
     "view_answers": MessageLookupByLibrary.simpleMessage("عرض الإجابات"),

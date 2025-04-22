@@ -8,18 +8,15 @@ class CustomTextButton extends StatelessWidget {
   final String text;
 
   final double? width;
+  final bool primary;
   final VoidCallback onTap;
-  final Widget? child;
-  final TextStyle? style;
   final double? fontSize;
   const CustomTextButton({
     super.key,
     required this.text,
     required this.onTap,
-    this.style,
-    this.child,
     this.width,
-    this.fontSize,
+    this.fontSize,required this.primary,
   });
 
   @override
@@ -29,11 +26,20 @@ class CustomTextButton extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 12.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16.r),
-        gradient: const LinearGradient(
-          colors: [AppColors.primaryColorlight, AppColors.primaryColordark],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-        ),
+        gradient:primary
+                ? const LinearGradient(
+                    colors: [
+                      AppColors.primaryColorlight,
+                      AppColors.primaryColordark
+                    ],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  )
+                : const LinearGradient(
+                    colors: [AppColors.redlight, AppColors.redDark],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  ),
         boxShadow: [
           BoxShadow(
               offset: const Offset(0, 4),

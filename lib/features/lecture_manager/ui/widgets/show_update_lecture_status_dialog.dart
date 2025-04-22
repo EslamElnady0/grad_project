@@ -98,6 +98,7 @@ void showUpdateLectureStatusDialog(BuildContext context) {
                 children: [
                   Expanded(
                     child: CustomTextButton(
+                       primary: true,
                       text: S.of(context).confirm,
                       fontSize: 16,
                       onTap: () {
