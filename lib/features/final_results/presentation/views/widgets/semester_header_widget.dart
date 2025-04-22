@@ -4,6 +4,7 @@ import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
+import 'package:grad_project/features/final_results/presentation/views/widgets/courses_grade_table.dart';
 
 class SemesterHeaderWidget extends StatefulWidget {
   const SemesterHeaderWidget({super.key, required this.semester});
@@ -61,6 +62,9 @@ class _SemesterHeaderWidgetState extends State<SemesterHeaderWidget> {
           ),
         ),
         vGap(15),
+        if (isExpanded) ...[        
+              isExpanded ? const CoursesGradesTable() : const SizedBox(),
+        ]
       ],
     );
   }

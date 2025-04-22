@@ -6,16 +6,17 @@ class LabelWidget extends StatelessWidget {
       required this.label,
       this.gradient,
       this.color,
-      required this.textStyle});
+      required this.textStyle, required this.width});
 
   final String label;
   final LinearGradient? gradient;
   final Color? color;
   final TextStyle textStyle;
+  final double width;
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100,
+      width: width,
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
       decoration: BoxDecoration(
           gradient: gradient,

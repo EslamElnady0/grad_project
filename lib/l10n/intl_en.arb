@@ -179,5 +179,9 @@
   "quiz_details":"Quiz Details",
   "add_to_send":"Add to send",
   "sent":"sent",
-  "final_results_welcome_message":"📊 Welcome to the final results page! Here you can easily and clearly review your academic performance and grades in various courses. We wish you all the best and success!"
+  "final_results_welcome_message":"📊 Welcome to the final results page! Here you can easily and clearly review your academic performance and grades in various courses. We wish you all the best and success!",
+  "course_name":"Course Name",
+    "course_code":"Course Code",
+    "grade":"Grade",
+    "course_status":"Course Status"
 }

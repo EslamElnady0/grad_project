@@ -71,9 +71,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "cooperateShareThoughts": MessageLookupByLibrary.simpleMessage(
       "Collaborate, share your ideas, and learn from your peers easily 📚",
     ),
+    "course_code": MessageLookupByLibrary.simpleMessage("Course Code"),
     "course_management_center": MessageLookupByLibrary.simpleMessage(
       "👨‍🏫 Easily manage your courses, from students to lectures and quizzes!",
     ),
+    "course_name": MessageLookupByLibrary.simpleMessage("Course Name"),
+    "course_status": MessageLookupByLibrary.simpleMessage("Course Status"),
     "courses": MessageLookupByLibrary.simpleMessage("Courses"),
     "create_and_manage_news": MessageLookupByLibrary.simpleMessage(
       "📰 Create and manage important news and announcements for your courses easily, and keep your students updated!",
@@ -124,6 +127,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Connect. Learn. Go!",
     ),
     "goodLuck": MessageLookupByLibrary.simpleMessage("Good Luck! 🍀"),
+    "grade": MessageLookupByLibrary.simpleMessage("Grade"),
     "group": MessageLookupByLibrary.simpleMessage("Group"),
     "in_progress": MessageLookupByLibrary.simpleMessage("In Progress"),
     "interested": MessageLookupByLibrary.simpleMessage("like"),

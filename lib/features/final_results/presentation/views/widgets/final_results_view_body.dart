@@ -24,7 +24,17 @@ class FinalResultsViewBody extends StatelessWidget {
               text: S.of(context).final_results_welcome_message,
             ),
             vGap(15),
-            const YearHeaderWidget()
+            ListView.separated(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemBuilder: (BuildContext context, int index) {
+                return const YearHeaderWidget();
+              },
+              separatorBuilder: (BuildContext context, int index) {
+                return vGap(15);
+              },
+              itemCount: 3,
+            )
           ],
         ),
       ),

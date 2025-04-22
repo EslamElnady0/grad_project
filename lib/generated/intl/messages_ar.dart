@@ -69,9 +69,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "cooperateShareThoughts": MessageLookupByLibrary.simpleMessage(
       "تعاون، شارك أفكارك، وتعلّم من زملائك بسهولة 📚",
     ),
+    "course_code": MessageLookupByLibrary.simpleMessage("كود المقرر"),
     "course_management_center": MessageLookupByLibrary.simpleMessage(
       "👨‍🏫 مركز إدارة المواد الدراسية الخاصة بك بكل سهولة، من الطلاب إلى المحاضرات والكويزات!",
     ),
+    "course_name": MessageLookupByLibrary.simpleMessage("اسم المادة"),
+    "course_status": MessageLookupByLibrary.simpleMessage("موقف المادة"),
     "courses": MessageLookupByLibrary.simpleMessage("المواد"),
     "create_and_manage_news": MessageLookupByLibrary.simpleMessage(
       "📰 أنشئ وأدر الأخبار والإعلانات الهامة لموادك الدراسية بسهولة، وأبقى طلابك على اطلاع دائم!",
@@ -120,6 +123,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تواصل. تعلّم. انطلق!",
     ),
     "goodLuck": MessageLookupByLibrary.simpleMessage("بالتوفيق! 🍀"),
+    "grade": MessageLookupByLibrary.simpleMessage("التقدير"),
     "group": MessageLookupByLibrary.simpleMessage("مجموعة"),
     "in_progress": MessageLookupByLibrary.simpleMessage("قيد التنفيذ"),
     "interested": MessageLookupByLibrary.simpleMessage("مهتم"),
