@@ -13,7 +13,7 @@ class CoursesGradesTable extends StatelessWidget {
 
   final List<List<String>> dummyCourses = const [
     ["OOP", "CS203", "C+", "ناجح"],
-    ["Data Structures", "CS202", "B", "ناجح"],
+    ["Data Structures Structures Structures", "CS202", "B", "ناجح"],
     ["Discrete Math", "MA201", "D", "راسب"],
     ["Networks", "CS301", "A", "ناجح"],
   ];
