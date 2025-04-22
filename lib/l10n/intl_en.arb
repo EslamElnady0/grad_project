@@ -186,7 +186,10 @@
   "lectureTitle": "Lecture Title",
   "lectureDescription": "Lecture Description",
   "addLink": "Add Link",
-  "uploadMedia": "Upload Video or Image",
-  "uploadFile": "Upload File",
-  "pleaseEnterRequiredFields": "Please enter the required fields"
+ 
+  "uploadFiles": "Upload Files",
+  "pleaseEnterRequiredFields": "Please enter the required fields",
+    
+  "clickheretoaddmorefiles": "Click here to add more files",
+  "noFilesUploaded": "No files uploaded yet"
 }

@@ -11,6 +11,8 @@ import '../../../../core/widgets/custom_text_form_field_and_icon.dart';
 import '../../../../core/widgets/text entry footer/custom_outloned_button.dart';
 import '../../../../generated/l10n.dart';
 
+import 'file_upload_dialog.dart';
+
 class LectureFormContent extends StatefulWidget {
   const LectureFormContent({
     super.key,
@@ -57,16 +59,12 @@ class _LectureFormContentState extends State<LectureFormContent> {
           CustomTextAndIconButton(
             width: double.infinity,
             style: AppTextStyles.font17WhiteSemiBold,
-            text: S.of(context).uploadFile,
-            onTap: () {},
+            text: S.of(context).uploadFiles,
+            onTap: () {
+              showFileUploadDialog(context);
+            },
             icon: SvgPicture.asset(Assets.imagesSvgsPdfIcon),
             primaryButton: false,
-          ),
-          vGap(12),
-          CustomOutlinedButton(
-            title: S.of(context).uploadMedia,
-            icon: SvgPicture.asset(Assets.imagesSvgsUpload),
-            onPressed: () {},
           ),
           vGap(12),
           CustomOutlinedButton(
@@ -80,7 +78,7 @@ class _LectureFormContentState extends State<LectureFormContent> {
             child: CustomTextButton(
               primary: false,
               width: 100.w,
-              style: AppTextStyles.font16WhiteBold,
+            fontSize: 18,
               text: S.of(context).publish,
               onTap: () {
                 if (formKey.currentState!.validate()) {
@@ -99,4 +97,15 @@ class _LectureFormContentState extends State<LectureFormContent> {
   }
 }
 
-
+void showFileUploadDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    barrierDismissible: true,
+    builder: (BuildContext context) {
+      return const Dialog(
+        backgroundColor: Colors.transparent,
+        child: FileUploadDialog(),
+      );
+    },
+  );
+}

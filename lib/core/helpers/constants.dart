@@ -61,38 +61,7 @@ class Constants {
     ];
   }
 
-  static Map<String, String> weakAr = {
-    "week1": "Week One",
-    "week2": "Week Two",
-    "week3": "Week Three",
-    "week4": "Week Four",
-    "week5": "Week Five",
-    "week6": "Week Six",
-    "week7": "Week Seven",
-    "week8": "Week Eight",
-    "week9": "Week Nine",
-    "week10": "Week Ten",
-    "week11": "Week Eleven",
-    "week12": "Week Twelve",
-    "week13": "Week Thirteen",
-    "week14": "Week Fourteen"
-  };
-  static Map<String, String> weakEn = {
-    "week1": "الأسبوع الأول",
-    "week2": "الأسبوع الثاني",
-    "week3": "الأسبوع الثالث",
-    "week4": "الأسبوع الرابع",
-    "week5": "الأسبوع الخامس",
-    "week6": "الأسبوع السادس",
-    "week7": "الأسبوع السابع",
-    "week8": "الأسبوع الثامن",
-    "week9": "الأسبوع التاسع",
-    "week10": "الأسبوع العاشر",
-    "week11": "الأسبوع الحادي عشر",
-    "week12": "الأسبوع الثاني عشر",
-    "week13": "الأسبوع الثالث عشر",
-    "week14": "الأسبوع الرابع عشر"
-  };
+
   static List<BottomNavBarItemModel> adminBottomNavBarItemsLocalized(
       BuildContext context) {
     return [

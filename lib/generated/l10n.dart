@@ -1500,19 +1500,14 @@ class S {
     return Intl.message('Add Link', name: 'addLink', desc: '', args: []);
   }
 
-  /// `Upload Video or Image`
-  String get uploadMedia {
+  /// `Upload Files`
+  String get uploadFiles {
     return Intl.message(
-      'Upload Video or Image',
-      name: 'uploadMedia',
+      'Upload Files',
+      name: 'uploadFiles',
       desc: '',
       args: [],
     );
-  }
-
-  /// `Upload File`
-  String get uploadFile {
-    return Intl.message('Upload File', name: 'uploadFile', desc: '', args: []);
   }
 
   /// `Please enter the required fields`
@@ -1520,6 +1515,26 @@ class S {
     return Intl.message(
       'Please enter the required fields',
       name: 'pleaseEnterRequiredFields',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click here to add more files`
+  String get clickheretoaddmorefiles {
+    return Intl.message(
+      'Click here to add more files',
+      name: 'clickheretoaddmorefiles',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No files uploaded yet`
+  String get noFilesUploaded {
+    return Intl.message(
+      'No files uploaded yet',
+      name: 'noFilesUploaded',
       desc: '',
       args: [],
     );

@@ -69,6 +69,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "clearAnswerSelection": MessageLookupByLibrary.simpleMessage(
       "Clear Answer Selection",
     ),
+    "clickheretoaddmorefiles": MessageLookupByLibrary.simpleMessage(
+      "Click here to add more files",
+    ),
     "college": MessageLookupByLibrary.simpleMessage("College"),
     "community": MessageLookupByLibrary.simpleMessage("Community"),
     "complete": MessageLookupByLibrary.simpleMessage("complete"),
@@ -173,6 +176,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
     "next_seven_days": MessageLookupByLibrary.simpleMessage("Next Seven Days"),
+    "noFilesUploaded": MessageLookupByLibrary.simpleMessage(
+      "No files uploaded yet",
+    ),
     "not_started": MessageLookupByLibrary.simpleMessage("Not Started"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
       "Allowed Attempts",
@@ -319,10 +325,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "update_lecture_status_title": MessageLookupByLibrary.simpleMessage(
       "📅 Update lecture status!",
     ),
-    "uploadFile": MessageLookupByLibrary.simpleMessage("Upload File"),
-    "uploadMedia": MessageLookupByLibrary.simpleMessage(
-      "Upload Video or Image",
-    ),
+    "uploadFiles": MessageLookupByLibrary.simpleMessage("Upload Files"),
     "verify_account": MessageLookupByLibrary.simpleMessage(
       "Verify your account!",
     ),

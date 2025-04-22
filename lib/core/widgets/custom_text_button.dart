@@ -10,15 +10,11 @@ class CustomTextButton extends StatelessWidget {
   final double? width;
   final bool primary;
   final VoidCallback onTap;
-  final Widget? child;
-  final TextStyle? style;
   final double? fontSize;
   const CustomTextButton({
     super.key,
     required this.text,
     required this.onTap,
-    this.style,
-    this.child,
     this.width,
     this.fontSize,required this.primary,
   });

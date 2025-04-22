@@ -67,6 +67,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "clearAnswerSelection": MessageLookupByLibrary.simpleMessage(
       "حذف تحديد الإجابة",
     ),
+    "clickheretoaddmorefiles": MessageLookupByLibrary.simpleMessage(
+      "اضعط هنا لإضافة المزيد من الملفات",
+    ),
     "college": MessageLookupByLibrary.simpleMessage("الكلية"),
     "community": MessageLookupByLibrary.simpleMessage("المنتدي"),
     "complete": MessageLookupByLibrary.simpleMessage("إكتمل"),
@@ -168,6 +171,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
     "next_seven_days": MessageLookupByLibrary.simpleMessage(
       "الأيام السبعة القادمة",
+    ),
+    "noFilesUploaded": MessageLookupByLibrary.simpleMessage(
+      "لم يتم رفع أي ملفات بعد",
     ),
     "not_started": MessageLookupByLibrary.simpleMessage("لم يبدأ"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
@@ -310,8 +316,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "update_lecture_status_title": MessageLookupByLibrary.simpleMessage(
       "📅تحديث حالة المحاضرة!",
     ),
-    "uploadFile": MessageLookupByLibrary.simpleMessage("رفع فايل"),
-    "uploadMedia": MessageLookupByLibrary.simpleMessage("رفع فيديو أو صورة"),
+    "uploadFiles": MessageLookupByLibrary.simpleMessage("رفع الملفات"),
     "verify_account": MessageLookupByLibrary.simpleMessage("أكد حسابك!"),
     "view": MessageLookupByLibrary.simpleMessage("مشاهدة"),
     "view_answers": MessageLookupByLibrary.simpleMessage("عرض الإجابات"),

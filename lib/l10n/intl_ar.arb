@@ -186,8 +186,9 @@
   "lectureTitle": "عنوان المحاضرة",
   "lectureDescription": "وصف المحاضرة",
   "addLink": "إضافة رابط",
-  "uploadMedia": "رفع فيديو أو صورة",
-  "uploadFile": "رفع فايل",
-  "pleaseEnterRequiredFields": "من فضلك ادخل الحقول المطلوبة"
-  
+ 
+  "uploadFiles": "رفع الملفات",
+  "pleaseEnterRequiredFields": "من فضلك ادخل الحقول المطلوبة",
+  "clickheretoaddmorefiles":"اضعط هنا لإضافة المزيد من الملفات",
+  "noFilesUploaded": "لم يتم رفع أي ملفات بعد"
 }
