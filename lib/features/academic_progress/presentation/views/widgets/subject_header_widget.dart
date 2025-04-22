@@ -12,7 +12,7 @@ class SubjectHeaderWidget extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(left: 8),
       height: 55,
-      width: 110,
+      width: 120,
       decoration: const BoxDecoration(
           gradient: Constants.primaryGrad,
           borderRadius: BorderRadius.only(

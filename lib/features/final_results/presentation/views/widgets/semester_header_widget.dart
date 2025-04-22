@@ -23,40 +23,45 @@ class _SemesterHeaderWidgetState extends State<SemesterHeaderWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 12),
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Text(
-            widget.semester,
-            style: AppTextStyles.font16DarkerBlueSemiBold,
+    return Column(
+      children: [
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 12),
+          decoration: BoxDecoration(
+            color: AppColors.white,
+            borderRadius: BorderRadius.circular(12),
           ),
-          hGap(36),
-          GestureDetector(
-            onTap: () {
-              isExpanded = !isExpanded;
-              setState(() {});
-            },
-            child: SizedBox(
-              height: 25,
-              width: 25,
-              child: SvgPicture.asset(
-                color: AppColors.darkblue,
-                isExpanded
-                    ? Assets.imagesSvgsArrowDown
-                    : Assets.imagesSvgsArrowLeft,
-                width: isExpanded ? 22 : 15,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text(
+                widget.semester,
+                style: AppTextStyles.font16DarkerBlueSemiBold,
               ),
-            ),
+              hGap(36),
+              GestureDetector(
+                onTap: () {
+                  isExpanded = !isExpanded;
+                  setState(() {});
+                },
+                child: SizedBox(
+                  height: 25,
+                  width: 25,
+                  child: SvgPicture.asset(
+                    color: AppColors.darkblue,
+                    isExpanded
+                        ? Assets.imagesSvgsArrowDown
+                        : Assets.imagesSvgsArrowLeft,
+                    width: isExpanded ? 22 : 15,
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+        vGap(15),
+      ],
     );
   }
 }

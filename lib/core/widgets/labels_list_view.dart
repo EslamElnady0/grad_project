@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
-import 'package:grad_project/features/academic_progress/presentation/views/widgets/label_widget.dart';
+import 'package:grad_project/core/widgets/label_widget.dart';
 
 class LabelsListView extends StatelessWidget {
   const LabelsListView({
     super.key,
     required this.labels,
+    this.gradient,
+    this.color, required this.textStyle,
   });
   final List<String> labels;
+  final LinearGradient? gradient;
+  final Color? color;
+  final TextStyle textStyle;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,7 +24,12 @@ class LabelsListView extends StatelessWidget {
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (BuildContext context, int index) {
-          return LabelWidget(labels: labels, index: index);
+          return LabelWidget(
+            label: labels[index],
+            gradient: gradient,
+            color: color,
+            textStyle: textStyle,
+          );
         },
         separatorBuilder: (BuildContext context, int index) {
           return hGap(15);

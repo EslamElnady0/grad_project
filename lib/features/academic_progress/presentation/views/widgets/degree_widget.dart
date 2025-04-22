@@ -12,7 +12,7 @@ class DegreeWidget extends StatelessWidget {
     return Container(
       color: AppColors.white,
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-      width: 90,
+      width: 100,
       child: Center(
         child: Text(
           "8/10",

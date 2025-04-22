@@ -66,7 +66,6 @@ class _YearHeaderWidgetState extends State<YearHeaderWidget> {
         vGap(15),
         if (isExpanded) ...[
           SemesterHeaderWidget(semester: S.of(context).semester_1),
-          vGap(15),
           SemesterHeaderWidget(semester: S.of(context).semester_2),
         ],
       ],
