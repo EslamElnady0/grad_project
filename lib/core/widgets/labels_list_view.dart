@@ -8,7 +8,8 @@ class LabelsListView extends StatelessWidget {
     required this.labels,
     this.gradient,
     this.color,
-    required this.textStyle, required this.width,
+    required this.textStyle,
+    required this.width,
   });
   final List<String> labels;
   final LinearGradient? gradient;

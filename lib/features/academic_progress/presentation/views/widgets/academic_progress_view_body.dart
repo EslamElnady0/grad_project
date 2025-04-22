@@ -98,7 +98,7 @@ class AcademicProgressViewBody extends StatelessWidget {
                       ],
                       textStyle: AppTextStyles.font12WhiteSemiBold,
                       gradient: Constants.secondaryGrad,
-                      width: 100,
+                      width: 98,
                     ),
                     vGap(10),
                     Column(
