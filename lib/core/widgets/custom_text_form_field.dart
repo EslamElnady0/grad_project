@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grad_project/core/widgets/decorated_input_border.dart';
 
 import '../../generated/l10n.dart';
+import '../helpers/localizationa.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
 
@@ -62,9 +63,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         hintStyle: AppTextStyles.font10grayRegular,
         filled: true,
         fillColor: Colors.transparent, // Make fillColor transparent
-        border: _buildBorder(),
-        enabledBorder: _buildBorder(),
-        focusedBorder: _buildBorder(),
+        border: buildBorder(),
+        enabledBorder: buildBorder(),
+        focusedBorder: buildBorder(),
         suffixIcon: _buildPrefixIcon(),
         contentPadding:
             const EdgeInsets.symmetric(vertical: 16, horizontal: 15),
@@ -91,7 +92,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     return null;
   }
 
-  DecoratedInputBorder _buildBorder() {
+  DecoratedInputBorder buildBorder() {
     return DecoratedInputBorder(
       child: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
@@ -106,8 +107,5 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     );
   }
 
-  bool isArabicLocale(BuildContext context) {
-    Locale locale = Localizations.localeOf(context);
-    return locale.languageCode == 'ar';
-  }
+ 
 }

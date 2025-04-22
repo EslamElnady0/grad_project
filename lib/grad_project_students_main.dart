@@ -7,6 +7,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/cubits/bloc_observer.dart';
 import 'package:grad_project/core/flavors/flavors_functions.dart';
+import 'core/di/dependency_injection.dart';
 import 'core/routes/student_router.dart';
 import 'core/theme/app_theme.dart';
 import 'firebase_options_student.dart';
@@ -15,6 +16,8 @@ import 'generated/l10n.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
+  await ScreenUtil.ensureScreenSize();
+  await setupGetIt();
   Bloc.observer = GradBlocObserver();
   FlavorsFunctions.setupStudentsFlover();
   await Firebase.initializeApp(

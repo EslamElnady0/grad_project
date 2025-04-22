@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:grad_project/features/lecture_manager/ui/screens/add_lecture_view.dart';
 import 'package:grad_project/features/lecture_manager/ui/screens/qr_attendance_view.dart';
 import 'package:grad_project/features/lecture_manager/ui/widgets/show_update_lecture_status_dialog.dart';
 
@@ -86,7 +87,9 @@ class LectureManagerItem extends StatelessWidget {
                   CustomTextAndIconButton(
                       text: S.of(context).add_courses,
                       width: double.infinity,
-                      onTap: () {},
+                      onTap: () {
+                        GoRouter.of(context).push(AddLectureView.routeName);
+                      },
                       icon: Image.asset(Assets.imagesAddLecture),
                       primaryButton: true),
                   vGap(12),

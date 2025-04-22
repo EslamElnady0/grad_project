@@ -70,6 +70,10 @@ class Assets {
   /// assets/images/svgs/add_icon.svg
   static const String imagesSvgsAddIcon = "assets/images/svgs/add_icon.svg";
 
+  /// Assets for imagesSvgsAddLink
+  /// assets/images/svgs/add_link.svg
+  static const String imagesSvgsAddLink = "assets/images/svgs/add_link.svg";
+
   /// Assets for imagesSvgsAlignmentRightIcon
   /// assets/images/svgs/alignment_right_icon.svg
   static const String imagesSvgsAlignmentRightIcon = "assets/images/svgs/alignment_right_icon.svg";
@@ -178,6 +182,14 @@ class Assets {
   /// assets/images/svgs/ios_arrow_icon.svg
   static const String imagesSvgsIosArrowIcon = "assets/images/svgs/ios_arrow_icon.svg";
 
+  /// Assets for imagesSvgsLecDesc
+  /// assets/images/svgs/lec_desc.svg
+  static const String imagesSvgsLecDesc = "assets/images/svgs/lec_desc.svg";
+
+  /// Assets for imagesSvgsLecTilte
+  /// assets/images/svgs/lec_tilte.svg
+  static const String imagesSvgsLecTilte = "assets/images/svgs/lec_tilte.svg";
+
   /// Assets for imagesSvgsLike
   /// assets/images/svgs/like.svg
   static const String imagesSvgsLike = "assets/images/svgs/like.svg";
@@ -265,6 +277,10 @@ class Assets {
   /// Assets for imagesSvgsTwoPersonsIcon
   /// assets/images/svgs/two_persons_icon.svg
   static const String imagesSvgsTwoPersonsIcon = "assets/images/svgs/two_persons_icon.svg";
+
+  /// Assets for imagesSvgsUpload
+  /// assets/images/svgs/upload.svg
+  static const String imagesSvgsUpload = "assets/images/svgs/upload.svg";
 
   /// Assets for imagesSvgsVideoIcon
   /// assets/images/svgs/video_icon.svg

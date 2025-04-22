@@ -1434,6 +1434,121 @@ class S {
   String get sent {
     return Intl.message('sent', name: 'sent', desc: '', args: []);
   }
+
+  /// `Add Study Content`
+  String get addStudyContent {
+    return Intl.message(
+      'Add Study Content',
+      name: 'addStudyContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `📚 Easily add new study materials and manage their details!`
+  String get addStudyContentSubtitle {
+    return Intl.message(
+      '📚 Easily add new study materials and manage their details!',
+      name: 'addStudyContentSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter a clear title that accurately reflects the lecture topic!`
+  String get lectureTitleHint {
+    return Intl.message(
+      'Enter a clear title that accurately reflects the lecture topic!',
+      name: 'lectureTitleHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A brief summary of the lecture content and its educational objectives!`
+  String get lectureDescriptionHint {
+    return Intl.message(
+      'A brief summary of the lecture content and its educational objectives!',
+      name: 'lectureDescriptionHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lecture Title`
+  String get lectureTitle {
+    return Intl.message(
+      'Lecture Title',
+      name: 'lectureTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lecture Description`
+  String get lectureDescription {
+    return Intl.message(
+      'Lecture Description',
+      name: 'lectureDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Link`
+  String get addLink {
+    return Intl.message('Add Link', name: 'addLink', desc: '', args: []);
+  }
+
+  /// `Upload Files`
+  String get uploadFiles {
+    return Intl.message(
+      'Upload Files',
+      name: 'uploadFiles',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter the required fields`
+  String get pleaseEnterRequiredFields {
+    return Intl.message(
+      'Please enter the required fields',
+      name: 'pleaseEnterRequiredFields',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click here to add more files`
+  String get clickheretoaddmorefiles {
+    return Intl.message(
+      'Click here to add more files',
+      name: 'clickheretoaddmorefiles',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No files uploaded yet`
+  String get noFilesUploaded {
+    return Intl.message(
+      'No files uploaded yet',
+      name: 'noFilesUploaded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add a link to the study material.`
+  String get addLinkDescrebtion {
+    return Intl.message(
+      'Add a link to the study material.',
+      name: 'addLinkDescrebtion',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
