@@ -1,5 +1,6 @@
 class ApiConstants {
-  static const String apiBaseUrl = "https://chifmate-rg.azurewebsites.net/api/";
+  static const String apiBaseUrl =
+      "https://nextgenedu-database.azurewebsites.net/api/";
   static const String login = "auth/login";
   static const String register = "auth/register";
   static const String otpVerification = "otp-verification";
@@ -7,9 +8,10 @@ class ApiConstants {
   static const String updateUserProfile = "user/update";
   static const String loginWithGoogle = "auth/google";
   static const String workSpace = "workspaces";
-  
+
   static const String warehouse = "warehouse";
   static const String ingredient = "ingredient";
   static const String equipment = "equipment";
+  static const String dashboard = "dashboard";
+  static const String teachers = "teachers";
 }
-
