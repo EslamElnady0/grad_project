@@ -13,5 +13,6 @@ class ApiConstants {
   static const String ingredient = "ingredient";
   static const String equipment = "equipment";
   static const String dashboard = "dashboard";
+  static const String announcements = "/announcements";
   static const String teachers = "teachers";
 }
