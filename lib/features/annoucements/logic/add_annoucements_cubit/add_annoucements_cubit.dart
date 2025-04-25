@@ -15,10 +15,9 @@ class AddAnnoucementsCubit extends Cubit<AddAnnoucementsState> {
   TextEditingController descController = TextEditingController();
   String selectedLevel = 'الفرقة الأولى';
   String selectedCourse = 'Data Structures';
-  Future<void> addAnnoucement({
-    required String date,
-    required String time,
-  }) async {
+  String? selectedDate;
+  String? selectedTime;
+  Future<void> addAnnoucement() async {
     emit(const AddAnnoucementsState.addAnnoucementsLoading());
     final result = await _repo.addAnnoucement(
       AddAnnouncementRequestBody(
@@ -27,8 +26,8 @@ class AddAnnoucementsCubit extends Cubit<AddAnnoucementsState> {
         courseId: 1,
         title: titleController.text,
         body: descController.text,
-        date: date,
-        time: time,
+        date: selectedDate,
+        time: selectedTime,
       ),
     );
     result.when(
