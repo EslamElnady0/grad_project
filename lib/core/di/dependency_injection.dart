@@ -3,7 +3,9 @@ import 'package:dio/dio.dart';
 import 'package:grad_project/features/annoucements/data/data%20sources/annoucements_remote_data_source.dart';
 import 'package:grad_project/features/annoucements/data/repos/annoucements_repo.dart';
 import 'package:grad_project/features/annoucements/logic/add_annoucements_cubit/add_annoucements_cubit.dart';
+import 'package:grad_project/features/lecture_manager/ui/cubit/week_cubit.dart';
 import '../../features/annoucements/data/data sources/annoucements_local_data_source.dart';
+import '../../features/lecture_manager/ui/cubit/file_upload_cubit.dart';
 import '../networking/dio_factory.dart';
 
 final getIt = GetIt.instance;
@@ -23,4 +25,7 @@ Future<void> setupGetIt() async {
       ));
   getIt.registerFactory<AddAnnoucementsCubit>(
       () => AddAnnoucementsCubit(getIt()));
+
+  getIt.registerFactory<WeekCubit>(() => WeekCubit());
+  getIt.registerFactory<FileUploadCubit>(() => FileUploadCubit());
 }
