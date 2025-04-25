@@ -19,11 +19,12 @@ class HomeView extends StatelessWidget {
       extendBody: true,
       body: BlocBuilder<BottomNavBarCubit, BottomNavBarState>(
         builder: (context, state) {
-          return FlavorsFunctions.isStudent()
-              ? Constants
-                  .homeBodies[context.read<BottomNavBarCubit>().currentIndex]
-              : Constants.adminHomeBodies[
-                  context.read<BottomNavBarCubit>().currentIndex];
+          return IndexedStack(
+            index: context.read<BottomNavBarCubit>().currentIndex,
+            children: FlavorsFunctions.isStudent()
+                ? Constants.homeBodies
+                : Constants.adminHomeBodies,
+          );
         },
       ),
       bottomNavigationBar: FlavorsFunctions.isStudent()

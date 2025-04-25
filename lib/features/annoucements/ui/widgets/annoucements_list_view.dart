@@ -27,14 +27,20 @@ class AnnoucementsListView extends StatelessWidget {
           final responseData = data as PaginatedAnnouncementsResponse;
           final items = responseData.data.data;
 
-          return ListView.builder(
-            padding: EdgeInsets.zero,
-            itemCount: items.length,
-            itemBuilder: (context, index) {
-              return AnnoucementItem(
-                announcementModel: items[index],
-              );
+          return RefreshIndicator(
+            color: AppColors.primaryColorlight,
+            onRefresh: () async {
+              context.read<GetAnnouncementCubit>().getAnnouncement();
             },
+            child: ListView.builder(
+              padding: EdgeInsets.zero,
+              itemCount: items.length,
+              itemBuilder: (context, index) {
+                return AnnoucementItem(
+                  announcementModel: items[index],
+                );
+              },
+            ),
           );
         },
         getAnnouncementFailure: (error) {
