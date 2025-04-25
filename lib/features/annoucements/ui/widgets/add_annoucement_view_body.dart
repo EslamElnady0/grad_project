@@ -11,9 +11,14 @@ import 'annoucement_title_and_desc.dart';
 import 'date_and_time_section.dart';
 import 'publish_row.dart';
 
-class AddAnnoucementViewBody extends StatelessWidget {
+class AddAnnoucementViewBody extends StatefulWidget {
   const AddAnnoucementViewBody({super.key});
 
+  @override
+  State<AddAnnoucementViewBody> createState() => _AddAnnoucementViewBodyState();
+}
+
+class _AddAnnoucementViewBodyState extends State<AddAnnoucementViewBody> {
   @override
   Widget build(BuildContext context) {
     return Padding(

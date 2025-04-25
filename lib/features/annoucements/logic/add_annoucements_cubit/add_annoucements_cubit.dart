@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -10,12 +11,25 @@ class AddAnnoucementsCubit extends Cubit<AddAnnoucementsState> {
   final AnnoucementsRepo _repo;
   AddAnnoucementsCubit(this._repo)
       : super(const AddAnnoucementsState.initial());
+  TextEditingController titleController = TextEditingController();
+  TextEditingController descController = TextEditingController();
+  String selectedLevel = 'الفرقة الأولى';
+  String selectedCourse = 'Data Structures';
   Future<void> addAnnoucement({
-    required AddAnnouncementRequestBody addAnnouncementRequestBody,
+    required String date,
+    required String time,
   }) async {
     emit(const AddAnnoucementsState.addAnnoucementsLoading());
     final result = await _repo.addAnnoucement(
-      addAnnouncementRequestBody,
+      AddAnnouncementRequestBody(
+        departmentId: 1,
+        semesterId: 3,
+        courseId: 1,
+        title: titleController.text,
+        body: descController.text,
+        date: date,
+        time: time,
+      ),
     );
     result.when(
       success: (data) {
@@ -26,5 +40,24 @@ class AddAnnoucementsCubit extends Cubit<AddAnnoucementsState> {
             error.getAllMessages()));
       },
     );
+  }
+
+  List<String> levels = [
+    'الفرقة الأولى',
+    'الفرقة الثانية',
+    'الفرقة الثالثة',
+    'الفرقة الرابعة',
+  ];
+  List<String> courses = [
+    'Data Structures',
+    'Database',
+    'Computer Networks',
+    'Operating Systems',
+  ];
+  @override
+  Future<void> close() {
+    titleController.dispose();
+    descController.dispose();
+    return super.close();
   }
 }
