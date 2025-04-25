@@ -1,6 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:grad_project/features/annoucements/data/models/teachers_courses_response.dart';
+import 'package:grad_project/features/annoucements/logic/get_teacher_cources_cubit/get_teacher_cources_cubit.dart';
 
 import '../../data/models/add_annoucement_request_body.dart';
 import '../../data/repos/annoucements_repo.dart';
@@ -9,22 +13,23 @@ part 'add_annoucements_cubit.freezed.dart';
 
 class AddAnnoucementsCubit extends Cubit<AddAnnoucementsState> {
   final AnnoucementsRepo _repo;
-  AddAnnoucementsCubit(this._repo)
+  final GetTeacherCourcesCubit _getTeacherCourcesCubit;
+  AddAnnoucementsCubit(this._repo, this._getTeacherCourcesCubit)
       : super(const AddAnnoucementsState.initial());
+  late List<Course> coursesList;
   TextEditingController titleController = TextEditingController();
   TextEditingController descController = TextEditingController();
   final formKey = GlobalKey<FormState>();
-  String selectedLevel = 'الفرقة الأولى';
-  String selectedCourse = 'Data Structures';
+  late Course selectedCourse;
   String? selectedDate;
   String? selectedTime;
   Future<void> addAnnoucement() async {
     emit(const AddAnnoucementsState.addAnnoucementsLoading());
     final result = await _repo.addAnnoucement(
       AnnouncementRequestBody(
-        departmentId: "2",
-        semesterId: '3',
-        courseId: "3",
+        departmentId: selectedCourse.department.id.toString(),
+        semesterId: selectedCourse.semester.id.toString(),
+        courseId: selectedCourse.id.toString(),
         title: titleController.text,
         body: descController.text,
         date: selectedDate,
@@ -42,18 +47,20 @@ class AddAnnoucementsCubit extends Cubit<AddAnnoucementsState> {
     );
   }
 
-  List<String> levels = [
-    'الفرقة الأولى',
-    'الفرقة الثانية',
-    'الفرقة الثالثة',
-    'الفرقة الرابعة',
-  ];
-  List<String> courses = [
-    'Data Structures',
-    'Database',
-    'Computer Networks',
-    'Operating Systems',
-  ];
+  Future<List<Course>> getTeacherCourses() async {
+    await _getTeacherCourcesCubit.getTeacherCourses();
+    coursesList = _getTeacherCourcesCubit.coursesResponse?.data ?? [];
+    return coursesList;
+  }
+
+  String selectedCourseText = '';
+  void selectCourse(Course course) {
+    selectedCourseText = "${course.name}    ${course.semester.name}";
+    selectedCourse = course;
+    log("selected course: $selectedCourseText");
+    emit(const AddAnnoucementsState.selected());
+  }
+
   @override
   Future<void> close() {
     titleController.dispose();

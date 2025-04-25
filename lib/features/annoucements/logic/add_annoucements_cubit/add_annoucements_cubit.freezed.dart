@@ -22,6 +22,7 @@ mixin _$AddAnnoucementsState<T> {
     required TResult Function() addAnnoucementsLoading,
     required TResult Function(T data) addAnnoucementsSuccess,
     required TResult Function(String error) addAnnoucementsFailure,
+    required TResult Function() selected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$AddAnnoucementsState<T> {
     TResult? Function()? addAnnoucementsLoading,
     TResult? Function(T data)? addAnnoucementsSuccess,
     TResult? Function(String error)? addAnnoucementsFailure,
+    TResult? Function()? selected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$AddAnnoucementsState<T> {
     TResult Function()? addAnnoucementsLoading,
     TResult Function(T data)? addAnnoucementsSuccess,
     TResult Function(String error)? addAnnoucementsFailure,
+    TResult Function()? selected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -50,6 +53,7 @@ mixin _$AddAnnoucementsState<T> {
         addAnnoucementsSuccess,
     required TResult Function(AddAnnoucementsFailure<T> value)
         addAnnoucementsFailure,
+    required TResult Function(AddAnnoucementsSelected<T> value) selected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,6 +62,7 @@ mixin _$AddAnnoucementsState<T> {
     TResult? Function(AddAnnoucementsLoading<T> value)? addAnnoucementsLoading,
     TResult? Function(AddAnnoucementsSuccess<T> value)? addAnnoucementsSuccess,
     TResult? Function(AddAnnoucementsFailure<T> value)? addAnnoucementsFailure,
+    TResult? Function(AddAnnoucementsSelected<T> value)? selected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,6 +71,7 @@ mixin _$AddAnnoucementsState<T> {
     TResult Function(AddAnnoucementsLoading<T> value)? addAnnoucementsLoading,
     TResult Function(AddAnnoucementsSuccess<T> value)? addAnnoucementsSuccess,
     TResult Function(AddAnnoucementsFailure<T> value)? addAnnoucementsFailure,
+    TResult Function(AddAnnoucementsSelected<T> value)? selected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -138,6 +144,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() addAnnoucementsLoading,
     required TResult Function(T data) addAnnoucementsSuccess,
     required TResult Function(String error) addAnnoucementsFailure,
+    required TResult Function() selected,
   }) {
     return initial();
   }
@@ -149,6 +156,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? addAnnoucementsLoading,
     TResult? Function(T data)? addAnnoucementsSuccess,
     TResult? Function(String error)? addAnnoucementsFailure,
+    TResult? Function()? selected,
   }) {
     return initial?.call();
   }
@@ -160,6 +168,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? addAnnoucementsLoading,
     TResult Function(T data)? addAnnoucementsSuccess,
     TResult Function(String error)? addAnnoucementsFailure,
+    TResult Function()? selected,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -178,6 +187,7 @@ class _$InitialImpl<T> implements _Initial<T> {
         addAnnoucementsSuccess,
     required TResult Function(AddAnnoucementsFailure<T> value)
         addAnnoucementsFailure,
+    required TResult Function(AddAnnoucementsSelected<T> value) selected,
   }) {
     return initial(this);
   }
@@ -189,6 +199,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(AddAnnoucementsLoading<T> value)? addAnnoucementsLoading,
     TResult? Function(AddAnnoucementsSuccess<T> value)? addAnnoucementsSuccess,
     TResult? Function(AddAnnoucementsFailure<T> value)? addAnnoucementsFailure,
+    TResult? Function(AddAnnoucementsSelected<T> value)? selected,
   }) {
     return initial?.call(this);
   }
@@ -200,6 +211,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(AddAnnoucementsLoading<T> value)? addAnnoucementsLoading,
     TResult Function(AddAnnoucementsSuccess<T> value)? addAnnoucementsSuccess,
     TResult Function(AddAnnoucementsFailure<T> value)? addAnnoucementsFailure,
+    TResult Function(AddAnnoucementsSelected<T> value)? selected,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -262,6 +274,7 @@ class _$AddAnnoucementsLoadingImpl<T> implements AddAnnoucementsLoading<T> {
     required TResult Function() addAnnoucementsLoading,
     required TResult Function(T data) addAnnoucementsSuccess,
     required TResult Function(String error) addAnnoucementsFailure,
+    required TResult Function() selected,
   }) {
     return addAnnoucementsLoading();
   }
@@ -273,6 +286,7 @@ class _$AddAnnoucementsLoadingImpl<T> implements AddAnnoucementsLoading<T> {
     TResult? Function()? addAnnoucementsLoading,
     TResult? Function(T data)? addAnnoucementsSuccess,
     TResult? Function(String error)? addAnnoucementsFailure,
+    TResult? Function()? selected,
   }) {
     return addAnnoucementsLoading?.call();
   }
@@ -284,6 +298,7 @@ class _$AddAnnoucementsLoadingImpl<T> implements AddAnnoucementsLoading<T> {
     TResult Function()? addAnnoucementsLoading,
     TResult Function(T data)? addAnnoucementsSuccess,
     TResult Function(String error)? addAnnoucementsFailure,
+    TResult Function()? selected,
     required TResult orElse(),
   }) {
     if (addAnnoucementsLoading != null) {
@@ -302,6 +317,7 @@ class _$AddAnnoucementsLoadingImpl<T> implements AddAnnoucementsLoading<T> {
         addAnnoucementsSuccess,
     required TResult Function(AddAnnoucementsFailure<T> value)
         addAnnoucementsFailure,
+    required TResult Function(AddAnnoucementsSelected<T> value) selected,
   }) {
     return addAnnoucementsLoading(this);
   }
@@ -313,6 +329,7 @@ class _$AddAnnoucementsLoadingImpl<T> implements AddAnnoucementsLoading<T> {
     TResult? Function(AddAnnoucementsLoading<T> value)? addAnnoucementsLoading,
     TResult? Function(AddAnnoucementsSuccess<T> value)? addAnnoucementsSuccess,
     TResult? Function(AddAnnoucementsFailure<T> value)? addAnnoucementsFailure,
+    TResult? Function(AddAnnoucementsSelected<T> value)? selected,
   }) {
     return addAnnoucementsLoading?.call(this);
   }
@@ -324,6 +341,7 @@ class _$AddAnnoucementsLoadingImpl<T> implements AddAnnoucementsLoading<T> {
     TResult Function(AddAnnoucementsLoading<T> value)? addAnnoucementsLoading,
     TResult Function(AddAnnoucementsSuccess<T> value)? addAnnoucementsSuccess,
     TResult Function(AddAnnoucementsFailure<T> value)? addAnnoucementsFailure,
+    TResult Function(AddAnnoucementsSelected<T> value)? selected,
     required TResult orElse(),
   }) {
     if (addAnnoucementsLoading != null) {
@@ -414,6 +432,7 @@ class _$AddAnnoucementsSuccessImpl<T> implements AddAnnoucementsSuccess<T> {
     required TResult Function() addAnnoucementsLoading,
     required TResult Function(T data) addAnnoucementsSuccess,
     required TResult Function(String error) addAnnoucementsFailure,
+    required TResult Function() selected,
   }) {
     return addAnnoucementsSuccess(data);
   }
@@ -425,6 +444,7 @@ class _$AddAnnoucementsSuccessImpl<T> implements AddAnnoucementsSuccess<T> {
     TResult? Function()? addAnnoucementsLoading,
     TResult? Function(T data)? addAnnoucementsSuccess,
     TResult? Function(String error)? addAnnoucementsFailure,
+    TResult? Function()? selected,
   }) {
     return addAnnoucementsSuccess?.call(data);
   }
@@ -436,6 +456,7 @@ class _$AddAnnoucementsSuccessImpl<T> implements AddAnnoucementsSuccess<T> {
     TResult Function()? addAnnoucementsLoading,
     TResult Function(T data)? addAnnoucementsSuccess,
     TResult Function(String error)? addAnnoucementsFailure,
+    TResult Function()? selected,
     required TResult orElse(),
   }) {
     if (addAnnoucementsSuccess != null) {
@@ -454,6 +475,7 @@ class _$AddAnnoucementsSuccessImpl<T> implements AddAnnoucementsSuccess<T> {
         addAnnoucementsSuccess,
     required TResult Function(AddAnnoucementsFailure<T> value)
         addAnnoucementsFailure,
+    required TResult Function(AddAnnoucementsSelected<T> value) selected,
   }) {
     return addAnnoucementsSuccess(this);
   }
@@ -465,6 +487,7 @@ class _$AddAnnoucementsSuccessImpl<T> implements AddAnnoucementsSuccess<T> {
     TResult? Function(AddAnnoucementsLoading<T> value)? addAnnoucementsLoading,
     TResult? Function(AddAnnoucementsSuccess<T> value)? addAnnoucementsSuccess,
     TResult? Function(AddAnnoucementsFailure<T> value)? addAnnoucementsFailure,
+    TResult? Function(AddAnnoucementsSelected<T> value)? selected,
   }) {
     return addAnnoucementsSuccess?.call(this);
   }
@@ -476,6 +499,7 @@ class _$AddAnnoucementsSuccessImpl<T> implements AddAnnoucementsSuccess<T> {
     TResult Function(AddAnnoucementsLoading<T> value)? addAnnoucementsLoading,
     TResult Function(AddAnnoucementsSuccess<T> value)? addAnnoucementsSuccess,
     TResult Function(AddAnnoucementsFailure<T> value)? addAnnoucementsFailure,
+    TResult Function(AddAnnoucementsSelected<T> value)? selected,
     required TResult orElse(),
   }) {
     if (addAnnoucementsSuccess != null) {
@@ -574,6 +598,7 @@ class _$AddAnnoucementsFailureImpl<T> implements AddAnnoucementsFailure<T> {
     required TResult Function() addAnnoucementsLoading,
     required TResult Function(T data) addAnnoucementsSuccess,
     required TResult Function(String error) addAnnoucementsFailure,
+    required TResult Function() selected,
   }) {
     return addAnnoucementsFailure(error);
   }
@@ -585,6 +610,7 @@ class _$AddAnnoucementsFailureImpl<T> implements AddAnnoucementsFailure<T> {
     TResult? Function()? addAnnoucementsLoading,
     TResult? Function(T data)? addAnnoucementsSuccess,
     TResult? Function(String error)? addAnnoucementsFailure,
+    TResult? Function()? selected,
   }) {
     return addAnnoucementsFailure?.call(error);
   }
@@ -596,6 +622,7 @@ class _$AddAnnoucementsFailureImpl<T> implements AddAnnoucementsFailure<T> {
     TResult Function()? addAnnoucementsLoading,
     TResult Function(T data)? addAnnoucementsSuccess,
     TResult Function(String error)? addAnnoucementsFailure,
+    TResult Function()? selected,
     required TResult orElse(),
   }) {
     if (addAnnoucementsFailure != null) {
@@ -614,6 +641,7 @@ class _$AddAnnoucementsFailureImpl<T> implements AddAnnoucementsFailure<T> {
         addAnnoucementsSuccess,
     required TResult Function(AddAnnoucementsFailure<T> value)
         addAnnoucementsFailure,
+    required TResult Function(AddAnnoucementsSelected<T> value) selected,
   }) {
     return addAnnoucementsFailure(this);
   }
@@ -625,6 +653,7 @@ class _$AddAnnoucementsFailureImpl<T> implements AddAnnoucementsFailure<T> {
     TResult? Function(AddAnnoucementsLoading<T> value)? addAnnoucementsLoading,
     TResult? Function(AddAnnoucementsSuccess<T> value)? addAnnoucementsSuccess,
     TResult? Function(AddAnnoucementsFailure<T> value)? addAnnoucementsFailure,
+    TResult? Function(AddAnnoucementsSelected<T> value)? selected,
   }) {
     return addAnnoucementsFailure?.call(this);
   }
@@ -636,6 +665,7 @@ class _$AddAnnoucementsFailureImpl<T> implements AddAnnoucementsFailure<T> {
     TResult Function(AddAnnoucementsLoading<T> value)? addAnnoucementsLoading,
     TResult Function(AddAnnoucementsSuccess<T> value)? addAnnoucementsSuccess,
     TResult Function(AddAnnoucementsFailure<T> value)? addAnnoucementsFailure,
+    TResult Function(AddAnnoucementsSelected<T> value)? selected,
     required TResult orElse(),
   }) {
     if (addAnnoucementsFailure != null) {
@@ -656,4 +686,134 @@ abstract class AddAnnoucementsFailure<T> implements AddAnnoucementsState<T> {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AddAnnoucementsFailureImplCopyWith<T, _$AddAnnoucementsFailureImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddAnnoucementsSelectedImplCopyWith<T, $Res> {
+  factory _$$AddAnnoucementsSelectedImplCopyWith(
+          _$AddAnnoucementsSelectedImpl<T> value,
+          $Res Function(_$AddAnnoucementsSelectedImpl<T>) then) =
+      __$$AddAnnoucementsSelectedImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$AddAnnoucementsSelectedImplCopyWithImpl<T, $Res>
+    extends _$AddAnnoucementsStateCopyWithImpl<T, $Res,
+        _$AddAnnoucementsSelectedImpl<T>>
+    implements _$$AddAnnoucementsSelectedImplCopyWith<T, $Res> {
+  __$$AddAnnoucementsSelectedImplCopyWithImpl(
+      _$AddAnnoucementsSelectedImpl<T> _value,
+      $Res Function(_$AddAnnoucementsSelectedImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AddAnnoucementsState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$AddAnnoucementsSelectedImpl<T> implements AddAnnoucementsSelected<T> {
+  const _$AddAnnoucementsSelectedImpl();
+
+  @override
+  String toString() {
+    return 'AddAnnoucementsState<$T>.selected()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddAnnoucementsSelectedImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addAnnoucementsLoading,
+    required TResult Function(T data) addAnnoucementsSuccess,
+    required TResult Function(String error) addAnnoucementsFailure,
+    required TResult Function() selected,
+  }) {
+    return selected();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addAnnoucementsLoading,
+    TResult? Function(T data)? addAnnoucementsSuccess,
+    TResult? Function(String error)? addAnnoucementsFailure,
+    TResult? Function()? selected,
+  }) {
+    return selected?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addAnnoucementsLoading,
+    TResult Function(T data)? addAnnoucementsSuccess,
+    TResult Function(String error)? addAnnoucementsFailure,
+    TResult Function()? selected,
+    required TResult orElse(),
+  }) {
+    if (selected != null) {
+      return selected();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddAnnoucementsLoading<T> value)
+        addAnnoucementsLoading,
+    required TResult Function(AddAnnoucementsSuccess<T> value)
+        addAnnoucementsSuccess,
+    required TResult Function(AddAnnoucementsFailure<T> value)
+        addAnnoucementsFailure,
+    required TResult Function(AddAnnoucementsSelected<T> value) selected,
+  }) {
+    return selected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddAnnoucementsLoading<T> value)? addAnnoucementsLoading,
+    TResult? Function(AddAnnoucementsSuccess<T> value)? addAnnoucementsSuccess,
+    TResult? Function(AddAnnoucementsFailure<T> value)? addAnnoucementsFailure,
+    TResult? Function(AddAnnoucementsSelected<T> value)? selected,
+  }) {
+    return selected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddAnnoucementsLoading<T> value)? addAnnoucementsLoading,
+    TResult Function(AddAnnoucementsSuccess<T> value)? addAnnoucementsSuccess,
+    TResult Function(AddAnnoucementsFailure<T> value)? addAnnoucementsFailure,
+    TResult Function(AddAnnoucementsSelected<T> value)? selected,
+    required TResult orElse(),
+  }) {
+    if (selected != null) {
+      return selected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddAnnoucementsSelected<T> implements AddAnnoucementsState<T> {
+  const factory AddAnnoucementsSelected() = _$AddAnnoucementsSelectedImpl<T>;
 }

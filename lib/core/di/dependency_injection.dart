@@ -25,12 +25,12 @@ Future<void> setupGetIt() async {
         remoteDataSource: getIt(),
         localDataSource: getIt(),
       ));
-  getIt.registerFactory<AddAnnoucementsCubit>(
-      () => AddAnnoucementsCubit(getIt()));
-  getIt.registerFactory<GetAnnouncementCubit>(
-      () => GetAnnouncementCubit(getIt()));
   getIt.registerFactory<GetTeacherCourcesCubit>(
       () => GetTeacherCourcesCubit(getIt()));
+  getIt.registerFactory<AddAnnoucementsCubit>(
+      () => AddAnnoucementsCubit(getIt(), getIt()));
+  getIt.registerFactory<GetAnnouncementCubit>(
+      () => GetAnnouncementCubit(getIt()));
 
   getIt.registerFactory<WeekCubit>(() => WeekCubit());
   getIt.registerFactory<FileUploadCubit>(() => FileUploadCubit());
