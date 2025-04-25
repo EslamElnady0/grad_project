@@ -31,7 +31,7 @@ class DioFactory {
       'X-Requested-With': 'XMLHttpRequest',
       // if (token != null)
       'Authorization':
-          'Bearer 6|rRbTqHhZUY4r7B9iMJcynxHYAObi8VM8c8gPBPnO21043028',
+          'Bearer 66|IwqqaoSq9VZ50jDwIfXXkQIJOIVFrm7OnYxshpJ96656c84d',
     };
   }
 

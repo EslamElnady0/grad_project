@@ -32,6 +32,8 @@ class CustomAnswerItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const ItemHeader(
+              date: "12/10/2023",
+              from: "2 mins ago",
               name: "ابراهيم صيام",
               specialization: "طالب فرقة رابعه",
             ),

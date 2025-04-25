@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:grad_project/features/annoucements/data/models/paginated_announcements_response.dart';
 import 'package:grad_project/features/annoucements/data/models/teachers_courses_response.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -22,7 +23,7 @@ abstract class AnnoucementsRemoteDataSource {
       @Body() AnnouncementRequestBody announcementRequestBody);
 
   @GET("${ApiConstants.dashboard}${ApiConstants.announcements}")
-  Future<AddAnnouncementResponseBody> getAnnoucements(
+  Future<PaginatedAnnouncementsResponse> getAnnoucements(
       @Body() AnnouncementRequestBody announcementRequestBody);
 
   @GET("${ApiConstants.teachers}${ApiConstants.courses}")

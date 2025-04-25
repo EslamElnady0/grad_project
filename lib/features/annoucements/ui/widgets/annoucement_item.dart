@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
+import 'package:grad_project/features/annoucements/data/models/paginated_announcements_response.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/widgets/item_header.dart';
 
 class AnnoucementItem extends StatelessWidget {
-  const AnnoucementItem({super.key});
+  final Announcement announcementModel;
+  const AnnoucementItem({super.key, required this.announcementModel});
 
   @override
   Widget build(BuildContext context) {
@@ -28,27 +30,30 @@ class AnnoucementItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-        const ItemHeader(
-                  name: "أ.د. أحمد المنوفي",
-                  specialization:  "أستاذ ودكتور مادة OOP" ,
-                ),
+          ItemHeader(
+            date: announcementModel.date,
+            from: announcementModel.from,
+            name: announcementModel.user.name,
+            specialization: announcementModel.course.name,
+          ),
           vGap(12),
           Text(
-            "📢 إعلان هام",
+            announcementModel.title,
             style: AppTextStyles.font10greenMedium
                 .copyWith(color: AppColors.black),
           ),
           vGap(20),
           Text(
-            "يرجى من جميع الطلاب حضور المحاضرة القادمة في موعدها، حيث سيتم مناقشة المواضيع الأساسية للامتحان النصفي القادم، وستشمل المحاضرة مراجعة شاملة للنماذج السابقة والأسئلة المتكررة.\n\n📌 ملاحظة: تم تحديث جميع المحاضرات السابقة والمحتوى التعليمي على النظام الإلكتروني الخاص بالجامعة، يُنصح الجميع بتحميل المحاضرات والتأكد من الاطلاع عليها قبل موعد المحاضرة.\n",
+            announcementModel.body,
             style: AppTextStyles.font10greenMedium
                 .copyWith(color: AppColors.black),
           ),
+          vGap(12),
           Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                "مع تمنياتي بالتوفيق للجميع، د. أحمد المنوفي ",
+                "مع تمنياتي بالتوفيق للجميع،\n${announcementModel.user.name} ",
                 style: AppTextStyles.font10greenMedium
                     .copyWith(color: AppColors.black),
               ),

@@ -1,6 +1,7 @@
 import 'package:grad_project/core/networking/api_error_handler.dart';
 import 'package:grad_project/core/networking/api_result.dart';
 import 'package:grad_project/features/annoucements/data/models/add_annoucement_response_body.dart';
+import 'package:grad_project/features/annoucements/data/models/paginated_announcements_response.dart';
 import 'package:grad_project/features/annoucements/data/models/teachers_courses_response.dart';
 
 import '../data sources/annoucements_local_data_source.dart';
@@ -27,7 +28,7 @@ class AnnoucementsRepo {
     }
   }
 
-  Future<ApiResult<AddAnnouncementResponseBody>> getAnnoucements(
+  Future<ApiResult<PaginatedAnnouncementsResponse>> getAnnoucements(
       AnnouncementRequestBody announcementRequestBody) async {
     try {
       final response =
