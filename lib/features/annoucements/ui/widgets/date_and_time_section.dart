@@ -38,7 +38,7 @@ class _DateAndTimeSectionState extends State<DateAndTimeSection> {
                   if (value != null) {
                     setState(() {
                       context.read<AddAnnoucementsCubit>().selectedDate =
-                          DateFormat('dd/MM/yyyy', 'en_US').format(value);
+                          DateFormat('yyyy/MM/dd', 'en_US').format(value);
                     });
                   }
                 });

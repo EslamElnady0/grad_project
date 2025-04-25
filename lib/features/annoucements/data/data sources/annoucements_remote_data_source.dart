@@ -16,7 +16,7 @@ abstract class AnnoucementsRemoteDataSource {
       {String baseUrl,
       ParseErrorLogger? errorLogger}) = _AnnoucementsRemoteDataSource;
 
-  @POST("${ApiConstants.dashboard}/${ApiConstants.announcements}")
+  @POST("${ApiConstants.dashboard}${ApiConstants.announcements}")
   Future<AddAnnouncementResponseBody> addAnnoucement(
       @Body() AddAnnouncementRequestBody addAnnouncementRequestBody);
 }

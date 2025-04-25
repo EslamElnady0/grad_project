@@ -5,13 +5,13 @@ part 'add_annoucement_request_body.g.dart';
 @JsonSerializable(includeIfNull: false)
 class AddAnnouncementRequestBody {
   @JsonKey(name: 'department_id')
-  final int departmentId;
+  final String departmentId;
 
   @JsonKey(name: 'semester_id')
-  final int semesterId;
+  final String semesterId;
 
   @JsonKey(name: 'course_id')
-  final int courseId;
+  final String courseId;
 
   final String title;
   final String body;

@@ -32,7 +32,7 @@ class _AnnoucementsRemoteDataSource implements AnnoucementsRemoteDataSource {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'dashboard//announcements',
+            'dashboard/announcements',
             queryParameters: queryParameters,
             data: _data,
           )

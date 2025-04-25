@@ -9,9 +9,9 @@ part of 'add_annoucement_request_body.dart';
 AddAnnouncementRequestBody _$AddAnnouncementRequestBodyFromJson(
         Map<String, dynamic> json) =>
     AddAnnouncementRequestBody(
-      departmentId: (json['department_id'] as num).toInt(),
-      semesterId: (json['semester_id'] as num).toInt(),
-      courseId: (json['course_id'] as num).toInt(),
+      departmentId: json['department_id'] as String,
+      semesterId: json['semester_id'] as String,
+      courseId: json['course_id'] as String,
       title: json['title'] as String,
       body: json['body'] as String,
       date: json['date'] as String?,

@@ -13,6 +13,7 @@ class AddAnnoucementsCubit extends Cubit<AddAnnoucementsState> {
       : super(const AddAnnoucementsState.initial());
   TextEditingController titleController = TextEditingController();
   TextEditingController descController = TextEditingController();
+  final formKey = GlobalKey<FormState>();
   String selectedLevel = 'الفرقة الأولى';
   String selectedCourse = 'Data Structures';
   String? selectedDate;
@@ -21,9 +22,9 @@ class AddAnnoucementsCubit extends Cubit<AddAnnoucementsState> {
     emit(const AddAnnoucementsState.addAnnoucementsLoading());
     final result = await _repo.addAnnoucement(
       AddAnnouncementRequestBody(
-        departmentId: 1,
-        semesterId: 3,
-        courseId: 1,
+        departmentId: "1",
+        semesterId: '3',
+        courseId: "1",
         title: titleController.text,
         body: descController.text,
         date: selectedDate,

@@ -20,9 +20,8 @@ class ApiErrorModel {
     if (errors == null || errors!.isEmpty) {
       return message ?? "An unknown error occurred";
     }
-    final nestedErrors = errors!["errors"];
-    if (nestedErrors is Map<String, dynamic>) {
-      return nestedErrors.entries.map((entry) {
+    if (errors is Map<String, dynamic>) {
+      return errors!.entries.map((entry) {
         final value = entry.value;
         return value is List<String> ? value.join(", ") : value.toString();
       }).join("\n");
