@@ -7,6 +7,8 @@ import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/academic_progress_view.dart';
 import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/get_announcement_cubit.dart';
+import 'package:grad_project/features/annoucements/logic/get_teacher_cources_cubit/get_teacher_cources_cubit.dart';
+import 'package:grad_project/features/annoucements/ui/ui%20cubit/announcement_filter_cubit.dart';
 import 'package:grad_project/features/annoucements/ui/views/annoucements_body.dart';
 import 'package:grad_project/features/dashboard/ui/views/dashboard_body.dart';
 import 'package:grad_project/features/final_results/presentation/views/final_results_view.dart';
@@ -234,8 +236,18 @@ class Constants {
   ];
   static List<Widget> adminHomeBodies = [
     const DashboardBody(),
-    BlocProvider(
-      create: (context) => getIt<GetAnnouncementCubit>(),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => getIt<GetAnnouncementCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => getIt<GetTeacherCourcesCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => AnnouncementFilterCubit(),
+        ),
+      ],
       child: const AnnoucementsBody(),
     ),
     const LectureManagerView(),
