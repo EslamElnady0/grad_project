@@ -22,10 +22,10 @@ class AnnoucementsBody extends StatefulWidget {
 
 class _AnnoucementsBodyState extends State<AnnoucementsBody> {
   Future<void> initApiCalls() async {
-    await context.read<GetAnnouncementCubit>().getAnnouncement();
-    if (mounted) {
-      await context.read<GetTeacherCourcesCubit>().getTeacherCourses();
-    }
+    await Future.wait([
+      context.read<GetAnnouncementCubit>().getAnnouncement(),
+      context.read<GetTeacherCourcesCubit>().getTeacherCourses()
+    ]);
   }
 
   @override
