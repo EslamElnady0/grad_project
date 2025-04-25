@@ -6,9 +6,9 @@ part of 'add_annoucement_request_body.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-AddAnnouncementRequestBody _$AddAnnouncementRequestBodyFromJson(
+AnnouncementRequestBody _$AnnouncementRequestBodyFromJson(
         Map<String, dynamic> json) =>
-    AddAnnouncementRequestBody(
+    AnnouncementRequestBody(
       departmentId: json['department_id'] as String,
       semesterId: json['semester_id'] as String,
       courseId: json['course_id'] as String,
@@ -18,8 +18,8 @@ AddAnnouncementRequestBody _$AddAnnouncementRequestBodyFromJson(
       time: json['time'] as String?,
     );
 
-Map<String, dynamic> _$AddAnnouncementRequestBodyToJson(
-        AddAnnouncementRequestBody instance) =>
+Map<String, dynamic> _$AnnouncementRequestBodyToJson(
+        AnnouncementRequestBody instance) =>
     <String, dynamic>{
       'department_id': instance.departmentId,
       'semester_id': instance.semesterId,

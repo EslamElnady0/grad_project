@@ -21,10 +21,10 @@ class AddAnnoucementsCubit extends Cubit<AddAnnoucementsState> {
   Future<void> addAnnoucement() async {
     emit(const AddAnnoucementsState.addAnnoucementsLoading());
     final result = await _repo.addAnnoucement(
-      AddAnnouncementRequestBody(
-        departmentId: "1",
+      AnnouncementRequestBody(
+        departmentId: "2",
         semesterId: '3',
-        courseId: "1",
+        courseId: "3",
         title: titleController.text,
         body: descController.text,
         date: selectedDate,

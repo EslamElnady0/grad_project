@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'add_annoucement_request_body.g.dart';
 
 @JsonSerializable(includeIfNull: false)
-class AddAnnouncementRequestBody {
+class AnnouncementRequestBody {
   @JsonKey(name: 'department_id')
   final String departmentId;
 
@@ -22,7 +22,7 @@ class AddAnnouncementRequestBody {
   @JsonKey(includeIfNull: false)
   final String? time;
 
-  AddAnnouncementRequestBody({
+  AnnouncementRequestBody({
     required this.departmentId,
     required this.semesterId,
     required this.courseId,
@@ -32,8 +32,8 @@ class AddAnnouncementRequestBody {
     this.time,
   });
 
-  factory AddAnnouncementRequestBody.fromJson(Map<String, dynamic> json) =>
-      _$AddAnnouncementRequestBodyFromJson(json);
+  factory AnnouncementRequestBody.fromJson(Map<String, dynamic> json) =>
+      _$AnnouncementRequestBodyFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AddAnnouncementRequestBodyToJson(this);
+  Map<String, dynamic> toJson() => _$AnnouncementRequestBodyToJson(this);
 }

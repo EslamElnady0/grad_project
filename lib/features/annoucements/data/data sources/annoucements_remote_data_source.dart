@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:grad_project/features/annoucements/data/models/teachers_courses_response.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../../../core/networking/api_constants.dart';
@@ -18,5 +19,12 @@ abstract class AnnoucementsRemoteDataSource {
 
   @POST("${ApiConstants.dashboard}${ApiConstants.announcements}")
   Future<AddAnnouncementResponseBody> addAnnoucement(
-      @Body() AddAnnouncementRequestBody addAnnouncementRequestBody);
+      @Body() AnnouncementRequestBody announcementRequestBody);
+
+  @GET("${ApiConstants.dashboard}${ApiConstants.announcements}")
+  Future<AddAnnouncementResponseBody> getAnnoucements(
+      @Body() AnnouncementRequestBody announcementRequestBody);
+
+  @GET("${ApiConstants.teachers}${ApiConstants.courses}")
+  Future<TeachersCoursesResponse> getTeacherCourses();
 }
