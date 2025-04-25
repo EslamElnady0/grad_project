@@ -46,6 +46,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     return TextFormField(
       obscureText: _isObscured,
       onSaved: widget.onSaved,
+      controller: widget.controller,
       keyboardType: widget.textInputType,
       maxLines: widget.maxLines,
       textAlign: isArabic ? TextAlign.right : TextAlign.left,
@@ -57,6 +58,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         return null;
       },
       decoration: InputDecoration(
+        errorStyle: AppTextStyles.font10RedRegular,
         prefixIcon: widget.prefixIcon,
         hintText: widget.hintText,
         alignLabelWithHint: widget.alignLabelWithHint,
@@ -106,6 +108,4 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       ),
     );
   }
-
- 
 }

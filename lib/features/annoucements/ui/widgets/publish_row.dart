@@ -1,5 +1,7 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/features/annoucements/logic/add_annoucements_cubit/add_annoucements_cubit.dart';
 import '../../../../core/helpers/app_assets.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
@@ -25,7 +27,15 @@ class PublishRow extends StatelessWidget {
             child: SvgIconButton(
                 iconPath: Assets.imagesSvgsEyeCrossedIcon, onPressed: () {})),
         GestureDetector(
-          onTap: () {},
+          onTap: () async {
+            if (context
+                .read<AddAnnoucementsCubit>()
+                .formKey
+                .currentState!
+                .validate()) {
+              await context.read<AddAnnoucementsCubit>().addAnnoucement();
+            }
+          },
           child: CustomRedGradContainer(
             alignment: Alignment.center,
             raduis: 12,

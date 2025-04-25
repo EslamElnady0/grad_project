@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/core/theme/app_text_styles.dart';
 
 import 'app_colors.dart';
 
@@ -23,6 +24,8 @@ class AppTheme {
     visualDensity: VisualDensity.adaptivePlatformDensity,
     // primaryColor: AppColors.primaryRed,
     scaffoldBackgroundColor: AppColors.backGround,
+    datePickerTheme: const DatePickerThemeData(),
+    timePickerTheme: const TimePickerThemeData(),
   );
 
   static final ThemeData darkTheme = ThemeData.dark(

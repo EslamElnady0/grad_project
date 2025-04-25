@@ -33,8 +33,10 @@ class CustomForumItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const ItemHeader(
+                  from: "2 mins ago",
+                  date: "12/10/2023",
                   name: "أ.د. أحمد المنوفي",
-                  specialization:  "أستاذ ودكتور مادة OOP" ,
+                  specialization: "أستاذ ودكتور مادة OOP",
                 ),
                 vGap(12),
                 Text(

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/flavors/flavors_functions.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
+import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/get_announcement_cubit.dart';
+import 'package:grad_project/features/annoucements/logic/get_teacher_cources_cubit/get_teacher_cources_cubit.dart';
+import 'package:provider/provider.dart';
 import '../../../../generated/l10n.dart';
 import '../widgets/admin_add_annoucement_row.dart';
 import '../widgets/courses_annoucement_filter.dart';
@@ -9,15 +13,31 @@ import '../../../home/ui/widgets/home_screens_header_row.dart';
 import '../../../home/ui/widgets/title_text_widget.dart';
 import '../widgets/annoucements_list_view.dart';
 
-class AnnoucementsBody extends StatelessWidget {
+class AnnoucementsBody extends StatefulWidget {
   const AnnoucementsBody({super.key});
+
+  @override
+  State<AnnoucementsBody> createState() => _AnnoucementsBodyState();
+}
+
+class _AnnoucementsBodyState extends State<AnnoucementsBody> {
+  Future<void> initApiCalls() async {
+    await Future.wait([
+      context.read<GetAnnouncementCubit>().getAnnouncement(),
+      context.read<GetTeacherCourcesCubit>().getTeacherCourses()
+    ]);
+  }
+
+  @override
+  void initState() {
+    initApiCalls();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(
-        top: 22.h,
-      ),
+      padding: EdgeInsets.only(top: 22.h),
       child: Column(
         children: [
           Padding(
@@ -44,10 +64,12 @@ class AnnoucementsBody extends StatelessWidget {
             child: const CoursesAnnoucementFilter(),
           ),
           vGap(12),
-          FlavorsFunctions.isAdmin()
-              ? const AdminAddAnnoucementRow()
-              : const SizedBox.shrink(),
-          const Expanded(child: AnnoucementsListView()),
+          if (FlavorsFunctions.isAdmin()) const AdminAddAnnoucementRow(),
+          // 👇 This is the only scrollable part
+          const Expanded(
+            child: AnnoucementsListView(),
+          ),
+          vGap(80)
         ],
       ),
     );

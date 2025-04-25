@@ -19,7 +19,7 @@ import '../../features/subjects/presentation/views/materials_view.dart';
 
 abstract class AdminRouter {
   static final router = GoRouter(
-    initialLocation: AddLectureView.routeName,
+    initialLocation: HomeView.routeName,
     routes: [
       GoRoute(
         path: HomeView.routeName,
