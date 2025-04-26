@@ -7,6 +7,8 @@ import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/
 import 'package:grad_project/features/annoucements/logic/get_teacher_cources_cubit/get_teacher_cources_cubit.dart';
 import 'package:grad_project/features/lecture_manager/ui/cubit/week_cubit.dart';
 import '../../features/annoucements/data/data sources/annoucements_local_data_source.dart';
+import '../../features/auth/data/repos/login_repo.dart';
+import '../../features/auth/logic/cubit/login_cubit.dart';
 import '../../features/lecture_manager/ui/cubit/file_upload_cubit.dart';
 import '../networking/dio_factory.dart';
 
@@ -15,7 +17,11 @@ final getIt = GetIt.instance;
 Future<void> setupGetIt() async {
   // Dio & ApiService
   Dio dio = await DioFactory.getDio();
-  //------------------------------ Annoucements ------------------------------//
+  //toDo:--------------------------------Auth API --------------------
+  getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
+  getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
+
+  //toDo:------------------------------ Annoucements API ------------------------------//
   getIt.registerLazySingleton<AnnoucementsRemoteDataSource>(
       () => AnnoucementsRemoteDataSource(dio));
   getIt.registerLazySingleton<AnnoucementsLocalDataSource>(

@@ -48,7 +48,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       onSaved: widget.onSaved,
       controller: widget.controller,
       keyboardType: widget.textInputType,
-      maxLines: widget.maxLines,
+      maxLines: _isObscured ? 1 : widget.maxLines,
       textAlign: isArabic ? TextAlign.right : TextAlign.left,
       style: AppTextStyles.font10grayRegular,
       validator: (value) {
