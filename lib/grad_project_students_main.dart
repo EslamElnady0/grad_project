@@ -7,6 +7,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/cubits/bloc_observer.dart';
 import 'package:grad_project/core/flavors/flavors_functions.dart';
+import 'package:grad_project/core/helpers/constants.dart';
+import 'package:grad_project/core/helpers/shared_pref_helper.dart';
 import 'core/di/dependency_injection.dart';
 import 'core/routes/student_router.dart';
 import 'core/theme/app_theme.dart';
@@ -17,6 +19,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
   await ScreenUtil.ensureScreenSize();
+  bool isLogin =await SharedPrefHelper.getSecuredString(Constants.token)!='';
   await setupGetIt();
   Bloc.observer = GradBlocObserver();
   FlavorsFunctions.setupStudentsFlover();
@@ -32,12 +35,14 @@ Future<void> main() async {
     return true;
   };
   
-  runApp(const GradProjectStudentApp());
+  runApp(GradProjectStudentApp(
+    isLogin: isLogin
+  ));
 }
 
 class GradProjectStudentApp extends StatelessWidget {
-  const GradProjectStudentApp({super.key});
-
+  const GradProjectStudentApp({super.key, required this.isLogin});
+final bool isLogin ;
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -51,7 +56,7 @@ class GradProjectStudentApp extends StatelessWidget {
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
         locale: const Locale('ar'),
-        routerConfig: StudentRouter.router,
+        routerConfig: StudentRouter.getRouter(isLogin),
         localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,

@@ -5,6 +5,7 @@ import 'package:grad_project/features/auth/ui/views/forget_password_view.dart';
 import 'package:grad_project/features/auth/ui/views/confirm_account_view.dart';
 import 'package:grad_project/features/chat/ui/views/chat_view.dart';
 import 'package:grad_project/features/forum/presentation/views/answers_view.dart';
+import 'package:grad_project/features/forum/presentation/views/forum_views.dart';
 import 'package:grad_project/features/lecture_manager/ui/screens/qr_attendance_view.dart';
 import 'package:grad_project/features/map/presentation/views/internal_map_view.dart';
 import 'package:grad_project/features/profile/presentation/views/profile_view.dart';
@@ -18,8 +19,10 @@ import '../../features/lecture_manager/ui/screens/add_lecture_view.dart';
 import '../../features/subjects/presentation/views/materials_view.dart';
 
 abstract class AdminRouter {
-  static final router = GoRouter(
-    initialLocation: AuthView.routeName,
+   static GoRouter getRouter(bool isLogin) {
+    return
+ GoRouter(
+    initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
     routes: [
       GoRoute(
         path: HomeView.routeName,
@@ -31,6 +34,10 @@ abstract class AdminRouter {
       GoRoute(
         path: AuthView.routeName,
         builder: (context, state) => const AuthView(),
+      ),
+      GoRoute(
+        path: ForumViews.routeName,
+        builder: (context, state) => const ForumViews(),
       ),
       GoRoute(
         path: ForgetPasswordView.routeName,
@@ -81,4 +88,4 @@ abstract class AdminRouter {
           builder: (context, state) => const AddLectureView()),
     ],
   );
-}
+}}

@@ -18,8 +18,10 @@ import '../../features/home/ui/views/home_view.dart';
 import '../../features/subjects/presentation/views/materials_view.dart';
 
 abstract class StudentRouter {
-  static final router = GoRouter(
-    initialLocation:AuthView.routeName,
+  
+   static GoRouter getRouter(bool isLogin) {
+    return GoRouter(
+    initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
     routes: [
    
       GoRoute(
@@ -87,4 +89,5 @@ abstract class StudentRouter {
       )
     ],
   );
+}
 }

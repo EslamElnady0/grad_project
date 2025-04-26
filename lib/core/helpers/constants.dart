@@ -159,13 +159,15 @@ class Constants {
       DrawerItemModel(
         title: S.of(context).forum_management,
         iconPath: Assets.imagesSvgsCommentBubbleIcon,
-        onTap: () {},
+        onTap: () {
+          GoRouter.of(context).push(ForumViews.routeName);
+        },
       ),
       DrawerItemModel(
         title: S.of(context).weekly_schedule,
         iconPath: Assets.imagesSvgsTimeQuarter,
         onTap: () {
-          // GoRouter.of(context).push(InternalMapView.routeName);
+          GoRouter.of(context).push(WeeklyScheduleView.routeName);
         },
       ),
       DrawerItemModel(
