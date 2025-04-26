@@ -19,7 +19,7 @@ import '../../features/subjects/presentation/views/materials_view.dart';
 
 abstract class StudentRouter {
   static final router = GoRouter(
-    initialLocation:HomeView.routeName,
+    initialLocation:AuthView.routeName,
     routes: [
    
       GoRoute(

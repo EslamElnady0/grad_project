@@ -20,7 +20,10 @@ class _ApiService implements ApiService {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<LoginResponseModel> login(LoginRequestModel loginRequestBody) async {
+  Future<LoginResponseModel> login(
+    String loginEndpoint,
+    LoginRequestModel loginRequestBody,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -30,7 +33,7 @@ class _ApiService implements ApiService {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'auth/login',
+            '${loginEndpoint}',
             queryParameters: queryParameters,
             data: _data,
           )

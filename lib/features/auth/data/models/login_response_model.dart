@@ -1,28 +1,66 @@
 import 'package:json_annotation/json_annotation.dart';
+
 part 'login_response_model.g.dart';
 
 @JsonSerializable()
 class LoginResponseModel {
-  String? message;
-  @JsonKey(name: 'data')// Maps the "data" key in JSON to the userData property in Dart
-  UserData? userData;
-  bool? status;
   int? code;
+  String? message;
+  List<UserData>? data;
 
-  LoginResponseModel({this.message, this.userData, this.status, this.code});
+  LoginResponseModel({this.code, this.message, this.data});
 
   factory LoginResponseModel.fromJson(Map<String, dynamic> json) =>
       _$LoginResponseModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$LoginResponseModelToJson(this);
 }
 
 @JsonSerializable()
 class UserData {
-  String? token;
-  @JsonKey(name: 'username')//Maps the "username" key in JSON to userName in Dart
-  String? userName;
+  @JsonKey(name: 'access_token')
+  String? accessToken;
 
-  UserData({this.token, this.userName});
+  @JsonKey(name: 'token_type')
+  String? tokenType;
+
+  User? user;
+
+  UserData({this.accessToken, this.tokenType, this.user});
 
   factory UserData.fromJson(Map<String, dynamic> json) =>
       _$UserDataFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UserDataToJson(this);
+}
+
+@JsonSerializable()
+class User {
+  int? id;
+  String? name;
+  String? email;
+
+  @JsonKey(name: 'created_at')
+  String? createdAt;
+
+  @JsonKey(name: 'updated_at')
+  String? updatedAt;
+
+  String? type;
+  String? avatar;
+
+  User({
+    this.id,
+    this.name,
+    this.email,
+    this.createdAt,
+    this.updatedAt,
+    this.type,
+    this.avatar,
+  });
+
+  factory User.fromJson(Map<String, dynamic> json) =>
+      _$UserFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UserToJson(this);
 }

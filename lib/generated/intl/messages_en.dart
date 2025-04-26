@@ -196,6 +196,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "number_of_subjects": MessageLookupByLibrary.simpleMessage(
       "Subjects count",
     ),
+    "ok": MessageLookupByLibrary.simpleMessage("OK"),
     "on_time": MessageLookupByLibrary.simpleMessage("On time (automatic)."),
     "once": MessageLookupByLibrary.simpleMessage("Once"),
     "open": MessageLookupByLibrary.simpleMessage("open"),

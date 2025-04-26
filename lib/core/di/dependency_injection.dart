@@ -10,6 +10,7 @@ import '../../features/annoucements/data/data sources/annoucements_local_data_so
 import '../../features/auth/data/repos/login_repo.dart';
 import '../../features/auth/logic/cubit/login_cubit.dart';
 import '../../features/lecture_manager/ui/cubit/file_upload_cubit.dart';
+import '../networking/api_service.dart';
 import '../networking/dio_factory.dart';
 
 final getIt = GetIt.instance;
@@ -17,6 +18,7 @@ final getIt = GetIt.instance;
 Future<void> setupGetIt() async {
   // Dio & ApiService
   Dio dio = await DioFactory.getDio();
+    getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
   //toDo:--------------------------------Auth API --------------------
   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));

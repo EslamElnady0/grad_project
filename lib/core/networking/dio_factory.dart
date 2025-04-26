@@ -28,6 +28,7 @@ class DioFactory {
     // String? token = await SharedPrefHelper.getSecuredString(Constants.token);
     dio?.options.headers = {
       'Accept': 'application/json',
+      'X-Device-Type': 'mobile',
       'X-Requested-With': 'XMLHttpRequest',
       // if (token != null)
       'Authorization':

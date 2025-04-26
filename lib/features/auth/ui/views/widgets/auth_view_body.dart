@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
@@ -11,6 +12,7 @@ import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/widgets/custom_logo.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../../generated/l10n.dart';
+import '../../../logic/cubit/login_cubit.dart';
 
 class AuthViewBody extends StatefulWidget {
   const AuthViewBody({super.key});
@@ -90,7 +92,8 @@ class _AuthViewBodyState extends State<AuthViewBody> {
                   onTap: () {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
-                      GoRouter.of(context).go(HomeView.routeName);
+                         context.read<LoginCubit>().emitLoginStates(
+                                email: email, password: password);
                     } else {
                       setState(() {
                         autovalidateMode = AutovalidateMode.always;

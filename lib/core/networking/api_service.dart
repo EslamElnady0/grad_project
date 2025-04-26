@@ -12,8 +12,9 @@ part 'api_service.g.dart';
 abstract class ApiService {
   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
 
- @POST(ApiConstants.studentLogin )
+@POST('{loginEndpoint}')
   Future<LoginResponseModel> login(
+    @Path() String loginEndpoint,
     @Body() LoginRequestModel loginRequestBody,
   );
  
