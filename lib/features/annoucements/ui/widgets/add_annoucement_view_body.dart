@@ -1,13 +1,15 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
+import 'package:grad_project/features/annoucements/logic/add_annoucements_cubit/add_annoucements_cubit.dart';
 import 'package:grad_project/features/annoucements/ui/widgets/drop_down_and_displays.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/widgets/custom_inner_screens_app_bar.dart';
 import '../../../../generated/l10n.dart';
-import 'annoucement_title_and_desc.dart';
+import 'title_and_desc_text_fields.dart';
 import 'date_and_time_section.dart';
 import 'publish_row.dart';
 
@@ -31,7 +33,17 @@ class _AddAnnoucementViewBodyState extends State<AddAnnoucementViewBody> {
             CustomInnerScreensAppBar(title: S.of(context).add_new),
             TitleTextWidget(text: S.of(context).add_new_news),
             vGap(8),
-            const AnnoucementTitleAndDesc(),
+            TitleAndDescTextFields(
+              title: S.of(context).news_title,
+              titleHintText: S.of(context).news_title_description,
+              desc: S.of(context).news_content,
+              descHintText: S.of(context).news_content_description,
+              formKey: context.read<AddAnnoucementsCubit>().formKey,
+              titleController:
+                  context.read<AddAnnoucementsCubit>().titleController,
+              descController:
+                  context.read<AddAnnoucementsCubit>().descController,
+            ),
             vGap(12),
             const DropDownAndDisplays(),
             vGap(15),

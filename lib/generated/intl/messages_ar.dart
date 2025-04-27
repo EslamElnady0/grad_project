@@ -89,6 +89,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "course_name": MessageLookupByLibrary.simpleMessage("اسم المادة"),
     "course_status": MessageLookupByLibrary.simpleMessage("موقف المادة"),
     "courses": MessageLookupByLibrary.simpleMessage("المواد"),
+    "createQuiz": MessageLookupByLibrary.simpleMessage("إنشاء كويز جديد"),
     "create_and_manage_news": MessageLookupByLibrary.simpleMessage(
       "📰 أنشئ وأدر الأخبار والإعلانات الهامة لموادك الدراسية بسهولة، وأبقى طلابك على اطلاع دائم!",
     ),
@@ -105,6 +106,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "download": MessageLookupByLibrary.simpleMessage("تحميل"),
     "eLearning": MessageLookupByLibrary.simpleMessage("التعليم الإلكتروني"),
     "email": MessageLookupByLibrary.simpleMessage("الإيميل"),
+    "endsAt": MessageLookupByLibrary.simpleMessage("ينتهي"),
     "enter_code": MessageLookupByLibrary.simpleMessage(
       "أدخل الكود المكون من 6 أرقام اللي اتبعت ليك.",
     ),
@@ -112,6 +114,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "هذا الحقل مطلوب",
     ),
     "filter": MessageLookupByLibrary.simpleMessage("تصفية"),
+    "finalGrade": MessageLookupByLibrary.simpleMessage("الدرجة النهائية"),
     "finalResults": MessageLookupByLibrary.simpleMessage("النتائج النهائية"),
     "final_exam": MessageLookupByLibrary.simpleMessage("الإختبار النهائي"),
     "final_grades": MessageLookupByLibrary.simpleMessage("الدرجات النهائية"),
@@ -138,6 +141,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "goodLuck": MessageLookupByLibrary.simpleMessage("بالتوفيق! 🍀"),
     "grade": MessageLookupByLibrary.simpleMessage("التقدير"),
     "group": MessageLookupByLibrary.simpleMessage("مجموعة"),
+    "images": MessageLookupByLibrary.simpleMessage("صور"),
     "in_progress": MessageLookupByLibrary.simpleMessage("قيد التنفيذ"),
     "interested": MessageLookupByLibrary.simpleMessage("مهتم"),
     "internalMap": MessageLookupByLibrary.simpleMessage("الخريطة الداخلية"),
@@ -168,6 +172,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "mostSreached": MessageLookupByLibrary.simpleMessage(
       "الاماكن الأكثر بحثاً!",
     ),
+    "multipleChoice": MessageLookupByLibrary.simpleMessage("إختيارات متعددة"),
     "name": MessageLookupByLibrary.simpleMessage("الإسم"),
     "news": MessageLookupByLibrary.simpleMessage("الأخبار"),
     "news_content": MessageLookupByLibrary.simpleMessage("محتوي الخبر"),
@@ -216,18 +221,35 @@ class MessageLookup extends MessageLookupByLibrary {
       "تحديد موعد لنشر الخبر كخبر علني !",
     ),
     "qr_attendance": MessageLookupByLibrary.simpleMessage("تسجيل حضور “QR”"),
+    "questionGrade": MessageLookupByLibrary.simpleMessage("درجة السؤال"),
+    "questionTypeHelper": MessageLookupByLibrary.simpleMessage(
+      "اختر نوع الأسئلة التي تريد تضمينها في الكويز",
+    ),
     "question_statistics": MessageLookupByLibrary.simpleMessage(
       "إحصائيات هذا السؤال",
     ),
+    "questions": MessageLookupByLibrary.simpleMessage("الأسئلة"),
+    "questionsCount": MessageLookupByLibrary.simpleMessage("عدد الأسئلة"),
     "quiz": MessageLookupByLibrary.simpleMessage("اختبار"),
     "quizAdvices": MessageLookupByLibrary.simpleMessage("نصائح للاختبار"),
     "quizDesc": MessageLookupByLibrary.simpleMessage("وصف الاختبار"),
+    "quizDescription": MessageLookupByLibrary.simpleMessage("وصف الكويز"),
+    "quizDescriptionHelper": MessageLookupByLibrary.simpleMessage(
+      "قدم وصفًا موجزًا يوضح محتوى الكويز وأهدافه.",
+    ),
     "quizDetails": MessageLookupByLibrary.simpleMessage("تفاصيل الاختبار"),
     "quizDuration": MessageLookupByLibrary.simpleMessage("مدة الاختبار"),
+    "quizHelperText": MessageLookupByLibrary.simpleMessage(
+      "❓أنشئ، عدّل، وتابع درجات الكويزات بسهولة لضمان تقييم فعال!",
+    ),
     "quizNavigation": MessageLookupByLibrary.simpleMessage(
       "التنقل في الاختبار",
     ),
     "quizState": MessageLookupByLibrary.simpleMessage("حالة الاختبار"),
+    "quizTitle": MessageLookupByLibrary.simpleMessage("عنوان الكويز"),
+    "quizTitleHelper": MessageLookupByLibrary.simpleMessage(
+      "دخل عنوانًا واضحًا يعبر عن موضوع الكويز.",
+    ),
     "quizzes": MessageLookupByLibrary.simpleMessage("الكويزات"),
     "readCarefully": MessageLookupByLibrary.simpleMessage(
       "🔍 اقرأ الأسئلة بتركيز",
@@ -246,6 +268,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "خصص وقتًا للمراجعة وفهم المواضيع الرئيسية.",
     ),
     "saturday": MessageLookupByLibrary.simpleMessage("السبت"),
+    "scheduleQuiz": MessageLookupByLibrary.simpleMessage("جدولة الكويز"),
+    "scheduleQuizHelper": MessageLookupByLibrary.simpleMessage(
+      "تحديد موعد لنشر الخبر كخبر علني !",
+    ),
     "schedule_publish_time": MessageLookupByLibrary.simpleMessage(
       "ضبط موعد للنشر",
     ),
@@ -276,11 +302,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "semester_1": MessageLookupByLibrary.simpleMessage("الفصل الدراسي الأول"),
     "semester_2": MessageLookupByLibrary.simpleMessage("الفصل الدراسي الثاني"),
     "sent": MessageLookupByLibrary.simpleMessage("تم الإرسال"),
+    "setTime": MessageLookupByLibrary.simpleMessage("تحديد الوقت"),
+    "showResultsAfterSubmit": MessageLookupByLibrary.simpleMessage(
+      "عرض النتائج وإتاحة الإجابة لهم بعد الإنتهاء من الإختبار",
+    ),
+    "single_grade": MessageLookupByLibrary.simpleMessage("درجة"),
     "start": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "startNow": MessageLookupByLibrary.simpleMessage("ابدأ الآن!"),
     "startWriting": MessageLookupByLibrary.simpleMessage(
       "إبدأ في الكتابة الأن..",
     ),
+    "startsAt": MessageLookupByLibrary.simpleMessage("يبدأ "),
     "status": MessageLookupByLibrary.simpleMessage("الحالة:"),
     "stayCalm": MessageLookupByLibrary.simpleMessage("😌 استرخِ وابقَ هادئًا"),
     "stayConfident": MessageLookupByLibrary.simpleMessage(
@@ -302,6 +334,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "testYourKnowledge": MessageLookupByLibrary.simpleMessage(
       "📋 اختبر معلوماتك، واستعد للامتحان من خلال الإجابة على الأسئلة المخصصة!",
     ),
+    "text": MessageLookupByLibrary.simpleMessage("نصوص"),
     "thursday": MessageLookupByLibrary.simpleMessage("الخميس"),
     "time": MessageLookupByLibrary.simpleMessage("الوقت"),
     "timeManagement": MessageLookupByLibrary.simpleMessage(

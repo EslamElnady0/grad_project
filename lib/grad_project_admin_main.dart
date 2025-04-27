@@ -21,10 +21,10 @@ Future<void> main() async {
   await setupGetIt();
   Bloc.observer = GradBlocObserver();
   FlavorsFunctions.setupAdminFlover();
-  bool isLogin =await SharedPrefHelper.getSecuredString(Constants.token)!='';
+  bool isLogin = await SharedPrefHelper.getSecuredString(Constants.token) != '';
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-  ); 
+  );
 
   FlutterError.onError = (errorDetails) {
     FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
@@ -35,14 +35,12 @@ Future<void> main() async {
     return true;
   };
 
-  runApp( GradProjectAdminApp(
-    isLogin: isLogin
-  ));
+  runApp(GradProjectAdminApp(isLogin: isLogin));
 }
 
 class GradProjectAdminApp extends StatelessWidget {
   const GradProjectAdminApp({super.key, required this.isLogin});
-final bool isLogin ;
+  final bool isLogin;
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(

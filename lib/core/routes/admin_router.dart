@@ -9,6 +9,7 @@ import 'package:grad_project/features/forum/presentation/views/forum_views.dart'
 import 'package:grad_project/features/lecture_manager/ui/screens/qr_attendance_view.dart';
 import 'package:grad_project/features/map/presentation/views/internal_map_view.dart';
 import 'package:grad_project/features/profile/presentation/views/profile_view.dart';
+import 'package:grad_project/features/quizes/ui/views/add_quiz_view.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_details_view.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_view.dart';
 import 'package:grad_project/features/weekly_schedule/ui/views/screens/weekly_schedule_view.dart';
@@ -19,73 +20,77 @@ import '../../features/lecture_manager/ui/screens/add_lecture_view.dart';
 import '../../features/subjects/presentation/views/materials_view.dart';
 
 abstract class AdminRouter {
-   static GoRouter getRouter(bool isLogin) {
-    return
- GoRouter(
-    initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
-    routes: [
-      GoRoute(
-        path: HomeView.routeName,
-        builder: (context, state) => BlocProvider(
-          create: (context) => BottomNavBarCubit(),
-          child: const HomeView(),
+  static GoRouter getRouter(bool isLogin) {
+    return GoRouter(
+      initialLocation: AddQuizView.routeName,
+      //initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
+      routes: [
+        GoRoute(
+          path: HomeView.routeName,
+          builder: (context, state) => BlocProvider(
+            create: (context) => BottomNavBarCubit(),
+            child: const HomeView(),
+          ),
         ),
-      ),
-      GoRoute(
-        path: AuthView.routeName,
-        builder: (context, state) => const AuthView(),
-      ),
-      GoRoute(
-        path: ForumViews.routeName,
-        builder: (context, state) => const ForumViews(),
-      ),
-      GoRoute(
-        path: ForgetPasswordView.routeName,
-        builder: (context, state) => const ForgetPasswordView(),
-      ),
-      GoRoute(
-        path: ChatView.routeName,
-        builder: (context, state) => const ChatView(),
-      ),
-      GoRoute(
-        path: ConfirmAccountView.routeName,
-        builder: (context, state) => const ConfirmAccountView(),
-      ),
-      GoRoute(
-        path: InternalMapView.routeName,
-        builder: (context, state) => const InternalMapView(),
-      ),
-      GoRoute(
-        path: WeeklyScheduleView.routeName,
-        builder: (context, state) => const WeeklyScheduleView(),
-      ),
-      GoRoute(
-        path: QuizDetailsView.routeName,
-        builder: (context, state) => const QuizDetailsView(),
-      ),
-      GoRoute(
-        path: QuizView.routeName,
-        builder: (context, state) => const QuizView(),
-      ),
-      GoRoute(
-        path: ProfileView.routeName,
-        builder: (context, state) => const ProfileView(),
-      ),
-      GoRoute(
-          path: MaterialsView.routeName,
-          builder: (context, state) => const MaterialsView()),
-      GoRoute(
-          path: AnswersView.routeName,
-          builder: (context, state) => const AnswersView()),
-      GoRoute(
-          path: AddAnnoucementView.routeName,
-          builder: (context, state) => const AddAnnoucementView()),
-      GoRoute(
-          path: QrAttendanceView.routeName,
-          builder: (context, state) => const QrAttendanceView()),
-      GoRoute(
-          path: AddLectureView.routeName,
-          builder: (context, state) => const AddLectureView()),
-    ],
-  );
-}}
+        GoRoute(
+          path: AuthView.routeName,
+          builder: (context, state) => const AuthView(),
+        ),
+        GoRoute(
+          path: ForumViews.routeName,
+          builder: (context, state) => const ForumViews(),
+        ),
+        GoRoute(
+          path: ForgetPasswordView.routeName,
+          builder: (context, state) => const ForgetPasswordView(),
+        ),
+        GoRoute(
+          path: ChatView.routeName,
+          builder: (context, state) => const ChatView(),
+        ),
+        GoRoute(
+          path: ConfirmAccountView.routeName,
+          builder: (context, state) => const ConfirmAccountView(),
+        ),
+        GoRoute(
+          path: InternalMapView.routeName,
+          builder: (context, state) => const InternalMapView(),
+        ),
+        GoRoute(
+          path: WeeklyScheduleView.routeName,
+          builder: (context, state) => const WeeklyScheduleView(),
+        ),
+        GoRoute(
+          path: QuizDetailsView.routeName,
+          builder: (context, state) => const QuizDetailsView(),
+        ),
+        GoRoute(
+          path: QuizView.routeName,
+          builder: (context, state) => const QuizView(),
+        ),
+        GoRoute(
+          path: ProfileView.routeName,
+          builder: (context, state) => const ProfileView(),
+        ),
+        GoRoute(
+            path: MaterialsView.routeName,
+            builder: (context, state) => const MaterialsView()),
+        GoRoute(
+            path: AnswersView.routeName,
+            builder: (context, state) => const AnswersView()),
+        GoRoute(
+            path: AddAnnoucementView.routeName,
+            builder: (context, state) => const AddAnnoucementView()),
+        GoRoute(
+            path: QrAttendanceView.routeName,
+            builder: (context, state) => const QrAttendanceView()),
+        GoRoute(
+            path: AddLectureView.routeName,
+            builder: (context, state) => const AddLectureView()),
+        GoRoute(
+            path: AddQuizView.routeName,
+            builder: (context, state) => const AddQuizView()),
+      ],
+    );
+  }
+}

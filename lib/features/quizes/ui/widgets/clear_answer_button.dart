@@ -5,7 +5,7 @@ import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/generated/l10n.dart';
 
-import '../cubit/quiz_cubit.dart';
+import '../cubit/quiz_cubit/quiz_cubit.dart';
 
 class ClearAnswerButton extends StatelessWidget {
   const ClearAnswerButton({super.key});
