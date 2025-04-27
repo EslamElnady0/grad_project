@@ -11,7 +11,11 @@ void showErrorDialog(BuildContext context, String message) {
         color: Colors.red,
         size: 32,
       ),
-      content: Text(message, style: AppTextStyles.font16BlackSemiBold),
+      content: Text(
+        message,
+        style: AppTextStyles.font16BlackSemiBold,
+        textAlign: TextAlign.center,
+      ),
       actions: [
         TextButton(
           onPressed: () {
