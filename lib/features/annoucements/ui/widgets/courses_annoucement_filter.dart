@@ -24,10 +24,10 @@ class CoursesAnnoucementFilter extends StatelessWidget {
           child: BlocBuilder<GetTeacherCourcesCubit, GetTeacherCourcesState>(
             builder: (context, state) => state.maybeWhen(
               orElse: () => _buildSkeletonLoading(
-                highlightColor: const Color.fromARGB(255, 216, 211, 211),
+                highlightColor: const Color.fromARGB(255, 209, 208, 208),
               ),
               getTeacherCourcesLoading: () => _buildSkeletonLoading(
-                highlightColor: const Color.fromARGB(255, 206, 205, 205),
+                highlightColor: const Color.fromARGB(255, 209, 208, 208),
               ),
               getTeacherCourcesSuccess: (data) =>
                   _buildCoursesList(context, data, selectedFilters),

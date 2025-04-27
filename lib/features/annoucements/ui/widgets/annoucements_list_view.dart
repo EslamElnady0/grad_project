@@ -21,11 +21,9 @@ class AnnoucementsListView extends StatelessWidget {
               current is GetAnnouncementFailure,
           builder: (context, state) {
             return state.maybeWhen(
-              getAnnouncementLoading: () => _buildLoadingList(),
               getAnnouncementSuccess: (data) =>
                   _buildAnnouncementsList(context, data, selectedFilters),
-              getAnnouncementFailure: (error) => _buildErrorState(error),
-              orElse: () => const SizedBox.shrink(),
+              orElse: () => _buildLoadingList(),
             );
           },
         );
@@ -69,15 +67,6 @@ class AnnoucementsListView extends StatelessWidget {
             announcementModel: filteredItems[index],
           );
         },
-      ),
-    );
-  }
-
-  Widget _buildErrorState(String error) {
-    return Center(
-      child: Text(
-        error,
-        style: const TextStyle(color: AppColors.redlight),
       ),
     );
   }
