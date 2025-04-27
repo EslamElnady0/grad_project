@@ -70,21 +70,21 @@ class _AuthViewBodyState extends State<AuthViewBody> {
                 hintText: S.of(context).password,
                 textInputType: TextInputType.visiblePassword,
               ),
-              vGap(10),
-              Align(
-                alignment: isArabicLocale(context)
-                    ? Alignment.centerRight
-                    : Alignment.centerLeft,
-                child: TextButton(
-                  onPressed: () {
-                    GoRouter.of(context).go(ForgetPasswordView.routeName);
-                  },
-                  child: Text(
-                    S.of(context).forgot_password,
-                    style: AppTextStyles.font12BlackSemiBold,
-                  ),
-                ),
-              ),
+              // vGap(10),
+              // Align(
+              //   alignment: isArabicLocale(context)
+              //       ? Alignment.centerRight
+              //       : Alignment.centerLeft,
+              //   child: TextButton(
+              //     onPressed: () {
+              //       GoRouter.of(context).go(ForgetPasswordView.routeName);
+              //     },
+              //     child: Text(
+              //       S.of(context).forgot_password,
+              //       style: AppTextStyles.font12BlackSemiBold,
+              //     ),
+              //   ),
+              // ),
               vGap(20),
               CustomTextButton(
                 primary: true,
