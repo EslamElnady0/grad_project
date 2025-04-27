@@ -28,10 +28,10 @@ class PaginatedAnnouncementData {
   @JsonKey(name: 'first_page_url')
   final String firstPageUrl;
 
-  final int from;
+  final num? from;
 
   @JsonKey(name: 'last_page')
-  final int lastPage;
+  final num lastPage;
 
   @JsonKey(name: 'last_page_url')
   final String lastPageUrl;
@@ -44,13 +44,13 @@ class PaginatedAnnouncementData {
   final String path;
 
   @JsonKey(name: 'per_page')
-  final int perPage;
+  final num perPage;
 
   @JsonKey(name: 'prev_page_url')
   final String? prevPageUrl;
 
-  final int to;
-  final int total;
+  final num? to;
+  final num total;
 
   PaginatedAnnouncementData({
     required this.currentPage,
@@ -76,7 +76,7 @@ class PaginatedAnnouncementData {
 
 @JsonSerializable()
 class Announcement {
-  final int id;
+  final num? id;
   final String title;
   final String body;
   final String date;
@@ -108,7 +108,7 @@ class Announcement {
 
 @JsonSerializable()
 class Department {
-  final int id;
+  final num? id;
   final String name;
 
   Department({
@@ -124,7 +124,7 @@ class Department {
 
 @JsonSerializable()
 class Semester {
-  final int id;
+  final num? id;
   final String name;
 
   Semester({
@@ -140,7 +140,7 @@ class Semester {
 
 @JsonSerializable()
 class Course {
-  final int id;
+  final num? id;
   final String name;
 
   Course({
@@ -155,7 +155,7 @@ class Course {
 
 @JsonSerializable()
 class User {
-  final int id;
+  final num? id;
   final String name;
   final String type;
   final String? avatar;

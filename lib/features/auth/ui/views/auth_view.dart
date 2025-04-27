@@ -23,10 +23,10 @@ class AuthView extends StatelessWidget {
           listener: (context, state) {
             state.whenOrNull(
               error: (apiErrorModel) {
-                 showErrorDialog(context, apiErrorModel);
+                showErrorDialog(context, apiErrorModel.getAllMessages());
               },
               success: (registerResponse) {
-                 GoRouter.of(context).go(HomeView.routeName);
+                GoRouter.of(context).go(HomeView.routeName);
               },
             );
           },

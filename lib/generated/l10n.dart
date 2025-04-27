@@ -1385,56 +1385,6 @@ class S {
     );
   }
 
-  /// `Welcome! Here you can view the upcoming quiz dates and submit the fees for each subject.⏰`
-  String get time_schedule_welcome_message {
-    return Intl.message(
-      'Welcome! Here you can view the upcoming quiz dates and submit the fees for each subject.⏰',
-      name: 'time_schedule_welcome_message',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Search by activity type or name`
-  String get search_for_task {
-    return Intl.message(
-      'Search by activity type or name',
-      name: 'search_for_task',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Next Seven Days`
-  String get next_seven_days {
-    return Intl.message(
-      'Next Seven Days',
-      name: 'next_seven_days',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Quiz Details`
-  String get quiz_details {
-    return Intl.message(
-      'Quiz Details',
-      name: 'quiz_details',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Add to send`
-  String get add_to_send {
-    return Intl.message('Add to send', name: 'add_to_send', desc: '', args: []);
-  }
-
-  /// `sent`
-  String get sent {
-    return Intl.message('sent', name: 'sent', desc: '', args: []);
-  }
-
   /// `Add Study Content`
   String get addStudyContent {
     return Intl.message(
@@ -1550,6 +1500,56 @@ class S {
     );
   }
 
+  /// `Welcome! Here you can view the upcoming quiz dates and submit the fees for each subject.⏰`
+  String get time_schedule_welcome_message {
+    return Intl.message(
+      'Welcome! Here you can view the upcoming quiz dates and submit the fees for each subject.⏰',
+      name: 'time_schedule_welcome_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search by activity type or name`
+  String get search_for_task {
+    return Intl.message(
+      'Search by activity type or name',
+      name: 'search_for_task',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next Seven Days`
+  String get next_seven_days {
+    return Intl.message(
+      'Next Seven Days',
+      name: 'next_seven_days',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quiz Details`
+  String get quiz_details {
+    return Intl.message(
+      'Quiz Details',
+      name: 'quiz_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add to send`
+  String get add_to_send {
+    return Intl.message('Add to send', name: 'add_to_send', desc: '', args: []);
+  }
+
+  /// `sent`
+  String get sent {
+    return Intl.message('sent', name: 'sent', desc: '', args: []);
+  }
+
   /// `📊 Welcome to the final results page! Here you can easily and clearly review your academic performance and grades in various courses. We wish you all the best and success!`
   String get final_results_welcome_message {
     return Intl.message(
@@ -1588,6 +1588,171 @@ class S {
   /// `OK`
   String get ok {
     return Intl.message('OK', name: 'ok', desc: '', args: []);
+  }
+
+  /// `Create a new quiz`
+  String get createQuiz {
+    return Intl.message(
+      'Create a new quiz',
+      name: 'createQuiz',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `❓Create, edit, and track quiz scores easily to ensure effective evaluation!`
+  String get quizHelperText {
+    return Intl.message(
+      '❓Create, edit, and track quiz scores easily to ensure effective evaluation!',
+      name: 'quizHelperText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quiz Title`
+  String get quizTitle {
+    return Intl.message('Quiz Title', name: 'quizTitle', desc: '', args: []);
+  }
+
+  /// `Enter a clear title that reflects the quiz topic.`
+  String get quizTitleHelper {
+    return Intl.message(
+      'Enter a clear title that reflects the quiz topic.',
+      name: 'quizTitleHelper',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quiz Description`
+  String get quizDescription {
+    return Intl.message(
+      'Quiz Description',
+      name: 'quizDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Provide a brief description that outlines the quiz content and objectives.`
+  String get quizDescriptionHelper {
+    return Intl.message(
+      'Provide a brief description that outlines the quiz content and objectives.',
+      name: 'quizDescriptionHelper',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set Time`
+  String get setTime {
+    return Intl.message('Set Time', name: 'setTime', desc: '', args: []);
+  }
+
+  /// `Number of Questions`
+  String get questionsCount {
+    return Intl.message(
+      'Number of Questions',
+      name: 'questionsCount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Question Grade`
+  String get questionGrade {
+    return Intl.message(
+      'Question Grade',
+      name: 'questionGrade',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Final Grade`
+  String get finalGrade {
+    return Intl.message('Final Grade', name: 'finalGrade', desc: '', args: []);
+  }
+
+  /// `Grade`
+  String get single_grade {
+    return Intl.message('Grade', name: 'single_grade', desc: '', args: []);
+  }
+
+  /// `Schedule Quiz`
+  String get scheduleQuiz {
+    return Intl.message(
+      'Schedule Quiz',
+      name: 'scheduleQuiz',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set a time to publish the quiz as public news!`
+  String get scheduleQuizHelper {
+    return Intl.message(
+      'Set a time to publish the quiz as public news!',
+      name: 'scheduleQuizHelper',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Starts at`
+  String get startsAt {
+    return Intl.message('Starts at', name: 'startsAt', desc: '', args: []);
+  }
+
+  /// `Ends at`
+  String get endsAt {
+    return Intl.message('Ends at', name: 'endsAt', desc: '', args: []);
+  }
+
+  /// `Questions`
+  String get questions {
+    return Intl.message('Questions', name: 'questions', desc: '', args: []);
+  }
+
+  /// `Choose the type of questions you want to include in the quiz`
+  String get questionTypeHelper {
+    return Intl.message(
+      'Choose the type of questions you want to include in the quiz',
+      name: 'questionTypeHelper',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Multiple Choice`
+  String get multipleChoice {
+    return Intl.message(
+      'Multiple Choice',
+      name: 'multipleChoice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Texts`
+  String get text {
+    return Intl.message('Texts', name: 'text', desc: '', args: []);
+  }
+
+  /// `Images`
+  String get images {
+    return Intl.message('Images', name: 'images', desc: '', args: []);
+  }
+
+  /// `Show results and allow viewing answers after completing the quiz`
+  String get showResultsAfterSubmit {
+    return Intl.message(
+      'Show results and allow viewing answers after completing the quiz',
+      name: 'showResultsAfterSubmit',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Select Week`

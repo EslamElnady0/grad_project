@@ -92,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "course_name": MessageLookupByLibrary.simpleMessage("Course Name"),
     "course_status": MessageLookupByLibrary.simpleMessage("Course Status"),
     "courses": MessageLookupByLibrary.simpleMessage("Courses"),
+    "createQuiz": MessageLookupByLibrary.simpleMessage("Create a new quiz"),
     "create_and_manage_news": MessageLookupByLibrary.simpleMessage(
       "📰 Create and manage important news and announcements for your courses easily, and keep your students updated!",
     ),
@@ -108,6 +109,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "download": MessageLookupByLibrary.simpleMessage("download"),
     "eLearning": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "endsAt": MessageLookupByLibrary.simpleMessage("Ends at"),
     "enter_code": MessageLookupByLibrary.simpleMessage(
       "Enter the 6-digit code that was sent to you.",
     ),
@@ -115,6 +117,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "This field is required",
     ),
     "filter": MessageLookupByLibrary.simpleMessage("Filter"),
+    "finalGrade": MessageLookupByLibrary.simpleMessage("Final Grade"),
     "finalResults": MessageLookupByLibrary.simpleMessage("Final Results"),
     "final_exam": MessageLookupByLibrary.simpleMessage("Final exam"),
     "final_grades": MessageLookupByLibrary.simpleMessage("Final Grades"),
@@ -143,6 +146,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "goodLuck": MessageLookupByLibrary.simpleMessage("Good Luck! 🍀"),
     "grade": MessageLookupByLibrary.simpleMessage("Grade"),
     "group": MessageLookupByLibrary.simpleMessage("Group"),
+    "images": MessageLookupByLibrary.simpleMessage("Images"),
     "in_progress": MessageLookupByLibrary.simpleMessage("In Progress"),
     "interested": MessageLookupByLibrary.simpleMessage("like"),
     "internalMap": MessageLookupByLibrary.simpleMessage("Internal Map"),
@@ -175,6 +179,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "mostSreached": MessageLookupByLibrary.simpleMessage(
       "Most searched places!",
     ),
+    "multipleChoice": MessageLookupByLibrary.simpleMessage("Multiple Choice"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "news": MessageLookupByLibrary.simpleMessage("News"),
     "news_content": MessageLookupByLibrary.simpleMessage("Annoucement Content"),
@@ -223,16 +228,35 @@ class MessageLookup extends MessageLookupByLibrary {
       "Set a time to publish the Annoucement as a public announcement!",
     ),
     "qr_attendance": MessageLookupByLibrary.simpleMessage("QR attendance"),
+    "questionGrade": MessageLookupByLibrary.simpleMessage("Question Grade"),
+    "questionTypeHelper": MessageLookupByLibrary.simpleMessage(
+      "Choose the type of questions you want to include in the quiz",
+    ),
     "question_statistics": MessageLookupByLibrary.simpleMessage(
       "Question statistics",
+    ),
+    "questions": MessageLookupByLibrary.simpleMessage("Questions"),
+    "questionsCount": MessageLookupByLibrary.simpleMessage(
+      "Number of Questions",
     ),
     "quiz": MessageLookupByLibrary.simpleMessage("Quiz"),
     "quizAdvices": MessageLookupByLibrary.simpleMessage("Quiz Tips"),
     "quizDesc": MessageLookupByLibrary.simpleMessage("Quiz Description"),
+    "quizDescription": MessageLookupByLibrary.simpleMessage("Quiz Description"),
+    "quizDescriptionHelper": MessageLookupByLibrary.simpleMessage(
+      "Provide a brief description that outlines the quiz content and objectives.",
+    ),
     "quizDetails": MessageLookupByLibrary.simpleMessage("Quiz Details"),
     "quizDuration": MessageLookupByLibrary.simpleMessage("Quiz Duration"),
+    "quizHelperText": MessageLookupByLibrary.simpleMessage(
+      "❓Create, edit, and track quiz scores easily to ensure effective evaluation!",
+    ),
     "quizNavigation": MessageLookupByLibrary.simpleMessage("Quiz Navigation"),
     "quizState": MessageLookupByLibrary.simpleMessage("Quiz Status"),
+    "quizTitle": MessageLookupByLibrary.simpleMessage("Quiz Title"),
+    "quizTitleHelper": MessageLookupByLibrary.simpleMessage(
+      "Enter a clear title that reflects the quiz topic.",
+    ),
     "quiz_details": MessageLookupByLibrary.simpleMessage("Quiz Details"),
     "quizzes": MessageLookupByLibrary.simpleMessage("Quizzes"),
     "readCarefully": MessageLookupByLibrary.simpleMessage(
@@ -252,6 +276,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Set aside time to review and understand key topics.",
     ),
     "saturday": MessageLookupByLibrary.simpleMessage("Saturday"),
+    "scheduleQuiz": MessageLookupByLibrary.simpleMessage("Schedule Quiz"),
+    "scheduleQuizHelper": MessageLookupByLibrary.simpleMessage(
+      "Set a time to publish the quiz as public news!",
+    ),
     "schedule_publish_time": MessageLookupByLibrary.simpleMessage(
       "Set Publish Time",
     ),
@@ -282,9 +310,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "semester_1": MessageLookupByLibrary.simpleMessage("First Semester"),
     "semester_2": MessageLookupByLibrary.simpleMessage("Second Semester"),
     "sent": MessageLookupByLibrary.simpleMessage("sent"),
+    "setTime": MessageLookupByLibrary.simpleMessage("Set Time"),
+    "showResultsAfterSubmit": MessageLookupByLibrary.simpleMessage(
+      "Show results and allow viewing answers after completing the quiz",
+    ),
+    "single_grade": MessageLookupByLibrary.simpleMessage("Grade"),
     "start": MessageLookupByLibrary.simpleMessage("Start"),
     "startNow": MessageLookupByLibrary.simpleMessage("Start Now!"),
     "startWriting": MessageLookupByLibrary.simpleMessage("Start writing now.."),
+    "startsAt": MessageLookupByLibrary.simpleMessage("Starts at"),
     "status": MessageLookupByLibrary.simpleMessage("Status:"),
     "stayCalm": MessageLookupByLibrary.simpleMessage(
       "😌 Stay Calm and Focused",
@@ -312,6 +346,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "testYourKnowledge": MessageLookupByLibrary.simpleMessage(
       "📋 Test your knowledge and prepare for the exam by answering the customized questions!",
     ),
+    "text": MessageLookupByLibrary.simpleMessage("Texts"),
     "thursday": MessageLookupByLibrary.simpleMessage("Thursday"),
     "time": MessageLookupByLibrary.simpleMessage("Time"),
     "timeManagement": MessageLookupByLibrary.simpleMessage(

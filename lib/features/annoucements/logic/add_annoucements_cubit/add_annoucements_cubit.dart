@@ -20,16 +20,16 @@ class AddAnnoucementsCubit extends Cubit<AddAnnoucementsState> {
   TextEditingController titleController = TextEditingController();
   TextEditingController descController = TextEditingController();
   final formKey = GlobalKey<FormState>();
-  late Course selectedCourse;
+  Course? selectedCourse;
   String? selectedDate;
   String? selectedTime;
   Future<void> addAnnoucement() async {
     emit(const AddAnnoucementsState.addAnnoucementsLoading());
     final result = await _repo.addAnnoucement(
       AnnouncementRequestBody(
-        departmentId: selectedCourse.department.id.toString(),
-        semesterId: selectedCourse.semester.id.toString(),
-        courseId: selectedCourse.id.toString(),
+        departmentId: selectedCourse?.department.id.toString() ?? '',
+        semesterId: selectedCourse?.semester.id.toString() ?? '',
+        courseId: selectedCourse?.id.toString() ?? '',
         title: titleController.text,
         body: descController.text,
         date: selectedDate,

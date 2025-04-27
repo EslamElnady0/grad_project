@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
-import 'package:grad_project/features/quizes/ui/cubit/quiz_cubit.dart';
+import 'package:grad_project/features/quizes/ui/cubit/quiz_cubit/quiz_cubit.dart';
 
 import '../../../../core/theme/app_colors.dart';
 

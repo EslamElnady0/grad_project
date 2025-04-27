@@ -50,6 +50,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       keyboardType: widget.textInputType,
       maxLines: _isObscured ? 1 : widget.maxLines,
       textAlign: isArabic ? TextAlign.right : TextAlign.left,
+      textDirection: isFirstCharArabic(widget.controller?.text ?? '')
+          ? TextDirection.rtl
+          : TextDirection.ltr,
       style: AppTextStyles.font10grayRegular,
       validator: (value) {
         if (value == null || value.isEmpty) {
@@ -73,6 +76,23 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             const EdgeInsets.symmetric(vertical: 16, horizontal: 15),
       ),
     );
+  }
+
+  bool isFirstCharArabic(String text) {
+    if (text.isEmpty) return false;
+
+    final firstChar = text.characters.first;
+
+    // Checking if the first character is within the Arabic Unicode block
+    return firstChar.codeUnitAt(0) >= 0x0600 &&
+            firstChar.codeUnitAt(0) <= 0x06FF ||
+        firstChar.codeUnitAt(0) >= 0x0750 &&
+            firstChar.codeUnitAt(0) <= 0x077F ||
+        firstChar.codeUnitAt(0) >= 0x08A0 &&
+            firstChar.codeUnitAt(0) <= 0x08FF ||
+        firstChar.codeUnitAt(0) >= 0xFB50 &&
+            firstChar.codeUnitAt(0) <= 0xFDFF ||
+        firstChar.codeUnitAt(0) >= 0xFE70 && firstChar.codeUnitAt(0) <= 0xFEFF;
   }
 
   Widget? _buildPrefixIcon() {

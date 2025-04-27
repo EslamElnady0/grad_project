@@ -32,8 +32,7 @@ class DioFactory {
       'Accept': 'application/json',
       'X-Device-Type': 'mobile',
       'X-Requested-With': 'XMLHttpRequest',
-      // if (token != null)
-      'Authorization': 'Bearer $token',
+      if (token != null) 'Authorization': 'Bearer $token',
     };
   }
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../../core/helpers/constants.dart';
 
@@ -35,6 +36,28 @@ class CoursesFilterItem extends StatelessWidget {
             color: isSelected ? AppColors.primaryColordark : AppColors.gray,
           ),
         ),
+      ),
+    );
+  }
+}
+
+class SkeletonCourseItem extends StatelessWidget {
+  const SkeletonCourseItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Skeleton.leaf(
+      enabled: true,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 8.h),
+        width: 80,
+        height: 50,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          gradient: Constants.whiteGrad,
+          borderRadius: BorderRadius.circular(10.r),
+        ),
+        child: const Text("dasd"),
       ),
     );
   }

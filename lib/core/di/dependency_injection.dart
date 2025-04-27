@@ -5,6 +5,7 @@ import 'package:grad_project/features/annoucements/data/repos/annoucements_repo.
 import 'package:grad_project/features/annoucements/logic/add_annoucements_cubit/add_annoucements_cubit.dart';
 import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/get_announcement_cubit.dart';
 import 'package:grad_project/features/annoucements/logic/get_teacher_cources_cubit/get_teacher_cources_cubit.dart';
+import 'package:grad_project/features/quizes/ui/cubit/add_quiz_cubit/add_quiz_cubit.dart';
 import '../../features/annoucements/data/data sources/annoucements_local_data_source.dart';
 import '../../features/auth/data/repos/login_repo.dart';
 import '../../features/auth/logic/cubit/login_cubit.dart';
@@ -17,7 +18,7 @@ final getIt = GetIt.instance;
 Future<void> setupGetIt() async {
   // Dio & ApiService
   Dio dio = await DioFactory.getDio();
-    getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
+  getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
   //toDo:--------------------------------Auth API --------------------
   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
@@ -38,7 +39,9 @@ Future<void> setupGetIt() async {
       () => AddAnnoucementsCubit(getIt(), getIt()));
   getIt.registerFactory<GetAnnouncementCubit>(
       () => GetAnnouncementCubit(getIt()));
+  //toDo:------------------------------ Quiz UI ------------------------------//
+  getIt.registerFactory<AddQuizCubit>(() => AddQuizCubit());
 
- //toDo:------------------------------Ui------------------------------
+  //toDo:------------------------------Ui------------------------------
   getIt.registerFactory<FileUploadCubit>(() => FileUploadCubit());
 }

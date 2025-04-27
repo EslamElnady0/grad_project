@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
@@ -18,9 +17,9 @@ class CustomModalProgress extends StatelessWidget {
   Widget build(BuildContext context) {
     return ModalProgressHUD(
       inAsyncCall: isLoading,
-      progressIndicator:const  CircularProgressIndicator(color: AppColors.darkblue),
+      progressIndicator:
+          const CircularProgressIndicator(color: AppColors.darkblue),
       child: child,
     );
   }
 }
- 
