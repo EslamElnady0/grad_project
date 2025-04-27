@@ -202,5 +202,6 @@
     "course_name":"اسم المادة",
     "course_code":"كود المقرر",
     "grade":"التقدير",
-    "course_status":"موقف المادة"
+    "course_status":"موقف المادة",
+    "ok":"حسناً"
 }

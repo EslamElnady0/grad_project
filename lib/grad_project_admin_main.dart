@@ -6,6 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/flavors/flavors_functions.dart';
+import 'package:grad_project/core/helpers/constants.dart';
+import 'package:grad_project/core/helpers/shared_pref_helper.dart';
 import 'package:grad_project/core/routes/admin_router.dart';
 import 'core/cubits/bloc_observer.dart';
 import 'core/di/dependency_injection.dart';
@@ -19,9 +21,10 @@ Future<void> main() async {
   await setupGetIt();
   Bloc.observer = GradBlocObserver();
   FlavorsFunctions.setupAdminFlover();
+  bool isLogin =await SharedPrefHelper.getSecuredString(Constants.token)!='';
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-  );
+  ); 
 
   FlutterError.onError = (errorDetails) {
     FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
@@ -32,12 +35,14 @@ Future<void> main() async {
     return true;
   };
 
-  runApp(const GradProjectAdminApp());
+  runApp( GradProjectAdminApp(
+    isLogin: isLogin
+  ));
 }
 
 class GradProjectAdminApp extends StatelessWidget {
-  const GradProjectAdminApp({super.key});
-
+  const GradProjectAdminApp({super.key, required this.isLogin});
+final bool isLogin ;
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -51,7 +56,7 @@ class GradProjectAdminApp extends StatelessWidget {
         darkTheme: AppTheme.darkTheme,
         themeMode: ThemeMode.light,
         locale: const Locale('ar'),
-        routerConfig: AdminRouter.router,
+        routerConfig: AdminRouter.getRouter(isLogin),
         localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,

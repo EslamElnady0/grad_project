@@ -190,6 +190,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "المرات المسموح بها",
     ),
     "number_of_subjects": MessageLookupByLibrary.simpleMessage("عدد المواد"),
+    "ok": MessageLookupByLibrary.simpleMessage("حسناً"),
     "on_time": MessageLookupByLibrary.simpleMessage(
       "في الوقت المحدد (تلقائي).",
     ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grad_project/core/helpers/localizationa.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
-import 'package:grad_project/features/auth/presentation/views/widgets/custom_pin_code_text_field.dart';
+import 'package:grad_project/features/auth/ui/views/widgets/custom_pin_code_text_field.dart';
 
 import '../../../../../core/helpers/app_assets.dart';
 import '../../../../../core/widgets/custom_app_bar.dart';

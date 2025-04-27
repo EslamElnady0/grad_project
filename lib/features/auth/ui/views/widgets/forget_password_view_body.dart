@@ -7,7 +7,7 @@ import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_logo.dart';
 import 'package:grad_project/core/widgets/custom_text_button.dart';
 import 'package:grad_project/core/widgets/custom_text_form_field.dart';
-import 'package:grad_project/features/auth/presentation/views/confirm_account_view.dart';
+import 'package:grad_project/features/auth/ui/views/confirm_account_view.dart';
 import 'package:grad_project/generated/l10n.dart';
 
 class ForgetPasswordViewBody extends StatefulWidget {
