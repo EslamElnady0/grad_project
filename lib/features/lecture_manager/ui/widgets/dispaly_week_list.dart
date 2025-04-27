@@ -70,9 +70,11 @@ class DisplayWeekList extends StatelessWidget {
                     },
                   ),
                   hGap(40),
-                  SvgPicture.asset(
+               Icon(
+                    Icons.arrow_forward_ios_outlined,
                     color: AppColors.gray,
-                    Assets.imagesSvgsIosArrowIcon)
+                    size: 20.h,
+                  ),
                 ],
               ),
               itemBuilder: (context) {
