@@ -29,18 +29,18 @@ PaginatedAnnouncementData _$PaginatedAnnouncementDataFromJson(
           .map((e) => Announcement.fromJson(e as Map<String, dynamic>))
           .toList(),
       firstPageUrl: json['first_page_url'] as String,
-      from: (json['from'] as num).toInt(),
-      lastPage: (json['last_page'] as num).toInt(),
+      from: json['from'] as num?,
+      lastPage: json['last_page'] as num,
       lastPageUrl: json['last_page_url'] as String,
       links: (json['links'] as List<dynamic>)
           .map((e) => Link.fromJson(e as Map<String, dynamic>))
           .toList(),
       nextPageUrl: json['next_page_url'] as String?,
       path: json['path'] as String,
-      perPage: (json['per_page'] as num).toInt(),
+      perPage: json['per_page'] as num,
       prevPageUrl: json['prev_page_url'] as String?,
-      to: (json['to'] as num).toInt(),
-      total: (json['total'] as num).toInt(),
+      to: json['to'] as num?,
+      total: json['total'] as num,
     );
 
 Map<String, dynamic> _$PaginatedAnnouncementDataToJson(
@@ -62,7 +62,7 @@ Map<String, dynamic> _$PaginatedAnnouncementDataToJson(
     };
 
 Announcement _$AnnouncementFromJson(Map<String, dynamic> json) => Announcement(
-      id: (json['id'] as num).toInt(),
+      id: json['id'] as num?,
       title: json['title'] as String,
       body: json['body'] as String,
       date: json['date'] as String,
@@ -90,7 +90,7 @@ Map<String, dynamic> _$AnnouncementToJson(Announcement instance) =>
     };
 
 Department _$DepartmentFromJson(Map<String, dynamic> json) => Department(
-      id: (json['id'] as num).toInt(),
+      id: json['id'] as num?,
       name: json['name'] as String,
     );
 
@@ -101,7 +101,7 @@ Map<String, dynamic> _$DepartmentToJson(Department instance) =>
     };
 
 Semester _$SemesterFromJson(Map<String, dynamic> json) => Semester(
-      id: (json['id'] as num).toInt(),
+      id: json['id'] as num?,
       name: json['name'] as String,
     );
 
@@ -111,7 +111,7 @@ Map<String, dynamic> _$SemesterToJson(Semester instance) => <String, dynamic>{
     };
 
 Course _$CourseFromJson(Map<String, dynamic> json) => Course(
-      id: (json['id'] as num).toInt(),
+      id: json['id'] as num?,
       name: json['name'] as String,
     );
 
@@ -121,7 +121,7 @@ Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
     };
 
 User _$UserFromJson(Map<String, dynamic> json) => User(
-      id: (json['id'] as num).toInt(),
+      id: json['id'] as num?,
       name: json['name'] as String,
       type: json['type'] as String,
       avatar: json['avatar'] as String?,

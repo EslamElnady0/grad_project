@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-//import '../helpers/constants.dart';
-//import '../helpers/shared_pref_helper.dart';
+import '../helpers/constants.dart';
+import '../helpers/shared_pref_helper.dart';
 
 class DioFactory {
   DioFactory._();
@@ -25,14 +25,12 @@ class DioFactory {
   }
 
   static Future<void> addDioHeaders() async {
-    // String? token = await SharedPrefHelper.getSecuredString(Constants.token);
+    String? token = await SharedPrefHelper.getSecuredString(Constants.token);
     dio?.options.headers = {
       'Accept': 'application/json',
       'X-Device-Type': 'mobile',
       'X-Requested-With': 'XMLHttpRequest',
-      // if (token != null)
-      'Authorization':
-          'Bearer 66|IwqqaoSq9VZ50jDwIfXXkQIJOIVFrm7OnYxshpJ96656c84d',
+      if (token != null) 'Authorization': 'Bearer $token',
     };
   }
 

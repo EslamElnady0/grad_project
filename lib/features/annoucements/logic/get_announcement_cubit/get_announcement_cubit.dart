@@ -14,11 +14,11 @@ class GetAnnouncementCubit extends Cubit<GetAnnouncementState> {
   Future<void> getAnnouncement() async {
     emit(const GetAnnouncementState.getAnnouncementLoading());
     final result = await _repo.getAnnoucements(AnnouncementRequestBody(
-      departmentId: "2",
-      semesterId: '3',
-      courseId: "3",
-      title: "title",
-      body: "body",
+      departmentId: "",
+      semesterId: '',
+      courseId: "",
+      title: "",
+      body: "",
     ));
     result.when(
       success: (data) {
