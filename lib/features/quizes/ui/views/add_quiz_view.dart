@@ -4,7 +4,7 @@ import 'package:grad_project/core/widgets/custom_scaffold.dart';
 
 import '../../../../core/di/dependency_injection.dart';
 import '../cubit/add_quiz_cubit/add_quiz_cubit.dart';
-import '../widgets/add_view_view_body.dart';
+import '../widgets/add_quiz_view_body.dart';
 
 class AddQuizView extends StatelessWidget {
   static const String routeName = '/add-quiz-view';

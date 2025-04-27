@@ -8,6 +8,7 @@ import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
 
 import '../../../../generated/l10n.dart';
 import '../cubit/add_quiz_cubit/add_quiz_cubit.dart';
+import 'add_quiz_drop_downs.dart';
 
 class AddQuizViewBody extends StatelessWidget {
   const AddQuizViewBody({super.key});
@@ -30,6 +31,8 @@ class AddQuizViewBody extends StatelessWidget {
               titleHintText: S.of(context).quizTitleHelper,
               desc: S.of(context).quizDescription,
               descHintText: S.of(context).quizDescriptionHelper),
+          vGap(12),
+          const AddQuizDropDowns(),
         ],
       ),
     );
