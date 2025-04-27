@@ -7,7 +7,6 @@ import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/widgets/custom_inner_screens_app_bar.dart';
 import '../../../../generated/l10n.dart';
-import 'add_announcement_bloc_listener.dart';
 import 'annoucement_title_and_desc.dart';
 import 'date_and_time_section.dart';
 import 'publish_row.dart';
@@ -53,7 +52,6 @@ class _AddAnnoucementViewBodyState extends State<AddAnnoucementViewBody> {
             const DateAndTimeSection(),
             vGap(20),
             const PublishRow(),
-            const AddAnnouncementBlocListener()
           ],
         ),
       ),
