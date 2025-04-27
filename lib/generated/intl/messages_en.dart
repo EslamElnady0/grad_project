@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Group": MessageLookupByLibrary.simpleMessage("Group"),
     "Overall_Grade": MessageLookupByLibrary.simpleMessage("Overall Grade"),
     "Section": MessageLookupByLibrary.simpleMessage("Section"),
+    "SelectWeek": MessageLookupByLibrary.simpleMessage("Select Week"),
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "Academic Progress",
     ),
@@ -382,6 +383,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "View Registered Students",
     ),
     "wednesday": MessageLookupByLibrary.simpleMessage("Wednesday"),
+    "week": MessageLookupByLibrary.simpleMessage("Week"),
     "weeklySchedule": MessageLookupByLibrary.simpleMessage("Weekly Schedule"),
     "weekly_schedule": MessageLookupByLibrary.simpleMessage("Weekly Schedule"),
     "welcome_message": MessageLookupByLibrary.simpleMessage(

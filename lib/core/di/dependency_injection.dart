@@ -5,7 +5,6 @@ import 'package:grad_project/features/annoucements/data/repos/annoucements_repo.
 import 'package:grad_project/features/annoucements/logic/add_annoucements_cubit/add_annoucements_cubit.dart';
 import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/get_announcement_cubit.dart';
 import 'package:grad_project/features/annoucements/logic/get_teacher_cources_cubit/get_teacher_cources_cubit.dart';
-import 'package:grad_project/features/lecture_manager/ui/cubit/week_cubit.dart';
 import 'package:grad_project/features/quizes/ui/cubit/add_quiz_cubit/add_quiz_cubit.dart';
 import '../../features/annoucements/data/data sources/annoucements_local_data_source.dart';
 import '../../features/auth/data/repos/login_repo.dart';
@@ -43,6 +42,6 @@ Future<void> setupGetIt() async {
   //toDo:------------------------------ Quiz UI ------------------------------//
   getIt.registerFactory<AddQuizCubit>(() => AddQuizCubit());
 
-  getIt.registerFactory<WeekCubit>(() => WeekCubit());
+  //toDo:------------------------------Ui------------------------------
   getIt.registerFactory<FileUploadCubit>(() => FileUploadCubit());
 }

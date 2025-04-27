@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Group": MessageLookupByLibrary.simpleMessage("مجموعة"),
     "Overall_Grade": MessageLookupByLibrary.simpleMessage("تقدير تراكمي"),
     "Section": MessageLookupByLibrary.simpleMessage("سكشن"),
+    "SelectWeek": MessageLookupByLibrary.simpleMessage("اختر الأسبوع"),
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "التقدم الأكاديمي",
     ),
@@ -371,6 +372,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "عرض الطلاب المسجلين",
     ),
     "wednesday": MessageLookupByLibrary.simpleMessage("الأربعاء"),
+    "week": MessageLookupByLibrary.simpleMessage("الأسبوع"),
     "weeklySchedule": MessageLookupByLibrary.simpleMessage("الجدول الإسبوعي"),
     "weekly_schedule": MessageLookupByLibrary.simpleMessage("الجدول الاسبوعي"),
     "welcome_message": MessageLookupByLibrary.simpleMessage(

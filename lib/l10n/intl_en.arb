@@ -197,6 +197,18 @@
   "grade": "Grade",
   "course_status": "Course Status",
   "ok": "OK",
+  "time_schedule_welcome_message": "Welcome! Here you can view the upcoming quiz dates and submit the fees for each subject.⏰",
+  "search_for_task": "Search by activity type or name",
+  "next_seven_days": "Next Seven Days",
+  "quiz_details": "Quiz Details",
+  "add_to_send": "Add to send",
+  "sent": "sent",
+  "final_results_welcome_message": "📊 Welcome to the final results page! Here you can easily and clearly review your academic performance and grades in various courses. We wish you all the best and success!",
+  "course_name": "Course Name",
+  "course_code": "Course Code",
+  "grade": "Grade",
+  "course_status": "Course Status",
+  "ok": "OK",
   "createQuiz": "Create a new quiz",
   "quizHelperText": "❓Create, edit, and track quiz scores easily to ensure effective evaluation!",
   "quizTitle": "Quiz Title",
@@ -217,5 +229,7 @@
   "multipleChoice": "Multiple Choice",
   "text": "Texts",
   "images": "Images",
-  "showResultsAfterSubmit": "Show results and allow viewing answers after completing the quiz"
+  "showResultsAfterSubmit": "Show results and allow viewing answers after completing the quiz",
+  "SelectWeek": "Select Week",
+  "week": "Week"
 }
