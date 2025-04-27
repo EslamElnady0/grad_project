@@ -21,63 +21,64 @@ class AnnoucementsListView extends StatelessWidget {
               current is GetAnnouncementFailure,
           builder: (context, state) {
             return state.maybeWhen(
-              getAnnouncementLoading: () {
-                return Skeletonizer(
-                  enabled: true,
-                  child: ListView.builder(
-                    physics: const BouncingScrollPhysics(),
-                    padding: EdgeInsets.zero,
-                    itemCount: 10,
-                    itemBuilder: (context, index) {
-                      return const AnnouncemectSkeletonItem();
-                    },
-                  ),
-                );
-              },
-              getAnnouncementSuccess: (data) {
-                final responseData = data as PaginatedAnnouncementsResponse;
-                final items = responseData.data.data;
-
-                // Filter the announcements based on the selected subject(s)
-                final filteredItems = items.where((announcement) {
-                  final subject = announcement.course.name.toLowerCase();
-                  return selectedFilters.isEmpty ||
-                      selectedFilters.any(
-                          (filter) => subject.contains(filter.toLowerCase()));
-                }).toList();
-
-                return RefreshIndicator(
-                  color: AppColors.primaryColorlight,
-                  onRefresh: () async {
-                    context.read<GetAnnouncementCubit>().getAnnouncement();
-                  },
-                  child: ListView.builder(
-                    physics: const BouncingScrollPhysics(),
-                    padding: EdgeInsets.zero,
-                    itemCount: filteredItems.length,
-                    itemBuilder: (context, index) {
-                      return AnnoucementItem(
-                        announcementModel: filteredItems[index],
-                      );
-                    },
-                  ),
-                );
-              },
-              getAnnouncementFailure: (error) {
-                return Center(
-                  child: Text(
-                    error,
-                    style: const TextStyle(color: AppColors.redlight),
-                  ),
-                );
-              },
-              orElse: () {
-                return const SizedBox.shrink();
-              },
+              getAnnouncementLoading: () => _buildLoadingList(),
+              getAnnouncementSuccess: (data) =>
+                  _buildAnnouncementsList(context, data, selectedFilters),
+              getAnnouncementFailure: (error) => _buildErrorState(error),
+              orElse: () => const SizedBox.shrink(),
             );
           },
         );
       },
+    );
+  }
+
+  Widget _buildLoadingList() {
+    return Skeletonizer(
+      enabled: true,
+      child: ListView.builder(
+        physics: const BouncingScrollPhysics(),
+        padding: EdgeInsets.zero,
+        itemCount: 10,
+        itemBuilder: (context, index) => const AnnouncemectSkeletonItem(),
+      ),
+    );
+  }
+
+  Widget _buildAnnouncementsList(BuildContext context,
+      PaginatedAnnouncementsResponse data, Set<String> selectedFilters) {
+    final items = data.data.data;
+    final filteredItems = items.where((announcement) {
+      final subject = announcement.course.name.toLowerCase();
+      return selectedFilters.isEmpty ||
+          selectedFilters
+              .any((filter) => subject.contains(filter.toLowerCase()));
+    }).toList();
+
+    return RefreshIndicator(
+      color: AppColors.primaryColorlight,
+      onRefresh: () async {
+        context.read<GetAnnouncementCubit>().getAnnouncement();
+      },
+      child: ListView.builder(
+        physics: const BouncingScrollPhysics(),
+        padding: EdgeInsets.zero,
+        itemCount: filteredItems.length,
+        itemBuilder: (context, index) {
+          return AnnoucementItem(
+            announcementModel: filteredItems[index],
+          );
+        },
+      ),
+    );
+  }
+
+  Widget _buildErrorState(String error) {
+    return Center(
+      child: Text(
+        error,
+        style: const TextStyle(color: AppColors.redlight),
+      ),
     );
   }
 }
