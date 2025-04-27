@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/annoucements/data/models/paginated_announcements_response.dart';
 import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/get_announcement_cubit.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 import '../ui cubit/announcement_filter_cubit.dart';
 import 'annoucement_item.dart';
 
@@ -21,9 +22,15 @@ class AnnoucementsListView extends StatelessWidget {
           builder: (context, state) {
             return state.maybeWhen(
               getAnnouncementLoading: () {
-                return const Center(
-                  child: CircularProgressIndicator(
-                    color: AppColors.primaryColorlight,
+                return Skeletonizer(
+                  enabled: true,
+                  child: ListView.builder(
+                    physics: const BouncingScrollPhysics(),
+                    padding: EdgeInsets.zero,
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return const AnnouncemectSkeletonItem();
+                    },
                   ),
                 );
               },
@@ -65,11 +72,7 @@ class AnnoucementsListView extends StatelessWidget {
                 );
               },
               orElse: () {
-                return const Center(
-                  child: CircularProgressIndicator(
-                    color: AppColors.primaryColorlight,
-                  ),
-                );
+                return const SizedBox.shrink();
               },
             );
           },

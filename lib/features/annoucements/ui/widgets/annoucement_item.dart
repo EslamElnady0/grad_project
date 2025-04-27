@@ -75,3 +75,105 @@ class AnnoucementItem extends StatelessWidget {
     );
   }
 }
+
+class AnnouncemectSkeletonItem extends StatelessWidget {
+  const AnnouncemectSkeletonItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      decoration: BoxDecoration(
+        color: AppColors.white,
+        borderRadius: BorderRadius.circular(16.r),
+        boxShadow: [
+          BoxShadow(
+            offset: const Offset(0, 1),
+            blurRadius: 5.r,
+            spreadRadius: 3,
+            color: const Color(0xff112316).withOpacity(0.15),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Header part (date, name, specialization)
+          Row(
+            children: [
+              CircleAvatar(
+                radius: 20.r,
+                backgroundColor: Colors.grey[300],
+              ),
+              hGap(12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: 100.w,
+                      height: 12.h,
+                      color: Colors.grey[300],
+                    ),
+                    vGap(6),
+                    Container(
+                      width: 60.w,
+                      height: 10.h,
+                      color: Colors.grey[300],
+                    ),
+                  ],
+                ),
+              ),
+              const Spacer(),
+              Container(
+                width: 50.w,
+                height: 10.h,
+                color: Colors.grey[300],
+              ),
+            ],
+          ),
+          vGap(16),
+          // Title
+          Container(
+            width: double.infinity,
+            height: 14.h,
+            color: Colors.grey[300],
+          ),
+          vGap(20),
+          // Body
+          Container(
+            width: double.infinity,
+            height: 50.h,
+            color: Colors.grey[300],
+          ),
+          vGap(20),
+          // Footer (name + views)
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Container(
+                width: 120.w,
+                height: 12.h,
+                color: Colors.grey[300],
+              ),
+              const Spacer(),
+              Container(
+                width: 20.w,
+                height: 10.h,
+                color: Colors.grey[300],
+              ),
+              hGap(6),
+              Icon(
+                Icons.visibility,
+                size: 17.r,
+                color: Colors.grey[300],
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
