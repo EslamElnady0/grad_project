@@ -2,19 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
-import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 
 class DropDownWidget<T> extends StatelessWidget {
   final String value;
+  final String? type;
   final Function(T)? onSelected;
   final List<T> contentList;
   const DropDownWidget(
       {super.key,
       required this.value,
       this.onSelected,
-      required this.contentList});
+      required this.contentList,
+      this.type});
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +51,6 @@ class DropDownWidget<T> extends StatelessWidget {
               style: AppTextStyles.font13BlackBold
                   .copyWith(color: AppColors.darkGray),
             ),
-            hGap(40),
             SvgPicture.asset(Assets.imagesSvgsIosArrowIcon)
           ],
         ),
@@ -59,7 +59,7 @@ class DropDownWidget<T> extends StatelessWidget {
             return PopupMenuItem<T>(
               value: entryValue,
               child: Text(
-                entryValue.toString(),
+                "${entryValue.toString()}${type != null ? "  $type" : ""}",
                 style: AppTextStyles.font13BlackBold
                     .copyWith(color: AppColors.darkGray),
               ),

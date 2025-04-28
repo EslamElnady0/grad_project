@@ -23,7 +23,7 @@ class Course {
   final int id;
   final String name;
   final String code;
-  final String description;
+  final String? description;
   final Department department;
   final Semester semester;
 
@@ -44,8 +44,8 @@ class Course {
 @JsonSerializable()
 class Department {
   final int id;
-  final String name;
-  final String description;
+  final String? name;
+  final String? description;
   final dynamic teachers;
 
   @JsonKey(name: 'courses_count')
@@ -72,7 +72,7 @@ class Department {
 @JsonSerializable()
 class Semester {
   final int id;
-  final String name;
+  final String? name;
 
   Semester({
     required this.id,

@@ -7,9 +7,7 @@ import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_text_and_icon_button.dart';
 import 'package:grad_project/core/widgets/custom_text_button.dart';
 import 'package:grad_project/features/lecture_manager/ui/widgets/dispaly_week_list.dart';
-
 import '../../../../core/helpers/spacing.dart';
-import '../../../../core/theme/app_colors.dart';
 import '../../../../core/widgets/custom_text_form_field_and_icon.dart';
 import '../../../../core/widgets/text entry footer/custom_outloned_button.dart';
 import '../../../../generated/l10n.dart';
@@ -37,17 +35,15 @@ class _LectureFormContentState extends State<LectureFormContent> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-           vGap(5),
+          vGap(5),
           DisplayWeekList(
-          isArabic:isArabicLocale(context), 
-         initialValue: S.of(context).SelectWeek, 
-          onSelected: (selectedWeek) {
-          
-            print('Selected week: $selectedWeek');
-            
-          },
+            isArabic: isArabicLocale(context),
+            initialValue: S.of(context).SelectWeek,
+            onSelected: (selectedWeek) {
+              print('Selected week: $selectedWeek');
+            },
           ),
-           vGap(10),
+          vGap(10),
           Text(
             S.of(context).lectureTitle,
             textAlign: TextAlign.start,
@@ -55,9 +51,8 @@ class _LectureFormContentState extends State<LectureFormContent> {
           ),
           vGap(5),
           CustomTextFormFieldAndicon(
-            hintText: S.of(context).lectureTitleHint,
-            icon: Assets.imagesSvgsLecTilte
-          ),
+              hintText: S.of(context).lectureTitleHint,
+              icon: Assets.imagesSvgsLecTilte),
           vGap(5),
           Text(
             S.of(context).lectureDescription,
@@ -92,16 +87,20 @@ class _LectureFormContentState extends State<LectureFormContent> {
             },
           ),
           vGap(12),
-      clickAddLink?    Text( 
-            S.of(context).addLink,
-            textAlign: TextAlign.start,
-            style: AppTextStyles.font16DarkerBlueSemiBold,
-          ) : Container(),
-        clickAddLink ? vGap(5) : Container(),
-            clickAddLink? CustomTextFormFieldAndicon(
-            hintText: S.of(context).addLinkDescrebtion,
-            icon: Assets.imagesSvgsAddLink,
-          ) : Container(),
+          clickAddLink
+              ? Text(
+                  S.of(context).addLink,
+                  textAlign: TextAlign.start,
+                  style: AppTextStyles.font16DarkerBlueSemiBold,
+                )
+              : Container(),
+          clickAddLink ? vGap(5) : Container(),
+          clickAddLink
+              ? CustomTextFormFieldAndicon(
+                  hintText: S.of(context).addLinkDescrebtion,
+                  icon: Assets.imagesSvgsAddLink,
+                )
+              : Container(),
           vGap(12),
           Align(
             alignment: Alignment.centerLeft,
@@ -139,4 +138,3 @@ void showFileUploadDialog(BuildContext context) {
     },
   );
 }
-

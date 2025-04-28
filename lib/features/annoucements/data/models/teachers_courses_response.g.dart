@@ -26,7 +26,7 @@ Course _$CourseFromJson(Map<String, dynamic> json) => Course(
       id: (json['id'] as num).toInt(),
       name: json['name'] as String,
       code: json['code'] as String,
-      description: json['description'] as String,
+      description: json['description'] as String?,
       department:
           Department.fromJson(json['department'] as Map<String, dynamic>),
       semester: Semester.fromJson(json['semester'] as Map<String, dynamic>),
@@ -43,8 +43,8 @@ Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
 
 Department _$DepartmentFromJson(Map<String, dynamic> json) => Department(
       id: (json['id'] as num).toInt(),
-      name: json['name'] as String,
-      description: json['description'] as String,
+      name: json['name'] as String?,
+      description: json['description'] as String?,
       teachers: json['teachers'],
       coursesCount: json['courses_count'],
       studentsCount: json['students_count'],
@@ -62,7 +62,7 @@ Map<String, dynamic> _$DepartmentToJson(Department instance) =>
 
 Semester _$SemesterFromJson(Map<String, dynamic> json) => Semester(
       id: (json['id'] as num).toInt(),
-      name: json['name'] as String,
+      name: json['name'] as String?,
     );
 
 Map<String, dynamic> _$SemesterToJson(Semester instance) => <String, dynamic>{

@@ -1764,6 +1764,76 @@ class S {
   String get week {
     return Intl.message('Week', name: 'week', desc: '', args: []);
   }
+
+  /// `Questions`
+  String get questionsWithNoThe {
+    return Intl.message(
+      'Questions',
+      name: 'questionsWithNoThe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Date`
+  String get selectDate {
+    return Intl.message('Select Date', name: 'selectDate', desc: '', args: []);
+  }
+
+  /// `Select Time`
+  String get selectTime {
+    return Intl.message('Select Time', name: 'selectTime', desc: '', args: []);
+  }
+
+  /// `Enter your question`
+  String get enterYourQuestion {
+    return Intl.message(
+      'Enter your question',
+      name: 'enterYourQuestion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Maximum number of questions reached`
+  String get maximumNumberOfQuestions {
+    return Intl.message(
+      'Maximum number of questions reached',
+      name: 'maximumNumberOfQuestions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All questions must have a question, at least one answer, and a selected correct answer.`
+  String get incompleteQuestionError {
+    return Intl.message(
+      'All questions must have a question, at least one answer, and a selected correct answer.',
+      name: 'incompleteQuestionError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have to specify date and time for the quiz.`
+  String get dateAndTimeError {
+    return Intl.message(
+      'You have to specify date and time for the quiz.',
+      name: 'dateAndTimeError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please provide at least two answers for each question`
+  String get atLeastTwoAnswers {
+    return Intl.message(
+      'Please provide at least two answers for each question',
+      name: 'atLeastTwoAnswers',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

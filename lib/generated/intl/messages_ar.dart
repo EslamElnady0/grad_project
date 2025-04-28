@@ -61,6 +61,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "app_title": MessageLookupByLibrary.simpleMessage("التعليم الالكتروني"),
     "assignment": MessageLookupByLibrary.simpleMessage("المهمة"),
     "assignments": MessageLookupByLibrary.simpleMessage("التكاليف"),
+    "atLeastTwoAnswers": MessageLookupByLibrary.simpleMessage(
+      "يرجى تقديم إجابتين على الأقل لكل سؤال",
+    ),
     "attendance": MessageLookupByLibrary.simpleMessage("الحضور"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
@@ -95,6 +98,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "📰 أنشئ وأدر الأخبار والإعلانات الهامة لموادك الدراسية بسهولة، وأبقى طلابك على اطلاع دائم!",
     ),
     "dashboard": MessageLookupByLibrary.simpleMessage("لوحة التحكم"),
+    "dateAndTimeError": MessageLookupByLibrary.simpleMessage(
+      "يجب تحديد التاريخ والوقت للاختبار.",
+    ),
     "days": MessageLookupByLibrary.simpleMessage("الأيام"),
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
       "🤔 لم تبحث عن شيء بعد! ",
@@ -108,6 +114,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "eLearning": MessageLookupByLibrary.simpleMessage("التعليم الإلكتروني"),
     "email": MessageLookupByLibrary.simpleMessage("الإيميل"),
     "endsAt": MessageLookupByLibrary.simpleMessage("ينتهي"),
+    "enterYourQuestion": MessageLookupByLibrary.simpleMessage("ادخل سؤالك"),
     "enter_code": MessageLookupByLibrary.simpleMessage(
       "أدخل الكود المكون من 6 أرقام اللي اتبعت ليك.",
     ),
@@ -144,6 +151,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "group": MessageLookupByLibrary.simpleMessage("مجموعة"),
     "images": MessageLookupByLibrary.simpleMessage("صور"),
     "in_progress": MessageLookupByLibrary.simpleMessage("قيد التنفيذ"),
+    "incompleteQuestionError": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تحتوي جميع الأسئلة على سؤال، وإجابة واحدة على الأقل، وإجابة صحيحة مختارة.",
+    ),
     "interested": MessageLookupByLibrary.simpleMessage("مهتم"),
     "internalMap": MessageLookupByLibrary.simpleMessage("الخريطة الداخلية"),
     "lectureDescription": MessageLookupByLibrary.simpleMessage("وصف المحاضرة"),
@@ -166,6 +176,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "materials_center": MessageLookupByLibrary.simpleMessage(
       "👨‍🏫 مركز إدارة المواد الدراسية الخاصة بك بكل سهولة، من الطلاب إلى المحاضرات والكويزات!",
+    ),
+    "maximumNumberOfQuestions": MessageLookupByLibrary.simpleMessage(
+      "تجاوزت الحد الاقصي لعدد الاسئلة الذي اختارته",
     ),
     "midterm": MessageLookupByLibrary.simpleMessage("الميدتيرم"),
     "minute": MessageLookupByLibrary.simpleMessage("دقيقة"),
@@ -231,6 +244,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "questions": MessageLookupByLibrary.simpleMessage("الأسئلة"),
     "questionsCount": MessageLookupByLibrary.simpleMessage("عدد الأسئلة"),
+    "questionsWithNoThe": MessageLookupByLibrary.simpleMessage("أسئلة"),
     "quiz": MessageLookupByLibrary.simpleMessage("اختبار"),
     "quizAdvices": MessageLookupByLibrary.simpleMessage("نصائح للاختبار"),
     "quizDesc": MessageLookupByLibrary.simpleMessage("وصف الاختبار"),
@@ -297,6 +311,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectCources": MessageLookupByLibrary.simpleMessage(
       "📚 يرجى اختيار المواد التي تود الاطلاع على منشوراتها وآخر مستجداتها!",
     ),
+    "selectDate": MessageLookupByLibrary.simpleMessage("اختر تاريخ"),
+    "selectTime": MessageLookupByLibrary.simpleMessage("اختر وقت"),
     "select_subjects": MessageLookupByLibrary.simpleMessage(
       "📚 يرجى اختيار المواد التي تود الاطلاع على منشوراتها وآخر مستجداتها!",
     ),
