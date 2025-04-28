@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 import '../theme/app_colors.dart';
 
@@ -31,44 +32,47 @@ class CustomTextAndIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Container(
-        width: width,
-        padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 15.w),
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.circular(12.r),
-          gradient: color == null
-              ? (primaryButton
-                  ? const LinearGradient(
-                      colors: [
-                        AppColors.primaryColorlight,
-                        AppColors.primaryColordark
-                      ],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    )
-                  : const LinearGradient(
-                      colors: [AppColors.redlight, AppColors.redDark],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    ))
-              : null,
-          boxShadow: [
-            BoxShadow(
-              offset: const Offset(0, 4),
-              blurRadius: 14,
-              color: AppColors.black.withOpacity(0.1),
-            ),
-          ],
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment:MainAxisAlignment.center ,
-          children: [
-            icon,
-            hGap(5),
-            Text(text, style: style ?? AppTextStyles.font12WhiteMedium),
-          ],
+      child: Skeleton.leaf(
+        enabled: true,
+        child: Container(
+          width: width,
+          padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 15.w),
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(12.r),
+            gradient: color == null
+                ? (primaryButton
+                    ? const LinearGradient(
+                        colors: [
+                          AppColors.primaryColorlight,
+                          AppColors.primaryColordark
+                        ],
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                      )
+                    : const LinearGradient(
+                        colors: [AppColors.redlight, AppColors.redDark],
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                      ))
+                : null,
+            boxShadow: [
+              BoxShadow(
+                offset: const Offset(0, 4),
+                blurRadius: 14,
+                color: AppColors.black.withOpacity(0.1),
+              ),
+            ],
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment:MainAxisAlignment.center ,
+            children: [
+              icon,
+              hGap(5),
+              Text(text, style: style ?? AppTextStyles.font12WhiteMedium),
+            ],
+          ),
         ),
       ),
     );
