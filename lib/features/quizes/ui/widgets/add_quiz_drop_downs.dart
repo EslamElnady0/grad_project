@@ -11,81 +11,77 @@ class AddQuizDropDowns extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StatefulBuilder(
-      builder: (context, setState) => Expanded(
-        child: Column(children: [
-          Row(
-            children: [
-              Expanded(
-                child: TitleAndDropDownWidget<int>(
-                  title: S.of(context).setTime,
-                  value:
-                      "${context.read<AddQuizCubit>().selectedTime}  ${S.of(context).minute}",
-                  type: S.of(context).minute,
-                  contentList: context.read<AddQuizCubit>().timeList,
-                  onSelected: (value) {
-                    setState(() {
-                      context.read<AddQuizCubit>().selectedTime = value;
-                    });
-                  },
-                ),
+      builder: (context, setState) => Column(children: [
+        Row(
+          children: [
+            Expanded(
+              child: TitleAndDropDownWidget<int>(
+                title: S.of(context).setTime,
+                value:
+                    "${context.read<AddQuizCubit>().selectedTime}  ${S.of(context).minute}",
+                type: S.of(context).minute,
+                contentList: context.read<AddQuizCubit>().timeList,
+                onSelected: (value) {
+                  setState(() {
+                    context.read<AddQuizCubit>().selectedTime = value;
+                  });
+                },
               ),
-              hGap(16),
-              Expanded(
-                child: TitleAndDropDownWidget<int>(
-                  title: S.of(context).questionsCount,
-                  value:
-                      "${context.read<AddQuizCubit>().selectedQuestionsCount}  ${S.of(context).questions}",
-                  type: S.of(context).questionsWithNoThe,
-                  contentList: context.read<AddQuizCubit>().questionsCount,
-                  onSelected: (value) {
-                    setState(() {
-                      context.read<AddQuizCubit>().selectedQuestionsCount =
-                          value;
-                      context.read<AddQuizCubit>().finalDegree = value *
-                          context.read<AddQuizCubit>().selectedQuestionGrade;
-                    });
-                  },
-                ),
+            ),
+            hGap(16),
+            Expanded(
+              child: TitleAndDropDownWidget<int>(
+                title: S.of(context).questionsCount,
+                value:
+                    "${context.read<AddQuizCubit>().selectedQuestionsCount}  ${S.of(context).questions}",
+                type: S.of(context).questionsWithNoThe,
+                contentList: context.read<AddQuizCubit>().questionsCount,
+                onSelected: (value) {
+                  setState(() {
+                    context.read<AddQuizCubit>().selectedQuestionsCount = value;
+                    context.read<AddQuizCubit>().finalDegree = value *
+                        context.read<AddQuizCubit>().selectedQuestionGrade;
+                  });
+                },
               ),
-            ],
-          ),
-          vGap(12),
-          Row(
-            children: [
-              Expanded(
-                child: TitleAndDropDownWidget<int>(
-                  title: S.of(context).questionGrade,
-                  value:
-                      "${context.read<AddQuizCubit>().selectedQuestionGrade}  ${S.of(context).single_grade}",
-                  type: S.of(context).single_grade,
-                  contentList: context.read<AddQuizCubit>().questionGrade,
-                  onSelected: (value) {
-                    setState(() {
-                      context.read<AddQuizCubit>().selectedQuestionGrade =
-                          value;
-                      context.read<AddQuizCubit>().finalDegree = value *
-                          context.read<AddQuizCubit>().selectedQuestionsCount;
-                    });
-                  },
-                ),
+            ),
+          ],
+        ),
+        vGap(12),
+        Row(
+          children: [
+            Expanded(
+              child: TitleAndDropDownWidget<int>(
+                title: S.of(context).questionGrade,
+                value:
+                    "${context.read<AddQuizCubit>().selectedQuestionGrade}  ${S.of(context).single_grade}",
+                type: S.of(context).single_grade,
+                contentList: context.read<AddQuizCubit>().questionGrade,
+                onSelected: (value) {
+                  setState(() {
+                    context.read<AddQuizCubit>().selectedQuestionGrade = value;
+                    context.read<AddQuizCubit>().finalDegree = value *
+                        context.read<AddQuizCubit>().selectedQuestionsCount;
+                  });
+                },
               ),
-              hGap(16),
-              Expanded(
-                child: TitleAndDropDownWidget(
-                  title: S.of(context).finalGrade,
-                  value:
-                      "${context.read<AddQuizCubit>().finalDegree} ${S.of(context).single_grade}",
-                  contentList: const [],
-                  onSelected: (value) {
-                    setState(() {});
-                  },
-                  isFinalGrade: true,
-                ),
+            ),
+            hGap(16),
+            Expanded(
+              child: TitleAndDropDownWidget(
+                title: S.of(context).finalGrade,
+                value:
+                    "${context.read<AddQuizCubit>().finalDegree} ${S.of(context).single_grade}",
+                contentList: const [],
+                onSelected: (value) {
+                  setState(() {});
+                },
+                isFinalGrade: true,
               ),
-            ],
-          ),
-        ]),
-      ),
+            ),
+          ],
+        ),
+      ]),
     );
   }
 }
