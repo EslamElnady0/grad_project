@@ -59,7 +59,7 @@ class QuestionContainer extends StatelessWidget {
                             hintStyle: AppTextStyles.font12GrayMedium,
                             border: InputBorder.none,
                           ),
-                          style: AppTextStyles.font12GrayMedium,
+                          style: AppTextStyles.font12BlackMedium,
                           maxLines: null,
                           onChanged: (value) {
                             context

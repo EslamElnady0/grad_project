@@ -61,6 +61,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "app_title": MessageLookupByLibrary.simpleMessage("التعليم الالكتروني"),
     "assignment": MessageLookupByLibrary.simpleMessage("المهمة"),
     "assignments": MessageLookupByLibrary.simpleMessage("التكاليف"),
+    "atLeastTwoAnswers": MessageLookupByLibrary.simpleMessage(
+      "يرجى تقديم إجابتين على الأقل لكل سؤال",
+    ),
     "attendance": MessageLookupByLibrary.simpleMessage("الحضور"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
