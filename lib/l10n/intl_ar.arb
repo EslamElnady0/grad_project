@@ -219,5 +219,13 @@
   "images": "صور",
   "showResultsAfterSubmit": "عرض النتائج وإتاحة الإجابة لهم بعد الإنتهاء من الإختبار",
   "SelectWeek": "اختر الأسبوع",
-  "week": "الأسبوع"
+  "week": "الأسبوع",
+  "questionsWithNoThe": "أسئلة",
+  "selectDate": "اختر تاريخ",
+  "selectTime": "اختر وقت",
+  "enterYourQuestion": "ادخل سؤالك",
+  "maximumNumberOfQuestions": "تجاوزت الحد الاقصي لعدد الاسئلة الذي اختارته",
+  "incompleteQuestionError": "يجب أن تحتوي جميع الأسئلة على سؤال، وإجابة واحدة على الأقل، وإجابة صحيحة مختارة.",
+  "dateAndTimeError": "يجب تحديد التاريخ والوقت للاختبار.",
+  "atLeastTwoAnswers": "يرجى تقديم إجابتين على الأقل لكل سؤال"
 }

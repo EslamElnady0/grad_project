@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-
-import '../../../../core/helpers/app_assets.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
@@ -62,15 +59,12 @@ class DisplayWeekList extends StatelessWidget {
                 children: [
                   BlocBuilder<WeekCubit, String>(
                     builder: (context, selectedValue) {
-                      return Text(
-                        selectedValue,
-                        style: AppTextStyles.font12GraySemiBold
-                            
-                      );
+                      return Text(selectedValue,
+                          style: AppTextStyles.font12GraySemiBold);
                     },
                   ),
                   hGap(40),
-               Icon(
+                  Icon(
                     Icons.arrow_forward_ios_outlined,
                     color: AppColors.gray,
                     size: 20.h,
@@ -79,7 +73,8 @@ class DisplayWeekList extends StatelessWidget {
               ),
               itemBuilder: (context) {
                 String t = isArabic ? "اسبوع" : "Week";
-                final List<String> weeksList = List.generate(14, (index) => '$t ${index + 1}');
+                final List<String> weeksList =
+                    List.generate(14, (index) => '$t ${index + 1}');
                 return weeksList.map((week) {
                   return PopupMenuItem<String>(
                     value: week,

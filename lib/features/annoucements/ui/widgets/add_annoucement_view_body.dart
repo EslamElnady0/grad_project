@@ -11,7 +11,7 @@ import '../../../../core/widgets/custom_inner_screens_app_bar.dart';
 import '../../../../generated/l10n.dart';
 import 'title_and_desc_text_fields.dart';
 import 'date_and_time_section.dart';
-import 'publish_row.dart';
+import '../../../../core/widgets/publish_row.dart';
 
 class AddAnnoucementViewBody extends StatefulWidget {
   const AddAnnoucementViewBody({super.key});
@@ -63,7 +63,17 @@ class _AddAnnoucementViewBodyState extends State<AddAnnoucementViewBody> {
             vGap(8),
             const DateAndTimeSection(),
             vGap(20),
-            const PublishRow(),
+            PublishRow(
+              onTap: () async {
+                if (context
+                    .read<AddAnnoucementsCubit>()
+                    .formKey
+                    .currentState!
+                    .validate()) {
+                  await context.read<AddAnnoucementsCubit>().addAnnoucement();
+                }
+              },
+            ),
           ],
         ),
       ),

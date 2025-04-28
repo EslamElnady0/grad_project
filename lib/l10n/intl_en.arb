@@ -219,5 +219,13 @@
   "images": "Images",
   "showResultsAfterSubmit": "Show results and allow viewing answers after completing the quiz",
   "SelectWeek": "Select Week",
-  "week": "Week"
+  "week": "Week",
+  "questionsWithNoThe": "Questions",
+  "selectDate": "Select Date",
+  "selectTime": "Select Time",
+  "enterYourQuestion": "Enter your question",
+  "maximumNumberOfQuestions": "Maximum number of questions reached",
+  "incompleteQuestionError": "All questions must have a question, at least one answer, and a selected correct answer.",
+  "dateAndTimeError": "You have to specify date and time for the quiz.",
+  "atLeastTwoAnswers": "Please provide at least two answers for each question"
 }

@@ -63,6 +63,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "app_title": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "assignment": MessageLookupByLibrary.simpleMessage("Assignment"),
     "assignments": MessageLookupByLibrary.simpleMessage("Assignments"),
+    "atLeastTwoAnswers": MessageLookupByLibrary.simpleMessage(
+      "Please provide at least two answers for each question",
+    ),
     "attendance": MessageLookupByLibrary.simpleMessage("Attendance"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "chat": MessageLookupByLibrary.simpleMessage("Chat"),
@@ -97,6 +100,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "📰 Create and manage important news and announcements for your courses easily, and keep your students updated!",
     ),
     "dashboard": MessageLookupByLibrary.simpleMessage("Dashboard"),
+    "dateAndTimeError": MessageLookupByLibrary.simpleMessage(
+      "You have to specify date and time for the quiz.",
+    ),
     "days": MessageLookupByLibrary.simpleMessage("Days"),
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
       "🤔 You haven\'t searched for anything yet!",
@@ -110,6 +116,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "eLearning": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "endsAt": MessageLookupByLibrary.simpleMessage("Ends at"),
+    "enterYourQuestion": MessageLookupByLibrary.simpleMessage(
+      "Enter your question",
+    ),
     "enter_code": MessageLookupByLibrary.simpleMessage(
       "Enter the 6-digit code that was sent to you.",
     ),
@@ -148,6 +157,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "group": MessageLookupByLibrary.simpleMessage("Group"),
     "images": MessageLookupByLibrary.simpleMessage("Images"),
     "in_progress": MessageLookupByLibrary.simpleMessage("In Progress"),
+    "incompleteQuestionError": MessageLookupByLibrary.simpleMessage(
+      "All questions must have a question, at least one answer, and a selected correct answer.",
+    ),
     "interested": MessageLookupByLibrary.simpleMessage("like"),
     "internalMap": MessageLookupByLibrary.simpleMessage("Internal Map"),
     "lectureDescription": MessageLookupByLibrary.simpleMessage(
@@ -172,6 +184,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "materials_center": MessageLookupByLibrary.simpleMessage(
       "👨‍🏫 Easily manage your course materials—from students to lectures and quizzes!",
+    ),
+    "maximumNumberOfQuestions": MessageLookupByLibrary.simpleMessage(
+      "Maximum number of questions reached",
     ),
     "midterm": MessageLookupByLibrary.simpleMessage("Midterm"),
     "minute": MessageLookupByLibrary.simpleMessage("Minute"),
@@ -239,6 +254,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "questionsCount": MessageLookupByLibrary.simpleMessage(
       "Number of Questions",
     ),
+    "questionsWithNoThe": MessageLookupByLibrary.simpleMessage("Questions"),
     "quiz": MessageLookupByLibrary.simpleMessage("Quiz"),
     "quizAdvices": MessageLookupByLibrary.simpleMessage("Quiz Tips"),
     "quizDesc": MessageLookupByLibrary.simpleMessage("Quiz Description"),
@@ -304,6 +320,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectCources": MessageLookupByLibrary.simpleMessage(
       "📚 Please select the courses you want to follow for updates and announcements!",
     ),
+    "selectDate": MessageLookupByLibrary.simpleMessage("Select Date"),
+    "selectTime": MessageLookupByLibrary.simpleMessage("Select Time"),
     "select_subjects": MessageLookupByLibrary.simpleMessage(
       "📚 Please select the subjects you want to check for posts and updates!",
     ),
