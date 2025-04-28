@@ -3,8 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
-import 'package:grad_project/features/annoucements/logic/add_annoucements_cubit/add_annoucements_cubit.dart';
-import 'package:grad_project/features/annoucements/ui/widgets/drop_down_and_displays.dart';
+import 'package:grad_project/features/annoucements/data/models/paginated_announcements_response.dart';
+import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/get_announcement_cubit.dart';
+import 'package:grad_project/features/annoucements/logic/update_annoucement_cubit/update_annoucement_cubit.dart';
+import 'package:grad_project/features/annoucements/ui/widgets/edit_drop_down_and_displays.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/widgets/custom_inner_screens_app_bar.dart';
@@ -13,11 +15,17 @@ import 'title_and_desc_text_fields.dart';
 import 'date_and_time_section.dart';
 import '../../../../core/widgets/publish_row.dart';
 
-class AddAnnoucementViewBody extends StatelessWidget {
-  const AddAnnoucementViewBody({super.key});
+class UpdateAnnoucementViewBody extends StatelessWidget {
+  const UpdateAnnoucementViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Announcement announcement = context.read<Announcement>();
+    context.read<UpdateAnnoucementCubit>().titleController.text =
+        announcement.title;
+    context.read<UpdateAnnoucementCubit>().descController.text =
+        announcement.body;
+
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
       child: SingleChildScrollView(
@@ -25,22 +33,22 @@ class AddAnnoucementViewBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomInnerScreensAppBar(title: S.of(context).add_new),
-            TitleTextWidget(text: S.of(context).add_new_news),
+            CustomInnerScreensAppBar(title: S.of(context).editAnnouncement),
+            TitleTextWidget(text: S.of(context).edit_news),
             vGap(8),
             TitleAndDescTextFields(
               title: S.of(context).news_title,
               titleHintText: S.of(context).news_title_description,
               desc: S.of(context).news_content,
               descHintText: S.of(context).news_content_description,
-              formKey: context.read<AddAnnoucementsCubit>().formKey,
+              formKey: context.read<UpdateAnnoucementCubit>().formKey,
               titleController:
-                  context.read<AddAnnoucementsCubit>().titleController,
+                  context.read<UpdateAnnoucementCubit>().titleController,
               descController:
-                  context.read<AddAnnoucementsCubit>().descController,
+                  context.read<UpdateAnnoucementCubit>().descController,
             ),
             vGap(12),
-            const DropDownAndDisplays(),
+            const EditDropDownAndDisplays(),
             vGap(15),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,16 +64,25 @@ class AddAnnoucementViewBody extends StatelessWidget {
               ],
             ),
             vGap(8),
-            const DateAndTimeSection(),
+            const DateAndTimeSection(
+              isEdit: true,
+            ),
             vGap(20),
             PublishRow(
               onTap: () async {
                 if (context
-                    .read<AddAnnoucementsCubit>()
+                    .read<UpdateAnnoucementCubit>()
                     .formKey
                     .currentState!
                     .validate()) {
-                  await context.read<AddAnnoucementsCubit>().addAnnoucement();
+                  await context
+                      .read<UpdateAnnoucementCubit>()
+                      .updateAnnoucement(context.read<Announcement>());
+                  if (context.mounted) {
+                    await context
+                        .read<GetAnnouncementCubit>()
+                        .getAnnouncement();
+                  }
                 }
               },
             ),

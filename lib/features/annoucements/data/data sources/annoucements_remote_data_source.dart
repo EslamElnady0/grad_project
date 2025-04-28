@@ -31,13 +31,13 @@ abstract class AnnoucementsRemoteDataSource {
   @GET("${ApiConstants.teachers}${ApiConstants.courses}")
   Future<TeachersCoursesResponse> getTeacherCourses();
 
-  @POST(
+  @PUT(
       "${ApiConstants.dashboard}${ApiConstants.announcements}/{announcementId}")
   Future<UpdateAnnoucementResponseBody> updateAnnoucement(
     @Path() String announcementId,
     @Body() AnnouncementRequestBody announcementRequestBody,
   );
-  @POST(
+  @DELETE(
       "${ApiConstants.dashboard}${ApiConstants.announcements}/{announcementId}")
   Future<DeleteAnnoucementResponseBody> deleteAnnoucement(
     @Path() String announcementId,

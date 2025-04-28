@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/di/dependency_injection.dart';
 import 'package:grad_project/core/widgets/custom_scaffold.dart';
 import 'package:grad_project/features/annoucements/logic/add_annoucements_cubit/add_annoucements_cubit.dart';
+import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/get_announcement_cubit.dart';
 import 'package:grad_project/features/annoucements/ui/widgets/add_announcement_bloc_consumer.dart';
 import '../widgets/add_annoucement_view_body.dart';
 
@@ -13,8 +14,15 @@ class AddAnnoucementView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-      body: BlocProvider(
-        create: (context) => getIt<AddAnnoucementsCubit>(),
+      body: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => getIt<AddAnnoucementsCubit>(),
+          ),
+          BlocProvider.value(
+            value: getIt<GetAnnouncementCubit>(),
+          ),
+        ],
         child:
             const AddAnnouncementBlocConsumer(child: AddAnnoucementViewBody()),
       ),

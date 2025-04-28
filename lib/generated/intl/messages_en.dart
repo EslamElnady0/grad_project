@@ -104,6 +104,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "You have to specify date and time for the quiz.",
     ),
     "days": MessageLookupByLibrary.simpleMessage("Days"),
+    "delete": MessageLookupByLibrary.simpleMessage("Delete"),
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
       "🤔 You haven\'t searched for anything yet!",
     ),
@@ -114,6 +115,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "done": MessageLookupByLibrary.simpleMessage("Done"),
     "download": MessageLookupByLibrary.simpleMessage("download"),
     "eLearning": MessageLookupByLibrary.simpleMessage("E-Learning"),
+    "edit": MessageLookupByLibrary.simpleMessage("Edit"),
+    "editAnnouncement": MessageLookupByLibrary.simpleMessage(
+      "Edit Announcement",
+    ),
+    "edit_news": MessageLookupByLibrary.simpleMessage(
+      "✏️ Edit your announcement to keep your students informed with the latest details and updates",
+    ),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "endsAt": MessageLookupByLibrary.simpleMessage("Ends at"),
     "enterYourQuestion": MessageLookupByLibrary.simpleMessage(

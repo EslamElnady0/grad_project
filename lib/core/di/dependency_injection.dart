@@ -3,8 +3,10 @@ import 'package:dio/dio.dart';
 import 'package:grad_project/features/annoucements/data/data%20sources/annoucements_remote_data_source.dart';
 import 'package:grad_project/features/annoucements/data/repos/annoucements_repo.dart';
 import 'package:grad_project/features/annoucements/logic/add_annoucements_cubit/add_annoucements_cubit.dart';
+import 'package:grad_project/features/annoucements/logic/delete_annoucement_cubit/delete_annoucement_cubit.dart';
 import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/get_announcement_cubit.dart';
 import 'package:grad_project/features/annoucements/logic/get_teacher_cources_cubit/get_teacher_cources_cubit.dart';
+import 'package:grad_project/features/annoucements/logic/update_annoucement_cubit/update_annoucement_cubit.dart';
 import 'package:grad_project/features/quizes/data/data%20sources/quizzes_local_data_source.dart';
 import 'package:grad_project/features/quizes/data/data%20sources/quizzes_remote_data_source.dart';
 import 'package:grad_project/features/quizes/data/repos/quizzes_repo.dart';
@@ -47,8 +49,12 @@ Future<void> setupGetIt() async {
       () => AddAnnoucementsCubit(getIt(), getIt()));
   getIt.registerFactory<GetAnnouncementCubit>(
       () => GetAnnouncementCubit(getIt()));
-  //toDo:------------------------------ Courses API ------------------------------//    
-  
+  getIt.registerFactory<UpdateAnnoucementCubit>(
+      () => UpdateAnnoucementCubit(getIt()));
+  getIt.registerFactory<DeleteAnnoucementCubit>(
+      () => DeleteAnnoucementCubit(getIt()));
+  //toDo:------------------------------ Courses API ------------------------------//
+
   getIt.registerLazySingleton<AllCoursesRemoteDataSource>(
       () => AllCoursesRemoteDataSource(dio));
   getIt.registerLazySingleton<AllCoursesRepo>(() => AllCoursesRepo(

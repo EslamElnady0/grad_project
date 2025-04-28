@@ -22,6 +22,9 @@ mixin _$UpdateAnnoucementState<T> {
     required TResult Function() updateAnnoucementLoading,
     required TResult Function(T data) updateAnnoucementSuccess,
     required TResult Function(String error) updateAnnoucementFailure,
+    required TResult Function(
+            CourseResponse selectedCourse, String selectedCourseText)
+        selected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +33,8 @@ mixin _$UpdateAnnoucementState<T> {
     TResult? Function()? updateAnnoucementLoading,
     TResult? Function(T data)? updateAnnoucementSuccess,
     TResult? Function(String error)? updateAnnoucementFailure,
+    TResult? Function(CourseResponse selectedCourse, String selectedCourseText)?
+        selected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +43,8 @@ mixin _$UpdateAnnoucementState<T> {
     TResult Function()? updateAnnoucementLoading,
     TResult Function(T data)? updateAnnoucementSuccess,
     TResult Function(String error)? updateAnnoucementFailure,
+    TResult Function(CourseResponse selectedCourse, String selectedCourseText)?
+        selected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -50,6 +57,7 @@ mixin _$UpdateAnnoucementState<T> {
         updateAnnoucementSuccess,
     required TResult Function(UpdateAnnoucementFailure<T> value)
         updateAnnoucementFailure,
+    required TResult Function(UpdateAnnoucementSelected<T> value) selected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,6 +69,7 @@ mixin _$UpdateAnnoucementState<T> {
         updateAnnoucementSuccess,
     TResult? Function(UpdateAnnoucementFailure<T> value)?
         updateAnnoucementFailure,
+    TResult? Function(UpdateAnnoucementSelected<T> value)? selected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,6 +81,7 @@ mixin _$UpdateAnnoucementState<T> {
         updateAnnoucementSuccess,
     TResult Function(UpdateAnnoucementFailure<T> value)?
         updateAnnoucementFailure,
+    TResult Function(UpdateAnnoucementSelected<T> value)? selected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -144,6 +154,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() updateAnnoucementLoading,
     required TResult Function(T data) updateAnnoucementSuccess,
     required TResult Function(String error) updateAnnoucementFailure,
+    required TResult Function(
+            CourseResponse selectedCourse, String selectedCourseText)
+        selected,
   }) {
     return initial();
   }
@@ -155,6 +168,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? updateAnnoucementLoading,
     TResult? Function(T data)? updateAnnoucementSuccess,
     TResult? Function(String error)? updateAnnoucementFailure,
+    TResult? Function(CourseResponse selectedCourse, String selectedCourseText)?
+        selected,
   }) {
     return initial?.call();
   }
@@ -166,6 +181,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? updateAnnoucementLoading,
     TResult Function(T data)? updateAnnoucementSuccess,
     TResult Function(String error)? updateAnnoucementFailure,
+    TResult Function(CourseResponse selectedCourse, String selectedCourseText)?
+        selected,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -184,6 +201,7 @@ class _$InitialImpl<T> implements _Initial<T> {
         updateAnnoucementSuccess,
     required TResult Function(UpdateAnnoucementFailure<T> value)
         updateAnnoucementFailure,
+    required TResult Function(UpdateAnnoucementSelected<T> value) selected,
   }) {
     return initial(this);
   }
@@ -198,6 +216,7 @@ class _$InitialImpl<T> implements _Initial<T> {
         updateAnnoucementSuccess,
     TResult? Function(UpdateAnnoucementFailure<T> value)?
         updateAnnoucementFailure,
+    TResult? Function(UpdateAnnoucementSelected<T> value)? selected,
   }) {
     return initial?.call(this);
   }
@@ -212,6 +231,7 @@ class _$InitialImpl<T> implements _Initial<T> {
         updateAnnoucementSuccess,
     TResult Function(UpdateAnnoucementFailure<T> value)?
         updateAnnoucementFailure,
+    TResult Function(UpdateAnnoucementSelected<T> value)? selected,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -274,6 +294,9 @@ class _$UpdateAnnoucementLoadingImpl<T> implements UpdateAnnoucementLoading<T> {
     required TResult Function() updateAnnoucementLoading,
     required TResult Function(T data) updateAnnoucementSuccess,
     required TResult Function(String error) updateAnnoucementFailure,
+    required TResult Function(
+            CourseResponse selectedCourse, String selectedCourseText)
+        selected,
   }) {
     return updateAnnoucementLoading();
   }
@@ -285,6 +308,8 @@ class _$UpdateAnnoucementLoadingImpl<T> implements UpdateAnnoucementLoading<T> {
     TResult? Function()? updateAnnoucementLoading,
     TResult? Function(T data)? updateAnnoucementSuccess,
     TResult? Function(String error)? updateAnnoucementFailure,
+    TResult? Function(CourseResponse selectedCourse, String selectedCourseText)?
+        selected,
   }) {
     return updateAnnoucementLoading?.call();
   }
@@ -296,6 +321,8 @@ class _$UpdateAnnoucementLoadingImpl<T> implements UpdateAnnoucementLoading<T> {
     TResult Function()? updateAnnoucementLoading,
     TResult Function(T data)? updateAnnoucementSuccess,
     TResult Function(String error)? updateAnnoucementFailure,
+    TResult Function(CourseResponse selectedCourse, String selectedCourseText)?
+        selected,
     required TResult orElse(),
   }) {
     if (updateAnnoucementLoading != null) {
@@ -314,6 +341,7 @@ class _$UpdateAnnoucementLoadingImpl<T> implements UpdateAnnoucementLoading<T> {
         updateAnnoucementSuccess,
     required TResult Function(UpdateAnnoucementFailure<T> value)
         updateAnnoucementFailure,
+    required TResult Function(UpdateAnnoucementSelected<T> value) selected,
   }) {
     return updateAnnoucementLoading(this);
   }
@@ -328,6 +356,7 @@ class _$UpdateAnnoucementLoadingImpl<T> implements UpdateAnnoucementLoading<T> {
         updateAnnoucementSuccess,
     TResult? Function(UpdateAnnoucementFailure<T> value)?
         updateAnnoucementFailure,
+    TResult? Function(UpdateAnnoucementSelected<T> value)? selected,
   }) {
     return updateAnnoucementLoading?.call(this);
   }
@@ -342,6 +371,7 @@ class _$UpdateAnnoucementLoadingImpl<T> implements UpdateAnnoucementLoading<T> {
         updateAnnoucementSuccess,
     TResult Function(UpdateAnnoucementFailure<T> value)?
         updateAnnoucementFailure,
+    TResult Function(UpdateAnnoucementSelected<T> value)? selected,
     required TResult orElse(),
   }) {
     if (updateAnnoucementLoading != null) {
@@ -433,6 +463,9 @@ class _$UpdateAnnoucementSuccessImpl<T> implements UpdateAnnoucementSuccess<T> {
     required TResult Function() updateAnnoucementLoading,
     required TResult Function(T data) updateAnnoucementSuccess,
     required TResult Function(String error) updateAnnoucementFailure,
+    required TResult Function(
+            CourseResponse selectedCourse, String selectedCourseText)
+        selected,
   }) {
     return updateAnnoucementSuccess(data);
   }
@@ -444,6 +477,8 @@ class _$UpdateAnnoucementSuccessImpl<T> implements UpdateAnnoucementSuccess<T> {
     TResult? Function()? updateAnnoucementLoading,
     TResult? Function(T data)? updateAnnoucementSuccess,
     TResult? Function(String error)? updateAnnoucementFailure,
+    TResult? Function(CourseResponse selectedCourse, String selectedCourseText)?
+        selected,
   }) {
     return updateAnnoucementSuccess?.call(data);
   }
@@ -455,6 +490,8 @@ class _$UpdateAnnoucementSuccessImpl<T> implements UpdateAnnoucementSuccess<T> {
     TResult Function()? updateAnnoucementLoading,
     TResult Function(T data)? updateAnnoucementSuccess,
     TResult Function(String error)? updateAnnoucementFailure,
+    TResult Function(CourseResponse selectedCourse, String selectedCourseText)?
+        selected,
     required TResult orElse(),
   }) {
     if (updateAnnoucementSuccess != null) {
@@ -473,6 +510,7 @@ class _$UpdateAnnoucementSuccessImpl<T> implements UpdateAnnoucementSuccess<T> {
         updateAnnoucementSuccess,
     required TResult Function(UpdateAnnoucementFailure<T> value)
         updateAnnoucementFailure,
+    required TResult Function(UpdateAnnoucementSelected<T> value) selected,
   }) {
     return updateAnnoucementSuccess(this);
   }
@@ -487,6 +525,7 @@ class _$UpdateAnnoucementSuccessImpl<T> implements UpdateAnnoucementSuccess<T> {
         updateAnnoucementSuccess,
     TResult? Function(UpdateAnnoucementFailure<T> value)?
         updateAnnoucementFailure,
+    TResult? Function(UpdateAnnoucementSelected<T> value)? selected,
   }) {
     return updateAnnoucementSuccess?.call(this);
   }
@@ -501,6 +540,7 @@ class _$UpdateAnnoucementSuccessImpl<T> implements UpdateAnnoucementSuccess<T> {
         updateAnnoucementSuccess,
     TResult Function(UpdateAnnoucementFailure<T> value)?
         updateAnnoucementFailure,
+    TResult Function(UpdateAnnoucementSelected<T> value)? selected,
     required TResult orElse(),
   }) {
     if (updateAnnoucementSuccess != null) {
@@ -600,6 +640,9 @@ class _$UpdateAnnoucementFailureImpl<T> implements UpdateAnnoucementFailure<T> {
     required TResult Function() updateAnnoucementLoading,
     required TResult Function(T data) updateAnnoucementSuccess,
     required TResult Function(String error) updateAnnoucementFailure,
+    required TResult Function(
+            CourseResponse selectedCourse, String selectedCourseText)
+        selected,
   }) {
     return updateAnnoucementFailure(error);
   }
@@ -611,6 +654,8 @@ class _$UpdateAnnoucementFailureImpl<T> implements UpdateAnnoucementFailure<T> {
     TResult? Function()? updateAnnoucementLoading,
     TResult? Function(T data)? updateAnnoucementSuccess,
     TResult? Function(String error)? updateAnnoucementFailure,
+    TResult? Function(CourseResponse selectedCourse, String selectedCourseText)?
+        selected,
   }) {
     return updateAnnoucementFailure?.call(error);
   }
@@ -622,6 +667,8 @@ class _$UpdateAnnoucementFailureImpl<T> implements UpdateAnnoucementFailure<T> {
     TResult Function()? updateAnnoucementLoading,
     TResult Function(T data)? updateAnnoucementSuccess,
     TResult Function(String error)? updateAnnoucementFailure,
+    TResult Function(CourseResponse selectedCourse, String selectedCourseText)?
+        selected,
     required TResult orElse(),
   }) {
     if (updateAnnoucementFailure != null) {
@@ -640,6 +687,7 @@ class _$UpdateAnnoucementFailureImpl<T> implements UpdateAnnoucementFailure<T> {
         updateAnnoucementSuccess,
     required TResult Function(UpdateAnnoucementFailure<T> value)
         updateAnnoucementFailure,
+    required TResult Function(UpdateAnnoucementSelected<T> value) selected,
   }) {
     return updateAnnoucementFailure(this);
   }
@@ -654,6 +702,7 @@ class _$UpdateAnnoucementFailureImpl<T> implements UpdateAnnoucementFailure<T> {
         updateAnnoucementSuccess,
     TResult? Function(UpdateAnnoucementFailure<T> value)?
         updateAnnoucementFailure,
+    TResult? Function(UpdateAnnoucementSelected<T> value)? selected,
   }) {
     return updateAnnoucementFailure?.call(this);
   }
@@ -668,6 +717,7 @@ class _$UpdateAnnoucementFailureImpl<T> implements UpdateAnnoucementFailure<T> {
         updateAnnoucementSuccess,
     TResult Function(UpdateAnnoucementFailure<T> value)?
         updateAnnoucementFailure,
+    TResult Function(UpdateAnnoucementSelected<T> value)? selected,
     required TResult orElse(),
   }) {
     if (updateAnnoucementFailure != null) {
@@ -688,5 +738,200 @@ abstract class UpdateAnnoucementFailure<T>
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateAnnoucementFailureImplCopyWith<T, _$UpdateAnnoucementFailureImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateAnnoucementSelectedImplCopyWith<T, $Res> {
+  factory _$$UpdateAnnoucementSelectedImplCopyWith(
+          _$UpdateAnnoucementSelectedImpl<T> value,
+          $Res Function(_$UpdateAnnoucementSelectedImpl<T>) then) =
+      __$$UpdateAnnoucementSelectedImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({CourseResponse selectedCourse, String selectedCourseText});
+}
+
+/// @nodoc
+class __$$UpdateAnnoucementSelectedImplCopyWithImpl<T, $Res>
+    extends _$UpdateAnnoucementStateCopyWithImpl<T, $Res,
+        _$UpdateAnnoucementSelectedImpl<T>>
+    implements _$$UpdateAnnoucementSelectedImplCopyWith<T, $Res> {
+  __$$UpdateAnnoucementSelectedImplCopyWithImpl(
+      _$UpdateAnnoucementSelectedImpl<T> _value,
+      $Res Function(_$UpdateAnnoucementSelectedImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UpdateAnnoucementState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? selectedCourse = null,
+    Object? selectedCourseText = null,
+  }) {
+    return _then(_$UpdateAnnoucementSelectedImpl<T>(
+      selectedCourse: null == selectedCourse
+          ? _value.selectedCourse
+          : selectedCourse // ignore: cast_nullable_to_non_nullable
+              as CourseResponse,
+      selectedCourseText: null == selectedCourseText
+          ? _value.selectedCourseText
+          : selectedCourseText // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateAnnoucementSelectedImpl<T>
+    implements UpdateAnnoucementSelected<T> {
+  const _$UpdateAnnoucementSelectedImpl(
+      {required this.selectedCourse, required this.selectedCourseText});
+
+  @override
+  final CourseResponse selectedCourse;
+  @override
+  final String selectedCourseText;
+
+  @override
+  String toString() {
+    return 'UpdateAnnoucementState<$T>.selected(selectedCourse: $selectedCourse, selectedCourseText: $selectedCourseText)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateAnnoucementSelectedImpl<T> &&
+            (identical(other.selectedCourse, selectedCourse) ||
+                other.selectedCourse == selectedCourse) &&
+            (identical(other.selectedCourseText, selectedCourseText) ||
+                other.selectedCourseText == selectedCourseText));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, selectedCourse, selectedCourseText);
+
+  /// Create a copy of UpdateAnnoucementState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateAnnoucementSelectedImplCopyWith<T,
+          _$UpdateAnnoucementSelectedImpl<T>>
+      get copyWith => __$$UpdateAnnoucementSelectedImplCopyWithImpl<T,
+          _$UpdateAnnoucementSelectedImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() updateAnnoucementLoading,
+    required TResult Function(T data) updateAnnoucementSuccess,
+    required TResult Function(String error) updateAnnoucementFailure,
+    required TResult Function(
+            CourseResponse selectedCourse, String selectedCourseText)
+        selected,
+  }) {
+    return selected(selectedCourse, selectedCourseText);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? updateAnnoucementLoading,
+    TResult? Function(T data)? updateAnnoucementSuccess,
+    TResult? Function(String error)? updateAnnoucementFailure,
+    TResult? Function(CourseResponse selectedCourse, String selectedCourseText)?
+        selected,
+  }) {
+    return selected?.call(selectedCourse, selectedCourseText);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? updateAnnoucementLoading,
+    TResult Function(T data)? updateAnnoucementSuccess,
+    TResult Function(String error)? updateAnnoucementFailure,
+    TResult Function(CourseResponse selectedCourse, String selectedCourseText)?
+        selected,
+    required TResult orElse(),
+  }) {
+    if (selected != null) {
+      return selected(selectedCourse, selectedCourseText);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(UpdateAnnoucementLoading<T> value)
+        updateAnnoucementLoading,
+    required TResult Function(UpdateAnnoucementSuccess<T> value)
+        updateAnnoucementSuccess,
+    required TResult Function(UpdateAnnoucementFailure<T> value)
+        updateAnnoucementFailure,
+    required TResult Function(UpdateAnnoucementSelected<T> value) selected,
+  }) {
+    return selected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(UpdateAnnoucementLoading<T> value)?
+        updateAnnoucementLoading,
+    TResult? Function(UpdateAnnoucementSuccess<T> value)?
+        updateAnnoucementSuccess,
+    TResult? Function(UpdateAnnoucementFailure<T> value)?
+        updateAnnoucementFailure,
+    TResult? Function(UpdateAnnoucementSelected<T> value)? selected,
+  }) {
+    return selected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(UpdateAnnoucementLoading<T> value)?
+        updateAnnoucementLoading,
+    TResult Function(UpdateAnnoucementSuccess<T> value)?
+        updateAnnoucementSuccess,
+    TResult Function(UpdateAnnoucementFailure<T> value)?
+        updateAnnoucementFailure,
+    TResult Function(UpdateAnnoucementSelected<T> value)? selected,
+    required TResult orElse(),
+  }) {
+    if (selected != null) {
+      return selected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateAnnoucementSelected<T>
+    implements UpdateAnnoucementState<T> {
+  const factory UpdateAnnoucementSelected(
+          {required final CourseResponse selectedCourse,
+          required final String selectedCourseText}) =
+      _$UpdateAnnoucementSelectedImpl<T>;
+
+  CourseResponse get selectedCourse;
+  String get selectedCourseText;
+
+  /// Create a copy of UpdateAnnoucementState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateAnnoucementSelectedImplCopyWith<T,
+          _$UpdateAnnoucementSelectedImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

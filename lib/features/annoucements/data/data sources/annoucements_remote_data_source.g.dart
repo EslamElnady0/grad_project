@@ -117,7 +117,7 @@ class _AnnoucementsRemoteDataSource implements AnnoucementsRemoteDataSource {
     final _data = <String, dynamic>{};
     _data.addAll(announcementRequestBody.toJson());
     final _options = _setStreamType<UpdateAnnoucementResponseBody>(
-      Options(method: 'POST', headers: _headers, extra: _extra)
+      Options(method: 'PUT', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
             'dashboard/announcements/${announcementId}',
@@ -146,7 +146,7 @@ class _AnnoucementsRemoteDataSource implements AnnoucementsRemoteDataSource {
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<DeleteAnnoucementResponseBody>(
-      Options(method: 'POST', headers: _headers, extra: _extra)
+      Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
             'dashboard/announcements/${announcementId}',

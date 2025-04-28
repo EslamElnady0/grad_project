@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,12 +7,14 @@ import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/widgets/custom_hollow_button.dart';
 import 'package:grad_project/features/annoucements/logic/add_annoucements_cubit/add_annoucements_cubit.dart';
+import 'package:grad_project/features/annoucements/logic/update_annoucement_cubit/update_annoucement_cubit.dart';
 import 'package:intl/intl.dart';
 import '../../../../core/helpers/app_assets.dart';
 import '../../../../core/theme/app_text_styles.dart';
 
 class DateAndTimeSection extends StatefulWidget {
-  const DateAndTimeSection({super.key});
+  final bool isEdit;
+  const DateAndTimeSection({super.key, this.isEdit = false});
 
   @override
   State<DateAndTimeSection> createState() => _DateAndTimeSectionState();
@@ -37,8 +38,13 @@ class _DateAndTimeSectionState extends State<DateAndTimeSection> {
                     .then((value) {
                   if (value != null) {
                     setState(() {
-                      context.read<AddAnnoucementsCubit>().selectedDate =
-                          DateFormat('yyyy/MM/dd', 'en_US').format(value);
+                      widget.isEdit
+                          ? context
+                                  .read<UpdateAnnoucementCubit>()
+                                  .selectedDate =
+                              DateFormat('yyyy/MM/dd', 'en_US').format(value)
+                          : context.read<AddAnnoucementsCubit>().selectedDate =
+                              DateFormat('yyyy/MM/dd', 'en_US').format(value);
                     });
                   }
                 });
@@ -46,7 +52,13 @@ class _DateAndTimeSectionState extends State<DateAndTimeSection> {
               child: Row(
                 children: [
                   Text(
-                      context.read<AddAnnoucementsCubit>().selectedDate ??
+                      (widget.isEdit
+                              ? context
+                                  .read<UpdateAnnoucementCubit>()
+                                  .selectedDate
+                              : context
+                                  .read<AddAnnoucementsCubit>()
+                                  .selectedDate) ??
                           'اختر تاريخ',
                       style: AppTextStyles.font12BlackSemiBold
                           .copyWith(color: AppColors.darkGray)),
@@ -65,8 +77,11 @@ class _DateAndTimeSectionState extends State<DateAndTimeSection> {
                   .then((value) {
                 if (value != null) {
                   setState(() {
-                    context.read<AddAnnoucementsCubit>().selectedTime =
-                        '${value.hour.toString().padLeft(2, '0')}:${value.minute.toString().padLeft(2, '0')}';
+                    widget.isEdit
+                        ? context.read<UpdateAnnoucementCubit>().selectedTime =
+                            '${value.hour.toString().padLeft(2, '0')}:${value.minute.toString().padLeft(2, '0')}'
+                        : context.read<AddAnnoucementsCubit>().selectedTime =
+                            '${value.hour.toString().padLeft(2, '0')}:${value.minute.toString().padLeft(2, '0')}';
                   });
                 }
               });
@@ -74,10 +89,23 @@ class _DateAndTimeSectionState extends State<DateAndTimeSection> {
             child: Row(
               children: [
                 Text(
-                    context.read<AddAnnoucementsCubit>().selectedTime == null
+                    (widget.isEdit
+                                ? context
+                                    .read<UpdateAnnoucementCubit>()
+                                    .selectedTime
+                                : context
+                                    .read<AddAnnoucementsCubit>()
+                                    .selectedTime) ==
+                            null
                         ? 'اختر وقت'
                         : FormatDateAndTimeHelpers.convertTo12HourFormat(
-                            context.read<AddAnnoucementsCubit>().selectedTime!),
+                            (widget.isEdit
+                                ? context
+                                    .read<UpdateAnnoucementCubit>()
+                                    .selectedTime
+                                : context
+                                    .read<AddAnnoucementsCubit>()
+                                    .selectedTime)!),
                     style: AppTextStyles.font12BlackSemiBold
                         .copyWith(color: AppColors.darkGray)),
                 hGap(20),
