@@ -219,5 +219,6 @@
   "images": "Images",
   "showResultsAfterSubmit": "Show results and allow viewing answers after completing the quiz",
   "SelectWeek": "Select Week",
-  "week": "Week"
+  "week": "Week",
+  "questionsWithNoThe": "Questions"
 }

@@ -1764,6 +1764,16 @@ class S {
   String get week {
     return Intl.message('Week', name: 'week', desc: '', args: []);
   }
+
+  /// `Questions`
+  String get questionsWithNoThe {
+    return Intl.message(
+      'Questions',
+      name: 'questionsWithNoThe',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

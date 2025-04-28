@@ -239,6 +239,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "questionsCount": MessageLookupByLibrary.simpleMessage(
       "Number of Questions",
     ),
+    "questionsWithNoThe": MessageLookupByLibrary.simpleMessage("Questions"),
     "quiz": MessageLookupByLibrary.simpleMessage("Quiz"),
     "quizAdvices": MessageLookupByLibrary.simpleMessage("Quiz Tips"),
     "quizDesc": MessageLookupByLibrary.simpleMessage("Quiz Description"),
