@@ -95,6 +95,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "📰 أنشئ وأدر الأخبار والإعلانات الهامة لموادك الدراسية بسهولة، وأبقى طلابك على اطلاع دائم!",
     ),
     "dashboard": MessageLookupByLibrary.simpleMessage("لوحة التحكم"),
+    "dateAndTimeError": MessageLookupByLibrary.simpleMessage(
+      "يجب تحديد التاريخ والوقت للاختبار.",
+    ),
     "days": MessageLookupByLibrary.simpleMessage("الأيام"),
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
       "🤔 لم تبحث عن شيء بعد! ",
@@ -145,6 +148,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "group": MessageLookupByLibrary.simpleMessage("مجموعة"),
     "images": MessageLookupByLibrary.simpleMessage("صور"),
     "in_progress": MessageLookupByLibrary.simpleMessage("قيد التنفيذ"),
+    "incompleteQuestionError": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تحتوي جميع الأسئلة على سؤال، وإجابة واحدة على الأقل، وإجابة صحيحة مختارة.",
+    ),
     "interested": MessageLookupByLibrary.simpleMessage("مهتم"),
     "internalMap": MessageLookupByLibrary.simpleMessage("الخريطة الداخلية"),
     "lectureDescription": MessageLookupByLibrary.simpleMessage("وصف المحاضرة"),

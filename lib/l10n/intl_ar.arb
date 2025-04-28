@@ -224,5 +224,7 @@
   "selectDate": "اختر تاريخ",
   "selectTime": "اختر وقت",
   "enterYourQuestion": "ادخل سؤالك",
-  "maximumNumberOfQuestions": "تجاوزت الحد الاقصي لعدد الاسئلة الذي اختارته"
+  "maximumNumberOfQuestions": "تجاوزت الحد الاقصي لعدد الاسئلة الذي اختارته",
+  "incompleteQuestionError": "يجب أن تحتوي جميع الأسئلة على سؤال، وإجابة واحدة على الأقل، وإجابة صحيحة مختارة.",
+  "dateAndTimeError": "يجب تحديد التاريخ والوقت للاختبار."
 }

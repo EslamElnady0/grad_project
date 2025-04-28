@@ -97,6 +97,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "📰 Create and manage important news and announcements for your courses easily, and keep your students updated!",
     ),
     "dashboard": MessageLookupByLibrary.simpleMessage("Dashboard"),
+    "dateAndTimeError": MessageLookupByLibrary.simpleMessage(
+      "You have to specify date and time for the quiz.",
+    ),
     "days": MessageLookupByLibrary.simpleMessage("Days"),
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
       "🤔 You haven\'t searched for anything yet!",
@@ -151,6 +154,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "group": MessageLookupByLibrary.simpleMessage("Group"),
     "images": MessageLookupByLibrary.simpleMessage("Images"),
     "in_progress": MessageLookupByLibrary.simpleMessage("In Progress"),
+    "incompleteQuestionError": MessageLookupByLibrary.simpleMessage(
+      "All questions must have a question, at least one answer, and a selected correct answer.",
+    ),
     "interested": MessageLookupByLibrary.simpleMessage("like"),
     "internalMap": MessageLookupByLibrary.simpleMessage("Internal Map"),
     "lectureDescription": MessageLookupByLibrary.simpleMessage(

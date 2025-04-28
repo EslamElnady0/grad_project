@@ -5,7 +5,8 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../generated/l10n.dart';
 
 class ScheduleQuizText extends StatelessWidget {
-  const ScheduleQuizText({super.key});
+  final GlobalKey dateTimePickerKey;
+  const ScheduleQuizText({super.key, required this.dateTimePickerKey});
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +15,7 @@ class ScheduleQuizText extends StatelessWidget {
       children: [
         Text(
           S.of(context).scheduleQuiz,
+          key: dateTimePickerKey,
           style: AppTextStyles.font14BlackBold
               .copyWith(color: AppColors.darkerBlue),
         ),

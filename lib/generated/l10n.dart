@@ -1804,6 +1804,26 @@ class S {
       args: [],
     );
   }
+
+  /// `All questions must have a question, at least one answer, and a selected correct answer.`
+  String get incompleteQuestionError {
+    return Intl.message(
+      'All questions must have a question, at least one answer, and a selected correct answer.',
+      name: 'incompleteQuestionError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have to specify date and time for the quiz.`
+  String get dateAndTimeError {
+    return Intl.message(
+      'You have to specify date and time for the quiz.',
+      name: 'dateAndTimeError',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -2,7 +2,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'create_quiz_request_model.g.dart';
 
-// Model class for creating a quiz API request
 @JsonSerializable(explicitToJson: true)
 class CreateQuizRequestModel {
   @JsonKey(name: 'course_id')
@@ -45,7 +44,6 @@ class CreateQuizRequestModel {
   Map<String, dynamic> toJson() => _$CreateQuizRequestModelToJson(this);
 }
 
-// Model class for a quiz question
 @JsonSerializable(explicitToJson: true)
 class QuestionModel {
   final String question;
@@ -62,7 +60,6 @@ class QuestionModel {
   Map<String, dynamic> toJson() => _$QuestionModelToJson(this);
 }
 
-// Model class for a quiz answer
 @JsonSerializable()
 class AnswerModel {
   final String answer;
