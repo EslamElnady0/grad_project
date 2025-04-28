@@ -231,5 +231,6 @@
   "edit": "Edit",
   "delete": "Delete",
   "editAnnouncement": "Edit Announcement",
-  "edit_news": "✏️ Edit your announcement to keep your students informed with the latest details and updates"
+  "edit_news": "✏️ Edit your announcement to keep your students informed with the latest details and updates",
+  "assignments_home_message":"📝 Organize assignments, review solutions, and update grades with ease!"
 }

@@ -1864,6 +1864,16 @@ class S {
       args: [],
     );
   }
+
+  /// `📝 Organize assignments, review solutions, and update grades with ease!`
+  String get assignments_home_message {
+    return Intl.message(
+      '📝 Organize assignments, review solutions, and update grades with ease!',
+      name: 'assignments_home_message',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

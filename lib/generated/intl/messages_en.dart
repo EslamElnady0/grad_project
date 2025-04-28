@@ -63,6 +63,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "app_title": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "assignment": MessageLookupByLibrary.simpleMessage("Assignment"),
     "assignments": MessageLookupByLibrary.simpleMessage("Assignments"),
+    "assignments_home_message": MessageLookupByLibrary.simpleMessage(
+      "📝 Organize assignments, review solutions, and update grades with ease!",
+    ),
     "atLeastTwoAnswers": MessageLookupByLibrary.simpleMessage(
       "Please provide at least two answers for each question",
     ),
