@@ -1,10 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../helpers/app_assets.dart';
-import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
 import 'custom_red_grad_container.dart';
-import 'svg_icon_button.dart';
 import '../../generated/l10n.dart';
 
 class PublishRow extends StatelessWidget {
@@ -16,15 +13,9 @@ class PublishRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Container(
-            width: 40,
-            height: 40,
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-                color: AppColors.darkblue,
-                borderRadius: BorderRadius.circular(10)),
-            child: SvgIconButton(
-                iconPath: Assets.imagesSvgsEyeCrossedIcon, onPressed: () {})),
+        const Spacer(
+          flex: 1,
+        ),
         GestureDetector(
           onTap: onTap,
           child: CustomRedGradContainer(
