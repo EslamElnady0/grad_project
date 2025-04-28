@@ -82,7 +82,7 @@ class _QuizDateAndTimePickersState extends State<QuizDateAndTimePickers> {
                     if (value != null) {
                       setState(() {
                         context.read<AddQuizCubit>().selectedStartTime =
-                            '${value.hour.toString().padLeft(2, '0')}:${value.minute.toString().padLeft(2, '0')}';
+                            '${value.hour.toString().padLeft(2, '0')}:${value.minute.toString().padLeft(2, '0')}:00';
                       });
                     }
                   });

@@ -10,6 +10,7 @@ CreateQuizRequestModel _$CreateQuizRequestModelFromJson(
         Map<String, dynamic> json) =>
     CreateQuizRequestModel(
       courseId: json['course_id'] as String,
+      questionDegree: json['question_degree'] as String,
       title: json['title'] as String,
       description: json['description'] as String,
       totalDegree: json['total_degree'] as String,
@@ -28,6 +29,7 @@ Map<String, dynamic> _$CreateQuizRequestModelToJson(
       'title': instance.title,
       'description': instance.description,
       'total_degree': instance.totalDegree,
+      'question_degree': instance.questionDegree,
       'date': instance.date,
       'start_time': instance.startTime,
       'duration': instance.duration,

@@ -14,6 +14,8 @@ class CreateQuizRequestModel {
 
   @JsonKey(name: 'total_degree')
   final String totalDegree;
+  @JsonKey(name: 'question_degree')
+  final String questionDegree;
 
   final String date;
 
@@ -27,6 +29,7 @@ class CreateQuizRequestModel {
 
   CreateQuizRequestModel({
     required this.courseId,
+    required this.questionDegree,
     required this.title,
     required this.description,
     required this.totalDegree,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/widgets/custom_scaffold.dart';
+import 'package:grad_project/features/quizes/logic/quizzes_cubit/quizzes_cubit.dart';
 import 'package:grad_project/features/quizes/ui/widgets/question_list_widget.dart';
 
 import '../../../../core/di/dependency_injection.dart';
@@ -21,6 +22,9 @@ class AddQuizView extends StatelessWidget {
           ),
           BlocProvider(
             create: (context) => getIt<QuestionListCubit>(),
+          ),
+          BlocProvider(
+            create: (context) => getIt<QuizzesCubit>(),
           ),
         ],
         child: const AddQuizViewBody(),

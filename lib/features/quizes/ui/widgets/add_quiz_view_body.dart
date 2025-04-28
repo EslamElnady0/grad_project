@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,6 +10,7 @@ import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
 import 'package:grad_project/features/quizes/data/models/create_quiz_request_model.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../generated/l10n.dart';
+import '../../logic/quizzes_cubit/quizzes_cubit.dart';
 import '../cubit/add_quiz_cubit/add_quiz_cubit.dart';
 import 'add_quiz_drop_downs.dart';
 import 'question_list_widget.dart';
@@ -80,23 +79,36 @@ class AddQuizViewBody extends StatelessWidget {
                 ),
                 vGap(20),
                 PublishRow(
-                  onTap: () {
+                  onTap: () async {
+                    AddQuizCubit addQuizCubit = context.read<AddQuizCubit>();
                     CreateQuizRequestModel createQuizRequestModel =
                         CreateQuizRequestModel(
-                            courseId: "2",
-                            title: "dasd",
-                            description: "dasd",
-                            totalDegree: "totalDegree",
-                            date: "dasd",
-                            startTime: "sdsad",
-                            duration: "dsadas",
+                            courseId: "195",
+                            title: addQuizCubit.titleController.text,
+                            description: addQuizCubit.descController.text,
+                            totalDegree: addQuizCubit.finalDegree.toString(),
+                            questionDegree:
+                                addQuizCubit.selectedQuestionGrade.toString(),
+                            date: addQuizCubit.selectedDate!,
+                            startTime: addQuizCubit.selectedStartTime!,
+                            duration: addQuizCubit.selectedTime.toString(),
                             newQuestions: [
                           QuestionModel(question: "dasdasd", answers: [
                             AnswerModel(answer: "dasdasd", isCorrect: 0),
                             AnswerModel(answer: "dasddasdasdasd", isCorrect: 1),
-                          ])
+                            AnswerModel(answer: "dasddasdasdasd", isCorrect: 0),
+                            AnswerModel(answer: "dasddasdasdasd", isCorrect: 0),
+                          ]),
+                          QuestionModel(question: "aaaaaaaaaa", answers: [
+                            AnswerModel(answer: "yyyyyyyyyy", isCorrect: 0),
+                            AnswerModel(answer: "iiiiiiiiii", isCorrect: 1),
+                            AnswerModel(answer: "bbbbbbbbb", isCorrect: 0),
+                            AnswerModel(answer: "nnnnnnnnnnn", isCorrect: 0),
+                          ]),
                         ]);
-                    log(createQuizRequestModel.toJson().toString());
+                    // context
+                    //     .read<QuizzesCubit>()
+                    //     .createQuiz(createQuizRequestModel);
                   },
                 ),
                 vGap(24),
