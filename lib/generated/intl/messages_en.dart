@@ -305,6 +305,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectCources": MessageLookupByLibrary.simpleMessage(
       "📚 Please select the courses you want to follow for updates and announcements!",
     ),
+    "selectDate": MessageLookupByLibrary.simpleMessage("Select Date"),
+    "selectTime": MessageLookupByLibrary.simpleMessage("Select Time"),
     "select_subjects": MessageLookupByLibrary.simpleMessage(
       "📚 Please select the subjects you want to check for posts and updates!",
     ),

@@ -220,5 +220,7 @@
   "showResultsAfterSubmit": "عرض النتائج وإتاحة الإجابة لهم بعد الإنتهاء من الإختبار",
   "SelectWeek": "اختر الأسبوع",
   "week": "الأسبوع",
-  "questionsWithNoThe": "أسئلة"
+  "questionsWithNoThe": "أسئلة",
+  "selectDate": "اختر تاريخ",
+  "selectTime": "اختر وقت"
 }

@@ -10,6 +10,7 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../generated/l10n.dart';
 import '../cubit/add_quiz_cubit/add_quiz_cubit.dart';
 import 'add_quiz_drop_downs.dart';
+import 'quiz_date_and_time_pickers.dart';
 
 class AddQuizViewBody extends StatelessWidget {
   const AddQuizViewBody({super.key});
@@ -50,6 +51,7 @@ class AddQuizViewBody extends StatelessWidget {
             ],
           ),
           vGap(12),
+          const QuizDateAndTimePickers()
         ],
       ),
     );

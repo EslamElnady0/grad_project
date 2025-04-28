@@ -220,5 +220,7 @@
   "showResultsAfterSubmit": "Show results and allow viewing answers after completing the quiz",
   "SelectWeek": "Select Week",
   "week": "Week",
-  "questionsWithNoThe": "Questions"
+  "questionsWithNoThe": "Questions",
+  "selectDate": "Select Date",
+  "selectTime": "Select Time"
 }

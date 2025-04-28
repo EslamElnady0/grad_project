@@ -298,6 +298,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectCources": MessageLookupByLibrary.simpleMessage(
       "📚 يرجى اختيار المواد التي تود الاطلاع على منشوراتها وآخر مستجداتها!",
     ),
+    "selectDate": MessageLookupByLibrary.simpleMessage("اختر تاريخ"),
+    "selectTime": MessageLookupByLibrary.simpleMessage("اختر وقت"),
     "select_subjects": MessageLookupByLibrary.simpleMessage(
       "📚 يرجى اختيار المواد التي تود الاطلاع على منشوراتها وآخر مستجداتها!",
     ),
