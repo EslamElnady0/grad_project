@@ -24,7 +24,9 @@ class _AnnoucementsBodyState extends State<AnnoucementsBody> {
   Future<void> initApiCalls() async {
     await Future.wait([
       context.read<GetAnnouncementCubit>().getAnnouncement(),
-      context.read<GetCourcesToFilterCubit>().getTeacherCourses()
+      FlavorsFunctions.isAdmin()
+          ? context.read<GetCourcesToFilterCubit>().getTeacherCourses()
+          : context.read<GetCourcesToFilterCubit>().getStudentsCourses(),
     ]);
   }
 
