@@ -13,7 +13,7 @@ part 'add_annoucements_cubit.freezed.dart';
 
 class AddAnnoucementsCubit extends Cubit<AddAnnoucementsState> {
   final AnnoucementsRepo _repo;
-  final GetTeacherCourcesCubit _getTeacherCourcesCubit;
+  final GetCourcesToFilterCubit _getTeacherCourcesCubit;
   AddAnnoucementsCubit(this._repo, this._getTeacherCourcesCubit)
       : super(const AddAnnoucementsState.initial());
   late List<CourseResponse> coursesList;

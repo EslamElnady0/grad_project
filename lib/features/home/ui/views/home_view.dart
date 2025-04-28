@@ -25,7 +25,7 @@ class HomeView extends StatelessWidget {
           create: (context) => getIt<GetAnnouncementCubit>(),
         ),
         BlocProvider(
-          create: (context) => getIt<GetTeacherCourcesCubit>(),
+          create: (context) => getIt<GetCourcesToFilterCubit>(),
         ),
         BlocProvider(
           create: (context) => AnnouncementFilterCubit(),

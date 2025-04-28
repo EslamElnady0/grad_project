@@ -8,6 +8,7 @@ import 'package:retrofit/retrofit.dart';
 import '../../../../core/networking/api_constants.dart';
 import '../models/add_annoucement_request_body.dart';
 import '../models/add_annoucement_response_body.dart';
+import '../models/students_courses_response.dart';
 part 'annoucements_remote_data_source.g.dart';
 
 //if this file is created for the first time or modified
@@ -42,4 +43,8 @@ abstract class AnnoucementsRemoteDataSource {
   Future<DeleteAnnoucementResponseBody> deleteAnnoucement(
     @Path() String announcementId,
   );
+  @GET(ApiConstants.announcements)
+  Future<PaginatedAnnouncementsResponse> getStudentsAnnoucements();
+  @GET(ApiConstants.courses)
+  Future<StudentsCoursesResponse> getStudentsCourses();
 }

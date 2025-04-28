@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/di/dependency_injection.dart';
+import 'package:grad_project/core/flavors/flavors_functions.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/features/annoucements/data/models/paginated_announcements_response.dart';
@@ -19,7 +20,9 @@ class AnnoucementItem extends StatelessWidget {
     return Container(
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-      padding: EdgeInsetsDirectional.only(start: 16.w, top: 12.h, bottom: 12.h),
+      padding: FlavorsFunctions.isAdmin()
+          ? EdgeInsetsDirectional.only(start: 16.w, top: 12.h, bottom: 12.h)
+          : EdgeInsetsDirectional.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.circular(16.r),
@@ -44,12 +47,14 @@ class AnnoucementItem extends StatelessWidget {
                   specialization: announcementModel.course.name,
                 ),
               ),
-              BlocProvider(
-                create: (context) => getIt<DeleteAnnoucementCubit>(),
-                child: AnnoucementPopUpMenu(
-                  announcement: announcementModel,
-                ),
-              ),
+              FlavorsFunctions.isAdmin()
+                  ? BlocProvider(
+                      create: (context) => getIt<DeleteAnnoucementCubit>(),
+                      child: AnnoucementPopUpMenu(
+                        announcement: announcementModel,
+                      ),
+                    )
+                  : const SizedBox.shrink(),
             ],
           ),
           vGap(12),
@@ -84,7 +89,7 @@ class AnnoucementItem extends StatelessWidget {
                 size: 17.r,
                 color: AppColors.gray,
               ),
-              hGap(16)
+              FlavorsFunctions.isAdmin() ? hGap(16) : const SizedBox(),
             ],
           )
         ],

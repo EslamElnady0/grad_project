@@ -33,7 +33,7 @@ class UpdateAnnoucementView extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) =>
-              getIt<GetTeacherCourcesCubit>()..getTeacherCourses(),
+              getIt<GetCourcesToFilterCubit>()..getTeacherCourses(),
         ),
       ],
       child: CustomScaffold(

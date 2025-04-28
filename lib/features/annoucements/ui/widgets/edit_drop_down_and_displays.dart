@@ -30,7 +30,7 @@ class EditDropDownAndDisplays extends StatelessWidget {
                   .copyWith(color: AppColors.darkerBlue),
             ),
             vGap(12),
-            BlocBuilder<GetTeacherCourcesCubit, GetTeacherCourcesState>(
+            BlocBuilder<GetCourcesToFilterCubit, GetCourcesToFilterState>(
               builder: (context, state) => state.maybeWhen(
                 orElse: () => Padding(
                   padding: EdgeInsetsDirectional.only(start: 25.w),
@@ -38,7 +38,7 @@ class EditDropDownAndDisplays extends StatelessWidget {
                     color: AppColors.darkblue,
                   ),
                 ),
-                getTeacherCourcesSuccess: (data) {
+                getCourcesToFilterSuccess: (data) {
                   data as TeachersCoursesResponse;
 
                   return BlocBuilder<UpdateAnnoucementCubit,

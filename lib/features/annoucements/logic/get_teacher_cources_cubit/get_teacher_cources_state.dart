@@ -1,8 +1,12 @@
 part of 'get_teacher_cources_cubit.dart';
+
 @freezed
-class GetTeacherCourcesState<T> with _$GetTeacherCourcesState {
-  const factory GetTeacherCourcesState.initial() = _Initial;
-  const factory GetTeacherCourcesState.getTeacherCourcesLoading() = GetTeacherCourcesLoading;
-  const factory GetTeacherCourcesState.getTeacherCourcesSuccess(T data) = GetTeacherCourcesSuccess<T>;
-  const factory GetTeacherCourcesState.getTeacherCourcesFailure(String error) = GetTeacherCourcesFailure;
+class GetCourcesToFilterState<T> with _$GetCourcesToFilterState {
+  const factory GetCourcesToFilterState.initial() = _Initial;
+  const factory GetCourcesToFilterState.getCourcesToFilterLoading() =
+      GetCourcesToFilterLoading;
+  const factory GetCourcesToFilterState.getCourcesToFilterSuccess(T data) =
+      GetCourcesToFilterSuccess<T>;
+  const factory GetCourcesToFilterState.getCourcesToFilterFailure(
+      String error) = GetCourcesToFilterFailure;
 }

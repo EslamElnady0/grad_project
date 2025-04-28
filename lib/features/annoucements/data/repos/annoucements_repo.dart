@@ -9,6 +9,7 @@ import 'package:grad_project/features/annoucements/data/models/update_annoucemen
 import '../data sources/annoucements_local_data_source.dart';
 import '../data sources/annoucements_remote_data_source.dart';
 import '../models/add_annoucement_request_body.dart';
+import '../models/students_courses_response.dart';
 
 class AnnoucementsRepo {
   final AnnoucementsRemoteDataSource remoteDataSource;
@@ -41,9 +42,28 @@ class AnnoucementsRepo {
     }
   }
 
+  Future<ApiResult<PaginatedAnnouncementsResponse>>
+      getStudentsAnnoucements() async {
+    try {
+      final response = await remoteDataSource.getStudentsAnnoucements();
+      return ApiResult.success(response);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
   Future<ApiResult<TeachersCoursesResponse>> getTeacherCourses() async {
     try {
       final response = await remoteDataSource.getTeacherCourses();
+      return ApiResult.success(response);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
+  Future<ApiResult<StudentsCoursesResponse>> getStudentsCourses() async {
+    try {
+      final response = await remoteDataSource.getStudentsCourses();
       return ApiResult.success(response);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));

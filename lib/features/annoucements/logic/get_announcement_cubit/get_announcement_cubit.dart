@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grad_project/core/flavors/flavors_functions.dart';
 import 'package:grad_project/features/annoucements/data/repos/annoucements_repo.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -13,13 +14,15 @@ class GetAnnouncementCubit extends Cubit<GetAnnouncementState> {
 
   Future<void> getAnnouncement() async {
     emit(const GetAnnouncementState.getAnnouncementLoading());
-    final result = await _repo.getAnnoucements(AnnouncementRequestBody(
-      departmentId: "",
-      semesterId: '',
-      courseId: "",
-      title: "",
-      body: "",
-    ));
+    final result = FlavorsFunctions.isAdmin()
+        ? await _repo.getAnnoucements(AnnouncementRequestBody(
+            departmentId: "",
+            semesterId: '',
+            courseId: "",
+            title: "",
+            body: "",
+          ))
+        : await _repo.getStudentsAnnoucements();
     result.when(
       success: (data) {
         emit(GetAnnouncementState.getAnnouncementSuccess(data));
