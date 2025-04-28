@@ -19,40 +19,42 @@ class AddQuizViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomInnerScreensAppBar(title: S.of(context).createQuiz),
-          vGap(4),
-          TitleTextWidget(text: S.of(context).quizHelperText),
-          vGap(22),
-          TitleAndDescTextFields(
-              formKey: context.read<AddQuizCubit>().formKey,
-              titleController: context.read<AddQuizCubit>().titleController,
-              descController: context.read<AddQuizCubit>().descController,
-              title: S.of(context).quizTitle,
-              titleHintText: S.of(context).quizTitleHelper,
-              desc: S.of(context).quizDescription,
-              descHintText: S.of(context).quizDescriptionHelper),
-          vGap(12),
-          const AddQuizDropDowns(),
-          vGap(14),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                S.of(context).scheduleQuiz,
-                style: AppTextStyles.font14BlackBold
-                    .copyWith(color: AppColors.darkerBlue),
-              ),
-              vGap(5),
-              Text(S.of(context).scheduleQuizHelper,
-                  style: AppTextStyles.font12GrayMedium),
-            ],
-          ),
-          vGap(12),
-          const QuizDateAndTimePickers()
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomInnerScreensAppBar(title: S.of(context).createQuiz),
+            vGap(4),
+            TitleTextWidget(text: S.of(context).quizHelperText),
+            vGap(22),
+            TitleAndDescTextFields(
+                formKey: context.read<AddQuizCubit>().formKey,
+                titleController: context.read<AddQuizCubit>().titleController,
+                descController: context.read<AddQuizCubit>().descController,
+                title: S.of(context).quizTitle,
+                titleHintText: S.of(context).quizTitleHelper,
+                desc: S.of(context).quizDescription,
+                descHintText: S.of(context).quizDescriptionHelper),
+            vGap(12),
+            const AddQuizDropDowns(),
+            vGap(14),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  S.of(context).scheduleQuiz,
+                  style: AppTextStyles.font14BlackBold
+                      .copyWith(color: AppColors.darkerBlue),
+                ),
+                vGap(5),
+                Text(S.of(context).scheduleQuizHelper,
+                    style: AppTextStyles.font12GrayMedium),
+              ],
+            ),
+            vGap(12),
+            const QuizDateAndTimePickers()
+          ],
+        ),
       ),
     );
   }
