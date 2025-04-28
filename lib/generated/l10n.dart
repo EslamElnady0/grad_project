@@ -1874,6 +1874,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Create Assignment`
+  String get create_assigment {
+    return Intl.message(
+      'Create Assignment',
+      name: 'create_assigment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scheduled Assignments`
+  String get scheduled_assignments {
+    return Intl.message(
+      'Scheduled Assignments',
+      name: 'scheduled_assignments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Previous Assignments`
+  String get previous_assignments {
+    return Intl.message(
+      'Previous Assignments',
+      name: 'previous_assignments',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

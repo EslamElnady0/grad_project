@@ -102,6 +102,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "create_and_manage_news": MessageLookupByLibrary.simpleMessage(
       "📰 Create and manage important news and announcements for your courses easily, and keep your students updated!",
     ),
+    "create_assigment": MessageLookupByLibrary.simpleMessage(
+      "Create Assignment",
+    ),
     "dashboard": MessageLookupByLibrary.simpleMessage("Dashboard"),
     "dateAndTimeError": MessageLookupByLibrary.simpleMessage(
       "You have to specify date and time for the quiz.",
@@ -244,6 +247,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "📚 Prepare in Advance",
     ),
     "previous": MessageLookupByLibrary.simpleMessage("Previous"),
+    "previous_assignments": MessageLookupByLibrary.simpleMessage(
+      "Previous Assignments",
+    ),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "profile_picture": MessageLookupByLibrary.simpleMessage("Profile Picture"),
     "profile_welcome_message": MessageLookupByLibrary.simpleMessage(
@@ -312,6 +318,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
       "📅 Welcome to the Weekly Schedule page! Select the days you want to view to easily track your lecture and practical session timings.",
+    ),
+    "scheduled_assignments": MessageLookupByLibrary.simpleMessage(
+      "Scheduled Assignments",
     ),
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       "Search for a building, lecture hall, room, etc..!",

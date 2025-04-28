@@ -100,6 +100,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "create_and_manage_news": MessageLookupByLibrary.simpleMessage(
       "📰 أنشئ وأدر الأخبار والإعلانات الهامة لموادك الدراسية بسهولة، وأبقى طلابك على اطلاع دائم!",
     ),
+    "create_assigment": MessageLookupByLibrary.simpleMessage("إنشاء إسايماينت"),
     "dashboard": MessageLookupByLibrary.simpleMessage("لوحة التحكم"),
     "dateAndTimeError": MessageLookupByLibrary.simpleMessage(
       "يجب تحديد التاريخ والوقت للاختبار.",
@@ -234,6 +235,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "postponed": MessageLookupByLibrary.simpleMessage("مؤجل."),
     "prepareWell": MessageLookupByLibrary.simpleMessage("📚 استعد مسبقًا"),
     "previous": MessageLookupByLibrary.simpleMessage("السابق"),
+    "previous_assignments": MessageLookupByLibrary.simpleMessage(
+      "اسايمينتات سابقة",
+    ),
     "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "profile_picture": MessageLookupByLibrary.simpleMessage("الصورة الشخصية"),
     "profile_welcome_message": MessageLookupByLibrary.simpleMessage(
@@ -301,6 +305,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
       "📅 مرحباً بك في صفحة الجدول الأسبوعي! حدد الأيام التي ترغب في عرض جدولها لتتابع مواعيد محاضراتك وجلساتك العملية بسهولة.",
+    ),
+    "scheduled_assignments": MessageLookupByLibrary.simpleMessage(
+      "اسايمينتات مجدولة",
     ),
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       " ابحث عن مبني، مدرج، قاعة، الخ..!",
