@@ -5,7 +5,6 @@ import '../../../../core/widgets/custom_app_bar.dart';
 import '../../../../generated/l10n.dart';
 import '../../../home/ui/widgets/title_text_widget.dart';
 
-
 class AddLectureViewBody extends StatelessWidget {
   const AddLectureViewBody({super.key});
 
@@ -21,6 +20,7 @@ class AddLectureViewBody extends StatelessWidget {
           TitleTextWidget(text: S.of(context).addStudyContentSubtitle),
           vGap(16),
           const LectureFormContent(),
+          vGap(16),
         ],
       ),
     );

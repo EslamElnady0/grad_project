@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/core/data/models/all_courses_response_model.dart';
+import 'package:grad_project/core/logic/all_courses_cubit/all_courses_cubit.dart';
 import 'package:grad_project/features/lecture_manager/ui/widgets/lecture_manager_item.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../generated/l10n.dart';
 import '../../../home/ui/widgets/home_screens_header_row.dart';
@@ -12,38 +16,67 @@ class LectureManagerViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.0.w),
-        child: Column(
-          children: [
-            vGap(22),
-            HomeScreensHeaderRow(
-              onMenuTap: () {
-                Scaffold.of(context).openDrawer();
-              },
-              onSearchTap: () {},
+      child: Column(
+        children: [
+          vGap(22),
+          HomeScreensHeaderRow(
+            onMenuTap: () {
+              Scaffold.of(context).openDrawer();
+            },
+            onSearchTap: () {},
+          ),
+          vGap(12),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            child: TitleTextWidget(
+              text: S.of(context).full_control_over_courses,
             ),
-            vGap(12),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: TitleTextWidget(
-                text: S.of(context).full_control_over_courses,
-              ),
-            ),
-            vGap(12),
-            ListView.builder(
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return const LectureManagerItem();
-              },
-            )
-          ],
+          ),
+          vGap(12),
+          BlocConsumer<AllCoursesCubit, AllCoursesState>(
+            listener: (context, state) {},
+            builder: (context, state) {
+              if (state is AllCoursesSuccess && state.data != null) {
+                final allCoursesResponseModel = state.data;
+      
+                return _buildCourseList(allCoursesResponseModel!);
+              } else {
+                return _buildSkeletonList();
+              }
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildCourseList(AllCoursesResponseModel allCoursesResponseModel) {
+    return ListView.builder(
+      padding: EdgeInsets.only(bottom: 200.h),
+      physics: const NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
+      itemCount: allCoursesResponseModel.data!.length,
+      itemBuilder: (context, index) {
+        return LectureManagerItem(
+          courseData: allCoursesResponseModel.data![index],
+        );
+      },
+    );
+  }
+
+  Widget _buildSkeletonList() {
+    return Skeletonizer(
+      enabled: true,
+      child: ListView.builder(
+        shrinkWrap: true,
+         physics: const NeverScrollableScrollPhysics(),
+        padding: EdgeInsets.zero,
+        itemCount: 2,
+        itemBuilder: (context, index) => LectureManagerItem(
+          courseData: CourseData(), // عرض بيانات فارغة
         ),
       ),
     );
   }
 }
-
- 
