@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
@@ -41,6 +43,7 @@ class AddQuizDropDowns extends StatelessWidget {
                     context.read<AddQuizCubit>().selectedQuestionsCount = value;
                     context.read<AddQuizCubit>().finalDegree = value *
                         context.read<AddQuizCubit>().selectedQuestionGrade;
+                    log("# of questinos ${context.read<AddQuizCubit>().selectedQuestionsCount}");
                   });
                 },
               ),

@@ -222,5 +222,7 @@
   "week": "الأسبوع",
   "questionsWithNoThe": "أسئلة",
   "selectDate": "اختر تاريخ",
-  "selectTime": "اختر وقت"
+  "selectTime": "اختر وقت",
+  "enterYourQuestion": "ادخل سؤالك",
+  "maximumNumberOfQuestions": "تجاوزت الحد الاقصي لعدد الاسئلة الذي اختارته"
 }

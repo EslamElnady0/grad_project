@@ -10,7 +10,9 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../generated/l10n.dart';
 import '../cubit/add_quiz_cubit/add_quiz_cubit.dart';
 import 'add_quiz_drop_downs.dart';
+import 'question_list_widget.dart';
 import 'quiz_date_and_time_pickers.dart';
+import 'schedule_quiz_text.dart';
 
 class AddQuizViewBody extends StatelessWidget {
   const AddQuizViewBody({super.key});
@@ -19,42 +21,64 @@ class AddQuizViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CustomInnerScreensAppBar(title: S.of(context).createQuiz),
-            vGap(4),
-            TitleTextWidget(text: S.of(context).quizHelperText),
-            vGap(22),
-            TitleAndDescTextFields(
-                formKey: context.read<AddQuizCubit>().formKey,
-                titleController: context.read<AddQuizCubit>().titleController,
-                descController: context.read<AddQuizCubit>().descController,
-                title: S.of(context).quizTitle,
-                titleHintText: S.of(context).quizTitleHelper,
-                desc: S.of(context).quizDescription,
-                descHintText: S.of(context).quizDescriptionHelper),
-            vGap(12),
-            const AddQuizDropDowns(),
-            vGap(14),
-            Column(
+      child: CustomScrollView(
+        controller: context.read<AddQuizCubit>().scrollController,
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                CustomInnerScreensAppBar(title: S.of(context).createQuiz),
+                vGap(4),
+                TitleTextWidget(text: S.of(context).quizHelperText),
+                vGap(22),
+                TitleAndDescTextFields(
+                    formKey: context.read<AddQuizCubit>().formKey,
+                    titleController:
+                        context.read<AddQuizCubit>().titleController,
+                    descController: context.read<AddQuizCubit>().descController,
+                    title: S.of(context).quizTitle,
+                    titleHintText: S.of(context).quizTitleHelper,
+                    desc: S.of(context).quizDescription,
+                    descHintText: S.of(context).quizDescriptionHelper),
+                vGap(12),
+                const AddQuizDropDowns(),
+                vGap(14),
+                const ScheduleQuizText(),
+                vGap(12),
+                const QuizDateAndTimePickers(),
+                vGap(12),
                 Text(
-                  S.of(context).scheduleQuiz,
-                  style: AppTextStyles.font14BlackBold
+                  S.of(context).questions,
+                  style: AppTextStyles.font14BlackLightSemibold
                       .copyWith(color: AppColors.darkerBlue),
                 ),
-                vGap(5),
-                Text(S.of(context).scheduleQuizHelper,
-                    style: AppTextStyles.font12GrayMedium),
+                vGap(12),
               ],
             ),
-            vGap(12),
-            const QuizDateAndTimePickers()
-          ],
-        ),
+          ),
+          const QuestionListWidget(),
+          SliverToBoxAdapter(
+            child: Column(
+              children: [
+                vGap(12),
+                FloatingActionButton(
+                  onPressed: () {
+                    context.read<QuestionListCubit>().addQuestion(
+                        context: context,
+                        selectedQuestionsCount:
+                            context.read<AddQuizCubit>().selectedQuestionsCount,
+                        scrollController:
+                            context.read<AddQuizCubit>().scrollController);
+                  },
+                  backgroundColor: AppColors.darkblue,
+                  child: const Icon(Icons.add, color: Colors.white),
+                ),
+                vGap(12),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

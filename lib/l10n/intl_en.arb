@@ -222,5 +222,7 @@
   "week": "Week",
   "questionsWithNoThe": "Questions",
   "selectDate": "Select Date",
-  "selectTime": "Select Time"
+  "selectTime": "Select Time",
+  "enterYourQuestion": "Enter your question",
+  "maximumNumberOfQuestions": "Maximum number of questions reached"
 }

@@ -110,6 +110,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "eLearning": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "endsAt": MessageLookupByLibrary.simpleMessage("Ends at"),
+    "enterYourQuestion": MessageLookupByLibrary.simpleMessage(
+      "Enter your question",
+    ),
     "enter_code": MessageLookupByLibrary.simpleMessage(
       "Enter the 6-digit code that was sent to you.",
     ),
@@ -172,6 +175,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "materials_center": MessageLookupByLibrary.simpleMessage(
       "👨‍🏫 Easily manage your course materials—from students to lectures and quizzes!",
+    ),
+    "maximumNumberOfQuestions": MessageLookupByLibrary.simpleMessage(
+      "Maximum number of questions reached",
     ),
     "midterm": MessageLookupByLibrary.simpleMessage("Midterm"),
     "minute": MessageLookupByLibrary.simpleMessage("Minute"),

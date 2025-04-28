@@ -8,11 +8,13 @@ class AddQuizCubit extends Cubit<AddQuizState> {
   AddQuizCubit() : super(const AddQuizState.initial());
   TextEditingController titleController = TextEditingController();
   TextEditingController descController = TextEditingController();
+  ScrollController scrollController = ScrollController();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   @override
   Future<void> close() {
     titleController.dispose();
     descController.dispose();
+    scrollController.dispose();
     return super.close();
   }
 

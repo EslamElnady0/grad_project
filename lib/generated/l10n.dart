@@ -1784,6 +1784,26 @@ class S {
   String get selectTime {
     return Intl.message('Select Time', name: 'selectTime', desc: '', args: []);
   }
+
+  /// `Enter your question`
+  String get enterYourQuestion {
+    return Intl.message(
+      'Enter your question',
+      name: 'enterYourQuestion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Maximum number of questions reached`
+  String get maximumNumberOfQuestions {
+    return Intl.message(
+      'Maximum number of questions reached',
+      name: 'maximumNumberOfQuestions',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

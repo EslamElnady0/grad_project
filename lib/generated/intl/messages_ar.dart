@@ -108,6 +108,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "eLearning": MessageLookupByLibrary.simpleMessage("التعليم الإلكتروني"),
     "email": MessageLookupByLibrary.simpleMessage("الإيميل"),
     "endsAt": MessageLookupByLibrary.simpleMessage("ينتهي"),
+    "enterYourQuestion": MessageLookupByLibrary.simpleMessage("ادخل سؤالك"),
     "enter_code": MessageLookupByLibrary.simpleMessage(
       "أدخل الكود المكون من 6 أرقام اللي اتبعت ليك.",
     ),
@@ -166,6 +167,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "materials_center": MessageLookupByLibrary.simpleMessage(
       "👨‍🏫 مركز إدارة المواد الدراسية الخاصة بك بكل سهولة، من الطلاب إلى المحاضرات والكويزات!",
+    ),
+    "maximumNumberOfQuestions": MessageLookupByLibrary.simpleMessage(
+      "تجاوزت الحد الاقصي لعدد الاسئلة الذي اختارته",
     ),
     "midterm": MessageLookupByLibrary.simpleMessage("الميدتيرم"),
     "minute": MessageLookupByLibrary.simpleMessage("دقيقة"),
