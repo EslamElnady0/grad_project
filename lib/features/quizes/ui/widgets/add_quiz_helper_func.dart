@@ -19,12 +19,15 @@ void showErrorSnackBar(BuildContext context, String message) {
 bool validateQuestions(
     List<QuestionData> questionDataList, BuildContext context) {
   for (final questionData in questionDataList) {
-    if (questionData.question.isEmpty) {
+    if (questionData.question.trim().isEmpty) {
       showErrorSnackBar(context, S.of(context).incompleteQuestionError);
       return false;
     }
-    if (questionData.answers.every((answer) => answer.isEmpty)) {
-      showErrorSnackBar(context, S.of(context).incompleteQuestionError);
+    final nonEmptyAnswers = questionData.answers
+        .where((answer) => answer.trim().isNotEmpty)
+        .toList();
+    if (nonEmptyAnswers.length < 2) {
+      showErrorSnackBar(context, S.of(context).atLeastTwoAnswers);
       return false;
     }
     if (questionData.selectedAnswerIndex == null) {
@@ -40,7 +43,11 @@ List<QuestionModel> buildNewQuestions(List<QuestionData> questionDataList) {
     final questionData = entry.value;
     return QuestionModel(
       question: questionData.question,
-      answers: questionData.answers.asMap().entries.map((answerEntry) {
+      answers: questionData.answers
+          .asMap()
+          .entries
+          .where((answerEntry) => answerEntry.value.trim().isNotEmpty)
+          .map((answerEntry) {
         final answerIndex = answerEntry.key;
         return AnswerModel(
           answer: answerEntry.value,

@@ -226,5 +226,6 @@
   "enterYourQuestion": "Enter your question",
   "maximumNumberOfQuestions": "Maximum number of questions reached",
   "incompleteQuestionError": "All questions must have a question, at least one answer, and a selected correct answer.",
-  "dateAndTimeError": "You have to specify date and time for the quiz."
+  "dateAndTimeError": "You have to specify date and time for the quiz.",
+  "atLeastTwoAnswers": "Please provide at least two answers for each question"
 }

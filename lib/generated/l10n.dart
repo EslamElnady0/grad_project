@@ -1824,6 +1824,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Please provide at least two answers for each question`
+  String get atLeastTwoAnswers {
+    return Intl.message(
+      'Please provide at least two answers for each question',
+      name: 'atLeastTwoAnswers',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

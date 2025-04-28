@@ -226,5 +226,6 @@
   "enterYourQuestion": "ادخل سؤالك",
   "maximumNumberOfQuestions": "تجاوزت الحد الاقصي لعدد الاسئلة الذي اختارته",
   "incompleteQuestionError": "يجب أن تحتوي جميع الأسئلة على سؤال، وإجابة واحدة على الأقل، وإجابة صحيحة مختارة.",
-  "dateAndTimeError": "يجب تحديد التاريخ والوقت للاختبار."
+  "dateAndTimeError": "يجب تحديد التاريخ والوقت للاختبار.",
+  "atLeastTwoAnswersError": "يرجى تقديم إجابتين على الأقل لكل سؤال"
 }
