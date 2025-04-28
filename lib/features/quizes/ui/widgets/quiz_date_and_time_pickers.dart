@@ -63,87 +63,55 @@ class _QuizDateAndTimePickersState extends State<QuizDateAndTimePickers> {
           ],
         ),
         vGap(5),
-        Row(children: [
-          Text(
-            S.of(context).startsAt,
-            style: AppTextStyles.font11BlackSemiBold
-                .copyWith(color: AppColors.darkGray),
-          ),
-          hGap(5),
-          //toDo:state time picker -------------------------------------------------------------------------------------
-          Expanded(
-            child: CustomHollowButton(
-                padding: EdgeInsets.symmetric(horizontal: 10.w),
-                borderWidth: 1,
-                borderColor: AppColors.black,
-                onPressed: () {
-                  showTimePicker(context: context, initialTime: TimeOfDay.now())
-                      .then((value) {
-                    if (value != null) {
-                      setState(() {
-                        context.read<AddQuizCubit>().selectedStartTime =
-                            '${value.hour.toString().padLeft(2, '0')}:${value.minute.toString().padLeft(2, '0')}:00';
-                      });
-                    }
-                  });
-                },
-                child: Row(
-                  children: [
-                    Text(
-                        context.read<AddQuizCubit>().selectedStartTime == null
-                            ? S.of(context).selectTime
-                            : FormatDateAndTimeHelpers.convertTo12HourFormat(
-                                context
-                                    .read<AddQuizCubit>()
-                                    .selectedStartTime!),
-                        style: AppTextStyles.font11BlackSemiBold
-                            .copyWith(color: AppColors.darkGray)),
-                    const Spacer(),
-                    SvgPicture.asset(Assets.imagesSvgsIosArrowIcon)
-                  ],
-                )),
-          ),
-          //------------------------------------------------------------------------------------------------------
-          hGap(10),
-          Text(
-            S.of(context).endsAt,
-            style: AppTextStyles.font11BlackSemiBold
-                .copyWith(color: AppColors.darkGray),
-          ),
-          hGap(10),
-          //toDo:end time picker ---------------------------------------------------------------------------------
-          Expanded(
-            child: CustomHollowButton(
-                padding: EdgeInsets.symmetric(horizontal: 10.w),
-                borderWidth: 1,
-                borderColor: AppColors.black,
-                onPressed: () {
-                  showTimePicker(context: context, initialTime: TimeOfDay.now())
-                      .then((value) {
-                    if (value != null) {
-                      setState(() {
-                        context.read<AddQuizCubit>().selectedEndTime =
-                            '${value.hour.toString().padLeft(2, '0')}:${value.minute.toString().padLeft(2, '0')}';
-                      });
-                    }
-                  });
-                },
-                child: Row(
-                  children: [
-                    Text(
-                        context.read<AddQuizCubit>().selectedEndTime == null
-                            ? S.of(context).selectTime
-                            : FormatDateAndTimeHelpers.convertTo12HourFormat(
-                                context.read<AddQuizCubit>().selectedEndTime!),
-                        style: AppTextStyles.font11BlackSemiBold
-                            .copyWith(color: AppColors.darkGray)),
-                    const Spacer(),
-                    SvgPicture.asset(Assets.imagesSvgsIosArrowIcon)
-                  ],
-                )),
-          ),
-          //------------------------------------------------------------------------------------------------------
-        ]),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Row(children: [
+            Text(
+              S.of(context).startsAt,
+              style: AppTextStyles.font11BlackSemiBold
+                  .copyWith(color: AppColors.darkGray),
+            ),
+            hGap(5),
+            //toDo:state time picker -------------------------------------------------------------------------------------
+            Expanded(
+              child: CustomHollowButton(
+                  padding: EdgeInsets.symmetric(horizontal: 10.w),
+                  borderWidth: 1,
+                  borderColor: AppColors.black,
+                  onPressed: () {
+                    showTimePicker(
+                            context: context, initialTime: TimeOfDay.now())
+                        .then((value) {
+                      if (value != null) {
+                        setState(() {
+                          context.read<AddQuizCubit>().selectedStartTime =
+                              '${value.hour.toString().padLeft(2, '0')}:${value.minute.toString().padLeft(2, '0')}:00';
+                        });
+                      }
+                    });
+                  },
+                  child: Row(
+                    children: [
+                      Text(
+                          context.read<AddQuizCubit>().selectedStartTime == null
+                              ? S.of(context).selectTime
+                              : FormatDateAndTimeHelpers.convertTo12HourFormat(
+                                  context
+                                      .read<AddQuizCubit>()
+                                      .selectedStartTime!
+                                      .substring(0, 5)),
+                          style: AppTextStyles.font11BlackSemiBold
+                              .copyWith(color: AppColors.darkGray)),
+                      const Spacer(),
+                      SvgPicture.asset(Assets.imagesSvgsIosArrowIcon)
+                    ],
+                  )),
+            ),
+            //------------------------------------------------------------------------------------------------------
+            const Spacer(),
+            //------------------------------------------------------------------------------------------------------
+          ]),
+        ),
       ],
     );
   }
