@@ -18,76 +18,70 @@ import '../../features/home/ui/views/home_view.dart';
 import '../../features/subjects/presentation/views/materials_view.dart';
 
 abstract class StudentRouter {
-  
-   static GoRouter getRouter(bool isLogin) {
+  static GoRouter getRouter(bool isLogin) {
     return GoRouter(
-    initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
-    routes: [
-   
-      GoRoute(
-        path: HomeView.routeName ,
-        builder: (context, state) => BlocProvider(
-          create: (context) => BottomNavBarCubit(),
-          child: const HomeView(),
+      initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
+      routes: [
+        GoRoute(
+          path: HomeView.routeName,
+          builder: (context, state) => BlocProvider(
+            create: (context) => BottomNavBarCubit(),
+            child: const HomeView(),
+          ),
         ),
-      ),
-      GoRoute(
-        path: AuthView.routeName,
-        builder: (context, state) => const AuthView(),
-      ),
-      GoRoute(
-        path: ForgetPasswordView.routeName,
-        builder: (context, state) => const ForgetPasswordView(),
-      ),
-      GoRoute(
-        path: ChatView.routeName,
-        builder: (context, state) => const ChatView(),
-      ),
-      GoRoute(
-        path: ConfirmAccountView.routeName,
-        builder: (context, state) => const ConfirmAccountView(),
-      ),
-      GoRoute(
-        path: InternalMapView.routeName,
-        builder: (context, state) => const InternalMapView(),
-      ),
-      GoRoute(
-        path: WeeklyScheduleView.routeName,
-        builder: (context, state) => const WeeklyScheduleView(),
-      ),
-      GoRoute(
-        path: QuizDetailsView.routeName,
-        builder: (context, state) => const QuizDetailsView(),
-      ),
-      GoRoute(
-        path: QuizView.routeName,
-        builder: (context, state) => const QuizView(),
-      ),
-      GoRoute(
-        path: ProfileView.routeName,
-        builder: (context, state) => const ProfileView(),
-      ),
-      GoRoute(
-        path: AcademicProgressView.routeName,
-        builder: (context, state) => const AcademicProgressView(),
-      ),
-      GoRoute(
-        path: MaterialsView.routeName,
-        builder: (context, state) => const MaterialsView()
-      ),
-      GoRoute(
-        path: AnswersView.routeName,
-        builder: (context, state) => const AnswersView()
-      ),
-      GoRoute(
-        path: TimeScheduleView.routeName,
-        builder: (context, state) => const TimeScheduleView()
-      ),
-      GoRoute(
-        path: FinalResultsView.routeName,
-        builder: (context, state) => const FinalResultsView()
-      )
-    ],
-  );
-}
+        GoRoute(
+          path: AuthView.routeName,
+          builder: (context, state) => const AuthView(),
+        ),
+        GoRoute(
+          path: ForgetPasswordView.routeName,
+          builder: (context, state) => const ForgetPasswordView(),
+        ),
+        GoRoute(
+          path: ChatView.routeName,
+          builder: (context, state) => const ChatView(),
+        ),
+        GoRoute(
+          path: ConfirmAccountView.routeName,
+          builder: (context, state) => const ConfirmAccountView(),
+        ),
+        GoRoute(
+          path: InternalMapView.routeName,
+          builder: (context, state) => const InternalMapView(),
+        ),
+        GoRoute(
+          path: WeeklyScheduleView.routeName,
+          builder: (context, state) => const WeeklyScheduleView(),
+        ),
+        GoRoute(
+          path: QuizDetailsView.routeName,
+          builder: (context, state) => const QuizDetailsView(),
+        ),
+        GoRoute(
+          path: QuizView.routeName,
+          builder: (context, state) => const QuizView(),
+        ),
+        GoRoute(
+          path: ProfileView.routeName,
+          builder: (context, state) => const ProfileView(),
+        ),
+        GoRoute(
+          path: AcademicProgressView.routeName,
+          builder: (context, state) => const AcademicProgressView(),
+        ),
+        GoRoute(
+            path: MaterialsView.routeName,
+            builder: (context, state) => const MaterialsView()),
+        GoRoute(
+            path: AnswersView.routeName,
+            builder: (context, state) => const AnswersView()),
+        GoRoute(
+            path: TimeScheduleView.routeName,
+            builder: (context, state) => const TimeScheduleView()),
+        GoRoute(
+            path: FinalResultsView.routeName,
+            builder: (context, state) => const FinalResultsView())
+      ],
+    );
+  }
 }

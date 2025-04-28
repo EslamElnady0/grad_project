@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,6 +9,7 @@ import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
 import 'package:grad_project/core/widgets/publish_row.dart';
 import 'package:grad_project/features/annoucements/ui/widgets/title_and_desc_text_fields.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
+import 'package:grad_project/features/quizes/data/models/create_quiz_request_model.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../generated/l10n.dart';
 import '../cubit/add_quiz_cubit/add_quiz_cubit.dart';
@@ -75,9 +78,26 @@ class AddQuizViewBody extends StatelessWidget {
                   backgroundColor: AppColors.darkblue,
                   child: const Icon(Icons.add, color: Colors.white),
                 ),
-                vGap(24),
+                vGap(20),
                 PublishRow(
-                  onTap: () {},
+                  onTap: () {
+                    CreateQuizRequestModel createQuizRequestModel =
+                        CreateQuizRequestModel(
+                            courseId: "2",
+                            title: "dasd",
+                            description: "dasd",
+                            totalDegree: "totalDegree",
+                            date: "dasd",
+                            startTime: "sdsad",
+                            duration: "dsadas",
+                            newQuestions: [
+                          QuestionModel(question: "dasdasd", answers: [
+                            AnswerModel(answer: "dasdasd", isCorrect: 0),
+                            AnswerModel(answer: "dasddasdasdasd", isCorrect: 1),
+                          ])
+                        ]);
+                    log(createQuizRequestModel.toJson().toString());
+                  },
                 ),
                 vGap(24),
               ],
