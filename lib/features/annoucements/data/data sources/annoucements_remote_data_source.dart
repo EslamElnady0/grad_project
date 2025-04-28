@@ -43,8 +43,10 @@ abstract class AnnoucementsRemoteDataSource {
   Future<DeleteAnnoucementResponseBody> deleteAnnoucement(
     @Path() String announcementId,
   );
+
   @GET(ApiConstants.announcements)
   Future<PaginatedAnnouncementsResponse> getStudentsAnnoucements();
+
   @GET(ApiConstants.courses)
   Future<StudentsCoursesResponse> getStudentsCourses();
 }
