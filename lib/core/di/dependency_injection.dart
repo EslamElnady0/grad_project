@@ -10,6 +10,9 @@ import '../../features/annoucements/data/data sources/annoucements_local_data_so
 import '../../features/auth/data/repos/login_repo.dart';
 import '../../features/auth/logic/cubit/login_cubit.dart';
 import '../../features/lecture_manager/ui/cubit/file_upload_cubit.dart';
+import '../data/data sources/all_courses_remote_data_source.dart';
+import '../data/repos/all_courses_repo.dart';
+import '../logic/all_courses_cubit/all_courses_cubit.dart';
 import '../networking/api_service.dart';
 import '../networking/dio_factory.dart';
 
@@ -39,6 +42,14 @@ Future<void> setupGetIt() async {
       () => AddAnnoucementsCubit(getIt(), getIt()));
   getIt.registerFactory<GetAnnouncementCubit>(
       () => GetAnnouncementCubit(getIt()));
+  //toDo:------------------------------ Courses API ------------------------------//    
+  
+  getIt.registerLazySingleton<AllCoursesRemoteDataSource>(
+      () => AllCoursesRemoteDataSource(dio));
+  getIt.registerLazySingleton<AllCoursesRepo>(() => AllCoursesRepo(
+        remoteDataSource: getIt(),
+      ));
+  getIt.registerFactory<AllCoursesCubit>(() => AllCoursesCubit(getIt()));
   //toDo:------------------------------ Quiz UI ------------------------------//
   getIt.registerFactory<AddQuizCubit>(() => AddQuizCubit());
 

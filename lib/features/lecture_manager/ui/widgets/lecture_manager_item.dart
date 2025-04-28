@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:grad_project/core/data/models/all_courses_response_model.dart';
+import 'package:grad_project/features/annoucements/data/models/add_annoucement_response_body.dart';
 import 'package:grad_project/features/lecture_manager/ui/screens/add_lecture_view.dart';
 import 'package:grad_project/features/lecture_manager/ui/screens/qr_attendance_view.dart';
 import 'package:grad_project/features/lecture_manager/ui/widgets/show_update_lecture_status_dialog.dart';
@@ -16,9 +18,9 @@ import '../../../../generated/l10n.dart';
 
 class LectureManagerItem extends StatelessWidget {
   const LectureManagerItem({
-    super.key,
+    super.key, required this.courseData,
   });
-
+final CourseData courseData;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -52,7 +54,7 @@ class LectureManagerItem extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 15.w),
                   child: Text(
-                    "البرمجة كائنية التوجه “OOP”",
+                    courseData.name?? "",
                     textAlign: TextAlign.start,
                     style: AppTextStyles.font20DarkerBlueBold,
                   ),
@@ -65,7 +67,7 @@ class LectureManagerItem extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 15.w),
                   child: Text(
-                    "عدد الطلاب المسجلين بالمادة: 350",
+                    courseData.description?? "",
                     textAlign: TextAlign.start,
                     style: AppTextStyles.font16GrayMedium,
                   ),
