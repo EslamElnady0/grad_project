@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
+import 'package:grad_project/features/assignments/presentation/views/widgets/assignment_manager_item_list_view.dart';
 import 'package:grad_project/features/home/ui/widgets/home_screens_header_row.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
 import 'package:grad_project/generated/l10n.dart';
@@ -27,6 +27,8 @@ class AssignmentsHomeBody extends StatelessWidget {
             child:
                 TitleTextWidget(text: S.of(context).assignments_home_message),
           ),
+          vGap(12),
+          const Expanded(child: AssignmentManagerItemListView())
         ],
       ),
     );
