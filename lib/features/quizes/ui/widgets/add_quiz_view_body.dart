@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
+import 'package:grad_project/core/widgets/publish_row.dart';
 import 'package:grad_project/features/annoucements/ui/widgets/title_and_desc_text_fields.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
 import '../../../../core/theme/app_colors.dart';
@@ -74,7 +75,11 @@ class AddQuizViewBody extends StatelessWidget {
                   backgroundColor: AppColors.darkblue,
                   child: const Icon(Icons.add, color: Colors.white),
                 ),
-                vGap(12),
+                vGap(24),
+                PublishRow(
+                  onTap: () {},
+                ),
+                vGap(24),
               ],
             ),
           )

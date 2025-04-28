@@ -1,16 +1,15 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grad_project/features/annoucements/logic/add_annoucements_cubit/add_annoucements_cubit.dart';
-import '../../../../core/helpers/app_assets.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_text_styles.dart';
-import '../../../../core/widgets/custom_red_grad_container.dart';
-import '../../../../core/widgets/svg_icon_button.dart';
-import '../../../../generated/l10n.dart';
+import '../helpers/app_assets.dart';
+import '../theme/app_colors.dart';
+import '../theme/app_text_styles.dart';
+import 'custom_red_grad_container.dart';
+import 'svg_icon_button.dart';
+import '../../generated/l10n.dart';
 
 class PublishRow extends StatelessWidget {
-  const PublishRow({super.key});
+  final VoidCallback onTap;
+  const PublishRow({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -27,15 +26,7 @@ class PublishRow extends StatelessWidget {
             child: SvgIconButton(
                 iconPath: Assets.imagesSvgsEyeCrossedIcon, onPressed: () {})),
         GestureDetector(
-          onTap: () async {
-            if (context
-                .read<AddAnnoucementsCubit>()
-                .formKey
-                .currentState!
-                .validate()) {
-              await context.read<AddAnnoucementsCubit>().addAnnoucement();
-            }
-          },
+          onTap: onTap,
           child: CustomRedGradContainer(
             alignment: Alignment.center,
             raduis: 12,
