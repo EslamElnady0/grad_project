@@ -1834,6 +1834,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message('Edit', name: 'edit', desc: '', args: []);
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message('Delete', name: 'delete', desc: '', args: []);
+  }
+
+  /// `Edit Announcement`
+  String get editAnnouncement {
+    return Intl.message(
+      'Edit Announcement',
+      name: 'editAnnouncement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `✏️ Edit your announcement to keep your students informed with the latest details and updates`
+  String get edit_news {
+    return Intl.message(
+      '✏️ Edit your announcement to keep your students informed with the latest details and updates',
+      name: 'edit_news',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

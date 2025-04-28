@@ -227,5 +227,9 @@
   "maximumNumberOfQuestions": "Maximum number of questions reached",
   "incompleteQuestionError": "All questions must have a question, at least one answer, and a selected correct answer.",
   "dateAndTimeError": "You have to specify date and time for the quiz.",
-  "atLeastTwoAnswers": "Please provide at least two answers for each question"
+  "atLeastTwoAnswers": "Please provide at least two answers for each question",
+  "edit": "Edit",
+  "delete": "Delete",
+  "editAnnouncement": "Edit Announcement",
+  "edit_news": "✏️ Edit your announcement to keep your students informed with the latest details and updates"
 }

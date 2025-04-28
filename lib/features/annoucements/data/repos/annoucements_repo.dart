@@ -1,8 +1,10 @@
 import 'package:grad_project/core/networking/api_error_handler.dart';
 import 'package:grad_project/core/networking/api_result.dart';
 import 'package:grad_project/features/annoucements/data/models/add_annoucement_response_body.dart';
+import 'package:grad_project/features/annoucements/data/models/delete_annoucement_response_body.dart';
 import 'package:grad_project/features/annoucements/data/models/paginated_announcements_response.dart';
 import 'package:grad_project/features/annoucements/data/models/teachers_courses_response.dart';
+import 'package:grad_project/features/annoucements/data/models/update_annoucement_response_body.dart';
 
 import '../data sources/annoucements_local_data_source.dart';
 import '../data sources/annoucements_remote_data_source.dart';
@@ -42,6 +44,28 @@ class AnnoucementsRepo {
   Future<ApiResult<TeachersCoursesResponse>> getTeacherCourses() async {
     try {
       final response = await remoteDataSource.getTeacherCourses();
+      return ApiResult.success(response);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
+  Future<ApiResult<UpdateAnnoucementResponseBody>> updateAnnoucement(
+      {required AnnouncementRequestBody announcementRequestBody,
+      required String id}) async {
+    try {
+      final response =
+          await remoteDataSource.updateAnnoucement(id, announcementRequestBody);
+      return ApiResult.success(response);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
+  Future<ApiResult<DeleteAnnoucementResponseBody>> deleteAnnoucement(
+      {required String annoucementId}) async {
+    try {
+      final response = await remoteDataSource.deleteAnnoucement(annoucementId);
       return ApiResult.success(response);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));

@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
+import 'package:grad_project/features/annoucements/data/models/delete_annoucement_response_body.dart';
 import 'package:grad_project/features/annoucements/data/models/paginated_announcements_response.dart';
 import 'package:grad_project/features/annoucements/data/models/teachers_courses_response.dart';
+import 'package:grad_project/features/annoucements/data/models/update_annoucement_response_body.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../../../core/networking/api_constants.dart';
@@ -28,4 +30,16 @@ abstract class AnnoucementsRemoteDataSource {
 
   @GET("${ApiConstants.teachers}${ApiConstants.courses}")
   Future<TeachersCoursesResponse> getTeacherCourses();
+
+  @PUT(
+      "${ApiConstants.dashboard}${ApiConstants.announcements}/{announcementId}")
+  Future<UpdateAnnoucementResponseBody> updateAnnoucement(
+    @Path() String announcementId,
+    @Body() AnnouncementRequestBody announcementRequestBody,
+  );
+  @DELETE(
+      "${ApiConstants.dashboard}${ApiConstants.announcements}/{announcementId}")
+  Future<DeleteAnnoucementResponseBody> deleteAnnoucement(
+    @Path() String announcementId,
+  );
 }

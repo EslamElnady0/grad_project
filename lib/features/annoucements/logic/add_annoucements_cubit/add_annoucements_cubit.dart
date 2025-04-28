@@ -16,11 +16,11 @@ class AddAnnoucementsCubit extends Cubit<AddAnnoucementsState> {
   final GetTeacherCourcesCubit _getTeacherCourcesCubit;
   AddAnnoucementsCubit(this._repo, this._getTeacherCourcesCubit)
       : super(const AddAnnoucementsState.initial());
-  late List<Course> coursesList;
+  late List<CourseResponse> coursesList;
   TextEditingController titleController = TextEditingController();
   TextEditingController descController = TextEditingController();
   final formKey = GlobalKey<FormState>();
-  Course? selectedCourse;
+  CourseResponse? selectedCourse;
   String? selectedDate;
   String? selectedTime;
   Future<void> addAnnoucement() async {
@@ -47,14 +47,14 @@ class AddAnnoucementsCubit extends Cubit<AddAnnoucementsState> {
     );
   }
 
-  Future<List<Course>> getTeacherCourses() async {
+  Future<List<CourseResponse>> getTeacherCourses() async {
     await _getTeacherCourcesCubit.getTeacherCourses();
     coursesList = _getTeacherCourcesCubit.coursesResponse?.data ?? [];
     return coursesList;
   }
 
   String selectedCourseText = '';
-  void selectCourse(Course course) {
+  void selectCourse(CourseResponse course) {
     selectedCourseText = "${course.name}    ${course.semester.name}";
     selectedCourse = course;
     log("selected course: $selectedCourseText");

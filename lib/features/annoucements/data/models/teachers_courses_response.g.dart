@@ -11,7 +11,7 @@ TeachersCoursesResponse _$TeachersCoursesResponseFromJson(
     TeachersCoursesResponse(
       code: (json['code'] as num).toInt(),
       data: (json['data'] as List<dynamic>)
-          .map((e) => Course.fromJson(e as Map<String, dynamic>))
+          .map((e) => CourseResponse.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -22,7 +22,8 @@ Map<String, dynamic> _$TeachersCoursesResponseToJson(
       'data': instance.data,
     };
 
-Course _$CourseFromJson(Map<String, dynamic> json) => Course(
+CourseResponse _$CourseResponseFromJson(Map<String, dynamic> json) =>
+    CourseResponse(
       id: (json['id'] as num).toInt(),
       name: json['name'] as String,
       code: json['code'] as String,
@@ -32,7 +33,8 @@ Course _$CourseFromJson(Map<String, dynamic> json) => Course(
       semester: Semester.fromJson(json['semester'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
+Map<String, dynamic> _$CourseResponseToJson(CourseResponse instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'code': instance.code,
