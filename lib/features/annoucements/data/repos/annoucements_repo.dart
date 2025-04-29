@@ -5,6 +5,7 @@ import 'package:grad_project/features/annoucements/data/models/delete_annoucemen
 import 'package:grad_project/features/annoucements/data/models/paginated_announcements_response.dart';
 import 'package:grad_project/core/data/models/teachers_courses_response.dart';
 import 'package:grad_project/features/annoucements/data/models/update_annoucement_response_body.dart';
+import '../../../../core/flavors/flavors_functions.dart';
 import '../data sources/annoucements_local_data_source.dart';
 import '../data sources/annoucements_remote_data_source.dart';
 import '../models/add_annoucement_request_body.dart';
@@ -32,8 +33,13 @@ class AnnoucementsRepo {
   Future<ApiResult<PaginatedAnnouncementsResponse>> getAnnoucements(
       AnnouncementRequestBody announcementRequestBody) async {
     try {
-      final response =
-          await remoteDataSource.getAnnoucements(announcementRequestBody);
+      late PaginatedAnnouncementsResponse response;
+      if (FlavorsFunctions.isAdmin()) {
+        response =
+            await remoteDataSource.getAnnoucements(announcementRequestBody);
+      } else {
+        response = await remoteDataSource.getStudentsAnnoucements();
+      }
       return ApiResult.success(response);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));
