@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:grad_project/features/subjects/presentation/views/widgets/materials_item.dart';
-import '../../../../../core/widgets/custom_expansion_tile.dart';
-import '../../manager/materials_filter_cubit.dart';
+import 'package:grad_project/features/subjects/ui/widgets/materials_item.dart';
+import '../../../../core/widgets/custom_expansion_tile.dart';
+import '../manager/materials_filter_cubit.dart';
 
 class CustomWeekTile extends StatelessWidget {
   final String day;

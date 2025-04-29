@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/features/dashboard/ui/widgets/custom_red_course_button.dart';
-import 'package:grad_project/features/subjects/presentation/views/materials_view.dart';
+import 'package:grad_project/features/subjects/ui/views/materials_view.dart';
 import 'package:grad_project/generated/l10n.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/app_colors.dart';

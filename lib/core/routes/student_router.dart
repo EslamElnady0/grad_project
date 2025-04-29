@@ -15,7 +15,7 @@ import 'package:grad_project/features/weekly_schedule/ui/views/screens/weekly_sc
 import '../../features/auth/ui/views/auth_view.dart';
 import '../../features/home/ui/cubit/bottom_nav_bar_cubit.dart';
 import '../../features/home/ui/views/home_view.dart';
-import '../../features/subjects/presentation/views/materials_view.dart';
+import '../../features/subjects/ui/views/materials_view.dart';
 
 abstract class StudentRouter {
   static GoRouter getRouter(bool isLogin) {

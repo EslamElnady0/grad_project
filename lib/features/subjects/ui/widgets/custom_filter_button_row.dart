@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../../core/widgets/custom_toggle_title_button.dart';
-import '../../../../../generated/l10n.dart';
-import '../../manager/materials_filter_cubit.dart';
+import '../../../../core/widgets/custom_toggle_title_button.dart';
+import '../../../../generated/l10n.dart';
+import '../manager/materials_filter_cubit.dart';
 class CustomFilterButtonsRow extends StatelessWidget {
   const CustomFilterButtonsRow({super.key});
 

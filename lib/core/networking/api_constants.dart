@@ -9,5 +9,7 @@ class ApiConstants {
   static const String announcements = "/announcements";
   static const String teachers = "teachers";
   static const String courses = "/courses";
+  static const String stuCourses = "courses";
+  static const String docCourses = "teachers/courses";
   static const String quizzes = "/quizzes";
 }

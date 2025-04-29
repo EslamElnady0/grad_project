@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:grad_project/features/subjects/presentation/views/widgets/custom_filter_button_row.dart';
-import 'package:grad_project/features/subjects/presentation/views/widgets/custom_wee_title.dart';
-import '../../../../../core/helpers/constants.dart';
-import '../../../../../core/helpers/spacing.dart';
-import '../../../../../core/widgets/custom_app_bar.dart';
-import '../../../../../generated/l10n.dart';
-import '../../../../home/ui/widgets/title_text_widget.dart';
-import '../../manager/materials_filter_cubit.dart';
+import 'package:grad_project/features/subjects/ui/widgets/custom_filter_button_row.dart';
+import 'package:grad_project/features/subjects/ui/widgets/custom_wee_title.dart';
+import '../../../../core/helpers/constants.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/widgets/custom_app_bar.dart';
+import '../../../../generated/l10n.dart';
+import '../../../home/ui/widgets/title_text_widget.dart';
+import '../manager/materials_filter_cubit.dart';
 class MaterialsViewBody extends StatelessWidget {
   const MaterialsViewBody({super.key});
 

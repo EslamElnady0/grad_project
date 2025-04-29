@@ -12,7 +12,7 @@ import 'package:grad_project/features/home/ui/models/drawer_item_model.dart';
 import 'package:grad_project/features/lecture_manager/ui/screens/lecture_manager_view.dart';
 import 'package:grad_project/features/profile/presentation/views/profile_view.dart';
 import 'package:grad_project/features/quizes/ui/models/quiz_advice_model.dart';
-import 'package:grad_project/features/subjects/presentation/views/subjects_view.dart';
+import 'package:grad_project/features/subjects/ui/views/subjects_view.dart';
 import 'package:grad_project/features/time_schedule/presentation/views/time_schedule_view.dart';
 
 import '../../features/chat/ui/views/chat_outsider_body.dart';
