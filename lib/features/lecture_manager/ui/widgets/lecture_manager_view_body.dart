@@ -37,7 +37,7 @@ class LectureManagerViewBody extends StatelessWidget {
           BlocConsumer<AllCoursesCubit, AllCoursesState>(
             listener: (context, state) {},
             builder: (context, state) {
-              if (state is AllTeacherCoursesSuccess && state.data != null) {
+              if (state is AllTeacherCoursesSuccess ) {
                 final allCoursesResponseModel = state.data;
 
                 return _buildCourseList(allCoursesResponseModel);

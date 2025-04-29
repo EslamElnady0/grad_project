@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/core/data/models/students_courses_response.dart';
 import 'package:grad_project/core/logic/all_courses_cubit/all_courses_cubit.dart';
 
 import 'package:grad_project/features/subjects/ui/widgets/custom_subject_card.dart';
@@ -47,10 +48,12 @@ class SubjectsViewBody extends StatelessWidget {
           ),
           BlocBuilder<AllCoursesCubit, AllCoursesState>(
             builder: (context, state) {
-             if (state is AllCoursesSuccess && state.data != null) {
-                final allCoursesResponseModel = state.data;
+              print("state is $state");
+             if (state is AllStudentCoursesSuccess) {
+              print("state is=========== ${state.data}");
+                final allCourses = state.data;
       
-                return _buildCourseList(allCoursesResponseModel!);
+                return _buildCourseList(allCourses);
               } else {
                 return _buildSkeletonList();
               }
@@ -61,36 +64,36 @@ class SubjectsViewBody extends StatelessWidget {
     );
   }
 
-  Widget _buildCourseList(AllCoursesResponseModel allCoursesResponseModel) {
+  Widget _buildCourseList(StudentsCoursesResponse allCoursesResponseModel) {
     return SliverList.builder(
-      itemCount: allCoursesResponseModel.data!.length,
+      itemCount: allCoursesResponseModel.data.length,
       itemBuilder: (context, index) {
         return CustomSubjectCard(
-          courseData: allCoursesResponseModel.data![index],
+          courseData: allCoursesResponseModel.data[index],
         );
       },
     );
   }
   Widget _buildSkeletonList() {
-    return SliverToBoxAdapter(
+    return const SliverToBoxAdapter(
       child: Column(
         children: [
       
           Skeletonizer(  
             enabled: true,
             child:CustomSubjectCard(
-          courseData:CourseData() ,
+          courseData:null, 
         )
           ),
           Skeletonizer(  
             enabled: true,
             child:CustomSubjectCard(
-          courseData:CourseData() ,
+          courseData: null ,
         )
           ),
     
         ],
-      ),
+      ), 
     );
   }
 }

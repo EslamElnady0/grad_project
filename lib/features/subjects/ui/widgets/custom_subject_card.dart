@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:grad_project/core/data/models/students_courses_response.dart';
 import 'package:grad_project/core/helpers/localizationa.dart';
 import 'package:grad_project/core/widgets/custom_text_button.dart';
-import '../../../../core/data/models/all_courses_response_model.dart';
 import '../../../../core/helpers/app_assets.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/app_colors.dart';
@@ -14,9 +14,9 @@ import '../views/materials_view.dart';
 
 class CustomSubjectCard extends StatelessWidget {
   const CustomSubjectCard({
-    super.key, required this.courseData,
+    super.key, this.courseData,
   });
-final CourseData courseData;
+ final StudentsCourseResponse? courseData;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -59,7 +59,7 @@ final CourseData courseData;
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 15.w),
                     child: Text(
-                      courseData.name?? "",
+                      courseData?.name ?? "",
                       textAlign: TextAlign.start,
                       style: AppTextStyles.font20DarkerBlueBold,
                     ),
@@ -72,7 +72,7 @@ final CourseData courseData;
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 15.w),
                     child: Text(
-                      courseData.description?? "",
+                      courseData?.description?? "",
                       textAlign: TextAlign.start,
                       style: AppTextStyles.font16GrayMedium,
                     ),
