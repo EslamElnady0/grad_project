@@ -25,18 +25,4 @@ class GetCourcesToFilterCubit extends Cubit<GetCourcesToFilterState> {
       },
     );
   }
-
-  Future<void> getStudentsCourses() async {
-    emit(const GetCourcesToFilterState.getCourcesToFilterLoading());
-    final result = await _repo.getStudentsCourses();
-    result.when(
-      success: (data) {
-        emit(GetCourcesToFilterState.getCourcesToFilterSuccess(data));
-      },
-      failure: (error) {
-        emit(GetCourcesToFilterState.getCourcesToFilterFailure(
-            error.getAllMessages()));
-      },
-    );
-  }
 }
