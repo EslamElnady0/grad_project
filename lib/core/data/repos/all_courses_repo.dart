@@ -7,7 +7,7 @@ import '../../networking/api_error_handler.dart' show ApiErrorHandler;
 import '../../networking/api_result.dart';
 import '../data sources/all_courses_remote_data_source.dart';
 
-class AllCoursesRepo {
+class AllCoursesRepo {  
   final AllCoursesRemoteDataSource remoteDataSource;
 
   AllCoursesRepo({

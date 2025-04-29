@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:grad_project/core/data/models/teachers_courses_response.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
@@ -11,8 +12,8 @@ import 'package:grad_project/features/assignments/presentation/views/create_assi
 import 'package:grad_project/generated/l10n.dart';
 
 class AssignmentManagerItem extends StatelessWidget {
-  const AssignmentManagerItem({super.key});
-
+  const AssignmentManagerItem({super.key, required this.courseData});
+  final CourseResponse courseData;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -39,14 +40,14 @@ class AssignmentManagerItem extends StatelessWidget {
           Padding(
             padding: EdgeInsetsDirectional.only(start: 15.w),
             child: Text(
-              "البرمجة كائنية التوجه “OOP”",
+              courseData.name ??"",
               style: AppTextStyles.font20DarkerBlueBold,
             ),
           ),
           Padding(
             padding: EdgeInsetsDirectional.only(start: 15.w),
             child: Text(
-              "${S.of(context).registered_students_count} 355",
+              courseData.description??"",
               style: AppTextStyles.font12GraySemiBold,
             ),
           ),
@@ -56,7 +57,7 @@ class AssignmentManagerItem extends StatelessWidget {
             child: Column(
               children: [
                 CustomTextAndIconButton(
-                  text: S.of(context).create_assigment,
+                  text: S.of(context).create_assignment,
                   style: AppTextStyles.font14WhiteMedium,
                   width: double.infinity,
                   onTap: () {

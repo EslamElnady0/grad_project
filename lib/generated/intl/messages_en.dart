@@ -62,6 +62,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "answer": MessageLookupByLibrary.simpleMessage("Answer"),
     "app_title": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "assignment": MessageLookupByLibrary.simpleMessage("Assignment"),
+    "assignment_degree": MessageLookupByLibrary.simpleMessage(
+      "Assignment Degree",
+    ),
+    "assignment_description": MessageLookupByLibrary.simpleMessage(
+      "Assignment Description",
+    ),
+    "assignment_description_hint_text": MessageLookupByLibrary.simpleMessage(
+      "Provide a detailed explanation of what is required in the assignment, along with any additional instructions.",
+    ),
+    "assignment_title": MessageLookupByLibrary.simpleMessage(
+      "Assignment Title",
+    ),
+    "assignment_title_hint_text": MessageLookupByLibrary.simpleMessage(
+      "Enter a title that clearly describes the content of the assignment.",
+    ),
     "assignments": MessageLookupByLibrary.simpleMessage("Assignments"),
     "assignments_home_message": MessageLookupByLibrary.simpleMessage(
       "📝 Organize assignments, review solutions, and update grades with ease!",
@@ -72,6 +87,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "attendance": MessageLookupByLibrary.simpleMessage("Attendance"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "chat": MessageLookupByLibrary.simpleMessage("Chat"),
+    "choose_assignment_deadline": MessageLookupByLibrary.simpleMessage(
+      "⏰ Specify the assignment submission deadline and closing time.",
+    ),
     "classWork": MessageLookupByLibrary.simpleMessage("Classwork"),
     "class_work": MessageLookupByLibrary.simpleMessage("Classwork"),
     "classes": MessageLookupByLibrary.simpleMessage("Classes:"),
@@ -102,8 +120,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "create_and_manage_news": MessageLookupByLibrary.simpleMessage(
       "📰 Create and manage important news and announcements for your courses easily, and keep your students updated!",
     ),
-    "create_assigment": MessageLookupByLibrary.simpleMessage(
+    "create_assignment": MessageLookupByLibrary.simpleMessage(
       "Create Assignment",
+    ),
+    "create_assignment_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "📑 Create a new assignment by specifying a title, description, due date, and attaching any supporting files.",
+    ),
+    "create_new_assignment": MessageLookupByLibrary.simpleMessage(
+      "Create New Assignment",
     ),
     "dashboard": MessageLookupByLibrary.simpleMessage("Dashboard"),
     "dateAndTimeError": MessageLookupByLibrary.simpleMessage(
@@ -130,6 +154,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "endsAt": MessageLookupByLibrary.simpleMessage("Ends at"),
+    "ends_in": MessageLookupByLibrary.simpleMessage("Ends In"),
     "enterYourQuestion": MessageLookupByLibrary.simpleMessage(
       "Enter your question",
     ),
@@ -142,6 +167,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "filter": MessageLookupByLibrary.simpleMessage("Filter"),
     "finalGrade": MessageLookupByLibrary.simpleMessage("Final Grade"),
     "finalResults": MessageLookupByLibrary.simpleMessage("Final Results"),
+    "final_date": MessageLookupByLibrary.simpleMessage("Final Date"),
     "final_exam": MessageLookupByLibrary.simpleMessage("Final exam"),
     "final_grades": MessageLookupByLibrary.simpleMessage("Final Grades"),
     "final_results_welcome_message": MessageLookupByLibrary.simpleMessage(
@@ -357,6 +383,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "startNow": MessageLookupByLibrary.simpleMessage("Start Now!"),
     "startWriting": MessageLookupByLibrary.simpleMessage("Start writing now.."),
     "startsAt": MessageLookupByLibrary.simpleMessage("Starts at"),
+    "starts_in": MessageLookupByLibrary.simpleMessage("Starts In"),
     "status": MessageLookupByLibrary.simpleMessage("Status:"),
     "stayCalm": MessageLookupByLibrary.simpleMessage(
       "😌 Stay Calm and Focused",
