@@ -5,12 +5,12 @@ import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
-import 'package:grad_project/features/annoucements/data/models/teachers_courses_response.dart';
+import 'package:grad_project/core/data/models/teachers_courses_response.dart';
 
 class DisplayAndDropDownButton extends StatelessWidget {
   final String value;
-  final Function(Course)? onSelected;
-  final List<Course> contentList;
+  final Function(CourseResponse)? onSelected;
+  final List<CourseResponse> contentList;
   const DisplayAndDropDownButton({
     super.key,
     required this.value,
@@ -57,11 +57,11 @@ class DisplayAndDropDownButton extends StatelessWidget {
           ],
         ),
         itemBuilder: (context) {
-          return contentList.map((Course value) {
-            return PopupMenuItem<Course>(
+          return contentList.map((CourseResponse value) {
+            return PopupMenuItem<CourseResponse>(
               value: value,
               child: Text(
-                "${value.name}    ${value.semester.name}",
+                "${value.name}    ${value.semester?.name}",
                 style: AppTextStyles.font13BlackBold
                     .copyWith(color: AppColors.darkGray),
               ),

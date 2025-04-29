@@ -26,7 +26,7 @@ class AddAnnouncementBlocConsumer extends StatelessWidget {
       },
       listener: (context, state) {
         state.mapOrNull(
-          addAnnoucementsSuccess: (data) {
+          addAnnoucementsSuccess: (data) async {
             AddAnnouncementResponseBody responseData =
                 data.data as AddAnnouncementResponseBody;
             showToast(

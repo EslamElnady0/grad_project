@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/features/annoucements/data/repos/annoucements_repo.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
 import '../../data/models/add_annoucement_request_body.dart';
 part 'get_announcement_state.dart';
 part 'get_announcement_cubit.freezed.dart';

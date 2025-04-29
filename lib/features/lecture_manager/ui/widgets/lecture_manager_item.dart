@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/data/models/all_courses_response_model.dart';
+import 'package:grad_project/core/data/models/teachers_courses_response.dart';
 import 'package:grad_project/features/lecture_manager/ui/screens/add_lecture_view.dart';
 import 'package:grad_project/features/lecture_manager/ui/screens/qr_attendance_view.dart';
 import 'package:grad_project/features/lecture_manager/ui/widgets/show_update_lecture_status_dialog.dart';
@@ -17,9 +18,10 @@ import '../../../../generated/l10n.dart';
 
 class LectureManagerItem extends StatelessWidget {
   const LectureManagerItem({
-    super.key, required this.courseData,
+    super.key,
+    required this.courseData,
   });
-final CourseData courseData;
+  final CourseResponse courseData;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -53,7 +55,7 @@ final CourseData courseData;
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 15.w),
                   child: Text(
-                    courseData.name?? "",
+                    courseData.name ?? "",
                     textAlign: TextAlign.start,
                     style: AppTextStyles.font20DarkerBlueBold,
                   ),
@@ -66,7 +68,7 @@ final CourseData courseData;
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 15.w),
                   child: Text(
-                    courseData.description?? "",
+                    courseData.description ?? "",
                     textAlign: TextAlign.start,
                     style: AppTextStyles.font16GrayMedium,
                   ),

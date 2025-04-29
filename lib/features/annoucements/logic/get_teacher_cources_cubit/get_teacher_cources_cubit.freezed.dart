@@ -15,87 +15,88 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$GetTeacherCourcesState<T> {
+mixin _$GetCourcesToFilterState<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getTeacherCourcesLoading,
-    required TResult Function(T data) getTeacherCourcesSuccess,
-    required TResult Function(String error) getTeacherCourcesFailure,
+    required TResult Function() getCourcesToFilterLoading,
+    required TResult Function(T data) getCourcesToFilterSuccess,
+    required TResult Function(String error) getCourcesToFilterFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getTeacherCourcesLoading,
-    TResult? Function(T data)? getTeacherCourcesSuccess,
-    TResult? Function(String error)? getTeacherCourcesFailure,
+    TResult? Function()? getCourcesToFilterLoading,
+    TResult? Function(T data)? getCourcesToFilterSuccess,
+    TResult? Function(String error)? getCourcesToFilterFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getTeacherCourcesLoading,
-    TResult Function(T data)? getTeacherCourcesSuccess,
-    TResult Function(String error)? getTeacherCourcesFailure,
+    TResult Function()? getCourcesToFilterLoading,
+    TResult Function(T data)? getCourcesToFilterSuccess,
+    TResult Function(String error)? getCourcesToFilterFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetTeacherCourcesLoading<T> value)
-        getTeacherCourcesLoading,
-    required TResult Function(GetTeacherCourcesSuccess<T> value)
-        getTeacherCourcesSuccess,
-    required TResult Function(GetTeacherCourcesFailure<T> value)
-        getTeacherCourcesFailure,
+    required TResult Function(GetCourcesToFilterLoading<T> value)
+        getCourcesToFilterLoading,
+    required TResult Function(GetCourcesToFilterSuccess<T> value)
+        getCourcesToFilterSuccess,
+    required TResult Function(GetCourcesToFilterFailure<T> value)
+        getCourcesToFilterFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetTeacherCourcesLoading<T> value)?
-        getTeacherCourcesLoading,
-    TResult? Function(GetTeacherCourcesSuccess<T> value)?
-        getTeacherCourcesSuccess,
-    TResult? Function(GetTeacherCourcesFailure<T> value)?
-        getTeacherCourcesFailure,
+    TResult? Function(GetCourcesToFilterLoading<T> value)?
+        getCourcesToFilterLoading,
+    TResult? Function(GetCourcesToFilterSuccess<T> value)?
+        getCourcesToFilterSuccess,
+    TResult? Function(GetCourcesToFilterFailure<T> value)?
+        getCourcesToFilterFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetTeacherCourcesLoading<T> value)?
-        getTeacherCourcesLoading,
-    TResult Function(GetTeacherCourcesSuccess<T> value)?
-        getTeacherCourcesSuccess,
-    TResult Function(GetTeacherCourcesFailure<T> value)?
-        getTeacherCourcesFailure,
+    TResult Function(GetCourcesToFilterLoading<T> value)?
+        getCourcesToFilterLoading,
+    TResult Function(GetCourcesToFilterSuccess<T> value)?
+        getCourcesToFilterSuccess,
+    TResult Function(GetCourcesToFilterFailure<T> value)?
+        getCourcesToFilterFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetTeacherCourcesStateCopyWith<T, $Res> {
-  factory $GetTeacherCourcesStateCopyWith(GetTeacherCourcesState<T> value,
-          $Res Function(GetTeacherCourcesState<T>) then) =
-      _$GetTeacherCourcesStateCopyWithImpl<T, $Res, GetTeacherCourcesState<T>>;
+abstract class $GetCourcesToFilterStateCopyWith<T, $Res> {
+  factory $GetCourcesToFilterStateCopyWith(GetCourcesToFilterState<T> value,
+          $Res Function(GetCourcesToFilterState<T>) then) =
+      _$GetCourcesToFilterStateCopyWithImpl<T, $Res,
+          GetCourcesToFilterState<T>>;
 }
 
 /// @nodoc
-class _$GetTeacherCourcesStateCopyWithImpl<T, $Res,
-        $Val extends GetTeacherCourcesState<T>>
-    implements $GetTeacherCourcesStateCopyWith<T, $Res> {
-  _$GetTeacherCourcesStateCopyWithImpl(this._value, this._then);
+class _$GetCourcesToFilterStateCopyWithImpl<T, $Res,
+        $Val extends GetCourcesToFilterState<T>>
+    implements $GetCourcesToFilterStateCopyWith<T, $Res> {
+  _$GetCourcesToFilterStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of GetTeacherCourcesState
+  /// Create a copy of GetCourcesToFilterState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -108,13 +109,13 @@ abstract class _$$InitialImplCopyWith<T, $Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<T, $Res>
-    extends _$GetTeacherCourcesStateCopyWithImpl<T, $Res, _$InitialImpl<T>>
+    extends _$GetCourcesToFilterStateCopyWithImpl<T, $Res, _$InitialImpl<T>>
     implements _$$InitialImplCopyWith<T, $Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl<T> _value, $Res Function(_$InitialImpl<T>) _then)
       : super(_value, _then);
 
-  /// Create a copy of GetTeacherCourcesState
+  /// Create a copy of GetCourcesToFilterState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -125,7 +126,7 @@ class _$InitialImpl<T> implements _Initial<T> {
 
   @override
   String toString() {
-    return 'GetTeacherCourcesState<$T>.initial()';
+    return 'GetCourcesToFilterState<$T>.initial()';
   }
 
   @override
@@ -141,9 +142,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getTeacherCourcesLoading,
-    required TResult Function(T data) getTeacherCourcesSuccess,
-    required TResult Function(String error) getTeacherCourcesFailure,
+    required TResult Function() getCourcesToFilterLoading,
+    required TResult Function(T data) getCourcesToFilterSuccess,
+    required TResult Function(String error) getCourcesToFilterFailure,
   }) {
     return initial();
   }
@@ -152,9 +153,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getTeacherCourcesLoading,
-    TResult? Function(T data)? getTeacherCourcesSuccess,
-    TResult? Function(String error)? getTeacherCourcesFailure,
+    TResult? Function()? getCourcesToFilterLoading,
+    TResult? Function(T data)? getCourcesToFilterSuccess,
+    TResult? Function(String error)? getCourcesToFilterFailure,
   }) {
     return initial?.call();
   }
@@ -163,9 +164,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getTeacherCourcesLoading,
-    TResult Function(T data)? getTeacherCourcesSuccess,
-    TResult Function(String error)? getTeacherCourcesFailure,
+    TResult Function()? getCourcesToFilterLoading,
+    TResult Function(T data)? getCourcesToFilterSuccess,
+    TResult Function(String error)? getCourcesToFilterFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -178,12 +179,12 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetTeacherCourcesLoading<T> value)
-        getTeacherCourcesLoading,
-    required TResult Function(GetTeacherCourcesSuccess<T> value)
-        getTeacherCourcesSuccess,
-    required TResult Function(GetTeacherCourcesFailure<T> value)
-        getTeacherCourcesFailure,
+    required TResult Function(GetCourcesToFilterLoading<T> value)
+        getCourcesToFilterLoading,
+    required TResult Function(GetCourcesToFilterSuccess<T> value)
+        getCourcesToFilterSuccess,
+    required TResult Function(GetCourcesToFilterFailure<T> value)
+        getCourcesToFilterFailure,
   }) {
     return initial(this);
   }
@@ -192,12 +193,12 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetTeacherCourcesLoading<T> value)?
-        getTeacherCourcesLoading,
-    TResult? Function(GetTeacherCourcesSuccess<T> value)?
-        getTeacherCourcesSuccess,
-    TResult? Function(GetTeacherCourcesFailure<T> value)?
-        getTeacherCourcesFailure,
+    TResult? Function(GetCourcesToFilterLoading<T> value)?
+        getCourcesToFilterLoading,
+    TResult? Function(GetCourcesToFilterSuccess<T> value)?
+        getCourcesToFilterSuccess,
+    TResult? Function(GetCourcesToFilterFailure<T> value)?
+        getCourcesToFilterFailure,
   }) {
     return initial?.call(this);
   }
@@ -206,12 +207,12 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetTeacherCourcesLoading<T> value)?
-        getTeacherCourcesLoading,
-    TResult Function(GetTeacherCourcesSuccess<T> value)?
-        getTeacherCourcesSuccess,
-    TResult Function(GetTeacherCourcesFailure<T> value)?
-        getTeacherCourcesFailure,
+    TResult Function(GetCourcesToFilterLoading<T> value)?
+        getCourcesToFilterLoading,
+    TResult Function(GetCourcesToFilterSuccess<T> value)?
+        getCourcesToFilterSuccess,
+    TResult Function(GetCourcesToFilterFailure<T> value)?
+        getCourcesToFilterFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -221,47 +222,48 @@ class _$InitialImpl<T> implements _Initial<T> {
   }
 }
 
-abstract class _Initial<T> implements GetTeacherCourcesState<T> {
+abstract class _Initial<T> implements GetCourcesToFilterState<T> {
   const factory _Initial() = _$InitialImpl<T>;
 }
 
 /// @nodoc
-abstract class _$$GetTeacherCourcesLoadingImplCopyWith<T, $Res> {
-  factory _$$GetTeacherCourcesLoadingImplCopyWith(
-          _$GetTeacherCourcesLoadingImpl<T> value,
-          $Res Function(_$GetTeacherCourcesLoadingImpl<T>) then) =
-      __$$GetTeacherCourcesLoadingImplCopyWithImpl<T, $Res>;
+abstract class _$$GetCourcesToFilterLoadingImplCopyWith<T, $Res> {
+  factory _$$GetCourcesToFilterLoadingImplCopyWith(
+          _$GetCourcesToFilterLoadingImpl<T> value,
+          $Res Function(_$GetCourcesToFilterLoadingImpl<T>) then) =
+      __$$GetCourcesToFilterLoadingImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$GetTeacherCourcesLoadingImplCopyWithImpl<T, $Res>
-    extends _$GetTeacherCourcesStateCopyWithImpl<T, $Res,
-        _$GetTeacherCourcesLoadingImpl<T>>
-    implements _$$GetTeacherCourcesLoadingImplCopyWith<T, $Res> {
-  __$$GetTeacherCourcesLoadingImplCopyWithImpl(
-      _$GetTeacherCourcesLoadingImpl<T> _value,
-      $Res Function(_$GetTeacherCourcesLoadingImpl<T>) _then)
+class __$$GetCourcesToFilterLoadingImplCopyWithImpl<T, $Res>
+    extends _$GetCourcesToFilterStateCopyWithImpl<T, $Res,
+        _$GetCourcesToFilterLoadingImpl<T>>
+    implements _$$GetCourcesToFilterLoadingImplCopyWith<T, $Res> {
+  __$$GetCourcesToFilterLoadingImplCopyWithImpl(
+      _$GetCourcesToFilterLoadingImpl<T> _value,
+      $Res Function(_$GetCourcesToFilterLoadingImpl<T>) _then)
       : super(_value, _then);
 
-  /// Create a copy of GetTeacherCourcesState
+  /// Create a copy of GetCourcesToFilterState
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$GetTeacherCourcesLoadingImpl<T> implements GetTeacherCourcesLoading<T> {
-  const _$GetTeacherCourcesLoadingImpl();
+class _$GetCourcesToFilterLoadingImpl<T>
+    implements GetCourcesToFilterLoading<T> {
+  const _$GetCourcesToFilterLoadingImpl();
 
   @override
   String toString() {
-    return 'GetTeacherCourcesState<$T>.getTeacherCourcesLoading()';
+    return 'GetCourcesToFilterState<$T>.getCourcesToFilterLoading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetTeacherCourcesLoadingImpl<T>);
+            other is _$GetCourcesToFilterLoadingImpl<T>);
   }
 
   @override
@@ -271,35 +273,35 @@ class _$GetTeacherCourcesLoadingImpl<T> implements GetTeacherCourcesLoading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getTeacherCourcesLoading,
-    required TResult Function(T data) getTeacherCourcesSuccess,
-    required TResult Function(String error) getTeacherCourcesFailure,
+    required TResult Function() getCourcesToFilterLoading,
+    required TResult Function(T data) getCourcesToFilterSuccess,
+    required TResult Function(String error) getCourcesToFilterFailure,
   }) {
-    return getTeacherCourcesLoading();
+    return getCourcesToFilterLoading();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getTeacherCourcesLoading,
-    TResult? Function(T data)? getTeacherCourcesSuccess,
-    TResult? Function(String error)? getTeacherCourcesFailure,
+    TResult? Function()? getCourcesToFilterLoading,
+    TResult? Function(T data)? getCourcesToFilterSuccess,
+    TResult? Function(String error)? getCourcesToFilterFailure,
   }) {
-    return getTeacherCourcesLoading?.call();
+    return getCourcesToFilterLoading?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getTeacherCourcesLoading,
-    TResult Function(T data)? getTeacherCourcesSuccess,
-    TResult Function(String error)? getTeacherCourcesFailure,
+    TResult Function()? getCourcesToFilterLoading,
+    TResult Function(T data)? getCourcesToFilterSuccess,
+    TResult Function(String error)? getCourcesToFilterFailure,
     required TResult orElse(),
   }) {
-    if (getTeacherCourcesLoading != null) {
-      return getTeacherCourcesLoading();
+    if (getCourcesToFilterLoading != null) {
+      return getCourcesToFilterLoading();
     }
     return orElse();
   }
@@ -308,82 +310,83 @@ class _$GetTeacherCourcesLoadingImpl<T> implements GetTeacherCourcesLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetTeacherCourcesLoading<T> value)
-        getTeacherCourcesLoading,
-    required TResult Function(GetTeacherCourcesSuccess<T> value)
-        getTeacherCourcesSuccess,
-    required TResult Function(GetTeacherCourcesFailure<T> value)
-        getTeacherCourcesFailure,
+    required TResult Function(GetCourcesToFilterLoading<T> value)
+        getCourcesToFilterLoading,
+    required TResult Function(GetCourcesToFilterSuccess<T> value)
+        getCourcesToFilterSuccess,
+    required TResult Function(GetCourcesToFilterFailure<T> value)
+        getCourcesToFilterFailure,
   }) {
-    return getTeacherCourcesLoading(this);
+    return getCourcesToFilterLoading(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetTeacherCourcesLoading<T> value)?
-        getTeacherCourcesLoading,
-    TResult? Function(GetTeacherCourcesSuccess<T> value)?
-        getTeacherCourcesSuccess,
-    TResult? Function(GetTeacherCourcesFailure<T> value)?
-        getTeacherCourcesFailure,
+    TResult? Function(GetCourcesToFilterLoading<T> value)?
+        getCourcesToFilterLoading,
+    TResult? Function(GetCourcesToFilterSuccess<T> value)?
+        getCourcesToFilterSuccess,
+    TResult? Function(GetCourcesToFilterFailure<T> value)?
+        getCourcesToFilterFailure,
   }) {
-    return getTeacherCourcesLoading?.call(this);
+    return getCourcesToFilterLoading?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetTeacherCourcesLoading<T> value)?
-        getTeacherCourcesLoading,
-    TResult Function(GetTeacherCourcesSuccess<T> value)?
-        getTeacherCourcesSuccess,
-    TResult Function(GetTeacherCourcesFailure<T> value)?
-        getTeacherCourcesFailure,
+    TResult Function(GetCourcesToFilterLoading<T> value)?
+        getCourcesToFilterLoading,
+    TResult Function(GetCourcesToFilterSuccess<T> value)?
+        getCourcesToFilterSuccess,
+    TResult Function(GetCourcesToFilterFailure<T> value)?
+        getCourcesToFilterFailure,
     required TResult orElse(),
   }) {
-    if (getTeacherCourcesLoading != null) {
-      return getTeacherCourcesLoading(this);
+    if (getCourcesToFilterLoading != null) {
+      return getCourcesToFilterLoading(this);
     }
     return orElse();
   }
 }
 
-abstract class GetTeacherCourcesLoading<T>
-    implements GetTeacherCourcesState<T> {
-  const factory GetTeacherCourcesLoading() = _$GetTeacherCourcesLoadingImpl<T>;
+abstract class GetCourcesToFilterLoading<T>
+    implements GetCourcesToFilterState<T> {
+  const factory GetCourcesToFilterLoading() =
+      _$GetCourcesToFilterLoadingImpl<T>;
 }
 
 /// @nodoc
-abstract class _$$GetTeacherCourcesSuccessImplCopyWith<T, $Res> {
-  factory _$$GetTeacherCourcesSuccessImplCopyWith(
-          _$GetTeacherCourcesSuccessImpl<T> value,
-          $Res Function(_$GetTeacherCourcesSuccessImpl<T>) then) =
-      __$$GetTeacherCourcesSuccessImplCopyWithImpl<T, $Res>;
+abstract class _$$GetCourcesToFilterSuccessImplCopyWith<T, $Res> {
+  factory _$$GetCourcesToFilterSuccessImplCopyWith(
+          _$GetCourcesToFilterSuccessImpl<T> value,
+          $Res Function(_$GetCourcesToFilterSuccessImpl<T>) then) =
+      __$$GetCourcesToFilterSuccessImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({T data});
 }
 
 /// @nodoc
-class __$$GetTeacherCourcesSuccessImplCopyWithImpl<T, $Res>
-    extends _$GetTeacherCourcesStateCopyWithImpl<T, $Res,
-        _$GetTeacherCourcesSuccessImpl<T>>
-    implements _$$GetTeacherCourcesSuccessImplCopyWith<T, $Res> {
-  __$$GetTeacherCourcesSuccessImplCopyWithImpl(
-      _$GetTeacherCourcesSuccessImpl<T> _value,
-      $Res Function(_$GetTeacherCourcesSuccessImpl<T>) _then)
+class __$$GetCourcesToFilterSuccessImplCopyWithImpl<T, $Res>
+    extends _$GetCourcesToFilterStateCopyWithImpl<T, $Res,
+        _$GetCourcesToFilterSuccessImpl<T>>
+    implements _$$GetCourcesToFilterSuccessImplCopyWith<T, $Res> {
+  __$$GetCourcesToFilterSuccessImplCopyWithImpl(
+      _$GetCourcesToFilterSuccessImpl<T> _value,
+      $Res Function(_$GetCourcesToFilterSuccessImpl<T>) _then)
       : super(_value, _then);
 
-  /// Create a copy of GetTeacherCourcesState
+  /// Create a copy of GetCourcesToFilterState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$GetTeacherCourcesSuccessImpl<T>(
+    return _then(_$GetCourcesToFilterSuccessImpl<T>(
       freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -394,22 +397,23 @@ class __$$GetTeacherCourcesSuccessImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$GetTeacherCourcesSuccessImpl<T> implements GetTeacherCourcesSuccess<T> {
-  const _$GetTeacherCourcesSuccessImpl(this.data);
+class _$GetCourcesToFilterSuccessImpl<T>
+    implements GetCourcesToFilterSuccess<T> {
+  const _$GetCourcesToFilterSuccessImpl(this.data);
 
   @override
   final T data;
 
   @override
   String toString() {
-    return 'GetTeacherCourcesState<$T>.getTeacherCourcesSuccess(data: $data)';
+    return 'GetCourcesToFilterState<$T>.getCourcesToFilterSuccess(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetTeacherCourcesSuccessImpl<T> &&
+            other is _$GetCourcesToFilterSuccessImpl<T> &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
@@ -417,48 +421,49 @@ class _$GetTeacherCourcesSuccessImpl<T> implements GetTeacherCourcesSuccess<T> {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
-  /// Create a copy of GetTeacherCourcesState
+  /// Create a copy of GetCourcesToFilterState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetTeacherCourcesSuccessImplCopyWith<T, _$GetTeacherCourcesSuccessImpl<T>>
-      get copyWith => __$$GetTeacherCourcesSuccessImplCopyWithImpl<T,
-          _$GetTeacherCourcesSuccessImpl<T>>(this, _$identity);
+  _$$GetCourcesToFilterSuccessImplCopyWith<T,
+          _$GetCourcesToFilterSuccessImpl<T>>
+      get copyWith => __$$GetCourcesToFilterSuccessImplCopyWithImpl<T,
+          _$GetCourcesToFilterSuccessImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getTeacherCourcesLoading,
-    required TResult Function(T data) getTeacherCourcesSuccess,
-    required TResult Function(String error) getTeacherCourcesFailure,
+    required TResult Function() getCourcesToFilterLoading,
+    required TResult Function(T data) getCourcesToFilterSuccess,
+    required TResult Function(String error) getCourcesToFilterFailure,
   }) {
-    return getTeacherCourcesSuccess(data);
+    return getCourcesToFilterSuccess(data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getTeacherCourcesLoading,
-    TResult? Function(T data)? getTeacherCourcesSuccess,
-    TResult? Function(String error)? getTeacherCourcesFailure,
+    TResult? Function()? getCourcesToFilterLoading,
+    TResult? Function(T data)? getCourcesToFilterSuccess,
+    TResult? Function(String error)? getCourcesToFilterFailure,
   }) {
-    return getTeacherCourcesSuccess?.call(data);
+    return getCourcesToFilterSuccess?.call(data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getTeacherCourcesLoading,
-    TResult Function(T data)? getTeacherCourcesSuccess,
-    TResult Function(String error)? getTeacherCourcesFailure,
+    TResult Function()? getCourcesToFilterLoading,
+    TResult Function(T data)? getCourcesToFilterSuccess,
+    TResult Function(String error)? getCourcesToFilterFailure,
     required TResult orElse(),
   }) {
-    if (getTeacherCourcesSuccess != null) {
-      return getTeacherCourcesSuccess(data);
+    if (getCourcesToFilterSuccess != null) {
+      return getCourcesToFilterSuccess(data);
     }
     return orElse();
   }
@@ -467,91 +472,92 @@ class _$GetTeacherCourcesSuccessImpl<T> implements GetTeacherCourcesSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetTeacherCourcesLoading<T> value)
-        getTeacherCourcesLoading,
-    required TResult Function(GetTeacherCourcesSuccess<T> value)
-        getTeacherCourcesSuccess,
-    required TResult Function(GetTeacherCourcesFailure<T> value)
-        getTeacherCourcesFailure,
+    required TResult Function(GetCourcesToFilterLoading<T> value)
+        getCourcesToFilterLoading,
+    required TResult Function(GetCourcesToFilterSuccess<T> value)
+        getCourcesToFilterSuccess,
+    required TResult Function(GetCourcesToFilterFailure<T> value)
+        getCourcesToFilterFailure,
   }) {
-    return getTeacherCourcesSuccess(this);
+    return getCourcesToFilterSuccess(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetTeacherCourcesLoading<T> value)?
-        getTeacherCourcesLoading,
-    TResult? Function(GetTeacherCourcesSuccess<T> value)?
-        getTeacherCourcesSuccess,
-    TResult? Function(GetTeacherCourcesFailure<T> value)?
-        getTeacherCourcesFailure,
+    TResult? Function(GetCourcesToFilterLoading<T> value)?
+        getCourcesToFilterLoading,
+    TResult? Function(GetCourcesToFilterSuccess<T> value)?
+        getCourcesToFilterSuccess,
+    TResult? Function(GetCourcesToFilterFailure<T> value)?
+        getCourcesToFilterFailure,
   }) {
-    return getTeacherCourcesSuccess?.call(this);
+    return getCourcesToFilterSuccess?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetTeacherCourcesLoading<T> value)?
-        getTeacherCourcesLoading,
-    TResult Function(GetTeacherCourcesSuccess<T> value)?
-        getTeacherCourcesSuccess,
-    TResult Function(GetTeacherCourcesFailure<T> value)?
-        getTeacherCourcesFailure,
+    TResult Function(GetCourcesToFilterLoading<T> value)?
+        getCourcesToFilterLoading,
+    TResult Function(GetCourcesToFilterSuccess<T> value)?
+        getCourcesToFilterSuccess,
+    TResult Function(GetCourcesToFilterFailure<T> value)?
+        getCourcesToFilterFailure,
     required TResult orElse(),
   }) {
-    if (getTeacherCourcesSuccess != null) {
-      return getTeacherCourcesSuccess(this);
+    if (getCourcesToFilterSuccess != null) {
+      return getCourcesToFilterSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class GetTeacherCourcesSuccess<T>
-    implements GetTeacherCourcesState<T> {
-  const factory GetTeacherCourcesSuccess(final T data) =
-      _$GetTeacherCourcesSuccessImpl<T>;
+abstract class GetCourcesToFilterSuccess<T>
+    implements GetCourcesToFilterState<T> {
+  const factory GetCourcesToFilterSuccess(final T data) =
+      _$GetCourcesToFilterSuccessImpl<T>;
 
   T get data;
 
-  /// Create a copy of GetTeacherCourcesState
+  /// Create a copy of GetCourcesToFilterState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetTeacherCourcesSuccessImplCopyWith<T, _$GetTeacherCourcesSuccessImpl<T>>
+  _$$GetCourcesToFilterSuccessImplCopyWith<T,
+          _$GetCourcesToFilterSuccessImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetTeacherCourcesFailureImplCopyWith<T, $Res> {
-  factory _$$GetTeacherCourcesFailureImplCopyWith(
-          _$GetTeacherCourcesFailureImpl<T> value,
-          $Res Function(_$GetTeacherCourcesFailureImpl<T>) then) =
-      __$$GetTeacherCourcesFailureImplCopyWithImpl<T, $Res>;
+abstract class _$$GetCourcesToFilterFailureImplCopyWith<T, $Res> {
+  factory _$$GetCourcesToFilterFailureImplCopyWith(
+          _$GetCourcesToFilterFailureImpl<T> value,
+          $Res Function(_$GetCourcesToFilterFailureImpl<T>) then) =
+      __$$GetCourcesToFilterFailureImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({String error});
 }
 
 /// @nodoc
-class __$$GetTeacherCourcesFailureImplCopyWithImpl<T, $Res>
-    extends _$GetTeacherCourcesStateCopyWithImpl<T, $Res,
-        _$GetTeacherCourcesFailureImpl<T>>
-    implements _$$GetTeacherCourcesFailureImplCopyWith<T, $Res> {
-  __$$GetTeacherCourcesFailureImplCopyWithImpl(
-      _$GetTeacherCourcesFailureImpl<T> _value,
-      $Res Function(_$GetTeacherCourcesFailureImpl<T>) _then)
+class __$$GetCourcesToFilterFailureImplCopyWithImpl<T, $Res>
+    extends _$GetCourcesToFilterStateCopyWithImpl<T, $Res,
+        _$GetCourcesToFilterFailureImpl<T>>
+    implements _$$GetCourcesToFilterFailureImplCopyWith<T, $Res> {
+  __$$GetCourcesToFilterFailureImplCopyWithImpl(
+      _$GetCourcesToFilterFailureImpl<T> _value,
+      $Res Function(_$GetCourcesToFilterFailureImpl<T>) _then)
       : super(_value, _then);
 
-  /// Create a copy of GetTeacherCourcesState
+  /// Create a copy of GetCourcesToFilterState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? error = null,
   }) {
-    return _then(_$GetTeacherCourcesFailureImpl<T>(
+    return _then(_$GetCourcesToFilterFailureImpl<T>(
       null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -562,70 +568,72 @@ class __$$GetTeacherCourcesFailureImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$GetTeacherCourcesFailureImpl<T> implements GetTeacherCourcesFailure<T> {
-  const _$GetTeacherCourcesFailureImpl(this.error);
+class _$GetCourcesToFilterFailureImpl<T>
+    implements GetCourcesToFilterFailure<T> {
+  const _$GetCourcesToFilterFailureImpl(this.error);
 
   @override
   final String error;
 
   @override
   String toString() {
-    return 'GetTeacherCourcesState<$T>.getTeacherCourcesFailure(error: $error)';
+    return 'GetCourcesToFilterState<$T>.getCourcesToFilterFailure(error: $error)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetTeacherCourcesFailureImpl<T> &&
+            other is _$GetCourcesToFilterFailureImpl<T> &&
             (identical(other.error, error) || other.error == error));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  /// Create a copy of GetTeacherCourcesState
+  /// Create a copy of GetCourcesToFilterState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetTeacherCourcesFailureImplCopyWith<T, _$GetTeacherCourcesFailureImpl<T>>
-      get copyWith => __$$GetTeacherCourcesFailureImplCopyWithImpl<T,
-          _$GetTeacherCourcesFailureImpl<T>>(this, _$identity);
+  _$$GetCourcesToFilterFailureImplCopyWith<T,
+          _$GetCourcesToFilterFailureImpl<T>>
+      get copyWith => __$$GetCourcesToFilterFailureImplCopyWithImpl<T,
+          _$GetCourcesToFilterFailureImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getTeacherCourcesLoading,
-    required TResult Function(T data) getTeacherCourcesSuccess,
-    required TResult Function(String error) getTeacherCourcesFailure,
+    required TResult Function() getCourcesToFilterLoading,
+    required TResult Function(T data) getCourcesToFilterSuccess,
+    required TResult Function(String error) getCourcesToFilterFailure,
   }) {
-    return getTeacherCourcesFailure(error);
+    return getCourcesToFilterFailure(error);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getTeacherCourcesLoading,
-    TResult? Function(T data)? getTeacherCourcesSuccess,
-    TResult? Function(String error)? getTeacherCourcesFailure,
+    TResult? Function()? getCourcesToFilterLoading,
+    TResult? Function(T data)? getCourcesToFilterSuccess,
+    TResult? Function(String error)? getCourcesToFilterFailure,
   }) {
-    return getTeacherCourcesFailure?.call(error);
+    return getCourcesToFilterFailure?.call(error);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getTeacherCourcesLoading,
-    TResult Function(T data)? getTeacherCourcesSuccess,
-    TResult Function(String error)? getTeacherCourcesFailure,
+    TResult Function()? getCourcesToFilterLoading,
+    TResult Function(T data)? getCourcesToFilterSuccess,
+    TResult Function(String error)? getCourcesToFilterFailure,
     required TResult orElse(),
   }) {
-    if (getTeacherCourcesFailure != null) {
-      return getTeacherCourcesFailure(error);
+    if (getCourcesToFilterFailure != null) {
+      return getCourcesToFilterFailure(error);
     }
     return orElse();
   }
@@ -634,59 +642,60 @@ class _$GetTeacherCourcesFailureImpl<T> implements GetTeacherCourcesFailure<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetTeacherCourcesLoading<T> value)
-        getTeacherCourcesLoading,
-    required TResult Function(GetTeacherCourcesSuccess<T> value)
-        getTeacherCourcesSuccess,
-    required TResult Function(GetTeacherCourcesFailure<T> value)
-        getTeacherCourcesFailure,
+    required TResult Function(GetCourcesToFilterLoading<T> value)
+        getCourcesToFilterLoading,
+    required TResult Function(GetCourcesToFilterSuccess<T> value)
+        getCourcesToFilterSuccess,
+    required TResult Function(GetCourcesToFilterFailure<T> value)
+        getCourcesToFilterFailure,
   }) {
-    return getTeacherCourcesFailure(this);
+    return getCourcesToFilterFailure(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetTeacherCourcesLoading<T> value)?
-        getTeacherCourcesLoading,
-    TResult? Function(GetTeacherCourcesSuccess<T> value)?
-        getTeacherCourcesSuccess,
-    TResult? Function(GetTeacherCourcesFailure<T> value)?
-        getTeacherCourcesFailure,
+    TResult? Function(GetCourcesToFilterLoading<T> value)?
+        getCourcesToFilterLoading,
+    TResult? Function(GetCourcesToFilterSuccess<T> value)?
+        getCourcesToFilterSuccess,
+    TResult? Function(GetCourcesToFilterFailure<T> value)?
+        getCourcesToFilterFailure,
   }) {
-    return getTeacherCourcesFailure?.call(this);
+    return getCourcesToFilterFailure?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetTeacherCourcesLoading<T> value)?
-        getTeacherCourcesLoading,
-    TResult Function(GetTeacherCourcesSuccess<T> value)?
-        getTeacherCourcesSuccess,
-    TResult Function(GetTeacherCourcesFailure<T> value)?
-        getTeacherCourcesFailure,
+    TResult Function(GetCourcesToFilterLoading<T> value)?
+        getCourcesToFilterLoading,
+    TResult Function(GetCourcesToFilterSuccess<T> value)?
+        getCourcesToFilterSuccess,
+    TResult Function(GetCourcesToFilterFailure<T> value)?
+        getCourcesToFilterFailure,
     required TResult orElse(),
   }) {
-    if (getTeacherCourcesFailure != null) {
-      return getTeacherCourcesFailure(this);
+    if (getCourcesToFilterFailure != null) {
+      return getCourcesToFilterFailure(this);
     }
     return orElse();
   }
 }
 
-abstract class GetTeacherCourcesFailure<T>
-    implements GetTeacherCourcesState<T> {
-  const factory GetTeacherCourcesFailure(final String error) =
-      _$GetTeacherCourcesFailureImpl<T>;
+abstract class GetCourcesToFilterFailure<T>
+    implements GetCourcesToFilterState<T> {
+  const factory GetCourcesToFilterFailure(final String error) =
+      _$GetCourcesToFilterFailureImpl<T>;
 
   String get error;
 
-  /// Create a copy of GetTeacherCourcesState
+  /// Create a copy of GetCourcesToFilterState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetTeacherCourcesFailureImplCopyWith<T, _$GetTeacherCourcesFailureImpl<T>>
+  _$$GetCourcesToFilterFailureImplCopyWith<T,
+          _$GetCourcesToFilterFailureImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

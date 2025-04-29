@@ -102,6 +102,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يجب تحديد التاريخ والوقت للاختبار.",
     ),
     "days": MessageLookupByLibrary.simpleMessage("الأيام"),
+    "delete": MessageLookupByLibrary.simpleMessage("حذف"),
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
       "🤔 لم تبحث عن شيء بعد! ",
     ),
@@ -112,6 +113,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "done": MessageLookupByLibrary.simpleMessage("تم"),
     "download": MessageLookupByLibrary.simpleMessage("تحميل"),
     "eLearning": MessageLookupByLibrary.simpleMessage("التعليم الإلكتروني"),
+    "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
+    "editAnnouncement": MessageLookupByLibrary.simpleMessage("تعديل خبر"),
+    "edit_news": MessageLookupByLibrary.simpleMessage(
+      "✏️ عدّل إعلانك لضمان بقاء طلابك على اطلاع بأحدث التفاصيل والتحديثات",
+    ),
     "email": MessageLookupByLibrary.simpleMessage("الإيميل"),
     "endsAt": MessageLookupByLibrary.simpleMessage("ينتهي"),
     "enterYourQuestion": MessageLookupByLibrary.simpleMessage("ادخل سؤالك"),

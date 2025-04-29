@@ -2,25 +2,25 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/features/annoucements/data/repos/annoucements_repo.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../data/models/teachers_courses_response.dart';
+import '../../../../core/data/models/teachers_courses_response.dart';
 part 'get_teacher_cources_state.dart';
 part 'get_teacher_cources_cubit.freezed.dart';
 
-class GetTeacherCourcesCubit extends Cubit<GetTeacherCourcesState> {
+class GetCourcesToFilterCubit extends Cubit<GetCourcesToFilterState> {
   final AnnoucementsRepo _repo;
-  GetTeacherCourcesCubit(this._repo)
-      : super(const GetTeacherCourcesState.initial());
+  GetCourcesToFilterCubit(this._repo)
+      : super(const GetCourcesToFilterState.initial());
   TeachersCoursesResponse? coursesResponse;
   Future<void> getTeacherCourses() async {
-    emit(const GetTeacherCourcesState.getTeacherCourcesLoading());
+    emit(const GetCourcesToFilterState.getCourcesToFilterLoading());
     final result = await _repo.getTeacherCourses();
     result.when(
       success: (data) {
         coursesResponse = data;
-        emit(GetTeacherCourcesState.getTeacherCourcesSuccess(data));
+        emit(GetCourcesToFilterState.getCourcesToFilterSuccess(data));
       },
       failure: (error) {
-        emit(GetTeacherCourcesState.getTeacherCourcesFailure(
+        emit(GetCourcesToFilterState.getCourcesToFilterFailure(
             error.getAllMessages()));
       },
     );

@@ -5,7 +5,7 @@ part 'teachers_courses_response.g.dart';
 @JsonSerializable()
 class TeachersCoursesResponse {
   final int code;
-  final List<Course> data;
+  final List<CourseResponse> data;
 
   TeachersCoursesResponse({
     required this.code,
@@ -19,26 +19,27 @@ class TeachersCoursesResponse {
 }
 
 @JsonSerializable()
-class Course {
-  final int id;
-  final String name;
-  final String code;
+class CourseResponse {
+  final int? id;
+  final String? name;
+  final String? code;
   final String? description;
-  final Department department;
-  final Semester semester;
+  final Department? department;
+  final Semester? semester;
 
-  Course({
-    required this.id,
-    required this.name,
-    required this.code,
-    required this.description,
-    required this.department,
-    required this.semester,
+  CourseResponse({
+    this.id,
+    this.name,
+    this.code,
+    this.description,
+    this.department,
+    this.semester,
   });
 
-  factory Course.fromJson(Map<String, dynamic> json) => _$CourseFromJson(json);
+  factory CourseResponse.fromJson(Map<String, dynamic> json) =>
+      _$CourseResponseFromJson(json);
 
-  Map<String, dynamic> toJson() => _$CourseToJson(this);
+  Map<String, dynamic> toJson() => _$CourseResponseToJson(this);
 }
 
 @JsonSerializable()
