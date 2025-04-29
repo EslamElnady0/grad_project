@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'students_courses_response.dart';
+part of '../../../../core/data/models/students_courses_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

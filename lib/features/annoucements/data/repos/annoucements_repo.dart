@@ -3,13 +3,13 @@ import 'package:grad_project/core/networking/api_result.dart';
 import 'package:grad_project/features/annoucements/data/models/add_annoucement_response_body.dart';
 import 'package:grad_project/features/annoucements/data/models/delete_annoucement_response_body.dart';
 import 'package:grad_project/features/annoucements/data/models/paginated_announcements_response.dart';
-import 'package:grad_project/features/annoucements/data/models/teachers_courses_response.dart';
+import 'package:grad_project/core/data/models/teachers_courses_response.dart';
 import 'package:grad_project/features/annoucements/data/models/update_annoucement_response_body.dart';
 
 import '../data sources/annoucements_local_data_source.dart';
 import '../data sources/annoucements_remote_data_source.dart';
 import '../models/add_annoucement_request_body.dart';
-import '../models/students_courses_response.dart';
+import '../../../../core/data/models/students_courses_response.dart';
 
 class AnnoucementsRepo {
   final AnnoucementsRemoteDataSource remoteDataSource;

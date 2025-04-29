@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'students_courses_response.g.dart';
+part '../../../features/annoucements/data/models/students_courses_response.g.dart';
 
 @JsonSerializable()
 class StudentsCoursesResponse {

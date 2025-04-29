@@ -2,7 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/features/annoucements/data/repos/annoucements_repo.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../data/models/teachers_courses_response.dart';
+import '../../../../core/data/models/teachers_courses_response.dart';
 part 'get_teacher_cources_state.dart';
 part 'get_teacher_cources_cubit.freezed.dart';
 
