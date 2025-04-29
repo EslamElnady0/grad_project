@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grad_project/core/data/models/all_courses_response_model.dart';
 import 'package:grad_project/core/logic/all_courses_cubit/all_courses_cubit.dart';
 import 'package:grad_project/features/lecture_manager/ui/widgets/lecture_manager_item.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../generated/l10n.dart';
+import '../../../../core/data/models/teachers_courses_response.dart';
 import '../../../home/ui/widgets/home_screens_header_row.dart';
 import '../../../home/ui/widgets/title_text_widget.dart';
 
@@ -16,7 +16,7 @@ class LectureManagerViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.0.w),
       child: Column(
         children: [
           vGap(22),
@@ -37,10 +37,10 @@ class LectureManagerViewBody extends StatelessWidget {
           BlocConsumer<AllCoursesCubit, AllCoursesState>(
             listener: (context, state) {},
             builder: (context, state) {
-              if (state is AllCoursesSuccess && state.data != null) {
+              if (state is AllTeacherCoursesSuccess && state.data != null) {
                 final allCoursesResponseModel = state.data;
-      
-                return _buildCourseList(allCoursesResponseModel!);
+
+                return _buildCourseList(allCoursesResponseModel);
               } else {
                 return _buildSkeletonList();
               }
@@ -51,15 +51,15 @@ class LectureManagerViewBody extends StatelessWidget {
     );
   }
 
-  Widget _buildCourseList(AllCoursesResponseModel allCoursesResponseModel) {
+  Widget _buildCourseList(TeachersCoursesResponse allCoursesResponseModel) {
     return ListView.builder(
       padding: EdgeInsets.only(bottom: 200.h),
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      itemCount: allCoursesResponseModel.data!.length,
+      itemCount: allCoursesResponseModel.data.length,
       itemBuilder: (context, index) {
         return LectureManagerItem(
-          courseData: allCoursesResponseModel.data![index],
+          courseData: allCoursesResponseModel.data[index],
         );
       },
     );
@@ -70,11 +70,11 @@ class LectureManagerViewBody extends StatelessWidget {
       enabled: true,
       child: ListView.builder(
         shrinkWrap: true,
-         physics: const NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         padding: EdgeInsets.zero,
         itemCount: 2,
         itemBuilder: (context, index) => LectureManagerItem(
-          courseData: CourseData(), // عرض بيانات فارغة
+          courseData: CourseResponse(), // عرض بيانات فارغة
         ),
       ),
     );

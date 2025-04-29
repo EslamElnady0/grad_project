@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
+import 'package:grad_project/core/logic/all_courses_cubit/all_courses_cubit.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/annoucements/data/models/paginated_announcements_response.dart';
-
-import 'package:grad_project/features/annoucements/data/models/teachers_courses_response.dart';
-
-import 'package:grad_project/features/annoucements/logic/get_teacher_cources_cubit/get_teacher_cources_cubit.dart';
 import 'package:grad_project/features/annoucements/logic/update_annoucement_cubit/update_annoucement_cubit.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../generated/l10n.dart';
@@ -30,7 +27,7 @@ class EditDropDownAndDisplays extends StatelessWidget {
                   .copyWith(color: AppColors.darkerBlue),
             ),
             vGap(12),
-            BlocBuilder<GetCourcesToFilterCubit, GetCourcesToFilterState>(
+            BlocBuilder<AllCoursesCubit, AllCoursesState>(
               builder: (context, state) => state.maybeWhen(
                 orElse: () => Padding(
                   padding: EdgeInsetsDirectional.only(start: 25.w),
@@ -38,9 +35,7 @@ class EditDropDownAndDisplays extends StatelessWidget {
                     color: AppColors.darkblue,
                   ),
                 ),
-                getCourcesToFilterSuccess: (data) {
-                  data as TeachersCoursesResponse;
-
+                allTeacherCoursesSuccess: (data) {
                   return BlocBuilder<UpdateAnnoucementCubit,
                       UpdateAnnoucementState>(
                     builder: (context, updateState) {
@@ -58,7 +53,7 @@ class EditDropDownAndDisplays extends StatelessWidget {
 
                       final selectedCourse = cubit.selectedCourse;
                       final selectedCourseText =
-                          "${selectedCourse!.name}    ${selectedCourse.semester.name}";
+                          "${selectedCourse!.name}    ${selectedCourse.semester?.name}";
 
                       return DisplayAndDropDownButton(
                         value: selectedCourseText,

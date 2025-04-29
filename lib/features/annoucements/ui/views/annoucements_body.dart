@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/flavors/flavors_functions.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
+import 'package:grad_project/core/logic/all_courses_cubit/all_courses_cubit.dart';
 import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/get_announcement_cubit.dart';
-import 'package:grad_project/features/annoucements/logic/get_teacher_cources_cubit/get_teacher_cources_cubit.dart';
 import 'package:provider/provider.dart';
 import '../../../../generated/l10n.dart';
 import '../widgets/admin_add_annoucement_row.dart';
@@ -24,9 +24,7 @@ class _AnnoucementsBodyState extends State<AnnoucementsBody> {
   Future<void> initApiCalls() async {
     await Future.wait([
       context.read<GetAnnouncementCubit>().getAnnouncement(),
-      FlavorsFunctions.isAdmin()
-          ? context.read<GetCourcesToFilterCubit>().getTeacherCourses()
-          : context.read<GetCourcesToFilterCubit>().getStudentsCourses(),
+      context.read<AllCoursesCubit>().get()
     ]);
   }
 

@@ -20,25 +20,52 @@ class _AllCoursesRemoteDataSource implements AllCoursesRemoteDataSource {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<AllCoursesResponseModel> getAllCourses() async {
+  Future<StudentsCoursesResponse> getStudentsCourses() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AllCoursesResponseModel>(
+    final _options = _setStreamType<StudentsCoursesResponse>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'teachers//courses',
+            '/courses',
             queryParameters: queryParameters,
             data: _data,
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AllCoursesResponseModel _value;
+    late StudentsCoursesResponse _value;
     try {
-      _value = AllCoursesResponseModel.fromJson(_result.data!);
+      _value = StudentsCoursesResponse.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<TeachersCoursesResponse> getTeacherCourses() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<TeachersCoursesResponse>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'teachers/courses',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late TeachersCoursesResponse _value;
+    try {
+      _value = TeachersCoursesResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

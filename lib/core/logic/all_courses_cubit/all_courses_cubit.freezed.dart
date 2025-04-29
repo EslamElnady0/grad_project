@@ -20,7 +20,10 @@ mixin _$AllCoursesState<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() allCoursesLoading,
-    required TResult Function(T data) allCoursesSuccess,
+    required TResult Function(TeachersCoursesResponse data)
+        allTeacherCoursesSuccess,
+    required TResult Function(StudentsCoursesResponse data)
+        allStudentCoursesSuccess,
     required TResult Function(String error) allCoursesFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +31,8 @@ mixin _$AllCoursesState<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? allCoursesLoading,
-    TResult? Function(T data)? allCoursesSuccess,
+    TResult? Function(TeachersCoursesResponse data)? allTeacherCoursesSuccess,
+    TResult? Function(StudentsCoursesResponse data)? allStudentCoursesSuccess,
     TResult? Function(String error)? allCoursesFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +40,8 @@ mixin _$AllCoursesState<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? allCoursesLoading,
-    TResult Function(T data)? allCoursesSuccess,
+    TResult Function(TeachersCoursesResponse data)? allTeacherCoursesSuccess,
+    TResult Function(StudentsCoursesResponse data)? allStudentCoursesSuccess,
     TResult Function(String error)? allCoursesFailure,
     required TResult orElse(),
   }) =>
@@ -45,7 +50,10 @@ mixin _$AllCoursesState<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(AllCoursesLoading<T> value) allCoursesLoading,
-    required TResult Function(AllCoursesSuccess<T> value) allCoursesSuccess,
+    required TResult Function(AllTeacherCoursesSuccess<T> value)
+        allTeacherCoursesSuccess,
+    required TResult Function(AllStudentCoursesSuccess<T> value)
+        allStudentCoursesSuccess,
     required TResult Function(AllCoursesFailure<T> value) allCoursesFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -53,7 +61,10 @@ mixin _$AllCoursesState<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(AllCoursesLoading<T> value)? allCoursesLoading,
-    TResult? Function(AllCoursesSuccess<T> value)? allCoursesSuccess,
+    TResult? Function(AllTeacherCoursesSuccess<T> value)?
+        allTeacherCoursesSuccess,
+    TResult? Function(AllStudentCoursesSuccess<T> value)?
+        allStudentCoursesSuccess,
     TResult? Function(AllCoursesFailure<T> value)? allCoursesFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +72,10 @@ mixin _$AllCoursesState<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
     TResult Function(AllCoursesLoading<T> value)? allCoursesLoading,
-    TResult Function(AllCoursesSuccess<T> value)? allCoursesSuccess,
+    TResult Function(AllTeacherCoursesSuccess<T> value)?
+        allTeacherCoursesSuccess,
+    TResult Function(AllStudentCoursesSuccess<T> value)?
+        allStudentCoursesSuccess,
     TResult Function(AllCoursesFailure<T> value)? allCoursesFailure,
     required TResult orElse(),
   }) =>
@@ -132,7 +146,10 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() allCoursesLoading,
-    required TResult Function(T data) allCoursesSuccess,
+    required TResult Function(TeachersCoursesResponse data)
+        allTeacherCoursesSuccess,
+    required TResult Function(StudentsCoursesResponse data)
+        allStudentCoursesSuccess,
     required TResult Function(String error) allCoursesFailure,
   }) {
     return initial();
@@ -143,7 +160,8 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? allCoursesLoading,
-    TResult? Function(T data)? allCoursesSuccess,
+    TResult? Function(TeachersCoursesResponse data)? allTeacherCoursesSuccess,
+    TResult? Function(StudentsCoursesResponse data)? allStudentCoursesSuccess,
     TResult? Function(String error)? allCoursesFailure,
   }) {
     return initial?.call();
@@ -154,7 +172,8 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? allCoursesLoading,
-    TResult Function(T data)? allCoursesSuccess,
+    TResult Function(TeachersCoursesResponse data)? allTeacherCoursesSuccess,
+    TResult Function(StudentsCoursesResponse data)? allStudentCoursesSuccess,
     TResult Function(String error)? allCoursesFailure,
     required TResult orElse(),
   }) {
@@ -169,7 +188,10 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(AllCoursesLoading<T> value) allCoursesLoading,
-    required TResult Function(AllCoursesSuccess<T> value) allCoursesSuccess,
+    required TResult Function(AllTeacherCoursesSuccess<T> value)
+        allTeacherCoursesSuccess,
+    required TResult Function(AllStudentCoursesSuccess<T> value)
+        allStudentCoursesSuccess,
     required TResult Function(AllCoursesFailure<T> value) allCoursesFailure,
   }) {
     return initial(this);
@@ -180,7 +202,10 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(AllCoursesLoading<T> value)? allCoursesLoading,
-    TResult? Function(AllCoursesSuccess<T> value)? allCoursesSuccess,
+    TResult? Function(AllTeacherCoursesSuccess<T> value)?
+        allTeacherCoursesSuccess,
+    TResult? Function(AllStudentCoursesSuccess<T> value)?
+        allStudentCoursesSuccess,
     TResult? Function(AllCoursesFailure<T> value)? allCoursesFailure,
   }) {
     return initial?.call(this);
@@ -191,7 +216,10 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
     TResult Function(AllCoursesLoading<T> value)? allCoursesLoading,
-    TResult Function(AllCoursesSuccess<T> value)? allCoursesSuccess,
+    TResult Function(AllTeacherCoursesSuccess<T> value)?
+        allTeacherCoursesSuccess,
+    TResult Function(AllStudentCoursesSuccess<T> value)?
+        allStudentCoursesSuccess,
     TResult Function(AllCoursesFailure<T> value)? allCoursesFailure,
     required TResult orElse(),
   }) {
@@ -250,7 +278,10 @@ class _$AllCoursesLoadingImpl<T> implements AllCoursesLoading<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() allCoursesLoading,
-    required TResult Function(T data) allCoursesSuccess,
+    required TResult Function(TeachersCoursesResponse data)
+        allTeacherCoursesSuccess,
+    required TResult Function(StudentsCoursesResponse data)
+        allStudentCoursesSuccess,
     required TResult Function(String error) allCoursesFailure,
   }) {
     return allCoursesLoading();
@@ -261,7 +292,8 @@ class _$AllCoursesLoadingImpl<T> implements AllCoursesLoading<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? allCoursesLoading,
-    TResult? Function(T data)? allCoursesSuccess,
+    TResult? Function(TeachersCoursesResponse data)? allTeacherCoursesSuccess,
+    TResult? Function(StudentsCoursesResponse data)? allStudentCoursesSuccess,
     TResult? Function(String error)? allCoursesFailure,
   }) {
     return allCoursesLoading?.call();
@@ -272,7 +304,8 @@ class _$AllCoursesLoadingImpl<T> implements AllCoursesLoading<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? allCoursesLoading,
-    TResult Function(T data)? allCoursesSuccess,
+    TResult Function(TeachersCoursesResponse data)? allTeacherCoursesSuccess,
+    TResult Function(StudentsCoursesResponse data)? allStudentCoursesSuccess,
     TResult Function(String error)? allCoursesFailure,
     required TResult orElse(),
   }) {
@@ -287,7 +320,10 @@ class _$AllCoursesLoadingImpl<T> implements AllCoursesLoading<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(AllCoursesLoading<T> value) allCoursesLoading,
-    required TResult Function(AllCoursesSuccess<T> value) allCoursesSuccess,
+    required TResult Function(AllTeacherCoursesSuccess<T> value)
+        allTeacherCoursesSuccess,
+    required TResult Function(AllStudentCoursesSuccess<T> value)
+        allStudentCoursesSuccess,
     required TResult Function(AllCoursesFailure<T> value) allCoursesFailure,
   }) {
     return allCoursesLoading(this);
@@ -298,7 +334,10 @@ class _$AllCoursesLoadingImpl<T> implements AllCoursesLoading<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(AllCoursesLoading<T> value)? allCoursesLoading,
-    TResult? Function(AllCoursesSuccess<T> value)? allCoursesSuccess,
+    TResult? Function(AllTeacherCoursesSuccess<T> value)?
+        allTeacherCoursesSuccess,
+    TResult? Function(AllStudentCoursesSuccess<T> value)?
+        allStudentCoursesSuccess,
     TResult? Function(AllCoursesFailure<T> value)? allCoursesFailure,
   }) {
     return allCoursesLoading?.call(this);
@@ -309,7 +348,10 @@ class _$AllCoursesLoadingImpl<T> implements AllCoursesLoading<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
     TResult Function(AllCoursesLoading<T> value)? allCoursesLoading,
-    TResult Function(AllCoursesSuccess<T> value)? allCoursesSuccess,
+    TResult Function(AllTeacherCoursesSuccess<T> value)?
+        allTeacherCoursesSuccess,
+    TResult Function(AllStudentCoursesSuccess<T> value)?
+        allStudentCoursesSuccess,
     TResult Function(AllCoursesFailure<T> value)? allCoursesFailure,
     required TResult orElse(),
   }) {
@@ -325,20 +367,23 @@ abstract class AllCoursesLoading<T> implements AllCoursesState<T> {
 }
 
 /// @nodoc
-abstract class _$$AllCoursesSuccessImplCopyWith<T, $Res> {
-  factory _$$AllCoursesSuccessImplCopyWith(_$AllCoursesSuccessImpl<T> value,
-          $Res Function(_$AllCoursesSuccessImpl<T>) then) =
-      __$$AllCoursesSuccessImplCopyWithImpl<T, $Res>;
+abstract class _$$AllTeacherCoursesSuccessImplCopyWith<T, $Res> {
+  factory _$$AllTeacherCoursesSuccessImplCopyWith(
+          _$AllTeacherCoursesSuccessImpl<T> value,
+          $Res Function(_$AllTeacherCoursesSuccessImpl<T>) then) =
+      __$$AllTeacherCoursesSuccessImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({T data});
+  $Res call({TeachersCoursesResponse data});
 }
 
 /// @nodoc
-class __$$AllCoursesSuccessImplCopyWithImpl<T, $Res>
-    extends _$AllCoursesStateCopyWithImpl<T, $Res, _$AllCoursesSuccessImpl<T>>
-    implements _$$AllCoursesSuccessImplCopyWith<T, $Res> {
-  __$$AllCoursesSuccessImplCopyWithImpl(_$AllCoursesSuccessImpl<T> _value,
-      $Res Function(_$AllCoursesSuccessImpl<T>) _then)
+class __$$AllTeacherCoursesSuccessImplCopyWithImpl<T, $Res>
+    extends _$AllCoursesStateCopyWithImpl<T, $Res,
+        _$AllTeacherCoursesSuccessImpl<T>>
+    implements _$$AllTeacherCoursesSuccessImplCopyWith<T, $Res> {
+  __$$AllTeacherCoursesSuccessImplCopyWithImpl(
+      _$AllTeacherCoursesSuccessImpl<T> _value,
+      $Res Function(_$AllTeacherCoursesSuccessImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of AllCoursesState
@@ -346,61 +391,62 @@ class __$$AllCoursesSuccessImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(_$AllCoursesSuccessImpl<T>(
-      freezed == data
+    return _then(_$AllTeacherCoursesSuccessImpl<T>(
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as T,
+              as TeachersCoursesResponse,
     ));
   }
 }
 
 /// @nodoc
 
-class _$AllCoursesSuccessImpl<T> implements AllCoursesSuccess<T> {
-  const _$AllCoursesSuccessImpl(this.data);
+class _$AllTeacherCoursesSuccessImpl<T> implements AllTeacherCoursesSuccess<T> {
+  const _$AllTeacherCoursesSuccessImpl(this.data);
 
   @override
-  final T data;
+  final TeachersCoursesResponse data;
 
   @override
   String toString() {
-    return 'AllCoursesState<$T>.allCoursesSuccess(data: $data)';
+    return 'AllCoursesState<$T>.allTeacherCoursesSuccess(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AllCoursesSuccessImpl<T> &&
-            const DeepCollectionEquality().equals(other.data, data));
+            other is _$AllTeacherCoursesSuccessImpl<T> &&
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, data);
 
   /// Create a copy of AllCoursesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$AllCoursesSuccessImplCopyWith<T, _$AllCoursesSuccessImpl<T>>
-      get copyWith =>
-          __$$AllCoursesSuccessImplCopyWithImpl<T, _$AllCoursesSuccessImpl<T>>(
-              this, _$identity);
+  _$$AllTeacherCoursesSuccessImplCopyWith<T, _$AllTeacherCoursesSuccessImpl<T>>
+      get copyWith => __$$AllTeacherCoursesSuccessImplCopyWithImpl<T,
+          _$AllTeacherCoursesSuccessImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() allCoursesLoading,
-    required TResult Function(T data) allCoursesSuccess,
+    required TResult Function(TeachersCoursesResponse data)
+        allTeacherCoursesSuccess,
+    required TResult Function(StudentsCoursesResponse data)
+        allStudentCoursesSuccess,
     required TResult Function(String error) allCoursesFailure,
   }) {
-    return allCoursesSuccess(data);
+    return allTeacherCoursesSuccess(data);
   }
 
   @override
@@ -408,10 +454,11 @@ class _$AllCoursesSuccessImpl<T> implements AllCoursesSuccess<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? allCoursesLoading,
-    TResult? Function(T data)? allCoursesSuccess,
+    TResult? Function(TeachersCoursesResponse data)? allTeacherCoursesSuccess,
+    TResult? Function(StudentsCoursesResponse data)? allStudentCoursesSuccess,
     TResult? Function(String error)? allCoursesFailure,
   }) {
-    return allCoursesSuccess?.call(data);
+    return allTeacherCoursesSuccess?.call(data);
   }
 
   @override
@@ -419,12 +466,13 @@ class _$AllCoursesSuccessImpl<T> implements AllCoursesSuccess<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? allCoursesLoading,
-    TResult Function(T data)? allCoursesSuccess,
+    TResult Function(TeachersCoursesResponse data)? allTeacherCoursesSuccess,
+    TResult Function(StudentsCoursesResponse data)? allStudentCoursesSuccess,
     TResult Function(String error)? allCoursesFailure,
     required TResult orElse(),
   }) {
-    if (allCoursesSuccess != null) {
-      return allCoursesSuccess(data);
+    if (allTeacherCoursesSuccess != null) {
+      return allTeacherCoursesSuccess(data);
     }
     return orElse();
   }
@@ -434,10 +482,13 @@ class _$AllCoursesSuccessImpl<T> implements AllCoursesSuccess<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(AllCoursesLoading<T> value) allCoursesLoading,
-    required TResult Function(AllCoursesSuccess<T> value) allCoursesSuccess,
+    required TResult Function(AllTeacherCoursesSuccess<T> value)
+        allTeacherCoursesSuccess,
+    required TResult Function(AllStudentCoursesSuccess<T> value)
+        allStudentCoursesSuccess,
     required TResult Function(AllCoursesFailure<T> value) allCoursesFailure,
   }) {
-    return allCoursesSuccess(this);
+    return allTeacherCoursesSuccess(this);
   }
 
   @override
@@ -445,10 +496,13 @@ class _$AllCoursesSuccessImpl<T> implements AllCoursesSuccess<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(AllCoursesLoading<T> value)? allCoursesLoading,
-    TResult? Function(AllCoursesSuccess<T> value)? allCoursesSuccess,
+    TResult? Function(AllTeacherCoursesSuccess<T> value)?
+        allTeacherCoursesSuccess,
+    TResult? Function(AllStudentCoursesSuccess<T> value)?
+        allStudentCoursesSuccess,
     TResult? Function(AllCoursesFailure<T> value)? allCoursesFailure,
   }) {
-    return allCoursesSuccess?.call(this);
+    return allTeacherCoursesSuccess?.call(this);
   }
 
   @override
@@ -456,26 +510,201 @@ class _$AllCoursesSuccessImpl<T> implements AllCoursesSuccess<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
     TResult Function(AllCoursesLoading<T> value)? allCoursesLoading,
-    TResult Function(AllCoursesSuccess<T> value)? allCoursesSuccess,
+    TResult Function(AllTeacherCoursesSuccess<T> value)?
+        allTeacherCoursesSuccess,
+    TResult Function(AllStudentCoursesSuccess<T> value)?
+        allStudentCoursesSuccess,
     TResult Function(AllCoursesFailure<T> value)? allCoursesFailure,
     required TResult orElse(),
   }) {
-    if (allCoursesSuccess != null) {
-      return allCoursesSuccess(this);
+    if (allTeacherCoursesSuccess != null) {
+      return allTeacherCoursesSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class AllCoursesSuccess<T> implements AllCoursesState<T> {
-  const factory AllCoursesSuccess(final T data) = _$AllCoursesSuccessImpl<T>;
+abstract class AllTeacherCoursesSuccess<T> implements AllCoursesState<T> {
+  const factory AllTeacherCoursesSuccess(final TeachersCoursesResponse data) =
+      _$AllTeacherCoursesSuccessImpl<T>;
 
-  T get data;
+  TeachersCoursesResponse get data;
 
   /// Create a copy of AllCoursesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AllCoursesSuccessImplCopyWith<T, _$AllCoursesSuccessImpl<T>>
+  _$$AllTeacherCoursesSuccessImplCopyWith<T, _$AllTeacherCoursesSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AllStudentCoursesSuccessImplCopyWith<T, $Res> {
+  factory _$$AllStudentCoursesSuccessImplCopyWith(
+          _$AllStudentCoursesSuccessImpl<T> value,
+          $Res Function(_$AllStudentCoursesSuccessImpl<T>) then) =
+      __$$AllStudentCoursesSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({StudentsCoursesResponse data});
+}
+
+/// @nodoc
+class __$$AllStudentCoursesSuccessImplCopyWithImpl<T, $Res>
+    extends _$AllCoursesStateCopyWithImpl<T, $Res,
+        _$AllStudentCoursesSuccessImpl<T>>
+    implements _$$AllStudentCoursesSuccessImplCopyWith<T, $Res> {
+  __$$AllStudentCoursesSuccessImplCopyWithImpl(
+      _$AllStudentCoursesSuccessImpl<T> _value,
+      $Res Function(_$AllStudentCoursesSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AllCoursesState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$AllStudentCoursesSuccessImpl<T>(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as StudentsCoursesResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AllStudentCoursesSuccessImpl<T> implements AllStudentCoursesSuccess<T> {
+  const _$AllStudentCoursesSuccessImpl(this.data);
+
+  @override
+  final StudentsCoursesResponse data;
+
+  @override
+  String toString() {
+    return 'AllCoursesState<$T>.allStudentCoursesSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AllStudentCoursesSuccessImpl<T> &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of AllCoursesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AllStudentCoursesSuccessImplCopyWith<T, _$AllStudentCoursesSuccessImpl<T>>
+      get copyWith => __$$AllStudentCoursesSuccessImplCopyWithImpl<T,
+          _$AllStudentCoursesSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() allCoursesLoading,
+    required TResult Function(TeachersCoursesResponse data)
+        allTeacherCoursesSuccess,
+    required TResult Function(StudentsCoursesResponse data)
+        allStudentCoursesSuccess,
+    required TResult Function(String error) allCoursesFailure,
+  }) {
+    return allStudentCoursesSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? allCoursesLoading,
+    TResult? Function(TeachersCoursesResponse data)? allTeacherCoursesSuccess,
+    TResult? Function(StudentsCoursesResponse data)? allStudentCoursesSuccess,
+    TResult? Function(String error)? allCoursesFailure,
+  }) {
+    return allStudentCoursesSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? allCoursesLoading,
+    TResult Function(TeachersCoursesResponse data)? allTeacherCoursesSuccess,
+    TResult Function(StudentsCoursesResponse data)? allStudentCoursesSuccess,
+    TResult Function(String error)? allCoursesFailure,
+    required TResult orElse(),
+  }) {
+    if (allStudentCoursesSuccess != null) {
+      return allStudentCoursesSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AllCoursesLoading<T> value) allCoursesLoading,
+    required TResult Function(AllTeacherCoursesSuccess<T> value)
+        allTeacherCoursesSuccess,
+    required TResult Function(AllStudentCoursesSuccess<T> value)
+        allStudentCoursesSuccess,
+    required TResult Function(AllCoursesFailure<T> value) allCoursesFailure,
+  }) {
+    return allStudentCoursesSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AllCoursesLoading<T> value)? allCoursesLoading,
+    TResult? Function(AllTeacherCoursesSuccess<T> value)?
+        allTeacherCoursesSuccess,
+    TResult? Function(AllStudentCoursesSuccess<T> value)?
+        allStudentCoursesSuccess,
+    TResult? Function(AllCoursesFailure<T> value)? allCoursesFailure,
+  }) {
+    return allStudentCoursesSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AllCoursesLoading<T> value)? allCoursesLoading,
+    TResult Function(AllTeacherCoursesSuccess<T> value)?
+        allTeacherCoursesSuccess,
+    TResult Function(AllStudentCoursesSuccess<T> value)?
+        allStudentCoursesSuccess,
+    TResult Function(AllCoursesFailure<T> value)? allCoursesFailure,
+    required TResult orElse(),
+  }) {
+    if (allStudentCoursesSuccess != null) {
+      return allStudentCoursesSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AllStudentCoursesSuccess<T> implements AllCoursesState<T> {
+  const factory AllStudentCoursesSuccess(final StudentsCoursesResponse data) =
+      _$AllStudentCoursesSuccessImpl<T>;
+
+  StudentsCoursesResponse get data;
+
+  /// Create a copy of AllCoursesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AllStudentCoursesSuccessImplCopyWith<T, _$AllStudentCoursesSuccessImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -551,7 +780,10 @@ class _$AllCoursesFailureImpl<T> implements AllCoursesFailure<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() allCoursesLoading,
-    required TResult Function(T data) allCoursesSuccess,
+    required TResult Function(TeachersCoursesResponse data)
+        allTeacherCoursesSuccess,
+    required TResult Function(StudentsCoursesResponse data)
+        allStudentCoursesSuccess,
     required TResult Function(String error) allCoursesFailure,
   }) {
     return allCoursesFailure(error);
@@ -562,7 +794,8 @@ class _$AllCoursesFailureImpl<T> implements AllCoursesFailure<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? allCoursesLoading,
-    TResult? Function(T data)? allCoursesSuccess,
+    TResult? Function(TeachersCoursesResponse data)? allTeacherCoursesSuccess,
+    TResult? Function(StudentsCoursesResponse data)? allStudentCoursesSuccess,
     TResult? Function(String error)? allCoursesFailure,
   }) {
     return allCoursesFailure?.call(error);
@@ -573,7 +806,8 @@ class _$AllCoursesFailureImpl<T> implements AllCoursesFailure<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? allCoursesLoading,
-    TResult Function(T data)? allCoursesSuccess,
+    TResult Function(TeachersCoursesResponse data)? allTeacherCoursesSuccess,
+    TResult Function(StudentsCoursesResponse data)? allStudentCoursesSuccess,
     TResult Function(String error)? allCoursesFailure,
     required TResult orElse(),
   }) {
@@ -588,7 +822,10 @@ class _$AllCoursesFailureImpl<T> implements AllCoursesFailure<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(AllCoursesLoading<T> value) allCoursesLoading,
-    required TResult Function(AllCoursesSuccess<T> value) allCoursesSuccess,
+    required TResult Function(AllTeacherCoursesSuccess<T> value)
+        allTeacherCoursesSuccess,
+    required TResult Function(AllStudentCoursesSuccess<T> value)
+        allStudentCoursesSuccess,
     required TResult Function(AllCoursesFailure<T> value) allCoursesFailure,
   }) {
     return allCoursesFailure(this);
@@ -599,7 +836,10 @@ class _$AllCoursesFailureImpl<T> implements AllCoursesFailure<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(AllCoursesLoading<T> value)? allCoursesLoading,
-    TResult? Function(AllCoursesSuccess<T> value)? allCoursesSuccess,
+    TResult? Function(AllTeacherCoursesSuccess<T> value)?
+        allTeacherCoursesSuccess,
+    TResult? Function(AllStudentCoursesSuccess<T> value)?
+        allStudentCoursesSuccess,
     TResult? Function(AllCoursesFailure<T> value)? allCoursesFailure,
   }) {
     return allCoursesFailure?.call(this);
@@ -610,7 +850,10 @@ class _$AllCoursesFailureImpl<T> implements AllCoursesFailure<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
     TResult Function(AllCoursesLoading<T> value)? allCoursesLoading,
-    TResult Function(AllCoursesSuccess<T> value)? allCoursesSuccess,
+    TResult Function(AllTeacherCoursesSuccess<T> value)?
+        allTeacherCoursesSuccess,
+    TResult Function(AllStudentCoursesSuccess<T> value)?
+        allStudentCoursesSuccess,
     TResult Function(AllCoursesFailure<T> value)? allCoursesFailure,
     required TResult orElse(),
   }) {
