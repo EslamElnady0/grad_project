@@ -226,8 +226,7 @@ class Constants {
         borderRadius: BorderRadius.circular(12),
       ));
   static List<Widget> homeBodies = [
-   // const AnnoucementsBody(),
-   const Column(),
+    const AnnoucementsBody(),
     const SubjectsView(),
     const ChatOutsiderBody(),
     const ForumViews()
