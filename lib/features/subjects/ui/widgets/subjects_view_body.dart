@@ -19,53 +19,50 @@ class SubjectsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.0.w),
-      child: CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(
-              child: Column(
-            children: [
-              vGap(22),
-              HomeScreensHeaderRow(
-                onMenuTap: () {
-                  Scaffold.of(context).openDrawer();
-                },
-                onSearchTap: () {},
-              ),
-              vGap(12),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.w),
-                child: TitleTextWidget(
-                  text: S.of(context).select_subjects,
-                ),
-              ),
-              vGap(12),
-            ],
-          )),
-          const SliverToBoxAdapter(
-            child: CustomSupjectsFilter(),
-          ),
-          BlocBuilder<AllCoursesCubit, AllCoursesState>(
-            builder: (context, state) {
-              print("state is $state");
-             if (state is AllStudentCoursesSuccess) {
-              print("state is=========== ${state.data}");
-                final allCourses = state.data;
-      
-                return _buildCourseList(allCourses);
-              } else {
-                return _buildSkeletonList();
-              }
+    return  SingleChildScrollView(
+             padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+      child: Column(
+        children: [
+          vGap(22),
+          HomeScreensHeaderRow(
+            onMenuTap: () {
+              Scaffold.of(context).openDrawer();
             },
+            onSearchTap: () {},
           ),
+          vGap(12),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            child: TitleTextWidget(
+              text: S.of(context).select_subjects,
+            ),
+          ),
+          vGap(12),
+                BlocBuilder<AllCoursesCubit, AllCoursesState>(
+        builder: (context, state) {
+
+         if (state is AllStudentCoursesSuccess) {
+     
+            final allCourses = state.data;
+              
+            return _buildCourseList(allCourses);
+          } else {
+            return _buildSkeletonList();
+          }
+        },
+      ),
+            
+               
         ],
       ),
     );
   }
 
   Widget _buildCourseList(StudentsCoursesResponse allCoursesResponseModel) {
-    return SliverList.builder(
+    return ListView.builder(
+      shrinkWrap: true,
+      padding: EdgeInsets.only(bottom: 200.h),
+      physics: const NeverScrollableScrollPhysics(),
       itemCount: allCoursesResponseModel.data.length,
       itemBuilder: (context, index) {
         return CustomSubjectCard(
@@ -75,25 +72,23 @@ class SubjectsViewBody extends StatelessWidget {
     );
   }
   Widget _buildSkeletonList() {
-    return const SliverToBoxAdapter(
-      child: Column(
-        children: [
-      
-          Skeletonizer(  
-            enabled: true,
-            child:CustomSubjectCard(
-          courseData:null, 
-        )
-          ),
-          Skeletonizer(  
-            enabled: true,
-            child:CustomSubjectCard(
-          courseData: null ,
-        )
-          ),
+    return const Column(
+      children: [
     
-        ],
-      ), 
+        Skeletonizer(  
+          enabled: true,
+          child:CustomSubjectCard(
+        courseData:null, 
+      )
+        ),
+        Skeletonizer(  
+          enabled: true,
+          child:CustomSubjectCard(
+        courseData: null ,
+      )
+        ),
+        
+      ],
     );
   }
 }
