@@ -20,20 +20,20 @@ class TeachersCoursesResponse {
 
 @JsonSerializable()
 class CourseResponse {
-  final int id;
-  final String name;
-  final String code;
+  final int? id;
+  final String? name;
+  final String? code;
   final String? description;
-  final Department department;
-  final Semester semester;
+  final Department? department;
+  final Semester? semester;
 
   CourseResponse({
-    required this.id,
-    required this.name,
-    required this.code,
-    required this.description,
-    required this.department,
-    required this.semester,
+    this.id,
+    this.name,
+    this.code,
+    this.description,
+    this.department,
+    this.semester,
   });
 
   factory CourseResponse.fromJson(Map<String, dynamic> json) =>

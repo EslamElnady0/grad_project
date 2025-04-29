@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../data/models/add_annoucement_request_body.dart';
 import '../../data/models/paginated_announcements_response.dart';
-import '../../data/models/teachers_courses_response.dart';
+import '../../../../core/data/models/teachers_courses_response.dart';
 import '../../data/repos/annoucements_repo.dart';
 part 'update_annoucement_state.dart';
 part 'update_annoucement_cubit.freezed.dart';
@@ -48,7 +48,7 @@ class UpdateAnnoucementCubit extends Cubit<UpdateAnnoucementState> {
 
   String selectedCourseText = '';
   void selectCourse(CourseResponse course) {
-    selectedCourseText = "${course.name}    ${course.semester.name}";
+    selectedCourseText = "${course.name}    ${course.semester?.name}";
     selectedCourse = course;
     log("selected course: $selectedCourseText");
     emit(UpdateAnnoucementState.selected(

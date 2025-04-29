@@ -2,6 +2,7 @@ import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 import '../theme/app_colors.dart';
 
 class CustomTextButton extends StatelessWidget {
@@ -23,37 +24,40 @@ class CustomTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Container(
-        width: width ?? double.infinity,
-        padding: EdgeInsets.symmetric(vertical: 12.h),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16.r),
-          gradient:primary
-                  ? const LinearGradient(
-                      colors: [
-                        AppColors.primaryColorlight,
-                        AppColors.primaryColordark
-                      ],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    )
-                  : const LinearGradient(
-                      colors: [AppColors.redlight, AppColors.redDark],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    ),
-          boxShadow: [
-            BoxShadow(
-                offset: const Offset(0, 4),
-                blurRadius: 14,
-                color: AppColors.black.withOpacity(0.25)),
-          ],
-        ),
-        child: Center(
-          child: Text(text,
-              style: AppTextStyles.font20WhiteSemiBold.copyWith(
-                fontSize: fontSize?.sp,
-              )),
+      child:  Skeleton.leaf(
+        enabled: true,
+        child: Container(
+          width: width ?? double.infinity,
+          padding: EdgeInsets.symmetric(vertical: 12.h),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16.r),
+            gradient:primary
+                    ? const LinearGradient(
+                        colors: [
+                          AppColors.primaryColorlight,
+                          AppColors.primaryColordark
+                        ],
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                      )
+                    : const LinearGradient(
+                        colors: [AppColors.redlight, AppColors.redDark],
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                      ),
+            boxShadow: [
+              BoxShadow(
+                  offset: const Offset(0, 4),
+                  blurRadius: 14,
+                  color: AppColors.black.withOpacity(0.25)),
+            ],
+          ),
+          child: Center(
+            child: Text(text,
+                style: AppTextStyles.font20WhiteSemiBold.copyWith(
+                  fontSize: fontSize?.sp,
+                )),
+          ),
         ),
       ),
     );

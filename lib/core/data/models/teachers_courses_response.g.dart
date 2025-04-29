@@ -24,13 +24,16 @@ Map<String, dynamic> _$TeachersCoursesResponseToJson(
 
 CourseResponse _$CourseResponseFromJson(Map<String, dynamic> json) =>
     CourseResponse(
-      id: (json['id'] as num).toInt(),
-      name: json['name'] as String,
-      code: json['code'] as String,
+      id: (json['id'] as num?)?.toInt(),
+      name: json['name'] as String?,
+      code: json['code'] as String?,
       description: json['description'] as String?,
-      department:
-          Department.fromJson(json['department'] as Map<String, dynamic>),
-      semester: Semester.fromJson(json['semester'] as Map<String, dynamic>),
+      department: json['department'] == null
+          ? null
+          : Department.fromJson(json['department'] as Map<String, dynamic>),
+      semester: json['semester'] == null
+          ? null
+          : Semester.fromJson(json['semester'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$CourseResponseToJson(CourseResponse instance) =>

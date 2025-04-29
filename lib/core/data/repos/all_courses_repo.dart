@@ -1,4 +1,7 @@
+import 'package:grad_project/core/data/models/all_courses.dart';
 import 'package:grad_project/core/data/models/all_courses_response_model.dart';
+import 'package:grad_project/core/flavors/flavors_functions.dart';
+import 'package:grad_project/core/networking/api_constants.dart';
 
 import '../../networking/api_error_handler.dart' show ApiErrorHandler;
 import '../../networking/api_result.dart';
@@ -11,10 +14,15 @@ class AllCoursesRepo {
     required this.remoteDataSource,
   });
 
-  Future<ApiResult<AllCoursesResponseModel>> getAllCourses() async {
+  Future<ApiResult<AllCourses>> getAllCourses() async {
     try {
-      final response = await remoteDataSource.getAllCourses();
-      return ApiResult.success(response);
+      if (FlavorsFunctions.isAdmin()) {
+        final result = await remoteDataSource.getTeacherCourses();
+        return ApiResult.success(AllCourses.teacher(result));
+      } else {
+        final result = await remoteDataSource.getStudentsCourses();
+        return ApiResult.success(AllCourses.student(result));
+      }
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));
     }

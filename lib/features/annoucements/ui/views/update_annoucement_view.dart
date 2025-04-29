@@ -3,13 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/di/dependency_injection.dart';
 import 'package:grad_project/core/helpers/show_toast.dart';
+import 'package:grad_project/core/logic/all_courses_cubit/all_courses_cubit.dart';
 import 'package:grad_project/core/widgets/custom_modal_progress.dart';
 import 'package:grad_project/core/widgets/custom_scaffold.dart';
 import 'package:grad_project/core/widgets/show_error_dialog.dart';
 import 'package:grad_project/features/annoucements/data/models/paginated_announcements_response.dart';
 import 'package:grad_project/features/annoucements/data/models/update_annoucement_response_body.dart';
 import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/get_announcement_cubit.dart';
-import 'package:grad_project/features/annoucements/logic/get_teacher_cources_cubit/get_teacher_cources_cubit.dart';
 import 'package:grad_project/features/annoucements/logic/update_annoucement_cubit/update_annoucement_cubit.dart';
 import 'package:provider/provider.dart';
 
@@ -32,8 +32,7 @@ class UpdateAnnoucementView extends StatelessWidget {
           create: (context) => getIt<GetAnnouncementCubit>(),
         ),
         BlocProvider(
-          create: (context) =>
-              getIt<GetCourcesToFilterCubit>()..getTeacherCourses(),
+          create: (context) => getIt<AllCoursesCubit>()..get(),
         ),
       ],
       child: CustomScaffold(

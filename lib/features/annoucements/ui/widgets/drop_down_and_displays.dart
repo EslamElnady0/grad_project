@@ -47,7 +47,7 @@ class _DropDownAndDisplaysState extends State<DropDownAndDisplays> {
                       style: const TextStyle(color: AppColors.redlight));
                 } else if (snapshot.hasData && snapshot.data!.isNotEmpty) {
                   String selectedCourseText =
-                      "${snapshot.data![0].name}    ${snapshot.data![0].semester.name}";
+                      "${snapshot.data![0].name}    ${snapshot.data![0].semester?.name}";
                   context.read<AddAnnoucementsCubit>().selectedCourse =
                       snapshot.data![0];
                   return StatefulBuilder(
@@ -57,7 +57,7 @@ class _DropDownAndDisplaysState extends State<DropDownAndDisplays> {
                       onSelected: (course) {
                         setState(() {
                           selectedCourseText =
-                              "${course.name}    ${course.semester.name}";
+                              "${course.name}    ${course.semester?.name}";
                         });
                         context
                             .read<AddAnnoucementsCubit>()

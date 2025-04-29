@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
-import 'package:grad_project/features/subjects/presentation/views/widgets/SubjectSemestertitle.dart';
-import 'package:grad_project/features/subjects/presentation/views/widgets/status_dropdoen.dart';
+import 'package:grad_project/features/subjects/ui/widgets/SubjectSemestertitle.dart';
+import 'package:grad_project/features/subjects/ui/widgets/status_dropdoen.dart';
 
-import '../../../../../core/helpers/spacing.dart';
-import '../../../../../generated/l10n.dart';
-import '../../manager/subjects_filter_cubit.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../generated/l10n.dart';
+import '../manager/subjects_filter_cubit.dart';
 
 class CustomSupjectsFilter extends StatelessWidget {
   const CustomSupjectsFilter({super.key});

@@ -6,9 +6,9 @@ import 'package:grad_project/features/home/ui/cubit/bottom_nav_bar_cubit.dart';
 import 'package:grad_project/features/home/ui/widgets/bottom%20nav%20bar/custom_admin_bottom_navigation_bar.dart';
 import 'package:grad_project/features/home/ui/widgets/bottom%20nav%20bar/custom_student_bottom_nav_bar.dart';
 import '../../../../core/di/dependency_injection.dart';
+import '../../../../core/logic/all_courses_cubit/all_courses_cubit.dart';
 import '../../../../core/widgets/custom_scaffold.dart';
 import '../../../annoucements/logic/get_announcement_cubit/get_announcement_cubit.dart';
-import '../../../annoucements/logic/get_teacher_cources_cubit/get_teacher_cources_cubit.dart';
 import '../../../annoucements/ui/ui cubit/announcement_filter_cubit.dart';
 import '../widgets/drawer/custom_doctor_drawer.dart';
 import '../widgets/drawer/custom_drawer.dart';
@@ -25,7 +25,7 @@ class HomeView extends StatelessWidget {
           create: (context) => getIt<GetAnnouncementCubit>(),
         ),
         BlocProvider(
-          create: (context) => getIt<GetCourcesToFilterCubit>(),
+          create: (context) => getIt<AllCoursesCubit>(),
         ),
         BlocProvider(
           create: (context) => AnnouncementFilterCubit(),

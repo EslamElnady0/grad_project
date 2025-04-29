@@ -1,9 +1,8 @@
 import 'package:dio/dio.dart';
+import 'package:grad_project/core/data/models/students_courses_response.dart';
 import 'package:retrofit/retrofit.dart';
-
+import '../models/teachers_courses_response.dart';
 import '../../networking/api_constants.dart';
-import '../models/all_courses_response_model.dart';
-
 part 'all_courses_remote_data_source.g.dart';
 
 //if this file is created for the first time or modified
@@ -13,9 +12,12 @@ part 'all_courses_remote_data_source.g.dart';
 @RestApi(baseUrl: ApiConstants.apiBaseUrl)
 abstract class AllCoursesRemoteDataSource {
   factory AllCoursesRemoteDataSource(Dio dio,
-      {String baseUrl, ParseErrorLogger? errorLogger}) = _AllCoursesRemoteDataSource;
+      {String baseUrl,
+      ParseErrorLogger? errorLogger}) = _AllCoursesRemoteDataSource;
 
-@GET('teachers/${ApiConstants.courses}')
-  Future<AllCoursesResponseModel> getAllCourses();
+  @GET(ApiConstants.courses)
+  Future<StudentsCoursesResponse> getStudentsCourses();
 
+  @GET("${ApiConstants.teachers}${ApiConstants.courses}")
+  Future<TeachersCoursesResponse> getTeacherCourses();
 }
