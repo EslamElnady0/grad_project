@@ -3,7 +3,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/data/models/all_courses_response_model.dart';
-import 'package:grad_project/features/annoucements/data/models/add_annoucement_response_body.dart';
 import 'package:grad_project/features/lecture_manager/ui/screens/add_lecture_view.dart';
 import 'package:grad_project/features/lecture_manager/ui/screens/qr_attendance_view.dart';
 import 'package:grad_project/features/lecture_manager/ui/widgets/show_update_lecture_status_dialog.dart';

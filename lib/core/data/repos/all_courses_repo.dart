@@ -1,4 +1,6 @@
 import 'package:grad_project/core/data/models/all_courses_response_model.dart';
+import 'package:grad_project/core/flavors/flavors_functions.dart';
+import 'package:grad_project/core/networking/api_constants.dart';
 
 import '../../networking/api_error_handler.dart' show ApiErrorHandler;
 import '../../networking/api_result.dart';
@@ -13,7 +15,8 @@ class AllCoursesRepo {
 
   Future<ApiResult<AllCoursesResponseModel>> getAllCourses() async {
     try {
-      final response = await remoteDataSource.getAllCourses();
+      String endpoint = FlavorsFunctions.isStudent() ? ApiConstants.stuCourses: ApiConstants.docCourses;
+      final response = await remoteDataSource.getAllCourses(endpoint);
       return ApiResult.success(response);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));

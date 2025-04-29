@@ -20,7 +20,7 @@ class _AllCoursesRemoteDataSource implements AllCoursesRemoteDataSource {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<AllCoursesResponseModel> getAllCourses() async {
+  Future<AllCoursesResponseModel> getAllCourses(String endpoint) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -29,7 +29,7 @@ class _AllCoursesRemoteDataSource implements AllCoursesRemoteDataSource {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'teachers//courses',
+            '${endpoint}',
             queryParameters: queryParameters,
             data: _data,
           )

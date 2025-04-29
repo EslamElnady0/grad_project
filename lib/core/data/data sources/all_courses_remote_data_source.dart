@@ -15,7 +15,9 @@ abstract class AllCoursesRemoteDataSource {
   factory AllCoursesRemoteDataSource(Dio dio,
       {String baseUrl, ParseErrorLogger? errorLogger}) = _AllCoursesRemoteDataSource;
 
-@GET('teachers/${ApiConstants.courses}')
-  Future<AllCoursesResponseModel> getAllCourses();
+@GET('{endpoint}')
+  Future<AllCoursesResponseModel> getAllCourses(
+    @Path() String endpoint,
+  );
 
 }

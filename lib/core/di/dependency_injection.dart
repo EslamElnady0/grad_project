@@ -11,6 +11,7 @@ import 'package:grad_project/features/quizes/data/repos/quizzes_repo.dart';
 import 'package:grad_project/features/quizes/logic/quizzes_cubit/quizzes_cubit.dart';
 import 'package:grad_project/features/quizes/ui/cubit/add_quiz_cubit/add_quiz_cubit.dart';
 import 'package:grad_project/features/quizes/ui/widgets/question_list_widget.dart';
+import 'package:grad_project/features/subjects/ui/manager/subjects_filter_cubit.dart';
 import '../../features/annoucements/data/data sources/annoucements_local_data_source.dart';
 import '../../features/auth/data/repos/login_repo.dart';
 import '../../features/auth/logic/cubit/login_cubit.dart';
@@ -68,4 +69,6 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<QuizzesCubit>(() => QuizzesCubit(getIt()));
   //toDo:------------------------------Ui------------------------------
   getIt.registerFactory<FileUploadCubit>(() => FileUploadCubit());
+  getIt.registerFactory<SubjectsFilterCubit>(() => SubjectsFilterCubit());
+  
 }

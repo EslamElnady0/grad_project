@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/theme/app_text_styles.dart';
-import '../../../../../generated/l10n.dart';
+import '../../../../core/theme/app_text_styles.dart';
+import '../../../../generated/l10n.dart';
 class StatusDropdown extends StatefulWidget {
   const StatusDropdown({super.key});
 

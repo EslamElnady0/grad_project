@@ -17,7 +17,7 @@ import '../../features/auth/ui/views/auth_view.dart';
 import '../../features/home/ui/cubit/bottom_nav_bar_cubit.dart';
 import '../../features/home/ui/views/home_view.dart';
 import '../../features/lecture_manager/ui/screens/add_lecture_view.dart';
-import '../../features/subjects/presentation/views/materials_view.dart';
+import '../../features/subjects/ui/views/materials_view.dart';
 
 abstract class AdminRouter {
   static GoRouter getRouter(bool isLogin) {
