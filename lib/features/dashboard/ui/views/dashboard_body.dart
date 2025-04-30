@@ -26,30 +26,31 @@ class _DashboardBodyState extends State<DashboardBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
-      child: BlocProvider(
-        create: (context) => GetDashboardCoursesCubit(),
-        child: Column(
-          children: [
-            vGap(22),
-            HomeScreensHeaderRow(
+    return BlocProvider(
+      create: (context) => GetDashboardCoursesCubit(),
+      child: Column(
+        children: [
+          vGap(22),
+          padding16Widget(
+            child: HomeScreensHeaderRow(
               onMenuTap: () {
                 Scaffold.of(context).openDrawer();
               },
               onSearchTap: () {},
             ),
-            vGap(14),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: TitleTextWidget(text: S.of(context).materials_center),
-            ),
-            vGap(12),
-            const DoctorSubjectsFilterRow(),
-            vGap(12),
-            const Expanded(child: CoursesInfoListView())
-          ],
-        ),
+          ),
+          vGap(14),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            child: padding16Widget(
+                child: TitleTextWidget(text: S.of(context).materials_center)),
+          ),
+          vGap(12),
+          padding16Widget(child: const DoctorSubjectsFilterRow()),
+          vGap(12),
+          const Expanded(child: CoursesInfoListView()),
+          vGap(80),
+        ],
       ),
     );
   }
