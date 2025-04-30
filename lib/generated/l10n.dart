@@ -1365,10 +1365,10 @@ class S {
     );
   }
 
-  /// `Enter the student’s name or ID number...`
+  /// `Enter the student’s name`
   String get search_placeholder {
     return Intl.message(
-      'Enter the student’s name or ID number...',
+      'Enter the student’s name',
       name: 'search_placeholder',
       desc: '',
       args: [],
@@ -1868,6 +1868,16 @@ class S {
   /// `Other`
   String get other {
     return Intl.message('Other', name: 'other', desc: '', args: []);
+  }
+
+  /// `Search`
+  String get search {
+    return Intl.message('Search', name: 'search', desc: '', args: []);
+  }
+
+  /// `status`
+  String get statuss {
+    return Intl.message('status', name: 'statuss', desc: '', args: []);
   }
 }
 

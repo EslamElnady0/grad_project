@@ -258,6 +258,11 @@ class AppTextStyles {
     color: AppColors.black,
     fontWeight: FontWeightHelper.semiBold,
   );
+  static TextStyle font11BlackMedium = ChangaTextStyle(
+    fontSize: 11.sp,
+    color: AppColors.black,
+    fontWeight: FontWeightHelper.medium,
+  );
   static TextStyle font14GrayMedium = ChangaTextStyle(
     fontSize: 14.sp,
     color: AppColors.gray,

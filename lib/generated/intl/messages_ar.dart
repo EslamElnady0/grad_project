@@ -300,6 +300,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
       "📅 مرحباً بك في صفحة الجدول الأسبوعي! حدد الأيام التي ترغب في عرض جدولها لتتابع مواعيد محاضراتك وجلساتك العملية بسهولة.",
     ),
+    "search": MessageLookupByLibrary.simpleMessage("بحث"),
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       " ابحث عن مبني، مدرج، قاعة، الخ..!",
     ),
@@ -307,7 +308,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "البحث حسب نوع النشاط او الاسم",
     ),
     "search_placeholder": MessageLookupByLibrary.simpleMessage(
-      "أدخل اسم الطالب أو رقم هويته..",
+      "أدخل اسم الطالب",
     ),
     "second_semester": MessageLookupByLibrary.simpleMessage("ترم ثاني"),
     "section": MessageLookupByLibrary.simpleMessage("سكشن"),
@@ -338,6 +339,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "startsAt": MessageLookupByLibrary.simpleMessage("يبدأ "),
     "status": MessageLookupByLibrary.simpleMessage("الحالة:"),
+    "statuss": MessageLookupByLibrary.simpleMessage("الحاله"),
     "stayCalm": MessageLookupByLibrary.simpleMessage("😌 استرخِ وابقَ هادئًا"),
     "stayConfident": MessageLookupByLibrary.simpleMessage(
       "تنفّس بعمق وثق بقدراتك!",
