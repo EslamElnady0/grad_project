@@ -229,6 +229,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "on_time": MessageLookupByLibrary.simpleMessage("On time (automatic)."),
     "once": MessageLookupByLibrary.simpleMessage("Once"),
     "open": MessageLookupByLibrary.simpleMessage("open"),
+    "other": MessageLookupByLibrary.simpleMessage("Other"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "percentage": MessageLookupByLibrary.simpleMessage("Percentage"),

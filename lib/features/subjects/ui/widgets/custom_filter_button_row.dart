@@ -40,21 +40,14 @@ class CustomFilterButtonsRow extends StatelessWidget {
                   onTap: () =>
                       context.read<MaterialsFilterCubit>().toggleFilter(FilterType.sections),
                 ),
+             
                 _buildFilterButton(
                   context,
-                  title: S.of(context).quiz,
-                  filter: FilterType.quiz,
-                  isPressed: selectedFilters.contains(FilterType.quiz),
+                  title: S.of(context).other,
+                  filter: FilterType.other,
+                  isPressed: selectedFilters.contains(FilterType.other),
                   onTap: () =>
-                      context.read<MaterialsFilterCubit>().toggleFilter(FilterType.quiz),
-                ),
-                _buildFilterButton(
-                  context,
-                  title: S.of(context).assignment,
-                  filter: FilterType.assignment,
-                  isPressed: selectedFilters.contains(FilterType.assignment),
-                  onTap: () =>
-                      context.read<MaterialsFilterCubit>().toggleFilter(FilterType.assignment),
+                      context.read<MaterialsFilterCubit>().toggleFilter(FilterType.other),
                 ),
               ],
             ),

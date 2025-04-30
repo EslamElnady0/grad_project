@@ -20,7 +20,8 @@ import '../../features/subjects/ui/views/materials_view.dart';
 abstract class StudentRouter {
   static GoRouter getRouter(bool isLogin) {
     return GoRouter(
-      initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
+      initialLocation:
+       isLogin ? HomeView.routeName : AuthView.routeName,
       routes: [
         GoRoute(
           path: HomeView.routeName,
@@ -71,7 +72,9 @@ abstract class StudentRouter {
         ),
         GoRoute(
             path: MaterialsView.routeName,
-            builder: (context, state) => const MaterialsView()),
+            builder: (context, state) =>  MaterialsView(
+                courseId:  state.extra as int, 
+            )),
         GoRoute(
             path: AnswersView.routeName,
             builder: (context, state) => const AnswersView()),
