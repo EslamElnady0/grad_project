@@ -1869,6 +1869,11 @@ class S {
   String get other {
     return Intl.message('Other', name: 'other', desc: '', args: []);
   }
+
+  /// `Lecture`
+  String get lecture {
+    return Intl.message('Lecture', name: 'lecture', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

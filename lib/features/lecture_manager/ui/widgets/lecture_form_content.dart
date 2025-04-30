@@ -1,12 +1,18 @@
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:grad_project/core/di/dependency_injection.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
+import 'package:grad_project/core/helpers/file_utils.dart';
 import 'package:grad_project/core/helpers/localizationa.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_text_and_icon_button.dart';
 import 'package:grad_project/core/widgets/custom_text_button.dart';
+import 'package:grad_project/features/lecture_manager/ui/cubit/file_upload_cubit.dart';
 import 'package:grad_project/features/lecture_manager/ui/widgets/dispaly_week_list.dart';
+import 'package:path/path.dart' as path;
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/widgets/custom_text_form_field_and_icon.dart';
 import '../../../../core/widgets/text entry footer/custom_outloned_button.dart';
@@ -25,8 +31,10 @@ class LectureFormContent extends StatefulWidget {
 
 class _LectureFormContentState extends State<LectureFormContent> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  bool clickAddLink = false;
+  
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -36,34 +44,44 @@ class _LectureFormContentState extends State<LectureFormContent> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           vGap(5),
-          DisplayWeekList(
-            isArabic: isArabicLocale(context),
-            initialValue: S.of(context).SelectWeek,
-            onSelected: (selectedWeek) {
-              print('Selected week: $selectedWeek');
-            },
-          ),
-          vGap(10),
           Text(
             S.of(context).lectureTitle,
             textAlign: TextAlign.start,
             style: AppTextStyles.font16DarkerBlueSemiBold,
           ),
-          vGap(5),
+             vGap(5),
           CustomTextFormFieldAndicon(
               hintText: S.of(context).lectureTitleHint,
               icon: Assets.imagesSvgsLecTilte),
-          vGap(5),
-          Text(
-            S.of(context).lectureDescription,
+          vGap(12),
+            Text(
+            S.of(context).week,
             textAlign: TextAlign.start,
             style: AppTextStyles.font16DarkerBlueSemiBold,
           ),
-          vGap(5),
-          CustomTextFormFieldAndicon(
-            hintText: S.of(context).lectureDescriptionHint,
-            icon: Assets.imagesSvgsLecDesc,
-            maxLines: 5,
+             vGap(5),
+          DisplayList(
+            listValue: getLocalizedWeekNames(
+                List.generate(14, (index) => index + 1), context),
+            onSelected: (selectedWeek) {
+              print('Selected week: $selectedWeek');
+            },
+          ),
+          vGap(12),
+            Text(
+            S.of(context).type,
+            textAlign: TextAlign.start,
+            style: AppTextStyles.font16DarkerBlueSemiBold,
+          ),
+             vGap(5),
+          DisplayList(
+            listValue: [
+              S.of(context).lecture,
+              S.of(context).section, 
+              S.of(context).other],
+            onSelected: (selectedWeek) {
+              print('Selected week: $selectedWeek');
+            },
           ),
           vGap(12),
           CustomTextAndIconButton(
@@ -76,36 +94,51 @@ class _LectureFormContentState extends State<LectureFormContent> {
             icon: SvgPicture.asset(Assets.imagesSvgsPdfIcon),
             primaryButton: false,
           ),
-          vGap(12),
-          CustomOutlinedButton(
-            title: S.of(context).addLink,
-            icon: SvgPicture.asset(Assets.imagesSvgsAddLink),
-            onPressed: () {
-              setState(() {
-                clickAddLink = !clickAddLink;
-              });
+       
+         BlocBuilder<FileUploadCubit, List<PlatformFile>>(
+            builder: (context, uploadedFiles) {
+              if (uploadedFiles.isEmpty) {
+                return const SizedBox.shrink();
+              }
+              
+              return Container(
+                margin: const EdgeInsets.symmetric(vertical: 16),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey.shade300),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: uploadedFiles.length,
+                  itemBuilder: (context, index) {
+                    final file = uploadedFiles[index];
+                    final extension = path.extension(file.name).replaceFirst('.', '');
+                    final icon = getFileIcon(extension);
+
+                    return ListTile(
+                      leading: Icon(icon, color: Colors.blue),
+                      title: Text(
+                        file.name,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      trailing: IconButton(
+                        icon: const Icon(Icons.delete, color: Colors.red),
+                        onPressed: () => 
+                            context.read<FileUploadCubit>().removeFile(index),
+                      ),
+                    );
+                  },
+                ),
+              );
             },
           ),
-          vGap(12),
-          clickAddLink
-              ? Text(
-                  S.of(context).addLink,
-                  textAlign: TextAlign.start,
-                  style: AppTextStyles.font16DarkerBlueSemiBold,
-                )
-              : Container(),
-          clickAddLink ? vGap(5) : Container(),
-          clickAddLink
-              ? CustomTextFormFieldAndicon(
-                  hintText: S.of(context).addLinkDescrebtion,
-                  icon: Assets.imagesSvgsAddLink,
-                )
-              : Container(),
+
           vGap(12),
           Align(
             alignment: Alignment.centerLeft,
             child: CustomTextButton(
-              primary: false,
+              primary: true,
               width: 100.w,
               fontSize: 18,
               text: S.of(context).publish,
@@ -130,10 +163,13 @@ void showFileUploadDialog(BuildContext context) {
   showDialog(
     context: context,
     barrierDismissible: true,
-    builder: (BuildContext context) {
-      return const Dialog(
-        backgroundColor: Colors.transparent,
-        child: FileUploadDialog(),
+    builder: (BuildContext dialogContext) {
+      return BlocProvider.value(
+        value: context.read<FileUploadCubit>(), 
+        child: const Dialog(
+          backgroundColor: Colors.transparent,
+          child: FileUploadDialog(),
+        ),
       );
     },
   );

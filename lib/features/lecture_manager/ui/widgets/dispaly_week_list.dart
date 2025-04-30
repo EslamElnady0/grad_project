@@ -1,27 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/features/lecture_manager/ui/cubit/List_cubit.dart';
+import '../../../../core/helpers/localizationa.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
-import '../cubit/week_cubit.dart';
 
-class DisplayWeekList extends StatelessWidget {
-  final String initialValue;
-  final bool isArabic;
+
+class DisplayList extends StatelessWidget {
+
+  final List<String> listValue;
   final Function(String)? onSelected;
-
-  const DisplayWeekList({
+  const DisplayList({
     super.key,
-    required this.initialValue,
-    required this.isArabic,
+
+    required this.listValue,
+
     this.onSelected,
   });
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => WeekCubit(initialValue),
+      create: (_) => ListCubit(listValue[0]),
       child: Builder(
         builder: (context) {
           return Container(
@@ -44,7 +46,7 @@ class DisplayWeekList extends StatelessWidget {
             child: PopupMenuButton<String>(
               onSelected: (week) {
                 // Update the selected week in the Cubit
-                context.read<WeekCubit>().selectWeek(week);
+                context.read<ListCubit>().selectWeek(week);
                 if (onSelected != null) {
                   onSelected!(week);
                 }
@@ -57,7 +59,7 @@ class DisplayWeekList extends StatelessWidget {
               icon: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  BlocBuilder<WeekCubit, String>(
+                  BlocBuilder<ListCubit, String>(
                     builder: (context, selectedValue) {
                       return Text(selectedValue,
                           style: AppTextStyles.font12GraySemiBold);
@@ -72,10 +74,9 @@ class DisplayWeekList extends StatelessWidget {
                 ],
               ),
               itemBuilder: (context) {
-                String t = isArabic ? "اسبوع" : "Week";
-                final List<String> weeksList =
-                    List.generate(14, (index) => '$t ${index + 1}');
-                return weeksList.map((week) {
+             
+ 
+                return listValue.map((week) {
                   return PopupMenuItem<String>(
                     value: week,
                     child: Text(

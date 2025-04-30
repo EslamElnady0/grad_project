@@ -170,6 +170,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "interested": MessageLookupByLibrary.simpleMessage("like"),
     "internalMap": MessageLookupByLibrary.simpleMessage("Internal Map"),
+    "lecture": MessageLookupByLibrary.simpleMessage("Lecture"),
     "lectureDescription": MessageLookupByLibrary.simpleMessage(
       "Lecture Description",
     ),

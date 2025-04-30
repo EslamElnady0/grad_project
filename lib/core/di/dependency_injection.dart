@@ -62,7 +62,7 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<QuizzesRepo>(() => QuizzesRepo(remoteDataSource: getIt(), localDataSource: getIt()));
   getIt.registerFactory<QuizzesCubit>(() => QuizzesCubit(getIt()));
   //toDo:------------------------------Ui------------------------------
-  getIt.registerFactory<FileUploadCubit>(() => FileUploadCubit());
+  getIt.registerLazySingleton<FileUploadCubit>(() => FileUploadCubit());
   getIt.registerFactory<SubjectsFilterCubit>(() => SubjectsFilterCubit());
   
 }

@@ -9,18 +9,14 @@ import '../../../../core/helpers/file_utils.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../generated/l10n.dart';
 import '../cubit/file_upload_cubit.dart';
-
 class FileUploadDialog extends StatelessWidget {
   const FileUploadDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => getIt<FileUploadCubit>(),
-      child: BlocBuilder<FileUploadCubit, List<PlatformFile>>(
-        builder: (context, uploadedFiles) {
-          final fileUploadCubit = context.read<FileUploadCubit>();
-
+    return BlocBuilder<FileUploadCubit, List<PlatformFile>>(
+      builder: (context, uploadedFiles) {
+        final fileUploadCubit = context.read<FileUploadCubit>();
           return Center(
             child: Container(
               width: MediaQuery.of(context).size.width * 0.9,
@@ -72,8 +68,10 @@ class FileUploadDialog extends StatelessWidget {
                   CustomTextButton(
                       width: 150,
                       fontSize: 14,
-                      text: S.of(context).uploadFiles,
-                      onTap: () {},
+                      text: S.of(context).ok,
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
                       primary: true),
                   const SizedBox(height: 16),
                   if (uploadedFiles.isNotEmpty)
@@ -111,8 +109,8 @@ class FileUploadDialog extends StatelessWidget {
             ),
           );
         },
-      ),
-    );
+      )
+    ;
   }
 
 }

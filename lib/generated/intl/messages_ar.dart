@@ -162,6 +162,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "interested": MessageLookupByLibrary.simpleMessage("مهتم"),
     "internalMap": MessageLookupByLibrary.simpleMessage("الخريطة الداخلية"),
+    "lecture": MessageLookupByLibrary.simpleMessage("محاضرة"),
     "lectureDescription": MessageLookupByLibrary.simpleMessage("وصف المحاضرة"),
     "lectureDescriptionHint": MessageLookupByLibrary.simpleMessage(
       "مختصرًا حول محتوى المحاضرة وأهدافها التعليمية!",
