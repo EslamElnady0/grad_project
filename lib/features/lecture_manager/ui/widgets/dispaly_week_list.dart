@@ -7,16 +7,14 @@ import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 
-
 class DisplayList extends StatelessWidget {
-
   final List<String> listValue;
-  final Function(String)? onSelected;
+  // Change the callback type to accept int instead of String
+  final Function(int)? onSelected;
+  
   const DisplayList({
     super.key,
-
     required this.listValue,
-
     this.onSelected,
   });
 
@@ -36,19 +34,19 @@ class DisplayList extends StatelessWidget {
               borderRadius: BorderRadius.circular(15.r),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.1), // Adjust shadow color
+                  color: Colors.black.withOpacity(0.1),
                   blurRadius: 10,
                   spreadRadius: 1,
                   offset: const Offset(0, 2),
                 ),
               ],
             ),
-            child: PopupMenuButton<String>(
-              onSelected: (week) {
-                // Update the selected week in the Cubit
-                context.read<ListCubit>().selectWeek(week);
+            child: PopupMenuButton<int>( // Change type to int
+              onSelected: (index) { // Now receiving index instead of value
+                // Update the selected week in the Cubit using the index
+                context.read<ListCubit>().selectWeek(listValue[index]);
                 if (onSelected != null) {
-                  onSelected!(week);
+                  onSelected!(index); // Pass the index to the callback
                 }
               },
               color: AppColors.white,
@@ -74,18 +72,16 @@ class DisplayList extends StatelessWidget {
                 ],
               ),
               itemBuilder: (context) {
-             
- 
-                return listValue.map((week) {
-                  return PopupMenuItem<String>(
-                    value: week,
+                return List.generate(listValue.length, (index) {
+                  return PopupMenuItem<int>( // Change type to int
+                    value: index, // Use index as value
                     child: Text(
-                      week,
+                      listValue[index],
                       style: AppTextStyles.font13BlackBold
                           .copyWith(color: AppColors.darkGray),
                     ),
                   );
-                }).toList();
+                });
               },
             ),
           );
