@@ -1999,6 +1999,11 @@ class S {
   String get ends_in {
     return Intl.message('Ends In', name: 'ends_in', desc: '', args: []);
   }
+
+  /// `Add File`
+  String get add_file {
+    return Intl.message('Add File', name: 'add_file', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

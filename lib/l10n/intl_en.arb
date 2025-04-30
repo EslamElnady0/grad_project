@@ -246,5 +246,6 @@
   "final_date":"Final Date",
   "choose_assignment_deadline":"⏰ Specify the assignment submission deadline and closing time.",
   "starts_in":"Starts In",
-  "ends_in":"Ends In"
+  "ends_in":"Ends In",
+  "add_file":"Add File"
 }

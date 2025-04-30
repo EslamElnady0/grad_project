@@ -47,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "📚 قم بإضافة مواد دراسية جديدة وإدارة تفاصيلها بكل سهولة!",
     ),
     "add_courses": MessageLookupByLibrary.simpleMessage("إضافة مواد دراسية"),
+    "add_file": MessageLookupByLibrary.simpleMessage("إضافة ملف"),
     "add_new": MessageLookupByLibrary.simpleMessage(" إضافة خبر جديد"),
     "add_new_news": MessageLookupByLibrary.simpleMessage(
       "🆕 أضف خبرًا جديدًا لإبقاء طلابك على اطلاع دائم بكل التحديثات والمستجدات",

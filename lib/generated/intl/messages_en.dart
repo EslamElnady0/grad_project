@@ -47,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "📚 Easily add new study materials and manage their details!",
     ),
     "add_courses": MessageLookupByLibrary.simpleMessage("Add courses"),
+    "add_file": MessageLookupByLibrary.simpleMessage("Add File"),
     "add_new": MessageLookupByLibrary.simpleMessage("Add New Annoucement"),
     "add_new_news": MessageLookupByLibrary.simpleMessage(
       "🆕 Add a new news item to keep your students updated with all the latest news and updates",

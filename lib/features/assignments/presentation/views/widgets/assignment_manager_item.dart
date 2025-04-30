@@ -40,14 +40,14 @@ class AssignmentManagerItem extends StatelessWidget {
           Padding(
             padding: EdgeInsetsDirectional.only(start: 15.w),
             child: Text(
-              courseData.name ??"",
+              courseData.name ?? "",
               style: AppTextStyles.font20DarkerBlueBold,
             ),
           ),
           Padding(
             padding: EdgeInsetsDirectional.only(start: 15.w),
             child: Text(
-              courseData.description??"",
+              courseData.description ?? "",
               style: AppTextStyles.font12GraySemiBold,
             ),
           ),
@@ -61,7 +61,10 @@ class AssignmentManagerItem extends StatelessWidget {
                   style: AppTextStyles.font14WhiteMedium,
                   width: double.infinity,
                   onTap: () {
-                    GoRouter.of(context).push(CreateAssignmentView.routeName);
+                    GoRouter.of(context).push(
+                      CreateAssignmentView.routeName,
+                      extra: courseData.id,
+                    );
                   },
                   icon: SvgPicture.asset(Assets.imagesSvgsAddIcon),
                   primaryButton: true,

@@ -36,7 +36,6 @@ class AssignmentsHomeBody extends StatelessWidget {
             builder: (context, state) {
               if (state is AllTeacherCoursesSuccess) {
                 final allCoursesResponseModel = state.data;
-
                 return Expanded(
                   child: AssignmentManagerItemListView(
                     allCoursesResponseModel: allCoursesResponseModel,
