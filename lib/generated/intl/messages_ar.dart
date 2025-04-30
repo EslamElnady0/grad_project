@@ -308,7 +308,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "البحث حسب نوع النشاط او الاسم",
     ),
     "search_placeholder": MessageLookupByLibrary.simpleMessage(
-      "أدخل اسم الطالب أو رقم هويته..",
+      "أدخل اسم الطالب",
     ),
     "second_semester": MessageLookupByLibrary.simpleMessage("ترم ثاني"),
     "section": MessageLookupByLibrary.simpleMessage("سكشن"),

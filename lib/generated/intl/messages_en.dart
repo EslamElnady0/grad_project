@@ -319,7 +319,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Search by activity type or name",
     ),
     "search_placeholder": MessageLookupByLibrary.simpleMessage(
-      "Enter the student’s name or ID number...",
+      "Enter the student’s name",
     ),
     "second_semester": MessageLookupByLibrary.simpleMessage("2nd Semester"),
     "section": MessageLookupByLibrary.simpleMessage("Section"),

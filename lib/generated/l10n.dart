@@ -1365,10 +1365,10 @@ class S {
     );
   }
 
-  /// `Enter the student’s name or ID number...`
+  /// `Enter the student’s name`
   String get search_placeholder {
     return Intl.message(
-      'Enter the student’s name or ID number...',
+      'Enter the student’s name',
       name: 'search_placeholder',
       desc: '',
       args: [],

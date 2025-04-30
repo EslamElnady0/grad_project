@@ -43,7 +43,7 @@ class CustomSearchContainer extends StatelessWidget {
               textInputType: TextInputType.text,
             ),
           ),
-          hGap(10),
+          hGap(8),
           GreenGradButton(
             padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 8.h),
             onTap: () {},

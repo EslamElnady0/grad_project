@@ -34,7 +34,7 @@ class RegisteredStudentsViewBody extends StatelessWidget {
                 S.of(context).name,
                 style: AppTextStyles.font12BlackMedium,
               ),
-              Spacer(),
+              const Spacer(),
               Text(
                 S.of(context).section,
                 style: AppTextStyles.font12BlackMedium,
