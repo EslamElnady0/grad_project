@@ -221,6 +221,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "once": MessageLookupByLibrary.simpleMessage("مرة واحدة"),
     "open": MessageLookupByLibrary.simpleMessage("فتح"),
+    "other": MessageLookupByLibrary.simpleMessage("اخري"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "pending": MessageLookupByLibrary.simpleMessage("معلق"),
     "percentage": MessageLookupByLibrary.simpleMessage("النسبة المئوية"),

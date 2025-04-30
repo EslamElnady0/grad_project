@@ -8,7 +8,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 import '../theme/app_colors.dart';
-
 class CustomTextAndIconButton extends StatelessWidget {
   final String text;
   final Widget icon;
@@ -17,14 +16,15 @@ class CustomTextAndIconButton extends StatelessWidget {
   final TextStyle? style;
   final double? width;
   final Color? color;
+
   const CustomTextAndIconButton({
     super.key,
     required this.text,
     required this.onTap,
     required this.icon,
+    required this.primaryButton,
     this.style,
     this.color,
-    required this.primaryButton,
     this.width,
   });
 
@@ -36,26 +36,18 @@ class CustomTextAndIconButton extends StatelessWidget {
         enabled: true,
         child: Container(
           width: width,
-          padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 15.w),
+          constraints: BoxConstraints(
+            minWidth: 65.w, // Add minimum width
+            maxWidth: width ?? double.infinity, // Add maximum width
+          ),
+          padding: EdgeInsets.symmetric(
+            vertical: 10.h,
+            horizontal: 15.w,
+          ),
           decoration: BoxDecoration(
             color: color,
             borderRadius: BorderRadius.circular(12.r),
-            gradient: color == null
-                ? (primaryButton
-                    ? const LinearGradient(
-                        colors: [
-                          AppColors.primaryColorlight,
-                          AppColors.primaryColordark
-                        ],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                      )
-                    : const LinearGradient(
-                        colors: [AppColors.redlight, AppColors.redDark],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                      ))
-                : null,
+            gradient: _buildGradient(),
             boxShadow: [
               BoxShadow(
                 offset: const Offset(0, 4),
@@ -66,17 +58,46 @@ class CustomTextAndIconButton extends StatelessWidget {
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment:MainAxisAlignment.center ,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               icon,
               hGap(5),
-              Text(text, style: style ?? AppTextStyles.font12WhiteMedium),
+              Flexible( // Add Flexible here
+                child: Text(
+                  text,
+                  style: style ?? AppTextStyles.font12WhiteMedium,
+                  overflow: TextOverflow.ellipsis, // Add overflow handling
+                  maxLines: 1, // Limit to one line
+                  textAlign: TextAlign.center, // Center align text
+                ),
+              ),
             ],
           ),
         ),
       ),
     );
   }
+
+  // Extract gradient logic to a separate method
+  LinearGradient? _buildGradient() {
+    if (color != null) return null;
+    
+    return primaryButton
+        ? const LinearGradient(
+            colors: [
+              AppColors.primaryColorlight,
+              AppColors.primaryColordark
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          )
+        : const LinearGradient(
+            colors: [
+              AppColors.redlight,
+              AppColors.redDark
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          );
+  }
 }
-
-

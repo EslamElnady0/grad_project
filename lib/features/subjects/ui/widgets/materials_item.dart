@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:grad_project/core/data/models/get_course_materials_response_model.dart';
+import 'package:grad_project/core/helpers/file_utils.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
-import 'package:grad_project/features/subjects/ui/widgets/complete_icon.dart';
 
 import '../../../../core/helpers/app_assets.dart';
 import '../../../../core/helpers/spacing.dart';
@@ -10,24 +11,25 @@ import '../../../../core/widgets/custom_icon_button.dart';
 import '../../../../core/widgets/custom_text_and_icon_button.dart';
 import '../../../../generated/l10n.dart';
 class MaterialsItem extends StatelessWidget {
-  final Map<String, String> item;
+  final CourseMaterialData item;
 
   const MaterialsItem({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin:const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start, // Add this
         children: [
           Expanded(
             child: Container(
-              padding:const EdgeInsets.symmetric(horizontal: 5, vertical: 12),
+              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 12),
               decoration: BoxDecoration(
-                color: Colors.white, // لون الخلفية مثل الـ Card
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: const [
-                 BoxShadow(
+                  BoxShadow(
                     color: Colors.black12,
                     blurRadius: 5,
                     spreadRadius: 1,
@@ -36,57 +38,63 @@ class MaterialsItem extends StatelessWidget {
                 ],
               ),
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start, // Add this
                 children: [
                   CustomIconButton(
-                    icon: SvgPicture.asset(
-                      item["fileType"] == "pdf"
-                          ? Assets.imagesSvgsPdfIcon
-                          : Assets.imagesSvgsVideoIcon,
-                      width: 20.w,
-                      height: 20.h,
+                    icon: Icon(
+                      getFileIcon(
+                        getFileType(item.file),
+                      ),
+                      size: 20.sp,
+                      color: Colors.white,
                     ),
                   ),
-               const   SizedBox(width: 10), 
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        item["fileType"] ?? "Unknown Type",
-                        style: AppTextStyles.font8DarkBlueSemiBold,
-                      ),
-                      Text(
-                        item["fileName"] ?? "No Title",
-                        style: AppTextStyles.font13DarkBlueBold,
-                      ),
-                    ],
+                  const SizedBox(width: 10),
+                  Expanded( // Wrap Column with Expanded
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          item.title ?? "",
+                          style: AppTextStyles.font13DarkBlueBold,
+                          maxLines: 2, 
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        Text(
+                          item.createdAt ?? "",
+                          style: AppTextStyles.font8DarkBlueSemiBold,
+                        ),
+                      ],
+                    ),
                   ),
-                  Spacer(),
-                  CompleteIcon(isComplete: item["status"] == "complete"),
                 ],
               ),
             ),
           ),
-          hGap(3),
-          Column(
-            children: [
-              CustomTextAndIconButton(
-                width: 65.w,
-                text: S.of(context).open,
-                style: AppTextStyles.font8WhiteSemiBold,
-                onTap: () {},
-                icon: SvgPicture.asset(Assets.imagesSvgsOpenIcon),
-                primaryButton: false,
-              ),
-              vGap(3),
-              CustomTextAndIconButton(
-                width: 65.w,
-                text: S.of(context).download,
-                style: AppTextStyles.font8WhiteSemiBold,
-                onTap: () {},
-                icon: SvgPicture.asset(Assets.imagesSvgsDewenloadIcon),
-                primaryButton: false,
-              ),
-            ],
+          hGap(5),
+          SizedBox( // Wrap Column with SizedBox to give it a fixed width
+            width: 65.w,
+            child: Column(
+              children: [
+                CustomTextAndIconButton(
+                  width: 70.w,
+                  text: S.of(context).open,
+                  style: AppTextStyles.font8WhiteSemiBold,
+                  onTap: () {},
+                  icon: SvgPicture.asset(Assets.imagesSvgsOpenIcon),
+                  primaryButton: false,
+                ),
+                vGap(8),
+                CustomTextAndIconButton(
+                  width:70.w,
+                  text: S.of(context).download,
+                  style: AppTextStyles.font8WhiteSemiBold,
+                  onTap: () {},
+                  icon: SvgPicture.asset(Assets.imagesSvgsDewenloadIcon),
+                  primaryButton: false,
+                ),
+              ],
+            ),
           ),
         ],
       ),

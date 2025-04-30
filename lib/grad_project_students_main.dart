@@ -55,7 +55,7 @@ final bool isLogin ;
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
-        locale: const Locale('ar'),
+        locale: const Locale('en'),
         routerConfig: StudentRouter.getRouter(isLogin),
         localizationsDelegates: const [
           S.delegate,

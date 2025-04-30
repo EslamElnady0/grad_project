@@ -5,6 +5,7 @@ import 'package:grad_project/core/di/dependency_injection.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_text_button.dart';
 import 'package:path/path.dart' as path;
+import '../../../../core/helpers/file_utils.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../generated/l10n.dart';
 import '../cubit/file_upload_cubit.dart';
@@ -85,7 +86,7 @@ class FileUploadDialog extends StatelessWidget {
                           final file = uploadedFiles[index];
                           final extension =
                               path.extension(file.name).replaceFirst('.', '');
-                          final icon = _getFileIcon(extension);
+                          final icon = getFileIcon(extension);
 
                           return ListTile(
                             leading: Icon(icon, color: Colors.blue),
@@ -114,36 +115,4 @@ class FileUploadDialog extends StatelessWidget {
     );
   }
 
-  IconData _getFileIcon(String extension) {
-    switch (extension.toLowerCase()) {
-      case 'pdf':
-        return Icons.picture_as_pdf;
-      case 'doc':
-      case 'docx':
-        return Icons.description;
-      case 'ppt':
-      case 'pptx':
-        return Icons.slideshow;
-      case 'xls':
-      case 'xlsx':
-        return Icons.table_chart;
-      case 'png':
-      case 'jpg':
-      case 'jpeg':
-      case 'gif':
-        return Icons.image;
-      case 'mp4':
-      case 'avi':
-      case 'mkv':
-        return Icons.video_library;
-      case 'mp3':
-      case 'wav':
-        return Icons.music_note;
-      case 'zip':
-      case 'rar':
-        return Icons.folder_zip;
-      default:
-        return Icons.insert_drive_file;
-    }
-  }
 }
