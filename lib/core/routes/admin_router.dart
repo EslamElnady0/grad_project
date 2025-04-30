@@ -5,6 +5,7 @@ import 'package:grad_project/features/annoucements/ui/views/update_annoucement_v
 import 'package:grad_project/features/auth/ui/views/forget_password_view.dart';
 import 'package:grad_project/features/auth/ui/views/confirm_account_view.dart';
 import 'package:grad_project/features/chat/ui/views/chat_view.dart';
+import 'package:grad_project/features/dashboard/ui/views/registered_students_view.dart';
 import 'package:grad_project/features/forum/presentation/views/answers_view.dart';
 import 'package:grad_project/features/forum/presentation/views/forum_views.dart';
 import 'package:grad_project/features/lecture_manager/ui/screens/qr_attendance_view.dart';
@@ -23,7 +24,8 @@ import '../../features/subjects/ui/views/materials_view.dart';
 abstract class AdminRouter {
   static GoRouter getRouter(bool isLogin) {
     return GoRouter(
-      initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
+      // initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
+      initialLocation: RegisteredStudentsView.routeName,
       routes: [
         GoRoute(
           path: HomeView.routeName,
@@ -75,8 +77,8 @@ abstract class AdminRouter {
         GoRoute(
             path: MaterialsView.routeName,
             builder: (context, state) => const MaterialsView(
-              courseId: 0,
-            )),
+                  courseId: 0,
+                )),
         GoRoute(
             path: AnswersView.routeName,
             builder: (context, state) => const AnswersView()),
@@ -95,6 +97,9 @@ abstract class AdminRouter {
         GoRoute(
             path: UpdateAnnoucementView.routeName,
             builder: (context, state) => const UpdateAnnoucementView()),
+        GoRoute(
+            path: RegisteredStudentsView.routeName,
+            builder: (context, state) => const RegisteredStudentsView()),
       ],
     );
   }

@@ -1869,6 +1869,16 @@ class S {
   String get other {
     return Intl.message('Other', name: 'other', desc: '', args: []);
   }
+
+  /// `Search`
+  String get search {
+    return Intl.message('Search', name: 'search', desc: '', args: []);
+  }
+
+  /// `status`
+  String get statuss {
+    return Intl.message('status', name: 'statuss', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

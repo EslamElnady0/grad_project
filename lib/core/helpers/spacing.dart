@@ -9,7 +9,13 @@ SizedBox hGap(double width) => SizedBox(
       width: width.w,
     );
 
-Widget padding16Widget({required Widget child}) => Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
+Widget symmetricPaddingWidget(
+        {required Widget child,
+        double? horizontalPadding,
+        double? verticalPadding}) =>
+    Padding(
+      padding: EdgeInsets.symmetric(
+          horizontal: horizontalPadding ?? 16.w,
+          vertical: verticalPadding ?? 0.h),
       child: child,
     );

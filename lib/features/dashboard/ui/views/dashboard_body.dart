@@ -31,7 +31,7 @@ class _DashboardBodyState extends State<DashboardBody> {
       child: Column(
         children: [
           vGap(22),
-          padding16Widget(
+          symmetricPaddingWidget(
             child: HomeScreensHeaderRow(
               onMenuTap: () {
                 Scaffold.of(context).openDrawer();
@@ -42,11 +42,11 @@ class _DashboardBodyState extends State<DashboardBody> {
           vGap(14),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w),
-            child: padding16Widget(
+            child: symmetricPaddingWidget(
                 child: TitleTextWidget(text: S.of(context).materials_center)),
           ),
           vGap(12),
-          padding16Widget(child: const DoctorSubjectsFilterRow()),
+          symmetricPaddingWidget(child: const DoctorSubjectsFilterRow()),
           vGap(12),
           const Expanded(child: CoursesInfoListView()),
           vGap(80),

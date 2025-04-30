@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/data/models/teachers_courses_response.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
+import 'package:grad_project/features/dashboard/ui/views/registered_students_view.dart';
 import 'package:grad_project/features/dashboard/ui/widgets/custom_red_course_button.dart';
 import 'package:grad_project/features/subjects/ui/views/materials_view.dart';
 import 'package:grad_project/generated/l10n.dart';
@@ -58,7 +59,13 @@ class CustomDashboardCourseContainer extends StatelessWidget {
             padding: EdgeInsetsDirectional.symmetric(horizontal: 15.w),
             child: Skeleton.leaf(
               child: CustomRedCourseButton(
-                  text: S.of(context).registered_students, onTap: () {}),
+                  text: S.of(context).registered_students,
+                  onTap: () {
+                    GoRouter.of(context).push(
+                      RegisteredStudentsView.routeName,
+                      extra: course,
+                    );
+                  }),
             ),
           ),
           vGap(10),
