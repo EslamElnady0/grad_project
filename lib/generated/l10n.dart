@@ -1894,6 +1894,146 @@ class S {
   String get statuss {
     return Intl.message('status', name: 'statuss', desc: '', args: []);
   }
+
+  /// `📝 Organize assignments, review solutions, and update grades with ease!`
+  String get assignments_home_message {
+    return Intl.message(
+      '📝 Organize assignments, review solutions, and update grades with ease!',
+      name: 'assignments_home_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create Assignment`
+  String get create_assignment {
+    return Intl.message(
+      'Create Assignment',
+      name: 'create_assignment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scheduled Assignments`
+  String get scheduled_assignments {
+    return Intl.message(
+      'Scheduled Assignments',
+      name: 'scheduled_assignments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Previous Assignments`
+  String get previous_assignments {
+    return Intl.message(
+      'Previous Assignments',
+      name: 'previous_assignments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create New Assignment`
+  String get create_new_assignment {
+    return Intl.message(
+      'Create New Assignment',
+      name: 'create_new_assignment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `📑 Create a new assignment by specifying a title, description, due date, and attaching any supporting files.`
+  String get create_assignment_welcome_message {
+    return Intl.message(
+      '📑 Create a new assignment by specifying a title, description, due date, and attaching any supporting files.',
+      name: 'create_assignment_welcome_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Assignment Title`
+  String get assignment_title {
+    return Intl.message(
+      'Assignment Title',
+      name: 'assignment_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter a title that clearly describes the content of the assignment.`
+  String get assignment_title_hint_text {
+    return Intl.message(
+      'Enter a title that clearly describes the content of the assignment.',
+      name: 'assignment_title_hint_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Assignment Description`
+  String get assignment_description {
+    return Intl.message(
+      'Assignment Description',
+      name: 'assignment_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Provide a detailed explanation of what is required in the assignment, along with any additional instructions.`
+  String get assignment_description_hint_text {
+    return Intl.message(
+      'Provide a detailed explanation of what is required in the assignment, along with any additional instructions.',
+      name: 'assignment_description_hint_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Assignment Degree`
+  String get assignment_degree {
+    return Intl.message(
+      'Assignment Degree',
+      name: 'assignment_degree',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Final Date`
+  String get final_date {
+    return Intl.message('Final Date', name: 'final_date', desc: '', args: []);
+  }
+
+  /// `⏰ Specify the assignment submission deadline and closing time.`
+  String get choose_assignment_deadline {
+    return Intl.message(
+      '⏰ Specify the assignment submission deadline and closing time.',
+      name: 'choose_assignment_deadline',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Starts In`
+  String get starts_in {
+    return Intl.message('Starts In', name: 'starts_in', desc: '', args: []);
+  }
+
+  /// `Ends In`
+  String get ends_in {
+    return Intl.message('Ends In', name: 'ends_in', desc: '', args: []);
+  }
+
+  /// `Add File`
+  String get add_file {
+    return Intl.message('Add File', name: 'add_file', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -47,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "📚 قم بإضافة مواد دراسية جديدة وإدارة تفاصيلها بكل سهولة!",
     ),
     "add_courses": MessageLookupByLibrary.simpleMessage("إضافة مواد دراسية"),
+    "add_file": MessageLookupByLibrary.simpleMessage("إضافة ملف"),
     "add_new": MessageLookupByLibrary.simpleMessage(" إضافة خبر جديد"),
     "add_new_news": MessageLookupByLibrary.simpleMessage(
       "🆕 أضف خبرًا جديدًا لإبقاء طلابك على اطلاع دائم بكل التحديثات والمستجدات",
@@ -60,13 +61,30 @@ class MessageLookup extends MessageLookupByLibrary {
     "answer": MessageLookupByLibrary.simpleMessage("إجابة"),
     "app_title": MessageLookupByLibrary.simpleMessage("التعليم الالكتروني"),
     "assignment": MessageLookupByLibrary.simpleMessage("المهمة"),
+    "assignment_degree": MessageLookupByLibrary.simpleMessage("درجة الأسايمنت"),
+    "assignment_description": MessageLookupByLibrary.simpleMessage(
+      "وصف الأسايمنت",
+    ),
+    "assignment_description_hint_text": MessageLookupByLibrary.simpleMessage(
+      "قدم شرحًا تفصيليًا حول المطلوب في الأسايمنت، مع أي تعليمات إضافية.",
+    ),
+    "assignment_title": MessageLookupByLibrary.simpleMessage("عنوان الأسايمنت"),
+    "assignment_title_hint_text": MessageLookupByLibrary.simpleMessage(
+      " أدخل عنوانًا يعبر عن محتوى الأسايمنت بشكل واضح.",
+    ),
     "assignments": MessageLookupByLibrary.simpleMessage("التكاليف"),
+    "assignments_home_message": MessageLookupByLibrary.simpleMessage(
+      "📝 نظم الواجبات، راجع الحلول، وقم بتحديث الدرجات بكل سهولة!",
+    ),
     "atLeastTwoAnswers": MessageLookupByLibrary.simpleMessage(
       "يرجى تقديم إجابتين على الأقل لكل سؤال",
     ),
     "attendance": MessageLookupByLibrary.simpleMessage("الحضور"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
+    "choose_assignment_deadline": MessageLookupByLibrary.simpleMessage(
+      "⏰ حدد الموعد النهائي لتسليم الأسايمنت وتوقيت إغلاقه.",
+    ),
     "classWork": MessageLookupByLibrary.simpleMessage("أعمال السنة"),
     "class_work": MessageLookupByLibrary.simpleMessage("أعمال الفصل"),
     "classes": MessageLookupByLibrary.simpleMessage("الفصول:"),
@@ -97,6 +115,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "create_and_manage_news": MessageLookupByLibrary.simpleMessage(
       "📰 أنشئ وأدر الأخبار والإعلانات الهامة لموادك الدراسية بسهولة، وأبقى طلابك على اطلاع دائم!",
     ),
+    "create_assignment": MessageLookupByLibrary.simpleMessage(
+      "إنشاء إسايماينت",
+    ),
+    "create_assignment_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "📑 قم بإنشاء أسايمنت جديد من خلال تحديد العنوان والوصف وموعد التسليم وإرفاق أي ملفات توضيحية.",
+    ),
+    "create_new_assignment": MessageLookupByLibrary.simpleMessage(
+      "إنشاء أسايمنت جديد",
+    ),
     "dashboard": MessageLookupByLibrary.simpleMessage("لوحة التحكم"),
     "dateAndTimeError": MessageLookupByLibrary.simpleMessage(
       "يجب تحديد التاريخ والوقت للاختبار.",
@@ -120,6 +147,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "email": MessageLookupByLibrary.simpleMessage("الإيميل"),
     "endsAt": MessageLookupByLibrary.simpleMessage("ينتهي"),
+    "ends_in": MessageLookupByLibrary.simpleMessage("ينتهي في "),
     "enterYourQuestion": MessageLookupByLibrary.simpleMessage("ادخل سؤالك"),
     "enter_code": MessageLookupByLibrary.simpleMessage(
       "أدخل الكود المكون من 6 أرقام اللي اتبعت ليك.",
@@ -130,6 +158,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "filter": MessageLookupByLibrary.simpleMessage("تصفية"),
     "finalGrade": MessageLookupByLibrary.simpleMessage("الدرجة النهائية"),
     "finalResults": MessageLookupByLibrary.simpleMessage("النتائج النهائية"),
+    "final_date": MessageLookupByLibrary.simpleMessage("الموعد النهائي"),
     "final_exam": MessageLookupByLibrary.simpleMessage("الإختبار النهائي"),
     "final_grades": MessageLookupByLibrary.simpleMessage("الدرجات النهائية"),
     "final_results_welcome_message": MessageLookupByLibrary.simpleMessage(
@@ -236,6 +265,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "postponed": MessageLookupByLibrary.simpleMessage("مؤجل."),
     "prepareWell": MessageLookupByLibrary.simpleMessage("📚 استعد مسبقًا"),
     "previous": MessageLookupByLibrary.simpleMessage("السابق"),
+    "previous_assignments": MessageLookupByLibrary.simpleMessage(
+      "اسايمينتات سابقة",
+    ),
     "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "profile_picture": MessageLookupByLibrary.simpleMessage("الصورة الشخصية"),
     "profile_welcome_message": MessageLookupByLibrary.simpleMessage(
@@ -305,6 +337,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "📅 مرحباً بك في صفحة الجدول الأسبوعي! حدد الأيام التي ترغب في عرض جدولها لتتابع مواعيد محاضراتك وجلساتك العملية بسهولة.",
     ),
     "search": MessageLookupByLibrary.simpleMessage("بحث"),
+    "scheduled_assignments": MessageLookupByLibrary.simpleMessage(
+      "اسايمينتات مجدولة",
+    ),
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       " ابحث عن مبني، مدرج، قاعة، الخ..!",
     ),
@@ -342,6 +377,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "إبدأ في الكتابة الأن..",
     ),
     "startsAt": MessageLookupByLibrary.simpleMessage("يبدأ "),
+    "starts_in": MessageLookupByLibrary.simpleMessage("يبدأ في "),
     "status": MessageLookupByLibrary.simpleMessage("الحالة:"),
     "statuss": MessageLookupByLibrary.simpleMessage("الحاله"),
     "stayCalm": MessageLookupByLibrary.simpleMessage("😌 استرخِ وابقَ هادئًا"),
