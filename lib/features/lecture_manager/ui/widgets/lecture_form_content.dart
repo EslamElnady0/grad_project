@@ -15,8 +15,6 @@ import 'package:grad_project/core/networking/dio_factory.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_text_and_icon_button.dart';
 import 'package:grad_project/core/widgets/custom_text_button.dart';
-import 'package:grad_project/features/lecture_manager/data/models/add_material_request_model.dart';
-import 'package:grad_project/features/lecture_manager/logic/add_materials_cubit/add_materials_cubit.dart';
 import 'package:grad_project/features/lecture_manager/ui/cubit/file_upload_cubit.dart';
 import 'package:grad_project/features/lecture_manager/ui/widgets/dispaly_week_list.dart';
 import 'package:path/path.dart' as path;

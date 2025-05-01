@@ -10,10 +10,6 @@ import 'package:grad_project/features/annoucements/logic/delete_annoucement_cubi
 import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/get_announcement_cubit.dart';
 import 'package:grad_project/features/annoucements/logic/get_teacher_cources_cubit/get_teacher_cources_cubit.dart';
 import 'package:grad_project/features/annoucements/logic/update_annoucement_cubit/update_annoucement_cubit.dart';
-import 'package:grad_project/features/lecture_manager/data/data%20sources/add_materials_local_data_source.dart';
-import 'package:grad_project/features/lecture_manager/data/data%20sources/add_materials_remote_data_source.dart';
-import 'package:grad_project/features/lecture_manager/data/repos/add_materials_repo.dart';
-import 'package:grad_project/features/lecture_manager/logic/add_materials_cubit/add_materials_cubit.dart';
 import 'package:grad_project/features/quizes/data/data%20sources/quizzes_local_data_source.dart';
 import 'package:grad_project/features/quizes/data/data%20sources/quizzes_remote_data_source.dart';
 import 'package:grad_project/features/quizes/data/repos/quizzes_repo.dart';
@@ -62,11 +58,6 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<QuizzesLocalDataSource>(() => QuizzesLocalDataSourceImpl());
   getIt.registerLazySingleton<QuizzesRepo>(() => QuizzesRepo(remoteDataSource: getIt(), localDataSource: getIt()));
   getIt.registerFactory<QuizzesCubit>(() => QuizzesCubit(getIt()));
-  // toDo:----------------------------Add Material API ------------------------------//
-  getIt.registerLazySingleton<AddMaterialsRemoteDataSource>(() => AddMaterialsRemoteDataSource(dio));
-  getIt.registerLazySingleton<AddMaterialsLocalDataSource>(() => AddMaterialsLocalDataSourceImpl());
-  getIt.registerLazySingleton<AddMaterialsRepo>(() => AddMaterialsRepo(remoteDataSource: getIt(), localDataSource: getIt()));
-  getIt.registerFactory<AddMaterialsCubit>(() => AddMaterialsCubit(getIt()));
   //toDo:---------------------------------------------------------------------//
   //toDo:---------------------------------------------------------------------//
   //toDo:------------------------------ Quiz UI ------------------------------//
