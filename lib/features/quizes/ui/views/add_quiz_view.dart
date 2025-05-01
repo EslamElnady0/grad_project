@@ -41,6 +41,7 @@ class AddQuizView extends StatelessWidget {
               quizzesSuccess: (data) {
                 data as CreateQuizResponseModel;
                 showToast(toastMsg: data.message, state: ToastStates.success);
+                context.pop();
               },
             );
           },

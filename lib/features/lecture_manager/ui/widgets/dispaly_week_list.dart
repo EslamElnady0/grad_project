@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/features/lecture_manager/ui/cubit/List_cubit.dart';
-import '../../../../core/helpers/localizationa.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
@@ -11,7 +10,7 @@ class DisplayList extends StatelessWidget {
   final List<String> listValue;
   // Change the callback type to accept int instead of String
   final Function(int)? onSelected;
-  
+
   const DisplayList({
     super.key,
     required this.listValue,
@@ -41,8 +40,10 @@ class DisplayList extends StatelessWidget {
                 ),
               ],
             ),
-            child: PopupMenuButton<int>( // Change type to int
-              onSelected: (index) { // Now receiving index instead of value
+            child: PopupMenuButton<int>(
+              // Change type to int
+              onSelected: (index) {
+                // Now receiving index instead of value
                 // Update the selected week in the Cubit using the index
                 context.read<ListCubit>().selectWeek(listValue[index]);
                 if (onSelected != null) {
@@ -73,7 +74,8 @@ class DisplayList extends StatelessWidget {
               ),
               itemBuilder: (context) {
                 return List.generate(listValue.length, (index) {
-                  return PopupMenuItem<int>( // Change type to int
+                  return PopupMenuItem<int>(
+                    // Change type to int
                     value: index, // Use index as value
                     child: Text(
                       listValue[index],
