@@ -89,7 +89,9 @@ abstract class AdminRouter {
             builder: (context, state) => const QrAttendanceView()),
         GoRoute(
             path: AddLectureView.routeName,
-            builder: (context, state) => const AddLectureView()),
+            builder: (context, state) =>  AddLectureView(
+              id:  state.extra as int,
+            )),
         GoRoute(
             path: AddQuizView.routeName,
             builder: (context, state) => const AddQuizView()),

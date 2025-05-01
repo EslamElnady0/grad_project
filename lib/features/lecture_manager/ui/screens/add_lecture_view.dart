@@ -10,7 +10,10 @@ import 'package:grad_project/features/lecture_manager/ui/cubit/file_upload_cubit
 import '../widgets/add_lecture_view_body.dart';
 
 class AddLectureView extends StatefulWidget {
-  const AddLectureView({super.key});
+  const AddLectureView({super.key, required this.id});
+
+  final int id;
+
   static const String routeName = '/addLectureView';
 
   @override
@@ -36,10 +39,13 @@ class _AddLectureViewState extends State<AddLectureView> {
           BlocProvider(
             create: (context) => getIt<FileUploadCubit>(),
           ),
-          BlocProvider(create: (context) => AddMaterialsCubit(AddMaterialsRepo())),
-       
+          BlocProvider(
+            create: (context) => getIt<AddMaterialsCubit>(),
+          ),
         ],
-        child: const AddLectureViewBody(),
+        child: AddLectureViewBody(
+          id: widget.id,
+        ),
       ),
     );
   }

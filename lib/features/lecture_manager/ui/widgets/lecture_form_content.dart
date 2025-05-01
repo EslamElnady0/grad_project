@@ -28,9 +28,9 @@ import 'file_upload_dialog.dart';
 
 class LectureFormContent extends StatefulWidget {
   const LectureFormContent({
-    super.key,
+    super.key, required this.id,
   });
-
+final int id;
   @override
   State<LectureFormContent> createState() => _LectureFormContentState();
 }
@@ -120,6 +120,7 @@ class _LectureFormContentState extends State<LectureFormContent> {
                     formKey.currentState!.save();
                     final selectedFiles = context.read<FileUploadCubit>().state;
                    await context.read<AddMaterialsCubit>().addMaterials(
+                           id: widget.id,
                           type: type,
                           selectedFiles: selectedFiles,
                           title: title,

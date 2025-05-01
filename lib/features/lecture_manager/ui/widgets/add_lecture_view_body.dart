@@ -6,8 +6,8 @@ import '../../../../generated/l10n.dart';
 import '../../../home/ui/widgets/title_text_widget.dart';
 
 class AddLectureViewBody extends StatelessWidget {
-  const AddLectureViewBody({super.key});
-
+  const AddLectureViewBody({super.key, required this.id});
+final int id;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -19,7 +19,9 @@ class AddLectureViewBody extends StatelessWidget {
           vGap(8),
           TitleTextWidget(text: S.of(context).addStudyContentSubtitle),
           vGap(16),
-          const LectureFormContent(),
+         LectureFormContent(
+            id: id
+          ),
           vGap(16),
         ],
       ),
