@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/features/annoucements/ui/views/add_annoucement_view.dart';
 import 'package:grad_project/features/annoucements/ui/views/update_annoucement_view.dart';
+import 'package:grad_project/features/assignments/presentation/views/create_assignment_view.dart';
 import 'package:grad_project/features/auth/ui/views/forget_password_view.dart';
 import 'package:grad_project/features/auth/ui/views/confirm_account_view.dart';
 import 'package:grad_project/features/chat/ui/views/chat_view.dart';
@@ -102,6 +103,9 @@ abstract class AdminRouter {
         GoRoute(
             path: RegisteredStudentsView.routeName,
             builder: (context, state) => const RegisteredStudentsView()),
+        GoRoute(
+            path: CreateAssignmentView.routeName,
+            builder: (context, state) => const CreateAssignmentView()),
         GoRoute(
             path: TeacherQuizzesView.routeName,
             builder: (context, state) => const TeacherQuizzesView()),

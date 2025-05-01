@@ -5,6 +5,7 @@ import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/academic_progress_view.dart';
 import 'package:grad_project/features/annoucements/ui/views/annoucements_body.dart';
+import 'package:grad_project/features/assignments/presentation/views/assignment_home_view.dart';
 import 'package:grad_project/features/dashboard/ui/views/dashboard_body.dart';
 import 'package:grad_project/features/final_results/presentation/views/final_results_view.dart';
 import 'package:grad_project/features/forum/presentation/views/forum_views.dart';
@@ -237,7 +238,7 @@ class Constants {
     const AnnoucementsBody(),
     const LectureManagerView(),
     const QuizManagementViewBody(),
-    const Column()
+    const AssignmentHomeView()
   ];
   static const List<Map<String, dynamic>> dummyMessages = [
     {

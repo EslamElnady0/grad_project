@@ -11,6 +11,11 @@ import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/
 import 'package:grad_project/features/annoucements/logic/get_teacher_cources_cubit/get_teacher_cources_cubit.dart';
 import 'package:grad_project/features/annoucements/logic/update_annoucement_cubit/update_annoucement_cubit.dart';
 import 'package:grad_project/features/lecture_manager/data/repos/add_materials_repo.dart';
+import 'package:grad_project/features/assignments/data/data_sources/assignments_local_data_source.dart';
+import 'package:grad_project/features/assignments/data/data_sources/assignments_remote_data_source.dart';
+import 'package:grad_project/features/assignments/data/repos/assignments_repo.dart';
+import 'package:grad_project/features/assignments/logic/cubits/assignment_upload_cubit.dart/assignment_upload_cubit.dart';
+import 'package:grad_project/features/assignments/logic/cubits/create_assignment_cubit/create_assignment_cubit.dart';
 import 'package:grad_project/features/quizes/data/data%20sources/quizzes_local_data_source.dart';
 import 'package:grad_project/features/quizes/data/data%20sources/quizzes_remote_data_source.dart';
 import 'package:grad_project/features/quizes/data/repos/quizzes_repo.dart';
@@ -92,4 +97,18 @@ Future<void> setupGetIt() async {
   //toDo:------------------------------Subjects Ui------------------------------
   getIt.registerLazySingleton<FileUploadCubit>(() => FileUploadCubit());
   getIt.registerFactory<SubjectsFilterCubit>(() => SubjectsFilterCubit());
+  //toDo:------------------------------ Assignments API ------------------------------//
+  getIt.registerLazySingleton<AssignmentsRemoteDataSource>(
+      () => AssignmentsRemoteDataSource(dio));
+  getIt.registerLazySingleton<AssignmentsLocalDataSource>(
+      () => AssignmentsLocalDataSourceImpl());
+
+  getIt.registerLazySingleton<AssignmentsRepo>(() => AssignmentsRepo(
+        remoteDataSource: getIt(),
+        localDataSource: getIt(),
+      ));
+  getIt.registerFactory<CreateAssignmentCubit>(
+      () => CreateAssignmentCubit(getIt()));
+
+  getIt.registerFactory<AssignmentUploadCubit>(() => AssignmentUploadCubit());
 }

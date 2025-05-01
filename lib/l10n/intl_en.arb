@@ -246,5 +246,22 @@
   "average_score": "Average student score in this quiz",
   "score": "Score",
   "finalDegree": "Final",
-  "theSearch": "Search.."
+  "theSearch": "Search..",
+  "edit_news": "✏️ Edit your announcement to keep your students informed with the latest details and updates",
+  "assignments_home_message": "📝 Organize assignments, review solutions, and update grades with ease!",
+  "create_assignment": "Create Assignment",
+  "scheduled_assignments": "Scheduled Assignments",
+  "previous_assignments": "Previous Assignments",
+  "create_new_assignment": "Create New Assignment",
+  "create_assignment_welcome_message": "📑 Create a new assignment by specifying a title, description, due date, and attaching any supporting files.",
+  "assignment_title": "Assignment Title",
+  "assignment_title_hint_text": "Enter a title that clearly describes the content of the assignment.",
+  "assignment_description": "Assignment Description",
+  "assignment_description_hint_text": "Provide a detailed explanation of what is required in the assignment, along with any additional instructions.",
+  "assignment_degree": "Assignment Degree",
+  "final_date": "Final Date",
+  "choose_assignment_deadline": "⏰ Specify the assignment submission deadline and closing time.",
+  "starts_in": "Starts In",
+  "ends_in": "Ends In",
+  "add_file": "Add File"
 }
