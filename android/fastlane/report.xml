@@ -5,17 +5,17 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.0009279">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.0015813">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.0006953">
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.0013371">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: firebase_app_distribution" time="93.4848663">
+      <testcase classname="fastlane.lanes" name="2: shorebird release android --flavor doctor --target ./lib/grad_project_admin_main.dart --artifact=apk" time="5.2487026">
         
       </testcase>
     
