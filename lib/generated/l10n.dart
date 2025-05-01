@@ -1875,10 +1875,10 @@ class S {
     return Intl.message('Lecture', name: 'lecture', desc: '', args: []);
   }
 
-  /// `Please upload files`
+  /// `Please upload the files first`
   String get pleaseUploadFiles {
     return Intl.message(
-      'Please upload files',
+      'Please upload the files first',
       name: 'pleaseUploadFiles',
       desc: '',
       args: [],

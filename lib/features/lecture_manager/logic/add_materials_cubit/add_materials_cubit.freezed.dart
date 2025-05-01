@@ -22,6 +22,7 @@ mixin _$AddMaterialsState<T> {
     required TResult Function() addMaterialsLoading,
     required TResult Function(T data) addMaterialsSuccess,
     required TResult Function(String error) addMaterialsFailure,
+    required TResult Function(double progress) addMaterialsProgress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$AddMaterialsState<T> {
     TResult? Function()? addMaterialsLoading,
     TResult? Function(T data)? addMaterialsSuccess,
     TResult? Function(String error)? addMaterialsFailure,
+    TResult? Function(double progress)? addMaterialsProgress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$AddMaterialsState<T> {
     TResult Function()? addMaterialsLoading,
     TResult Function(T data)? addMaterialsSuccess,
     TResult Function(String error)? addMaterialsFailure,
+    TResult Function(double progress)? addMaterialsProgress,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,8 @@ mixin _$AddMaterialsState<T> {
     required TResult Function(AddMaterialsLoading<T> value) addMaterialsLoading,
     required TResult Function(AddMaterialsSuccess<T> value) addMaterialsSuccess,
     required TResult Function(AddMaterialsFailure<T> value) addMaterialsFailure,
+    required TResult Function(AddMaterialsProgress<T> value)
+        addMaterialsProgress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +60,7 @@ mixin _$AddMaterialsState<T> {
     TResult? Function(AddMaterialsLoading<T> value)? addMaterialsLoading,
     TResult? Function(AddMaterialsSuccess<T> value)? addMaterialsSuccess,
     TResult? Function(AddMaterialsFailure<T> value)? addMaterialsFailure,
+    TResult? Function(AddMaterialsProgress<T> value)? addMaterialsProgress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +69,7 @@ mixin _$AddMaterialsState<T> {
     TResult Function(AddMaterialsLoading<T> value)? addMaterialsLoading,
     TResult Function(AddMaterialsSuccess<T> value)? addMaterialsSuccess,
     TResult Function(AddMaterialsFailure<T> value)? addMaterialsFailure,
+    TResult Function(AddMaterialsProgress<T> value)? addMaterialsProgress,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -135,6 +142,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() addMaterialsLoading,
     required TResult Function(T data) addMaterialsSuccess,
     required TResult Function(String error) addMaterialsFailure,
+    required TResult Function(double progress) addMaterialsProgress,
   }) {
     return initial();
   }
@@ -146,6 +154,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? addMaterialsLoading,
     TResult? Function(T data)? addMaterialsSuccess,
     TResult? Function(String error)? addMaterialsFailure,
+    TResult? Function(double progress)? addMaterialsProgress,
   }) {
     return initial?.call();
   }
@@ -157,6 +166,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? addMaterialsLoading,
     TResult Function(T data)? addMaterialsSuccess,
     TResult Function(String error)? addMaterialsFailure,
+    TResult Function(double progress)? addMaterialsProgress,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -172,6 +182,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(AddMaterialsLoading<T> value) addMaterialsLoading,
     required TResult Function(AddMaterialsSuccess<T> value) addMaterialsSuccess,
     required TResult Function(AddMaterialsFailure<T> value) addMaterialsFailure,
+    required TResult Function(AddMaterialsProgress<T> value)
+        addMaterialsProgress,
   }) {
     return initial(this);
   }
@@ -183,6 +195,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(AddMaterialsLoading<T> value)? addMaterialsLoading,
     TResult? Function(AddMaterialsSuccess<T> value)? addMaterialsSuccess,
     TResult? Function(AddMaterialsFailure<T> value)? addMaterialsFailure,
+    TResult? Function(AddMaterialsProgress<T> value)? addMaterialsProgress,
   }) {
     return initial?.call(this);
   }
@@ -194,6 +207,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(AddMaterialsLoading<T> value)? addMaterialsLoading,
     TResult Function(AddMaterialsSuccess<T> value)? addMaterialsSuccess,
     TResult Function(AddMaterialsFailure<T> value)? addMaterialsFailure,
+    TResult Function(AddMaterialsProgress<T> value)? addMaterialsProgress,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -254,6 +268,7 @@ class _$AddMaterialsLoadingImpl<T> implements AddMaterialsLoading<T> {
     required TResult Function() addMaterialsLoading,
     required TResult Function(T data) addMaterialsSuccess,
     required TResult Function(String error) addMaterialsFailure,
+    required TResult Function(double progress) addMaterialsProgress,
   }) {
     return addMaterialsLoading();
   }
@@ -265,6 +280,7 @@ class _$AddMaterialsLoadingImpl<T> implements AddMaterialsLoading<T> {
     TResult? Function()? addMaterialsLoading,
     TResult? Function(T data)? addMaterialsSuccess,
     TResult? Function(String error)? addMaterialsFailure,
+    TResult? Function(double progress)? addMaterialsProgress,
   }) {
     return addMaterialsLoading?.call();
   }
@@ -276,6 +292,7 @@ class _$AddMaterialsLoadingImpl<T> implements AddMaterialsLoading<T> {
     TResult Function()? addMaterialsLoading,
     TResult Function(T data)? addMaterialsSuccess,
     TResult Function(String error)? addMaterialsFailure,
+    TResult Function(double progress)? addMaterialsProgress,
     required TResult orElse(),
   }) {
     if (addMaterialsLoading != null) {
@@ -291,6 +308,8 @@ class _$AddMaterialsLoadingImpl<T> implements AddMaterialsLoading<T> {
     required TResult Function(AddMaterialsLoading<T> value) addMaterialsLoading,
     required TResult Function(AddMaterialsSuccess<T> value) addMaterialsSuccess,
     required TResult Function(AddMaterialsFailure<T> value) addMaterialsFailure,
+    required TResult Function(AddMaterialsProgress<T> value)
+        addMaterialsProgress,
   }) {
     return addMaterialsLoading(this);
   }
@@ -302,6 +321,7 @@ class _$AddMaterialsLoadingImpl<T> implements AddMaterialsLoading<T> {
     TResult? Function(AddMaterialsLoading<T> value)? addMaterialsLoading,
     TResult? Function(AddMaterialsSuccess<T> value)? addMaterialsSuccess,
     TResult? Function(AddMaterialsFailure<T> value)? addMaterialsFailure,
+    TResult? Function(AddMaterialsProgress<T> value)? addMaterialsProgress,
   }) {
     return addMaterialsLoading?.call(this);
   }
@@ -313,6 +333,7 @@ class _$AddMaterialsLoadingImpl<T> implements AddMaterialsLoading<T> {
     TResult Function(AddMaterialsLoading<T> value)? addMaterialsLoading,
     TResult Function(AddMaterialsSuccess<T> value)? addMaterialsSuccess,
     TResult Function(AddMaterialsFailure<T> value)? addMaterialsFailure,
+    TResult Function(AddMaterialsProgress<T> value)? addMaterialsProgress,
     required TResult orElse(),
   }) {
     if (addMaterialsLoading != null) {
@@ -401,6 +422,7 @@ class _$AddMaterialsSuccessImpl<T> implements AddMaterialsSuccess<T> {
     required TResult Function() addMaterialsLoading,
     required TResult Function(T data) addMaterialsSuccess,
     required TResult Function(String error) addMaterialsFailure,
+    required TResult Function(double progress) addMaterialsProgress,
   }) {
     return addMaterialsSuccess(data);
   }
@@ -412,6 +434,7 @@ class _$AddMaterialsSuccessImpl<T> implements AddMaterialsSuccess<T> {
     TResult? Function()? addMaterialsLoading,
     TResult? Function(T data)? addMaterialsSuccess,
     TResult? Function(String error)? addMaterialsFailure,
+    TResult? Function(double progress)? addMaterialsProgress,
   }) {
     return addMaterialsSuccess?.call(data);
   }
@@ -423,6 +446,7 @@ class _$AddMaterialsSuccessImpl<T> implements AddMaterialsSuccess<T> {
     TResult Function()? addMaterialsLoading,
     TResult Function(T data)? addMaterialsSuccess,
     TResult Function(String error)? addMaterialsFailure,
+    TResult Function(double progress)? addMaterialsProgress,
     required TResult orElse(),
   }) {
     if (addMaterialsSuccess != null) {
@@ -438,6 +462,8 @@ class _$AddMaterialsSuccessImpl<T> implements AddMaterialsSuccess<T> {
     required TResult Function(AddMaterialsLoading<T> value) addMaterialsLoading,
     required TResult Function(AddMaterialsSuccess<T> value) addMaterialsSuccess,
     required TResult Function(AddMaterialsFailure<T> value) addMaterialsFailure,
+    required TResult Function(AddMaterialsProgress<T> value)
+        addMaterialsProgress,
   }) {
     return addMaterialsSuccess(this);
   }
@@ -449,6 +475,7 @@ class _$AddMaterialsSuccessImpl<T> implements AddMaterialsSuccess<T> {
     TResult? Function(AddMaterialsLoading<T> value)? addMaterialsLoading,
     TResult? Function(AddMaterialsSuccess<T> value)? addMaterialsSuccess,
     TResult? Function(AddMaterialsFailure<T> value)? addMaterialsFailure,
+    TResult? Function(AddMaterialsProgress<T> value)? addMaterialsProgress,
   }) {
     return addMaterialsSuccess?.call(this);
   }
@@ -460,6 +487,7 @@ class _$AddMaterialsSuccessImpl<T> implements AddMaterialsSuccess<T> {
     TResult Function(AddMaterialsLoading<T> value)? addMaterialsLoading,
     TResult Function(AddMaterialsSuccess<T> value)? addMaterialsSuccess,
     TResult Function(AddMaterialsFailure<T> value)? addMaterialsFailure,
+    TResult Function(AddMaterialsProgress<T> value)? addMaterialsProgress,
     required TResult orElse(),
   }) {
     if (addMaterialsSuccess != null) {
@@ -556,6 +584,7 @@ class _$AddMaterialsFailureImpl<T> implements AddMaterialsFailure<T> {
     required TResult Function() addMaterialsLoading,
     required TResult Function(T data) addMaterialsSuccess,
     required TResult Function(String error) addMaterialsFailure,
+    required TResult Function(double progress) addMaterialsProgress,
   }) {
     return addMaterialsFailure(error);
   }
@@ -567,6 +596,7 @@ class _$AddMaterialsFailureImpl<T> implements AddMaterialsFailure<T> {
     TResult? Function()? addMaterialsLoading,
     TResult? Function(T data)? addMaterialsSuccess,
     TResult? Function(String error)? addMaterialsFailure,
+    TResult? Function(double progress)? addMaterialsProgress,
   }) {
     return addMaterialsFailure?.call(error);
   }
@@ -578,6 +608,7 @@ class _$AddMaterialsFailureImpl<T> implements AddMaterialsFailure<T> {
     TResult Function()? addMaterialsLoading,
     TResult Function(T data)? addMaterialsSuccess,
     TResult Function(String error)? addMaterialsFailure,
+    TResult Function(double progress)? addMaterialsProgress,
     required TResult orElse(),
   }) {
     if (addMaterialsFailure != null) {
@@ -593,6 +624,8 @@ class _$AddMaterialsFailureImpl<T> implements AddMaterialsFailure<T> {
     required TResult Function(AddMaterialsLoading<T> value) addMaterialsLoading,
     required TResult Function(AddMaterialsSuccess<T> value) addMaterialsSuccess,
     required TResult Function(AddMaterialsFailure<T> value) addMaterialsFailure,
+    required TResult Function(AddMaterialsProgress<T> value)
+        addMaterialsProgress,
   }) {
     return addMaterialsFailure(this);
   }
@@ -604,6 +637,7 @@ class _$AddMaterialsFailureImpl<T> implements AddMaterialsFailure<T> {
     TResult? Function(AddMaterialsLoading<T> value)? addMaterialsLoading,
     TResult? Function(AddMaterialsSuccess<T> value)? addMaterialsSuccess,
     TResult? Function(AddMaterialsFailure<T> value)? addMaterialsFailure,
+    TResult? Function(AddMaterialsProgress<T> value)? addMaterialsProgress,
   }) {
     return addMaterialsFailure?.call(this);
   }
@@ -615,6 +649,7 @@ class _$AddMaterialsFailureImpl<T> implements AddMaterialsFailure<T> {
     TResult Function(AddMaterialsLoading<T> value)? addMaterialsLoading,
     TResult Function(AddMaterialsSuccess<T> value)? addMaterialsSuccess,
     TResult Function(AddMaterialsFailure<T> value)? addMaterialsFailure,
+    TResult Function(AddMaterialsProgress<T> value)? addMaterialsProgress,
     required TResult orElse(),
   }) {
     if (addMaterialsFailure != null) {
@@ -634,5 +669,169 @@ abstract class AddMaterialsFailure<T> implements AddMaterialsState<T> {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AddMaterialsFailureImplCopyWith<T, _$AddMaterialsFailureImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddMaterialsProgressImplCopyWith<T, $Res> {
+  factory _$$AddMaterialsProgressImplCopyWith(
+          _$AddMaterialsProgressImpl<T> value,
+          $Res Function(_$AddMaterialsProgressImpl<T>) then) =
+      __$$AddMaterialsProgressImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({double progress});
+}
+
+/// @nodoc
+class __$$AddMaterialsProgressImplCopyWithImpl<T, $Res>
+    extends _$AddMaterialsStateCopyWithImpl<T, $Res,
+        _$AddMaterialsProgressImpl<T>>
+    implements _$$AddMaterialsProgressImplCopyWith<T, $Res> {
+  __$$AddMaterialsProgressImplCopyWithImpl(_$AddMaterialsProgressImpl<T> _value,
+      $Res Function(_$AddMaterialsProgressImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AddMaterialsState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? progress = null,
+  }) {
+    return _then(_$AddMaterialsProgressImpl<T>(
+      null == progress
+          ? _value.progress
+          : progress // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddMaterialsProgressImpl<T> implements AddMaterialsProgress<T> {
+  const _$AddMaterialsProgressImpl(this.progress);
+
+  @override
+  final double progress;
+
+  @override
+  String toString() {
+    return 'AddMaterialsState<$T>.addMaterialsProgress(progress: $progress)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddMaterialsProgressImpl<T> &&
+            (identical(other.progress, progress) ||
+                other.progress == progress));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, progress);
+
+  /// Create a copy of AddMaterialsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddMaterialsProgressImplCopyWith<T, _$AddMaterialsProgressImpl<T>>
+      get copyWith => __$$AddMaterialsProgressImplCopyWithImpl<T,
+          _$AddMaterialsProgressImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addMaterialsLoading,
+    required TResult Function(T data) addMaterialsSuccess,
+    required TResult Function(String error) addMaterialsFailure,
+    required TResult Function(double progress) addMaterialsProgress,
+  }) {
+    return addMaterialsProgress(progress);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addMaterialsLoading,
+    TResult? Function(T data)? addMaterialsSuccess,
+    TResult? Function(String error)? addMaterialsFailure,
+    TResult? Function(double progress)? addMaterialsProgress,
+  }) {
+    return addMaterialsProgress?.call(progress);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addMaterialsLoading,
+    TResult Function(T data)? addMaterialsSuccess,
+    TResult Function(String error)? addMaterialsFailure,
+    TResult Function(double progress)? addMaterialsProgress,
+    required TResult orElse(),
+  }) {
+    if (addMaterialsProgress != null) {
+      return addMaterialsProgress(progress);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddMaterialsLoading<T> value) addMaterialsLoading,
+    required TResult Function(AddMaterialsSuccess<T> value) addMaterialsSuccess,
+    required TResult Function(AddMaterialsFailure<T> value) addMaterialsFailure,
+    required TResult Function(AddMaterialsProgress<T> value)
+        addMaterialsProgress,
+  }) {
+    return addMaterialsProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddMaterialsLoading<T> value)? addMaterialsLoading,
+    TResult? Function(AddMaterialsSuccess<T> value)? addMaterialsSuccess,
+    TResult? Function(AddMaterialsFailure<T> value)? addMaterialsFailure,
+    TResult? Function(AddMaterialsProgress<T> value)? addMaterialsProgress,
+  }) {
+    return addMaterialsProgress?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddMaterialsLoading<T> value)? addMaterialsLoading,
+    TResult Function(AddMaterialsSuccess<T> value)? addMaterialsSuccess,
+    TResult Function(AddMaterialsFailure<T> value)? addMaterialsFailure,
+    TResult Function(AddMaterialsProgress<T> value)? addMaterialsProgress,
+    required TResult orElse(),
+  }) {
+    if (addMaterialsProgress != null) {
+      return addMaterialsProgress(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddMaterialsProgress<T> implements AddMaterialsState<T> {
+  const factory AddMaterialsProgress(final double progress) =
+      _$AddMaterialsProgressImpl<T>;
+
+  double get progress;
+
+  /// Create a copy of AddMaterialsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AddMaterialsProgressImplCopyWith<T, _$AddMaterialsProgressImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

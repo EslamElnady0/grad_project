@@ -5,4 +5,5 @@ class AddMaterialsState<T> with _$AddMaterialsState {
   const factory AddMaterialsState.addMaterialsLoading() = AddMaterialsLoading;
   const factory AddMaterialsState.addMaterialsSuccess(T data) = AddMaterialsSuccess<T>;
   const factory AddMaterialsState.addMaterialsFailure(String error) = AddMaterialsFailure;
+const factory AddMaterialsState.addMaterialsProgress(double progress) = AddMaterialsProgress;
 }

@@ -44,6 +44,12 @@ class AddMaterialsCubit extends Cubit<AddMaterialsState> {
     final result = await _repo.upload(
       id: id,
       data: data,
+        onProgress: (sent, total) {
+    double progress = sent / total;
+  
+  emit(AddMaterialsState.addMaterialsProgress(progress));
+   
+  },
     );
 
     result.when(

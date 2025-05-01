@@ -239,7 +239,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please enter the required fields",
     ),
     "pleaseUploadFiles": MessageLookupByLibrary.simpleMessage(
-      "Please upload files",
+      "Please upload the files first",
     ),
     "postponed": MessageLookupByLibrary.simpleMessage("Postponed."),
     "prepareWell": MessageLookupByLibrary.simpleMessage(

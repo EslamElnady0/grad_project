@@ -64,15 +64,8 @@ class FileUploadDialog extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 16),
-                  CustomTextButton(
-                      width: 150,
-                      fontSize: 14,
-                      text: S.of(context).ok,
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      primary: true),
+                 
+              
                   const SizedBox(height: 16),
                   if (uploadedFiles.isNotEmpty)
                     Expanded(
@@ -103,7 +96,15 @@ class FileUploadDialog extends StatelessWidget {
                     Text(
                       S.of(context).noFilesUploaded,
                       style: AppTextStyles.font14GrayMedium,
-                    ),
+                    ), const SizedBox(height: 16),
+                        CustomTextButton(
+                      width: 150,
+                      fontSize: 14,
+                      text: S.of(context).ok,
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      primary: true),
                 ],
               ),
             ),

@@ -10,7 +10,9 @@ class AddMaterialsRepo {
 
   AddMaterialsRepo(this.dio);
   Future<ApiResult<AddMaterialsResponseModel>> upload(
-      {required int id, required FormData data}) async {
+      {required int id, required FormData data,
+       required void Function(int sentBytes, int totalBytes)? onProgress,
+      }) async {
     try {
       Response response = await dio.request(
         '${ApiConstants.apiBaseUrl}teachers/course-materials/$id',
@@ -18,6 +20,7 @@ class AddMaterialsRepo {
           method: 'POST',
         ),
         data: data,
+         onSendProgress: onProgress,
       );
 
       AddMaterialsResponseModel result = AddMaterialsResponseModel(
