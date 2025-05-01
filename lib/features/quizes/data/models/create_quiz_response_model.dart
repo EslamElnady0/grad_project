@@ -64,7 +64,7 @@ class QuizDataModel {
 // Model class for the course object
 @JsonSerializable()
 class CourseModel {
-  final int? id;
+  final dynamic id;
   final String name;
 
   CourseModel({
