@@ -187,7 +187,7 @@
   "addLinkDescrebtion": "Add a link to the study material.",
   "time_schedule_welcome_message": "Welcome! Here you can view the upcoming quiz dates and submit the fees for each subject.⏰",
   "search_for_task": "Search by activity type or name",
-  "next_seven_days": "Next Seven Days",
+  "next_seven_days": "Next 7 Days",
   "quiz_details": "Quiz Details",
   "add_to_send": "Add to send",
   "sent": "sent",
@@ -245,5 +245,6 @@
   "results_description": "📊 View students’ quiz results, including grades!",
   "average_score": "Average student score in this quiz",
   "score": "Score",
-  "finalDegree": "Final"
+  "finalDegree": "Final",
+  "theSearch": "Search.."
 }

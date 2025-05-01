@@ -5,7 +5,9 @@ import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/data/models/teachers_courses_response.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
+import 'package:grad_project/features/quizes/data/models/get_quizzes_request_query_params_model.dart';
 import 'package:grad_project/features/quizes/ui/views/add_quiz_view.dart';
+import 'package:grad_project/features/quizes/ui/views/teacher_quizzes_view.dart';
 import 'package:grad_project/generated/l10n.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/helpers/spacing.dart';
@@ -74,9 +76,12 @@ class CustomCourseQuizWidget extends StatelessWidget {
                   width: double.infinity,
                   style: AppTextStyles.font14WhiteSemiBold,
                   onTap: () {
-                    // GoRouter.of(context).push(AddLectureView.routeName
-                    //   , extra: courseData.id
-                    // );
+                    GoRouter.of(context).push(TeacherQuizzesView.routeName,
+                        extra: GetQuizzesRequestQueryParamsModel(
+                            //TODO: add courseId
+                            courseId: "",
+                            quizStatus: "scheduled",
+                            fromDate: ""));
                   },
                   icon: SvgPicture.asset(Assets.imagesSvgsTwoCirclesTimeIcon),
                   primaryButton: true),
@@ -85,7 +90,14 @@ class CustomCourseQuizWidget extends StatelessWidget {
                   text: S.of(context).previous_quizzes,
                   width: double.infinity,
                   style: AppTextStyles.font14WhiteSemiBold,
-                  onTap: () {},
+                  onTap: () {
+                    GoRouter.of(context).push(TeacherQuizzesView.routeName,
+                        extra: GetQuizzesRequestQueryParamsModel(
+                            //TODO: add courseId
+                            courseId: "",
+                            quizStatus: "finished",
+                            fromDate: ""));
+                  },
                   icon: SvgPicture.asset(Assets.imagesSvgsTimePulseIcon),
                   primaryButton: false),
             ]),

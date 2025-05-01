@@ -24,6 +24,7 @@ class CustomDropDownButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(12)),
       child: DropdownButtonHideUnderline(
         child: DropdownButton(
+          borderRadius: BorderRadius.circular(12),
           dropdownColor: AppColors.primaryColordark,
           value: initialValue,
           icon: Padding(

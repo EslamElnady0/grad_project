@@ -209,9 +209,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "قم بإضافة عنوان واضح ومباشر يُلخص الخبر بدقة!",
     ),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
-    "next_seven_days": MessageLookupByLibrary.simpleMessage(
-      "الأيام السبعة القادمة",
-    ),
+    "next_seven_days": MessageLookupByLibrary.simpleMessage("7 أيام القادمة"),
     "noFilesUploaded": MessageLookupByLibrary.simpleMessage(
       "لم يتم رفع أي ملفات بعد",
     ),
@@ -382,6 +380,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "📋 اختبر معلوماتك، واستعد للامتحان من خلال الإجابة على الأسئلة المخصصة!",
     ),
     "text": MessageLookupByLibrary.simpleMessage("نصوص"),
+    "theSearch": MessageLookupByLibrary.simpleMessage("البحث.."),
     "thursday": MessageLookupByLibrary.simpleMessage("الخميس"),
     "time": MessageLookupByLibrary.simpleMessage("الوقت"),
     "timeManagement": MessageLookupByLibrary.simpleMessage(

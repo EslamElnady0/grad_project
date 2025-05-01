@@ -219,7 +219,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Add a clear and direct title that summarizes the Annoucement accurately!",
     ),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
-    "next_seven_days": MessageLookupByLibrary.simpleMessage("Next Seven Days"),
+    "next_seven_days": MessageLookupByLibrary.simpleMessage("Next 7 Days"),
     "noFilesUploaded": MessageLookupByLibrary.simpleMessage(
       "No files uploaded yet",
     ),
@@ -401,6 +401,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "📋 Test your knowledge and prepare for the exam by answering the customized questions!",
     ),
     "text": MessageLookupByLibrary.simpleMessage("Texts"),
+    "theSearch": MessageLookupByLibrary.simpleMessage("Search.."),
     "thursday": MessageLookupByLibrary.simpleMessage("Thursday"),
     "time": MessageLookupByLibrary.simpleMessage("Time"),
     "timeManagement": MessageLookupByLibrary.simpleMessage(

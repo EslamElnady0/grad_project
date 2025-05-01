@@ -1520,10 +1520,10 @@ class S {
     );
   }
 
-  /// `Next Seven Days`
+  /// `Next 7 Days`
   String get next_seven_days {
     return Intl.message(
-      'Next Seven Days',
+      'Next 7 Days',
       name: 'next_seven_days',
       desc: '',
       args: [],
@@ -1968,6 +1968,11 @@ class S {
   /// `Final`
   String get finalDegree {
     return Intl.message('Final', name: 'finalDegree', desc: '', args: []);
+  }
+
+  /// `Search..`
+  String get theSearch {
+    return Intl.message('Search..', name: 'theSearch', desc: '', args: []);
   }
 }
 

@@ -17,11 +17,17 @@ class TaskWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(15),
+      padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(20),
-      ),
+          color: AppColors.white,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              offset: const Offset(0, 1),
+              blurRadius: 16,
+              color: AppColors.black.withOpacity(0.16),
+            )
+          ]),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
