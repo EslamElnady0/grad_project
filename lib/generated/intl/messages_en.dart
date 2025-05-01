@@ -86,6 +86,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please provide at least two answers for each question",
     ),
     "attendance": MessageLookupByLibrary.simpleMessage("Attendance"),
+    "average_score": MessageLookupByLibrary.simpleMessage(
+      "Average student score in this quiz",
+    ),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "chat": MessageLookupByLibrary.simpleMessage("Chat"),
     "choose_assignment_deadline": MessageLookupByLibrary.simpleMessage(
@@ -166,6 +169,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "This field is required",
     ),
     "filter": MessageLookupByLibrary.simpleMessage("Filter"),
+    "finalDegree": MessageLookupByLibrary.simpleMessage("Final"),
     "finalGrade": MessageLookupByLibrary.simpleMessage("Final Grade"),
     "finalResults": MessageLookupByLibrary.simpleMessage("Final Results"),
     "final_date": MessageLookupByLibrary.simpleMessage("Final Date"),
@@ -248,7 +252,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Add a clear and direct title that summarizes the Annoucement accurately!",
     ),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
-    "next_seven_days": MessageLookupByLibrary.simpleMessage("Next Seven Days"),
+    "next_seven_days": MessageLookupByLibrary.simpleMessage("Next 7 Days"),
     "noFilesUploaded": MessageLookupByLibrary.simpleMessage(
       "No files uploaded yet",
     ),
@@ -281,6 +285,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "previous": MessageLookupByLibrary.simpleMessage("Previous"),
     "previous_assignments": MessageLookupByLibrary.simpleMessage(
       "Previous Assignments",
+    ),
+    "previous_quizzes": MessageLookupByLibrary.simpleMessage(
+      "Previous Quizzes",
+    ),
+    "previous_quizzes_description": MessageLookupByLibrary.simpleMessage(
+      "📜 Browse past quizzes, review results and answers, and assess performance.",
     ),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "profile_picture": MessageLookupByLibrary.simpleMessage("Profile Picture"),
@@ -337,6 +347,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "👥 View a list of all students registered in the course with details like name and academic number.",
     ),
     "resend": MessageLookupByLibrary.simpleMessage("Resend?"),
+    "results": MessageLookupByLibrary.simpleMessage("Results"),
+    "results_description": MessageLookupByLibrary.simpleMessage(
+      "📊 View students’ quiz results, including grades!",
+    ),
     "reviewTopics": MessageLookupByLibrary.simpleMessage(
       "Set aside time to review and understand key topics.",
     ),
@@ -351,10 +365,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
       "📅 Welcome to the Weekly Schedule page! Select the days you want to view to easily track your lecture and practical session timings.",
     ),
-    "search": MessageLookupByLibrary.simpleMessage("Search"),
     "scheduled_assignments": MessageLookupByLibrary.simpleMessage(
       "Scheduled Assignments",
     ),
+    "scheduled_quizzes": MessageLookupByLibrary.simpleMessage(
+      "Scheduled Quizzes",
+    ),
+    "scheduled_quizzes_description": MessageLookupByLibrary.simpleMessage(
+      "📅 View a list of upcoming quizzes with start/end times and settings.",
+    ),
+    "score": MessageLookupByLibrary.simpleMessage("Score"),
+    "search": MessageLookupByLibrary.simpleMessage("Search"),
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       "Search for a building, lecture hall, room, etc..!",
     ),
@@ -420,6 +441,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "📋 Test your knowledge and prepare for the exam by answering the customized questions!",
     ),
     "text": MessageLookupByLibrary.simpleMessage("Texts"),
+    "theSearch": MessageLookupByLibrary.simpleMessage("Search.."),
     "thursday": MessageLookupByLibrary.simpleMessage("Thursday"),
     "time": MessageLookupByLibrary.simpleMessage("Time"),
     "timeManagement": MessageLookupByLibrary.simpleMessage(

@@ -13,6 +13,7 @@ import 'package:grad_project/features/home/ui/models/drawer_item_model.dart';
 import 'package:grad_project/features/lecture_manager/ui/screens/lecture_manager_view.dart';
 import 'package:grad_project/features/profile/presentation/views/profile_view.dart';
 import 'package:grad_project/features/quizes/ui/models/quiz_advice_model.dart';
+import 'package:grad_project/features/quizes/ui/views/quiz_management_view_body.dart';
 import 'package:grad_project/features/subjects/ui/views/subjects_view.dart';
 import 'package:grad_project/features/time_schedule/presentation/views/time_schedule_view.dart';
 
@@ -236,7 +237,7 @@ class Constants {
     const DashboardBody(),
     const AnnoucementsBody(),
     const LectureManagerView(),
-    const Column(),
+    const QuizManagementViewBody(),
     const AssignmentHomeView()
   ];
   static const List<Map<String, dynamic>> dummyMessages = [

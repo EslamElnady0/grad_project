@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:grad_project/core/data/models/get_course_materials_response_model.dart';
 import 'package:grad_project/core/helpers/localizationa.dart';
 import 'package:grad_project/features/subjects/ui/widgets/custom_filter_button_row.dart';
 import 'package:grad_project/features/subjects/ui/widgets/custom_week_title.dart';
@@ -12,7 +11,6 @@ import '../../../../core/widgets/custom_app_bar.dart';
 import '../../../../generated/l10n.dart';
 import '../../../home/ui/widgets/title_text_widget.dart';
 import '../manager/materials_filter_cubit.dart';
-
 
 class MaterialsViewBody extends StatelessWidget {
   const MaterialsViewBody({super.key});
@@ -49,7 +47,8 @@ class MaterialsViewBody extends StatelessWidget {
     );
   }
 
-  Widget _buildMaterialsList(BuildContext context, Set<FilterType> selectedFilters) {
+  Widget _buildMaterialsList(
+      BuildContext context, Set<FilterType> selectedFilters) {
     return BlocBuilder<GetCourseMaterialsCubit, GetCourseMaterialsState>(
       builder: (context, state) {
         return state is GetCourseMaterialsSuccess
@@ -59,7 +58,8 @@ class MaterialsViewBody extends StatelessWidget {
     );
   }
 
-  Widget _buildSuccessState(BuildContext context, Set<FilterType> selectedFilters) {
+  Widget _buildSuccessState(
+      BuildContext context, Set<FilterType> selectedFilters) {
     final cubit = context.read<GetCourseMaterialsCubit>();
     final weekNames = getLocalizedWeekNames(cubit.weekNumbers, context);
 
@@ -86,7 +86,8 @@ class MaterialsViewBody extends StatelessWidget {
   }) {
     final weekNumber = cubit.weekNumbers[index];
     final weekMaterials = cubit.sortedMaterialsByWeek[weekNumber]!;
-    final filteredWeek = MaterialsFilter.filterWeek(weekMaterials, selectedFilters);
+    final filteredWeek =
+        MaterialsFilter.filterWeek(weekMaterials, selectedFilters);
 
     return CustomWeekTitle(
       day: weekNames[index],
@@ -98,22 +99,17 @@ class MaterialsViewBody extends StatelessWidget {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (context, index) => const Skeletonizer(
-      enabled: true,
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10.0),
-        child: CustomWeekTitle(
-          day: "الاسبوع     الاول",
-          week: [],
+          enabled: true,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.0),
+            child: CustomWeekTitle(
+              day: "الاسبوع     الاول",
+              week: [],
+            ),
+          ),
         ),
-      ),
-    ),
         childCount: 10,
       ),
     );
   }
 }
-
-
-
-
-

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:grad_project/core/data/models/all_courses_response_model.dart';
 import 'package:grad_project/core/data/models/teachers_courses_response.dart';
 import 'package:grad_project/features/lecture_manager/ui/screens/add_lecture_view.dart';
 import 'package:grad_project/features/lecture_manager/ui/screens/qr_attendance_view.dart';
@@ -91,9 +90,8 @@ class LectureManagerItem extends StatelessWidget {
                       text: S.of(context).add_courses,
                       width: double.infinity,
                       onTap: () {
-                        GoRouter.of(context).push(AddLectureView.routeName
-                          , extra: courseData.id
-                        );
+                        GoRouter.of(context).push(AddLectureView.routeName,
+                            extra: courseData.id);
                       },
                       icon: Image.asset(Assets.imagesAddLecture),
                       primaryButton: true),

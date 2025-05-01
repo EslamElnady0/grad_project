@@ -1,18 +1,17 @@
 import 'package:dio/dio.dart';
 import 'package:grad_project/core/networking/api_constants.dart';
 import 'package:grad_project/core/networking/api_result.dart';
-import 'package:grad_project/core/networking/dio_factory.dart';
-
 import '../../../../core/networking/api_error_handler.dart';
 
 class AddMaterialsRepo {
   final Dio dio;
 
   AddMaterialsRepo(this.dio);
-  Future<ApiResult<AddMaterialsResponseModel>> upload(
-      {required int id, required FormData data,
-       required void Function(int sentBytes, int totalBytes)? onProgress,
-      }) async {
+  Future<ApiResult<AddMaterialsResponseModel>> upload({
+    required int id,
+    required FormData data,
+    required void Function(int sentBytes, int totalBytes)? onProgress,
+  }) async {
     try {
       Response response = await dio.request(
         '${ApiConstants.apiBaseUrl}teachers/course-materials/$id',
@@ -20,7 +19,7 @@ class AddMaterialsRepo {
           method: 'POST',
         ),
         data: data,
-         onSendProgress: onProgress,
+        onSendProgress: onProgress,
       );
 
       AddMaterialsResponseModel result = AddMaterialsResponseModel(

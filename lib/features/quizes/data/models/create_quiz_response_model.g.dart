@@ -51,7 +51,7 @@ Map<String, dynamic> _$QuizDataModelToJson(QuizDataModel instance) =>
     };
 
 CourseModel _$CourseModelFromJson(Map<String, dynamic> json) => CourseModel(
-      id: (json['id'] as num?)?.toInt(),
+      id: json['id'],
       name: json['name'] as String,
     );
 

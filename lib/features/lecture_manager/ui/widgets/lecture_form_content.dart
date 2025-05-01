@@ -1,23 +1,14 @@
-import 'dart:convert';
-
-import 'package:dio/dio.dart';
-
-import 'package:file_picker/src/platform_file.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-
 import 'package:grad_project/core/helpers/app_assets.dart';
-
 import 'package:grad_project/core/helpers/localizationa.dart';
-import 'package:grad_project/core/networking/dio_factory.dart';
-import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/show_snak_bar.dart';
 import 'package:grad_project/core/widgets/custom_text_and_icon_button.dart';
 import 'package:grad_project/core/widgets/custom_text_button.dart';
-import 'package:grad_project/features/lecture_manager/data/repos/add_materials_repo.dart';
 import 'package:grad_project/features/lecture_manager/logic/add_materials_cubit/add_materials_cubit.dart';
 import 'package:grad_project/features/lecture_manager/ui/cubit/file_upload_cubit.dart';
 import 'package:grad_project/features/lecture_manager/ui/widgets/dispaly_week_list.dart';
@@ -137,8 +128,9 @@ class _LectureFormContentState extends State<LectureFormContent> {
     );
   }
 
-  Future<void> callCubit(List<PlatformFile> selectedFiles, BuildContext context) async {
-           if (selectedFiles.isNotEmpty) {
+  Future<void> callCubit(
+      List<PlatformFile> selectedFiles, BuildContext context) async {
+    if (selectedFiles.isNotEmpty) {
       await context.read<AddMaterialsCubit>().addMaterials(
             id: widget.id,
             type: type,
@@ -147,17 +139,12 @@ class _LectureFormContentState extends State<LectureFormContent> {
             weekNumber: weekNumber,
           );
     } else {
-  
       showSnakBar(
         context: context,
         message: S.of(context).pleaseUploadFiles,
       );
     }
   }
-
-
-  
-  
 }
 
 void showFileUploadDialog(BuildContext context) {

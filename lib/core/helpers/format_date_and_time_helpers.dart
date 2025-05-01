@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:grad_project/core/helpers/localizationa.dart';
+import 'package:intl/intl.dart';
+
 class FormatDateAndTimeHelpers {
   FormatDateAndTimeHelpers._();
   static String convertTo12HourFormat(String time24) {
@@ -12,5 +16,13 @@ class FormatDateAndTimeHelpers {
     hour = hour % 12 == 0 ? 12 : hour % 12;
 
     return '${hour.toString().padLeft(2, '0')}:${minute.toString().padLeft(2, '0')} $period';
+  }
+
+  static String formatDateToDayFullMonthAndYear(
+      String dateString, BuildContext context) {
+    final DateTime date = DateTime.parse(dateString);
+    final DateFormat formatter =
+        DateFormat('d MMMM yyyy', isArabicLocale(context) ? 'ar' : 'en');
+    return formatter.format(date);
   }
 }

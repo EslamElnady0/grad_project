@@ -3,11 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/data/models/students_courses_response.dart';
 import 'package:grad_project/core/logic/all_courses_cubit/all_courses_cubit.dart';
-
 import 'package:grad_project/features/subjects/ui/widgets/custom_subject_card.dart';
-import 'package:grad_project/features/subjects/ui/widgets/custom_subjects_filter.dart';
 import 'package:skeletonizer/skeletonizer.dart';
-import '../../../../core/data/models/all_courses_response_model.dart';
 import '../../../../core/helpers/spacing.dart';
 
 import '../../../../generated/l10n.dart';
@@ -19,8 +16,8 @@ class SubjectsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  SingleChildScrollView(
-             padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+    return SingleChildScrollView(
+      padding: EdgeInsets.symmetric(horizontal: 16.0.w),
       child: Column(
         children: [
           vGap(22),
@@ -38,21 +35,17 @@ class SubjectsViewBody extends StatelessWidget {
             ),
           ),
           vGap(12),
-                BlocBuilder<AllCoursesCubit, AllCoursesState>(
-        builder: (context, state) {
+          BlocBuilder<AllCoursesCubit, AllCoursesState>(
+            builder: (context, state) {
+              if (state is AllStudentCoursesSuccess) {
+                final allCourses = state.data;
 
-         if (state is AllStudentCoursesSuccess) {
-     
-            final allCourses = state.data;
-              
-            return _buildCourseList(allCourses);
-          } else {
-            return _buildSkeletonList();
-          }
-        },
-      ),
-            
-               
+                return _buildCourseList(allCourses);
+              } else {
+                return _buildSkeletonList();
+              }
+            },
+          ),
         ],
       ),
     );
@@ -71,25 +64,21 @@ class SubjectsViewBody extends StatelessWidget {
       },
     );
   }
+
   Widget _buildSkeletonList() {
     return const Column(
       children: [
-    
-        Skeletonizer(  
-          enabled: true,
-          child:CustomSubjectCard(
-        courseData:null, 
-      )
-        ),
-        Skeletonizer(  
-          enabled: true,
-          child:CustomSubjectCard(
-        courseData: null ,
-      )
-        ),
-        
+        Skeletonizer(
+            enabled: true,
+            child: CustomSubjectCard(
+              courseData: null,
+            )),
+        Skeletonizer(
+            enabled: true,
+            child: CustomSubjectCard(
+              courseData: null,
+            )),
       ],
     );
   }
 }
- 
