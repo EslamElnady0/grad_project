@@ -119,3 +119,4 @@ flutter_assets:
   output_path: lib/core/helpers/
   filename: app_assets.dart
   field_prefix: null
+generate: true
