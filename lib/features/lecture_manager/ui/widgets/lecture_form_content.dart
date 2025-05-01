@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 
+import 'package:file_picker/src/platform_file.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,7 +12,9 @@ import 'package:grad_project/core/helpers/app_assets.dart';
 
 import 'package:grad_project/core/helpers/localizationa.dart';
 import 'package:grad_project/core/networking/dio_factory.dart';
+import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
+import 'package:grad_project/core/widgets/show_snak_bar.dart';
 import 'package:grad_project/core/widgets/custom_text_and_icon_button.dart';
 import 'package:grad_project/core/widgets/custom_text_button.dart';
 import 'package:grad_project/features/lecture_manager/data/repos/add_materials_repo.dart';
@@ -28,9 +31,10 @@ import 'file_upload_dialog.dart';
 
 class LectureFormContent extends StatefulWidget {
   const LectureFormContent({
-    super.key, required this.id,
+    super.key,
+    required this.id,
   });
-final int id;
+  final int id;
   @override
   State<LectureFormContent> createState() => _LectureFormContentState();
 }
@@ -45,100 +49,115 @@ class _LectureFormContentState extends State<LectureFormContent> {
   late String title;
   @override
   Widget build(BuildContext context) {
-    return  Form(
-        key: formKey,
-        autovalidateMode: autovalidateMode,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            vGap(5),
-            Text(
-              S.of(context).lectureTitle,
-              textAlign: TextAlign.start,
-              style: AppTextStyles.font16DarkerBlueSemiBold,
-            ),
-            vGap(5),
-            CustomTextFormFieldAndicon(
-                hintText: S.of(context).lectureTitleHint,
-                onSaved: (value) {
-                  title = value!;
-                },
-                icon: Assets.imagesSvgsLecTilte),
-            vGap(12),
-            Text(
-              S.of(context).week,
-              textAlign: TextAlign.start,
-              style: AppTextStyles.font16DarkerBlueSemiBold,
-            ),
-            vGap(5),
-            DisplayList(
-              listValue: getLocalizedWeekNames(
-                  List.generate(14, (index) => index + 1), context),
-              onSelected: (selectedWeek) {
-                weekNumber = selectedWeek;
+    return Form(
+      key: formKey,
+      autovalidateMode: autovalidateMode,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          vGap(5),
+          Text(
+            S.of(context).lectureTitle,
+            textAlign: TextAlign.start,
+            style: AppTextStyles.font16DarkerBlueSemiBold,
+          ),
+          vGap(5),
+          CustomTextFormFieldAndicon(
+              hintText: S.of(context).lectureTitleHint,
+              onSaved: (value) {
+                title = value!;
+              },
+              icon: Assets.imagesSvgsLecTilte),
+          vGap(12),
+          Text(
+            S.of(context).week,
+            textAlign: TextAlign.start,
+            style: AppTextStyles.font16DarkerBlueSemiBold,
+          ),
+          vGap(5),
+          DisplayList(
+            listValue: getLocalizedWeekNames(
+                List.generate(14, (index) => index + 1), context),
+            onSelected: (selectedWeek) {
+              weekNumber = selectedWeek;
+            },
+          ),
+          vGap(12),
+          Text(
+            S.of(context).type,
+            textAlign: TextAlign.start,
+            style: AppTextStyles.font16DarkerBlueSemiBold,
+          ),
+          vGap(5),
+          DisplayList(
+            listValue: [
+              S.of(context).lecture,
+              S.of(context).section,
+              S.of(context).other
+            ],
+            onSelected: (selectedWeek) {
+              type = selectedWeek;
+            },
+          ),
+          vGap(12),
+          CustomTextAndIconButton(
+            width: double.infinity,
+            style: AppTextStyles.font17WhiteSemiBold,
+            text: S.of(context).uploadFiles,
+            onTap: () {
+              showFileUploadDialog(context);
+            },
+            icon: SvgPicture.asset(Assets.imagesSvgsPdfIcon),
+            primaryButton: false,
+          ),
+          const FilesListView(),
+          vGap(12),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: CustomTextButton(
+              primary: true,
+              width: 100.w,
+              fontSize: 18,
+              text: S.of(context).publish,
+              onTap: () async {
+                if (formKey.currentState!.validate()) {
+                  formKey.currentState!.save();
+                  final selectedFiles = context.read<FileUploadCubit>().state;
+                  await callCubit(selectedFiles, context);
+                } else {
+                  setState(() {
+                    autovalidateMode = AutovalidateMode.always;
+                  });
+                }
               },
             ),
-            vGap(12),
-            Text(
-              S.of(context).type,
-              textAlign: TextAlign.start,
-              style: AppTextStyles.font16DarkerBlueSemiBold,
-            ),
-            vGap(5),
-            DisplayList(
-              listValue: [
-                S.of(context).lecture,
-                S.of(context).section,
-                S.of(context).other
-              ],
-              onSelected: (selectedWeek) {
-                type = selectedWeek;
-              },
-            ),
-            vGap(12),
-            CustomTextAndIconButton(
-              width: double.infinity,
-              style: AppTextStyles.font17WhiteSemiBold,
-              text: S.of(context).uploadFiles,
-              onTap: () {
-                showFileUploadDialog(context);
-              },
-              icon: SvgPicture.asset(Assets.imagesSvgsPdfIcon),
-              primaryButton: false,
-            ),
-            const FilesListView(),
-            vGap(12),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: CustomTextButton(
-                primary: true,
-                width: 100.w,
-                fontSize: 18,
-                text: S.of(context).publish,
-                onTap: () async {
-                  if (formKey.currentState!.validate()) {
-                    formKey.currentState!.save();
-                    final selectedFiles = context.read<FileUploadCubit>().state;
-                   await context.read<AddMaterialsCubit>().addMaterials(
-                           id: widget.id,
-                          type: type,
-                          selectedFiles: selectedFiles,
-                          title: title,
-                          weekNumber: weekNumber,
-                        );
-                  } else {
-                    setState(() {
-                      autovalidateMode = AutovalidateMode.always;
-                    });
-                  }
-                },
-              ),
-            ),
-          ],
-        ),
-      )
-    ;
+          ),
+        ],
+      ),
+    );
   }
+
+  Future<void> callCubit(List<PlatformFile> selectedFiles, BuildContext context) async {
+           if (selectedFiles.isNotEmpty) {
+      await context.read<AddMaterialsCubit>().addMaterials(
+            id: widget.id,
+            type: type,
+            selectedFiles: selectedFiles,
+            title: title,
+            weekNumber: weekNumber,
+          );
+    } else {
+  
+      showSnakBar(
+        context: context,
+        message: S.of(context).pleaseUploadFiles,
+      );
+    }
+  }
+
+
+  
+  
 }
 
 void showFileUploadDialog(BuildContext context) {
@@ -156,5 +175,3 @@ void showFileUploadDialog(BuildContext context) {
     },
   );
 }
-
-

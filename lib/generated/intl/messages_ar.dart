@@ -230,6 +230,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseEnterRequiredFields": MessageLookupByLibrary.simpleMessage(
       "من فضلك ادخل الحقول المطلوبة",
     ),
+    "pleaseUploadFiles": MessageLookupByLibrary.simpleMessage(
+      "من فضلك ارفع الملفات",
+    ),
     "postponed": MessageLookupByLibrary.simpleMessage("مؤجل."),
     "prepareWell": MessageLookupByLibrary.simpleMessage("📚 استعد مسبقًا"),
     "previous": MessageLookupByLibrary.simpleMessage("السابق"),

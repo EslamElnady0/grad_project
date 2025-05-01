@@ -1874,6 +1874,16 @@ class S {
   String get lecture {
     return Intl.message('Lecture', name: 'lecture', desc: '', args: []);
   }
+
+  /// `Please upload files`
+  String get pleaseUploadFiles {
+    return Intl.message(
+      'Please upload files',
+      name: 'pleaseUploadFiles',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

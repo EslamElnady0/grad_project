@@ -238,6 +238,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseEnterRequiredFields": MessageLookupByLibrary.simpleMessage(
       "Please enter the required fields",
     ),
+    "pleaseUploadFiles": MessageLookupByLibrary.simpleMessage(
+      "Please upload files",
+    ),
     "postponed": MessageLookupByLibrary.simpleMessage("Postponed."),
     "prepareWell": MessageLookupByLibrary.simpleMessage(
       "📚 Prepare in Advance",
