@@ -170,6 +170,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "interested": MessageLookupByLibrary.simpleMessage("like"),
     "internalMap": MessageLookupByLibrary.simpleMessage("Internal Map"),
+    "lecture": MessageLookupByLibrary.simpleMessage("Lecture"),
     "lectureDescription": MessageLookupByLibrary.simpleMessage(
       "Lecture Description",
     ),
@@ -236,6 +237,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "place": MessageLookupByLibrary.simpleMessage("Place"),
     "pleaseEnterRequiredFields": MessageLookupByLibrary.simpleMessage(
       "Please enter the required fields",
+    ),
+    "pleaseUploadFiles": MessageLookupByLibrary.simpleMessage(
+      "Please upload the files first",
     ),
     "postponed": MessageLookupByLibrary.simpleMessage("Postponed."),
     "prepareWell": MessageLookupByLibrary.simpleMessage(

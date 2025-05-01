@@ -7,7 +7,7 @@ class FileUploadCubit extends Cubit<List<PlatformFile>> {
   bool _isPickingFiles = false;
 
   void pickFiles() async {
-    if (_isPickingFiles) return; // Prevent multiple simultaneous calls
+    if (_isPickingFiles) return; 
     _isPickingFiles = true;
 
     try {

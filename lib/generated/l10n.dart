@@ -1870,6 +1870,21 @@ class S {
     return Intl.message('Other', name: 'other', desc: '', args: []);
   }
 
+  /// `Lecture`
+  String get lecture {
+    return Intl.message('Lecture', name: 'lecture', desc: '', args: []);
+  }
+
+  /// `Please upload the files first`
+  String get pleaseUploadFiles {
+    return Intl.message(
+      'Please upload the files first',
+      name: 'pleaseUploadFiles',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Search`
   String get search {
     return Intl.message('Search', name: 'search', desc: '', args: []);

@@ -11,7 +11,7 @@ class CustomTextFormFieldAndicon extends StatelessWidget {
   final String hintText;
   final String icon;
   final int maxLines;
-  final TextEditingController? controller;
+   final void Function(String?)? onSaved;
   final TextInputType keyboardType;
 
   const CustomTextFormFieldAndicon({
@@ -19,8 +19,8 @@ class CustomTextFormFieldAndicon extends StatelessWidget {
     required this.hintText,
     required this.icon,
     this.maxLines = 1,
-    this.controller,
-    this.keyboardType = TextInputType.text,
+  
+    this.keyboardType = TextInputType.text, this.onSaved,
   });
 
   @override
@@ -34,7 +34,7 @@ class CustomTextFormFieldAndicon extends StatelessWidget {
             }
             return null;
           },
-          controller: controller,
+          onSaved: onSaved,
           maxLines: maxLines,
           keyboardType: keyboardType,
           decoration: InputDecoration(

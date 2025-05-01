@@ -1,21 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart' ;
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/di/dependency_injection.dart';
 import 'package:grad_project/core/widgets/custom_scaffold.dart';
+import 'package:grad_project/features/lecture_manager/data/repos/add_materials_repo.dart';
+import 'package:grad_project/features/lecture_manager/logic/add_materials_cubit/add_materials_cubit.dart';
+import 'package:grad_project/features/lecture_manager/ui/cubit/List_cubit.dart';
+import 'package:grad_project/features/lecture_manager/ui/cubit/file_upload_cubit.dart';
 
-import '../cubit/week_cubit.dart';
 import '../widgets/add_lecture_view_body.dart';
-    
 
-class AddLectureView extends StatelessWidget {
-  const AddLectureView({super.key});
+class AddLectureView extends StatefulWidget {
+  const AddLectureView({super.key, required this.id});
+
+  final int id;
+
   static const String routeName = '/addLectureView';
+
+  @override
+  State<AddLectureView> createState() => _AddLectureViewState();
+}
+
+class _AddLectureViewState extends State<AddLectureView> {
+  @override
+  void initState() {
+    getIt.unregister<FileUploadCubit>();
+    getIt.registerLazySingleton<FileUploadCubit>(() => FileUploadCubit());
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-      body: BlocProvider(
-        create: (context) => getIt<WeekCubit>(), 
-        child: const AddLectureViewBody(),
+      body: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => getIt<ListCubit>(),
+          ),
+          BlocProvider(
+            create: (context) => getIt<FileUploadCubit>(),
+          ),
+          BlocProvider(
+            create: (context) => getIt<AddMaterialsCubit>(),
+          ),
+        ],
+        child: AddLectureViewBody(
+          id: widget.id,
+        ),
       ),
     );
   }

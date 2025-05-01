@@ -231,8 +231,10 @@
   "edit": "Edit",
   "delete": "Delete",
   "editAnnouncement": "Edit Announcement",
-  "edit_news": "✏️ Edit your announcement to keep your students informed with the latest details and updates",
-  "other": "Other",
-  "search": "Search",
+  "edit_news": "✏️ Edit your announcement to keep your students informed with the latest details and updates"
+  ,"other": "Other",
+  "lecture": "Lecture",
+  "pleaseUploadFiles": "Please upload the files first",
+   "search": "Search",
   "statuss": "status"
 }

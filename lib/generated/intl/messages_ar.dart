@@ -162,6 +162,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "interested": MessageLookupByLibrary.simpleMessage("مهتم"),
     "internalMap": MessageLookupByLibrary.simpleMessage("الخريطة الداخلية"),
+    "lecture": MessageLookupByLibrary.simpleMessage("محاضرة"),
     "lectureDescription": MessageLookupByLibrary.simpleMessage("وصف المحاضرة"),
     "lectureDescriptionHint": MessageLookupByLibrary.simpleMessage(
       "مختصرًا حول محتوى المحاضرة وأهدافها التعليمية!",
@@ -228,6 +229,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "place": MessageLookupByLibrary.simpleMessage("المكان"),
     "pleaseEnterRequiredFields": MessageLookupByLibrary.simpleMessage(
       "من فضلك ادخل الحقول المطلوبة",
+    ),
+    "pleaseUploadFiles": MessageLookupByLibrary.simpleMessage(
+      "من فضلك ارفع الملفات اولاً",
     ),
     "postponed": MessageLookupByLibrary.simpleMessage("مؤجل."),
     "prepareWell": MessageLookupByLibrary.simpleMessage("📚 استعد مسبقًا"),
