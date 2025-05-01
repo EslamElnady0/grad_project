@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../theme/app_colors.dart' show AppColors;
 import '../theme/app_text_styles.dart';
 
-class CustomExpansionTile extends StatelessWidget {
+class CustomExpansionTile extends StatefulWidget {
   final String day;
   final bool isExpanded;
   final Function(bool) onExpansionChanged;
@@ -17,6 +17,18 @@ class CustomExpansionTile extends StatelessWidget {
     required this.children,
   });
 
+  @override
+  State<CustomExpansionTile> createState() => _CustomExpansionTileState();
+}
+
+class _CustomExpansionTileState extends State<CustomExpansionTile> {
+   bool _isExpanded = false;  // Local state to track expansion
+
+  @override
+  void initState() {
+    super.initState();
+    _isExpanded = widget.isExpanded;
+  }
 @override
 Widget build(BuildContext context) {
   return Theme(
@@ -29,11 +41,11 @@ Widget build(BuildContext context) {
       showTrailingIcon: false,
       shape: Border.all(color: Colors.transparent),
       title: Text(
-        day,
+        widget.day,
         style: AppTextStyles.font18DarkblueBold,
       ),
       leading: AnimatedRotation(
-        turns: isExpanded ? -0.25 : 0,
+        turns:  _isExpanded ? -0.25 : 0,
         duration: const Duration(milliseconds: 200),
         child: const Icon(
           Icons.chevron_right,
@@ -41,10 +53,14 @@ Widget build(BuildContext context) {
           size: 30,
         ),
       ),
-      onExpansionChanged: onExpansionChanged,
-      children: children,
+    onExpansionChanged: (value) {
+          setState(() {
+            _isExpanded = value;  // Update local state
+          });
+          widget.onExpansionChanged(value);  // Call parent callback
+        },
+      children: widget.children,
     ),
   );
 }
-
 }

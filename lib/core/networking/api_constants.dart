@@ -1,10 +1,8 @@
 import '../flavors/flavors_functions.dart';
 
 class ApiConstants {
-  static const String apiBaseUrl =
-      "https://nextgenedu-database.azurewebsites.net/api/";
-  static String login =
-      FlavorsFunctions.isStudent() ? "login" : "dashboard/login";
+  static const String apiBaseUrl ="https://nextgenedu-database.azurewebsites.net/api/";
+  static String login = FlavorsFunctions.isStudent() ? "login" : "dashboard/login";
   static const String dashboard = "dashboard";
   static const String announcements = "/announcements";
   static const String teachers = "teachers";
@@ -12,5 +10,6 @@ class ApiConstants {
   static const String stuCourses = "courses";
   static const String docCourses = "teachers/courses";
   static const String quizzes = "/quizzes";
+  static const String courseMaterials = "course-materials";
   static const String assignments = "/assignments";
 }

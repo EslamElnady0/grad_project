@@ -19,7 +19,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
   await ScreenUtil.ensureScreenSize();
-  bool isLogin =await SharedPrefHelper.getSecuredString(Constants.token)!='';
+  bool isLogin = await SharedPrefHelper.getSecuredString(Constants.token) != '';
   await setupGetIt();
   Bloc.observer = GradBlocObserver();
   FlavorsFunctions.setupStudentsFlover();
@@ -34,15 +34,13 @@ Future<void> main() async {
     FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
     return true;
   };
-  
-  runApp(GradProjectStudentApp(
-    isLogin: isLogin
-  ));
+
+  runApp(GradProjectStudentApp(isLogin: isLogin));
 }
 
 class GradProjectStudentApp extends StatelessWidget {
   const GradProjectStudentApp({super.key, required this.isLogin});
-final bool isLogin ;
+  final bool isLogin;
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(

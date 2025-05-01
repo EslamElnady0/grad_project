@@ -1,15 +1,30 @@
+import 'dart:convert';
+
+import 'package:dio/dio.dart';
+
+import 'package:file_picker/src/platform_file.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+
 import 'package:grad_project/core/helpers/app_assets.dart';
+
 import 'package:grad_project/core/helpers/localizationa.dart';
+import 'package:grad_project/core/networking/dio_factory.dart';
+import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
+import 'package:grad_project/core/widgets/show_snak_bar.dart';
 import 'package:grad_project/core/widgets/custom_text_and_icon_button.dart';
 import 'package:grad_project/core/widgets/custom_text_button.dart';
+import 'package:grad_project/features/lecture_manager/data/repos/add_materials_repo.dart';
+import 'package:grad_project/features/lecture_manager/logic/add_materials_cubit/add_materials_cubit.dart';
+import 'package:grad_project/features/lecture_manager/ui/cubit/file_upload_cubit.dart';
 import 'package:grad_project/features/lecture_manager/ui/widgets/dispaly_week_list.dart';
+import 'package:grad_project/features/lecture_manager/ui/widgets/files_list_view.dart';
+
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/widgets/custom_text_form_field_and_icon.dart';
-import '../../../../core/widgets/text entry footer/custom_outloned_button.dart';
 import '../../../../generated/l10n.dart';
 
 import 'file_upload_dialog.dart';
@@ -17,16 +32,21 @@ import 'file_upload_dialog.dart';
 class LectureFormContent extends StatefulWidget {
   const LectureFormContent({
     super.key,
+    required this.id,
   });
-
+  final int id;
   @override
   State<LectureFormContent> createState() => _LectureFormContentState();
 }
 
 class _LectureFormContentState extends State<LectureFormContent> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  bool clickAddLink = false;
+
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+
+  int weekNumber = 0;
+  int type = 0;
+  late String title;
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -36,14 +56,6 @@ class _LectureFormContentState extends State<LectureFormContent> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           vGap(5),
-          DisplayWeekList(
-            isArabic: isArabicLocale(context),
-            initialValue: S.of(context).SelectWeek,
-            onSelected: (selectedWeek) {
-              print('Selected week: $selectedWeek');
-            },
-          ),
-          vGap(10),
           Text(
             S.of(context).lectureTitle,
             textAlign: TextAlign.start,
@@ -52,18 +64,40 @@ class _LectureFormContentState extends State<LectureFormContent> {
           vGap(5),
           CustomTextFormFieldAndicon(
               hintText: S.of(context).lectureTitleHint,
+              onSaved: (value) {
+                title = value!;
+              },
               icon: Assets.imagesSvgsLecTilte),
-          vGap(5),
+          vGap(12),
           Text(
-            S.of(context).lectureDescription,
+            S.of(context).week,
             textAlign: TextAlign.start,
             style: AppTextStyles.font16DarkerBlueSemiBold,
           ),
           vGap(5),
-          CustomTextFormFieldAndicon(
-            hintText: S.of(context).lectureDescriptionHint,
-            icon: Assets.imagesSvgsLecDesc,
-            maxLines: 5,
+          DisplayList(
+            listValue: getLocalizedWeekNames(
+                List.generate(14, (index) => index + 1), context),
+            onSelected: (selectedWeek) {
+              weekNumber = selectedWeek;
+            },
+          ),
+          vGap(12),
+          Text(
+            S.of(context).type,
+            textAlign: TextAlign.start,
+            style: AppTextStyles.font16DarkerBlueSemiBold,
+          ),
+          vGap(5),
+          DisplayList(
+            listValue: [
+              S.of(context).lecture,
+              S.of(context).section,
+              S.of(context).other
+            ],
+            onSelected: (selectedWeek) {
+              type = selectedWeek;
+            },
           ),
           vGap(12),
           CustomTextAndIconButton(
@@ -76,42 +110,20 @@ class _LectureFormContentState extends State<LectureFormContent> {
             icon: SvgPicture.asset(Assets.imagesSvgsPdfIcon),
             primaryButton: false,
           ),
-          vGap(12),
-          CustomOutlinedButton(
-            title: S.of(context).addLink,
-            icon: SvgPicture.asset(Assets.imagesSvgsAddLink),
-            onPressed: () {
-              setState(() {
-                clickAddLink = !clickAddLink;
-              });
-            },
-          ),
-          vGap(12),
-          clickAddLink
-              ? Text(
-                  S.of(context).addLink,
-                  textAlign: TextAlign.start,
-                  style: AppTextStyles.font16DarkerBlueSemiBold,
-                )
-              : Container(),
-          clickAddLink ? vGap(5) : Container(),
-          clickAddLink
-              ? CustomTextFormFieldAndicon(
-                  hintText: S.of(context).addLinkDescrebtion,
-                  icon: Assets.imagesSvgsAddLink,
-                )
-              : Container(),
+          const FilesListView(),
           vGap(12),
           Align(
             alignment: Alignment.centerLeft,
             child: CustomTextButton(
-              primary: false,
+              primary: true,
               width: 100.w,
               fontSize: 18,
               text: S.of(context).publish,
-              onTap: () {
+              onTap: () async {
                 if (formKey.currentState!.validate()) {
                   formKey.currentState!.save();
+                  final selectedFiles = context.read<FileUploadCubit>().state;
+                  await callCubit(selectedFiles, context);
                 } else {
                   setState(() {
                     autovalidateMode = AutovalidateMode.always;
@@ -124,16 +136,41 @@ class _LectureFormContentState extends State<LectureFormContent> {
       ),
     );
   }
+
+  Future<void> callCubit(List<PlatformFile> selectedFiles, BuildContext context) async {
+           if (selectedFiles.isNotEmpty) {
+      await context.read<AddMaterialsCubit>().addMaterials(
+            id: widget.id,
+            type: type,
+            selectedFiles: selectedFiles,
+            title: title,
+            weekNumber: weekNumber,
+          );
+    } else {
+  
+      showSnakBar(
+        context: context,
+        message: S.of(context).pleaseUploadFiles,
+      );
+    }
+  }
+
+
+  
+  
 }
 
 void showFileUploadDialog(BuildContext context) {
   showDialog(
     context: context,
     barrierDismissible: true,
-    builder: (BuildContext context) {
-      return const Dialog(
-        backgroundColor: Colors.transparent,
-        child: FileUploadDialog(),
+    builder: (BuildContext dialogContext) {
+      return BlocProvider.value(
+        value: context.read<FileUploadCubit>(),
+        child: const Dialog(
+          backgroundColor: Colors.transparent,
+          child: FileUploadDialog(),
+        ),
       );
     },
   );

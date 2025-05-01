@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/features/lecture_manager/ui/cubit/List_cubit.dart';
+import '../../../../core/helpers/localizationa.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
-import '../cubit/week_cubit.dart';
 
-class DisplayWeekList extends StatelessWidget {
-  final String initialValue;
-  final bool isArabic;
-  final Function(String)? onSelected;
-
-  const DisplayWeekList({
+class DisplayList extends StatelessWidget {
+  final List<String> listValue;
+  // Change the callback type to accept int instead of String
+  final Function(int)? onSelected;
+  
+  const DisplayList({
     super.key,
-    required this.initialValue,
-    required this.isArabic,
+    required this.listValue,
     this.onSelected,
   });
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => WeekCubit(initialValue),
+      create: (_) => ListCubit(listValue[0]),
       child: Builder(
         builder: (context) {
           return Container(
@@ -34,19 +34,19 @@ class DisplayWeekList extends StatelessWidget {
               borderRadius: BorderRadius.circular(15.r),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.1), // Adjust shadow color
+                  color: Colors.black.withOpacity(0.1),
                   blurRadius: 10,
                   spreadRadius: 1,
                   offset: const Offset(0, 2),
                 ),
               ],
             ),
-            child: PopupMenuButton<String>(
-              onSelected: (week) {
-                // Update the selected week in the Cubit
-                context.read<WeekCubit>().selectWeek(week);
+            child: PopupMenuButton<int>( // Change type to int
+              onSelected: (index) { // Now receiving index instead of value
+                // Update the selected week in the Cubit using the index
+                context.read<ListCubit>().selectWeek(listValue[index]);
                 if (onSelected != null) {
-                  onSelected!(week);
+                  onSelected!(index); // Pass the index to the callback
                 }
               },
               color: AppColors.white,
@@ -57,7 +57,7 @@ class DisplayWeekList extends StatelessWidget {
               icon: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  BlocBuilder<WeekCubit, String>(
+                  BlocBuilder<ListCubit, String>(
                     builder: (context, selectedValue) {
                       return Text(selectedValue,
                           style: AppTextStyles.font12GraySemiBold);
@@ -72,19 +72,16 @@ class DisplayWeekList extends StatelessWidget {
                 ],
               ),
               itemBuilder: (context) {
-                String t = isArabic ? "اسبوع" : "Week";
-                final List<String> weeksList =
-                    List.generate(14, (index) => '$t ${index + 1}');
-                return weeksList.map((week) {
-                  return PopupMenuItem<String>(
-                    value: week,
+                return List.generate(listValue.length, (index) {
+                  return PopupMenuItem<int>( // Change type to int
+                    value: index, // Use index as value
                     child: Text(
-                      week,
+                      listValue[index],
                       style: AppTextStyles.font13BlackBold
                           .copyWith(color: AppColors.darkGray),
                     ),
                   );
-                }).toList();
+                });
               },
             ),
           );

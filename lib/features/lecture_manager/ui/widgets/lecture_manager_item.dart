@@ -91,7 +91,9 @@ class LectureManagerItem extends StatelessWidget {
                       text: S.of(context).add_courses,
                       width: double.infinity,
                       onTap: () {
-                        GoRouter.of(context).push(AddLectureView.routeName);
+                        GoRouter.of(context).push(AddLectureView.routeName
+                          , extra: courseData.id
+                        );
                       },
                       icon: Image.asset(Assets.imagesAddLecture),
                       primaryButton: true),

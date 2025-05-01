@@ -4,14 +4,17 @@ import '../theme/app_colors.dart';
 
 class CustomWhiteDropShadowedContainer extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
+  final EdgeInsetsGeometry? margin;
+
   final Widget? child;
   final double? width;
   const CustomWhiteDropShadowedContainer(
-      {super.key, this.padding, this.child, this.width});
+      {super.key, this.padding, this.child, this.width, this.margin});
 
   @override
   Widget build(BuildContext context) {
     return Container(
+        margin: margin,
         width: width ?? double.infinity,
         padding:
             padding ?? const EdgeInsets.symmetric(horizontal: 10, vertical: 8),

@@ -191,6 +191,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "interested": MessageLookupByLibrary.simpleMessage("مهتم"),
     "internalMap": MessageLookupByLibrary.simpleMessage("الخريطة الداخلية"),
+    "lecture": MessageLookupByLibrary.simpleMessage("محاضرة"),
     "lectureDescription": MessageLookupByLibrary.simpleMessage("وصف المحاضرة"),
     "lectureDescriptionHint": MessageLookupByLibrary.simpleMessage(
       "مختصرًا حول محتوى المحاضرة وأهدافها التعليمية!",
@@ -250,12 +251,16 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "once": MessageLookupByLibrary.simpleMessage("مرة واحدة"),
     "open": MessageLookupByLibrary.simpleMessage("فتح"),
+    "other": MessageLookupByLibrary.simpleMessage("اخري"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "pending": MessageLookupByLibrary.simpleMessage("معلق"),
     "percentage": MessageLookupByLibrary.simpleMessage("النسبة المئوية"),
     "place": MessageLookupByLibrary.simpleMessage("المكان"),
     "pleaseEnterRequiredFields": MessageLookupByLibrary.simpleMessage(
       "من فضلك ادخل الحقول المطلوبة",
+    ),
+    "pleaseUploadFiles": MessageLookupByLibrary.simpleMessage(
+      "من فضلك ارفع الملفات اولاً",
     ),
     "postponed": MessageLookupByLibrary.simpleMessage("مؤجل."),
     "prepareWell": MessageLookupByLibrary.simpleMessage("📚 استعد مسبقًا"),
@@ -331,6 +336,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
       "📅 مرحباً بك في صفحة الجدول الأسبوعي! حدد الأيام التي ترغب في عرض جدولها لتتابع مواعيد محاضراتك وجلساتك العملية بسهولة.",
     ),
+    "search": MessageLookupByLibrary.simpleMessage("بحث"),
     "scheduled_assignments": MessageLookupByLibrary.simpleMessage(
       "اسايمينتات مجدولة",
     ),
@@ -341,7 +347,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "البحث حسب نوع النشاط او الاسم",
     ),
     "search_placeholder": MessageLookupByLibrary.simpleMessage(
-      "أدخل اسم الطالب أو رقم هويته..",
+      "أدخل اسم الطالب",
     ),
     "second_semester": MessageLookupByLibrary.simpleMessage("ترم ثاني"),
     "section": MessageLookupByLibrary.simpleMessage("سكشن"),
@@ -373,6 +379,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "startsAt": MessageLookupByLibrary.simpleMessage("يبدأ "),
     "starts_in": MessageLookupByLibrary.simpleMessage("يبدأ في "),
     "status": MessageLookupByLibrary.simpleMessage("الحالة:"),
+    "statuss": MessageLookupByLibrary.simpleMessage("الحاله"),
     "stayCalm": MessageLookupByLibrary.simpleMessage("😌 استرخِ وابقَ هادئًا"),
     "stayConfident": MessageLookupByLibrary.simpleMessage(
       "تنفّس بعمق وثق بقدراتك!",

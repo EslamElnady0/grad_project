@@ -210,6 +210,10 @@ class Assets {
   /// assets/images/svgs/log_out.svg
   static const String imagesSvgsLogOut = "assets/images/svgs/log_out.svg";
 
+  /// Assets for imagesSvgsMagnifyingGlassIcon
+  /// assets/images/svgs/magnifying_glass_icon.svg
+  static const String imagesSvgsMagnifyingGlassIcon = "assets/images/svgs/magnifying_glass_icon.svg";
+
   /// Assets for imagesSvgsMentionIcon
   /// assets/images/svgs/mention_icon.svg
   static const String imagesSvgsMentionIcon = "assets/images/svgs/mention_icon.svg";

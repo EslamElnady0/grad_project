@@ -203,6 +203,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "interested": MessageLookupByLibrary.simpleMessage("like"),
     "internalMap": MessageLookupByLibrary.simpleMessage("Internal Map"),
+    "lecture": MessageLookupByLibrary.simpleMessage("Lecture"),
     "lectureDescription": MessageLookupByLibrary.simpleMessage(
       "Lecture Description",
     ),
@@ -262,12 +263,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "on_time": MessageLookupByLibrary.simpleMessage("On time (automatic)."),
     "once": MessageLookupByLibrary.simpleMessage("Once"),
     "open": MessageLookupByLibrary.simpleMessage("open"),
+    "other": MessageLookupByLibrary.simpleMessage("Other"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "percentage": MessageLookupByLibrary.simpleMessage("Percentage"),
     "place": MessageLookupByLibrary.simpleMessage("Place"),
     "pleaseEnterRequiredFields": MessageLookupByLibrary.simpleMessage(
       "Please enter the required fields",
+    ),
+    "pleaseUploadFiles": MessageLookupByLibrary.simpleMessage(
+      "Please upload the files first",
     ),
     "postponed": MessageLookupByLibrary.simpleMessage("Postponed."),
     "prepareWell": MessageLookupByLibrary.simpleMessage(
@@ -346,6 +351,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
       "📅 Welcome to the Weekly Schedule page! Select the days you want to view to easily track your lecture and practical session timings.",
     ),
+    "search": MessageLookupByLibrary.simpleMessage("Search"),
     "scheduled_assignments": MessageLookupByLibrary.simpleMessage(
       "Scheduled Assignments",
     ),
@@ -356,7 +362,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Search by activity type or name",
     ),
     "search_placeholder": MessageLookupByLibrary.simpleMessage(
-      "Enter the student’s name or ID number...",
+      "Enter the student’s name",
     ),
     "second_semester": MessageLookupByLibrary.simpleMessage("2nd Semester"),
     "section": MessageLookupByLibrary.simpleMessage("Section"),
@@ -386,6 +392,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "startsAt": MessageLookupByLibrary.simpleMessage("Starts at"),
     "starts_in": MessageLookupByLibrary.simpleMessage("Starts In"),
     "status": MessageLookupByLibrary.simpleMessage("Status:"),
+    "statuss": MessageLookupByLibrary.simpleMessage("status"),
     "stayCalm": MessageLookupByLibrary.simpleMessage(
       "😌 Stay Calm and Focused",
     ),

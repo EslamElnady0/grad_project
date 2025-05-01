@@ -1365,10 +1365,10 @@ class S {
     );
   }
 
-  /// `Enter the student’s name or ID number...`
+  /// `Enter the student’s name`
   String get search_placeholder {
     return Intl.message(
-      'Enter the student’s name or ID number...',
+      'Enter the student’s name',
       name: 'search_placeholder',
       desc: '',
       args: [],
@@ -1863,6 +1863,36 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `Other`
+  String get other {
+    return Intl.message('Other', name: 'other', desc: '', args: []);
+  }
+
+  /// `Lecture`
+  String get lecture {
+    return Intl.message('Lecture', name: 'lecture', desc: '', args: []);
+  }
+
+  /// `Please upload the files first`
+  String get pleaseUploadFiles {
+    return Intl.message(
+      'Please upload the files first',
+      name: 'pleaseUploadFiles',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search`
+  String get search {
+    return Intl.message('Search', name: 'search', desc: '', args: []);
+  }
+
+  /// `status`
+  String get statuss {
+    return Intl.message('status', name: 'statuss', desc: '', args: []);
   }
 
   /// `📝 Organize assignments, review solutions, and update grades with ease!`
