@@ -1,16 +1,14 @@
-import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/widgets/custom_modal_progress.dart';
 import 'package:grad_project/core/widgets/custom_scaffold.dart';
 import 'package:grad_project/core/widgets/show_error_dialog.dart';
+import 'package:grad_project/core/widgets/show_success_dialog.dart';
 import 'package:grad_project/features/quizes/data/models/create_quiz_response_model.dart';
 import 'package:grad_project/features/quizes/logic/quizzes_cubit/quizzes_cubit.dart';
 import 'package:grad_project/features/quizes/ui/widgets/question_list_widget.dart';
-import 'package:translator/translator.dart';
 import '../../../../core/di/dependency_injection.dart';
-import '../../../../core/helpers/localizationa.dart';
 import '../cubit/add_quiz_cubit/add_quiz_cubit.dart';
 import '../widgets/add_quiz_view_body.dart';
 
@@ -40,27 +38,7 @@ class AddQuizView extends StatelessWidget {
               showErrorDialog(context, error);
             }, quizzesSuccess: (data) async {
               data as CreateQuizResponseModel;
-              final translator = GoogleTranslator();
-              String message = "";
-              if (isArabicLocale(context)) {
-                final translation = await translator.translate(data.message,
-                    from: 'en', to: 'ar');
-                message = translation.text;
-              }
-              if (context.mounted) {
-                WidgetsBinding.instance.addPostFrameCallback((_) {
-                  AwesomeDialog(
-                    context: context,
-                    dialogType: DialogType.success,
-                    animType: AnimType.bottomSlide,
-                    desc: message,
-                    showCloseIcon: false,
-                    btnOkOnPress: () {
-                      context.pop();
-                    },
-                  ).show();
-                });
-              }
+              showSuccessDialog(context: context, message: data.message);
             });
           },
           builder: (context, state) {
