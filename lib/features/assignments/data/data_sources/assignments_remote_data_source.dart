@@ -23,4 +23,12 @@ abstract class AssignmentsRemoteDataSource {
     @Part(name: 'time') String time,
     @Part(name: 'file') File file,
   );
+
+
+  @GET("${ApiConstants.teachers}${ApiConstants.assignments}")
+  Future<CreateAssignmentResponseModel> getAssignments(
+    @Query("course") String courseId,
+    @Query("status") String assignmentStatus,
+    @Query("from") String fromDate,
+  );
 }

@@ -33,4 +33,18 @@ class AssignmentsRepo {
       return ApiResult.failure(ApiErrorHandler.handle(e));
     }
   }
+
+  Future<ApiResult<CreateAssignmentResponseModel>> getAssignments(
+      String courseId, String assignmentStatus, String fromDate) async {
+    try {
+      final response = await remoteDataSource.getAssignments(
+        courseId,
+        assignmentStatus,
+        fromDate,
+      );
+      return ApiResult.success(response);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
 }
