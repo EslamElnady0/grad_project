@@ -2,9 +2,11 @@ import 'package:grad_project/core/networking/api_error_handler.dart';
 import 'package:grad_project/core/networking/api_result.dart';
 import 'package:grad_project/features/quizes/data/models/create_quiz_request_model.dart';
 import 'package:grad_project/features/quizes/data/models/create_quiz_response_model.dart';
+import 'package:grad_project/features/quizes/data/models/get_quizzes_response.dart';
 
 import '../data sources/quizzes_local_data_source.dart';
 import '../data sources/quizzes_remote_data_source.dart';
+import '../models/get_quizzes_request_query_params_model.dart';
 
 class QuizzesRepo {
   final QuizzesRemoteDataSource remoteDataSource;
@@ -19,6 +21,20 @@ class QuizzesRepo {
       CreateQuizRequestModel createQuizRequestModel) async {
     try {
       final result = await remoteDataSource.createQuiz(createQuizRequestModel);
+      return ApiResult.success(result);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
+  Future<ApiResult<GetQuizzesResponse>> getQuizzes(
+      GetQuizzesRequestQueryParamsModel getQuizzesRequestQueryParams) async {
+    try {
+      final result = await remoteDataSource.getQuizzes(
+        getQuizzesRequestQueryParams.courseId,
+        getQuizzesRequestQueryParams.quizStatus,
+        getQuizzesRequestQueryParams.fromDate,
+      );
       return ApiResult.success(result);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));
