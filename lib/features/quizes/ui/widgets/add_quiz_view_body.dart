@@ -19,7 +19,8 @@ import 'quiz_date_and_time_pickers.dart';
 import 'schedule_quiz_text.dart';
 
 class AddQuizViewBody extends StatelessWidget {
-  const AddQuizViewBody({super.key});
+  final int courseId;
+  const AddQuizViewBody({super.key, required this.courseId});
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +104,7 @@ class AddQuizViewBody extends StatelessWidget {
 
                     final newQuestions = buildNewQuestions(questionDataList);
                     final createQuizRequestModel = CreateQuizRequestModel(
-                      courseId: "195",
+                      courseId: courseId.toString(),
                       title: addQuizCubit.titleController.text,
                       description: addQuizCubit.descController.text,
                       totalDegree: addQuizCubit.finalDegree.toString(),

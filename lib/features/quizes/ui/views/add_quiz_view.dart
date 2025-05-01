@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/helpers/show_toast.dart';
 import 'package:grad_project/core/widgets/custom_modal_progress.dart';
 import 'package:grad_project/core/widgets/custom_scaffold.dart';
@@ -17,6 +18,7 @@ class AddQuizView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final courseId = GoRouterState.of(context).extra as int;
     return CustomScaffold(
       body: MultiBlocProvider(
         providers: [
@@ -45,7 +47,9 @@ class AddQuizView extends StatelessWidget {
           builder: (context, state) {
             return CustomModalProgress(
                 isLoading: state is QuizzesLoading,
-                child: const AddQuizViewBody());
+                child: AddQuizViewBody(
+                  courseId: courseId,
+                ));
           },
         ),
       ),

@@ -65,6 +65,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى تقديم إجابتين على الأقل لكل سؤال",
     ),
     "attendance": MessageLookupByLibrary.simpleMessage("الحضور"),
+    "average_score": MessageLookupByLibrary.simpleMessage(
+      "متوسط درجات الطلاب في هذا الاختبار",
+    ),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
     "classWork": MessageLookupByLibrary.simpleMessage("أعمال السنة"),
@@ -128,6 +131,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "هذا الحقل مطلوب",
     ),
     "filter": MessageLookupByLibrary.simpleMessage("تصفية"),
+    "finalDegree": MessageLookupByLibrary.simpleMessage("نهائية"),
     "finalGrade": MessageLookupByLibrary.simpleMessage("الدرجة النهائية"),
     "finalResults": MessageLookupByLibrary.simpleMessage("النتائج النهائية"),
     "final_exam": MessageLookupByLibrary.simpleMessage("الإختبار النهائي"),
@@ -236,6 +240,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "postponed": MessageLookupByLibrary.simpleMessage("مؤجل."),
     "prepareWell": MessageLookupByLibrary.simpleMessage("📚 استعد مسبقًا"),
     "previous": MessageLookupByLibrary.simpleMessage("السابق"),
+    "previous_quizzes": MessageLookupByLibrary.simpleMessage("كويزات سابقة"),
+    "previous_quizzes_description": MessageLookupByLibrary.simpleMessage(
+      "📜 استعرض الكويزات التي انتهت، مع إمكانية مراجعة النتائج والإجابات وتقييم الأداء.",
+    ),
     "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "profile_picture": MessageLookupByLibrary.simpleMessage("الصورة الشخصية"),
     "profile_welcome_message": MessageLookupByLibrary.simpleMessage(
@@ -290,6 +298,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "👥 استعرض قائمة جميع الطلاب المسجلين في المادة مع تفاصيل مثل الاسم، الرقم الأكاديمي،",
     ),
     "resend": MessageLookupByLibrary.simpleMessage("إعادة الإرسال؟"),
+    "results": MessageLookupByLibrary.simpleMessage("النتائج"),
+    "results_description": MessageLookupByLibrary.simpleMessage(
+      "📊 استعرض نتائج الطلاب في الكويزات، بما في ذلك الدرجات!",
+    ),
     "reviewTopics": MessageLookupByLibrary.simpleMessage(
       "خصص وقتًا للمراجعة وفهم المواضيع الرئيسية.",
     ),
@@ -304,6 +316,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
       "📅 مرحباً بك في صفحة الجدول الأسبوعي! حدد الأيام التي ترغب في عرض جدولها لتتابع مواعيد محاضراتك وجلساتك العملية بسهولة.",
     ),
+    "scheduled_quizzes": MessageLookupByLibrary.simpleMessage("كويزات مجدولة"),
+    "scheduled_quizzes_description": MessageLookupByLibrary.simpleMessage(
+      "📅 عرض قائمة بالكويزات المجدولة مع مواعيد البدء والانتهاء والإعدادات الخاصة بها.",
+    ),
+    "score": MessageLookupByLibrary.simpleMessage("درجة"),
     "search": MessageLookupByLibrary.simpleMessage("بحث"),
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       " ابحث عن مبني، مدرج، قاعة، الخ..!",

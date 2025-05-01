@@ -1894,6 +1894,81 @@ class S {
   String get statuss {
     return Intl.message('status', name: 'statuss', desc: '', args: []);
   }
+
+  /// `Scheduled Quizzes`
+  String get scheduled_quizzes {
+    return Intl.message(
+      'Scheduled Quizzes',
+      name: 'scheduled_quizzes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Previous Quizzes`
+  String get previous_quizzes {
+    return Intl.message(
+      'Previous Quizzes',
+      name: 'previous_quizzes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `📅 View a list of upcoming quizzes with start/end times and settings.`
+  String get scheduled_quizzes_description {
+    return Intl.message(
+      '📅 View a list of upcoming quizzes with start/end times and settings.',
+      name: 'scheduled_quizzes_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `📜 Browse past quizzes, review results and answers, and assess performance.`
+  String get previous_quizzes_description {
+    return Intl.message(
+      '📜 Browse past quizzes, review results and answers, and assess performance.',
+      name: 'previous_quizzes_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Results`
+  String get results {
+    return Intl.message('Results', name: 'results', desc: '', args: []);
+  }
+
+  /// `📊 View students’ quiz results, including grades!`
+  String get results_description {
+    return Intl.message(
+      '📊 View students’ quiz results, including grades!',
+      name: 'results_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Average student score in this quiz`
+  String get average_score {
+    return Intl.message(
+      'Average student score in this quiz',
+      name: 'average_score',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Score`
+  String get score {
+    return Intl.message('Score', name: 'score', desc: '', args: []);
+  }
+
+  /// `Final`
+  String get finalDegree {
+    return Intl.message('Final', name: 'finalDegree', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

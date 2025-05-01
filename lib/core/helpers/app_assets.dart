@@ -282,9 +282,17 @@ class Assets {
   /// assets/images/svgs/time_check.svg
   static const String imagesSvgsTimeCheck = "assets/images/svgs/time_check.svg";
 
+  /// Assets for imagesSvgsTimePulseIcon
+  /// assets/images/svgs/time_pulse_icon.svg
+  static const String imagesSvgsTimePulseIcon = "assets/images/svgs/time_pulse_icon.svg";
+
   /// Assets for imagesSvgsTimeQuarter
   /// assets/images/svgs/time_quarter.svg
   static const String imagesSvgsTimeQuarter = "assets/images/svgs/time_quarter.svg";
+
+  /// Assets for imagesSvgsTwoCirclesTimeIcon
+  /// assets/images/svgs/two_circles_time_icon.svg
+  static const String imagesSvgsTwoCirclesTimeIcon = "assets/images/svgs/two_circles_time_icon.svg";
 
   /// Assets for imagesSvgsTwoPersonsIcon
   /// assets/images/svgs/two_persons_icon.svg
