@@ -38,8 +38,8 @@ class GreenGradButton extends StatelessWidget {
               padding ?? EdgeInsets.symmetric(horizontal: 34.w, vertical: 10.h),
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(radius ?? 12)),
         ),
         child: Text(title, style: style ?? AppTextStyles.font14WhiteBold),
       ),

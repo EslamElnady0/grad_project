@@ -171,7 +171,7 @@
   "registered_students": "Registered Students",
   "registered_students_count": "No. of registered students:",
   "registered_students_description": "👥 View a list of all students registered in the course with details like name and academic number.",
-  "search_placeholder": "Enter the student’s name or ID number...",
+  "search_placeholder": "Enter the student’s name",
   "materials_center": "👨‍🏫 Easily manage your course materials—from students to lectures and quizzes!",
   "addStudyContent": "Add Study Content",
   "addStudyContentSubtitle": "📚 Easily add new study materials and manage their details!",
@@ -234,5 +234,7 @@
   "edit_news": "✏️ Edit your announcement to keep your students informed with the latest details and updates"
   ,"other": "Other",
   "lecture": "Lecture",
-  "pleaseUploadFiles": "Please upload the files first"
+  "pleaseUploadFiles": "Please upload the files first",
+   "search": "Search",
+  "statuss": "status"
 }

@@ -16,6 +16,7 @@ class CustomTextFormField extends StatefulWidget {
     this.controller,
     this.maxLines,
     this.alignLabelWithHint,
+    this.fillColor,
   });
 
   final String hintText;
@@ -23,6 +24,7 @@ class CustomTextFormField extends StatefulWidget {
   final TextEditingController? controller;
   final TextInputType textInputType;
   final int? maxLines;
+  final Color? fillColor;
   final bool? alignLabelWithHint;
   final void Function(String?)? onSaved;
 
@@ -67,7 +69,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         alignLabelWithHint: widget.alignLabelWithHint,
         hintStyle: AppTextStyles.font10grayRegular,
         filled: true,
-        fillColor: Colors.transparent, // Make fillColor transparent
+        fillColor: widget.fillColor ??
+            Colors.transparent, // Make fillColor transparent
         border: buildBorder(),
         enabledBorder: buildBorder(),
         focusedBorder: buildBorder(),

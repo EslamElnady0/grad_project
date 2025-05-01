@@ -315,6 +315,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
       "📅 Welcome to the Weekly Schedule page! Select the days you want to view to easily track your lecture and practical session timings.",
     ),
+    "search": MessageLookupByLibrary.simpleMessage("Search"),
     "searchForBuilding": MessageLookupByLibrary.simpleMessage(
       "Search for a building, lecture hall, room, etc..!",
     ),
@@ -322,7 +323,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Search by activity type or name",
     ),
     "search_placeholder": MessageLookupByLibrary.simpleMessage(
-      "Enter the student’s name or ID number...",
+      "Enter the student’s name",
     ),
     "second_semester": MessageLookupByLibrary.simpleMessage("2nd Semester"),
     "section": MessageLookupByLibrary.simpleMessage("Section"),
@@ -351,6 +352,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "startWriting": MessageLookupByLibrary.simpleMessage("Start writing now.."),
     "startsAt": MessageLookupByLibrary.simpleMessage("Starts at"),
     "status": MessageLookupByLibrary.simpleMessage("Status:"),
+    "statuss": MessageLookupByLibrary.simpleMessage("status"),
     "stayCalm": MessageLookupByLibrary.simpleMessage(
       "😌 Stay Calm and Focused",
     ),
