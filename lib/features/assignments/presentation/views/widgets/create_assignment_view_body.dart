@@ -8,11 +8,13 @@ import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
 import 'package:grad_project/core/widgets/custom_text_and_icon_button.dart';
 import 'package:grad_project/core/widgets/publish_row.dart';
+import 'package:grad_project/features/assignments/logic/cubits/assignment_upload_cubit.dart/assignment_upload_cubit.dart';
 import 'package:grad_project/features/assignments/logic/cubits/create_assignment_cubit/create_assignment_cubit.dart';
 import 'package:grad_project/features/assignments/presentation/views/widgets/assignment_degree_widget.dart';
 import 'package:grad_project/features/assignments/presentation/views/widgets/assignment_upload_dialog.dart';
 import 'package:grad_project/features/assignments/presentation/views/widgets/date_and_time_section.dart';
 import 'package:grad_project/features/assignments/presentation/views/widgets/title_and_desc_text_fields.dart';
+import 'package:grad_project/features/assignments/presentation/views/widgets/uploaded_assignment_show.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
 import 'package:grad_project/generated/l10n.dart';
 
@@ -79,6 +81,7 @@ class CreateAssignmentViewBody extends StatelessWidget {
               icon: const SizedBox(),
               primaryButton: true,
             ),
+            const UploadedAssignmentShow(),
             vGap(20),
             PublishRow(
               onTap: () async {
@@ -112,5 +115,6 @@ void showAssignmentUploadDialog(BuildContext context) async {
   cubit.descController.text = savedDesc;
   if (assignmentFile != null) {
     context.read<CreateAssignmentCubit>().setUploadedAssignment(assignmentFile);
+    context.read<AssignmentUploadCubit>().setAssignment(assignmentFile);
   }
 }

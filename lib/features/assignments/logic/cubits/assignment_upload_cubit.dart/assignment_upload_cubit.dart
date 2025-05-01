@@ -62,7 +62,9 @@ class AssignmentUploadCubit extends Cubit<PlatformFile?> {
       rethrow;
     }
   }
-
+void setAssignment(PlatformFile file) {
+  emit(file);
+}
   void removeAssignment() {
     emit(null);
   }
