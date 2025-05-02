@@ -76,18 +76,23 @@ class TeacherQuizzesViewBody extends StatelessWidget {
   }
 
   Widget _buildSuccessState(GetQuizzesResponse data) {
+    final sortedQuizzes = [...data.data]..sort((a, b) =>
+        DateTime.parse('${a.date} ${a.startTime}')
+            .compareTo(DateTime.parse('${b.date} ${b.startTime}')));
+
     return ListView.separated(
       padding: EdgeInsets.only(top: 10.h),
       itemBuilder: (context, index) {
         return Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: CustomQuizWidget(
-            quizModel: data.data[index],
+            queryParamsModel: queryParamsModel,
+            quizModel: sortedQuizzes[index],
           ),
         );
       },
       separatorBuilder: (context, index) => vGap(12),
-      itemCount: data.data.length,
+      itemCount: sortedQuizzes.length,
       physics: const BouncingScrollPhysics(),
     );
   }

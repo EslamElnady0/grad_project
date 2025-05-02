@@ -156,6 +156,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "editAnnouncement": MessageLookupByLibrary.simpleMessage(
       "Edit Announcement",
     ),
+    "editQuiz": MessageLookupByLibrary.simpleMessage("Edit Quiz"),
     "edit_news": MessageLookupByLibrary.simpleMessage(
       "✏️ Edit your announcement to keep your students informed with the latest details and updates",
     ),
@@ -372,6 +373,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
       "📅 Welcome to the Weekly Schedule page! Select the days you want to view to easily track your lecture and practical session timings.",
     ),
+    "scheduled": MessageLookupByLibrary.simpleMessage("Scheduled"),
     "scheduled_assignments": MessageLookupByLibrary.simpleMessage(
       "Scheduled Assignments",
     ),

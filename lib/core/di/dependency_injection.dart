@@ -20,6 +20,7 @@ import 'package:grad_project/features/assignments/logic/cubits/create_assignment
 import 'package:grad_project/features/quizes/data/data%20sources/quizzes_local_data_source.dart';
 import 'package:grad_project/features/quizes/data/data%20sources/quizzes_remote_data_source.dart';
 import 'package:grad_project/features/quizes/data/repos/quizzes_repo.dart';
+import 'package:grad_project/features/quizes/logic/delete_quiz_cubit/delete_quiz_cubit.dart';
 import 'package:grad_project/features/quizes/logic/get_quizzes_cubit/get_quizzes_cubit.dart';
 import 'package:grad_project/features/quizes/logic/quizzes_cubit/quizzes_cubit.dart';
 import 'package:grad_project/features/quizes/ui/cubit/add_quiz_cubit/add_quiz_cubit.dart';
@@ -36,6 +37,8 @@ import '../../features/auth/data/repos/login_repo.dart';
 import '../../features/auth/logic/cubit/login_cubit.dart';
 import '../../features/lecture_manager/logic/add_materials_cubit/add_materials_cubit.dart';
 import '../../features/lecture_manager/ui/cubit/file_upload_cubit.dart';
+import '../../features/quizes/logic/get_quiz_by_id_cubit/get_quiz_by_id_cubit.dart';
+import '../../features/quizes/logic/update_quiz_cubit/update_quiz_cubit.dart';
 import '../data/data sources/all_courses_remote_data_source.dart';
 import '../data/repos/all_courses_repo.dart';
 import '../logic/all_courses_cubit/all_courses_cubit.dart';
@@ -93,6 +96,9 @@ Future<void> setupGetIt() async {
       () => QuizzesRepo(remoteDataSource: getIt(), localDataSource: getIt()));
   getIt.registerFactory<QuizzesCubit>(() => QuizzesCubit(getIt()));
   getIt.registerFactory<GetQuizzesCubit>(() => GetQuizzesCubit(getIt()));
+  getIt.registerFactory<UpdateQuizCubit>(() => UpdateQuizCubit(getIt()));
+  getIt.registerFactory<DeleteQuizCubit>(() => DeleteQuizCubit(getIt()));
+  getIt.registerFactory<GetQuizByIdCubit>(() => GetQuizByIdCubit(getIt()));
   //toDo:------------------------------Add Materials------------------------------//
   getIt.registerLazySingleton<AddMaterialsRepo>(() => AddMaterialsRepo(dio));
   getIt.registerFactory<AddMaterialsCubit>(() => AddMaterialsCubit(getIt()));

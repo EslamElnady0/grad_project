@@ -148,6 +148,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "eLearning": MessageLookupByLibrary.simpleMessage("التعليم الإلكتروني"),
     "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
     "editAnnouncement": MessageLookupByLibrary.simpleMessage("تعديل خبر"),
+    "editQuiz": MessageLookupByLibrary.simpleMessage("تعديل كويز"),
     "edit_news": MessageLookupByLibrary.simpleMessage(
       "✏️ عدّل إعلانك لضمان بقاء طلابك على اطلاع بأحدث التفاصيل والتحديثات",
     ),
@@ -353,6 +354,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
       "📅 مرحباً بك في صفحة الجدول الأسبوعي! حدد الأيام التي ترغب في عرض جدولها لتتابع مواعيد محاضراتك وجلساتك العملية بسهولة.",
     ),
+    "scheduled": MessageLookupByLibrary.simpleMessage("مجدول"),
     "scheduled_assignments": MessageLookupByLibrary.simpleMessage(
       "اسايمينتات مجدولة",
     ),

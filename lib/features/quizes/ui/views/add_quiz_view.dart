@@ -37,7 +37,7 @@ class AddQuizView extends StatelessWidget {
             state.whenOrNull(quizzesFailure: (error) {
               showErrorDialog(context, error);
             }, quizzesSuccess: (data) async {
-              data as CreateQuizResponseModel;
+              data as QuizResponseModel;
               showSuccessDialog(context: context, message: data.message);
             });
           },

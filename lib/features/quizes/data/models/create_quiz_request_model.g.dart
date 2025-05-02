@@ -6,9 +6,8 @@ part of 'create_quiz_request_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-CreateQuizRequestModel _$CreateQuizRequestModelFromJson(
-        Map<String, dynamic> json) =>
-    CreateQuizRequestModel(
+QuizRequestModel _$QuizRequestModelFromJson(Map<String, dynamic> json) =>
+    QuizRequestModel(
       courseId: json['course_id'] as String,
       questionDegree: json['question_degree'] as String,
       title: json['title'] as String,
@@ -22,8 +21,7 @@ CreateQuizRequestModel _$CreateQuizRequestModelFromJson(
           .toList(),
     );
 
-Map<String, dynamic> _$CreateQuizRequestModelToJson(
-        CreateQuizRequestModel instance) =>
+Map<String, dynamic> _$QuizRequestModelToJson(QuizRequestModel instance) =>
     <String, dynamic>{
       'course_id': instance.courseId,
       'title': instance.title,
