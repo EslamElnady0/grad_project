@@ -22,7 +22,7 @@ abstract class AnnoucementsRemoteDataSource {
       ParseErrorLogger? errorLogger}) = _AnnoucementsRemoteDataSource;
 
   @POST("${ApiConstants.dashboard}${ApiConstants.announcements}")
-  Future<AddAnnouncementResponseBody> addAnnoucement(
+  Future<SimpleResponseBody> addAnnoucement(
       @Body() AnnouncementRequestBody announcementRequestBody);
 
   @GET("${ApiConstants.dashboard}${ApiConstants.announcements}")

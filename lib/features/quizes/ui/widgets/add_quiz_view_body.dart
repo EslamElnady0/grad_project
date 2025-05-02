@@ -103,7 +103,7 @@ class AddQuizViewBody extends StatelessWidget {
                     }
 
                     final newQuestions = buildNewQuestions(questionDataList);
-                    final createQuizRequestModel = CreateQuizRequestModel(
+                    final createQuizRequestModel = QuizRequestModel(
                       courseId: courseId.toString(),
                       title: addQuizCubit.titleController.text,
                       description: addQuizCubit.descController.text,

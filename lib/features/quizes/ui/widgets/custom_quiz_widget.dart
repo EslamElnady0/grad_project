@@ -8,16 +8,25 @@ import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:grad_project/features/quizes/data/models/get_quizzes_request_query_params_model.dart';
 import 'package:grad_project/features/quizes/data/models/get_quizzes_response.dart';
+import 'package:grad_project/features/quizes/logic/delete_quiz_cubit/delete_quiz_cubit.dart';
+import 'package:grad_project/features/quizes/logic/get_quizzes_cubit/get_quizzes_cubit.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_details_view.dart';
+import 'package:grad_project/features/quizes/ui/views/update_quiz_view.dart';
 import 'package:grad_project/generated/l10n.dart';
+import 'package:provider/provider.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
+import 'activity_pop_up_menu.dart';
+
 class CustomQuizWidget extends StatelessWidget {
+  final GetQuizzesRequestQueryParamsModel queryParamsModel;
   final QuizModel quizModel;
   const CustomQuizWidget({
     super.key,
     required this.quizModel,
+    required this.queryParamsModel,
   });
 
   @override
@@ -43,10 +52,35 @@ class CustomQuizWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            FormatDateAndTimeHelpers.formatDateToDayFullMonthAndYear(
-                quizModel.date, context),
-            style: AppTextStyles.font16DarkerBlueBold,
+          Row(
+            children: [
+              Text(
+                FormatDateAndTimeHelpers.formatDateToDayFullMonthAndYear(
+                    quizModel.date, context),
+                style: AppTextStyles.font16DarkerBlueBold,
+              ),
+              const Spacer(),
+              ActivityPopUpMenu(
+                onEditPressed: () {
+                  GoRouter.of(context).push(
+                    UpdateQuizView.routeName,
+                    extra: quizModel.id.toString(),
+                  );
+                },
+                onDeletePressed: () async {
+                  await context.read<DeleteQuizCubit>().deleteQuiz(
+                        quizModel.id.toString(),
+                      );
+                  if (context.mounted) {
+                    await context.read<GetQuizzesCubit>().getQuizzes(
+                          courseId: queryParamsModel.courseId,
+                          quizStatus: queryParamsModel.quizStatus,
+                          fromDate: queryParamsModel.fromDate,
+                        );
+                  }
+                },
+              ),
+            ],
           ),
           vGap(10),
           Row(
@@ -121,7 +155,7 @@ class CustomQuizButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        isDone
+        !isDone
             ? GoRouter.of(context)
                 .push(QuizDetailsView.routeName, extra: quizModel)
             : null;

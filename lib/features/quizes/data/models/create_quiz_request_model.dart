@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'create_quiz_request_model.g.dart';
 
 @JsonSerializable(explicitToJson: true)
-class CreateQuizRequestModel {
+class QuizRequestModel {
   @JsonKey(name: 'course_id')
   final String courseId;
 
@@ -26,7 +26,7 @@ class CreateQuizRequestModel {
   @JsonKey(name: 'new_questions')
   final List<QuestionModel> newQuestions;
 
-  CreateQuizRequestModel({
+  QuizRequestModel({
     required this.courseId,
     required this.questionDegree,
     required this.title,
@@ -38,10 +38,10 @@ class CreateQuizRequestModel {
     required this.newQuestions,
   });
 
-  factory CreateQuizRequestModel.fromJson(Map<String, dynamic> json) =>
-      _$CreateQuizRequestModelFromJson(json);
+  factory QuizRequestModel.fromJson(Map<String, dynamic> json) =>
+      _$QuizRequestModelFromJson(json);
 
-  Map<String, dynamic> toJson() => _$CreateQuizRequestModelToJson(this);
+  Map<String, dynamic> toJson() => _$QuizRequestModelToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)

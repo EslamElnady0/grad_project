@@ -10,13 +10,14 @@ import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_view.dart';
 import 'package:grad_project/features/quizes/ui/widgets/quiz_label_widget.dart';
 import 'package:grad_project/generated/l10n.dart';
-
 import 'quiz_advices_section.dart';
 import 'quiz_desc_section.dart';
 import 'quiz_details_section.dart';
 
 class QuizDetailsViewBody extends StatelessWidget {
-  const QuizDetailsViewBody({super.key});
+  const QuizDetailsViewBody({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

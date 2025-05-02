@@ -9,7 +9,7 @@ class QuizzesCubit extends Cubit<QuizzesState> {
   final QuizzesRepo _repo;
   QuizzesCubit(this._repo) : super(const QuizzesState.initial());
 
-  Future<void> createQuiz(CreateQuizRequestModel createQuizRequestModel) async {
+  Future<void> createQuiz(QuizRequestModel createQuizRequestModel) async {
     emit(const QuizzesState.quizzesLoading());
     final result = await _repo.createQuiz(createQuizRequestModel);
     result.when(success: (data) {
