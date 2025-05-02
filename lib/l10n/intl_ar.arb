@@ -262,5 +262,7 @@
   "average_score": "متوسط درجات الطلاب في هذا الاختبار",
   "score": "درجة",
   "finalDegree": "نهائية",
-  "theSearch": "البحث.."
+  "theSearch": "البحث..",
+  "from": "من",
+  "to": "إلى"
 }

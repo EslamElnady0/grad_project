@@ -262,5 +262,7 @@
   "choose_assignment_deadline": "⏰ Specify the assignment submission deadline and closing time.",
   "starts_in": "Starts In",
   "ends_in": "Ends In",
-  "add_file": "Add File"
+  "add_file": "Add File",
+  "from": "From",
+  "to": "To"
 }

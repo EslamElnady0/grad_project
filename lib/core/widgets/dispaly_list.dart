@@ -2,25 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/features/lecture_manager/ui/cubit/List_cubit.dart';
-import '../../../../core/helpers/spacing.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_text_styles.dart';
+import '../helpers/spacing.dart';
+import '../theme/app_colors.dart';
+import '../theme/app_text_styles.dart';
 
 class DisplayList extends StatelessWidget {
   final List<String> listValue;
-  // Change the callback type to accept int instead of String
+  final String? initialValue;  
   final Function(int)? onSelected;
 
   const DisplayList({
     super.key,
     required this.listValue,
-    this.onSelected,
+    this.onSelected, this.initialValue,
   });
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => ListCubit(listValue[0]),
+      create: (_) => ListCubit(initialValue ?? listValue[0]),
       child: Builder(
         builder: (context) {
           return Container(

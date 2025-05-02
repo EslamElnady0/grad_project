@@ -13,14 +13,11 @@ class AddMaterialsRepo {
     required void Function(int sentBytes, int totalBytes)? onProgress,
   }) async {
     try {
-      Response response = await dio.request(
-        '${ApiConstants.apiBaseUrl}teachers/course-materials/$id',
-        options: Options(
-          method: 'POST',
-        ),
-        data: data,
-        onSendProgress: onProgress,
-      );
+   final response = await dio.post(
+ '${ApiConstants.apiBaseUrl}teachers/course-materials/$id',
+  data: data,
+  onSendProgress: onProgress,
+);
 
       AddMaterialsResponseModel result = AddMaterialsResponseModel(
         code: response.statusCode ?? 0,

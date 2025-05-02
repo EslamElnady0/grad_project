@@ -2114,6 +2114,16 @@ class S {
   String get add_file {
     return Intl.message('Add File', name: 'add_file', desc: '', args: []);
   }
+
+  /// `From`
+  String get from {
+    return Intl.message('From', name: 'from', desc: '', args: []);
+  }
+
+  /// `To`
+  String get to {
+    return Intl.message('To', name: 'to', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

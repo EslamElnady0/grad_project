@@ -11,7 +11,7 @@ import 'package:grad_project/core/widgets/custom_text_and_icon_button.dart';
 import 'package:grad_project/core/widgets/custom_text_button.dart';
 import 'package:grad_project/features/lecture_manager/logic/add_materials_cubit/add_materials_cubit.dart';
 import 'package:grad_project/features/lecture_manager/ui/cubit/file_upload_cubit.dart';
-import 'package:grad_project/features/lecture_manager/ui/widgets/dispaly_week_list.dart';
+import 'package:grad_project/core/widgets/dispaly_list.dart';
 import 'package:grad_project/features/lecture_manager/ui/widgets/files_list_view.dart';
 
 import '../../../../core/helpers/spacing.dart';
