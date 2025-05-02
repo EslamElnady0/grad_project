@@ -2,28 +2,80 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
+import '../../../../core/helpers/debouncer.dart';
 import '../models/question_data.dart';
 import 'custom_radio_button.dart';
 import 'question_list_widget.dart';
 
 // Widget to display a single question with four answer options
-class QuestionContainer extends StatelessWidget {
+class QuestionContainer extends StatefulWidget {
   final int index;
   const QuestionContainer({super.key, required this.index});
+
+  @override
+  _QuestionContainerState createState() => _QuestionContainerState();
+}
+
+class _QuestionContainerState extends State<QuestionContainer> {
+  late final TextEditingController questionController;
+  late final List<TextEditingController> answerControllers;
+  late final Debouncer questionDebouncer;
+  late final List<Debouncer> answerDebouncers;
+
+  @override
+  void initState() {
+    super.initState();
+    final questionData = context.read<QuestionListCubit>().state[widget.index];
+    questionController = TextEditingController(text: questionData.question);
+    answerControllers = questionData.answers
+        .asMap()
+        .entries
+        .map((entry) => TextEditingController(text: entry.value))
+        .toList();
+
+    questionDebouncer = Debouncer(delay: const Duration(milliseconds: 500));
+    answerDebouncers = List.generate(
+      4,
+      (_) => Debouncer(delay: const Duration(milliseconds: 500)),
+    );
+
+    questionController.addListener(() {
+      questionDebouncer.run(() {
+        context
+            .read<QuestionListCubit>()
+            .updateQuestion(widget.index, questionController.text);
+      });
+    });
+
+    for (int i = 0; i < answerControllers.length; i++) {
+      answerControllers[i].addListener(() {
+        answerDebouncers[i].run(() {
+          context
+              .read<QuestionListCubit>()
+              .updateAnswer(widget.index, i, answerControllers[i].text);
+        });
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    questionController.dispose();
+    for (var controller in answerControllers) {
+      controller.dispose();
+    }
+    questionDebouncer.dispose();
+    for (var debouncer in answerDebouncers) {
+      debouncer.dispose();
+    }
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<QuestionListCubit, List<QuestionData>>(
       builder: (context, questionDataList) {
-        final questionData = questionDataList[index];
-        final questionController =
-            TextEditingController(text: questionData.question);
-        final answerControllers = questionData.answers
-            .asMap()
-            .entries
-            .map((entry) => TextEditingController(text: entry.value))
-            .toList();
-
+        final questionData = questionDataList[widget.index];
         return Directionality(
           textDirection: TextDirection.ltr,
           child: Container(
@@ -42,17 +94,18 @@ class QuestionContainer extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Question TextField
                 Padding(
                   padding: const EdgeInsets.only(bottom: 8),
                   child: Row(
                     children: [
                       Text(
-                        '${index + 1}- ',
+                        '${widget.index + 1}- ',
                         style: AppTextStyles.font12GraySemiBold,
                       ),
                       Expanded(
                         child: TextField(
+                          textDirection: TextDirection.ltr,
+                          textAlign: TextAlign.start,
                           controller: questionController,
                           decoration: InputDecoration(
                             hintText: 'Enter your question',
@@ -61,32 +114,25 @@ class QuestionContainer extends StatelessWidget {
                           ),
                           style: AppTextStyles.font12BlackMedium,
                           maxLines: null,
-                          onChanged: (value) {
-                            context
-                                .read<QuestionListCubit>()
-                                .updateQuestion(index, value);
-                          },
                         ),
                       ),
                     ],
                   ),
                 ),
                 const SizedBox(height: 8),
-                // Answer Fields
                 ...List.generate(4, (answerIndex) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        // Custom Radio Button
                         CustomRadioButton(
                           value: answerIndex,
                           groupValue: questionData.selectedAnswerIndex,
                           onChanged: (int? value) {
                             context
                                 .read<QuestionListCubit>()
-                                .selectCorrectAnswer(index, value);
+                                .selectCorrectAnswer(widget.index, value);
                           },
                         ),
                         SizedBox(width: 16.w),
@@ -97,6 +143,8 @@ class QuestionContainer extends StatelessWidget {
                         const SizedBox(width: 8),
                         Expanded(
                           child: TextField(
+                            textDirection: TextDirection.ltr,
+                            textAlign: TextAlign.start,
                             controller: answerControllers[answerIndex],
                             decoration: InputDecoration(
                               hintText: 'Enter answer ${answerIndex + 1}',
@@ -104,11 +152,6 @@ class QuestionContainer extends StatelessWidget {
                               border: InputBorder.none,
                             ),
                             maxLines: null,
-                            onChanged: (value) {
-                              context
-                                  .read<QuestionListCubit>()
-                                  .updateAnswer(index, answerIndex, value);
-                            },
                           ),
                         ),
                       ],

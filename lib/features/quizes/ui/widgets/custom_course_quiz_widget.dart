@@ -78,8 +78,7 @@ class CustomCourseQuizWidget extends StatelessWidget {
                   onTap: () {
                     GoRouter.of(context).push(TeacherQuizzesView.routeName,
                         extra: GetQuizzesRequestQueryParamsModel(
-                            //TODO: add courseId
-                            courseId: "",
+                            courseId: course.id.toString(),
                             quizStatus: "scheduled",
                             fromDate: ""));
                   },
@@ -93,8 +92,7 @@ class CustomCourseQuizWidget extends StatelessWidget {
                   onTap: () {
                     GoRouter.of(context).push(TeacherQuizzesView.routeName,
                         extra: GetQuizzesRequestQueryParamsModel(
-                            //TODO: add courseId
-                            courseId: "",
+                            courseId: course.id.toString(),
                             quizStatus: "finished",
                             fromDate: ""));
                   },
