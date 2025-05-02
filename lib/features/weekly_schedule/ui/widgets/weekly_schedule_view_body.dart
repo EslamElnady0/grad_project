@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grad_project/core/flavors/flavors_functions.dart';
 
 import 'package:grad_project/core/helpers/localizationa.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
@@ -30,13 +31,10 @@ class WeeklyScheduleViewBody extends StatelessWidget {
       child: BlocBuilder<WeeklyScheduleCubit, WeeklyScheduleState>(
         builder: (context, state) {
           final cubit = context.read<WeeklyScheduleCubit>();
-          final departments = tableResponseList
-              .map((e) => e.department)
-              .toSet()
-              .toList();
+          final departments =
+              tableResponseList.map((e) => e.department).toSet().toList();
 
           return CustomScrollView(
-         
             slivers: [
               SliverToBoxAdapter(
                 child: Padding(
@@ -52,26 +50,29 @@ class WeeklyScheduleViewBody extends StatelessWidget {
                 ),
               ),
               SliverToBoxAdapter(
-                child: Padding(
-                  padding: EdgeInsets.only(
-                    left: isArabicLocale(context) ? 50 : 8,
-                    right: isArabicLocale(context) ? 8 : 50,
-                    top: 8,
-                    bottom: 8,
-                  ),
-                  child: DisplayList(
-                    listValue: departments,
-                    onSelected: (index) {
-                      final selectedDepartment = departments[index];
-                      final newTable = tableResponseList.firstWhere(
-                        (element) => element.department == selectedDepartment,
-                        orElse: () => tableResponseList.first,
-                      );
+                child: FlavorsFunctions.isAdmin()
+                    ? Padding(
+                        padding: EdgeInsets.only(
+                          left: isArabicLocale(context) ? 50 : 8,
+                          right: isArabicLocale(context) ? 8 : 50,
+                          top: 8,
+                          bottom: 8,
+                        ),
+                        child: DisplayList(
+                          listValue: departments,
+                          onSelected: (index) {
+                            final selectedDepartment = departments[index];
+                            final newTable = tableResponseList.firstWhere(
+                              (element) =>
+                                  element.department == selectedDepartment,
+                              orElse: () => tableResponseList.first,
+                            );
 
-                      cubit.updateTable(newTable);
-                    },
-                  ),
-                ),
+                            cubit.updateTable(newTable);
+                          },
+                        ),
+                      )
+                    : Container(),
               ),
               SliverToBoxAdapter(
                 child: WeeklyScheduleTableSection(

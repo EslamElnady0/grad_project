@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
@@ -14,23 +15,26 @@ class SchedulaHeaderItem extends StatelessWidget {
   final String label;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: isFirst ? 90.w : 120.w,
-      padding: EdgeInsets.symmetric(vertical: 5.h),
-      margin: EdgeInsets.symmetric(horizontal: 10.w),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8.r),
-        gradient: const LinearGradient(
-          colors: [AppColors.redlight, AppColors.redDark],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
+    return Skeleton.leaf(
+        enabled: true, 
+        child: Container(
+        width: isFirst ? 90.w : 120.w,
+        padding: EdgeInsets.symmetric(vertical: 5.h),
+        margin: EdgeInsets.symmetric(horizontal: 10.w),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8.r),
+          gradient: const LinearGradient(
+            colors: [AppColors.redlight, AppColors.redDark],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
         ),
+        child: Center(
+            child: Text(
+          label,
+          style: AppTextStyles.font14WhiteSemiBold,
+        )),
       ),
-      child: Center(
-          child: Text(
-        label,
-        style: AppTextStyles.font14WhiteSemiBold,
-      )),
     );
   }
 }

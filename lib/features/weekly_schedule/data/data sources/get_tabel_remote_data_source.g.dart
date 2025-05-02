@@ -20,7 +20,7 @@ class _GetTabelRemoteDataSource implements GetTabelRemoteDataSource {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<GetTableResponseModel> getTable() async {
+  Future<GetTableResponseModel> getTable(String path) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -29,7 +29,7 @@ class _GetTabelRemoteDataSource implements GetTabelRemoteDataSource {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/teachers/table',
+            '${path}',
             queryParameters: queryParameters,
             data: _data,
           )

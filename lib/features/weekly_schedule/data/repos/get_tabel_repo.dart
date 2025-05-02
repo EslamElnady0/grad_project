@@ -1,3 +1,4 @@
+import 'package:grad_project/core/networking/api_constants.dart';
 import 'package:grad_project/core/networking/api_error_handler.dart';
 import 'package:grad_project/core/networking/api_result.dart';
 import 'package:grad_project/features/weekly_schedule/data/models/get_table_response_model.dart';
@@ -13,9 +14,9 @@ class GetTabelRepo {
     required this.remoteDataSource,
     required this.localDataSource,
   });
- Future<ApiResult<GetTableResponseModel>> getTable() async {
+  Future<ApiResult<GetTableResponseModel>> getTable() async {
     try {
-      final response = await remoteDataSource.getTable();
+      final response = await remoteDataSource.getTable(ApiConstants.table);
       return ApiResult.success(response);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));

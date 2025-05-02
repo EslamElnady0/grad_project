@@ -14,6 +14,9 @@ abstract class GetTabelRemoteDataSource {
   factory GetTabelRemoteDataSource(Dio dio,
       {String baseUrl, ParseErrorLogger? errorLogger}) = _GetTabelRemoteDataSource;
 
-  @GET("/teachers/table")
-  Future<GetTableResponseModel> getTable();
+ @GET('{path}')
+  Future<GetTableResponseModel> getTable(
+    @Path() String path,
+  );
 }
+ 
