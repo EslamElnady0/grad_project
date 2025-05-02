@@ -32,7 +32,7 @@ AssignmentModel _$AssignmentModelFromJson(Map<String, dynamic> json) =>
       time: json['time'] as String,
       status: json['status'] as String,
       course: Course.fromJson(json['course'] as Map<String, dynamic>),
-      teacher: json['teacher'] as String,
+      teacher: json['teacher'] as String?,
       file: json['file'] as String,
     );
 

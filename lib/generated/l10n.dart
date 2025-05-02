@@ -2114,6 +2114,36 @@ class S {
   String get add_file {
     return Intl.message('Add File', name: 'add_file', desc: '', args: []);
   }
+
+  /// `📅 View a list of upcoming assignments with delivery dates, status, and the ability to modify or cancel.`
+  String get scheduled_assignments_description {
+    return Intl.message(
+      '📅 View a list of upcoming assignments with delivery dates, status, and the ability to modify or cancel.',
+      name: 'scheduled_assignments_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `📜 View completed assignments, with the ability to review solutions, grades, and comments.`
+  String get previous_assignments_description {
+    return Intl.message(
+      '📜 View completed assignments, with the ability to review solutions, grades, and comments.',
+      name: 'previous_assignments_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Assignment Details`
+  String get assignment_details {
+    return Intl.message(
+      'Assignment Details',
+      name: 'assignment_details',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

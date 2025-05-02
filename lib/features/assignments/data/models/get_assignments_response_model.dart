@@ -8,8 +8,11 @@ class GetAssignmentsResponseModel {
   final List<AssignmentModel> data;
 
   GetAssignmentsResponseModel({required this.code, required this.data});
-}
 
+  factory GetAssignmentsResponseModel.fromJson(Map<String, dynamic> json) =>
+      _$GetAssignmentsResponseModelFromJson(json);
+  Map<String, dynamic> toJson() => _$GetAssignmentsResponseModelToJson(this);
+}
 
 @JsonSerializable()
 class AssignmentModel {
@@ -22,7 +25,7 @@ class AssignmentModel {
   final String time;
   final String status;
   final Course course;
-  final String teacher;
+  final String? teacher;
   final String file;
 
   AssignmentModel({
@@ -42,7 +45,6 @@ class AssignmentModel {
       _$AssignmentModelFromJson(json);
   Map<String, dynamic> toJson() => _$AssignmentModelToJson(this);
 }
-
 
 @JsonSerializable()
 class Course {
