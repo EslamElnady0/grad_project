@@ -8,7 +8,9 @@ import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_text_and_icon_button.dart';
+import 'package:grad_project/features/assignments/data/models/get_assignments_request_query_params_model.dart';
 import 'package:grad_project/features/assignments/presentation/views/create_assignment_view.dart';
+import 'package:grad_project/features/assignments/presentation/views/teachers_assignments_view.dart';
 import 'package:grad_project/generated/l10n.dart';
 
 class AssignmentManagerItem extends StatelessWidget {
@@ -74,7 +76,13 @@ class AssignmentManagerItem extends StatelessWidget {
                   text: S.of(context).scheduled_assignments,
                   style: AppTextStyles.font14WhiteMedium,
                   width: double.infinity,
-                  onTap: () {},
+                  onTap: () {
+                    GoRouter.of(context).push(TeachersAssignmentsView.routeName,
+                        extra: GetAssignmentsRequestQueryParamsModel(
+                            courseId: "",
+                            assignmentStatus: "scheduled",
+                            fromDate: ""));
+                  },
                   icon: SvgPicture.asset(Assets.imagesSvgsScheduledIcon),
                   primaryButton: true,
                 ),
@@ -83,7 +91,13 @@ class AssignmentManagerItem extends StatelessWidget {
                   text: S.of(context).previous_assignments,
                   style: AppTextStyles.font14WhiteMedium,
                   width: double.infinity,
-                  onTap: () {},
+                  onTap: () {
+                    GoRouter.of(context).push(TeachersAssignmentsView.routeName,
+                        extra: GetAssignmentsRequestQueryParamsModel(
+                            courseId: "",
+                            assignmentStatus: "finished",
+                            fromDate: ""));
+                  },
                   icon: SvgPicture.asset(Assets.imagesSvgsPreviousIcon),
                   primaryButton: false,
                 ),

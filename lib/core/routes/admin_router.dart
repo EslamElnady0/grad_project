@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:grad_project/features/annoucements/ui/views/add_annoucement_view.dart';
 import 'package:grad_project/features/annoucements/ui/views/update_annoucement_view.dart';
 import 'package:grad_project/features/assignments/presentation/views/create_assignment_view.dart';
+import 'package:grad_project/features/assignments/presentation/views/teachers_assignments_view.dart';
 import 'package:grad_project/features/auth/ui/views/forget_password_view.dart';
 import 'package:grad_project/features/auth/ui/views/confirm_account_view.dart';
 import 'package:grad_project/features/chat/ui/views/chat_view.dart';
@@ -110,6 +111,9 @@ abstract class AdminRouter {
         GoRoute(
             path: TeacherQuizzesView.routeName,
             builder: (context, state) => const TeacherQuizzesView()),
+            GoRoute(
+            path: TeachersAssignmentsView.routeName,
+            builder: (context, state) => const TeachersAssignmentsView())
       ],
     );
   }
