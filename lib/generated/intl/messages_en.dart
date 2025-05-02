@@ -156,6 +156,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "editAnnouncement": MessageLookupByLibrary.simpleMessage(
       "Edit Announcement",
     ),
+    "editQuiz": MessageLookupByLibrary.simpleMessage("Edit Quiz"),
     "edit_news": MessageLookupByLibrary.simpleMessage(
       "✏️ Edit your announcement to keep your students informed with the latest details and updates",
     ),

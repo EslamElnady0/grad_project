@@ -268,5 +268,6 @@
   "assignment_details": "تفاصيل الأسايمنت",
   "from": "من",
   "to": "إلى",
-  "scheduled": "مجدول"
+  "scheduled": "مجدول",
+  "editQuiz": "تعديل كويز"
 }

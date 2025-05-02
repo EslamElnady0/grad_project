@@ -148,6 +148,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "eLearning": MessageLookupByLibrary.simpleMessage("التعليم الإلكتروني"),
     "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
     "editAnnouncement": MessageLookupByLibrary.simpleMessage("تعديل خبر"),
+    "editQuiz": MessageLookupByLibrary.simpleMessage("تعديل كويز"),
     "edit_news": MessageLookupByLibrary.simpleMessage(
       "✏️ عدّل إعلانك لضمان بقاء طلابك على اطلاع بأحدث التفاصيل والتحديثات",
     ),

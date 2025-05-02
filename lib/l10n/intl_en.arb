@@ -268,5 +268,6 @@
   "assignment_details": "Assignment Details",
   "from": "From",
   "to": "To",
-  "scheduled": "Scheduled"
+  "scheduled": "Scheduled",
+  "editQuiz": "Edit Quiz"
 }

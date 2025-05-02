@@ -2159,6 +2159,11 @@ class S {
   String get scheduled {
     return Intl.message('Scheduled', name: 'scheduled', desc: '', args: []);
   }
+
+  /// `Edit Quiz`
+  String get editQuiz {
+    return Intl.message('Edit Quiz', name: 'editQuiz', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

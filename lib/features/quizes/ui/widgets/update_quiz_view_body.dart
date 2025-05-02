@@ -60,7 +60,7 @@ class UpdateQuizViewBody extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomInnerScreensAppBar(
-                        title: S.of(context).createQuiz,
+                        title: S.of(context).editQuiz,
                       ),
                       vGap(4),
                       TitleTextWidget(text: S.of(context).quizHelperText),
