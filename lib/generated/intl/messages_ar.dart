@@ -68,6 +68,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "assignment_description_hint_text": MessageLookupByLibrary.simpleMessage(
       "قدم شرحًا تفصيليًا حول المطلوب في الأسايمنت، مع أي تعليمات إضافية.",
     ),
+    "assignment_details": MessageLookupByLibrary.simpleMessage(
+      "تفاصيل الأسايمنت",
+    ),
     "assignment_title": MessageLookupByLibrary.simpleMessage("عنوان الأسايمنت"),
     "assignment_title_hint_text": MessageLookupByLibrary.simpleMessage(
       " أدخل عنوانًا يعبر عن محتوى الأسايمنت بشكل واضح.",
@@ -270,6 +273,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "previous_assignments": MessageLookupByLibrary.simpleMessage(
       "اسايمينتات سابقة",
     ),
+    "previous_assignments_description": MessageLookupByLibrary.simpleMessage(
+      "📜 استعرض الأسايمنتات التي انتهت، مع إمكانية مراجعة الحلول، الدرجات، والتعليقات.",
+    ),
     "previous_quizzes": MessageLookupByLibrary.simpleMessage("كويزات سابقة"),
     "previous_quizzes_description": MessageLookupByLibrary.simpleMessage(
       "📜 استعرض الكويزات التي انتهت، مع إمكانية مراجعة النتائج والإجابات وتقييم الأداء.",
@@ -348,6 +354,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "scheduled_assignments": MessageLookupByLibrary.simpleMessage(
       "اسايمينتات مجدولة",
+    ),
+    "scheduled_assignments_description": MessageLookupByLibrary.simpleMessage(
+      "📅 عرض قائمة الأسايمنتات القادمة مع مواعيد التسليم والحالة وإمكانية التعديل أو الإلغاء.",
     ),
     "scheduled_quizzes": MessageLookupByLibrary.simpleMessage("كويزات مجدولة"),
     "scheduled_quizzes_description": MessageLookupByLibrary.simpleMessage(

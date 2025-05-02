@@ -72,6 +72,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "assignment_description_hint_text": MessageLookupByLibrary.simpleMessage(
       "Provide a detailed explanation of what is required in the assignment, along with any additional instructions.",
     ),
+    "assignment_details": MessageLookupByLibrary.simpleMessage(
+      "Assignment Details",
+    ),
     "assignment_title": MessageLookupByLibrary.simpleMessage(
       "Assignment Title",
     ),
@@ -286,6 +289,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "previous_assignments": MessageLookupByLibrary.simpleMessage(
       "Previous Assignments",
     ),
+    "previous_assignments_description": MessageLookupByLibrary.simpleMessage(
+      "📜 View completed assignments, with the ability to review solutions, grades, and comments.",
+    ),
     "previous_quizzes": MessageLookupByLibrary.simpleMessage(
       "Previous Quizzes",
     ),
@@ -367,6 +373,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "scheduled_assignments": MessageLookupByLibrary.simpleMessage(
       "Scheduled Assignments",
+    ),
+    "scheduled_assignments_description": MessageLookupByLibrary.simpleMessage(
+      "📅 View a list of upcoming assignments with delivery dates, status, and the ability to modify or cancel.",
     ),
     "scheduled_quizzes": MessageLookupByLibrary.simpleMessage(
       "Scheduled Quizzes",
