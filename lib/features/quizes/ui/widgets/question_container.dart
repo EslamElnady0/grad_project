@@ -146,6 +146,7 @@ class _QuestionContainerState extends State<QuestionContainer> {
                     const SizedBox(width: 8),
                     Expanded(
                       child: TextField(
+                        style: AppTextStyles.font12BlackMedium,
                         textDirection: TextDirection.ltr,
                         textAlign: TextAlign.start,
                         controller: answerControllers[answerIndex],
