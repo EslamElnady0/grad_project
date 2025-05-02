@@ -267,5 +267,6 @@
   "previous_assignments_description": "📜 View completed assignments, with the ability to review solutions, grades, and comments.",
   "assignment_details": "Assignment Details",
   "from": "From",
-  "to": "To"
+  "to": "To",
+  "scheduled": "Scheduled"
 }

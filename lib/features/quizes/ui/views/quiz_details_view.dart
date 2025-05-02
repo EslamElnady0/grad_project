@@ -1,6 +1,9 @@
 import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/widgets/custom_scaffold.dart';
+import 'package:provider/provider.dart';
 
+import '../../data/models/get_quizzes_response.dart';
 import '../widgets/quiz_details_view_body.dart';
 
 class QuizDetailsView extends StatelessWidget {
@@ -9,8 +12,12 @@ class QuizDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomScaffold(
-      body: QuizDetailsViewBody(),
+    final QuizModel quizModel = GoRouterState.of(context).extra as QuizModel;
+    return CustomScaffold(
+      body: Provider.value(
+        value: quizModel,
+        child: const QuizDetailsViewBody(),
+      ),
     );
   }
 }

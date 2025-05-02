@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import '../../../../generated/l10n.dart';
+import '../../data/models/get_quizzes_response.dart';
 import 'quiz_label_widget_content.dart';
 
 class QuizLabelWidget extends StatelessWidget {
@@ -9,6 +11,7 @@ class QuizLabelWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final quizModel = context.read<QuizModel>();
     return Container(
       padding: EdgeInsets.all(12.r),
       decoration: BoxDecoration(
@@ -35,7 +38,9 @@ class QuizLabelWidget extends StatelessWidget {
             ),
           ),
           child: Text(
-            S.of(context).done,
+            quizModel.status == 'finished'
+                ? S.of(context).done
+                : S.of(context).scheduled,
             style: AppTextStyles.font10BlackMedium,
           ),
         ),

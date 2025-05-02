@@ -353,6 +353,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
       "📅 مرحباً بك في صفحة الجدول الأسبوعي! حدد الأيام التي ترغب في عرض جدولها لتتابع مواعيد محاضراتك وجلساتك العملية بسهولة.",
     ),
+    "scheduled": MessageLookupByLibrary.simpleMessage("مجدول"),
     "scheduled_assignments": MessageLookupByLibrary.simpleMessage(
       "اسايمينتات مجدولة",
     ),

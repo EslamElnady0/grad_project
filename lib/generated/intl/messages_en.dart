@@ -372,6 +372,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
       "📅 Welcome to the Weekly Schedule page! Select the days you want to view to easily track your lecture and practical session timings.",
     ),
+    "scheduled": MessageLookupByLibrary.simpleMessage("Scheduled"),
     "scheduled_assignments": MessageLookupByLibrary.simpleMessage(
       "Scheduled Assignments",
     ),

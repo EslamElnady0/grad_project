@@ -2154,6 +2154,11 @@ class S {
   String get to {
     return Intl.message('To', name: 'to', desc: '', args: []);
   }
+
+  /// `Scheduled`
+  String get scheduled {
+    return Intl.message('Scheduled', name: 'scheduled', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -121,7 +121,7 @@ class CustomQuizButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        isDone
+        !isDone
             ? GoRouter.of(context)
                 .push(QuizDetailsView.routeName, extra: quizModel)
             : null;
