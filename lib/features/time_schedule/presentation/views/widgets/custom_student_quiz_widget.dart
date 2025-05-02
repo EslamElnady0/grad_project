@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/helpers/constants.dart';
@@ -31,10 +32,10 @@ class CustomStudentQuizWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              offset: const Offset(0, 1),
-              blurRadius: 16,
-              color: AppColors.black.withOpacity(0.16),
-            )
+                offset: const Offset(0, 1),
+                blurRadius: 5.r,
+                spreadRadius: 3,
+                color: const Color(0xff112316).withOpacity(0.15))
           ]),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,17 +48,20 @@ class CustomStudentQuizWidget extends StatelessWidget {
           vGap(10),
           Row(
             children: [
-              Column(
-                children: [
-                  Text(
-                    startTime,
-                    style: AppTextStyles.font14DarkBlueMedium,
-                  ),
-                  Text(
-                    timePeriod,
-                    style: AppTextStyles.font14DarkBlueMedium,
-                  )
-                ],
+              SizedBox(
+                width: 50,
+                child: Column(
+                  children: [
+                    Text(
+                      startTime,
+                      style: AppTextStyles.font14DarkBlueMedium,
+                    ),
+                    Text(
+                      timePeriod,
+                      style: AppTextStyles.font14DarkBlueMedium,
+                    )
+                  ],
+                ),
               ),
               hGap(10),
               Container(
@@ -75,20 +79,22 @@ class CustomStudentQuizWidget extends StatelessWidget {
                 ),
               ),
               hGap(10),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    quizModel.title,
-                    style: AppTextStyles.font16DarkerBlueBold,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  vGap(8),
-                  Text(
-                    quizModel.course.name,
-                    style: AppTextStyles.font10GraySemiBold,
-                  )
-                ],
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      quizModel.title,
+                      style: AppTextStyles.font16DarkerBlueBold,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    vGap(8),
+                    Text(
+                      quizModel.course.name,
+                      style: AppTextStyles.font10GraySemiBold,
+                    )
+                  ],
+                ),
               ),
             ],
           ),

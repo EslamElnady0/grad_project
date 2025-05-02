@@ -13,6 +13,7 @@ import 'package:grad_project/features/time_schedule/logic/get_students_quizzes_c
 import 'package:grad_project/features/time_schedule/presentation/views/widgets/custom_student_assignment_widget.dart';
 import 'package:grad_project/features/time_schedule/presentation/views/widgets/custom_student_quiz_widget.dart';
 import 'package:grad_project/generated/l10n.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 class TimeScheduleViewBody extends StatefulWidget {
   const TimeScheduleViewBody({super.key});
@@ -39,8 +40,8 @@ class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
       setState(() {
         activities = combined;
         activities.sort((a, b) {
-          final aDate = DateTime.parse(a.date );
-          final bDate = DateTime.parse(b.date );
+          final aDate = DateTime.parse(a.date);
+          final bDate = DateTime.parse(b.date);
           return aDate.compareTo(bDate);
         });
       });
@@ -103,25 +104,52 @@ class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
               ),
             ),*/
             vGap(15),
-            ListView.separated(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) {
-                if (activities[index] is StudentQuizModel) {
-                  return CustomStudentQuizWidget(quizModel: activities[index]as StudentQuizModel);
-                } else {
-                  return CustomStudentAssignmentWidget(
-                      assignmentModel: activities[index]as StudentAssignmentModel);
-                }
+            quizState.maybeWhen(
+              orElse: () => _buildLoadingState(),
+              getStudentsQuizzesSuccess: (data) {
+                return assignmentState.maybeWhen(
+                  orElse: () => _buildLoadingState(),
+                  getStudentsAssignmentsSuccess: (data) {
+                    return _buildSuccessState(activities);
+                  },
+                );
               },
-              separatorBuilder: (context, index) {
-                return vGap(15);
-              },
-              itemCount: activities.length,
-            )
+            ),
           ],
         ),
       ),
     );
   }
+}
+
+Widget _buildSuccessState(List<ActivityModel> data) {
+  return ListView.separated(
+    shrinkWrap: true,
+    physics: const NeverScrollableScrollPhysics(),
+    padding: EdgeInsets.only(top: 10.h),
+    itemBuilder: (context, index) {
+      return data[index] is StudentQuizModel
+          ? CustomStudentQuizWidget(quizModel: data[index] as StudentQuizModel)
+          : CustomStudentAssignmentWidget(
+              assignmentModel: data[index] as StudentAssignmentModel);
+    },
+    separatorBuilder: (context, index) => vGap(12),
+    itemCount: data.length,
+  );
+}
+
+Widget _buildLoadingState() {
+  return Skeletonizer(
+    enabled: true,
+    child: ListView.separated(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      padding: EdgeInsets.only(top: 10.h),
+      itemBuilder: (context, index) {
+        return const CustomStudentQuizWidgetSkeleton();
+      },
+      separatorBuilder: (context, index) => vGap(12),
+      itemCount: 5,
+    ),
+  );
 }
