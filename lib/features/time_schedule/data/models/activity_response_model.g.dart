@@ -30,16 +30,6 @@ Map<String, dynamic> _$ActivityModelToJson(ActivityModel instance) =>
       'teacher': instance.teacher,
     };
 
-Course _$CourseFromJson(Map<String, dynamic> json) => Course(
-      id: (json['id'] as num).toInt(),
-      name: json['name'] as String,
-    );
-
-Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-    };
-
 StudentQuizModel _$StudentQuizModelFromJson(Map<String, dynamic> json) =>
     StudentQuizModel(
       id: (json['id'] as num).toInt(),

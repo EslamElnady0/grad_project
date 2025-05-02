@@ -94,8 +94,7 @@ class CustomStudentQuizWidget extends StatelessWidget {
           ),
           vGap(15),
           CustomStudentQuizButton(
-            
-            quizModel: quizModel,
+            studentQuizModel: quizModel,
           )
         ],
       ),

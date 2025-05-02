@@ -1,4 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../../quizes/data/models/get_quizzes_response.dart';
 part 'activity_response_model.g.dart';
 
 @JsonSerializable()
@@ -28,18 +30,6 @@ class ActivityModel {
       _$ActivityModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$ActivityModelToJson(this);
-}
-
-@JsonSerializable()
-class Course {
-  final int id;
-  final String name;
-
-  Course({required this.id, required this.name});
-
-  factory Course.fromJson(Map<String, dynamic> json) => _$CourseFromJson(json);
-
-  Map<String, dynamic> toJson() => _$CourseToJson(this);
 }
 
 @JsonSerializable()
