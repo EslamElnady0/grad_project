@@ -29,7 +29,7 @@ class _QuestionContainerState extends State<QuestionContainer> {
   @override
   void initState() {
     super.initState();
-    // Initialize with widget.questionData
+
     questionController =
         TextEditingController(text: widget.questionData.question);
     answerControllers = widget.questionData.answers

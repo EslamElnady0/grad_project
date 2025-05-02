@@ -49,7 +49,6 @@ class UpdateQuizViewBody extends StatelessWidget {
           addQuizCubit.selectedTime = data.data.duration;
           addQuizCubit.finalDegree = data.data.totalDegree;
           questionListCubit.addQuestionsFromApiCall(data.data.questions);
-          // Log the state length for debugging
 
           return Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
