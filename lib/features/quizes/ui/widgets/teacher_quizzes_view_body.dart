@@ -86,6 +86,7 @@ class TeacherQuizzesViewBody extends StatelessWidget {
         return Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: CustomQuizWidget(
+            queryParamsModel: queryParamsModel,
             quizModel: sortedQuizzes[index],
           ),
         );
