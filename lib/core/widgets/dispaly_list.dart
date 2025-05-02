@@ -43,11 +43,10 @@ class DisplayList extends StatelessWidget {
             child: PopupMenuButton<int>(
               // Change type to int
               onSelected: (index) {
-                // Now receiving index instead of value
-                // Update the selected week in the Cubit using the index
+
                 context.read<ListCubit>().selectWeek(listValue[index]);
                 if (onSelected != null) {
-                  onSelected!(index); // Pass the index to the callback
+                  onSelected!(index); 
                 }
               },
               color: AppColors.white,
@@ -61,13 +60,15 @@ class DisplayList extends StatelessWidget {
                   BlocBuilder<ListCubit, String>(
                     builder: (context, selectedValue) {
                       return Text(selectedValue,
-                          style: AppTextStyles.font12GraySemiBold);
+                          style: AppTextStyles.font12GraySemiBold.copyWith(
+                            color: AppColors.darkblue
+                          ));
                     },
                   ),
                   hGap(40),
                   Icon(
                     Icons.arrow_forward_ios_outlined,
-                    color: AppColors.gray,
+                    color: AppColors.darkblue,
                     size: 20.h,
                   ),
                 ],
@@ -80,7 +81,7 @@ class DisplayList extends StatelessWidget {
                     child: Text(
                       listValue[index],
                       style: AppTextStyles.font13BlackBold
-                          .copyWith(color: AppColors.darkGray),
+                          .copyWith(color: AppColors.darkblue),
                     ),
                   );
                 });

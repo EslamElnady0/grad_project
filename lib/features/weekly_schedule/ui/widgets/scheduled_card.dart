@@ -115,7 +115,9 @@ class ScheduleCard extends StatelessWidget {
       child: Center(
         child: Text(
           text,
-          style: AppTextStyles.font11BlackSemiBold,
+          style: AppTextStyles.font11BlackSemiBold.copyWith(
+            color: AppColors.darkblue
+          ),
           textAlign: TextAlign.center,
         ),
       ),

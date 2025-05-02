@@ -20,23 +20,21 @@ class WeeklyScheduleFilter extends StatelessWidget {
     List<String> filterDays = [...days];
     filterDays.insert(0, S.of(context).all_days); 
 
-    return SliverToBoxAdapter(
-      child: SingleChildScrollView(
-        padding: const EdgeInsets.all(8.0),
-        scrollDirection: Axis.horizontal,
-        child: Row(
-          children: List.generate(
-            filterDays.length,
-            (index) => Row(
-              children: [
-                CustomToggleTitleButton(
-                  title: filterDays[index],
-                  isPressed:index==0? false: selectedDays.contains(filterDays[index]),
-                  onTap: () => toggleSelection(filterDays[index]),
-                ),
-                const SizedBox(width: 12), 
-              ],
-            ),
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(8.0),
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: List.generate(
+          filterDays.length,
+          (index) => Row(
+            children: [
+              CustomToggleTitleButton(
+                title: filterDays[index],
+                isPressed:index==0? false: selectedDays.contains(filterDays[index]),
+                onTap: () => toggleSelection(filterDays[index]),
+              ),
+              const SizedBox(width: 12), 
+            ],
           ),
         ),
       ),
