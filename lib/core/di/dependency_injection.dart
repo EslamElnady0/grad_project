@@ -11,7 +11,6 @@ import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/
 import 'package:grad_project/features/annoucements/logic/get_teacher_cources_cubit/get_teacher_cources_cubit.dart';
 import 'package:grad_project/features/annoucements/logic/update_annoucement_cubit/update_annoucement_cubit.dart';
 import 'package:grad_project/features/assignments/logic/cubits/get_assignments_cubit/get_assignments_cubit.dart';
-import 'package:grad_project/features/get_quiz_by_id/logic/get_quiz_by_id_cubit/get_quiz_by_id_cubit.dart';
 import 'package:grad_project/features/lecture_manager/data/repos/add_materials_repo.dart';
 import 'package:grad_project/features/assignments/data/data_sources/assignments_local_data_source.dart';
 import 'package:grad_project/features/assignments/data/data_sources/assignments_remote_data_source.dart';
@@ -36,6 +35,7 @@ import '../../features/auth/data/repos/login_repo.dart';
 import '../../features/auth/logic/cubit/login_cubit.dart';
 import '../../features/lecture_manager/logic/add_materials_cubit/add_materials_cubit.dart';
 import '../../features/lecture_manager/ui/cubit/file_upload_cubit.dart';
+import '../../features/quizes/logic/get_quiz_by_id_cubit/get_quiz_by_id_cubit.dart';
 import '../../features/quizes/logic/update_quiz_cubit/update_quiz_cubit.dart';
 import '../data/data sources/all_courses_remote_data_source.dart';
 import '../data/repos/all_courses_repo.dart';
