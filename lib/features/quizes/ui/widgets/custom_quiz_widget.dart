@@ -13,6 +13,8 @@ import 'package:grad_project/features/quizes/ui/views/quiz_details_view.dart';
 import 'package:grad_project/generated/l10n.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
+import 'activity_pop_up_menu.dart';
+
 class CustomQuizWidget extends StatelessWidget {
   final QuizModel quizModel;
   const CustomQuizWidget({
@@ -43,10 +45,19 @@ class CustomQuizWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            FormatDateAndTimeHelpers.formatDateToDayFullMonthAndYear(
-                quizModel.date, context),
-            style: AppTextStyles.font16DarkerBlueBold,
+          Row(
+            children: [
+              Text(
+                FormatDateAndTimeHelpers.formatDateToDayFullMonthAndYear(
+                    quizModel.date, context),
+                style: AppTextStyles.font16DarkerBlueBold,
+              ),
+              Spacer(),
+              ActivityPopUpMenu(
+                onEditPressed: () {},
+                onDeletePressed: () {},
+              ),
+            ],
           ),
           vGap(10),
           Row(

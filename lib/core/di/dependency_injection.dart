@@ -20,11 +20,13 @@ import 'package:grad_project/features/assignments/logic/cubits/create_assignment
 import 'package:grad_project/features/quizes/data/data%20sources/quizzes_local_data_source.dart';
 import 'package:grad_project/features/quizes/data/data%20sources/quizzes_remote_data_source.dart';
 import 'package:grad_project/features/quizes/data/repos/quizzes_repo.dart';
+import 'package:grad_project/features/quizes/logic/delete_quiz_cubit/delete_quiz_cubit.dart';
 import 'package:grad_project/features/quizes/logic/get_quizzes_cubit/get_quizzes_cubit.dart';
 import 'package:grad_project/features/quizes/logic/quizzes_cubit/quizzes_cubit.dart';
 import 'package:grad_project/features/quizes/ui/cubit/add_quiz_cubit/add_quiz_cubit.dart';
 import 'package:grad_project/features/quizes/ui/widgets/question_list_widget.dart';
 import 'package:grad_project/features/subjects/ui/manager/subjects_filter_cubit.dart';
+import 'package:grad_project/features/update_quiz/logic/update_quiz_cubit/update_quiz_cubit.dart';
 import 'package:grad_project/features/weekly_schedule/data/data%20sources/get_tabel_local_data_source.dart';
 import 'package:grad_project/features/weekly_schedule/data/data%20sources/get_tabel_remote_data_source.dart';
 import 'package:grad_project/features/weekly_schedule/data/repos/get_tabel_repo.dart';
@@ -91,6 +93,8 @@ Future<void> setupGetIt() async {
       () => QuizzesRepo(remoteDataSource: getIt(), localDataSource: getIt()));
   getIt.registerFactory<QuizzesCubit>(() => QuizzesCubit(getIt()));
   getIt.registerFactory<GetQuizzesCubit>(() => GetQuizzesCubit(getIt()));
+  getIt.registerFactory<UpdateQuizCubit>(() => UpdateQuizCubit(getIt()));
+  getIt.registerFactory<DeleteQuizCubit>(() => DeleteQuizCubit(getIt()));
   //toDo:------------------------------Add Materials------------------------------//
   getIt.registerLazySingleton<AddMaterialsRepo>(() => AddMaterialsRepo(dio));
   getIt.registerFactory<AddMaterialsCubit>(() => AddMaterialsCubit(getIt()));

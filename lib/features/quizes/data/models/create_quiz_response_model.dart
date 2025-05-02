@@ -4,21 +4,21 @@ part 'create_quiz_response_model.g.dart';
 
 // Model class for parsing a quiz creation API response
 @JsonSerializable(explicitToJson: true)
-class CreateQuizResponseModel {
+class QuizResponseModel {
   final int code;
   final String message;
   final QuizDataModel data;
 
-  CreateQuizResponseModel({
+  QuizResponseModel({
     required this.code,
     required this.message,
     required this.data,
   });
 
-  factory CreateQuizResponseModel.fromJson(Map<String, dynamic> json) =>
-      _$CreateQuizResponseModelFromJson(json);
+  factory QuizResponseModel.fromJson(Map<String, dynamic> json) =>
+      _$QuizResponseModelFromJson(json);
 
-  Map<String, dynamic> toJson() => _$CreateQuizResponseModelToJson(this);
+  Map<String, dynamic> toJson() => _$QuizResponseModelToJson(this);
 }
 
 // Model class for the quiz data object

@@ -19,7 +19,7 @@ class AnnoucementsRepo {
     required this.localDataSource,
   });
 
-  Future<ApiResult<AddAnnouncementResponseBody>> addAnnoucement(
+  Future<ApiResult<SimpleResponseBody>> addAnnoucement(
       AnnouncementRequestBody announcementRequestBody) async {
     try {
       final response =
