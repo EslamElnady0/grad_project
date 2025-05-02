@@ -94,18 +94,7 @@ Future<void> setupGetIt() async {
   //toDo:------------------------------Add Materials------------------------------//
   getIt.registerLazySingleton<AddMaterialsRepo>(() => AddMaterialsRepo(dio));
   getIt.registerFactory<AddMaterialsCubit>(() => AddMaterialsCubit(getIt()));
-  //toDo:------------------------------ Assignments API ------------------------------//
-  getIt.registerLazySingleton<AssignmentsRemoteDataSource>(
-      () => AssignmentsRemoteDataSource(dio));
-  getIt.registerLazySingleton<AssignmentsLocalDataSource>(
-      () => AssignmentsLocalDataSourceImpl());
-  getIt.registerLazySingleton<AssignmentsRepo>(() => AssignmentsRepo(
-        remoteDataSource: getIt(),
-        localDataSource: getIt(),
-      ));
-  getIt.registerFactory<CreateAssignmentCubit>(
-      () => CreateAssignmentCubit(getIt()));
-  getIt.registerFactory<AssignmentUploadCubit>(() => AssignmentUploadCubit());
+
   //toDo:------------------------------ Get Tabel Api ------------------------------//
   getIt.registerLazySingleton<GetTabelRemoteDataSource>(
       () => GetTabelRemoteDataSource(dio));
