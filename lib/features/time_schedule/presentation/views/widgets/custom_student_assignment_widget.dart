@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/helpers/constants.dart';
@@ -6,23 +6,24 @@ import 'package:grad_project/core/helpers/format_date_and_time_helpers.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
-import 'package:grad_project/features/assignments/data/models/get_assignments_response_model.dart';
-import 'package:grad_project/features/assignments/presentation/views/widgets/custom_assignment_button.dart';
+import 'package:grad_project/features/time_schedule/data/models/activity_response_model.dart';
+import 'package:grad_project/features/time_schedule/presentation/views/widgets/custom_student_assignment_button.dart';
 import 'package:grad_project/generated/l10n.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 
-class CustomAssignmentWidget extends StatelessWidget {
-  const CustomAssignmentWidget({super.key, required this.assignmentModel});
+class CustomStudentAssignmentWidget extends StatelessWidget {
+  const CustomStudentAssignmentWidget(
+      {super.key, required this.assignmentModel});
 
-  final AssignmentModel assignmentModel;
+  final StudentAssignmentModel assignmentModel;
   @override
   Widget build(BuildContext context) {
     String time = FormatDateAndTimeHelpers.convertTo12HourFormat(
-      assignmentModel.time.substring(0, 5),).substring(0, 5);
-String timePeriod = FormatDateAndTimeHelpers.convertTo12HourFormat(
-      assignmentModel.time.substring(0, 5),).substring(5, 8);
+      assignmentModel.time.substring(0, 5),
+    ).substring(0, 5);
+    String timePeriod = FormatDateAndTimeHelpers.convertTo12HourFormat(
+      assignmentModel.time.substring(0, 5),
+    ).substring(5, 8);
 
-    
     return Container(
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
@@ -98,8 +99,7 @@ String timePeriod = FormatDateAndTimeHelpers.convertTo12HourFormat(
             ],
           ),
           vGap(15),
-          CustomAssignmentButton(
-            isDone: assignmentModel.status == "finished",
+          CustomStudentAssignmentButton(
             assignmentModel: assignmentModel,
           )
         ],
@@ -107,7 +107,3 @@ String timePeriod = FormatDateAndTimeHelpers.convertTo12HourFormat(
     );
   }
 }
-
-
-
-

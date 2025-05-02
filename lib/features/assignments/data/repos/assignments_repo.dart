@@ -7,6 +7,7 @@ import 'package:grad_project/features/assignments/data/models/create_assignment_
 import 'package:grad_project/features/assignments/data/models/create_assignment_response_model.dart';
 import 'package:grad_project/features/assignments/data/models/get_assignments_request_query_params_model.dart';
 import 'package:grad_project/features/assignments/data/models/get_assignments_response_model.dart';
+import 'package:grad_project/features/time_schedule/data/models/activity_response_model.dart';
 
 class AssignmentsRepo {
 
@@ -45,6 +46,15 @@ class AssignmentsRepo {
         getAssignmentRequestQueryParamsModel.fromDate,
       );
       return ApiResult.success(response);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
+  Future<ApiResult<List<StudentAssignmentModel>>> getStudentAssignments() async {
+    try {
+      final response = await remoteDataSource.getStudentAssignments();
+      return ApiResult.success(response.data);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));
     }

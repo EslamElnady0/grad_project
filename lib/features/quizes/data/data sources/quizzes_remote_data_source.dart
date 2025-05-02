@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:grad_project/features/quizes/data/models/create_quiz_request_model.dart';
 import 'package:grad_project/features/quizes/data/models/create_quiz_response_model.dart';
 import 'package:grad_project/features/quizes/data/models/get_quizzes_response.dart';
+import 'package:grad_project/features/time_schedule/data/models/activity_response_model.dart';
 import 'package:retrofit/retrofit.dart';
 import '../../../../core/networking/api_constants.dart';
 part 'quizzes_remote_data_source.g.dart';
@@ -26,4 +27,7 @@ abstract class QuizzesRemoteDataSource {
     @Query("status") String quizStatus,
     @Query("from") String fromDate,
   );
+
+  @GET(ApiConstants.quizzes)
+  Future<StudentQuizResponseModel> getStudentQuizzes();
 }

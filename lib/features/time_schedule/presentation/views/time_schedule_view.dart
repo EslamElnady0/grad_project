@@ -1,14 +1,29 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grad_project/core/di/dependency_injection.dart';
 import 'package:grad_project/core/widgets/custom_scaffold.dart';
+import 'package:grad_project/features/time_schedule/logic/get_students_assignments_cubit/get_students_assignments_cubit.dart';
+import 'package:grad_project/features/time_schedule/logic/get_students_quizzes_cubit/get_students_quizzes_cubit.dart';
 import 'package:grad_project/features/time_schedule/presentation/views/widgets/time_schedule_view_body.dart';
 
 class TimeScheduleView extends StatelessWidget {
   const TimeScheduleView({super.key});
-static const String routeName = '/Time-Schedule-view';
+  static const String routeName = '/Time-Schedule-view';
   @override
   Widget build(BuildContext context) {
-    return const CustomScaffold(
-      body: TimeScheduleViewBody(),
-    );
+    return CustomScaffold(
+        body: MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) =>
+              getIt<GetStudentsQuizzesCubit>()..getStudentsQuizzes(),
+        ),
+        BlocProvider(
+          create: (context) =>
+              getIt<GetStudentsAssignmentsCubit>()..getStudentsAssignments(),
+        )
+      ],
+      child: const TimeScheduleViewBody(),
+    ));
   }
 }

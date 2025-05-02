@@ -13,4 +13,5 @@ class ApiConstants {
   static const String quizzes = "/quizzes";
   static const String courseMaterials = "course-materials";
   static const String assignments = "/assignments";
+  static const String students = "/students";
 }
