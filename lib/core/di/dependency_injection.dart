@@ -11,6 +11,7 @@ import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/
 import 'package:grad_project/features/annoucements/logic/get_teacher_cources_cubit/get_teacher_cources_cubit.dart';
 import 'package:grad_project/features/annoucements/logic/update_annoucement_cubit/update_annoucement_cubit.dart';
 import 'package:grad_project/features/assignments/logic/cubits/get_assignments_cubit/get_assignments_cubit.dart';
+import 'package:grad_project/features/get_quiz_by_id/logic/get_quiz_by_id_cubit/get_quiz_by_id_cubit.dart';
 import 'package:grad_project/features/lecture_manager/data/repos/add_materials_repo.dart';
 import 'package:grad_project/features/assignments/data/data_sources/assignments_local_data_source.dart';
 import 'package:grad_project/features/assignments/data/data_sources/assignments_remote_data_source.dart';
@@ -95,6 +96,7 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<GetQuizzesCubit>(() => GetQuizzesCubit(getIt()));
   getIt.registerFactory<UpdateQuizCubit>(() => UpdateQuizCubit(getIt()));
   getIt.registerFactory<DeleteQuizCubit>(() => DeleteQuizCubit(getIt()));
+  getIt.registerFactory<GetQuizByIdCubit>(() => GetQuizByIdCubit(getIt()));
   //toDo:------------------------------Add Materials------------------------------//
   getIt.registerLazySingleton<AddMaterialsRepo>(() => AddMaterialsRepo(dio));
   getIt.registerFactory<AddMaterialsCubit>(() => AddMaterialsCubit(getIt()));

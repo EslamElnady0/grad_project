@@ -3,10 +3,10 @@ import 'package:grad_project/core/networking/api_result.dart';
 import 'package:grad_project/features/quizes/data/models/create_quiz_request_model.dart';
 import 'package:grad_project/features/quizes/data/models/create_quiz_response_model.dart';
 import 'package:grad_project/features/quizes/data/models/get_quizzes_response.dart';
-
 import '../../../annoucements/data/models/add_annoucement_response_body.dart';
 import '../data sources/quizzes_local_data_source.dart';
 import '../data sources/quizzes_remote_data_source.dart';
+import '../models/get_quiz_using_id_response.dart';
 import '../models/get_quizzes_request_query_params_model.dart';
 
 class QuizzesRepo {
@@ -47,6 +47,17 @@ class QuizzesRepo {
   ) async {
     try {
       final result = await remoteDataSource.deleteQuiz(quizId);
+      return ApiResult.success(result);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
+  Future<ApiResult<GetQuizByIdResponse>> getQuizById(
+    String quizId,
+  ) async {
+    try {
+      final result = await remoteDataSource.getQuizById(quizId);
       return ApiResult.success(result);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));

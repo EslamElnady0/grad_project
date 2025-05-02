@@ -60,7 +60,12 @@ class CustomQuizWidget extends StatelessWidget {
               ),
               const Spacer(),
               ActivityPopUpMenu(
-                onEditPressed: () {},
+                onEditPressed: () {
+                  GoRouter.of(context).push(
+                    QuizDetailsView.routeName,
+                    extra: quizModel.id.toString(),
+                  );
+                },
                 onDeletePressed: () async {
                   await context.read<DeleteQuizCubit>().deleteQuiz(
                         quizModel.id.toString(),

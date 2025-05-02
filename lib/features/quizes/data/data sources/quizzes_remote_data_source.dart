@@ -5,6 +5,7 @@ import 'package:grad_project/features/quizes/data/models/create_quiz_response_mo
 import 'package:grad_project/features/quizes/data/models/get_quizzes_response.dart';
 import 'package:retrofit/retrofit.dart';
 import '../../../../core/networking/api_constants.dart';
+import '../models/get_quiz_using_id_response.dart';
 part 'quizzes_remote_data_source.g.dart';
 
 //if this file is created for the first time or modified
@@ -35,5 +36,9 @@ abstract class QuizzesRemoteDataSource {
   Future<SimpleResponseBody> updateQuiz(
     @Path("quizId") String quizId,
     @Body() QuizRequestModel quizRequestModel,
+  );
+  @GET('${ApiConstants.teachers}${ApiConstants.quizzes}/{quizId}')
+  Future<GetQuizByIdResponse> getQuizById(
+    @Path("quizId") String quizId,
   );
 }
