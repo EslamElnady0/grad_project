@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/widgets/custom_toggle_title_button.dart';
-import '../../../../../generated/l10n.dart';
+import '../../../../core/widgets/custom_toggle_title_button.dart';
+import '../../../../generated/l10n.dart';
 
 class WeeklyScheduleFilter extends StatelessWidget {
   final List<String> days;
@@ -21,6 +21,7 @@ class WeeklyScheduleFilter extends StatelessWidget {
     filterDays.insert(0, S.of(context).all_days); 
 
     return SingleChildScrollView(
+      padding: const EdgeInsets.all(8.0),
       scrollDirection: Axis.horizontal,
       child: Row(
         children: List.generate(
@@ -29,7 +30,7 @@ class WeeklyScheduleFilter extends StatelessWidget {
             children: [
               CustomToggleTitleButton(
                 title: filterDays[index],
-                isPressed: selectedDays.contains(filterDays[index]),
+                isPressed:index==0? false: selectedDays.contains(filterDays[index]),
                 onTap: () => toggleSelection(filterDays[index]),
               ),
               const SizedBox(width: 12), 

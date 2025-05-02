@@ -22,34 +22,30 @@ class AddMaterialsCubit extends Cubit<AddMaterialsState> {
             ? "section"
             : "other";
 
-    FormData data = FormData.fromMap({
-      'files': selectedFiles.map((file) {
-        if (file.path != null) {
-          return MultipartFile.fromFile(file.path!, filename: file.name);
-        } else {
-          // You can handle the error or provide a default value here
-          return MultipartFile.fromFile('',
-              filename: file.name); // Empty string as fallback
-        }
-      }).toList(),
-      'title': title,
-      'week': (weekNumber + 1).toString(),
-      'type': typeWord,
-      'material': selectedFiles.isNotEmpty
-          ? await MultipartFile.fromFile(selectedFiles.first.path!,
-              filename: selectedFiles.first.name)
-          : null, // Make sure material is a file
-    });
+
+FormData data = FormData();
+
+for (var file in selectedFiles) {
+  if (file.path != null) {
+    data.files.add(MapEntry(
+      'material[]',
+      MultipartFile.fromFileSync(file.path!, filename: file.name),
+    ));
+  }
+}
+
+data.fields.add(MapEntry('title', title));
+data.fields.add(MapEntry('week', (weekNumber + 1).toString()));
+data.fields.add(MapEntry('type', typeWord));
 
     final result = await _repo.upload(
       id: id,
       data: data,
-        onProgress: (sent, total) {
-    double progress = sent / total;
-  
-  emit(AddMaterialsState.addMaterialsProgress(progress));
-   
-  },
+      onProgress: (sent, total) {
+        double progress = sent / total;
+
+        emit(AddMaterialsState.addMaterialsProgress(progress));
+      },
     );
 
     result.when(

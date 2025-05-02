@@ -182,6 +182,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "forum_welcome_message": MessageLookupByLibrary.simpleMessage(
       "💬 مرحباً بك في منتدى الأسئلة والإجابات!اطرح أسئلتك، وشارك معرفتك بالإجابة على أسئلة الآخرين، واستفد من خبرات زملائك هنا!",
     ),
+    "from": MessageLookupByLibrary.simpleMessage("من"),
     "full_control_over_courses": MessageLookupByLibrary.simpleMessage(
       "📚 تحكم كامل بموادك الدراسية، من إضافة المحاضرات إلى متابعة تقدم الطلاب وإدارة الكويزات والأسايمنتات!",
     ),
@@ -436,6 +437,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "time_schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
       "مرحباً بك!هنا يمكنك الاطلاع على مواعيد الكويزات القادمة وتسليم التكاليف لكل مادة.⏰",
     ),
+    "to": MessageLookupByLibrary.simpleMessage("إلى"),
     "total": MessageLookupByLibrary.simpleMessage("المجموع"),
     "tuesday": MessageLookupByLibrary.simpleMessage("الثلاثاء"),
     "type": MessageLookupByLibrary.simpleMessage("النوع"),

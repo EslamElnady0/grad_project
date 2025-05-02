@@ -263,7 +263,9 @@
   "starts_in": "Starts In",
   "ends_in": "Ends In",
   "add_file": "Add File",
-  "scheduled_assignments_description":"📅 View a list of upcoming assignments with delivery dates, status, and the ability to modify or cancel.",
-  "previous_assignments_description":"📜 View completed assignments, with the ability to review solutions, grades, and comments.",
-  "assignment_details": "Assignment Details"
+  "scheduled_assignments_description": "📅 View a list of upcoming assignments with delivery dates, status, and the ability to modify or cancel.",
+  "previous_assignments_description": "📜 View completed assignments, with the ability to review solutions, grades, and comments.",
+  "assignment_details": "Assignment Details",
+  "from": "From",
+  "to": "To"
 }

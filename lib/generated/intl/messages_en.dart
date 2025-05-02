@@ -194,6 +194,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "forum_welcome_message": MessageLookupByLibrary.simpleMessage(
       "💬 Welcome to the Q&A forum! Ask your questions, share your knowledge by answering others\' questions, and benefit from your peers\' experiences here!",
     ),
+    "from": MessageLookupByLibrary.simpleMessage("From"),
     "full_control_over_courses": MessageLookupByLibrary.simpleMessage(
       "📚 Full control over your courses, from adding lectures to tracking student progress and managing quizzes and assignments!",
     ),
@@ -461,6 +462,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "time_schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
       "Welcome! Here you can view the upcoming quiz dates and submit the fees for each subject.⏰",
     ),
+    "to": MessageLookupByLibrary.simpleMessage("To"),
     "total": MessageLookupByLibrary.simpleMessage("Total"),
     "tuesday": MessageLookupByLibrary.simpleMessage("Tuesday"),
     "type": MessageLookupByLibrary.simpleMessage("Type"),

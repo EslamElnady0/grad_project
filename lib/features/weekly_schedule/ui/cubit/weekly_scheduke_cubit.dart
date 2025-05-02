@@ -1,31 +1,52 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:bloc/bloc.dart';
+import 'package:grad_project/features/weekly_schedule/data/models/get_table_response_model.dart';
 
-class WeeklyScheduleCubit extends Cubit<Set<String>> {
-  final List<String> days;
-  WeeklyScheduleCubit(this.days) : super(days.toSet());
+class WeeklyScheduleState {
+  final TableResponse selectedTable;
+  final Set<String> selectedDays;
+
+  WeeklyScheduleState({
+    required this.selectedTable,
+    required this.selectedDays,
+  });
+
+  WeeklyScheduleState copyWith({
+    TableResponse? selectedTable,
+    Set<String>? selectedDays,
+  }) {
+    return WeeklyScheduleState(
+      selectedTable: selectedTable ?? this.selectedTable,
+      selectedDays: selectedDays ?? this.selectedDays,
+    );
+  }
+}
+
+class WeeklyScheduleCubit extends Cubit<WeeklyScheduleState> {
+  final List<String> initialDays;
+
+  WeeklyScheduleCubit(this.initialDays, TableResponse initialTable)
+      : super(WeeklyScheduleState(
+          selectedTable: initialTable,
+          selectedDays: initialDays.toSet(),
+        ));
+
+  void updateTable(TableResponse newTable) {
+    final newDays = newTable.sessions.values
+        .expand((e) => e)
+        .map((e) => e.day.trim().toLowerCase())
+        .toSet();
+    emit(state.copyWith(selectedTable: newTable, selectedDays: newDays));
+  }
 
   void toggleSelection(String day, String allDaysLabel) {
-    final updatedSelection = Set<String>.from(state);
-    
+    final updatedDays = Set<String>.from(state.selectedDays);
     if (day == allDaysLabel) {
-      if (updatedSelection.length == days.length) {
-       // updatedSelection.clear();
-      } else {
-        updatedSelection.addAll(days);
-      }
+      updatedDays.addAll(initialDays);
+    } else if (updatedDays.contains(day) && updatedDays.length > 1) {
+      updatedDays.remove(day);
     } else {
-      if (updatedSelection.contains(day)) {
-        updatedSelection.remove(day);
-      } else {
-        updatedSelection.add(day);
-      }
-      
-      if (updatedSelection.length == days.length) {
-        updatedSelection.add(allDaysLabel);
-      } else {
-        updatedSelection.remove(allDaysLabel);
-      }
+      updatedDays.add(day);
     }
-    emit(updatedSelection);
+    emit(state.copyWith(selectedDays: updatedDays));
   }
 }

@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/features/weekly_schedule/data/models/get_table_response_model.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
-import '../../../../../core/helpers/localizationa.dart';
-import '../../../../../core/theme/app_colors.dart';
-import '../../../../../core/theme/app_text_styles.dart';
+import '../../../../core/helpers/localizationa.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_text_styles.dart';
 
 class ScheduleCard extends StatelessWidget {
   final String day;
-  final List<Map<String, String>> dayData;
+  final List<SessionResponse> dayData;
   final int currentIndex;
+  final int noOfItemInTable;
   final int lengthOfList;
   const ScheduleCard(
       {super.key,
       required this.day,
       required this.dayData,
       required this.currentIndex,
-      required this.lengthOfList});
+      required this.lengthOfList,
+      required this.noOfItemInTable});
 
   @override
   Widget build(BuildContext context) {
@@ -23,35 +27,11 @@ class ScheduleCard extends StatelessWidget {
     double rowHeight = 50.0.h;
     final double tableHeight = numberOfRows * rowHeight;
 
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(
-          topLeft: currentIndex == 0 && isArabicLocale(context)
-              ? Radius.circular(16.r)
-              : Radius.zero,
-          bottomLeft:
-              currentIndex == lengthOfList - 1 && isArabicLocale(context)
-                  ? Radius.circular(16.r)
-                  : Radius.zero,
-          topRight: currentIndex == 0 && !isArabicLocale(context)
-              ? Radius.circular(16.r)
-              : Radius.zero,
-          bottomRight:
-              currentIndex == lengthOfList - 1 && !isArabicLocale(context)
-                  ? Radius.circular(16.r)
-                  : Radius.zero,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 5,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Row(
-        children: [
-          Container(
+    return Row(
+      children: [
+        Skeleton.leaf(
+        enabled: true,
+          child: Container(
             width: 110.w,
             height: tableHeight,
             alignment: Alignment.center,
@@ -72,7 +52,7 @@ class ScheduleCard extends StatelessWidget {
                         ? Radius.circular(16.r)
                         : Radius.zero,
               ),
-              gradient:const LinearGradient(
+              gradient: const LinearGradient(
                 colors: [
                   AppColors.primaryColorlight,
                   AppColors.primaryColordark
@@ -83,12 +63,33 @@ class ScheduleCard extends StatelessWidget {
             ),
             child: Text(day, style: AppTextStyles.font14WhiteSemiBold),
           ),
-          Container(
-            color: Colors.white,
-            width: 840.w,
+        ),
+      Skeleton.leaf(
+        enabled: true,
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: currentIndex == 0 && isArabicLocale(context)
+                    ? Radius.circular(16.r)
+                    : Radius.zero,
+                bottomLeft:
+                    currentIndex == lengthOfList - 1 && isArabicLocale(context)
+                        ? Radius.circular(16.r)
+                        : Radius.zero,
+                topRight: currentIndex == 0 && !isArabicLocale(context)
+                    ? Radius.circular(16.r)
+                    : Radius.zero,
+                bottomRight:
+                    currentIndex == lengthOfList - 1 && !isArabicLocale(context)
+                        ? Radius.circular(16.r)
+                        : Radius.zero,
+              ),
+            ),
+            width: (noOfItemInTable * 140).w,
             child: Table(
-              border:const TableBorder.symmetric(
-                inside:  BorderSide(
+              border: const TableBorder.symmetric(
+                inside: BorderSide(
                   color: AppColors.gray,
                   width: 1,
                 ),
@@ -97,20 +98,21 @@ class ScheduleCard extends StatelessWidget {
                 ...dayData.map((lecture) {
                   return TableRow(
                     children: [
-                      _buildTableCell(lecture['subject'] ?? '', rowHeight),
-                      _buildTableCell(lecture['time'] ?? '', rowHeight),
-                      _buildTableCell(lecture['type'] ?? '', rowHeight),
-                      _buildTableCell(lecture['teacher'] ?? '', rowHeight),
-                      _buildTableCell(lecture['place'] ?? '', rowHeight),
-                      _buildTableCell(lecture['status'] ?? '', rowHeight),
+                      _buildTableCell(lecture.course, rowHeight),
+                      _buildTableCell(lecture.from, rowHeight),
+                      _buildTableCell(lecture.to, rowHeight),
+                      _buildTableCell("${lecture.hall.building} (${lecture.hall.hallName})", rowHeight),
+                      _buildTableCell(lecture.type, rowHeight),
+                      _buildTableCell(lecture.attendance, rowHeight),
+                      _buildTableCell(lecture.status, rowHeight),
                     ],
                   );
                 })
               ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
@@ -120,7 +122,9 @@ class ScheduleCard extends StatelessWidget {
       child: Center(
         child: Text(
           text,
-          style: AppTextStyles.font11BlackSemiBold,
+          style: AppTextStyles.font11BlackSemiBold.copyWith(
+            color: AppColors.darkblue
+          ),
           textAlign: TextAlign.center,
         ),
       ),
