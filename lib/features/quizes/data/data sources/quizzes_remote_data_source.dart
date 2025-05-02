@@ -33,7 +33,7 @@ abstract class QuizzesRemoteDataSource {
     @Path("quizId") String quizId,
   );
   @PUT('${ApiConstants.teachers}${ApiConstants.quizzes}/{quizId}')
-  Future<SimpleResponseBody> updateQuiz(
+  Future<QuizResponseModel> updateQuiz(
     @Path("quizId") String quizId,
     @Body() QuizRequestModel quizRequestModel,
   );

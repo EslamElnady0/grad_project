@@ -13,6 +13,7 @@ import 'package:grad_project/features/quizes/data/models/get_quizzes_response.da
 import 'package:grad_project/features/quizes/logic/delete_quiz_cubit/delete_quiz_cubit.dart';
 import 'package:grad_project/features/quizes/logic/get_quizzes_cubit/get_quizzes_cubit.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_details_view.dart';
+import 'package:grad_project/features/quizes/ui/views/update_quiz_view.dart';
 import 'package:grad_project/generated/l10n.dart';
 import 'package:provider/provider.dart';
 import 'package:skeletonizer/skeletonizer.dart';
@@ -62,7 +63,7 @@ class CustomQuizWidget extends StatelessWidget {
               ActivityPopUpMenu(
                 onEditPressed: () {
                   GoRouter.of(context).push(
-                    QuizDetailsView.routeName,
+                    UpdateQuizView.routeName,
                     extra: quizModel.id.toString(),
                   );
                 },

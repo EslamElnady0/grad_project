@@ -64,7 +64,7 @@ class QuizzesRepo {
     }
   }
 
-  Future<ApiResult<SimpleResponseBody>> updateQuiz(
+  Future<ApiResult<QuizResponseModel>> updateQuiz(
     String quizId,
     QuizRequestModel quizRequestModel,
   ) async {

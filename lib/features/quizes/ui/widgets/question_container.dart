@@ -7,10 +7,14 @@ import '../models/question_data.dart';
 import 'custom_radio_button.dart';
 import 'question_list_widget.dart';
 
-// Widget to display a single question with four answer options
 class QuestionContainer extends StatefulWidget {
+  final QuestionData questionData;
   final int index;
-  const QuestionContainer({super.key, required this.index});
+  const QuestionContainer({
+    super.key,
+    required this.index,
+    required this.questionData,
+  });
 
   @override
   _QuestionContainerState createState() => _QuestionContainerState();
@@ -25,9 +29,10 @@ class _QuestionContainerState extends State<QuestionContainer> {
   @override
   void initState() {
     super.initState();
-    final questionData = context.read<QuestionListCubit>().state[widget.index];
-    questionController = TextEditingController(text: questionData.question);
-    answerControllers = questionData.answers
+    // Initialize with widget.questionData
+    questionController =
+        TextEditingController(text: widget.questionData.question);
+    answerControllers = widget.questionData.answers
         .asMap()
         .entries
         .map((entry) => TextEditingController(text: entry.value))
@@ -35,7 +40,7 @@ class _QuestionContainerState extends State<QuestionContainer> {
 
     questionDebouncer = Debouncer(delay: const Duration(milliseconds: 500));
     answerDebouncers = List.generate(
-      4,
+      4, // Always initialize 4 debouncers
       (_) => Debouncer(delay: const Duration(milliseconds: 500)),
     );
 
@@ -73,96 +78,92 @@ class _QuestionContainerState extends State<QuestionContainer> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<QuestionListCubit, List<QuestionData>>(
-      builder: (context, questionDataList) {
-        final questionData = questionDataList[widget.index];
-        return Directionality(
-          textDirection: TextDirection.ltr,
-          child: Container(
-            padding: EdgeInsets.all(16.r),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(16.r),
-              boxShadow: const [
-                BoxShadow(
-                  color: Colors.black12,
-                  blurRadius: 4,
-                  offset: Offset(0, 2),
-                ),
-              ],
+    final questionData = widget.questionData;
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: Container(
+        padding: EdgeInsets.all(16.r),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16.r),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black12,
+              blurRadius: 4,
+              offset: Offset(0, 2),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 8),
-                  child: Row(
-                    children: [
-                      Text(
-                        '${widget.index + 1}- ',
-                        style: AppTextStyles.font12GraySemiBold,
-                      ),
-                      Expanded(
-                        child: TextField(
-                          textDirection: TextDirection.ltr,
-                          textAlign: TextAlign.start,
-                          controller: questionController,
-                          decoration: InputDecoration(
-                            hintText: 'Enter your question',
-                            hintStyle: AppTextStyles.font12GrayMedium,
-                            border: InputBorder.none,
-                          ),
-                          style: AppTextStyles.font12BlackMedium,
-                          maxLines: null,
-                        ),
-                      ),
-                    ],
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Row(
+                children: [
+                  Text(
+                    '${widget.index + 1}- ',
+                    style: AppTextStyles.font12GraySemiBold,
                   ),
-                ),
-                const SizedBox(height: 8),
-                ...List.generate(4, (answerIndex) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        CustomRadioButton(
-                          value: answerIndex,
-                          groupValue: questionData.selectedAnswerIndex,
-                          onChanged: (int? value) {
-                            context
-                                .read<QuestionListCubit>()
-                                .selectCorrectAnswer(widget.index, value);
-                          },
-                        ),
-                        SizedBox(width: 16.w),
-                        Text(
-                          "${['A', 'B', 'C', 'D'][answerIndex]}) ",
-                          style: AppTextStyles.font12GraySemiBold,
-                        ),
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: TextField(
-                            textDirection: TextDirection.ltr,
-                            textAlign: TextAlign.start,
-                            controller: answerControllers[answerIndex],
-                            decoration: InputDecoration(
-                              hintText: 'Enter answer ${answerIndex + 1}',
-                              hintStyle: AppTextStyles.font12GrayMedium,
-                              border: InputBorder.none,
-                            ),
-                            maxLines: null,
-                          ),
-                        ),
-                      ],
+                  Expanded(
+                    child: TextField(
+                      textDirection: TextDirection.ltr,
+                      textAlign: TextAlign.start,
+                      controller: questionController,
+                      decoration: InputDecoration(
+                        hintText: 'Enter your question',
+                        hintStyle: AppTextStyles.font12GrayMedium,
+                        border: InputBorder.none,
+                      ),
+                      style: AppTextStyles.font12BlackMedium,
+                      maxLines: null,
                     ),
-                  );
-                }),
-              ],
+                  ),
+                ],
+              ),
             ),
-          ),
-        );
-      },
+            const SizedBox(height: 8),
+            ...List.generate(4, (answerIndex) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CustomRadioButton(
+                      value: answerIndex,
+                      groupValue: questionData.selectedAnswerIndex,
+                      onChanged: (int? value) {
+                        context
+                            .read<QuestionListCubit>()
+                            .selectCorrectAnswer(widget.index, value);
+                      },
+                    ),
+                    SizedBox(width: 16.w),
+                    Text(
+                      "${['A', 'B', 'C', 'D'][answerIndex]}) ",
+                      style: AppTextStyles.font12GraySemiBold,
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: TextField(
+                        textDirection: TextDirection.ltr,
+                        textAlign: TextAlign.start,
+                        controller: answerControllers[answerIndex],
+                        decoration: InputDecoration(
+                          hintText: 'Enter answer ${answerIndex + 1}',
+                          hintStyle: AppTextStyles.font12GrayMedium,
+                          border: InputBorder.none,
+                        ),
+                        maxLines: null,
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            }),
+          ],
+        ),
+      ),
     );
   }
 }
