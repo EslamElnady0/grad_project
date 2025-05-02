@@ -29,7 +29,7 @@ class DioFactory {
   static Future<void> addDioHeaders() async {
     String? token = await SharedPrefHelper.getSecuredString(Constants.token);
     dio?.options.headers = {
-      'Content-Type': 'multipart/form-data',
+      'Content-Type': 'application/json',
       'X-Device-Type': 'mobile',
       'X-Requested-With': 'XMLHttpRequest',
       if (token != null) 'Authorization': 'Bearer $token',
