@@ -79,8 +79,8 @@ abstract class AdminRouter {
         ),
         GoRoute(
             path: MaterialsView.routeName,
-            builder: (context, state) => const MaterialsView(
-                  courseId: 0,
+            builder: (context, state) => MaterialsView(
+                  courseId: state.extra as int,
                 )),
         GoRoute(
             path: AnswersView.routeName,
