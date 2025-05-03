@@ -1,20 +1,20 @@
 import 'dart:io';
-
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/di/dependency_injection.dart';
 import 'package:grad_project/core/helpers/constants.dart';
+import 'package:grad_project/core/helpers/show_toast.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
-import 'package:grad_project/core/widgets/custom_modal_progress.dart';
 import 'package:grad_project/core/widgets/show_error_dialog.dart';
-import 'package:grad_project/core/widgets/show_success_dialog.dart';
 import 'package:grad_project/features/assignments/logic/cubits/assignment_upload_cubit.dart/assignment_upload_cubit.dart';
 import 'package:grad_project/features/assignments/presentation/views/widgets/assignment_upload_dialog.dart';
 import 'package:grad_project/features/time_schedule/data/models/activity_response_model.dart';
 import 'package:grad_project/features/time_schedule/logic/upload_assignment_solution_cubit/upload_assignment_solution_cubit.dart';
 import 'package:grad_project/features/time_schedule/logic/upload_assignment_solution_cubit/upload_assignment_solution_state.dart';
 import 'package:grad_project/generated/l10n.dart';
+
+import '../../../../assignments/data/models/assignments_solution_response_model.dart';
 
 class CustomStudentAssignmentButton extends StatelessWidget {
   final StudentAssignmentModel assignmentModel;
@@ -35,14 +35,13 @@ class CustomStudentAssignmentButton extends StatelessWidget {
       child: BlocListener<UploadAssignmentSolutionCubit,
           UploadAssignmentSolutionState>(
         listener: (context, state) {
-          state.mapOrNull(
+          state.whenOrNull(
             uploadAssignmentSolutionSuccess: (data) {
-              showSuccessDialog(
-                  context: context,
-                  message: S.of(context).assignment_uploaded_successfully);
+              data as AssignmentsSolutionResponseModel;
+              showToast(toastMsg: data.message, state: ToastStates.success);
             },
             uploadAssignmentSolutionFailure: (data) {
-              showErrorDialog(context, data.error);
+              showErrorDialog(context, data);
             },
           );
         },

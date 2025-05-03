@@ -8,17 +8,15 @@ import '../data sources/get_course_materials_remote_data_source.dart';
 class GetCourseMaterialsRepo {
   final GetCourseMaterialsRemoteDataSource remoteDataSource;
 
-
   GetCourseMaterialsRepo({
     required this.remoteDataSource,
-
   });
- Future<ApiResult<GetCourseMaterialsResponseModel>> getCourseMaterials({
+  Future<ApiResult<GetCourseMaterialsResponseModel>> getCourseMaterials({
     required int courseId,
   }) async {
     try {
       String path = "${ApiConstants.courseMaterials}/$courseId";
- 
+
       final response = await remoteDataSource.getCourseMaterials(path);
       return ApiResult.success(response);
     } catch (e) {
@@ -26,4 +24,3 @@ class GetCourseMaterialsRepo {
     }
   }
 }
-

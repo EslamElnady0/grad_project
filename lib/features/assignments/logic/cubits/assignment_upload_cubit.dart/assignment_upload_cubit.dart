@@ -1,30 +1,17 @@
 import 'dart:io';
-
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 class AssignmentUploadCubit extends Cubit<PlatformFile?> {
   AssignmentUploadCubit() : super(null);
 
-  bool _isPickingAssignment = false;
-
   void pickAssignment() async {
-    final status = await Permission.storage.request();
-    if (!status.isGranted) {
-      return;
-    }
-
-    if (_isPickingAssignment) return; // Prevent multiple simultaneous calls
-    _isPickingAssignment = true;
-
     try {
       final result = await FilePicker.platform.pickFiles(
         type: FileType.any,
         allowMultiple: false,
       );
-
 
       if (result == null) {
         return;
@@ -51,9 +38,11 @@ class AssignmentUploadCubit extends Cubit<PlatformFile?> {
       rethrow;
     }
   }
-void setAssignment(PlatformFile file) {
-  emit(file);
-}
+
+  void setAssignment(PlatformFile file) {
+    emit(file);
+  }
+
   void removeAssignment() {
     emit(null);
   }

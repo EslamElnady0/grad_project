@@ -46,10 +46,10 @@ class AssignmentUploadDialog extends StatelessWidget {
                   Material(
                     type: MaterialType.transparency,
                     child: InkWell(
-                      onTap: ()  {
+                      onTap: () {
                         debugPrint('File picker initiated');
                         try {
-                           assignmentCubit.pickAssignment();
+                          assignmentCubit.pickAssignment();
                           debugPrint('File picker completed');
                         } catch (e) {
                           debugPrint('Error in file picker: $e');

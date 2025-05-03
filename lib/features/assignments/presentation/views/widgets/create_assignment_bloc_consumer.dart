@@ -1,7 +1,5 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:grad_project/core/helpers/extensions.dart';
-import 'package:grad_project/core/helpers/show_toast.dart';
 import 'package:grad_project/core/widgets/custom_modal_progress.dart';
 import 'package:grad_project/core/widgets/show_error_dialog.dart';
 import 'package:grad_project/core/widgets/show_success_dialog.dart';
@@ -27,17 +25,17 @@ class CreateAssignmentBlocConsumer extends StatelessWidget {
             current is CreateAssignmentFailure;
       },
       listener: (context, state) {
-        state.mapOrNull(
+        state.whenOrNull(
           createAssignmentSuccess: (data) async {
             CreateAssignmentResponseModel responseData =
-                data.data as CreateAssignmentResponseModel;
+                data as CreateAssignmentResponseModel;
             showSuccessDialog(
               context: context,
-                message: responseData.message,);
-            context.pop();
+              message: responseData.message,
+            );
           },
           createAssignmentFailure: (error) {
-            showErrorDialog(context, error.error);
+            showErrorDialog(context, error);
           },
         );
       },
