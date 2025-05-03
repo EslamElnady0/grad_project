@@ -20,7 +20,7 @@ class _AnnoucementsRemoteDataSource implements AnnoucementsRemoteDataSource {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<AddAnnouncementResponseBody> addAnnoucement(
+  Future<SimpleResponseBody> addAnnoucement(
     AnnouncementRequestBody announcementRequestBody,
   ) async {
     final _extra = <String, dynamic>{};
@@ -28,7 +28,7 @@ class _AnnoucementsRemoteDataSource implements AnnoucementsRemoteDataSource {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(announcementRequestBody.toJson());
-    final _options = _setStreamType<AddAnnouncementResponseBody>(
+    final _options = _setStreamType<SimpleResponseBody>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -39,9 +39,9 @@ class _AnnoucementsRemoteDataSource implements AnnoucementsRemoteDataSource {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AddAnnouncementResponseBody _value;
+    late SimpleResponseBody _value;
     try {
-      _value = AddAnnouncementResponseBody.fromJson(_result.data!);
+      _value = SimpleResponseBody.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

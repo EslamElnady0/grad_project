@@ -16,6 +16,7 @@ import 'package:grad_project/features/profile/presentation/views/profile_view.da
 import 'package:grad_project/features/quizes/ui/views/add_quiz_view.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_details_view.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_view.dart';
+import 'package:grad_project/features/quizes/ui/views/update_quiz_view.dart';
 import 'package:grad_project/features/weekly_schedule/ui/screens/weekly_schedule_view.dart';
 import '../../features/auth/ui/views/auth_view.dart';
 import '../../features/home/ui/cubit/bottom_nav_bar_cubit.dart';
@@ -27,8 +28,7 @@ import '../../features/subjects/ui/views/materials_view.dart';
 abstract class AdminRouter {
   static GoRouter getRouter(bool isLogin) {
     return GoRouter(
-      initialLocation:
-       isLogin ? HomeView.routeName : AuthView.routeName,
+      initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
       routes: [
         GoRoute(
           path: HomeView.routeName,
@@ -111,9 +111,12 @@ abstract class AdminRouter {
         GoRoute(
             path: TeacherQuizzesView.routeName,
             builder: (context, state) => const TeacherQuizzesView()),
-            GoRoute(
+        GoRoute(
             path: TeachersAssignmentsView.routeName,
-            builder: (context, state) => const TeachersAssignmentsView())
+            builder: (context, state) => const TeachersAssignmentsView()),
+        GoRoute(
+            path: UpdateQuizView.routeName,
+            builder: (context, state) => const UpdateQuizView())
       ],
     );
   }

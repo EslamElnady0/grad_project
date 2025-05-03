@@ -35,7 +35,6 @@ class QuestionListCubit extends Cubit<List<QuestionData>> {
       ));
     emit(updatedList);
 
-    // Schedule scroll to max extent after the frame is rendered
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (scrollController.hasClients) {
         scrollController.animateTo(
@@ -45,6 +44,25 @@ class QuestionListCubit extends Cubit<List<QuestionData>> {
         );
       }
     });
+  }
+
+  void addQuestionsFromApiCall(List<Question> questions) {
+    final updatedList = <QuestionData>[];
+    for (var question in questions) {
+      // Get the API answers and pad with empty strings to ensure 4 answers
+      final apiAnswers = question.answers.map((e) => e.answer).toList();
+      final paddedAnswers = List<String>.filled(4, '');
+      for (int i = 0; i < apiAnswers.length && i < 4; i++) {
+        paddedAnswers[i] = apiAnswers[i];
+      }
+      updatedList.add(QuestionData(
+        question: question.question,
+        answers: paddedAnswers,
+        selectedAnswerIndex:
+            question.answers.indexWhere((element) => element.correct == 1),
+      ));
+    }
+    emit(updatedList);
   }
 
   void updateQuestion(int index, String question) {

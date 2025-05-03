@@ -2,9 +2,11 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/widgets/custom_white_drop_shadowed_container.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../generated/l10n.dart';
+import '../../data/models/get_quizzes_response.dart';
 import 'quiz_details_item.dart';
 
 class QuizDetailsSection extends StatelessWidget {
@@ -12,6 +14,7 @@ class QuizDetailsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final quizModel = context.read<QuizModel>();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -41,7 +44,7 @@ class QuizDetailsSection extends StatelessWidget {
             children: [
               QuizDetailsItem(
                   title: S.of(context).quizDuration,
-                  value: S.of(context).minute),
+                  value: "${quizModel.duration} ${S.of(context).minute}"),
               hGap(20),
               QuizDetailsItem(
                   title: S.of(context).numOfTimesAllowed,

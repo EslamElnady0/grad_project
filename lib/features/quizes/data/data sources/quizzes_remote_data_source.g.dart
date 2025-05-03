@@ -20,15 +20,15 @@ class _QuizzesRemoteDataSource implements QuizzesRemoteDataSource {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<CreateQuizResponseModel> createQuiz(
-    CreateQuizRequestModel createQuizRequestModel,
+  Future<QuizResponseModel> createQuiz(
+    QuizRequestModel quizRequestModel,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    _data.addAll(createQuizRequestModel.toJson());
-    final _options = _setStreamType<CreateQuizResponseModel>(
+    _data.addAll(quizRequestModel.toJson());
+    final _options = _setStreamType<QuizResponseModel>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -39,9 +39,9 @@ class _QuizzesRemoteDataSource implements QuizzesRemoteDataSource {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late CreateQuizResponseModel _value;
+    late QuizResponseModel _value;
     try {
-      _value = CreateQuizResponseModel.fromJson(_result.data!);
+      _value = QuizResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -77,6 +77,91 @@ class _QuizzesRemoteDataSource implements QuizzesRemoteDataSource {
     late GetQuizzesResponse _value;
     try {
       _value = GetQuizzesResponse.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<SimpleResponseBody> deleteQuiz(String quizId) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<SimpleResponseBody>(
+      Options(method: 'DELETE', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'teachers/quizzes/${quizId}',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SimpleResponseBody _value;
+    try {
+      _value = SimpleResponseBody.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<QuizResponseModel> updateQuiz(
+    String quizId,
+    QuizRequestModel quizRequestModel,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(quizRequestModel.toJson());
+    final _options = _setStreamType<QuizResponseModel>(
+      Options(method: 'PUT', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'teachers/quizzes/${quizId}',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late QuizResponseModel _value;
+    try {
+      _value = QuizResponseModel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<GetQuizByIdResponse> getQuizById(String quizId) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<GetQuizByIdResponse>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'teachers/quizzes/${quizId}',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late GetQuizByIdResponse _value;
+    try {
+      _value = GetQuizByIdResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

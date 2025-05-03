@@ -6,16 +6,14 @@ part of 'create_quiz_response_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-CreateQuizResponseModel _$CreateQuizResponseModelFromJson(
-        Map<String, dynamic> json) =>
-    CreateQuizResponseModel(
+QuizResponseModel _$QuizResponseModelFromJson(Map<String, dynamic> json) =>
+    QuizResponseModel(
       code: (json['code'] as num).toInt(),
       message: json['message'] as String,
       data: QuizDataModel.fromJson(json['data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$CreateQuizResponseModelToJson(
-        CreateQuizResponseModel instance) =>
+Map<String, dynamic> _$QuizResponseModelToJson(QuizResponseModel instance) =>
     <String, dynamic>{
       'code': instance.code,
       'message': instance.message,
