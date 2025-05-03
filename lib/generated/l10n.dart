@@ -2164,6 +2164,16 @@ class S {
   String get editQuiz {
     return Intl.message('Edit Quiz', name: 'editQuiz', desc: '', args: []);
   }
+
+  /// `Assignment uploaded successfully`
+  String get assignment_uploaded_successfully {
+    return Intl.message(
+      'Assignment uploaded successfully',
+      name: 'assignment_uploaded_successfully',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

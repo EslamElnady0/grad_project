@@ -28,6 +28,7 @@ import 'package:grad_project/features/quizes/ui/widgets/question_list_widget.dar
 import 'package:grad_project/features/subjects/ui/manager/subjects_filter_cubit.dart';
 import 'package:grad_project/features/time_schedule/logic/get_students_assignments_cubit/get_students_assignments_cubit.dart';
 import 'package:grad_project/features/time_schedule/logic/get_students_quizzes_cubit/get_students_quizzes_cubit.dart';
+import 'package:grad_project/features/time_schedule/logic/upload_assignment_solution_cubit/upload_assignment_solution_cubit.dart';
 import 'package:grad_project/features/weekly_schedule/data/data%20sources/get_tabel_local_data_source.dart';
 import 'package:grad_project/features/weekly_schedule/data/data%20sources/get_tabel_remote_data_source.dart';
 import 'package:grad_project/features/weekly_schedule/data/repos/get_tabel_repo.dart';
@@ -134,4 +135,5 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<AssignmentUploadCubit>(() => AssignmentUploadCubit());
   getIt.registerFactory<GetAssignmentsCubit>(() => GetAssignmentsCubit(getIt()));
   getIt.registerFactory<GetStudentsAssignmentsCubit>(() => GetStudentsAssignmentsCubit(getIt()));
+  getIt.registerFactory<UploadAssignmentSolutionCubit>(() => UploadAssignmentSolutionCubit(getIt()));
 }

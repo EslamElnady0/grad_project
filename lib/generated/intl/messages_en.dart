@@ -81,6 +81,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "assignment_title_hint_text": MessageLookupByLibrary.simpleMessage(
       "Enter a title that clearly describes the content of the assignment.",
     ),
+    "assignment_uploaded_successfully": MessageLookupByLibrary.simpleMessage(
+      "Assignment uploaded successfully",
+    ),
     "assignments": MessageLookupByLibrary.simpleMessage("Assignments"),
     "assignments_home_message": MessageLookupByLibrary.simpleMessage(
       "📝 Organize assignments, review solutions, and update grades with ease!",

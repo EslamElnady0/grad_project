@@ -75,6 +75,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "assignment_title_hint_text": MessageLookupByLibrary.simpleMessage(
       " أدخل عنوانًا يعبر عن محتوى الأسايمنت بشكل واضح.",
     ),
+    "assignment_uploaded_successfully": MessageLookupByLibrary.simpleMessage(
+      " تم رفع الأسايمنت بنجاح",
+    ),
     "assignments": MessageLookupByLibrary.simpleMessage("التكاليف"),
     "assignments_home_message": MessageLookupByLibrary.simpleMessage(
       "📝 نظم الواجبات، راجع الحلول، وقم بتحديث الدرجات بكل سهولة!",
