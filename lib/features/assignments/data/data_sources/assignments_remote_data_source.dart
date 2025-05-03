@@ -1,8 +1,10 @@
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:grad_project/core/networking/api_constants.dart';
+import 'package:grad_project/features/assignments/data/models/assignments_solution_response_model.dart';
 import 'package:grad_project/features/assignments/data/models/create_assignment_response_model.dart';
 import 'package:grad_project/features/assignments/data/models/get_assignments_response_model.dart';
+import 'package:grad_project/features/time_schedule/data/models/activity_response_model.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'assignments_remote_data_source.g.dart';
@@ -25,11 +27,20 @@ abstract class AssignmentsRemoteDataSource {
     @Part(name: 'file') File file,
   );
 
-
   @GET("${ApiConstants.teachers}${ApiConstants.assignments}")
   Future<GetAssignmentsResponseModel> getAssignments(
     @Query("course") String courseId,
     @Query("status") String assignmentStatus,
     @Query("from") String fromDate,
+  );
+
+  @GET(ApiConstants.assignments)
+  Future<StudentAssignmentResponseModel> getStudentAssignments();
+
+  @POST("${ApiConstants.assignments}/{id}/submit")
+  @MultiPart()
+  Future<AssignmentsSolutionResponseModel> uploadAssignmentSolution(
+    @Path("id") int assignmentId,
+    @Part(name: 'file') File file,
   );
 }

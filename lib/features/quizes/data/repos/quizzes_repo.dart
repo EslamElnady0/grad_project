@@ -3,7 +3,8 @@ import 'package:grad_project/core/networking/api_result.dart';
 import 'package:grad_project/features/quizes/data/models/create_quiz_request_model.dart';
 import 'package:grad_project/features/quizes/data/models/create_quiz_response_model.dart';
 import 'package:grad_project/features/quizes/data/models/get_quizzes_response.dart';
-import '../../../annoucements/data/models/add_annoucement_response_body.dart';
+import '../../../annoucements/data/models/add_annoucement_response_body.dart';import 'package:grad_project/features/time_schedule/data/models/activity_response_model.dart';
+
 import '../data sources/quizzes_local_data_source.dart';
 import '../data sources/quizzes_remote_data_source.dart';
 import '../models/get_quiz_using_id_response.dart';
@@ -72,6 +73,15 @@ class QuizzesRepo {
       final result =
           await remoteDataSource.updateQuiz(quizId, quizRequestModel);
       return ApiResult.success(result);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
+  Future<ApiResult<List<StudentQuizModel>>> getStudentQuizzes() async {
+    try {
+      final result = await remoteDataSource.getStudentQuizzes();
+      return ApiResult.success(result.data);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));
     }

@@ -1,20 +1,63 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
-import 'package:grad_project/core/theme/app_colors.dart';
-import 'package:grad_project/core/widgets/custom_drop_down_button.dart';
 import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
 import 'package:grad_project/core/widgets/custom_search_text_field.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
-import 'package:grad_project/features/time_schedule/presentation/views/widgets/task_widget.dart';
+import 'package:grad_project/features/time_schedule/data/models/activity_response_model.dart';
+import 'package:grad_project/features/time_schedule/logic/get_students_assignments_cubit/get_students_assignments_cubit.dart';
+import 'package:grad_project/features/time_schedule/logic/get_students_assignments_cubit/get_students_assignments_state.dart';
+import 'package:grad_project/features/time_schedule/logic/get_students_quizzes_cubit/get_students_quizzes_cubit.dart';
+import 'package:grad_project/features/time_schedule/logic/get_students_quizzes_cubit/get_students_quizzes_state.dart';
+import 'package:grad_project/features/time_schedule/presentation/views/widgets/custom_student_assignment_widget.dart';
+import 'package:grad_project/features/time_schedule/presentation/views/widgets/custom_student_quiz_widget.dart';
 import 'package:grad_project/generated/l10n.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
-class TimeScheduleViewBody extends StatelessWidget {
+class TimeScheduleViewBody extends StatefulWidget {
   const TimeScheduleViewBody({super.key});
 
+  @override
+  State<TimeScheduleViewBody> createState() => _TimeScheduleViewBodyState();
+}
+
+class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
+  List<ActivityModel> activities = [];
+
+  List<ActivityModel> _mergeAndSortActivities(GetStudentsQuizzesState quizState,
+      GetStudentsAssignmentsState assignmentState) {
+    if (quizState is GetStudentsQuizzesSuccess &&
+        assignmentState is GetStudentsAssignmentsSuccess) {
+      final quizzes = quizState.data;
+      final assignments = assignmentState.data;
+
+      final combined = <ActivityModel>[
+        ...quizzes,
+        ...assignments,
+      ];
+
+      setState(() {
+        activities = combined;
+        activities.sort((a, b) {
+          final aDate = DateTime.parse(a.date);
+          final bDate = DateTime.parse(b.date);
+          return aDate.compareTo(bDate);
+        });
+      });
+    }
+    return activities;
+  }
+
   final List<bool> isQuiz = const [true, false, true, true, true, false];
+
   @override
   Widget build(BuildContext context) {
+    final quizState = context.watch<GetStudentsQuizzesCubit>().state;
+    final assignmentState = context.watch<GetStudentsAssignmentsCubit>().state;
+
+    List<ActivityModel> activities =
+        _mergeAndSortActivities(quizState, assignmentState);
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: 16.w,
@@ -33,7 +76,7 @@ class TimeScheduleViewBody extends StatelessWidget {
               controller: TextEditingController(),
             ),
             vGap(15),
-            Container(
+            /*Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
                   boxShadow: const [
@@ -59,22 +102,54 @@ class TimeScheduleViewBody extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
+            ),*/
             vGap(15),
-            ListView.separated(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) {
-                return TaskWidget(isQuiz: isQuiz[index]);
+            quizState.maybeWhen(
+              orElse: () => _buildLoadingState(),
+              getStudentsQuizzesSuccess: (data) {
+                return assignmentState.maybeWhen(
+                  orElse: () => _buildLoadingState(),
+                  getStudentsAssignmentsSuccess: (data) {
+                    return _buildSuccessState(activities);
+                  },
+                );
               },
-              separatorBuilder: (context, index) {
-                return vGap(15);
-              },
-              itemCount: isQuiz.length,
-            )
+            ),
           ],
         ),
       ),
     );
   }
+}
+
+Widget _buildSuccessState(List<ActivityModel> data) {
+  return ListView.separated(
+    shrinkWrap: true,
+    physics: const NeverScrollableScrollPhysics(),
+    padding: EdgeInsets.only(top: 10.h),
+    itemBuilder: (context, index) {
+      return data[index] is StudentQuizModel
+          ? CustomStudentQuizWidget(quizModel: data[index] as StudentQuizModel)
+          : CustomStudentAssignmentWidget(
+              assignmentModel: data[index] as StudentAssignmentModel);
+    },
+    separatorBuilder: (context, index) => vGap(12),
+    itemCount: data.length,
+  );
+}
+
+Widget _buildLoadingState() {
+  return Skeletonizer(
+    enabled: true,
+    child: ListView.separated(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      padding: EdgeInsets.only(top: 10.h),
+      itemBuilder: (context, index) {
+        return const CustomStudentQuizWidgetSkeleton();
+      },
+      separatorBuilder: (context, index) => vGap(12),
+      itemCount: 5,
+    ),
+  );
 }

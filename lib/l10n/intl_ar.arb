@@ -269,5 +269,6 @@
   "from": "من",
   "to": "إلى",
   "scheduled": "مجدول",
-  "editQuiz": "تعديل كويز"
+  "editQuiz": "تعديل كويز",
+  "assignment_uploaded_successfully":" تم رفع الأسايمنت بنجاح"
 }

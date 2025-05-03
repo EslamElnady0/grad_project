@@ -269,5 +269,6 @@
   "from": "From",
   "to": "To",
   "scheduled": "Scheduled",
-  "editQuiz": "Edit Quiz"
+  "editQuiz": "Edit Quiz",
+  "assignment_uploaded_successfully": "Assignment uploaded successfully"
 }

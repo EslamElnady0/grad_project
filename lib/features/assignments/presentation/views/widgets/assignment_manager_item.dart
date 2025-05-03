@@ -79,7 +79,7 @@ class AssignmentManagerItem extends StatelessWidget {
                   onTap: () {
                     GoRouter.of(context).push(TeachersAssignmentsView.routeName,
                         extra: GetAssignmentsRequestQueryParamsModel(
-                            courseId: "",
+                            courseId: courseData.id.toString(),
                             assignmentStatus: "scheduled",
                             fromDate: ""));
                   },

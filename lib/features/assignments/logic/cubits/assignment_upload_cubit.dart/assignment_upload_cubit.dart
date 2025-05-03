@@ -13,35 +13,24 @@ class AssignmentUploadCubit extends Cubit<PlatformFile?> {
   void pickAssignment() async {
     final status = await Permission.storage.request();
     if (!status.isGranted) {
-      print('Storage permission denied');
       return;
     }
 
     if (_isPickingAssignment) return; // Prevent multiple simultaneous calls
     _isPickingAssignment = true;
 
-    debugPrint("1. Starting file picker...");
     try {
       final result = await FilePicker.platform.pickFiles(
         type: FileType.any,
         allowMultiple: false,
       );
 
-      debugPrint("2. File picker returned: ${result != null}");
 
       if (result == null) {
-        debugPrint("3. User cancelled file selection");
         return;
       }
 
       final file = result.files.first;
-      debugPrint("""
-    4. Selected File Details:
-       Name: ${file.name}
-       Size: ${file.size} bytes
-       Path: ${file.path}
-       Extension: ${file.extension}
-    """);
 
       if (file.path == null) {
         debugPrint("5. WARNING: File path is null!");
