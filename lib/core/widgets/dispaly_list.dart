@@ -59,10 +59,17 @@ class DisplayList extends StatelessWidget {
                 children: [
                   BlocBuilder<ListCubit, String>(
                     builder: (context, selectedValue) {
-                      return Text(selectedValue,
-                          style: AppTextStyles.font12GraySemiBold.copyWith(
-                            color: AppColors.darkblue
-                          ));
+                      return Flexible(
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(selectedValue,
+                           maxLines: 1,
+                              style: AppTextStyles.font12GraySemiBold.copyWith(
+                                color: AppColors.darkblue
+                          , 
+                              )),
+                        ),
+                      );
                     },
                   ),
                   hGap(40),
