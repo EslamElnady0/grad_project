@@ -14,8 +14,8 @@ abstract class GetCourseMaterialsRemoteDataSource {
       {String baseUrl,
       ParseErrorLogger? errorLogger}) = _GetCourseMaterialsRemoteDataSource;
 
-  @GET("${ApiConstants.courseMaterials}/{id}")
+   @GET('{path}')
   Future<GetCourseMaterialsResponseModel> getCourseMaterials(
-    @Path("id") int courseId,
+    @Path('path') String path, 
   );
 }

@@ -6,7 +6,7 @@ import '../widgets/subjects_view_body.dart';
 
 class SubjectsView extends StatelessWidget {
   const SubjectsView({super.key});
- 
+static const String routeName = "/subjectsView";
   @override
   Widget build(BuildContext context) {
     final allCoursesCubit = getIt<AllCoursesCubit>()..get();

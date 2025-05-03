@@ -26,43 +26,48 @@ class AddLectureViewBody extends StatelessWidget {
           },
         );
       },
-   builder: (context, state) {
-  double progress = 0;
-  if (state is AddMaterialsProgress) {
-    progress = state.progress;
-  }
+      builder: (context, state) {
+        double progress = 0;
+        if (state is AddMaterialsProgress) {
+          progress = state.progress;
+        }
 
-  return Stack(
-    children: [
-      CustomModalProgress(
-        isLoading: state is AddMaterialsLoading,
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CustomAppBar(title: S.of(context).addStudyContent),
-              vGap(8),
-              TitleTextWidget(text: S.of(context).addStudyContentSubtitle),
-              vGap(16),
-              LectureFormContent(id: id),
-              vGap(16),
-            ],
-          ),
-        ),
-      ),
-     if (state is AddMaterialsProgress)
-        LinearProgressIndicator(
-          value: progress,
-          minHeight: 8,
-          backgroundColor: Colors.grey[300],
-          
-          color: AppColors.primaryColordark,
-        ),
-    ],
-  );
-},
-
+        return Stack(
+          children: [
+            AbsorbPointer(
+              absorbing: state is AddMaterialsProgress,
+              child: Opacity(
+                opacity: state is AddMaterialsProgress ? 0.2 : 1.0,
+                child: CustomModalProgress(
+                  isLoading: state is AddMaterialsLoading,
+                  child: SingleChildScrollView(
+                    padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CustomAppBar(title: S.of(context).addStudyContent),
+                        vGap(8),
+                        TitleTextWidget(
+                            text: S.of(context).addStudyContentSubtitle),
+                        vGap(16),
+                        LectureFormContent(id: id),
+                        vGap(16),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            if (state is AddMaterialsProgress)
+              LinearProgressIndicator(
+                value: progress,
+                minHeight: 12,
+                backgroundColor: Colors.grey[300],
+                color: AppColors.primaryColordark,
+              ),
+          ],
+        );
+      },
     );
   }
 }

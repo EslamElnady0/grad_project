@@ -26,7 +26,7 @@ class _GetCourseMaterialsRemoteDataSource
 
   @override
   Future<GetCourseMaterialsResponseModel> getCourseMaterials(
-    int courseId,
+    String path,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -36,7 +36,7 @@ class _GetCourseMaterialsRemoteDataSource
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'course-materials/${courseId}',
+            '${path}',
             queryParameters: queryParameters,
             data: _data,
           )
