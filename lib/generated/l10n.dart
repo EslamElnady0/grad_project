@@ -2214,6 +2214,26 @@ class S {
   String get evaluation {
     return Intl.message('Evaluate', name: 'evaluation', desc: '', args: []);
   }
+
+  /// `Number of students who submitted the assignment`
+  String get number_of_students_who_handed_assignment {
+    return Intl.message(
+      'Number of students who submitted the assignment',
+      name: 'number_of_students_who_handed_assignment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Average student scores in this assignment`
+  String get Average_student_scores_in_this_assignment {
+    return Intl.message(
+      'Average student scores in this assignment',
+      name: 'Average_student_scores_in_this_assignment',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
+import 'package:grad_project/features/assignments/presentation/views/widgets/assignment_analysis_widget.dart';
 import 'package:grad_project/features/assignments/presentation/views/widgets/evaluation_row.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
 import 'package:grad_project/generated/l10n.dart';
@@ -25,11 +26,12 @@ class AssignmentResultsViewBody extends StatelessWidget {
               text: S.of(context).assignment_correction_welcome_message,
             ),
             vGap(30),
-            const EvaluationRow()
+            const EvaluationRow(),
+            vGap(10),
+            const AssignmentAnalysisWidget()
           ],
         ),
       ),
     );
   }
 }
-

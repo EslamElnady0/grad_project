@@ -26,6 +26,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "Answers_welcome_message": MessageLookupByLibrary.simpleMessage(
       "هنا يمكنك استعراض جميع الإجابات المقدمة للسؤال. اقرأ آراء زملائك واقتراحاتهم!",
     ),
+    "Average_student_scores_in_this_assignment":
+        MessageLookupByLibrary.simpleMessage(
+          "Average student scores in this assignment",
+        ),
     "Group": MessageLookupByLibrary.simpleMessage("Group"),
     "Overall_Grade": MessageLookupByLibrary.simpleMessage("Overall Grade"),
     "Section": MessageLookupByLibrary.simpleMessage("Section"),
@@ -275,6 +279,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
       "Allowed Attempts",
     ),
+    "number_of_students_who_handed_assignment":
+        MessageLookupByLibrary.simpleMessage(
+          "Number of students who submitted the assignment",
+        ),
     "number_of_subjects": MessageLookupByLibrary.simpleMessage(
       "Subjects count",
     ),

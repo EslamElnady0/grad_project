@@ -275,5 +275,7 @@
   "select_all_to_give_degree":"تحديد الكل وإعطاء درجة",
   "enter_student_name_or_code":"ادخل اسم الطالب أو الكود",
   "show": "عرض",
-  "evaluation": "تقييم"
+  "evaluation": "تقييم",
+  "number_of_students_who_handed_assignment": "عدد الطلاب الذين سلموا الأسايمنت",
+  "Average_student_scores_in_this_assignment": "متوسط درجات الطلاب في هذا الأسايمنت"
 }
