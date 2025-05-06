@@ -2174,6 +2174,46 @@ class S {
       args: [],
     );
   }
+
+  /// `📑⚡ Review submitted assignments, evaluate answers, and view grades with the ability to send comments to each student.`
+  String get assignment_correction_welcome_message {
+    return Intl.message(
+      '📑⚡ Review submitted assignments, evaluate answers, and view grades with the ability to send comments to each student.',
+      name: 'assignment_correction_welcome_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select all and give a score`
+  String get select_all_to_give_degree {
+    return Intl.message(
+      'Select all and give a score',
+      name: 'select_all_to_give_degree',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter student name or code`
+  String get enter_student_name_or_code {
+    return Intl.message(
+      'Enter student name or code',
+      name: 'enter_student_name_or_code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show`
+  String get show {
+    return Intl.message('Show', name: 'show', desc: '', args: []);
+  }
+
+  /// `Evaluate`
+  String get evaluation {
+    return Intl.message('Evaluate', name: 'evaluation', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

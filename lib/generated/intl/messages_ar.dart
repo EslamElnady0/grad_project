@@ -61,6 +61,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "answer": MessageLookupByLibrary.simpleMessage("إجابة"),
     "app_title": MessageLookupByLibrary.simpleMessage("التعليم الالكتروني"),
     "assignment": MessageLookupByLibrary.simpleMessage("المهمة"),
+    "assignment_correction_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "📑⚡ راجع الأسايمنتات المرسلة، قم بتقييم الإجابات، واعرض الدرجات مع إمكانية إرسال التعليقات لكل طالب.",
+    ),
     "assignment_degree": MessageLookupByLibrary.simpleMessage("درجة الأسايمنت"),
     "assignment_description": MessageLookupByLibrary.simpleMessage(
       "وصف الأسايمنت",
@@ -162,6 +165,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_code": MessageLookupByLibrary.simpleMessage(
       "أدخل الكود المكون من 6 أرقام اللي اتبعت ليك.",
     ),
+    "enter_student_name_or_code": MessageLookupByLibrary.simpleMessage(
+      "ادخل اسم الطالب أو الكود",
+    ),
+    "evaluation": MessageLookupByLibrary.simpleMessage("تقييم"),
     "field_is_required": MessageLookupByLibrary.simpleMessage(
       "هذا الحقل مطلوب",
     ),
@@ -390,6 +397,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "selectDate": MessageLookupByLibrary.simpleMessage("اختر تاريخ"),
     "selectTime": MessageLookupByLibrary.simpleMessage("اختر وقت"),
+    "select_all_to_give_degree": MessageLookupByLibrary.simpleMessage(
+      "تحديد الكل وإعطاء درجة",
+    ),
     "select_subjects": MessageLookupByLibrary.simpleMessage(
       "📚 يرجى اختيار المواد التي تود الاطلاع على منشوراتها وآخر مستجداتها!",
     ),
@@ -397,6 +407,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "semester_2": MessageLookupByLibrary.simpleMessage("الفصل الدراسي الثاني"),
     "sent": MessageLookupByLibrary.simpleMessage("تم الإرسال"),
     "setTime": MessageLookupByLibrary.simpleMessage("تحديد الوقت"),
+    "show": MessageLookupByLibrary.simpleMessage("عرض"),
     "showResultsAfterSubmit": MessageLookupByLibrary.simpleMessage(
       "عرض النتائج وإتاحة الإجابة لهم بعد الإنتهاء من الإختبار",
     ),

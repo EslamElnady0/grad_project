@@ -63,6 +63,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "answer": MessageLookupByLibrary.simpleMessage("Answer"),
     "app_title": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "assignment": MessageLookupByLibrary.simpleMessage("Assignment"),
+    "assignment_correction_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "📑⚡ Review submitted assignments, evaluate answers, and view grades with the ability to send comments to each student.",
+    ),
     "assignment_degree": MessageLookupByLibrary.simpleMessage(
       "Assignment Degree",
     ),
@@ -172,6 +175,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_code": MessageLookupByLibrary.simpleMessage(
       "Enter the 6-digit code that was sent to you.",
     ),
+    "enter_student_name_or_code": MessageLookupByLibrary.simpleMessage(
+      "Enter student name or code",
+    ),
+    "evaluation": MessageLookupByLibrary.simpleMessage("Evaluate"),
     "field_is_required": MessageLookupByLibrary.simpleMessage(
       "This field is required",
     ),
@@ -411,6 +418,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "selectDate": MessageLookupByLibrary.simpleMessage("Select Date"),
     "selectTime": MessageLookupByLibrary.simpleMessage("Select Time"),
+    "select_all_to_give_degree": MessageLookupByLibrary.simpleMessage(
+      "Select all and give a score",
+    ),
     "select_subjects": MessageLookupByLibrary.simpleMessage(
       "📚 Please select the subjects you want to check for posts and updates!",
     ),
@@ -418,6 +428,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "semester_2": MessageLookupByLibrary.simpleMessage("Second Semester"),
     "sent": MessageLookupByLibrary.simpleMessage("sent"),
     "setTime": MessageLookupByLibrary.simpleMessage("Set Time"),
+    "show": MessageLookupByLibrary.simpleMessage("Show"),
     "showResultsAfterSubmit": MessageLookupByLibrary.simpleMessage(
       "Show results and allow viewing answers after completing the quiz",
     ),

@@ -4,7 +4,7 @@ import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/features/assignments/data/models/get_assignments_response_model.dart';
-import 'package:grad_project/features/assignments/presentation/views/assignment_correction_view.dart';
+import 'package:grad_project/features/assignments/presentation/views/assignment_results_view.dart';
 import 'package:grad_project/generated/l10n.dart';
 
 class CustomAssignmentButton extends StatelessWidget {
@@ -22,7 +22,7 @@ class CustomAssignmentButton extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         isDone
-            ? GoRouter.of(context).push(AssignmentCorrectionView.routeName)
+            ? GoRouter.of(context).push(AssignmentResultsView.routeName)
             : ();
       },
       child: Container(

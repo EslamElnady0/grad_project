@@ -270,5 +270,10 @@
   "to": "To",
   "scheduled": "Scheduled",
   "editQuiz": "Edit Quiz",
-  "assignment_uploaded_successfully": "Assignment uploaded successfully"
+  "assignment_uploaded_successfully": "Assignment uploaded successfully",
+  "assignment_correction_welcome_message":"📑⚡ Review submitted assignments, evaluate answers, and view grades with the ability to send comments to each student.",
+  "select_all_to_give_degree":"Select all and give a score",
+  "enter_student_name_or_code":"Enter student name or code",
+  "show": "Show",
+  "evaluation":"Evaluate"
 }
