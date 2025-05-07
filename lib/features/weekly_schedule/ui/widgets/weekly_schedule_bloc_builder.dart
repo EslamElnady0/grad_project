@@ -29,6 +29,9 @@ class WeeklyScheduleBlocBuilder extends StatelessWidget {
 ;
   }
 
+
+
+
   List<TableResponse> get fakeData {
     return [
           TableResponse(
