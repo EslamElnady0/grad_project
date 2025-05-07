@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grad_project/core/widgets/show_error_dialog.dart';
 import 'package:grad_project/features/weekly_schedule/data/models/get_table_response_model.dart';
 import 'package:grad_project/features/weekly_schedule/logic/get_tabel_cubit/get_tabel_cubit.dart';
 import 'package:grad_project/features/weekly_schedule/ui/widgets/weekly_schedule_view_body.dart';
@@ -22,11 +23,20 @@ class WeeklyScheduleBlocBuilder extends StatelessWidget {
       getTabelSuccess: (data) => WeeklyScheduleViewBody(
         tableResponseList: data.data, 
       ),
-      getTabelFailure: (error) => Center(child: Text(error)),
+    getTabelFailure: (error) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        showErrorDialog(
+         context,
+       error,
+      doublePop: true,
+        );
+       
+      });
+      return const SizedBox.shrink();
+    },
     );
   },
-)
-;
+);
   }
 
 
