@@ -2189,6 +2189,86 @@ class S {
       args: [],
     );
   }
+
+  /// `📑⚡ Review submitted assignments, evaluate answers, and view grades with the ability to send comments to each student.`
+  String get assignment_correction_welcome_message {
+    return Intl.message(
+      '📑⚡ Review submitted assignments, evaluate answers, and view grades with the ability to send comments to each student.',
+      name: 'assignment_correction_welcome_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select all and give a score`
+  String get select_all_to_give_degree {
+    return Intl.message(
+      'Select all and give a score',
+      name: 'select_all_to_give_degree',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter student name or code`
+  String get enter_student_name_or_code {
+    return Intl.message(
+      'Enter student name or code',
+      name: 'enter_student_name_or_code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show`
+  String get show {
+    return Intl.message('Show', name: 'show', desc: '', args: []);
+  }
+
+  /// `Evaluate`
+  String get evaluation {
+    return Intl.message('Evaluate', name: 'evaluation', desc: '', args: []);
+  }
+
+  /// `Number of students who submitted the assignment`
+  String get number_of_students_who_handed_assignment {
+    return Intl.message(
+      'Number of students who submitted the assignment',
+      name: 'number_of_students_who_handed_assignment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Average student scores in this assignment`
+  String get Average_student_scores_in_this_assignment {
+    return Intl.message(
+      'Average student scores in this assignment',
+      name: 'Average_student_scores_in_this_assignment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Student Grade`
+  String get student_grade {
+    return Intl.message(
+      'Student Grade',
+      name: 'student_grade',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Grade`
+  String get add_grade {
+    return Intl.message('Add Grade', name: 'add_grade', desc: '', args: []);
+  }
+
+  /// `Degree`
+  String get the_degree {
+    return Intl.message('Degree', name: 'the_degree', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

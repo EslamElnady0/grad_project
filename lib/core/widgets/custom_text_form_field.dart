@@ -17,6 +17,7 @@ class CustomTextFormField extends StatefulWidget {
     this.maxLines,
     this.alignLabelWithHint,
     this.fillColor,
+    this.contentPadding,
   });
 
   final String hintText;
@@ -27,6 +28,7 @@ class CustomTextFormField extends StatefulWidget {
   final Color? fillColor;
   final bool? alignLabelWithHint;
   final void Function(String?)? onSaved;
+  final EdgeInsetsGeometry? contentPadding;
 
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
@@ -75,7 +77,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         enabledBorder: buildBorder(),
         focusedBorder: buildBorder(),
         suffixIcon: _buildPrefixIcon(),
-        contentPadding:
+        contentPadding: widget.contentPadding ??
             const EdgeInsets.symmetric(vertical: 16, horizontal: 15),
       ),
     );

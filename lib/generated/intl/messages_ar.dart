@@ -26,6 +26,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "Answers_welcome_message": MessageLookupByLibrary.simpleMessage(
       "هنا يمكنك استعراض جميع الإجابات المقدمة للسؤال. اقرأ آراء زملائك واقتراحاتهم!",
     ),
+    "Average_student_scores_in_this_assignment":
+        MessageLookupByLibrary.simpleMessage(
+          "متوسط درجات الطلاب في هذا الأسايمنت",
+        ),
     "Group": MessageLookupByLibrary.simpleMessage("مجموعة"),
     "Overall_Grade": MessageLookupByLibrary.simpleMessage("تقدير تراكمي"),
     "Section": MessageLookupByLibrary.simpleMessage("سكشن"),
@@ -48,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "add_courses": MessageLookupByLibrary.simpleMessage("إضافة مواد دراسية"),
     "add_file": MessageLookupByLibrary.simpleMessage("إضافة ملف"),
+    "add_grade": MessageLookupByLibrary.simpleMessage("إضافة تقييم"),
     "add_new": MessageLookupByLibrary.simpleMessage(" إضافة خبر جديد"),
     "add_new_news": MessageLookupByLibrary.simpleMessage(
       "🆕 أضف خبرًا جديدًا لإبقاء طلابك على اطلاع دائم بكل التحديثات والمستجدات",
@@ -60,7 +65,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "announcements": MessageLookupByLibrary.simpleMessage("الأخبار المعلنه"),
     "answer": MessageLookupByLibrary.simpleMessage("إجابة"),
     "app_title": MessageLookupByLibrary.simpleMessage("التعليم الالكتروني"),
-    "assignment": MessageLookupByLibrary.simpleMessage("المهمة"),
+    "assignment": MessageLookupByLibrary.simpleMessage("الاسايمنت"),
+    "assignment_correction_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "📑⚡ راجع الأسايمنتات المرسلة، قم بتقييم الإجابات، واعرض الدرجات مع إمكانية إرسال التعليقات لكل طالب.",
+    ),
     "assignment_degree": MessageLookupByLibrary.simpleMessage("درجة الأسايمنت"),
     "assignment_description": MessageLookupByLibrary.simpleMessage(
       "وصف الأسايمنت",
@@ -162,6 +170,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_code": MessageLookupByLibrary.simpleMessage(
       "أدخل الكود المكون من 6 أرقام اللي اتبعت ليك.",
     ),
+    "enter_student_name_or_code": MessageLookupByLibrary.simpleMessage(
+      "ادخل اسم الطالب أو الكود",
+    ),
+    "evaluation": MessageLookupByLibrary.simpleMessage("تقييم"),
     "field_is_required": MessageLookupByLibrary.simpleMessage(
       "هذا الحقل مطلوب",
     ),
@@ -254,6 +266,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
       "المرات المسموح بها",
     ),
+    "number_of_students_who_handed_assignment":
+        MessageLookupByLibrary.simpleMessage(
+          "عدد الطلاب الذين سلموا الأسايمنت",
+        ),
     "number_of_subjects": MessageLookupByLibrary.simpleMessage("عدد المواد"),
     "ok": MessageLookupByLibrary.simpleMessage("حسناً"),
     "onMap": MessageLookupByLibrary.simpleMessage("على الخريطة"),
@@ -391,6 +407,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "selectDate": MessageLookupByLibrary.simpleMessage("اختر تاريخ"),
     "selectTime": MessageLookupByLibrary.simpleMessage("اختر وقت"),
+    "select_all_to_give_degree": MessageLookupByLibrary.simpleMessage(
+      "تحديد الكل وإعطاء درجة",
+    ),
     "select_subjects": MessageLookupByLibrary.simpleMessage(
       "📚 يرجى اختيار المواد التي تود الاطلاع على منشوراتها وآخر مستجداتها!",
     ),
@@ -399,6 +418,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sent": MessageLookupByLibrary.simpleMessage("تم الإرسال"),
     "setTime": MessageLookupByLibrary.simpleMessage("تحديد الوقت"),
     "showDirections": MessageLookupByLibrary.simpleMessage("عرض الاتجاهات"),
+    "show": MessageLookupByLibrary.simpleMessage("عرض"),
     "showResultsAfterSubmit": MessageLookupByLibrary.simpleMessage(
       "عرض النتائج وإتاحة الإجابة لهم بعد الإنتهاء من الإختبار",
     ),
@@ -416,6 +436,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "stayConfident": MessageLookupByLibrary.simpleMessage(
       "تنفّس بعمق وثق بقدراتك!",
     ),
+    "student_grade": MessageLookupByLibrary.simpleMessage("درجة الطالب"),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage("طالب نشط الآن"),
     "students_count": MessageLookupByLibrary.simpleMessage("عدد الطلاب:"),
     "students_management": MessageLookupByLibrary.simpleMessage("إدارة الطلاب"),
@@ -434,6 +455,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "text": MessageLookupByLibrary.simpleMessage("نصوص"),
     "theSearch": MessageLookupByLibrary.simpleMessage("البحث.."),
+    "the_degree": MessageLookupByLibrary.simpleMessage("الدرجة"),
     "thursday": MessageLookupByLibrary.simpleMessage("الخميس"),
     "time": MessageLookupByLibrary.simpleMessage("الوقت"),
     "timeManagement": MessageLookupByLibrary.simpleMessage(

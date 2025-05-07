@@ -150,6 +150,10 @@ class Assets {
   /// assets/images/svgs/dashboard_icon.svg
   static const String imagesSvgsDashboardIcon = "assets/images/svgs/dashboard_icon.svg";
 
+  /// Assets for imagesSvgsDecreaseIcon
+  /// assets/images/svgs/decrease_icon.svg
+  static const String imagesSvgsDecreaseIcon = "assets/images/svgs/decrease_icon.svg";
+
   /// Assets for imagesSvgsDetailedMenuIcon
   /// assets/images/svgs/detailed_menu_icon.svg
   static const String imagesSvgsDetailedMenuIcon = "assets/images/svgs/detailed_menu_icon.svg";
@@ -185,6 +189,10 @@ class Assets {
   /// Assets for imagesSvgsGradHat
   /// assets/images/svgs/grad_hat.svg
   static const String imagesSvgsGradHat = "assets/images/svgs/grad_hat.svg";
+
+  /// Assets for imagesSvgsIncreaseIcon
+  /// assets/images/svgs/increase_icon.svg
+  static const String imagesSvgsIncreaseIcon = "assets/images/svgs/increase_icon.svg";
 
   /// Assets for imagesSvgsIosArrowIcon
   /// assets/images/svgs/ios_arrow_icon.svg
@@ -229,6 +237,10 @@ class Assets {
   /// Assets for imagesSvgsOpenIcon
   /// assets/images/svgs/open_icon.svg
   static const String imagesSvgsOpenIcon = "assets/images/svgs/open_icon.svg";
+
+  /// Assets for imagesSvgsOpenInNew
+  /// assets/images/svgs/open_in_new.svg
+  static const String imagesSvgsOpenInNew = "assets/images/svgs/open_in_new.svg";
 
   /// Assets for imagesSvgsPaperIcon
   /// assets/images/svgs/paper_icon.svg
