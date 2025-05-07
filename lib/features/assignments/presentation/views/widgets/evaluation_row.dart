@@ -34,30 +34,35 @@ class EvaluationRow extends StatelessWidget {
             S.of(context).select_all_to_give_degree,
             style: AppTextStyles.font14DarkerBlueSemiBold,
           ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 14, vertical: 11),
-            decoration: BoxDecoration(
-              color: AppColors.backGround,
-              borderRadius: BorderRadius.circular(14),
-            ),
-            child: Row(
-              children: [
-                Text(
-                  "5",
-                  style: AppTextStyles.font14DarkBlueMedium,
-                ),
-                hGap(10),
-                Column(
-                  children: [
-                    SvgPicture.asset(Assets.imagesSvgsIncreaseIcon),
-                    vGap(12),
-                    SvgPicture.asset(Assets.imagesSvgsDecreaseIcon),
-                  ],
-                )
-              ],
+          hGap(5),
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 14, vertical: 7),
+              decoration: BoxDecoration(
+                color: AppColors.backGround,
+                borderRadius: BorderRadius.circular(14),
+              ),
+              child: Row(
+                children: [
+                  Text(
+                    "5",
+                    style: AppTextStyles.font14DarkBlueMedium,
+                  ),
+                  hGap(10),
+                  Column(
+                    children: [
+                      SvgPicture.asset(Assets.imagesSvgsIncreaseIcon),
+                      vGap(12),
+                      SvgPicture.asset(Assets.imagesSvgsDecreaseIcon),
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
+          hGap(5),
           Container(
+            height: 40,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(14),
                 gradient: Constants.secondaryGrad),
@@ -65,7 +70,7 @@ class EvaluationRow extends StatelessWidget {
               onPressed: () {},
               child: Text(
                 S.of(context).evaluation,
-                style: AppTextStyles.font14WhiteSemiBold,
+                style: AppTextStyles.font12WhiteSemiBold,
               ),
             ),
           )

@@ -70,8 +70,9 @@ class _AssignmentAnalysisWidgetState extends State<AssignmentAnalysisWidget> {
                 height: 10,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color:
-                      index == i ? AppColors.primaryColordark : AppColors.gray,
+                  color: index == i
+                      ? AppColors.primaryColordark
+                      : AppColors.lightGrayText,
                 ),
               ),
             ),
