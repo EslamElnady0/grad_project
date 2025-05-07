@@ -33,7 +33,8 @@ class _AssignmentAnalysisWidgetState extends State<AssignmentAnalysisWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Stack(
+      clipBehavior: Clip.none,
       children: [
         GestureDetector(
           onHorizontalDragEnd: _onSwipe,
@@ -55,18 +56,23 @@ class _AssignmentAnalysisWidgetState extends State<AssignmentAnalysisWidget> {
           ),
         ),
         vGap(1),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: List.generate(
-            2,
-            (i) => Container(
-              margin: EdgeInsets.symmetric(horizontal: 4),
-              width: 10,
-              height: 10,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color:
-                    index == i ? AppColors.primaryColordark : AppColors.white,
+        Positioned(
+          left: 0,
+          bottom: -5,
+          right: 0,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: List.generate(
+              2,
+              (i) => Container(
+                margin: const EdgeInsets.symmetric(horizontal: 2),
+                width: 10,
+                height: 10,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color:
+                      index == i ? AppColors.primaryColordark : AppColors.gray,
+                ),
               ),
             ),
           ),
