@@ -2175,6 +2175,21 @@ class S {
     );
   }
 
+  /// `On Map`
+  String get onMap {
+    return Intl.message('On Map', name: 'onMap', desc: '', args: []);
+  }
+
+  /// `Show Directions`
+  String get showDirections {
+    return Intl.message(
+      'Show Directions',
+      name: 'showDirections',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `📑⚡ Review submitted assignments, evaluate answers, and view grades with the ability to send comments to each student.`
   String get assignment_correction_welcome_message {
     return Intl.message(

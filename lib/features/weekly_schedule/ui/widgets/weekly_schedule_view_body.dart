@@ -12,13 +12,20 @@ import '../../../../core/widgets/custom_app_bar.dart';
 import '../../../../generated/l10n.dart';
 import '../../../home/ui/widgets/title_text_widget.dart';
 import '../cubit/weekly_scheduke_cubit.dart';
+
 class WeeklyScheduleViewBody extends StatelessWidget {
   const WeeklyScheduleViewBody({super.key, required this.tableResponseList});
-  final List<TableResponse> tableResponseList;
+  final List<TableResponse>? tableResponseList;
 
   @override
   Widget build(BuildContext context) {
-    final initialTable = tableResponseList.first;
+    final initialTable = (tableResponseList?.isNotEmpty ?? false)
+        ? tableResponseList!.first
+        : TableResponse(
+            department: 'No Data',
+            departmentId: -1,
+            semester: -1,
+            sessions: {});
     final initialDays = initialTable.sessions.values
         .expand((e) => e)
         .map((e) => e.day.trim().toLowerCase())
@@ -30,14 +37,11 @@ class WeeklyScheduleViewBody extends StatelessWidget {
       child: BlocBuilder<WeeklyScheduleCubit, WeeklyScheduleState>(
         builder: (context, state) {
           final cubit = context.read<WeeklyScheduleCubit>();
-
-          /// هنا بنبني Map بحيث المفتاح `department (semester)` والقيمة TableResponse
           final departmentTableMap = {
-            for (var e in tableResponseList)
+            for (var e in tableResponseList ?? [])
               "${e.department} (${e.semester})": e
           };
 
-          /// نحصل على اللائحة الجاهزة للعرض
           final combinedList = departmentTableMap.keys.toList();
 
           return CustomScrollView(
