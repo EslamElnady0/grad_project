@@ -2234,6 +2234,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Student Grade`
+  String get student_grade {
+    return Intl.message(
+      'Student Grade',
+      name: 'student_grade',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Grade`
+  String get add_grade {
+    return Intl.message('Add Grade', name: 'add_grade', desc: '', args: []);
+  }
+
+  /// `Degree`
+  String get the_degree {
+    return Intl.message('Degree', name: 'the_degree', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -121,7 +121,7 @@
   "download": "تحميل",
   "lectures": "المحاضرات",
   "sections": "سكشن",
-  "assignment": "المهمة",
+  "assignment": "الاسايمنت",
   "all": "الكل",
   "Answers_welcome_message": "هنا يمكنك استعراض جميع الإجابات المقدمة للسؤال. اقرأ آراء زملائك واقتراحاتهم!",
   "Answers": "الإجابات",
@@ -277,5 +277,8 @@
   "show": "عرض",
   "evaluation": "تقييم",
   "number_of_students_who_handed_assignment": "عدد الطلاب الذين سلموا الأسايمنت",
-  "Average_student_scores_in_this_assignment": "متوسط درجات الطلاب في هذا الأسايمنت"
+  "Average_student_scores_in_this_assignment": "متوسط درجات الطلاب في هذا الأسايمنت",
+  "student_grade": "درجة الطالب",
+  "add_grade": "إضافة تقييم",
+  "the_degree": "الدرجة"
 }

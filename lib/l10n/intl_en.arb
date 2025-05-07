@@ -277,5 +277,8 @@
   "show": "Show",
   "evaluation":"Evaluate",
   "number_of_students_who_handed_assignment":"Number of students who submitted the assignment",
-  "Average_student_scores_in_this_assignment":"Average student scores in this assignment"
+  "Average_student_scores_in_this_assignment":"Average student scores in this assignment",
+  "student_grade":"Student Grade",
+  "add_grade":"Add Grade",
+  "the_degree":"Degree"
 }

@@ -52,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "add_courses": MessageLookupByLibrary.simpleMessage("Add courses"),
     "add_file": MessageLookupByLibrary.simpleMessage("Add File"),
+    "add_grade": MessageLookupByLibrary.simpleMessage("Add Grade"),
     "add_new": MessageLookupByLibrary.simpleMessage("Add New Annoucement"),
     "add_new_news": MessageLookupByLibrary.simpleMessage(
       "🆕 Add a new news item to keep your students updated with all the latest news and updates",
@@ -454,6 +455,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "stayConfident": MessageLookupByLibrary.simpleMessage(
       "Take deep breaths and trust your abilities!",
     ),
+    "student_grade": MessageLookupByLibrary.simpleMessage("Student Grade"),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage(
       "students online now",
     ),
@@ -476,6 +478,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "text": MessageLookupByLibrary.simpleMessage("Texts"),
     "theSearch": MessageLookupByLibrary.simpleMessage("Search.."),
+    "the_degree": MessageLookupByLibrary.simpleMessage("Degree"),
     "thursday": MessageLookupByLibrary.simpleMessage("Thursday"),
     "time": MessageLookupByLibrary.simpleMessage("Time"),
     "timeManagement": MessageLookupByLibrary.simpleMessage(

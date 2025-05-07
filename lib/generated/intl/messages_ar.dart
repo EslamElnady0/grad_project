@@ -52,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "add_courses": MessageLookupByLibrary.simpleMessage("إضافة مواد دراسية"),
     "add_file": MessageLookupByLibrary.simpleMessage("إضافة ملف"),
+    "add_grade": MessageLookupByLibrary.simpleMessage("إضافة تقييم"),
     "add_new": MessageLookupByLibrary.simpleMessage(" إضافة خبر جديد"),
     "add_new_news": MessageLookupByLibrary.simpleMessage(
       "🆕 أضف خبرًا جديدًا لإبقاء طلابك على اطلاع دائم بكل التحديثات والمستجدات",
@@ -64,7 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "announcements": MessageLookupByLibrary.simpleMessage("الأخبار المعلنه"),
     "answer": MessageLookupByLibrary.simpleMessage("إجابة"),
     "app_title": MessageLookupByLibrary.simpleMessage("التعليم الالكتروني"),
-    "assignment": MessageLookupByLibrary.simpleMessage("المهمة"),
+    "assignment": MessageLookupByLibrary.simpleMessage("الاسايمنت"),
     "assignment_correction_welcome_message": MessageLookupByLibrary.simpleMessage(
       "📑⚡ راجع الأسايمنتات المرسلة، قم بتقييم الإجابات، واعرض الدرجات مع إمكانية إرسال التعليقات لكل طالب.",
     ),
@@ -433,6 +434,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "stayConfident": MessageLookupByLibrary.simpleMessage(
       "تنفّس بعمق وثق بقدراتك!",
     ),
+    "student_grade": MessageLookupByLibrary.simpleMessage("درجة الطالب"),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage("طالب نشط الآن"),
     "students_count": MessageLookupByLibrary.simpleMessage("عدد الطلاب:"),
     "students_management": MessageLookupByLibrary.simpleMessage("إدارة الطلاب"),
@@ -451,6 +453,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "text": MessageLookupByLibrary.simpleMessage("نصوص"),
     "theSearch": MessageLookupByLibrary.simpleMessage("البحث.."),
+    "the_degree": MessageLookupByLibrary.simpleMessage("الدرجة"),
     "thursday": MessageLookupByLibrary.simpleMessage("الخميس"),
     "time": MessageLookupByLibrary.simpleMessage("الوقت"),
     "timeManagement": MessageLookupByLibrary.simpleMessage(
