@@ -18,7 +18,6 @@ import 'generated/l10n.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
-  await ScreenUtil.ensureScreenSize();
   bool isLogin = await SharedPrefHelper.getSecuredString(Constants.token) != '';
   await setupGetIt();
   Bloc.observer = GradBlocObserver();

@@ -270,5 +270,8 @@
   "to": "إلى",
   "scheduled": "مجدول",
   "editQuiz": "تعديل كويز",
-  "assignment_uploaded_successfully":" تم رفع الأسايمنت بنجاح"
+  "assignment_uploaded_successfully":" تم رفع الأسايمنت بنجاح",
+  "onMap": "على الخريطة",
+"showDirections": "عرض الاتجاهات"
+  
 }

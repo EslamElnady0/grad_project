@@ -270,5 +270,7 @@
   "to": "To",
   "scheduled": "Scheduled",
   "editQuiz": "Edit Quiz",
-  "assignment_uploaded_successfully": "Assignment uploaded successfully"
+  "assignment_uploaded_successfully": "Assignment uploaded successfully",
+  "onMap": "On Map",
+  "showDirections": "Show Directions"
 }
