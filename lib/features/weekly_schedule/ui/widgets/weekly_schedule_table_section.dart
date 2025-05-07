@@ -35,7 +35,7 @@ class WeeklyScheduleTableSection extends StatelessWidget {
         .where((day) => selectedDays.contains(day.trim().toLowerCase()))
         .toList();
 
-    final noOfItemInTable = 7;
+    final noOfItemInTable = 8;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

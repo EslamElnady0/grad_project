@@ -256,6 +256,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "number_of_subjects": MessageLookupByLibrary.simpleMessage("عدد المواد"),
     "ok": MessageLookupByLibrary.simpleMessage("حسناً"),
+    "onMap": MessageLookupByLibrary.simpleMessage("على الخريطة"),
     "on_time": MessageLookupByLibrary.simpleMessage(
       "في الوقت المحدد (تلقائي).",
     ),
@@ -397,6 +398,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "semester_2": MessageLookupByLibrary.simpleMessage("الفصل الدراسي الثاني"),
     "sent": MessageLookupByLibrary.simpleMessage("تم الإرسال"),
     "setTime": MessageLookupByLibrary.simpleMessage("تحديد الوقت"),
+    "showDirections": MessageLookupByLibrary.simpleMessage("عرض الاتجاهات"),
     "showResultsAfterSubmit": MessageLookupByLibrary.simpleMessage(
       "عرض النتائج وإتاحة الإجابة لهم بعد الإنتهاء من الإختبار",
     ),

@@ -272,6 +272,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Subjects count",
     ),
     "ok": MessageLookupByLibrary.simpleMessage("OK"),
+    "onMap": MessageLookupByLibrary.simpleMessage("On Map"),
     "on_time": MessageLookupByLibrary.simpleMessage("On time (automatic)."),
     "once": MessageLookupByLibrary.simpleMessage("Once"),
     "open": MessageLookupByLibrary.simpleMessage("open"),
@@ -418,6 +419,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "semester_2": MessageLookupByLibrary.simpleMessage("Second Semester"),
     "sent": MessageLookupByLibrary.simpleMessage("sent"),
     "setTime": MessageLookupByLibrary.simpleMessage("Set Time"),
+    "showDirections": MessageLookupByLibrary.simpleMessage("Show Directions"),
     "showResultsAfterSubmit": MessageLookupByLibrary.simpleMessage(
       "Show results and allow viewing answers after completing the quiz",
     ),

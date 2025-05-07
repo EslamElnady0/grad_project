@@ -2174,6 +2174,21 @@ class S {
       args: [],
     );
   }
+
+  /// `On Map`
+  String get onMap {
+    return Intl.message('On Map', name: 'onMap', desc: '', args: []);
+  }
+
+  /// `Show Directions`
+  String get showDirections {
+    return Intl.message(
+      'Show Directions',
+      name: 'showDirections',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -25,6 +25,7 @@ class ScheduleHeader extends StatelessWidget {
         SchedulaHeaderItem(label: S.of(context).from),
         SchedulaHeaderItem(label: S.of(context).to),
         SchedulaHeaderItem(label: S.of(context).place),
+        SchedulaHeaderItem(label: S.of(context).onMap),
         SchedulaHeaderItem(label: S.of(context).type),
         SchedulaHeaderItem(label: S.of(context).attendance),
         SchedulaHeaderItem(label: S.of(context).condition),
