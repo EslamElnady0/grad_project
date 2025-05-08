@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
 
-import '../../../../../core/helpers/spacing.dart';
-import '../../../../../core/theme/app_colors.dart';
-import '../../../../../core/theme/app_text_styles.dart';
-import '../../../../../core/widgets/doctor_info_section.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_text_styles.dart';
+import '../../../../core/widgets/doctor_info_section.dart';
 
 class CustomAnsewrChat extends StatelessWidget {
   const CustomAnsewrChat({

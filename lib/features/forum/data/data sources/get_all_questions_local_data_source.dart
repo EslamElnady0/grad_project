@@ -1,0 +1,3 @@
+abstract class GetAllQuestionsLocalDataSource {}
+
+class GetAllQuestionsLocalDataSourceImpl implements GetAllQuestionsLocalDataSource {}

@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:grad_project/features/forum/presentation/views/answers_view.dart';
-import 'package:grad_project/features/forum/presentation/views/widgets/show_state_dialog.dart';
+import 'package:grad_project/features/forum/ui/views/answers_view.dart';
+import 'package:grad_project/features/forum/ui/widgets/show_state_dialog.dart';
 
-import '../../../../../core/helpers/app_assets.dart';
-import '../../../../../core/theme/app_colors.dart';
-import '../../../../../core/theme/app_text_styles.dart';
-import '../../../../../generated/l10n.dart';
+import '../../../../core/helpers/app_assets.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_text_styles.dart';
+import '../../../../generated/l10n.dart';
 
 class ButtonRow extends StatelessWidget {
   const ButtonRow({super.key});

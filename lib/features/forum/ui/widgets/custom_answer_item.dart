@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/helpers/spacing.dart';
-import '../../../../../core/theme/app_colors.dart';
-import '../../../../../core/theme/app_text_styles.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_text_styles.dart';
 
-import '../../../../../core/widgets/item_header.dart';
+import '../../../../core/widgets/item_header.dart';
 
 class CustomAnswerItem extends StatelessWidget {
   const CustomAnswerItem({super.key});

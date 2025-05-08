@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grad_project/features/forum/presentation/views/widgets/custom_answer_chat.dart';
-import 'package:grad_project/features/forum/presentation/views/widgets/custom_answer_item.dart';
-import '../../../../../core/helpers/spacing.dart';
-import '../../../../../core/widgets/custom_app_bar.dart';
-import '../../../../../generated/l10n.dart';
-import '../../../../home/ui/widgets/title_text_widget.dart';
+import 'package:grad_project/features/forum/ui/widgets/custom_answer_chat.dart';
+import 'package:grad_project/features/forum/ui/widgets/custom_answer_item.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/widgets/custom_app_bar.dart';
+import '../../../../generated/l10n.dart';
+import '../../../home/ui/widgets/title_text_widget.dart';
 
 class AnswersViewBody extends StatelessWidget {
   const AnswersViewBody({super.key});

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grad_project/features/forum/presentation/views/widgets/button_row.dart';
-import '../../../../../core/helpers/spacing.dart';
-import '../../../../../core/theme/app_colors.dart';
-import '../../../../../core/theme/app_text_styles.dart';
-import '../../../../../core/widgets/item_header.dart';
+import 'package:grad_project/features/forum/ui/widgets/button_row.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_text_styles.dart';
+import '../../../../core/widgets/item_header.dart';
 
 class CustomForumItem extends StatelessWidget {
   const CustomForumItem({super.key});

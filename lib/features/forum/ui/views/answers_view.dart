@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grad_project/core/widgets/custom_scaffold.dart';
-import 'package:grad_project/features/forum/presentation/views/widgets/answers_view_body.dart';
+import 'package:grad_project/features/forum/ui/widgets/answers_view_body.dart';
 
 import '../../../../core/widgets/text entry footer/text_entry_footer.dart';
 
