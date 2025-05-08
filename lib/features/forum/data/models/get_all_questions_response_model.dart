@@ -6,9 +6,9 @@ part 'get_all_questions_response_model.freezed.dart';
 @freezed
 class GetAllQuestionsResponseModel with _$GetAllQuestionsResponseModel {
   const factory GetAllQuestionsResponseModel({
-    required String message,
-    required List<QuestionModel> questions,
-    required int totalQuestions,
+ String? message,
+    List<QuestionModel>? questions,
+   int? totalQuestions,
   }) = _GetAllQuestionsResponseModel;
 
   factory GetAllQuestionsResponseModel.fromJson(Map<String, dynamic> json) =>
@@ -18,14 +18,15 @@ class GetAllQuestionsResponseModel with _$GetAllQuestionsResponseModel {
 @freezed
 class QuestionModel with _$QuestionModel {
   const factory QuestionModel({
-    required String id,
-    required String body,
+   // ignore: invalid_annotation_target
+   @JsonKey(name: '_id') String? id,
+    String? body,
     int? answers,
     int? likes,
     int? views,
     String? imageUrl,
-    required UserModel user,
-    required String createdAt,
+     UserModel? user,
+    String?  createdAt,
   }) = _QuestionModel;
 
   factory QuestionModel.fromJson(Map<String, dynamic> json) =>
@@ -35,11 +36,11 @@ class QuestionModel with _$QuestionModel {
 @freezed
 class UserModel with _$UserModel {
   const factory UserModel({
-    required String name,
-    required String avatar,
-    required int semester,
-    required String department,
-    required bool liked,
+    String? name, 
+    String? avatar,
+    int? semester,
+    String? department,
+    bool? liked,
   }) = _UserModel;
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>

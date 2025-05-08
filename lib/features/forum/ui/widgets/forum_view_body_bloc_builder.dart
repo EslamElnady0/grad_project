@@ -9,9 +9,19 @@ class ForumViewBodyBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  BlocProvider.value(
+    return BlocProvider.value(
       value: getIt<GetAllQuestionsCubit>()..getAllQuestions(),
-      child: const ForumViewsBody(),
+      child: BlocBuilder<GetAllQuestionsCubit, GetAllQuestionsState>(
+        builder: (context, state) {
+          return state.maybeWhen(
+           getAllQuestionsSuccess: (data) =>  ForumViewsBody(),
+           getAllQuestionsFailure: (error) => Center(child: Text(error)),
+            orElse: () => const Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
+        },
+      ),
     );
   }
 }

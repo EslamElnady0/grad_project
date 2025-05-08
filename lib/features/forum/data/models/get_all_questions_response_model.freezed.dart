@@ -21,9 +21,9 @@ GetAllQuestionsResponseModel _$GetAllQuestionsResponseModelFromJson(
 
 /// @nodoc
 mixin _$GetAllQuestionsResponseModel {
-  String get message => throw _privateConstructorUsedError;
-  List<QuestionModel> get questions => throw _privateConstructorUsedError;
-  int get totalQuestions => throw _privateConstructorUsedError;
+  String? get message => throw _privateConstructorUsedError;
+  List<QuestionModel>? get questions => throw _privateConstructorUsedError;
+  int? get totalQuestions => throw _privateConstructorUsedError;
 
   /// Serializes this GetAllQuestionsResponseModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -44,7 +44,7 @@ abstract class $GetAllQuestionsResponseModelCopyWith<$Res> {
           GetAllQuestionsResponseModel>;
   @useResult
   $Res call(
-      {String message, List<QuestionModel> questions, int totalQuestions});
+      {String? message, List<QuestionModel>? questions, int? totalQuestions});
 }
 
 /// @nodoc
@@ -63,23 +63,23 @@ class _$GetAllQuestionsResponseModelCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
-    Object? questions = null,
-    Object? totalQuestions = null,
+    Object? message = freezed,
+    Object? questions = freezed,
+    Object? totalQuestions = freezed,
   }) {
     return _then(_value.copyWith(
-      message: null == message
+      message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      questions: null == questions
+              as String?,
+      questions: freezed == questions
           ? _value.questions
           : questions // ignore: cast_nullable_to_non_nullable
-              as List<QuestionModel>,
-      totalQuestions: null == totalQuestions
+              as List<QuestionModel>?,
+      totalQuestions: freezed == totalQuestions
           ? _value.totalQuestions
           : totalQuestions // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ) as $Val);
   }
 }
@@ -94,7 +94,7 @@ abstract class _$$GetAllQuestionsResponseModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String message, List<QuestionModel> questions, int totalQuestions});
+      {String? message, List<QuestionModel>? questions, int? totalQuestions});
 }
 
 /// @nodoc
@@ -112,23 +112,23 @@ class __$$GetAllQuestionsResponseModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
-    Object? questions = null,
-    Object? totalQuestions = null,
+    Object? message = freezed,
+    Object? questions = freezed,
+    Object? totalQuestions = freezed,
   }) {
     return _then(_$GetAllQuestionsResponseModelImpl(
-      message: null == message
+      message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      questions: null == questions
+              as String?,
+      questions: freezed == questions
           ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
-              as List<QuestionModel>,
-      totalQuestions: null == totalQuestions
+              as List<QuestionModel>?,
+      totalQuestions: freezed == totalQuestions
           ? _value.totalQuestions
           : totalQuestions // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 }
@@ -138,9 +138,7 @@ class __$$GetAllQuestionsResponseModelImplCopyWithImpl<$Res>
 class _$GetAllQuestionsResponseModelImpl
     implements _GetAllQuestionsResponseModel {
   const _$GetAllQuestionsResponseModelImpl(
-      {required this.message,
-      required final List<QuestionModel> questions,
-      required this.totalQuestions})
+      {this.message, final List<QuestionModel>? questions, this.totalQuestions})
       : _questions = questions;
 
   factory _$GetAllQuestionsResponseModelImpl.fromJson(
@@ -148,17 +146,19 @@ class _$GetAllQuestionsResponseModelImpl
       _$$GetAllQuestionsResponseModelImplFromJson(json);
 
   @override
-  final String message;
-  final List<QuestionModel> _questions;
+  final String? message;
+  final List<QuestionModel>? _questions;
   @override
-  List<QuestionModel> get questions {
+  List<QuestionModel>? get questions {
+    final value = _questions;
+    if (value == null) return null;
     if (_questions is EqualUnmodifiableListView) return _questions;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_questions);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
-  final int totalQuestions;
+  final int? totalQuestions;
 
   @override
   String toString() {
@@ -203,19 +203,19 @@ class _$GetAllQuestionsResponseModelImpl
 abstract class _GetAllQuestionsResponseModel
     implements GetAllQuestionsResponseModel {
   const factory _GetAllQuestionsResponseModel(
-      {required final String message,
-      required final List<QuestionModel> questions,
-      required final int totalQuestions}) = _$GetAllQuestionsResponseModelImpl;
+      {final String? message,
+      final List<QuestionModel>? questions,
+      final int? totalQuestions}) = _$GetAllQuestionsResponseModelImpl;
 
   factory _GetAllQuestionsResponseModel.fromJson(Map<String, dynamic> json) =
       _$GetAllQuestionsResponseModelImpl.fromJson;
 
   @override
-  String get message;
+  String? get message;
   @override
-  List<QuestionModel> get questions;
+  List<QuestionModel>? get questions;
   @override
-  int get totalQuestions;
+  int? get totalQuestions;
 
   /// Create a copy of GetAllQuestionsResponseModel
   /// with the given fields replaced by the non-null parameter values.
@@ -232,14 +232,16 @@ QuestionModel _$QuestionModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$QuestionModel {
-  String get id => throw _privateConstructorUsedError;
-  String get body => throw _privateConstructorUsedError;
+// ignore: invalid_annotation_target
+  @JsonKey(name: '_id')
+  String? get id => throw _privateConstructorUsedError;
+  String? get body => throw _privateConstructorUsedError;
   int? get answers => throw _privateConstructorUsedError;
   int? get likes => throw _privateConstructorUsedError;
   int? get views => throw _privateConstructorUsedError;
   String? get imageUrl => throw _privateConstructorUsedError;
-  UserModel get user => throw _privateConstructorUsedError;
-  String get createdAt => throw _privateConstructorUsedError;
+  UserModel? get user => throw _privateConstructorUsedError;
+  String? get createdAt => throw _privateConstructorUsedError;
 
   /// Serializes this QuestionModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -258,16 +260,16 @@ abstract class $QuestionModelCopyWith<$Res> {
       _$QuestionModelCopyWithImpl<$Res, QuestionModel>;
   @useResult
   $Res call(
-      {String id,
-      String body,
+      {@JsonKey(name: '_id') String? id,
+      String? body,
       int? answers,
       int? likes,
       int? views,
       String? imageUrl,
-      UserModel user,
-      String createdAt});
+      UserModel? user,
+      String? createdAt});
 
-  $UserModelCopyWith<$Res> get user;
+  $UserModelCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -285,24 +287,24 @@ class _$QuestionModelCopyWithImpl<$Res, $Val extends QuestionModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? body = null,
+    Object? id = freezed,
+    Object? body = freezed,
     Object? answers = freezed,
     Object? likes = freezed,
     Object? views = freezed,
     Object? imageUrl = freezed,
-    Object? user = null,
-    Object? createdAt = null,
+    Object? user = freezed,
+    Object? createdAt = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      body: null == body
+              as String?,
+      body: freezed == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       answers: freezed == answers
           ? _value.answers
           : answers // ignore: cast_nullable_to_non_nullable
@@ -319,14 +321,14 @@ class _$QuestionModelCopyWithImpl<$Res, $Val extends QuestionModel>
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      user: null == user
+      user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as UserModel,
-      createdAt: null == createdAt
+              as UserModel?,
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 
@@ -334,8 +336,12 @@ class _$QuestionModelCopyWithImpl<$Res, $Val extends QuestionModel>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $UserModelCopyWith<$Res> get user {
-    return $UserModelCopyWith<$Res>(_value.user, (value) {
+  $UserModelCopyWith<$Res>? get user {
+    if (_value.user == null) {
+      return null;
+    }
+
+    return $UserModelCopyWith<$Res>(_value.user!, (value) {
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
@@ -350,17 +356,17 @@ abstract class _$$QuestionModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
-      String body,
+      {@JsonKey(name: '_id') String? id,
+      String? body,
       int? answers,
       int? likes,
       int? views,
       String? imageUrl,
-      UserModel user,
-      String createdAt});
+      UserModel? user,
+      String? createdAt});
 
   @override
-  $UserModelCopyWith<$Res> get user;
+  $UserModelCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -376,24 +382,24 @@ class __$$QuestionModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? body = null,
+    Object? id = freezed,
+    Object? body = freezed,
     Object? answers = freezed,
     Object? likes = freezed,
     Object? views = freezed,
     Object? imageUrl = freezed,
-    Object? user = null,
-    Object? createdAt = null,
+    Object? user = freezed,
+    Object? createdAt = freezed,
   }) {
     return _then(_$QuestionModelImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      body: null == body
+              as String?,
+      body: freezed == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       answers: freezed == answers
           ? _value.answers
           : answers // ignore: cast_nullable_to_non_nullable
@@ -410,14 +416,14 @@ class __$$QuestionModelImplCopyWithImpl<$Res>
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      user: null == user
+      user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as UserModel,
-      createdAt: null == createdAt
+              as UserModel?,
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -426,22 +432,24 @@ class __$$QuestionModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$QuestionModelImpl implements _QuestionModel {
   const _$QuestionModelImpl(
-      {required this.id,
-      required this.body,
+      {@JsonKey(name: '_id') this.id,
+      this.body,
       this.answers,
       this.likes,
       this.views,
       this.imageUrl,
-      required this.user,
-      required this.createdAt});
+      this.user,
+      this.createdAt});
 
   factory _$QuestionModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$QuestionModelImplFromJson(json);
 
+// ignore: invalid_annotation_target
   @override
-  final String id;
+  @JsonKey(name: '_id')
+  final String? id;
   @override
-  final String body;
+  final String? body;
   @override
   final int? answers;
   @override
@@ -451,9 +459,9 @@ class _$QuestionModelImpl implements _QuestionModel {
   @override
   final String? imageUrl;
   @override
-  final UserModel user;
+  final UserModel? user;
   @override
-  final String createdAt;
+  final String? createdAt;
 
   @override
   String toString() {
@@ -500,22 +508,24 @@ class _$QuestionModelImpl implements _QuestionModel {
 
 abstract class _QuestionModel implements QuestionModel {
   const factory _QuestionModel(
-      {required final String id,
-      required final String body,
+      {@JsonKey(name: '_id') final String? id,
+      final String? body,
       final int? answers,
       final int? likes,
       final int? views,
       final String? imageUrl,
-      required final UserModel user,
-      required final String createdAt}) = _$QuestionModelImpl;
+      final UserModel? user,
+      final String? createdAt}) = _$QuestionModelImpl;
 
   factory _QuestionModel.fromJson(Map<String, dynamic> json) =
       _$QuestionModelImpl.fromJson;
 
+// ignore: invalid_annotation_target
   @override
-  String get id;
+  @JsonKey(name: '_id')
+  String? get id;
   @override
-  String get body;
+  String? get body;
   @override
   int? get answers;
   @override
@@ -525,9 +535,9 @@ abstract class _QuestionModel implements QuestionModel {
   @override
   String? get imageUrl;
   @override
-  UserModel get user;
+  UserModel? get user;
   @override
-  String get createdAt;
+  String? get createdAt;
 
   /// Create a copy of QuestionModel
   /// with the given fields replaced by the non-null parameter values.
@@ -543,11 +553,11 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserModel {
-  String get name => throw _privateConstructorUsedError;
-  String get avatar => throw _privateConstructorUsedError;
-  int get semester => throw _privateConstructorUsedError;
-  String get department => throw _privateConstructorUsedError;
-  bool get liked => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get avatar => throw _privateConstructorUsedError;
+  int? get semester => throw _privateConstructorUsedError;
+  String? get department => throw _privateConstructorUsedError;
+  bool? get liked => throw _privateConstructorUsedError;
 
   /// Serializes this UserModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -565,11 +575,11 @@ abstract class $UserModelCopyWith<$Res> {
       _$UserModelCopyWithImpl<$Res, UserModel>;
   @useResult
   $Res call(
-      {String name,
-      String avatar,
-      int semester,
-      String department,
-      bool liked});
+      {String? name,
+      String? avatar,
+      int? semester,
+      String? department,
+      bool? liked});
 }
 
 /// @nodoc
@@ -587,33 +597,33 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
-    Object? avatar = null,
-    Object? semester = null,
-    Object? department = null,
-    Object? liked = null,
+    Object? name = freezed,
+    Object? avatar = freezed,
+    Object? semester = freezed,
+    Object? department = freezed,
+    Object? liked = freezed,
   }) {
     return _then(_value.copyWith(
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      avatar: null == avatar
+              as String?,
+      avatar: freezed == avatar
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
-              as String,
-      semester: null == semester
+              as String?,
+      semester: freezed == semester
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
-              as int,
-      department: null == department
+              as int?,
+      department: freezed == department
           ? _value.department
           : department // ignore: cast_nullable_to_non_nullable
-              as String,
-      liked: null == liked
+              as String?,
+      liked: freezed == liked
           ? _value.liked
           : liked // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
     ) as $Val);
   }
 }
@@ -627,11 +637,11 @@ abstract class _$$UserModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String name,
-      String avatar,
-      int semester,
-      String department,
-      bool liked});
+      {String? name,
+      String? avatar,
+      int? semester,
+      String? department,
+      bool? liked});
 }
 
 /// @nodoc
@@ -647,33 +657,33 @@ class __$$UserModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
-    Object? avatar = null,
-    Object? semester = null,
-    Object? department = null,
-    Object? liked = null,
+    Object? name = freezed,
+    Object? avatar = freezed,
+    Object? semester = freezed,
+    Object? department = freezed,
+    Object? liked = freezed,
   }) {
     return _then(_$UserModelImpl(
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      avatar: null == avatar
+              as String?,
+      avatar: freezed == avatar
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
-              as String,
-      semester: null == semester
+              as String?,
+      semester: freezed == semester
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
-              as int,
-      department: null == department
+              as int?,
+      department: freezed == department
           ? _value.department
           : department // ignore: cast_nullable_to_non_nullable
-              as String,
-      liked: null == liked
+              as String?,
+      liked: freezed == liked
           ? _value.liked
           : liked // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
     ));
   }
 }
@@ -682,25 +692,21 @@ class __$$UserModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserModelImpl implements _UserModel {
   const _$UserModelImpl(
-      {required this.name,
-      required this.avatar,
-      required this.semester,
-      required this.department,
-      required this.liked});
+      {this.name, this.avatar, this.semester, this.department, this.liked});
 
   factory _$UserModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserModelImplFromJson(json);
 
   @override
-  final String name;
+  final String? name;
   @override
-  final String avatar;
+  final String? avatar;
   @override
-  final int semester;
+  final int? semester;
   @override
-  final String department;
+  final String? department;
   @override
-  final bool liked;
+  final bool? liked;
 
   @override
   String toString() {
@@ -744,25 +750,25 @@ class _$UserModelImpl implements _UserModel {
 
 abstract class _UserModel implements UserModel {
   const factory _UserModel(
-      {required final String name,
-      required final String avatar,
-      required final int semester,
-      required final String department,
-      required final bool liked}) = _$UserModelImpl;
+      {final String? name,
+      final String? avatar,
+      final int? semester,
+      final String? department,
+      final bool? liked}) = _$UserModelImpl;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$UserModelImpl.fromJson;
 
   @override
-  String get name;
+  String? get name;
   @override
-  String get avatar;
+  String? get avatar;
   @override
-  int get semester;
+  int? get semester;
   @override
-  String get department;
+  String? get department;
   @override
-  bool get liked;
+  bool? get liked;
 
   /// Create a copy of UserModel
   /// with the given fields replaced by the non-null parameter values.
