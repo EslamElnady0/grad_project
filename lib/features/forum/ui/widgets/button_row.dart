@@ -4,15 +4,17 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/features/forum/ui/views/answers_view.dart';
 import 'package:grad_project/features/forum/ui/widgets/show_state_dialog.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../../core/helpers/app_assets.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../generated/l10n.dart';
+import '../../data/models/get_all_questions_response_model.dart';
 
 class ButtonRow extends StatelessWidget {
-  const ButtonRow({super.key});
-
+  const ButtonRow({super.key, this.questionModel});
+  final QuestionModel? questionModel;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -51,18 +53,21 @@ class ButtonRow extends StatelessWidget {
         ),
      const   Spacer(),
         GestureDetector(
-          onTap: () => showStatsDialog(context),
-          child: Container(
-            decoration: BoxDecoration(
-              gradient:const LinearGradient(
-                colors: [AppColors.redDark, AppColors.redlight],
-                begin: Alignment.bottomCenter,
-                end: Alignment.topCenter,
+          onTap: () => showStatsDialog(context, questionModel),
+          child: Skeleton.leaf(
+            enabled: true,
+            child: Container(
+              decoration: BoxDecoration(
+                gradient:const LinearGradient(
+                  colors: [AppColors.redDark, AppColors.redlight],
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                ),
+                borderRadius: BorderRadius.circular(12),
               ),
-              borderRadius: BorderRadius.circular(12),
+              padding:const EdgeInsets.all(12),
+              child: SvgPicture.asset(Assets.imagesSvgsChart),
             ),
-            padding:const EdgeInsets.all(12),
-            child: SvgPicture.asset(Assets.imagesSvgsChart),
           ),
         ),
       ],

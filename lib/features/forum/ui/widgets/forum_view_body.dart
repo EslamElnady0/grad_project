@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/widgets/custom_text_and_icon_button.dart';
+import 'package:grad_project/features/forum/data/models/get_all_questions_response_model.dart';
 import 'package:grad_project/features/forum/ui/widgets/custom_forum_item.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/app_text_styles.dart';
@@ -10,10 +11,13 @@ import '../../../home/ui/widgets/home_screens_header_row.dart';
 import '../../../home/ui/widgets/title_text_widget.dart';
 
 class ForumViewsBody extends StatelessWidget {
-  const ForumViewsBody({super.key});
+  const ForumViewsBody({super.key, this.questions, this.totalQuestions});
+final    List<QuestionModel>? questions;
+  final int? totalQuestions;
 
   @override
   Widget build(BuildContext context) {
+    
     return CustomScrollView(slivers: [
       SliverToBoxAdapter(
         child: Padding(
@@ -54,7 +58,7 @@ class ForumViewsBody extends StatelessWidget {
                   ),
                 ]),
                 vGap(8),
-                Text("48 سؤال حتي الآن!",
+                Text("${S.of(context).questions_count} $totalQuestions",
                     style: AppTextStyles.font12GrayMedium),
                 vGap(8),
               ],
@@ -62,10 +66,15 @@ class ForumViewsBody extends StatelessWidget {
       ),
       SliverList(
         delegate: SliverChildBuilderDelegate(
-          (context, index) => const CustomForumItem(),
-          childCount: 10,
+          (context, index) =>  CustomForumItem(
+          questionModel: questions?[index],
+          ),
+          childCount: questions?.length ?? 0,
         ),
       ),
-    ]);
+      SliverToBoxAdapter(
+        child: vGap(150),
+      ),
+    ]); 
   }
 }

@@ -322,6 +322,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "questions": MessageLookupByLibrary.simpleMessage("الأسئلة"),
     "questionsCount": MessageLookupByLibrary.simpleMessage("عدد الأسئلة"),
     "questionsWithNoThe": MessageLookupByLibrary.simpleMessage("أسئلة"),
+    "questions_count": MessageLookupByLibrary.simpleMessage("عدد الأسئلة"),
     "quiz": MessageLookupByLibrary.simpleMessage("اختبار"),
     "quizAdvices": MessageLookupByLibrary.simpleMessage("نصائح للاختبار"),
     "quizDesc": MessageLookupByLibrary.simpleMessage("وصف الاختبار"),
@@ -422,6 +423,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "showResultsAfterSubmit": MessageLookupByLibrary.simpleMessage(
       "عرض النتائج وإتاحة الإجابة لهم بعد الإنتهاء من الإختبار",
     ),
+    "show_image": MessageLookupByLibrary.simpleMessage("عرض الصوره"),
     "single_grade": MessageLookupByLibrary.simpleMessage("درجة"),
     "start": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "startNow": MessageLookupByLibrary.simpleMessage("ابدأ الآن!"),
@@ -473,6 +475,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "understandBeforeAnswering": MessageLookupByLibrary.simpleMessage(
       "تأكد من فهم السؤال جيدًا قبل البدء بالإجابة.",
     ),
+    "unknown": MessageLookupByLibrary.simpleMessage("غير معروف"),
     "update_lecture_status": MessageLookupByLibrary.simpleMessage(
       "تحديث حالة المحاضرة",
     ),

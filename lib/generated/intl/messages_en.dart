@@ -342,6 +342,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Number of Questions",
     ),
     "questionsWithNoThe": MessageLookupByLibrary.simpleMessage("Questions"),
+    "questions_count": MessageLookupByLibrary.simpleMessage("Questions Count"),
     "quiz": MessageLookupByLibrary.simpleMessage("Quiz"),
     "quizAdvices": MessageLookupByLibrary.simpleMessage("Quiz Tips"),
     "quizDesc": MessageLookupByLibrary.simpleMessage("Quiz Description"),
@@ -443,6 +444,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "showResultsAfterSubmit": MessageLookupByLibrary.simpleMessage(
       "Show results and allow viewing answers after completing the quiz",
     ),
+    "show_image": MessageLookupByLibrary.simpleMessage("Show Image"),
     "single_grade": MessageLookupByLibrary.simpleMessage("Grade"),
     "start": MessageLookupByLibrary.simpleMessage("Start"),
     "startNow": MessageLookupByLibrary.simpleMessage("Start Now!"),
@@ -498,6 +500,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "understandBeforeAnswering": MessageLookupByLibrary.simpleMessage(
       "Make sure you fully understand the question before answering.",
     ),
+    "unknown": MessageLookupByLibrary.simpleMessage("Unknown"),
     "update_lecture_status": MessageLookupByLibrary.simpleMessage(
       "Update lecture status",
     ),

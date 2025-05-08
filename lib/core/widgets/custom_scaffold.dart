@@ -4,6 +4,7 @@ class CustomScaffold extends StatelessWidget {
   final PreferredSizeWidget? appBar;
   final Widget? body;
   final Widget? bottomNavigationBar;
+  final Color? backgroundColor;
   final Widget? bottomSheet;
   final Widget? drawer;
   final bool extendBody;
@@ -24,12 +25,14 @@ class CustomScaffold extends StatelessWidget {
       this.floatingActionButtonAnimator,
       this.floatingActionButtonLocation,
       this.resizeToAvoidBottomInset,
+      this.backgroundColor,
       this.scaffoldKey});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      backgroundColor: backgroundColor ,
       appBar: appBar,
       key: scaffoldKey,
       body: body,
