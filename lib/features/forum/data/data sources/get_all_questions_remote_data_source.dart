@@ -9,10 +9,10 @@ part 'get_all_questions_remote_data_source.g.dart';
 //run the command:
 //?=> dart run build_runner build --delete-conflicting-outputs
 //to generate the .g.dart file
-@RestApi(baseUrl: ApiConstants.apiBaseUrl)
+@RestApi(baseUrl: ApiConstants.apiBaseUrlSecond)
 abstract class GetAllQuestionsRemoteDataSource {
   factory GetAllQuestionsRemoteDataSource(Dio dio,
       {String baseUrl, ParseErrorLogger? errorLogger}) = _GetAllQuestionsRemoteDataSource;
-  @GET("/questions")
+  @GET(ApiConstants.questions)
   Future<GetAllQuestionsResponseModel> getAllQuestions();
 }

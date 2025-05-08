@@ -15,7 +15,7 @@ class _GetAllQuestionsRemoteDataSource
     this.baseUrl,
     this.errorLogger,
   }) {
-    baseUrl ??= 'https://nextgenedu-database.azurewebsites.net/api/';
+    baseUrl ??= 'https://ngu-question-hub.azurewebsites.net/';
   }
 
   final Dio _dio;
@@ -34,7 +34,7 @@ class _GetAllQuestionsRemoteDataSource
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/questions',
+            'questions',
             queryParameters: queryParameters,
             data: _data,
           )
