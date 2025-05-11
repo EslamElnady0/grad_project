@@ -417,8 +417,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "semester_2": MessageLookupByLibrary.simpleMessage("الفصل الدراسي الثاني"),
     "sent": MessageLookupByLibrary.simpleMessage("تم الإرسال"),
     "setTime": MessageLookupByLibrary.simpleMessage("تحديد الوقت"),
-    "showDirections": MessageLookupByLibrary.simpleMessage("عرض الاتجاهات"),
     "show": MessageLookupByLibrary.simpleMessage("عرض"),
+    "showDirections": MessageLookupByLibrary.simpleMessage("عرض الاتجاهات"),
     "showResultsAfterSubmit": MessageLookupByLibrary.simpleMessage(
       "عرض النتائج وإتاحة الإجابة لهم بعد الإنتهاء من الإختبار",
     ),
