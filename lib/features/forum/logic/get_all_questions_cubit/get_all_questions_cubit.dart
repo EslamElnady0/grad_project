@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../data/repos/get_all_questions_repo.dart';
+import '../../data/repos/questions_repo.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'get_all_questions_state.dart';
 part 'get_all_questions_cubit.freezed.dart';

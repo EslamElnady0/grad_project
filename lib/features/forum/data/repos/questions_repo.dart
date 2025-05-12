@@ -2,12 +2,12 @@ import 'package:grad_project/core/networking/api_error_handler.dart';
 import 'package:grad_project/core/networking/api_result.dart';
 import 'package:grad_project/features/forum/data/models/get_all_questions_response_model.dart';
 
-import '../data sources/get_all_questions_local_data_source.dart';
-import '../data sources/get_all_questions_remote_data_source.dart';
+import '../data sources/questions_local_data_source.dart';
+import '../data sources/questions_remote_data_source.dart';
 
 class GetAllQuestionsRepo {
-  final GetAllQuestionsRemoteDataSource remoteDataSource;
-  final GetAllQuestionsLocalDataSource localDataSource;
+  final QuestionsRemoteDataSource remoteDataSource;
+  final QuestionsLocalDataSource localDataSource;
 
   GetAllQuestionsRepo({
     required this.remoteDataSource,

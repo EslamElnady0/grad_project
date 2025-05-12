@@ -11,9 +11,9 @@ import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/
 import 'package:grad_project/features/annoucements/logic/get_teacher_cources_cubit/get_teacher_cources_cubit.dart';
 import 'package:grad_project/features/annoucements/logic/update_annoucement_cubit/update_annoucement_cubit.dart';
 import 'package:grad_project/features/assignments/logic/cubits/get_assignments_cubit/get_assignments_cubit.dart';
-import 'package:grad_project/features/forum/data/data%20sources/get_all_questions_local_data_source.dart';
-import 'package:grad_project/features/forum/data/data%20sources/get_all_questions_remote_data_source.dart';
-import 'package:grad_project/features/forum/data/repos/get_all_questions_repo.dart';
+import 'package:grad_project/features/forum/data/data%20sources/questions_local_data_source.dart';
+import 'package:grad_project/features/forum/data/data%20sources/questions_remote_data_source.dart';
+import 'package:grad_project/features/forum/data/repos/questions_repo.dart';
 import 'package:grad_project/features/forum/logic/get_all_questions_cubit/get_all_questions_cubit.dart';
 import 'package:grad_project/features/lecture_manager/data/repos/add_materials_repo.dart';
 import 'package:grad_project/features/assignments/data/data_sources/assignments_local_data_source.dart';
@@ -102,9 +102,9 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<GetAssignmentsCubit>(() => GetAssignmentsCubit(getIt()));
   getIt.registerFactory<GetStudentsAssignmentsCubit>(() => GetStudentsAssignmentsCubit(getIt()));
   getIt.registerFactory<UploadAssignmentSolutionCubit>(() => UploadAssignmentSolutionCubit(getIt()));
-  //toDo:------------------------------ Get AllQuestions API ------------------------------//
-  getIt.registerLazySingleton<GetAllQuestionsRemoteDataSource>(() => GetAllQuestionsRemoteDataSource(dio));
-  getIt.registerLazySingleton<GetAllQuestionsLocalDataSource>(() => GetAllQuestionsLocalDataSourceImpl());
+  //toDo:------------------------------ Questions API ------------------------------//
+  getIt.registerLazySingleton<QuestionsRemoteDataSource>(() => QuestionsRemoteDataSource(dio));
+  getIt.registerLazySingleton<QuestionsLocalDataSource>(() => QuestionsLocalDataSourceImpl());
   getIt.registerLazySingleton<GetAllQuestionsRepo>(() => GetAllQuestionsRepo( remoteDataSource: getIt(),localDataSource: getIt(),));
   getIt.registerFactory<GetAllQuestionsCubit>(() => GetAllQuestionsCubit(getIt()));
   //toDo:***************************************************************************//
