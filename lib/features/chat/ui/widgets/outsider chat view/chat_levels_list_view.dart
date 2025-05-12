@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:grad_project/features/chat/ui/views/chat_view.dart';
 
 import '../../../../../core/helpers/spacing.dart';
+import '../../views/chat_view.dart';
 import 'chat_levels_item.dart';
 
 class ChatLevelsListView extends StatelessWidget {

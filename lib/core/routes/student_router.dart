@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/academic_progress_view.dart';
 import 'package:grad_project/features/auth/ui/views/forget_password_view.dart';
 import 'package:grad_project/features/auth/ui/views/confirm_account_view.dart';
-import 'package:grad_project/features/chat/ui/views/chat_view.dart';
 import 'package:grad_project/features/final_results/presentation/views/final_results_view.dart';
 import 'package:grad_project/features/forum/presentation/views/answers_view.dart';
 import 'package:grad_project/features/map/presentation/views/internal_map_view.dart';
@@ -13,6 +12,7 @@ import 'package:grad_project/features/quizes/ui/views/quiz_view.dart';
 import 'package:grad_project/features/time_schedule/presentation/views/time_schedule_view.dart';
 import 'package:grad_project/features/weekly_schedule/ui/screens/weekly_schedule_view.dart';
 import '../../features/auth/ui/views/auth_view.dart';
+import '../../features/chat/ui/views/chat_view.dart';
 import '../../features/home/ui/cubit/bottom_nav_bar_cubit.dart';
 import '../../features/home/ui/views/home_view.dart';
 import '../../features/subjects/ui/views/materials_view.dart';
@@ -20,8 +20,7 @@ import '../../features/subjects/ui/views/materials_view.dart';
 abstract class StudentRouter {
   static GoRouter getRouter(bool isLogin) {
     return GoRouter(
-      initialLocation:
-       isLogin ? HomeView.routeName : AuthView.routeName,
+      initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
       routes: [
         GoRoute(
           path: HomeView.routeName,
@@ -72,9 +71,9 @@ abstract class StudentRouter {
         ),
         GoRoute(
             path: MaterialsView.routeName,
-            builder: (context, state) =>  MaterialsView(
-                courseId:  state.extra as int, 
-            )),
+            builder: (context, state) => MaterialsView(
+                  courseId: state.extra as int,
+                )),
         GoRoute(
             path: AnswersView.routeName,
             builder: (context, state) => const AnswersView()),
