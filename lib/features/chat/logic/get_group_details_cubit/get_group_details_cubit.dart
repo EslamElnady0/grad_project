@@ -8,4 +8,15 @@ class GetGroupDetailsCubit extends Cubit<GetGroupDetailsState> {
   final ChatRepo _repo;
   GetGroupDetailsCubit(this._repo)
       : super(const GetGroupDetailsState.initial());
+
+  Future<void> getGroupDetails() async {
+    emit(const GetGroupDetailsState.getGroupDetailsLoading());
+    final result = await _repo.getGroupDetails();
+    result.when(
+      success: (data) =>
+          emit(GetGroupDetailsState.getGroupDetailsSuccess(data)),
+      failure: (error) => emit(
+          GetGroupDetailsState.getGroupDetailsFailure(error.getAllMessages())),
+    );
+  }
 }
