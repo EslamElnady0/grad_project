@@ -4,7 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'get_all_questions_state.dart';
 part 'get_all_questions_cubit.freezed.dart';
 class GetAllQuestionsCubit extends Cubit<GetAllQuestionsState> {
-  final GetAllQuestionsRepo _repo;
+  final QuestionsRepo _repo;
   GetAllQuestionsCubit(this._repo) : super(const GetAllQuestionsState.initial());
 
 Future<void> getAllQuestions() async {

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/features/forum/ui/views/answers_view.dart';
+import 'package:grad_project/features/forum/ui/widgets/like_toggle_button.dart';
 import 'package:grad_project/features/forum/ui/widgets/show_state_dialog.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
@@ -21,25 +22,10 @@ class ButtonRow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
      LikeToggleButton(
+          questionId: questionModel?.id ?? '',
           value: questionModel?.user?.liked ?? false,
         ),
-        const SizedBox(width: 10),
-        OutlinedButton.icon(
-          onPressed: () {
-            GoRouter.of(context).push(AnswersView.routeName);
-          },
-          style: OutlinedButton.styleFrom(
-            foregroundColor: AppColors.darkblue,
-            side: const BorderSide(color: AppColors.darkblue, width: 3),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-          icon: SvgPicture.asset(Assets.imagesSvgsCommentBubbleIcon),
-          label: Text("S.of(context).comment",
-              style:
-                  AppTextStyles.font16DarkerBlueSemiBold.copyWith(fontSize: 14.sp)),
-     ),
+
         const Spacer(),
         ElevatedButton.icon(
           onPressed: () {
@@ -80,52 +66,3 @@ class ButtonRow extends StatelessWidget {
     );
   }
 }
-
-class LikeToggleButton extends StatefulWidget {
-  const LikeToggleButton({super.key, required this.value});
-
-  final bool value;
-
-  @override
-  State<LikeToggleButton> createState() => _LikeToggleButtonState();
-}
-
-class _LikeToggleButtonState extends State<LikeToggleButton> {
-  late bool isLiked;
-
-  @override
-  void initState() {
-    super.initState();
-    isLiked = widget.value;
-  }
-
-  void _toggleLike() {
-    setState(() {
-      isLiked = !isLiked;
-    });
-    print('Is Liked: $isLiked');
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return OutlinedButton.icon(
-      onPressed: _toggleLike,
-      style: OutlinedButton.styleFrom(
-        foregroundColor: AppColors.darkblue,
-        side: const BorderSide(color: AppColors.darkblue, width: 3),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-      ),
-      icon: Icon(
-        isLiked ? Icons.thumb_up : Icons.thumb_up_off_alt,
-        color: AppColors.darkblue,
-      ),
-      label: Text(
-        S.of(context).interested,
-        style: AppTextStyles.font16DarkerBlueSemiBold.copyWith(fontSize: 14.sp),
-      ),
-    );
-  }
-}
-

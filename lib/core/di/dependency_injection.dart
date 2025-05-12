@@ -15,6 +15,7 @@ import 'package:grad_project/features/forum/data/data%20sources/questions_local_
 import 'package:grad_project/features/forum/data/data%20sources/questions_remote_data_source.dart';
 import 'package:grad_project/features/forum/data/repos/questions_repo.dart';
 import 'package:grad_project/features/forum/logic/get_all_questions_cubit/get_all_questions_cubit.dart';
+import 'package:grad_project/features/forum/logic/toggle_like_cubit/toggle_like_cubit.dart';
 import 'package:grad_project/features/lecture_manager/data/repos/add_materials_repo.dart';
 import 'package:grad_project/features/assignments/data/data_sources/assignments_local_data_source.dart';
 import 'package:grad_project/features/assignments/data/data_sources/assignments_remote_data_source.dart';
@@ -105,10 +106,11 @@ Future<void> setupGetIt() async {
   //toDo:------------------------------ Questions API ------------------------------//
   getIt.registerLazySingleton<QuestionsRemoteDataSource>(() => QuestionsRemoteDataSource(dio));
   getIt.registerLazySingleton<QuestionsLocalDataSource>(() => QuestionsLocalDataSourceImpl());
-  getIt.registerLazySingleton<GetAllQuestionsRepo>(() => GetAllQuestionsRepo( remoteDataSource: getIt(),localDataSource: getIt(),));
+  getIt.registerLazySingleton<QuestionsRepo>(() => QuestionsRepo( remoteDataSource: getIt(),localDataSource: getIt(),));
   getIt.registerFactory<GetAllQuestionsCubit>(() => GetAllQuestionsCubit(getIt()));
+  getIt.registerFactory<ToggleLikeCubit>(() => ToggleLikeCubit(getIt()));
   //toDo:***************************************************************************//
-  //toDo:********************************* UI ***************************************//
+  //********************************* UI ***************************************//
   //toDo:***************************************************************************//
   //toDo:------------------------------ Quiz UI ------------------------------//
   getIt.registerFactory<AddQuizCubit>(() => AddQuizCubit());

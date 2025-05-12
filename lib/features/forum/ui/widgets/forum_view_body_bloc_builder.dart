@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/di/dependency_injection.dart';
 import 'package:grad_project/features/forum/data/models/get_all_questions_response_model.dart';
 import 'package:grad_project/features/forum/logic/get_all_questions_cubit/get_all_questions_cubit.dart';
+import 'package:grad_project/features/forum/logic/toggle_like_cubit/toggle_like_cubit.dart';
 import 'package:grad_project/features/forum/ui/widgets/forum_view_body.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
@@ -11,8 +12,15 @@ class ForumViewBodyBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider.value(
-      value: getIt<GetAllQuestionsCubit>()..getAllQuestions(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider.value(
+          value: getIt<GetAllQuestionsCubit>()..getAllQuestions(),
+        ),
+        BlocProvider(
+          create: (context) => getIt<ToggleLikeCubit>(),
+        ),
+      ],
       child: BlocBuilder<GetAllQuestionsCubit, GetAllQuestionsState>(
         builder: (context, state) {
           return state.maybeWhen(
