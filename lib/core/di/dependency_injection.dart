@@ -11,6 +11,7 @@ import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/
 import 'package:grad_project/features/annoucements/logic/get_teacher_cources_cubit/get_teacher_cources_cubit.dart';
 import 'package:grad_project/features/annoucements/logic/update_annoucement_cubit/update_annoucement_cubit.dart';
 import 'package:grad_project/features/assignments/logic/cubits/get_assignments_cubit/get_assignments_cubit.dart';
+import 'package:grad_project/features/chat/logic/get_group_details_cubit/get_group_details_cubit.dart';
 import 'package:grad_project/features/lecture_manager/data/repos/add_materials_repo.dart';
 import 'package:grad_project/features/assignments/data/data_sources/assignments_local_data_source.dart';
 import 'package:grad_project/features/assignments/data/data_sources/assignments_remote_data_source.dart';
@@ -36,6 +37,10 @@ import 'package:grad_project/features/weekly_schedule/logic/get_tabel_cubit/get_
 import '../../features/annoucements/data/data sources/annoucements_local_data_source.dart';
 import '../../features/auth/data/repos/login_repo.dart';
 import '../../features/auth/logic/cubit/login_cubit.dart';
+import '../../features/chat/data/data sources/chat_local_data_source.dart';
+import '../../features/chat/data/data sources/chat_remote_data_source.dart';
+import '../../features/chat/data/repos/chat_repo.dart';
+import '../../features/chat/logic/chat_cubit/chat_cubit.dart';
 import '../../features/lecture_manager/logic/add_materials_cubit/add_materials_cubit.dart';
 import '../../features/lecture_manager/ui/cubit/file_upload_cubit.dart';
 import '../../features/quizes/logic/get_quiz_by_id_cubit/get_quiz_by_id_cubit.dart';
@@ -120,20 +125,37 @@ Future<void> setupGetIt() async {
   //toDo:------------------------------ Quiz UI ------------------------------//
   getIt.registerFactory<AddQuizCubit>(() => AddQuizCubit());
   getIt.registerFactory<QuestionListCubit>(() => QuestionListCubit());
-  getIt.registerFactory<GetStudentsQuizzesCubit>(() => GetStudentsQuizzesCubit(getIt()));
+  getIt.registerFactory<GetStudentsQuizzesCubit>(
+      () => GetStudentsQuizzesCubit(getIt()));
   //toDo:------------------------------Subjects Ui------------------------------
   getIt.registerLazySingleton<FileUploadCubit>(() => FileUploadCubit());
   getIt.registerFactory<SubjectsFilterCubit>(() => SubjectsFilterCubit());
   //toDo:------------------------------ Assignments API ------------------------------//
-  getIt.registerLazySingleton<AssignmentsRemoteDataSource>(() => AssignmentsRemoteDataSource(dio));
-  getIt.registerLazySingleton<AssignmentsLocalDataSource>(() => AssignmentsLocalDataSourceImpl());
+  getIt.registerLazySingleton<AssignmentsRemoteDataSource>(
+      () => AssignmentsRemoteDataSource(dio));
+  getIt.registerLazySingleton<AssignmentsLocalDataSource>(
+      () => AssignmentsLocalDataSourceImpl());
   getIt.registerLazySingleton<AssignmentsRepo>(() => AssignmentsRepo(
         remoteDataSource: getIt(),
         localDataSource: getIt(),
       ));
-  getIt.registerFactory<CreateAssignmentCubit>(() => CreateAssignmentCubit(getIt()));
+  getIt.registerFactory<CreateAssignmentCubit>(
+      () => CreateAssignmentCubit(getIt()));
   getIt.registerFactory<AssignmentUploadCubit>(() => AssignmentUploadCubit());
-  getIt.registerFactory<GetAssignmentsCubit>(() => GetAssignmentsCubit(getIt()));
-  getIt.registerFactory<GetStudentsAssignmentsCubit>(() => GetStudentsAssignmentsCubit(getIt()));
-  getIt.registerFactory<UploadAssignmentSolutionCubit>(() => UploadAssignmentSolutionCubit(getIt()));
+  getIt
+      .registerFactory<GetAssignmentsCubit>(() => GetAssignmentsCubit(getIt()));
+  getIt.registerFactory<GetStudentsAssignmentsCubit>(
+      () => GetStudentsAssignmentsCubit(getIt()));
+  getIt.registerFactory<UploadAssignmentSolutionCubit>(
+      () => UploadAssignmentSolutionCubit(getIt()));
+  //toDo:------------------------------ Chat API ------------------------------//
+  getIt.registerLazySingleton<ChatRemoteDataSource>(
+      () => ChatRemoteDataSource(dio));
+  getIt.registerLazySingleton<ChatLocalDataSource>(
+      () => ChatLocalDataSourceImpl());
+  getIt.registerLazySingleton<ChatRepo>(
+      () => ChatRepo(remoteDataSource: getIt(), localDataSource: getIt()));
+  getIt.registerFactory<ChatGroupsCubit>(() => ChatGroupsCubit(getIt()));
+  getIt.registerFactory<GetGroupDetailsCubit>(
+      () => GetGroupDetailsCubit(getIt()));
 }

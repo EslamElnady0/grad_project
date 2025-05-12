@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-
-import '../../../../../core/helpers/spacing.dart';
-import '../../views/chat_view.dart';
+import 'package:grad_project/features/chat/data/models/chat_groups_response.dart';
+import 'package:grad_project/features/chat/logic/chat_cubit/chat_cubit.dart';
+import 'package:grad_project/features/chat/ui/views/chat_view.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 import 'chat_levels_item.dart';
 
 class ChatLevelsListView extends StatelessWidget {
@@ -10,17 +13,38 @@ class ChatLevelsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      padding: EdgeInsets.zero,
-      itemBuilder: (context, index) => ChatLevelsItem(
-        title: 'Level 1',
-        index: index,
-        onTap: () {
-          GoRouter.of(context).push(ChatView.routeName);
+    return BlocBuilder<ChatGroupsCubit, ChatState>(
+      builder: (context, state) => state.maybeWhen(
+        orElse: () => _buildChatGroupsLoading(),
+        chatSuccess: (data) {
+          data as ChatGroupResponse;
+          return ListView.builder(
+              itemCount: 1,
+              itemBuilder: (context, index) => ChatLevelsItem(
+                    onTap: () => GoRouter.of(context).push(ChatView.routeName),
+                    title: data.data.name,
+                    index: 3,
+                  ));
         },
       ),
-      itemCount: 4,
-      separatorBuilder: (context, index) => vGap(12),
     );
   }
+}
+
+Widget _buildChatGroupsLoading() {
+  return ListView.builder(
+      itemCount: 2,
+      itemBuilder: (context, index) => Skeletonizer(
+            enabled: true,
+            child: Skeleton.leaf(
+              child: Padding(
+                padding: EdgeInsets.only(bottom: 16.h),
+                child: ChatLevelsItem(
+                  onTap: () => GoRouter.of(context).push(ChatView.routeName),
+                  title: "dasdasdasd",
+                  index: 0,
+                ),
+              ),
+            ),
+          ));
 }
