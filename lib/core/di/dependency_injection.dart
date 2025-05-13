@@ -11,6 +11,7 @@ import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/
 import 'package:grad_project/features/annoucements/logic/get_teacher_cources_cubit/get_teacher_cources_cubit.dart';
 import 'package:grad_project/features/annoucements/logic/update_annoucement_cubit/update_annoucement_cubit.dart';
 import 'package:grad_project/features/assignments/logic/cubits/get_assignments_cubit/get_assignments_cubit.dart';
+import 'package:grad_project/features/chat/logic/inner_chat_cubit/inner_chat_cubit.dart';
 import 'package:grad_project/features/forum/data/data%20sources/questions_local_data_source.dart';
 import 'package:grad_project/features/forum/data/data%20sources/questions_remote_data_source.dart';
 import 'package:grad_project/features/forum/data/repos/questions_repo.dart';
@@ -47,6 +48,7 @@ import '../../features/auth/logic/cubit/login_cubit.dart';
 import '../../features/chat/data/data sources/chat_local_data_source.dart';
 import '../../features/chat/data/data sources/chat_remote_data_source.dart';
 import '../../features/chat/data/repos/chat_repo.dart';
+import '../../features/chat/data/services/socket_service.dart';
 import '../../features/chat/logic/chat_cubit/chat_cubit.dart';
 import '../../features/lecture_manager/logic/add_materials_cubit/add_materials_cubit.dart';
 import '../../features/lecture_manager/ui/cubit/file_upload_cubit.dart';
@@ -162,13 +164,16 @@ Future<void> setupGetIt() async {
       () => ChatRemoteDataSource(dio));
   getIt.registerLazySingleton<ChatLocalDataSource>(
       () => ChatLocalDataSourceImpl());
-  getIt.registerLazySingleton<ChatRepo>(
-      () => ChatRepo(remoteDataSource: getIt(), localDataSource: getIt()));
+  getIt.registerLazySingleton<ChatRepo>(() => ChatRepo(
+      remoteDataSource: getIt(),
+      localDataSource: getIt(),
+      socketService: SocketService()));
   getIt.registerFactory<ChatGroupsCubit>(() => ChatGroupsCubit(getIt()));
   getIt.registerFactory<GetGroupDetailsCubit>(
       () => GetGroupDetailsCubit(getIt()));
   getIt.registerFactory<GetLatestMessagesCubit>(
       () => GetLatestMessagesCubit(getIt()));
+  getIt.registerFactory<InnerChatCubit>(() => InnerChatCubit(getIt()));
   //toDo:***************************************************************************//
   //********************************* UI ***************************************//
   //toDo:***************************************************************************//

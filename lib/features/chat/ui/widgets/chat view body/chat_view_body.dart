@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/helpers/shared_pref_helper.dart';
 import 'package:grad_project/features/chat/logic/get_latest_messages_cubit/get_latest_messages_cubit.dart';
+import 'package:grad_project/features/chat/logic/inner_chat_cubit/inner_chat_cubit.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../../core/helpers/spacing.dart';
 import 'chat_message_widget.dart';
@@ -18,10 +19,18 @@ class ChatViewBody extends StatefulWidget {
 
 class _ChatViewBodyState extends State<ChatViewBody> {
   String userId = '';
+  Future<void> initSocket() async {
+    await context.read<InnerChatCubit>().init(onConnected: () {
+      if (mounted) {
+        context.read<InnerChatCubit>().registerUser(context);
+      }
+    });
+  }
+
   @override
   void initState() {
     getUserId();
-    context.read<GetLatestMessagesCubit>().getLatestMessages();
+    initSocket();
     super.initState();
   }
 
