@@ -153,6 +153,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "days": MessageLookupByLibrary.simpleMessage("Days"),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
+    "department": MessageLookupByLibrary.simpleMessage("department"),
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
       "🤔 You haven\'t searched for anything yet!",
     ),
@@ -262,6 +263,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "multipleChoice": MessageLookupByLibrary.simpleMessage("Multiple Choice"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
+    "national_id": MessageLookupByLibrary.simpleMessage("National ID"),
+    "nationality": MessageLookupByLibrary.simpleMessage("Nationality"),
     "news": MessageLookupByLibrary.simpleMessage("News"),
     "news_content": MessageLookupByLibrary.simpleMessage("Annoucement Content"),
     "news_content_description": MessageLookupByLibrary.simpleMessage(
@@ -501,6 +504,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "understandBeforeAnswering": MessageLookupByLibrary.simpleMessage(
       "Make sure you fully understand the question before answering.",
     ),
+    "university_code": MessageLookupByLibrary.simpleMessage("ID"),
     "unknown": MessageLookupByLibrary.simpleMessage("Unknown"),
     "update_lecture_status": MessageLookupByLibrary.simpleMessage(
       "Update lecture status",

@@ -283,10 +283,12 @@
   "student_grade": "درجة الطالب",
   "add_grade": "إضافة تقييم",
   "the_degree": "الدرجة",
-
   "questions_count": "عدد الأسئلة",
   "show_image": "عرض الصوره" ,
-  
   "unknown": "غير معروف",
-  "semester": "ترم"
+  "semester": "ترم",
+  "university_code":"الكود الجامعي",
+  "national_id":"الرقم القومي",
+  "nationality":"الجنسية",
+  "department":"القسم"
 }

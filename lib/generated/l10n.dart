@@ -2294,6 +2294,26 @@ class S {
   String get semester {
     return Intl.message('Semester', name: 'semester', desc: '', args: []);
   }
+
+  /// `ID`
+  String get university_code {
+    return Intl.message('ID', name: 'university_code', desc: '', args: []);
+  }
+
+  /// `National ID`
+  String get national_id {
+    return Intl.message('National ID', name: 'national_id', desc: '', args: []);
+  }
+
+  /// `Nationality`
+  String get nationality {
+    return Intl.message('Nationality', name: 'nationality', desc: '', args: []);
+  }
+
+  /// `department`
+  String get department {
+    return Intl.message('department', name: 'department', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

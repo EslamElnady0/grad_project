@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
-import 'package:grad_project/features/profile/presentation/views/widgets/info_widget_list_view.dart';
+import 'package:grad_project/features/profile/presentation/views/widgets/main_info_column.dart';
 import 'package:grad_project/features/profile/presentation/views/widgets/profile_card.dart';
 import 'package:grad_project/generated/l10n.dart';
 
@@ -15,8 +14,6 @@ class ProfileViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> labels = getLabels(context);
-    List<String> info = Constants.info;
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 10.h),
       child: SingleChildScrollView(
@@ -49,20 +46,9 @@ class ProfileViewBody extends StatelessWidget {
             ),
           ),
           vGap(20),
-          InfoWidgetListView(labels: labels, info: info)
+          const MainInfoColumn(),
         ]),
       ),
     );
   }
-}
-
-List<String> getLabels(BuildContext context) {
-  return [
-    S.of(context).name,
-    S.of(context).college,
-    S.of(context).level,
-    S.of(context).group,
-    S.of(context).section,
-    S.of(context).Overall_Grade
-  ];
 }

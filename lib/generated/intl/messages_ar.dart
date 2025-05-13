@@ -147,6 +147,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "days": MessageLookupByLibrary.simpleMessage("الأيام"),
     "delete": MessageLookupByLibrary.simpleMessage("حذف"),
+    "department": MessageLookupByLibrary.simpleMessage("القسم"),
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
       "🤔 لم تبحث عن شيء بعد! ",
     ),
@@ -248,6 +249,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "multipleChoice": MessageLookupByLibrary.simpleMessage("إختيارات متعددة"),
     "name": MessageLookupByLibrary.simpleMessage("الإسم"),
+    "national_id": MessageLookupByLibrary.simpleMessage("الرقم القومي"),
+    "nationality": MessageLookupByLibrary.simpleMessage("الجنسية"),
     "news": MessageLookupByLibrary.simpleMessage("الأخبار"),
     "news_content": MessageLookupByLibrary.simpleMessage("محتوي الخبر"),
     "news_content_description": MessageLookupByLibrary.simpleMessage(
@@ -476,6 +479,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "understandBeforeAnswering": MessageLookupByLibrary.simpleMessage(
       "تأكد من فهم السؤال جيدًا قبل البدء بالإجابة.",
     ),
+    "university_code": MessageLookupByLibrary.simpleMessage("الكود الجامعي"),
     "unknown": MessageLookupByLibrary.simpleMessage("غير معروف"),
     "update_lecture_status": MessageLookupByLibrary.simpleMessage(
       "تحديث حالة المحاضرة",
