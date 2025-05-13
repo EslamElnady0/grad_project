@@ -4,10 +4,11 @@ import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 
 class InfoWidget extends StatelessWidget {
-  const InfoWidget({super.key, required this.label, required this.content});
+  const InfoWidget({super.key, required this.label, required this.content, this.textDirection});
 
   final String label;
   final String content;
+  final TextDirection? textDirection;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -40,6 +41,7 @@ class InfoWidget extends StatelessWidget {
                     bottomLeft: Radius.circular(15))),
             child: Center(
               child: Text(
+                textDirection: textDirection?? null,
                 content,
                 style: AppTextStyles.font12WhiteSemiBold,
               ),

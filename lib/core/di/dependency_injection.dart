@@ -23,6 +23,10 @@ import 'package:grad_project/features/assignments/data/data_sources/assignments_
 import 'package:grad_project/features/assignments/data/repos/assignments_repo.dart';
 import 'package:grad_project/features/assignments/logic/cubits/assignment_upload_cubit.dart/assignment_upload_cubit.dart';
 import 'package:grad_project/features/assignments/logic/cubits/create_assignment_cubit/create_assignment_cubit.dart';
+import 'package:grad_project/features/profile/data/data_sources/profile_local_data_source.dart';
+import 'package:grad_project/features/profile/data/data_sources/profile_remote_data_source.dart';
+import 'package:grad_project/features/profile/data/repos/profile_repo.dart';
+import 'package:grad_project/features/profile/logic/get_profile_cubit/get_profile_cubit.dart';
 import 'package:grad_project/features/quizes/data/data%20sources/quizzes_local_data_source.dart';
 import 'package:grad_project/features/quizes/data/data%20sources/quizzes_remote_data_source.dart';
 import 'package:grad_project/features/quizes/data/repos/quizzes_repo.dart';
@@ -111,6 +115,11 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<GetAllQuestionsCubit>(() => GetAllQuestionsCubit(getIt()));
   getIt.registerFactory<ToggleLikeCubit>(() => ToggleLikeCubit(getIt()));
   getIt.registerFactory<QuestionAndAnswersCubit>(() => QuestionAndAnswersCubit(getIt()));
+    //toDo:------------------------------ Profile API ------------------------------//
+    getIt.registerLazySingleton<ProfileRemoteDataSource>(() => ProfileRemoteDataSource(dio));
+    getIt.registerLazySingleton<ProfileLocalDataSource>(() => ProfileLocalDataSourceImpl());
+    getIt.registerLazySingleton<ProfileRepo>(() => ProfileRepo(remoteDataSource: getIt(),localDataSource: getIt(),));
+    getIt.registerFactory<GetProfileCubit>(() => GetProfileCubit(getIt()));
   //toDo:***************************************************************************//
   //********************************* UI ***************************************//
   //toDo:***************************************************************************//

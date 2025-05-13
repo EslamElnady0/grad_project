@@ -4,13 +4,16 @@ import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
+import 'package:grad_project/features/profile/data/models/get_profile_response_model.dart';
 import 'package:grad_project/generated/l10n.dart';
 
 class ProfileCard extends StatelessWidget {
   const ProfileCard({
     super.key,
+    required this.profileModel,
   });
 
+  final ProfileModel profileModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,9 +30,12 @@ class ProfileCard extends StatelessWidget {
             style: AppTextStyles.font20WhiteBold,
           ),
           vGap(15),
-          const CircleAvatar(
+          CircleAvatar(
             radius: 70,
-            backgroundImage: AssetImage(Assets.imagesTestPicture),
+            backgroundImage: profileModel.avatarUrl != null
+                ? NetworkImage(
+                    "https://img.freepik.com/premium-vector/man-avatar-profile-picture-isolated-background-avatar-profile-picture-man_1293239-4841.jpg?semt=ais_hybrid&w=740")
+                : const AssetImage(Assets.imagesTestPicture),
           ),
           vGap(10),
           RichText(
@@ -37,7 +43,7 @@ class ProfileCard extends StatelessWidget {
             text: TextSpan(
               style: AppTextStyles.font14WhiteSemiBold,
               children: [
-                const TextSpan(text: "إسلام إيهاب محمد لطفي\n"),
+                TextSpan(text: "${profileModel.name}\n"),
                 FlavorsFunctions.isStudent()
                     ? TextSpan(
                         text: "طالب في كلية الحاسبات والمعلومات\n",
@@ -48,7 +54,8 @@ class ProfileCard extends StatelessWidget {
               ],
             ),
           ),
-          FlavorsFunctions.isAdmin()
+          FlavorsFunctions.isAdmin() &&
+                  (profileModel as TeacherModel).description != null
               ? Column(
                   children: [
                     const Divider(
@@ -57,7 +64,7 @@ class ProfileCard extends StatelessWidget {
                       endIndent: 70,
                     ),
                     Text(
-                      "أستاذ متميز في قسم علوم الحاسب، تخرج عام 1941 وما زال ينبض بالحيوية وكأنه في ريعان الشباب بخبرة 39 عامًا ليس علي كوكب الأرض، بل امتدت إلى المريخ وزحل، حيث استلهم من عوالمهما تقنيات لم تصل إليها البشرية بعد. عاد إلينا بتواضعه المعهود ليشارك معرفته، ويدفع طلابه للأمام، نحو آفاق لم يسبقهم إليها أحد!",
+                      (profileModel as TeacherModel).description!,
                       style: AppTextStyles.font10GraySemiBold,
                     ),
                   ],
