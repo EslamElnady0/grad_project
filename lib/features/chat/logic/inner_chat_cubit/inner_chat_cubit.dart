@@ -9,6 +9,7 @@ import '../get_latest_messages_cubit/get_latest_messages_cubit.dart';
 import 'inner_chat_state.dart';
 
 class InnerChatCubit extends Cubit<InnerChatState> {
+  ScrollController scrollController = ScrollController();
   final ChatRepo _repo;
 
   InnerChatCubit(this._repo) : super(InnerChatInitial());
@@ -59,6 +60,14 @@ class InnerChatCubit extends Cubit<InnerChatState> {
           createdAt: DateTime.now());
       if (context.mounted) {
         context.read<GetLatestMessagesCubit>().addMessage(newMessage);
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (scrollController.hasClients) {
+            scrollController.animateTo(
+                scrollController.position.minScrollExtent,
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.ease);
+          }
+        });
       }
       emit(InnerChatMessageReceived());
     });
@@ -67,6 +76,7 @@ class InnerChatCubit extends Cubit<InnerChatState> {
   @override
   Future<void> close() {
     _repo.dispose();
+    scrollController.dispose();
     return super.close();
   }
 }

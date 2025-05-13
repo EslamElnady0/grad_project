@@ -21,7 +21,6 @@ class ChatViewBody extends StatefulWidget {
 
 class _ChatViewBodyState extends State<ChatViewBody> {
   String userId = '';
-  final ScrollController _scrollController = ScrollController();
   bool _isFetchingOlder = false;
 
   @override
@@ -29,7 +28,7 @@ class _ChatViewBodyState extends State<ChatViewBody> {
     super.initState();
     getUserId();
     initSocket();
-    _scrollController.addListener(_onScroll);
+    context.read<InnerChatCubit>().scrollController.addListener(_onScroll);
   }
 
   Future<void> getUserId() async {
@@ -45,8 +44,13 @@ class _ChatViewBodyState extends State<ChatViewBody> {
   }
 
   void _onScroll() {
-    if (_scrollController.position.pixels >=
-        _scrollController.position.maxScrollExtent - 300) {
+    if (context.read<InnerChatCubit>().scrollController.position.pixels >=
+        context
+                .read<InnerChatCubit>()
+                .scrollController
+                .position
+                .maxScrollExtent -
+            300) {
       if (!_isFetchingOlder) {
         _isFetchingOlder = true;
         context
@@ -61,7 +65,7 @@ class _ChatViewBodyState extends State<ChatViewBody> {
 
   @override
   void dispose() {
-    _scrollController.dispose();
+    context.read<InnerChatCubit>().scrollController.dispose();
     super.dispose();
   }
 
@@ -76,7 +80,7 @@ class _ChatViewBodyState extends State<ChatViewBody> {
               if (!snapshot.hasData) return _buildLoadingMessages();
               final messages = snapshot.data!;
               return ListView.separated(
-                controller: _scrollController,
+                controller: context.read<InnerChatCubit>().scrollController,
                 reverse: true,
                 itemCount: messages.length + 1,
                 padding: EdgeInsets.symmetric(horizontal: 10.w),
