@@ -15,8 +15,6 @@ import 'package:grad_project/features/time_schedule/presentation/views/widgets/c
 import 'package:grad_project/generated/l10n.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-import '../../../../../core/helpers/format_date_and_time_helpers.dart';
-
 class TimeScheduleViewBody extends StatefulWidget {
   const TimeScheduleViewBody({super.key});
 
@@ -31,25 +29,17 @@ class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
       GetStudentsAssignmentsState assignmentState) {
     if (quizState is GetStudentsQuizzesSuccess &&
         assignmentState is GetStudentsAssignmentsSuccess) {
-      final quizzes = quizState.data as List<StudentQuizModel>;
-      final assignments = assignmentState.data as List<StudentAssignmentModel>;
-      final presentQuizzes = quizzes
-          .where((quiz) =>
-              FormatDateAndTimeHelpers.parseDateAndTime(quiz.date, quiz.time)
-                  .isAfter(DateTime.now()))
-          .toList();
-      final presentAssignments = assignments
-          .where((assignment) => FormatDateAndTimeHelpers.parseDateAndTime(
-                  assignment.date, assignment.time)
-              .isAfter(DateTime.now()))
-          .toList();
-      final combined = <ActivityModel>[
-        ...presentQuizzes,
-        ...presentAssignments,
-      ];
+      final quizzes = quizState.data;
+      final assignments = assignmentState.data;
 
+      final combined = <ActivityModel>[
+        ...quizzes,
+        ...assignments,
+      ];
+      final List<ActivityModel> scheduled =
+          combined.where((a) => a.status != "finished").toList();
       setState(() {
-        activities = combined;
+        activities = scheduled;
         activities.sort((a, b) {
           final aDate = DateTime.parse(a.date);
           final bDate = DateTime.parse(b.date);
