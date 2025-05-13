@@ -157,35 +157,6 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<ToggleLikeCubit>(() => ToggleLikeCubit(getIt()));
   getIt.registerFactory<QuestionAndAnswersCubit>(
       () => QuestionAndAnswersCubit(getIt()));
-  //toDo:***************************************************************************//
-  //********************************* UI ***************************************//
-  //toDo:***************************************************************************//
-  //toDo:------------------------------ Quiz UI ------------------------------//
-  getIt.registerFactory<AddQuizCubit>(() => AddQuizCubit());
-  getIt.registerFactory<QuestionListCubit>(() => QuestionListCubit());
-  getIt.registerFactory<GetStudentsQuizzesCubit>(
-      () => GetStudentsQuizzesCubit(getIt()));
-  //toDo:------------------------------Subjects Ui------------------------------
-  getIt.registerLazySingleton<FileUploadCubit>(() => FileUploadCubit());
-  getIt.registerFactory<SubjectsFilterCubit>(() => SubjectsFilterCubit());
-  //toDo:------------------------------ Assignments API ------------------------------//
-  getIt.registerLazySingleton<AssignmentsRemoteDataSource>(
-      () => AssignmentsRemoteDataSource(dio));
-  getIt.registerLazySingleton<AssignmentsLocalDataSource>(
-      () => AssignmentsLocalDataSourceImpl());
-  getIt.registerLazySingleton<AssignmentsRepo>(() => AssignmentsRepo(
-        remoteDataSource: getIt(),
-        localDataSource: getIt(),
-      ));
-  getIt.registerFactory<CreateAssignmentCubit>(
-      () => CreateAssignmentCubit(getIt()));
-  getIt.registerFactory<AssignmentUploadCubit>(() => AssignmentUploadCubit());
-  getIt
-      .registerFactory<GetAssignmentsCubit>(() => GetAssignmentsCubit(getIt()));
-  getIt.registerFactory<GetStudentsAssignmentsCubit>(
-      () => GetStudentsAssignmentsCubit(getIt()));
-  getIt.registerFactory<UploadAssignmentSolutionCubit>(
-      () => UploadAssignmentSolutionCubit(getIt()));
   //toDo:------------------------------ Chat API ------------------------------//
   getIt.registerLazySingleton<ChatRemoteDataSource>(
       () => ChatRemoteDataSource(dio));
@@ -198,4 +169,15 @@ Future<void> setupGetIt() async {
       () => GetGroupDetailsCubit(getIt()));
   getIt.registerFactory<GetLatestMessagesCubit>(
       () => GetLatestMessagesCubit(getIt()));
+  //toDo:***************************************************************************//
+  //********************************* UI ***************************************//
+  //toDo:***************************************************************************//
+  //toDo:------------------------------ Quiz UI ------------------------------//
+  getIt.registerFactory<AddQuizCubit>(() => AddQuizCubit());
+  getIt.registerFactory<QuestionListCubit>(() => QuestionListCubit());
+  getIt.registerFactory<GetStudentsQuizzesCubit>(
+      () => GetStudentsQuizzesCubit(getIt()));
+  //toDo:------------------------------Subjects Ui------------------------------
+  getIt.registerLazySingleton<FileUploadCubit>(() => FileUploadCubit());
+  getIt.registerFactory<SubjectsFilterCubit>(() => SubjectsFilterCubit());
 }
