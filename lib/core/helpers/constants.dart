@@ -178,7 +178,7 @@ class Constants {
         title: S.of(context).profile,
         iconPath: Assets.imagesSvgsPerson,
         onTap: () {
-          //   GoRouter.of(context).push(ProfileView.routeName);
+          GoRouter.of(context).push(ProfileView.routeName);
         },
       ),
       DrawerItemModel(
@@ -363,5 +363,3 @@ class Constants {
     "B-"
   ];
 }
-
-
