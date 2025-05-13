@@ -10,6 +10,7 @@ import '../data sources/quizzes_local_data_source.dart';
 import '../data sources/quizzes_remote_data_source.dart';
 import '../models/get_quiz_using_id_response.dart';
 import '../models/get_quizzes_request_query_params_model.dart';
+import '../models/submit_quiz_request_body.dart';
 
 class QuizzesRepo {
   final QuizzesRemoteDataSource remoteDataSource;
@@ -93,6 +94,18 @@ class QuizzesRepo {
   Future<ApiResult<List<StudentQuizModel>>> getStudentQuizzes() async {
     try {
       final result = await remoteDataSource.getStudentQuizzes();
+      return ApiResult.success(result.data);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
+  Future<ApiResult<dynamic>> submitQuiz(
+      {required SubmitQuizRequestBody submitQuizRequestModel,
+      required String quizId}) async {
+    try {
+      final result =
+          await remoteDataSource.submitQuiz(quizId, submitQuizRequestModel);
       return ApiResult.success(result.data);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));

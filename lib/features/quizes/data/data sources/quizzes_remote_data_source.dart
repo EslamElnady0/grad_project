@@ -3,6 +3,7 @@ import 'package:grad_project/features/annoucements/data/models/add_annoucement_r
 import 'package:grad_project/features/quizes/data/models/create_quiz_request_model.dart';
 import 'package:grad_project/features/quizes/data/models/create_quiz_response_model.dart';
 import 'package:grad_project/features/quizes/data/models/get_quizzes_response.dart';
+import 'package:grad_project/features/quizes/data/models/submit_quiz_request_body.dart';
 import 'package:grad_project/features/time_schedule/data/models/activity_response_model.dart';
 import 'package:retrofit/retrofit.dart';
 import '../../../../core/networking/api_constants.dart';
@@ -45,8 +46,14 @@ abstract class QuizzesRemoteDataSource {
 
   @GET(ApiConstants.quizzes)
   Future<StudentQuizResponseModel> getStudentQuizzes();
+
   @GET("${ApiConstants.quizzes}/{quizId}/start")
   Future<GetQuizByIdResponse> startStudentsQuiz(
     @Path("quizId") String quizId,
+  );
+  @POST("${ApiConstants.quizzes}/{quizId}/submit")
+  Future<dynamic> submitQuiz(
+    @Path("quizId") String quizId,
+    @Body() SubmitQuizRequestBody submitQuizRequestModel,
   );
 }
