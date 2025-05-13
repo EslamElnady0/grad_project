@@ -6,6 +6,7 @@ import 'package:grad_project/features/chat/data/models/chat_groups_response.dart
 import 'package:grad_project/features/chat/logic/chat_cubit/chat_cubit.dart';
 import 'package:grad_project/features/chat/ui/views/chat_view.dart';
 import 'package:skeletonizer/skeletonizer.dart';
+import '../../../../../core/helpers/spacing.dart';
 import 'chat_levels_item.dart';
 
 class ChatLevelsListView extends StatelessWidget {
@@ -18,13 +19,24 @@ class ChatLevelsListView extends StatelessWidget {
         orElse: () => _buildChatGroupsLoading(),
         chatSuccess: (data) {
           data as ChatGroupResponse;
-          return ListView.builder(
-              itemCount: 1,
-              itemBuilder: (context, index) => ChatLevelsItem(
-                    onTap: () => GoRouter.of(context).push(ChatView.routeName),
-                    title: data.data.name,
-                    index: 3,
-                  ));
+          return ListView.separated(
+            itemCount: data.allDepartChats.length,
+            itemBuilder: (context, index) {
+              bool isMyChat =
+                  data.chatId.id == data.allDepartChats[index].id.toString();
+
+              return ChatLevelsItem(
+                onTap: () {
+                  data.chatId.id == data.allDepartChats[index].id.toString()
+                      ? GoRouter.of(context).push(ChatView.routeName)
+                      : null;
+                },
+                title: data.allDepartChats[index].name,
+                isMyChat: isMyChat,
+              );
+            },
+            separatorBuilder: (context, index) => vGap(12),
+          );
         },
       ),
     );
@@ -42,7 +54,7 @@ Widget _buildChatGroupsLoading() {
                 child: ChatLevelsItem(
                   onTap: () => GoRouter.of(context).push(ChatView.routeName),
                   title: "dasdasdasd",
-                  index: 0,
+                  isMyChat: false,
                 ),
               ),
             ),

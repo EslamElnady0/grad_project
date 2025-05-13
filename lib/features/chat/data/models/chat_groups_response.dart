@@ -5,9 +5,14 @@ part 'chat_groups_response.g.dart';
 @JsonSerializable()
 class ChatGroupResponse {
   final String message;
-  final ChatGroupData data;
+  final ChatId chatId;
+  final List<DepartmentChatGroup> allDepartChats;
 
-  ChatGroupResponse({required this.message, required this.data});
+  ChatGroupResponse({
+    required this.message,
+    required this.chatId,
+    required this.allDepartChats,
+  });
 
   factory ChatGroupResponse.fromJson(Map<String, dynamic> json) =>
       _$ChatGroupResponseFromJson(json);
@@ -16,13 +21,30 @@ class ChatGroupResponse {
 }
 
 @JsonSerializable()
-class ChatGroupData {
+class ChatId {
+  final String id;
+
+  ChatId({required this.id});
+
+  factory ChatId.fromJson(Map<String, dynamic> json) => _$ChatIdFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ChatIdToJson(this);
+}
+
+@JsonSerializable()
+class DepartmentChatGroup {
+  final String id;
   final String name;
+  final String? imageurl;
 
-  ChatGroupData({required this.name});
+  DepartmentChatGroup({
+    required this.id,
+    required this.name,
+    required this.imageurl,
+  });
 
-  factory ChatGroupData.fromJson(Map<String, dynamic> json) =>
-      _$ChatGroupDataFromJson(json);
+  factory DepartmentChatGroup.fromJson(Map<String, dynamic> json) =>
+      _$DepartmentChatGroupFromJson(json);
 
-  Map<String, dynamic> toJson() => _$ChatGroupDataToJson(this);
+  Map<String, dynamic> toJson() => _$DepartmentChatGroupToJson(this);
 }

@@ -9,21 +9,38 @@ part of 'chat_groups_response.dart';
 ChatGroupResponse _$ChatGroupResponseFromJson(Map<String, dynamic> json) =>
     ChatGroupResponse(
       message: json['message'] as String,
-      data: ChatGroupData.fromJson(json['data'] as Map<String, dynamic>),
+      chatId: ChatId.fromJson(json['chatId'] as Map<String, dynamic>),
+      allDepartChats: (json['allDepartChats'] as List<dynamic>)
+          .map((e) => DepartmentChatGroup.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$ChatGroupResponseToJson(ChatGroupResponse instance) =>
     <String, dynamic>{
       'message': instance.message,
-      'data': instance.data,
+      'chatId': instance.chatId,
+      'allDepartChats': instance.allDepartChats,
     };
 
-ChatGroupData _$ChatGroupDataFromJson(Map<String, dynamic> json) =>
-    ChatGroupData(
-      name: json['name'] as String,
+ChatId _$ChatIdFromJson(Map<String, dynamic> json) => ChatId(
+      id: json['id'] as String,
     );
 
-Map<String, dynamic> _$ChatGroupDataToJson(ChatGroupData instance) =>
+Map<String, dynamic> _$ChatIdToJson(ChatId instance) => <String, dynamic>{
+      'id': instance.id,
+    };
+
+DepartmentChatGroup _$DepartmentChatGroupFromJson(Map<String, dynamic> json) =>
+    DepartmentChatGroup(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      imageurl: json['imageurl'] as String?,
+    );
+
+Map<String, dynamic> _$DepartmentChatGroupToJson(
+        DepartmentChatGroup instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'name': instance.name,
+      'imageurl': instance.imageurl,
     };

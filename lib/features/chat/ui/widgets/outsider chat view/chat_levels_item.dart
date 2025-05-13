@@ -10,9 +10,9 @@ import '../../../../../core/theme/app_text_styles.dart';
 class ChatLevelsItem extends StatelessWidget {
   final void Function()? onTap;
   final String title;
-  final int index;
+  final bool isMyChat;
   const ChatLevelsItem(
-      {super.key, required this.title, this.onTap, required this.index});
+      {super.key, required this.title, this.onTap, required this.isMyChat});
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +23,10 @@ class ChatLevelsItem extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
             decoration: BoxDecoration(
-              color:
-                  index == 3 ? AppColors.veryLightCyan : AppColors.backGround,
+              color: isMyChat ? AppColors.veryLightCyan : AppColors.backGround,
               borderRadius: BorderRadius.circular(12.r),
               border: Border.all(
-                  color:
-                      index == 3 ? AppColors.primaryColordark : AppColors.gray,
+                  color: isMyChat ? AppColors.primaryColordark : AppColors.gray,
                   width: 2),
             ),
             child: Row(
@@ -41,13 +39,17 @@ class ChatLevelsItem extends StatelessWidget {
                 Text(
                   title,
                   style: AppTextStyles.font20DarkerBlueBold.copyWith(
-                      fontWeight: index == 3
+                      fontWeight: isMyChat
                           ? FontWeightHelper.bold
                           : FontWeightHelper.semiBold,
-                      color: index == 3
+                      color: isMyChat
                           ? AppColors.primaryColordark
                           : AppColors.darkerBlue),
                 ),
+                const Spacer(),
+                !isMyChat
+                    ? const Icon(Icons.lock, color: AppColors.darkerBlue)
+                    : const SizedBox.shrink()
               ],
             ),
           ),
