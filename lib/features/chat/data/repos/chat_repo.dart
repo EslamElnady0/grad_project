@@ -65,14 +65,14 @@ class ChatRepo {
     required Function(String error) onFailure,
   }) {
     log("registering user .....");
-    socketService.emit('User-Register', userData);
+    socketService.emit(SocketEvents.userRegister, userData);
 
-    socketService.once('user-register-success', (_) {
+    socketService.once(SocketEvents.userRegisterSuccess, (_) {
       log("user registered successfully");
       onSuccess();
     });
 
-    socketService.once('user-register-error', (error) {
+    socketService.once(SocketEvents.userRegisterError, (error) {
       log("user registration failed");
       onFailure(error.toString());
     });
@@ -83,26 +83,26 @@ class ChatRepo {
     required Function onSuccess,
     required Function(String error) onFailure,
   }) {
-    socketService.emit('Send-Message', {'text': messageText});
+    socketService.emit(SocketEvents.sendMessage, {'text': messageText});
     //todo: send message success action
-    socketService.once('send-message-error', (error) {
+    socketService.once(SocketEvents.sendMessageError, (error) {
       log("message sending failed");
       onFailure(error.toString());
     });
   }
 
   void recieveMessage({required Function onSuccess}) {
-    socketService.on('recieve-message', (data) {
+    socketService.on(SocketEvents.recieveMessage, (data) {
       onSuccess(data);
       log(data.toString());
     });
   }
 
   void dispose() {
-    socketService.off('user-register-success');
-    socketService.off('user-register-error');
-    socketService.off('recieve-message');
-    socketService.off('send-message-error');
+    socketService.off(SocketEvents.userRegisterSuccess);
+    socketService.off(SocketEvents.userRegisterError);
+    socketService.off(SocketEvents.recieveMessage);
+    socketService.off(SocketEvents.sendMessageError);
     socketService.socket.disconnect();
     socketService.socket.destroy();
     socketService.socket.close();

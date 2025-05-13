@@ -48,3 +48,13 @@ class SocketService {
 
   void off(String event) => socket.off(event);
 }
+
+class SocketEvents {
+  SocketEvents._();
+  static const String userRegister = 'User-Register';
+  static const String userRegisterError = 'user-register-error';
+  static const String userRegisterSuccess = 'user-register-success';
+  static const String sendMessage = 'Send-Message';
+  static const String sendMessageError = 'send-message-error';
+  static const String recieveMessage = 'recieve-message';
+}
