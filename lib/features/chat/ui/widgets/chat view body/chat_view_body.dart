@@ -5,9 +5,7 @@ import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/helpers/shared_pref_helper.dart';
 import 'package:grad_project/features/chat/logic/get_latest_messages_cubit/get_latest_messages_cubit.dart';
 import 'package:skeletonizer/skeletonizer.dart';
-
 import '../../../../../core/helpers/spacing.dart';
-import '../../../data/models/get_messages_response.dart';
 import 'chat_message_widget.dart';
 import '../../../../../core/widgets/text entry footer/text_entry_footer.dart';
 
@@ -40,13 +38,17 @@ class _ChatViewBodyState extends State<ChatViewBody> {
               builder: (context, state) => state.maybeWhen(
                     orElse: () => _buildLoadingMessages(),
                     getLatestMessagesSuccess: (data) {
-                      data as GetMessagesResponse;
                       return ListView.separated(
                         reverse: true,
-                        itemCount: data.data.length,
+                        itemCount: context
+                            .read<GetLatestMessagesCubit>()
+                            .messagesList
+                            .length,
                         padding: EdgeInsets.symmetric(horizontal: 10.w),
                         itemBuilder: (context, index) {
-                          final msg = data.data[index];
+                          final msg = context
+                              .read<GetLatestMessagesCubit>()
+                              .messagesList[index];
                           return ChatMessageWidget(
                             sender: msg.senderId.toString(),
                             message: msg.content,
