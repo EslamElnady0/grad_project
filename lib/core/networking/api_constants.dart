@@ -24,7 +24,7 @@ class ApiConstants {
   static const String assignments = "/assignments";
   static const String students = "/students";
   static const String chatGroups = "/chat/group";
-  static const String groupDetails = "chat/group/detials";
-  static const String messages = "chat/messages";
-  static const String oldMessages = "chat/messages/old";
+  static const String groupDetails = "/chat/group/detials";
+  static const String messages = "/chat/messages";
+  static const String oldMessages = "/chat/messages/old";
 }

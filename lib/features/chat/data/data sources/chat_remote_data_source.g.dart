@@ -56,7 +56,7 @@ class _ChatRemoteDataSource implements ChatRemoteDataSource {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'chat/group/detials',
+            '/chat/group/detials',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -83,7 +83,7 @@ class _ChatRemoteDataSource implements ChatRemoteDataSource {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'chat/messages',
+            '/chat/messages',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -110,7 +110,7 @@ class _ChatRemoteDataSource implements ChatRemoteDataSource {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'chat/messages/old/${messageId}',
+            '/chat/messages/old/${messageId}',
             queryParameters: queryParameters,
             data: _data,
           )
