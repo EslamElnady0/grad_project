@@ -53,6 +53,7 @@ import '../../features/chat/logic/chat_cubit/chat_cubit.dart';
 import '../../features/lecture_manager/logic/add_materials_cubit/add_materials_cubit.dart';
 import '../../features/lecture_manager/ui/cubit/file_upload_cubit.dart';
 import '../../features/quizes/logic/get_quiz_by_id_cubit/get_quiz_by_id_cubit.dart';
+import '../../features/quizes/logic/start_students_quiz_cubit/start_students_quiz_cubit.dart';
 import '../../features/quizes/logic/update_quiz_cubit/update_quiz_cubit.dart';
 import '../data/data sources/all_courses_remote_data_source.dart';
 import '../data/repos/all_courses_repo.dart';
@@ -116,6 +117,8 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<UpdateQuizCubit>(() => UpdateQuizCubit(getIt()));
   getIt.registerFactory<DeleteQuizCubit>(() => DeleteQuizCubit(getIt()));
   getIt.registerFactory<GetQuizByIdCubit>(() => GetQuizByIdCubit(getIt()));
+  getIt.registerFactory<StartStudentsQuizCubit>(
+      () => StartStudentsQuizCubit(getIt()));
   //toDo:------------------------------Add Materials------------------------------//
   getIt.registerLazySingleton<AddMaterialsRepo>(() => AddMaterialsRepo(dio));
   getIt.registerFactory<AddMaterialsCubit>(() => AddMaterialsCubit(getIt()));

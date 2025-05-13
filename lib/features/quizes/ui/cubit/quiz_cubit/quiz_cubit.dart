@@ -5,14 +5,20 @@ part 'quiz_state.dart';
 
 class QuizCubit extends Cubit<QuizState> {
   QuizCubit() : super(QuizInitial());
-  String selectedAnswer = "";
-  void selectAnswer(String answer) {
-    selectedAnswer = answer;
+
+  final Map<int, String> selectedAnswers = {}; // Key = questionIndex
+
+  void selectAnswer(int questionIndex, String answer) {
+    selectedAnswers[questionIndex] = answer;
     emit(QuizAnswerSelected());
   }
 
-  void clearAnswer() {
-    selectedAnswer = "";
+  String? getSelectedAnswer(int questionIndex) {
+    return selectedAnswers[questionIndex];
+  }
+
+  void clearAnswer(int questionIndex) {
+    selectedAnswers.remove(questionIndex);
     emit(QuizInitial());
   }
 }
