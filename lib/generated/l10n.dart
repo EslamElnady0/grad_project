@@ -2289,6 +2289,11 @@ class S {
   String get unknown {
     return Intl.message('Unknown', name: 'unknown', desc: '', args: []);
   }
+
+  /// `Semester`
+  String get semester {
+    return Intl.message('Semester', name: 'semester', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -15,6 +15,7 @@ import 'package:grad_project/features/forum/data/data%20sources/questions_local_
 import 'package:grad_project/features/forum/data/data%20sources/questions_remote_data_source.dart';
 import 'package:grad_project/features/forum/data/repos/questions_repo.dart';
 import 'package:grad_project/features/forum/logic/get_all_questions_cubit/get_all_questions_cubit.dart';
+import 'package:grad_project/features/forum/logic/question_and_answers/question_and_answers_cubit.dart';
 import 'package:grad_project/features/forum/logic/toggle_like_cubit/toggle_like_cubit.dart';
 import 'package:grad_project/features/lecture_manager/data/repos/add_materials_repo.dart';
 import 'package:grad_project/features/assignments/data/data_sources/assignments_local_data_source.dart';
@@ -109,6 +110,7 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<QuestionsRepo>(() => QuestionsRepo( remoteDataSource: getIt(),localDataSource: getIt(),));
   getIt.registerFactory<GetAllQuestionsCubit>(() => GetAllQuestionsCubit(getIt()));
   getIt.registerFactory<ToggleLikeCubit>(() => ToggleLikeCubit(getIt()));
+  getIt.registerFactory<QuestionAndAnswersCubit>(() => QuestionAndAnswersCubit(getIt()));
   //toDo:***************************************************************************//
   //********************************* UI ***************************************//
   //toDo:***************************************************************************//

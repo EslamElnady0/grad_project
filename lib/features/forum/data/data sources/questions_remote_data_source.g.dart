@@ -47,7 +47,10 @@ class _QuestionsRemoteDataSource implements QuestionsRemoteDataSource {
   }
 
   @override
-  Future<ToggleLikeResponseModel> toggleLike(String questionId) async {
+  Future<ToggleLikeResponseModel> toggleLike(
+    String like,
+    String questionId,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -56,7 +59,7 @@ class _QuestionsRemoteDataSource implements QuestionsRemoteDataSource {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'questions/qlike/${questionId}',
+            'questions/${like}/${questionId}',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -66,6 +69,35 @@ class _QuestionsRemoteDataSource implements QuestionsRemoteDataSource {
     late ToggleLikeResponseModel _value;
     try {
       _value = ToggleLikeResponseModel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<QuestionAndAnswersResponseModel> getQuestionAndAnswers(
+    String questionId,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<QuestionAndAnswersResponseModel>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'questions/${questionId}',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late QuestionAndAnswersResponseModel _value;
+    try {
+      _value = QuestionAndAnswersResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

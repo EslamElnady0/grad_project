@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/features/forum/ui/views/answers_view.dart';
-import 'package:grad_project/features/forum/ui/widgets/like_toggle_button.dart';
+import 'package:grad_project/features/forum/ui/widgets/custom_like_toggle_question.dart';
 import 'package:grad_project/features/forum/ui/widgets/show_state_dialog.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
@@ -21,7 +21,7 @@ class ButtonRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-     LikeToggleButton(
+     CustomLikeToggleQuestion(
           questionId: questionModel?.id ?? '',
           value: questionModel?.user?.liked ?? false,
         ),
@@ -29,7 +29,10 @@ class ButtonRow extends StatelessWidget {
         const Spacer(),
         ElevatedButton.icon(
           onPressed: () {
-            GoRouter.of(context).push(AnswersView.routeName);
+            GoRouter.of(context).push(AnswersView.routeName,
+            extra: questionModel?.id?? '',
+                
+            );
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.darkblue,

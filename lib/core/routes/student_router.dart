@@ -21,7 +21,8 @@ import '../../features/subjects/ui/views/materials_view.dart';
 abstract class StudentRouter {
   static GoRouter getRouter(bool isLogin) {
     return GoRouter(
-      initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
+      initialLocation: AnswersView.routeName,
+      //isLogin ? HomeView.routeName : AuthView.routeName,
       routes: [
         GoRoute(
           path: HomeView.routeName,
@@ -77,7 +78,10 @@ abstract class StudentRouter {
                 )),
         GoRoute(
             path: AnswersView.routeName,
-            builder: (context, state) => const AnswersView()),
+            builder: (context, state) =>  AnswersView(
+                  questionId: "681eaa46398ee6194584b5d2",
+                )),
+            
         GoRoute(
             path: TimeScheduleView.routeName,
             builder: (context, state) => const TimeScheduleView()),

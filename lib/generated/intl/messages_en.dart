@@ -435,6 +435,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "select_subjects": MessageLookupByLibrary.simpleMessage(
       "📚 Please select the subjects you want to check for posts and updates!",
     ),
+    "semester": MessageLookupByLibrary.simpleMessage("Semester"),
     "semester_1": MessageLookupByLibrary.simpleMessage("First Semester"),
     "semester_2": MessageLookupByLibrary.simpleMessage("Second Semester"),
     "sent": MessageLookupByLibrary.simpleMessage("sent"),

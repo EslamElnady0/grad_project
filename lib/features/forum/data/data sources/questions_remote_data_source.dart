@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:grad_project/core/networking/api_constants.dart';
 import 'package:grad_project/features/forum/data/models/get_all_questions_response_model.dart';
+import 'package:grad_project/features/forum/data/models/question_and_answers_response_model.dart';
 import 'package:grad_project/features/forum/data/models/toggle_like_response_model.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -15,10 +16,18 @@ abstract class QuestionsRemoteDataSource {
   factory QuestionsRemoteDataSource(Dio dio,
       {String baseUrl,
       ParseErrorLogger? errorLogger}) = _QuestionsRemoteDataSource;
+
   @GET(ApiConstants.questions)
   Future<GetAllQuestionsResponseModel> getAllQuestions();
 
-  @POST("${ApiConstants.questions}/${ApiConstants.like}/{questionId}")
+  @POST("${ApiConstants.questions}/{like}/{questionId}")
   Future<ToggleLikeResponseModel> toggleLike(
-      @Path("questionId") String questionId);
+    @Path("like") String like,
+    @Path("questionId") String questionId,
+  );
+
+  @GET("${ApiConstants.questions}/{questionId}")
+  Future<QuestionAndAnswersResponseModel> getQuestionAndAnswers(
+    @Path("questionId") String questionId,
+  );
 }

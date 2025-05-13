@@ -1,54 +1,73 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:grad_project/core/helpers/app_assets.dart';
+import 'package:grad_project/core/networking/api_constants.dart';
+import 'package:grad_project/features/forum/data/models/question_and_answers_response_model.dart';
+import 'package:grad_project/features/forum/logic/toggle_like_cubit/toggle_like_cubit.dart';
+import 'package:grad_project/features/forum/ui/widgets/custom_like_toggle_answer.dart';
+import 'package:grad_project/features/forum/ui/widgets/custom_like_toggle_question.dart';
+import 'package:grad_project/generated/l10n.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
-
-import '../../../../core/widgets/item_header.dart';
+import '../../../../core/widgets/doctor_info_section.dart';
 
 class CustomAnswerItem extends StatelessWidget {
-  const CustomAnswerItem({super.key});
+  const CustomAnswerItem({
+    super.key,
+    this.answerModel,
+  });
+
+  final AnswerModel? answerModel;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.0.w),
-      child: Container(
-        width: double.infinity,
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-        decoration: BoxDecoration(
-          color: AppColors.white,
-          borderRadius: BorderRadius.circular(16.r),
-          boxShadow: [
-            BoxShadow(
-                offset: const Offset(0, 1),
-                blurRadius: 5.r,
-                spreadRadius: 3,
-                color: const Color(0xff112316).withOpacity(0.15)),
-          ],
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+      child: IntrinsicHeight(
+        child: Row(
           children: [
-            const ItemHeader(
-              date: "12/10/2023",
-              from: "2 mins ago",
-              name: "ابراهيم صيام",
-              specialization: "طالب فرقة رابعه",
+            Expanded(
+              child:  Skeleton.leaf(
+            enabled: true,
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: AppColors.darkblue),
+                    borderRadius: BorderRadius.circular(18.r),
+                  ),
+                  child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20.0, vertical: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          DoctorInfoSection(
+                            name: answerModel?.user?.name ?? "",
+                            specialization:
+                                "${answerModel?.user?.department} ${S.of(context).semester} ${answerModel?.user?.semester}",
+                          ),
+                          vGap(4),
+                          Text(answerModel?.body ?? "",
+                              style: AppTextStyles.font12GrayMedium.copyWith(
+                                color: AppColors.darkblue,
+                              ))
+                        ],
+                      )),
+                ),
+              ),
             ),
-            vGap(12),
-            Text(
-              "📢 إعلان هام",
-              style: AppTextStyles.font10greenMedium
-                  .copyWith(color: AppColors.black),
+            hGap(8),
+       CustomLikeToggleAnswer(
+              questionId: answerModel?.id ?? "",
+              likesCount: answerModel?.likes ?? 0,
+              value: answerModel?.user?.liked ?? false,
             ),
-            vGap(20),
-            Text(
-              "يرجى من جميع الطلاب حضور المحاضرة القادمة في موعدها، حيث سيتم مناقشة المواضيع الأساسية للامتحان النصفي القادم، وستشمل المحاضرة مراجعة شاملة للنماذج السابقة والأسئلة المتكررة.",
-              style: AppTextStyles.font10greenMedium
-                  .copyWith(color: AppColors.black),
-            ),
+           
+         
           ],
         ),
       ),

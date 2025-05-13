@@ -287,5 +287,6 @@
   "questions_count": "عدد الأسئلة",
   "show_image": "عرض الصوره" ,
   
-  "unknown": "غير معروف"
+  "unknown": "غير معروف",
+  "semester": "ترم"
 }

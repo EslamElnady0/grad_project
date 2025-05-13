@@ -85,7 +85,9 @@ abstract class AdminRouter {
                 )),
         GoRoute(
             path: AnswersView.routeName,
-            builder: (context, state) => const AnswersView()),
+            builder: (context, state) => AnswersView(
+               questionId: state.extra as String
+            )),
         GoRoute(
             path: AddAnnoucementView.routeName,
             builder: (context, state) => const AddAnnoucementView()),

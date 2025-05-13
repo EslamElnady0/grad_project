@@ -17,5 +17,6 @@ class ApiConstants {
  
   static const String assignments = "/assignments";
   static const String students = "/students";
-  static const String like = "qlike";
+  static const String questionLike = "qlike";
+  static const String answerlike = "alike";
 }

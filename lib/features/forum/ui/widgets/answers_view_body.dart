@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grad_project/features/forum/ui/widgets/custom_answer_chat.dart';
+import 'package:grad_project/features/forum/data/models/question_and_answers_response_model.dart';
 import 'package:grad_project/features/forum/ui/widgets/custom_answer_item.dart';
+import 'package:grad_project/features/forum/ui/widgets/custom_question_forum_item.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 import '../../../../generated/l10n.dart';
 import '../../../home/ui/widgets/title_text_widget.dart';
 
 class AnswersViewBody extends StatelessWidget {
-  const AnswersViewBody({super.key});
-
+  const AnswersViewBody({super.key,  this.questionAndAnswerDataModel});
+final QuestionAndAnswerDataModel? questionAndAnswerDataModel;
   @override
   Widget build(BuildContext context) {
+    
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -26,19 +28,25 @@ class AnswersViewBody extends StatelessWidget {
               ],
             ),
           ),
-          const CustomAnswerItem(),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+            child: CustomQuestionForumItem(questionModel: questionAndAnswerDataModel?.question),
+          ),
           vGap(18),
           ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            itemCount: 10,
+            itemCount: questionAndAnswerDataModel?.answers?.length ?? 0,
             itemBuilder: (context, index) => Padding(
               padding: EdgeInsets.only(bottom: 8.h),
-              child: const CustomAnsewrChat(),
+              child: CustomAnswerItem(
+                answerModel: questionAndAnswerDataModel?.answers?[index],
+              ),
             ),
           ),
         ],
       ),
-    );
+    ); 
   }
 }
+   

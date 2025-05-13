@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/core/networking/api_constants.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/features/forum/logic/toggle_like_cubit/toggle_like_cubit.dart';
 import 'package:grad_project/generated/l10n.dart';
 
-class LikeToggleButton extends StatefulWidget {
-  const LikeToggleButton({super.key, required this.value, required this.questionId});
-final String questionId;
+class CustomLikeToggleQuestion extends StatefulWidget {
+  const CustomLikeToggleQuestion({super.key, required this.value, required this.questionId});
+  final String questionId;
   final bool value;
 
   @override
-  State<LikeToggleButton> createState() => _LikeToggleButtonState();
+  State<CustomLikeToggleQuestion> createState() => _CustomLikeToggleQuestionState();
 }
 
-class _LikeToggleButtonState extends State<LikeToggleButton> {
+class _CustomLikeToggleQuestionState extends State<CustomLikeToggleQuestion> {
   late bool isLiked;
 
   @override
@@ -30,7 +31,8 @@ class _LikeToggleButtonState extends State<LikeToggleButton> {
     });
     
     context.read<ToggleLikeCubit>().toggleLike(
-      widget.questionId,
+      questionId: widget.questionId,
+      like: ApiConstants.questionLike
        
     );
 

@@ -9,9 +9,12 @@ class ToggleLikeCubit extends Cubit<ToggleLikeState> {
 
   ToggleLikeCubit(this._repo) : super(const ToggleLikeState.initial());
 
-  Future<void> toggleLike(String questionId) async {
+  Future<void> toggleLike({required String questionId, required String like}) async {
     emit(const ToggleLikeState.toggleLikeLoading());
-    final result = await _repo.toggleLike(questionId);
+    final result = await _repo.toggleLike(
+      questionId: questionId,
+      like: like,
+    );
 
     result.when(
       success: (response) => emit(ToggleLikeState.toggleLikeSuccess(response)),

@@ -285,5 +285,6 @@
   "the_degree":"Degree",
    "questions_count":"Questions Count",
    "show_image":"Show Image",
-   "unknown":"Unknown"
+   "unknown":"Unknown",
+   "semester":"Semester"
 }
