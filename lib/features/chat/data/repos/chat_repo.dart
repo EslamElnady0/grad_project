@@ -73,20 +73,26 @@ class ChatRepo {
     required Function onSuccess,
     required Function(String error) onFailure,
   }) {
-    socketService.emit('Send-Message', {'message': messageText});
-
-    socketService.on('send-message-success', (_) {
-      onSuccess();
-    });
-
-    socketService.on('send-message-failure', (error) {
+    socketService.emit('Send-Message', {'text': messageText});
+    //todo: send message success action
+    socketService.on('send-message-error', (error) {
+      log("message sending failed");
       onFailure(error.toString());
+    });
+  }
+
+  void recieveMessage({required Function onSuccess}) {
+    socketService.on('recieve-message', (data) {
+      onSuccess(data);
+      log(data.toString());
     });
   }
 
   void dispose() {
     socketService.off('user-register-success');
     socketService.off('user-register-error');
+    socketService.off('recieve-message');
+    socketService.off('send-message-error');
     socketService.socket.disconnect();
     socketService.socket.destroy();
     socketService.socket.close();

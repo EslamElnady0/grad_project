@@ -29,7 +29,11 @@ class SocketService {
     });
   }
 
-  void connect() => socket.connect();
+  void connect() {
+    log('Socket connecting...');
+    socket.connect();
+  }
+
   void disconnect() => socket.disconnect();
 
   void emit(String event, dynamic data) => socket.emit(event, data);

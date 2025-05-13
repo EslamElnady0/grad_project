@@ -10,6 +10,8 @@ class InnerChatSending extends InnerChatState {}
 
 class InnerChatMessageSent extends InnerChatState {}
 
+class InnerChatMessageReceived extends InnerChatState {}
+
 class InnerChatError extends InnerChatState {
   final String message;
   InnerChatError(this.message);

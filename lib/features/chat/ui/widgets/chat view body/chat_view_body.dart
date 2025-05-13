@@ -7,6 +7,7 @@ import 'package:grad_project/features/chat/logic/get_latest_messages_cubit/get_l
 import 'package:grad_project/features/chat/logic/inner_chat_cubit/inner_chat_cubit.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../../core/helpers/spacing.dart';
+import '../../../data/models/get_messages_response.dart';
 import 'chat_message_widget.dart';
 import '../../../../../core/widgets/text entry footer/text_entry_footer.dart';
 
@@ -43,35 +44,32 @@ class _ChatViewBodyState extends State<ChatViewBody> {
     return Column(
       children: [
         Expanded(
-          child: BlocBuilder<GetLatestMessagesCubit, GetLatestMessagesState>(
-              builder: (context, state) => state.maybeWhen(
-                    orElse: () => _buildLoadingMessages(),
-                    getLatestMessagesSuccess: (data) {
-                      return ListView.separated(
-                        reverse: true,
-                        itemCount: context
-                            .read<GetLatestMessagesCubit>()
-                            .messagesList
-                            .length,
-                        padding: EdgeInsets.symmetric(horizontal: 10.w),
-                        itemBuilder: (context, index) {
-                          final msg = context
-                              .read<GetLatestMessagesCubit>()
-                              .messagesList[index];
-                          return ChatMessageWidget(
-                            sender: msg.senderId.toString(),
-                            message: msg.content,
-                            isMe: msg.senderId.toString() == userId,
-                          );
-                        },
-                        separatorBuilder: (context, index) => vGap(12),
-                      );
-                    },
-                  )),
+          child: StreamBuilder<List<Message>>(
+            stream: context.read<GetLatestMessagesCubit>().messagesStream,
+            builder: (context, snapshot) {
+              if (!snapshot.hasData) return _buildLoadingMessages();
+
+              final messages = snapshot.data!;
+              return ListView.separated(
+                reverse: true,
+                itemCount: messages.length,
+                padding: EdgeInsets.symmetric(horizontal: 10.w),
+                itemBuilder: (context, index) {
+                  final msg = messages[index];
+                  return ChatMessageWidget(
+                    sender: msg.senderId.toString(),
+                    message: msg.content,
+                    isMe: msg.senderId.toString() == userId,
+                  );
+                },
+                separatorBuilder: (_, __) => vGap(12),
+              );
+            },
+          ),
         ),
         ChatViewFooter(
           onSend: (text) {
-            print('Send this message: $text');
+            context.read<InnerChatCubit>().sendMessage(text, context);
           },
           onTextChanged: (text) {
             print('Typing: $text');
