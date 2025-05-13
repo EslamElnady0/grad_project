@@ -25,4 +25,17 @@ class FormatDateAndTimeHelpers {
         DateFormat('d MMMM yyyy', isArabicLocale(context) ? 'ar' : 'en');
     return formatter.format(date);
   }
+
+  static DateTime parseDateAndTime(String date, String time) {
+    final dateParts = date.split('-'); // [2025, 05, 10]
+    final timeParts = time.split(':'); // [22, 00]
+
+    return DateTime(
+      int.parse(dateParts[0]), // year
+      int.parse(dateParts[1]), // month
+      int.parse(dateParts[2]), // day
+      int.parse(timeParts[0]), // hour
+      int.parse(timeParts[1]), // minute
+    );
+  }
 }
