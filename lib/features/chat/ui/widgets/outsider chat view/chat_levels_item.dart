@@ -10,9 +10,14 @@ import '../../../../../core/theme/app_text_styles.dart';
 class ChatLevelsItem extends StatelessWidget {
   final void Function()? onTap;
   final String title;
+  final String? imageUrl;
   final bool isMyChat;
   const ChatLevelsItem(
-      {super.key, required this.title, this.onTap, required this.isMyChat});
+      {super.key,
+      required this.title,
+      this.onTap,
+      required this.isMyChat,
+      this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +38,9 @@ class ChatLevelsItem extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 22.r,
-                  backgroundImage: const AssetImage(Assets.imagesAvatarDoc),
+                  backgroundImage: imageUrl != null
+                      ? NetworkImage(imageUrl!)
+                      : const AssetImage(Assets.imagesAvatarDoc),
                 ),
                 hGap(15),
                 Text(
