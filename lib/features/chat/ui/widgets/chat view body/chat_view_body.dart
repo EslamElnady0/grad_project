@@ -64,12 +64,6 @@ class _ChatViewBodyState extends State<ChatViewBody> {
   }
 
   @override
-  void dispose() {
-    context.read<InnerChatCubit>().scrollController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
