@@ -54,6 +54,7 @@ class ChatRepo {
     }
   }
 
+  //toDo:--------------------------------------- Sockets Methods -------------------------------------------------------
   Future<void> initSocket({Function? onConnected}) async {
     log("initializing socket ......");
     await socketService.init(onConnect: onConnected);
