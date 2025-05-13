@@ -1,18 +1,17 @@
 import 'dart:developer';
-
-// import 'package:grad_project/core/helpers/constants.dart';
-// import 'package:grad_project/core/helpers/shared_pref_helper.dart';
 import 'package:socket_io_client/socket_io_client.dart' as io;
 
 class SocketService {
   late io.Socket socket;
+  final String token;
 
+  SocketService({required this.token});
   Future<void> init({Function? onConnect}) async {
+    log(token);
     socket = io.io(
       'wss://ngu-question-hub.azurewebsites.net',
-      io.OptionBuilder().setTransports(['websocket']).setQuery({
-        'token': "21|LvlWyk2DnyojGLbYYbz2pUPvzMTBz0uN0Fp6q5ea97670cd9"
-      }).build(),
+      io.OptionBuilder()
+          .setTransports(['websocket']).setQuery({'token': token}).build(),
     );
 
     socket.onConnect((_) {
@@ -37,7 +36,8 @@ class SocketService {
   void disconnect() => socket.disconnect();
 
   void emit(String event, dynamic data) => socket.emit(event, data);
-
+  void once(String event, Function(dynamic) handler) =>
+      socket.once(event, handler);
   void on(String event, Function(dynamic) handler) {
     log('Listening to event: $event');
     socket.on(event, (data) {

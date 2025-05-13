@@ -57,12 +57,12 @@ class ChatRepo {
     log("registering user .....");
     socketService.emit('User-Register', userData);
 
-    socketService.on('user-register-success', (_) {
+    socketService.once('user-register-success', (_) {
       log("user registered successfully");
       onSuccess();
     });
 
-    socketService.on('user-register-error', (error) {
+    socketService.once('user-register-error', (error) {
       log("user registration failed");
       onFailure(error.toString());
     });
@@ -75,7 +75,7 @@ class ChatRepo {
   }) {
     socketService.emit('Send-Message', {'text': messageText});
     //todo: send message success action
-    socketService.on('send-message-error', (error) {
+    socketService.once('send-message-error', (error) {
       log("message sending failed");
       onFailure(error.toString());
     });

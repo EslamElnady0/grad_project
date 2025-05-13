@@ -56,6 +56,8 @@ import '../../features/quizes/logic/get_quiz_by_id_cubit/get_quiz_by_id_cubit.da
 import '../../features/quizes/logic/update_quiz_cubit/update_quiz_cubit.dart';
 import '../data/data sources/all_courses_remote_data_source.dart';
 import '../data/repos/all_courses_repo.dart';
+import '../helpers/constants.dart';
+import '../helpers/shared_pref_helper.dart';
 import '../logic/all_courses_cubit/all_courses_cubit.dart';
 import '../networking/api_service.dart';
 import '../networking/dio_factory.dart';
@@ -164,10 +166,11 @@ Future<void> setupGetIt() async {
       () => ChatRemoteDataSource(dio));
   getIt.registerLazySingleton<ChatLocalDataSource>(
       () => ChatLocalDataSourceImpl());
+  String token = await SharedPrefHelper.getSecuredString(Constants.token);
   getIt.registerLazySingleton<ChatRepo>(() => ChatRepo(
       remoteDataSource: getIt(),
       localDataSource: getIt(),
-      socketService: SocketService()));
+      socketService: SocketService(token: token)));
   getIt.registerFactory<ChatGroupsCubit>(() => ChatGroupsCubit(getIt()));
   getIt.registerFactory<GetGroupDetailsCubit>(
       () => GetGroupDetailsCubit(getIt()));
