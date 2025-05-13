@@ -10,7 +10,7 @@ part of 'chat_remote_data_source.dart';
 
 class _ChatRemoteDataSource implements ChatRemoteDataSource {
   _ChatRemoteDataSource(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://ngu-question-hub.azurewebsites.net';
+    baseUrl ??= 'https://ngu-question-hub.azurewebsites.net/';
   }
 
   final Dio _dio;

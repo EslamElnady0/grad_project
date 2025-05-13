@@ -4,13 +4,16 @@ import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/generated/l10n.dart';
 import 'package:translator/translator.dart';
 
-Future<void> showErrorDialog(BuildContext context, String message, {bool doublePop = false}) async {
+Future<void> showErrorDialog(BuildContext context, String message,
+    {bool doublePop = false, bool translate = true}) async {
   final translator = GoogleTranslator();
 
-  if (isArabicLocale(context)) {
-    final translation =
-        await translator.translate(message, from: 'en', to: 'ar');
-    message = translation.text;
+  if (translate) {
+    if (isArabicLocale(context)) {
+      final translation =
+          await translator.translate(message, from: 'en', to: 'ar');
+      message = translation.text;
+    }
   }
 
   if (context.mounted) {
@@ -29,12 +32,11 @@ Future<void> showErrorDialog(BuildContext context, String message, {bool doubleP
         ),
         actions: [
           TextButton(
-            onPressed: ()  {
+            onPressed: () {
               Navigator.of(context).pop();
-              if(doublePop){
+              if (doublePop) {
                 Navigator.of(context).pop();
               }
-              
             },
             child: Text(
               S.of(context).ok,

@@ -2294,6 +2294,21 @@ class S {
   String get semester {
     return Intl.message('Semester', name: 'semester', desc: '', args: []);
   }
+
+  /// `Quiz hasn't started yet`
+  String get quizNotStarted {
+    return Intl.message(
+      'Quiz hasn\'t started yet',
+      name: 'quizNotStarted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Started`
+  String get started {
+    return Intl.message('Started', name: 'started', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

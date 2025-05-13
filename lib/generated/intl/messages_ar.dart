@@ -338,6 +338,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "quizNavigation": MessageLookupByLibrary.simpleMessage(
       "التنقل في الاختبار",
     ),
+    "quizNotStarted": MessageLookupByLibrary.simpleMessage("لم يبدأ بعد"),
     "quizState": MessageLookupByLibrary.simpleMessage("حالة الاختبار"),
     "quizTitle": MessageLookupByLibrary.simpleMessage("عنوان الكويز"),
     "quizTitleHelper": MessageLookupByLibrary.simpleMessage(
@@ -431,6 +432,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "startWriting": MessageLookupByLibrary.simpleMessage(
       "إبدأ في الكتابة الأن..",
     ),
+    "started": MessageLookupByLibrary.simpleMessage("بدأ"),
     "startsAt": MessageLookupByLibrary.simpleMessage("يبدأ "),
     "starts_in": MessageLookupByLibrary.simpleMessage("يبدأ في "),
     "status": MessageLookupByLibrary.simpleMessage("الحالة:"),

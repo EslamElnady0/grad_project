@@ -45,4 +45,8 @@ abstract class QuizzesRemoteDataSource {
 
   @GET(ApiConstants.quizzes)
   Future<StudentQuizResponseModel> getStudentQuizzes();
+  @GET("${ApiConstants.quizzes}/{quizId}/start")
+  Future<GetQuizByIdResponse> startStudentsQuiz(
+    @Path("quizId") String quizId,
+  );
 }
