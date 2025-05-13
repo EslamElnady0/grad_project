@@ -11,6 +11,7 @@ import 'package:grad_project/features/map/presentation/views/internal_map_view.d
 import 'package:grad_project/features/profile/presentation/views/profile_view.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_details_view.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_view.dart';
+import 'package:grad_project/features/time_schedule/presentation/views/edit_profile_view.dart';
 import 'package:grad_project/features/time_schedule/presentation/views/time_schedule_view.dart';
 import 'package:grad_project/features/weekly_schedule/ui/screens/weekly_schedule_view.dart';
 import '../../features/auth/ui/views/auth_view.dart';
@@ -21,8 +22,7 @@ import '../../features/subjects/ui/views/materials_view.dart';
 abstract class StudentRouter {
   static GoRouter getRouter(bool isLogin) {
     return GoRouter(
-      initialLocation: 
-      isLogin ? HomeView.routeName : AuthView.routeName,
+      initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
       routes: [
         GoRoute(
           path: HomeView.routeName,
@@ -78,10 +78,9 @@ abstract class StudentRouter {
                 )),
         GoRoute(
             path: AnswersView.routeName,
-            builder: (context, state) =>  AnswersView(
+            builder: (context, state) => AnswersView(
                   questionId: state.extra as String,
                 )),
-            
         GoRoute(
             path: TimeScheduleView.routeName,
             builder: (context, state) => const TimeScheduleView()),
@@ -93,7 +92,10 @@ abstract class StudentRouter {
           builder: (context, state) => FullScreenImageView(
             imageUrl: state.extra as String,
           ),
-        )
+        ),
+        GoRoute(
+            path: EditProfileView.routeName,
+            builder: (context, state) => const EditProfileView())
       ],
     );
   }

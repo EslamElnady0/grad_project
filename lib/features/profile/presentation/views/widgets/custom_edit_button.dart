@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
+import 'package:grad_project/features/time_schedule/presentation/views/edit_profile_view.dart';
 import 'package:grad_project/generated/l10n.dart';
 
 class CustomEditButton extends StatelessWidget {
@@ -14,7 +16,9 @@ class CustomEditButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {} ,
+      onTap: () {
+        GoRouter.of(context).push(EditProfileView.routeName);
+      },
       child: Container(
         width: 100,
         height: 50,
