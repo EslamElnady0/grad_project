@@ -58,17 +58,17 @@ class _ChatViewBodyState extends State<ChatViewBody> {
                     },
                   )),
         ),
-      ChatViewFooter(
-  onSend: (text) {
-    print('Send this message: $text');
-  },
-  onTextChanged: (text) {
-    print('Typing: $text');
-  },
-  onAttach: () {
-    print('Open attachments dialog');
-  },
-),
+        ChatViewFooter(
+          onSend: (text) {
+            print('Send this message: $text');
+          },
+          onTextChanged: (text) {
+            print('Typing: $text');
+          },
+          onAttach: () {
+            print('Open attachments dialog');
+          },
+        ),
       ],
     );
   }
