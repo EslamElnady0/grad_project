@@ -80,22 +80,7 @@ class _ChatViewBodyState extends State<ChatViewBody> {
                 padding: EdgeInsets.symmetric(horizontal: 10.w),
                 itemBuilder: (context, index) {
                   if (index == messages.length) {
-                    return BlocBuilder<GetLatestMessagesCubit,
-                            GetLatestMessagesState>(
-                        builder: (context, state) => state.maybeWhen(
-                              orElse: () => const SizedBox.shrink(),
-                              getLatestMessagesLoading: () {
-                                {
-                                  return const Center(
-                                      child: Padding(
-                                    padding: EdgeInsets.symmetric(vertical: 8),
-                                    child: CircularProgressIndicator(
-                                        color: AppColors.darkblue,
-                                        strokeWidth: 2),
-                                  ));
-                                }
-                              },
-                            ));
+                    return _buildPaginationLoader();
                   }
                   final msg = messages[index];
                   return ChatMessageWidget(
@@ -119,6 +104,23 @@ class _ChatViewBodyState extends State<ChatViewBody> {
       ],
     );
   }
+}
+
+Widget _buildPaginationLoader() {
+  return BlocBuilder<GetLatestMessagesCubit, GetLatestMessagesState>(
+      builder: (context, state) => state.maybeWhen(
+            orElse: () => const SizedBox.shrink(),
+            getLatestMessagesLoading: () {
+              {
+                return const Center(
+                    child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8),
+                  child: CircularProgressIndicator(
+                      color: AppColors.darkblue, strokeWidth: 2),
+                ));
+              }
+            },
+          ));
 }
 
 Widget _buildLoadingMessages() {
