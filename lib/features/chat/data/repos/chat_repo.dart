@@ -49,8 +49,6 @@ class ChatRepo {
     await socketService.init(onConnect: onConnected);
   }
 
-  bool _listenersSet = false;
-
   void registerUser(
     Map<String, dynamic> userData, {
     required Function onSuccess,
@@ -59,19 +57,15 @@ class ChatRepo {
     log("registering user .....");
     socketService.emit('User-Register', userData);
 
-    if (!_listenersSet) {
-      _listenersSet = true;
+    socketService.on('user-register-success', (_) {
+      log("user registered successfully");
+      onSuccess();
+    });
 
-      socketService.on('user-register-success', (_) {
-        log("user registered successfully");
-        onSuccess();
-      });
-
-      socketService.on('user-register-error', (error) {
-        log("user registration failed");
-        onFailure(error.toString());
-      });
-    }
+    socketService.on('user-register-error', (error) {
+      log("user registration failed");
+      onFailure(error.toString());
+    });
   }
 
   void sendMessage(
@@ -91,9 +85,11 @@ class ChatRepo {
   }
 
   void dispose() {
-    socketService.off('register-user-success');
-    socketService.off('register-user-failure');
-    socketService.off('send-message-success');
-    socketService.off('send-message-failure');
+    socketService.off('user-register-success');
+    socketService.off('user-register-error');
+    socketService.socket.disconnect();
+    socketService.socket.destroy();
+    socketService.socket.close();
+    socketService.socket.dispose();
   }
 }

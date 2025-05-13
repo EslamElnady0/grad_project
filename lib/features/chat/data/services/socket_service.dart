@@ -6,12 +6,8 @@ import 'package:socket_io_client/socket_io_client.dart' as io;
 
 class SocketService {
   late io.Socket socket;
-  bool _initialized = false;
 
   Future<void> init({Function? onConnect}) async {
-    if (_initialized) return;
-    _initialized = true;
-
     socket = io.io(
       'wss://ngu-question-hub.azurewebsites.net',
       io.OptionBuilder().setTransports(['websocket']).setQuery({
