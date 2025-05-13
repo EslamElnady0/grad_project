@@ -8,4 +8,15 @@ class StartStudentsQuizCubit extends Cubit<StartStudentsQuizState> {
   final QuizzesRepo _repo;
   StartStudentsQuizCubit(this._repo)
       : super(const StartStudentsQuizState.initial());
+
+  Future<void> startStudentsQuiz(String quizId) async {
+    emit(const StartStudentsQuizState.startStudentsQuizLoading());
+    final result = await _repo.startStudentsQuiz(quizId);
+    result.when(success: (data) {
+      emit(StartStudentsQuizState.startStudentsQuizSuccess(data));
+    }, failure: (error) {
+      emit(StartStudentsQuizState.startStudentsQuizFailure(
+          error.getAllMessages()));
+    });
+  }
 }
