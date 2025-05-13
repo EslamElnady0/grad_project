@@ -8,8 +8,8 @@ import 'package:grad_project/features/assignments/presentation/views/teachers_as
 import 'package:grad_project/features/auth/ui/views/forget_password_view.dart';
 import 'package:grad_project/features/auth/ui/views/confirm_account_view.dart';
 import 'package:grad_project/features/dashboard/ui/views/registered_students_view.dart';
-import 'package:grad_project/features/forum/presentation/views/answers_view.dart';
-import 'package:grad_project/features/forum/presentation/views/forum_views.dart';
+import 'package:grad_project/features/forum/ui/views/answers_view.dart';
+import 'package:grad_project/features/forum/ui/views/forum_views.dart';
 import 'package:grad_project/features/lecture_manager/ui/screens/qr_attendance_view.dart';
 import 'package:grad_project/features/map/presentation/views/internal_map_view.dart';
 import 'package:grad_project/features/profile/presentation/views/profile_view.dart';
@@ -85,7 +85,9 @@ abstract class AdminRouter {
                 )),
         GoRoute(
             path: AnswersView.routeName,
-            builder: (context, state) => const AnswersView()),
+            builder: (context, state) => AnswersView(
+               questionId: state.extra as String
+            )),
         GoRoute(
             path: AddAnnoucementView.routeName,
             builder: (context, state) => const AddAnnoucementView()),

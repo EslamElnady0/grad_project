@@ -11,6 +11,12 @@ import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/
 import 'package:grad_project/features/annoucements/logic/get_teacher_cources_cubit/get_teacher_cources_cubit.dart';
 import 'package:grad_project/features/annoucements/logic/update_annoucement_cubit/update_annoucement_cubit.dart';
 import 'package:grad_project/features/assignments/logic/cubits/get_assignments_cubit/get_assignments_cubit.dart';
+import 'package:grad_project/features/forum/data/data%20sources/questions_local_data_source.dart';
+import 'package:grad_project/features/forum/data/data%20sources/questions_remote_data_source.dart';
+import 'package:grad_project/features/forum/data/repos/questions_repo.dart';
+import 'package:grad_project/features/forum/logic/get_all_questions_cubit/get_all_questions_cubit.dart';
+import 'package:grad_project/features/forum/logic/question_and_answers/question_and_answers_cubit.dart';
+import 'package:grad_project/features/forum/logic/toggle_like_cubit/toggle_like_cubit.dart';
 import 'package:grad_project/features/chat/logic/get_group_details_cubit/get_group_details_cubit.dart';
 import 'package:grad_project/features/chat/logic/get_latest_messages_cubit/get_latest_messages_cubit.dart';
 import 'package:grad_project/features/lecture_manager/data/repos/add_materials_repo.dart';
@@ -109,7 +115,6 @@ Future<void> setupGetIt() async {
   //toDo:------------------------------Add Materials------------------------------//
   getIt.registerLazySingleton<AddMaterialsRepo>(() => AddMaterialsRepo(dio));
   getIt.registerFactory<AddMaterialsCubit>(() => AddMaterialsCubit(getIt()));
-
   //toDo:------------------------------ Get Tabel Api ------------------------------//
   getIt.registerLazySingleton<GetTabelRemoteDataSource>(
       () => GetTabelRemoteDataSource(dio));
@@ -120,8 +125,40 @@ Future<void> setupGetIt() async {
         localDataSource: getIt(),
       ));
   getIt.registerFactory<GetTabelCubit>(() => GetTabelCubit(getIt()));
+  //toDo:------------------------------ Assignments API ------------------------------//
+  getIt.registerLazySingleton<AssignmentsRemoteDataSource>(
+      () => AssignmentsRemoteDataSource(dio));
+  getIt.registerLazySingleton<AssignmentsLocalDataSource>(
+      () => AssignmentsLocalDataSourceImpl());
+  getIt.registerLazySingleton<AssignmentsRepo>(() => AssignmentsRepo(
+        remoteDataSource: getIt(),
+        localDataSource: getIt(),
+      ));
+  getIt.registerFactory<CreateAssignmentCubit>(
+      () => CreateAssignmentCubit(getIt()));
+  getIt.registerFactory<AssignmentUploadCubit>(() => AssignmentUploadCubit());
+  getIt
+      .registerFactory<GetAssignmentsCubit>(() => GetAssignmentsCubit(getIt()));
+  getIt.registerFactory<GetStudentsAssignmentsCubit>(
+      () => GetStudentsAssignmentsCubit(getIt()));
+  getIt.registerFactory<UploadAssignmentSolutionCubit>(
+      () => UploadAssignmentSolutionCubit(getIt()));
+  //toDo:------------------------------ Questions API ------------------------------//
+  getIt.registerLazySingleton<QuestionsRemoteDataSource>(
+      () => QuestionsRemoteDataSource(dio));
+  getIt.registerLazySingleton<QuestionsLocalDataSource>(
+      () => QuestionsLocalDataSourceImpl());
+  getIt.registerLazySingleton<QuestionsRepo>(() => QuestionsRepo(
+        remoteDataSource: getIt(),
+        localDataSource: getIt(),
+      ));
+  getIt.registerFactory<GetAllQuestionsCubit>(
+      () => GetAllQuestionsCubit(getIt()));
+  getIt.registerFactory<ToggleLikeCubit>(() => ToggleLikeCubit(getIt()));
+  getIt.registerFactory<QuestionAndAnswersCubit>(
+      () => QuestionAndAnswersCubit(getIt()));
   //toDo:***************************************************************************//
-  //toDo:********************************* UI ***************************************//
+  //********************************* UI ***************************************//
   //toDo:***************************************************************************//
   //toDo:------------------------------ Quiz UI ------------------------------//
   getIt.registerFactory<AddQuizCubit>(() => AddQuizCubit());
