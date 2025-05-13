@@ -13,10 +13,13 @@ import 'package:grad_project/features/quizes/ui/views/quiz_view.dart';
 import 'package:grad_project/features/time_schedule/presentation/views/time_schedule_view.dart';
 import 'package:grad_project/features/weekly_schedule/ui/screens/weekly_schedule_view.dart';
 import '../../features/auth/ui/views/auth_view.dart';
+import '../../features/chat/logic/get_latest_messages_cubit/get_latest_messages_cubit.dart';
+import '../../features/chat/logic/inner_chat_cubit/inner_chat_cubit.dart';
 import '../../features/chat/ui/views/chat_view.dart';
 import '../../features/home/ui/cubit/bottom_nav_bar_cubit.dart';
 import '../../features/home/ui/views/home_view.dart';
 import '../../features/subjects/ui/views/materials_view.dart';
+import '../di/dependency_injection.dart';
 
 abstract class StudentRouter {
   static GoRouter getRouter(bool isLogin) {
@@ -40,7 +43,17 @@ abstract class StudentRouter {
         ),
         GoRoute(
           path: ChatView.routeName,
-          builder: (context, state) => const ChatView(),
+          builder: (context, state) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => getIt<InnerChatCubit>(),
+              ),
+              BlocProvider(
+                create: (context) => getIt<GetLatestMessagesCubit>(),
+              ),
+            ],
+            child: const ChatView(),
+          ),
         ),
         GoRoute(
           path: ConfirmAccountView.routeName,
