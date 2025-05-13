@@ -25,13 +25,36 @@ class GetLatestMessagesCubit extends Cubit<GetLatestMessagesState> {
     result.when(
       success: (data) {
         messagesList = data.data;
-        _messagesStreamController.add(messagesList); // stream update
+        _messagesStreamController.add(messagesList);
         emit(GetLatestMessagesState.getLatestMessagesSuccess(data));
       },
       failure: (error) => emit(GetLatestMessagesState.getLatestMessagesFailure(
           error.getAllMessages())),
     );
   }
+
+  Future<void> getOlder30Messages() async {
+    _isPaginating = true;
+    emit(const GetLatestMessagesState.getLatestMessagesLoading());
+
+    final result = await _repo.getOlder30Messages(messagesList.last.id);
+
+    result.when(
+      success: (data) {
+        List<Message> olderMessages = data.data;
+        messagesList = messagesList + olderMessages;
+        _messagesStreamController.add(messagesList);
+        emit(GetLatestMessagesState.getLatestMessagesSuccess(data));
+      },
+      failure: (error) => emit(GetLatestMessagesState.getLatestMessagesFailure(
+          error.getAllMessages())),
+    );
+
+    _isPaginating = false;
+  }
+
+  bool get isPaginating => _isPaginating;
+  bool _isPaginating = false;
 
   void addMessage(Message newMsg) {
     messagesList.insert(0, newMsg);

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/helpers/shared_pref_helper.dart';
+import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/chat/logic/get_latest_messages_cubit/get_latest_messages_cubit.dart';
 import 'package:grad_project/features/chat/logic/inner_chat_cubit/inner_chat_cubit.dart';
 import 'package:skeletonizer/skeletonizer.dart';
@@ -20,6 +21,21 @@ class ChatViewBody extends StatefulWidget {
 
 class _ChatViewBodyState extends State<ChatViewBody> {
   String userId = '';
+  final ScrollController _scrollController = ScrollController();
+  bool _isFetchingOlder = false;
+
+  @override
+  void initState() {
+    super.initState();
+    getUserId();
+    initSocket();
+    _scrollController.addListener(_onScroll);
+  }
+
+  Future<void> getUserId() async {
+    userId = await SharedPrefHelper.getString(Constants.userId) ?? '';
+  }
+
   Future<void> initSocket() async {
     await context.read<InnerChatCubit>().init(onConnected: () {
       if (mounted) {
@@ -28,15 +44,25 @@ class _ChatViewBodyState extends State<ChatViewBody> {
     });
   }
 
-  @override
-  void initState() {
-    getUserId();
-    initSocket();
-    super.initState();
+  void _onScroll() {
+    if (_scrollController.position.pixels >=
+        _scrollController.position.maxScrollExtent - 300) {
+      if (!_isFetchingOlder) {
+        _isFetchingOlder = true;
+        context
+            .read<GetLatestMessagesCubit>()
+            .getOlder30Messages()
+            .whenComplete(() {
+          _isFetchingOlder = false;
+        });
+      }
+    }
   }
 
-  Future<void> getUserId() async {
-    userId = await SharedPrefHelper.getString(Constants.userId) ?? '';
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 
   @override
@@ -48,13 +74,31 @@ class _ChatViewBodyState extends State<ChatViewBody> {
             stream: context.read<GetLatestMessagesCubit>().messagesStream,
             builder: (context, snapshot) {
               if (!snapshot.hasData) return _buildLoadingMessages();
-
               final messages = snapshot.data!;
               return ListView.separated(
+                controller: _scrollController,
                 reverse: true,
-                itemCount: messages.length,
+                itemCount: messages.length + 1,
                 padding: EdgeInsets.symmetric(horizontal: 10.w),
                 itemBuilder: (context, index) {
+                  if (index == messages.length) {
+                    return BlocBuilder<GetLatestMessagesCubit,
+                            GetLatestMessagesState>(
+                        builder: (context, state) => state.maybeWhen(
+                              orElse: () => const SizedBox.shrink(),
+                              getLatestMessagesLoading: () {
+                                {
+                                  return const Center(
+                                      child: Padding(
+                                    padding: EdgeInsets.symmetric(vertical: 8),
+                                    child: CircularProgressIndicator(
+                                        color: AppColors.darkblue,
+                                        strokeWidth: 2),
+                                  ));
+                                }
+                              },
+                            ));
+                  }
                   final msg = messages[index];
                   return ChatMessageWidget(
                     sender: msg.senderId.toString(),
@@ -71,12 +115,8 @@ class _ChatViewBodyState extends State<ChatViewBody> {
           onSend: (text) {
             context.read<InnerChatCubit>().sendMessage(text, context);
           },
-          onTextChanged: (text) {
-            print('Typing: $text');
-          },
-          onAttach: () {
-            print('Open attachments dialog');
-          },
+          onTextChanged: (text) {},
+          onAttach: () {},
         ),
       ],
     );

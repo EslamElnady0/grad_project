@@ -44,6 +44,16 @@ class ChatRepo {
     }
   }
 
+  Future<ApiResult<GetMessagesResponse>> getOlder30Messages(
+      String messageId) async {
+    try {
+      final response = await remoteDataSource.getOlder30Messages(messageId);
+      return ApiResult.success(response);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
   Future<void> initSocket({Function? onConnected}) async {
     log("initializing socket ......");
     await socketService.init(onConnect: onConnected);
