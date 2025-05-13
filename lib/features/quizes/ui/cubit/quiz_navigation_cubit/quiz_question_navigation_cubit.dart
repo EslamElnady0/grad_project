@@ -11,5 +11,6 @@ class QuizQuestionNavigatorCubit extends Cubit<int> {
     if (state > 0) emit(state - 1);
   }
 
+  void goTo(int index) => emit(index);
   void reset() => emit(0);
 }

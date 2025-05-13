@@ -50,6 +50,7 @@ class CustomQuestionWidget extends StatelessWidget {
                       physics: const NeverScrollableScrollPhysics(),
                       padding: EdgeInsets.zero,
                       shrinkWrap: true,
+                      itemCount: currentQuestion.answers.length,
                       itemBuilder: (context, index) {
                         final choiceLetter = Constants.dummyChoices[index];
                         final isSelected =
@@ -63,7 +64,6 @@ class CustomQuestionWidget extends StatelessWidget {
                         );
                       },
                       separatorBuilder: (context, index) => vGap(10),
-                      itemCount: currentQuestion.answers.length,
                     ),
                   ],
                 );

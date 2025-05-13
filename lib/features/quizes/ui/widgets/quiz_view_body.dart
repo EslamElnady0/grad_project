@@ -45,7 +45,7 @@ class QuizViewBody extends StatelessWidget {
                     key: actionKey,
                     iconPath: Assets.imagesSvgsQuizMenuIcon,
                     onPressed: () {
-                      showQuizNavigationPopUpMenu(context, actionKey);
+                      showQuizNavigationPopUpMenu(context, actionKey, data);
                     }),
               )),
           vGap(14),
