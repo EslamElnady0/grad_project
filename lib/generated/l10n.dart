@@ -2269,6 +2269,31 @@ class S {
   String get the_degree {
     return Intl.message('Degree', name: 'the_degree', desc: '', args: []);
   }
+
+  /// `Questions Count`
+  String get questions_count {
+    return Intl.message(
+      'Questions Count',
+      name: 'questions_count',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show Image`
+  String get show_image {
+    return Intl.message('Show Image', name: 'show_image', desc: '', args: []);
+  }
+
+  /// `Unknown`
+  String get unknown {
+    return Intl.message('Unknown', name: 'unknown', desc: '', args: []);
+  }
+
+  /// `Semester`
+  String get semester {
+    return Intl.message('Semester', name: 'semester', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

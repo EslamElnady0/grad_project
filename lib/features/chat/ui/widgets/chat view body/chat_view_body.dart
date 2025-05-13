@@ -29,7 +29,17 @@ class ChatViewBody extends StatelessWidget {
             separatorBuilder: (context, index) => vGap(12),
           ),
         ),
-        const ChatViewFooter(),
+      ChatViewFooter(
+  onSend: (text) {
+    print('Send this message: $text');
+  },
+  onTextChanged: (text) {
+    print('Typing: $text');
+  },
+  onAttach: () {
+    print('Open attachments dialog');
+  },
+),
       ],
     );
   }

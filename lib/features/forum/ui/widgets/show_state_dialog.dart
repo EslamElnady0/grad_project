@@ -4,10 +4,11 @@ import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
+import 'package:grad_project/features/forum/data/models/get_all_questions_response_model.dart';
 
-import '../../../../../generated/l10n.dart';
+import '../../../../generated/l10n.dart';
 
-void showStatsDialog(BuildContext context) {
+void showStatsDialog(BuildContext context, QuestionModel? questionModel) {
   showDialog(
     context: context,
     builder: (context) {
@@ -29,11 +30,11 @@ void showStatsDialog(BuildContext context) {
                   style: AppTextStyles.font16GrayBold),
               const SizedBox(height: 8),
               _buildStatRow(
-                  Assets.imagesSvgsLike, S.of(context).interested, "69"),
+                  Assets.imagesSvgsLike, S.of(context).interested, questionModel?.likes.toString() ?? ""),
               _buildStatRow(
-                  Assets.imagesSvgsAnswers, S.of(context).answer, "8"),
+                  Assets.imagesSvgsAnswers, S.of(context).answer, questionModel?.answers.toString() ?? ""),
               _buildStatRow(
-                  Assets.imagesSvgsVisibility, S.of(context).view, "126"),
+                  Assets.imagesSvgsVisibility, S.of(context).view, questionModel?.views.toString() ?? ""),
             ],
           ),
         ),

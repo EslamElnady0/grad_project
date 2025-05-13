@@ -282,5 +282,9 @@
   "Average_student_scores_in_this_assignment":"Average student scores in this assignment",
   "student_grade":"Student Grade",
   "add_grade":"Add Grade",
-  "the_degree":"Degree"
+  "the_degree":"Degree",
+   "questions_count":"Questions Count",
+   "show_image":"Show Image",
+   "unknown":"Unknown",
+   "semester":"Semester"
 }

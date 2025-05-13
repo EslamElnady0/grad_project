@@ -9,6 +9,7 @@ import 'package:grad_project/core/flavors/flavors_functions.dart';
 import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/helpers/shared_pref_helper.dart';
 import 'package:grad_project/core/routes/admin_router.dart';
+import 'package:timeago/timeago.dart' as timeago;
 import 'core/cubits/bloc_observer.dart';
 import 'core/di/dependency_injection.dart';
 import 'core/theme/app_theme.dart';
@@ -21,6 +22,8 @@ Future<void> main() async {
   await setupGetIt();
   Bloc.observer = GradBlocObserver();
   FlavorsFunctions.setupAdminFlover();
+    timeago.setLocaleMessages('ar', timeago.ArMessages());
+  timeago.setLocaleMessages('en', timeago.EnMessages());
   bool isLogin = await SharedPrefHelper.getSecuredString(Constants.token) != '';
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,

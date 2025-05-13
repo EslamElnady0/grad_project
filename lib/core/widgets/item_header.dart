@@ -10,11 +10,14 @@ class ItemHeader extends StatelessWidget {
       required this.name,
       required this.specialization,
       required this.date,
-      required this.from});
+      required this.from,
+      this.imageUrl});
+     
   final String name;
   final String specialization;
   final String date;
   final String from;
+  final String? imageUrl;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -23,6 +26,7 @@ class ItemHeader extends StatelessWidget {
         DoctorInfoSection(
           name: name,
           specialization: specialization,
+          imageUrl: imageUrl, 
         ),
         const Spacer(),
         Column(

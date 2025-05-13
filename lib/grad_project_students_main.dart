@@ -9,6 +9,7 @@ import 'package:grad_project/core/cubits/bloc_observer.dart';
 import 'package:grad_project/core/flavors/flavors_functions.dart';
 import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/helpers/shared_pref_helper.dart';
+import 'package:timeago/timeago.dart' as timeago;
 import 'core/di/dependency_injection.dart';
 import 'core/routes/student_router.dart';
 import 'core/theme/app_theme.dart';
@@ -18,8 +19,11 @@ import 'generated/l10n.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
+  timeago.setLocaleMessages('ar', timeago.ArMessages());
+  timeago.setLocaleMessages('en', timeago.EnMessages());
   bool isLogin = await SharedPrefHelper.getSecuredString(Constants.token) != '';
   await setupGetIt();
+  
   Bloc.observer = GradBlocObserver();
   FlavorsFunctions.setupStudentsFlover();
   await Firebase.initializeApp(

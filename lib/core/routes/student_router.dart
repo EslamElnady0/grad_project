@@ -1,11 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:grad_project/core/widgets/full_screen_image_view.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/academic_progress_view.dart';
 import 'package:grad_project/features/auth/ui/views/forget_password_view.dart';
 import 'package:grad_project/features/auth/ui/views/confirm_account_view.dart';
 import 'package:grad_project/features/chat/ui/views/chat_view.dart';
 import 'package:grad_project/features/final_results/presentation/views/final_results_view.dart';
-import 'package:grad_project/features/forum/presentation/views/answers_view.dart';
+import 'package:grad_project/features/forum/ui/views/answers_view.dart';
 import 'package:grad_project/features/map/presentation/views/internal_map_view.dart';
 import 'package:grad_project/features/profile/presentation/views/profile_view.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_details_view.dart';
@@ -20,8 +21,8 @@ import '../../features/subjects/ui/views/materials_view.dart';
 abstract class StudentRouter {
   static GoRouter getRouter(bool isLogin) {
     return GoRouter(
-      initialLocation:
-       isLogin ? HomeView.routeName : AuthView.routeName,
+      initialLocation: 
+      isLogin ? HomeView.routeName : AuthView.routeName,
       routes: [
         GoRoute(
           path: HomeView.routeName,
@@ -72,18 +73,27 @@ abstract class StudentRouter {
         ),
         GoRoute(
             path: MaterialsView.routeName,
-            builder: (context, state) =>  MaterialsView(
-                courseId:  state.extra as int, 
-            )),
+            builder: (context, state) => MaterialsView(
+                  courseId: state.extra as int,
+                )),
         GoRoute(
             path: AnswersView.routeName,
-            builder: (context, state) => const AnswersView()),
+            builder: (context, state) =>  AnswersView(
+                  questionId: state.extra as String,
+                )),
+            
         GoRoute(
             path: TimeScheduleView.routeName,
             builder: (context, state) => const TimeScheduleView()),
         GoRoute(
             path: FinalResultsView.routeName,
-            builder: (context, state) => const FinalResultsView())
+            builder: (context, state) => const FinalResultsView()),
+        GoRoute(
+          path: FullScreenImageView.routeName,
+          builder: (context, state) => FullScreenImageView(
+            imageUrl: state.extra as String,
+          ),
+        )
       ],
     );
   }
