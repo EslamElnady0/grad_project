@@ -12,6 +12,7 @@ import 'package:grad_project/features/annoucements/logic/get_teacher_cources_cub
 import 'package:grad_project/features/annoucements/logic/update_annoucement_cubit/update_annoucement_cubit.dart';
 import 'package:grad_project/features/assignments/logic/cubits/get_assignments_cubit/get_assignments_cubit.dart';
 import 'package:grad_project/features/chat/logic/get_group_details_cubit/get_group_details_cubit.dart';
+import 'package:grad_project/features/chat/logic/get_latest_messages_cubit/get_latest_messages_cubit.dart';
 import 'package:grad_project/features/lecture_manager/data/repos/add_materials_repo.dart';
 import 'package:grad_project/features/assignments/data/data_sources/assignments_local_data_source.dart';
 import 'package:grad_project/features/assignments/data/data_sources/assignments_remote_data_source.dart';
@@ -158,4 +159,6 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<ChatGroupsCubit>(() => ChatGroupsCubit(getIt()));
   getIt.registerFactory<GetGroupDetailsCubit>(
       () => GetGroupDetailsCubit(getIt()));
+  getIt.registerFactory<GetLatestMessagesCubit>(
+      () => GetLatestMessagesCubit(getIt()));
 }

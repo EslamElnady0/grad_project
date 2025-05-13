@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:grad_project/features/chat/data/models/get_messages_response.dart';
 import 'package:grad_project/features/chat/data/models/group_details_response.dart';
 import 'package:retrofit/retrofit.dart';
 import '../../../../core/networking/api_constants.dart';
@@ -16,6 +17,14 @@ abstract class ChatRemoteDataSource {
 
   @GET(ApiConstants.chatGroups)
   Future<ChatGroupResponse> getChatGroups();
+
   @GET(ApiConstants.groupDetails)
   Future<GroupDetailsResponse> getChatGroupDetails();
+
+  @GET(ApiConstants.messages)
+  Future<GetMessagesResponse> getLatestMessages();
+
+  @GET("${ApiConstants.oldMessages}/{messageId}")
+  Future<GetMessagesResponse> getOlder30Messages(
+      @Path("messageId") String messageId);
 }

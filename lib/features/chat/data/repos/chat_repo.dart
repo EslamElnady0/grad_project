@@ -1,5 +1,6 @@
 import 'package:grad_project/core/networking/api_result.dart';
 import 'package:grad_project/features/chat/data/models/chat_groups_response.dart';
+import 'package:grad_project/features/chat/data/models/get_messages_response.dart';
 import 'package:grad_project/features/chat/data/models/group_details_response.dart';
 
 import '../../../../core/networking/api_error_handler.dart';
@@ -26,6 +27,15 @@ class ChatRepo {
   Future<ApiResult<GroupDetailsResponse>> getGroupDetails() async {
     try {
       final response = await remoteDataSource.getChatGroupDetails();
+      return ApiResult.success(response);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
+  Future<ApiResult<GetMessagesResponse>> getLatestMessages() async {
+    try {
+      final response = await remoteDataSource.getLatestMessages();
       return ApiResult.success(response);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));
