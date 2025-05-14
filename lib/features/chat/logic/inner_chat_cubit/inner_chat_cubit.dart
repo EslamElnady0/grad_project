@@ -9,11 +9,10 @@ class InnerChatCubit extends Cubit<InnerChatState> {
   ScrollController scrollController = ScrollController();
   final ChatRepo _repo;
   StreamSubscription? _messageSubscription;
-  bool isChatViewActive = false;
 
   InnerChatCubit(this._repo) : super(InnerChatInitial()) {
     _messageSubscription = eventBus.on<NewMessageEvent>().listen((event) {
-      if (isChatViewActive && scrollController.hasClients) {
+      if (scrollController.hasClients) {
         WidgetsBinding.instance.addPostFrameCallback((_) {
           scrollController.animateTo(
             scrollController.position.minScrollExtent,
@@ -24,10 +23,6 @@ class InnerChatCubit extends Cubit<InnerChatState> {
         messageSeen(event.message.id);
       }
     });
-  }
-
-  void setChatViewActive(bool active) {
-    isChatViewActive = active;
   }
 
   void sendMessage(String messageText, BuildContext context) {
