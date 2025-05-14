@@ -29,7 +29,9 @@ class QuizDetailsSection extends StatelessWidget {
             children: [
               QuizDetailsItem(
                   title: S.of(context).quizState,
-                  value: S.of(context).didntStartYet),
+                  value: quizModel.status == 'started'
+                      ? S.of(context).started
+                      : S.of(context).didntStartYet),
               hGap(20),
               QuizDetailsItem(
                   title: S.of(context).classification,

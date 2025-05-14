@@ -16,7 +16,6 @@ import 'package:grad_project/features/quizes/ui/models/quiz_advice_model.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_management_view_body.dart';
 import 'package:grad_project/features/subjects/ui/views/subjects_view.dart';
 import 'package:grad_project/features/time_schedule/presentation/views/time_schedule_view.dart';
-
 import '../../features/chat/ui/views/chat_outsider_body.dart';
 import '../../features/home/ui/models/bottom_nav_bar_item_model.dart';
 import '../../features/map/presentation/views/internal_map_view.dart';
@@ -27,6 +26,7 @@ import '../widgets/decorated_input_border.dart';
 class Constants {
   const Constants._();
   static const String token = "token";
+  static const String userId = "userId";
   static const LinearGradient primaryGrad = LinearGradient(
     colors: [AppColors.primaryColorlight, AppColors.primaryColordark],
     begin: Alignment.topCenter,

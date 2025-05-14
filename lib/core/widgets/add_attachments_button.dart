@@ -56,7 +56,7 @@ class _ChatAddAttachmentsButtonState extends State<ChatAddAttachmentsButton> {
                 color: AppColors.darkerBlue,
               ),
               child: Column(
-                  mainAxisSize: MainAxisSize.min,
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Expanded(
                     child: AnimatedScale(

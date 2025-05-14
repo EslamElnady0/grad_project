@@ -363,6 +363,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "❓Create, edit, and track quiz scores easily to ensure effective evaluation!",
     ),
     "quizNavigation": MessageLookupByLibrary.simpleMessage("Quiz Navigation"),
+    "quizNotStarted": MessageLookupByLibrary.simpleMessage(
+      "Quiz hasn\'t started yet",
+    ),
     "quizState": MessageLookupByLibrary.simpleMessage("Quiz Status"),
     "quizTitle": MessageLookupByLibrary.simpleMessage("Quiz Title"),
     "quizTitleHelper": MessageLookupByLibrary.simpleMessage(
@@ -457,6 +460,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "start": MessageLookupByLibrary.simpleMessage("Start"),
     "startNow": MessageLookupByLibrary.simpleMessage("Start Now!"),
     "startWriting": MessageLookupByLibrary.simpleMessage("Start writing now.."),
+    "started": MessageLookupByLibrary.simpleMessage("Started"),
     "startsAt": MessageLookupByLibrary.simpleMessage("Starts at"),
     "starts_in": MessageLookupByLibrary.simpleMessage("Starts In"),
     "status": MessageLookupByLibrary.simpleMessage("Status:"),

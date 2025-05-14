@@ -32,7 +32,7 @@ class QuizDescSection extends StatelessWidget {
               ),
               const Divider(),
               Text(
-                "يبدأ في : ${FormatDateAndTimeHelpers.formatDateToDayFullMonthAndYear(quizModel.date, context)} ، الساعة ${FormatDateAndTimeHelpers.convertTo12HourFormat(
+                "${S.of(context).startsAt} : ${FormatDateAndTimeHelpers.formatDateToDayFullMonthAndYear(quizModel.date, context)} ، الساعة ${FormatDateAndTimeHelpers.convertTo12HourFormat(
                   quizModel.startTime.substring(0, 5),
                 )}",
                 style: AppTextStyles.font8BlackSemiBold,

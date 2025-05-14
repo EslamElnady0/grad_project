@@ -5,7 +5,7 @@ part 'bottom_nav_bar_state.dart';
 
 class BottomNavBarCubit extends Cubit<BottomNavBarState> {
   BottomNavBarCubit() : super(BottomNavBarInitial());
-  int currentIndex = 3;
+  int currentIndex = 2;
 
   void changeIndex(int index) {
     currentIndex = index;

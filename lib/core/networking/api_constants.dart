@@ -27,4 +27,8 @@ class ApiConstants {
   static const String answerlike = "alike";
   static const String profile = "/profile";
   static const String update = "/update";
+  static const String chatGroups = "/chat/group";
+  static const String groupDetails = "/chat/group/detials";
+  static const String messages = "/chat/messages";
+  static const String oldMessages = "/chat/messages/old";
 }

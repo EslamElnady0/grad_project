@@ -7,7 +7,6 @@ import 'package:grad_project/features/assignments/presentation/views/create_assi
 import 'package:grad_project/features/assignments/presentation/views/teachers_assignments_view.dart';
 import 'package:grad_project/features/auth/ui/views/forget_password_view.dart';
 import 'package:grad_project/features/auth/ui/views/confirm_account_view.dart';
-import 'package:grad_project/features/chat/ui/views/chat_view.dart';
 import 'package:grad_project/features/dashboard/ui/views/registered_students_view.dart';
 import 'package:grad_project/features/forum/ui/views/answers_view.dart';
 import 'package:grad_project/features/forum/ui/views/forum_views.dart';
@@ -21,6 +20,7 @@ import 'package:grad_project/features/quizes/ui/views/update_quiz_view.dart';
 import 'package:grad_project/features/profile/presentation/views/edit_profile_view.dart';
 import 'package:grad_project/features/weekly_schedule/ui/screens/weekly_schedule_view.dart';
 import '../../features/auth/ui/views/auth_view.dart';
+import '../../features/chat/ui/views/chat_view.dart';
 import '../../features/home/ui/cubit/bottom_nav_bar_cubit.dart';
 import '../../features/home/ui/views/home_view.dart';
 import '../../features/lecture_manager/ui/screens/add_lecture_view.dart';

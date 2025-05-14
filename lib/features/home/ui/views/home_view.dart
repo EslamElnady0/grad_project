@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grad_project/core/cubits/socket_cubit/global_socket_cubit.dart';
 import 'package:grad_project/core/flavors/flavors_functions.dart';
 import 'package:grad_project/core/helpers/constants.dart';
+import 'package:grad_project/core/services/socket_service.dart';
+import 'package:grad_project/features/chat/logic/chat_cubit/chat_cubit.dart';
 import 'package:grad_project/features/home/ui/cubit/bottom_nav_bar_cubit.dart';
 import 'package:grad_project/features/home/ui/widgets/bottom%20nav%20bar/custom_admin_bottom_navigation_bar.dart';
 import 'package:grad_project/features/home/ui/widgets/bottom%20nav%20bar/custom_student_bottom_nav_bar.dart';
@@ -13,9 +16,34 @@ import '../../../annoucements/ui/ui cubit/announcement_filter_cubit.dart';
 import '../widgets/drawer/custom_doctor_drawer.dart';
 import '../widgets/drawer/custom_drawer.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   static const String routeName = "/home";
   const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  @override
+  void initState() {
+    assignTokenAndInitSocket();
+
+    super.initState();
+  }
+
+  void assignTokenAndInitSocket() async {
+    await context.read<SocketCubit>().assignUserToken();
+    if (mounted) {
+      if (!SocketService.isInitialized) {
+        context.read<SocketCubit>().init().whenComplete(() {
+          if (mounted) {
+            context.read<SocketCubit>().registerUser(context: context);
+          }
+        });
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +57,9 @@ class HomeView extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => AnnouncementFilterCubit(),
+        ),
+        BlocProvider(
+          create: (context) => getIt<ChatGroupsCubit>(),
         ),
       ],
       child: CustomScaffold(
