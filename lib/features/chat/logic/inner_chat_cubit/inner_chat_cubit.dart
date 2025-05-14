@@ -45,7 +45,7 @@ class InnerChatCubit extends Cubit<InnerChatState> {
   Future<void> close() {
     _repo.dispose();
     scrollController.dispose();
-    _messageSubscription?.cancel(); // Cancel event subscription
+    _messageSubscription?.cancel();
     return super.close();
   }
 }
