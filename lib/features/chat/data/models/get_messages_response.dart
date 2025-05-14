@@ -21,14 +21,14 @@ class GetMessagesResponse {
 @JsonSerializable()
 class Message {
   final String id;
-  final int senderId;
-  final String content;
+  final Sender sender;
+  final String? content;
   final Status status;
   final DateTime createdAt;
 
   Message({
     required this.id,
-    required this.senderId,
+    required this.sender,
     required this.content,
     required this.status,
     required this.createdAt,
@@ -41,9 +41,26 @@ class Message {
 }
 
 @JsonSerializable()
+class Sender {
+  final int id;
+  final String name;
+  final String avatar;
+
+  Sender({
+    required this.id,
+    required this.name,
+    required this.avatar,
+  });
+
+  factory Sender.fromJson(Map<String, dynamic> json) => _$SenderFromJson(json);
+
+  Map<String, dynamic> toJson() => _$SenderToJson(this);
+}
+
+@JsonSerializable()
 class Status {
-  final List<int> deliveredTo;
-  final List<int> seenBy;
+  final List<Sender> deliveredTo;
+  final List<Sender> seenBy;
 
   Status({
     required this.deliveredTo,

@@ -23,26 +23,38 @@ Map<String, dynamic> _$GetMessagesResponseToJson(
 
 Message _$MessageFromJson(Map<String, dynamic> json) => Message(
       id: json['id'] as String,
-      senderId: (json['senderId'] as num).toInt(),
-      content: json['content'] as String,
+      sender: Sender.fromJson(json['sender'] as Map<String, dynamic>),
+      content: json['content'] as String?,
       status: Status.fromJson(json['status'] as Map<String, dynamic>),
       createdAt: DateTime.parse(json['createdAt'] as String),
     );
 
 Map<String, dynamic> _$MessageToJson(Message instance) => <String, dynamic>{
       'id': instance.id,
-      'senderId': instance.senderId,
+      'sender': instance.sender,
       'content': instance.content,
       'status': instance.status,
       'createdAt': instance.createdAt.toIso8601String(),
     };
 
+Sender _$SenderFromJson(Map<String, dynamic> json) => Sender(
+      id: (json['id'] as num).toInt(),
+      name: json['name'] as String,
+      avatar: json['avatar'] as String,
+    );
+
+Map<String, dynamic> _$SenderToJson(Sender instance) => <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'avatar': instance.avatar,
+    };
+
 Status _$StatusFromJson(Map<String, dynamic> json) => Status(
       deliveredTo: (json['deliveredTo'] as List<dynamic>)
-          .map((e) => (e as num).toInt())
+          .map((e) => Sender.fromJson(e as Map<String, dynamic>))
           .toList(),
       seenBy: (json['seenBy'] as List<dynamic>)
-          .map((e) => (e as num).toInt())
+          .map((e) => Sender.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

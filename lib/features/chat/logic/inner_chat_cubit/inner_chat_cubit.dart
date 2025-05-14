@@ -1,8 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/helpers/constants.dart';
-import '../../../../core/helpers/shared_pref_helper.dart';
 import '../../data/models/get_messages_response.dart';
 import '../../data/repos/chat_repo.dart';
 import '../get_latest_messages_cubit/get_latest_messages_cubit.dart';
@@ -51,13 +49,8 @@ class InnerChatCubit extends Cubit<InnerChatState> {
     BuildContext context,
   ) {
     _repo.recieveMessage(onSuccess: (data) async {
-      final newMessage = Message(
-          senderId: int.parse(
-              await SharedPrefHelper.getString(Constants.userId) ?? 0),
-          content: data['text'],
-          id: "",
-          status: Status(deliveredTo: [], seenBy: []),
-          createdAt: DateTime.now());
+      final newMessage = Message.fromJson(data["data"]);
+
       if (context.mounted) {
         context.read<GetLatestMessagesCubit>().addMessage(newMessage);
         WidgetsBinding.instance.addPostFrameCallback((_) {
