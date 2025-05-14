@@ -27,20 +27,13 @@ class _ChatViewBodyState extends State<ChatViewBody> {
   void initState() {
     super.initState();
     getUserId();
-    initSocket();
+    context.read<InnerChatCubit>().recieveMessage(context);
+    context.read<GetLatestMessagesCubit>().getLatestMessages();
     context.read<InnerChatCubit>().scrollController.addListener(_onScroll);
   }
 
   Future<void> getUserId() async {
     userId = await SharedPrefHelper.getString(Constants.userId) ?? '';
-  }
-
-  Future<void> initSocket() async {
-    await context.read<InnerChatCubit>().init(onConnected: () {
-      if (mounted) {
-        context.read<InnerChatCubit>().registerUser(context);
-      }
-    });
   }
 
   void _onScroll() {

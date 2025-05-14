@@ -6,7 +6,7 @@ import 'package:grad_project/features/chat/data/models/group_details_response.da
 import '../../../../core/networking/api_error_handler.dart';
 import '../data sources/chat_local_data_source.dart';
 import '../data sources/chat_remote_data_source.dart';
-import '../services/socket_service.dart';
+import '../../../../core/services/socket_service.dart';
 
 class ChatRepo {
   final ChatRemoteDataSource remoteDataSource;
@@ -55,29 +55,6 @@ class ChatRepo {
   }
 
   //toDo:--------------------------------------- Sockets Methods -------------------------------------------------------
-  Future<void> initSocket({Function? onConnected}) async {
-    log("initializing socket ......");
-    await socketService.init(onConnect: onConnected);
-  }
-
-  void registerUser(
-    Map<String, dynamic> userData, {
-    required Function onSuccess,
-    required Function(String error) onFailure,
-  }) {
-    log("registering user .....");
-    socketService.emit(SocketEvents.userRegister, userData);
-
-    socketService.once(SocketEvents.userRegisterSuccess, (_) {
-      log("user registered successfully");
-      onSuccess();
-    });
-
-    socketService.once(SocketEvents.userRegisterError, (error) {
-      log("user registration failed");
-      onFailure(error.toString());
-    });
-  }
 
   void sendMessage(
     String messageText, {
@@ -100,13 +77,7 @@ class ChatRepo {
   }
 
   void dispose() {
-    socketService.off(SocketEvents.userRegisterSuccess);
-    socketService.off(SocketEvents.userRegisterError);
     socketService.off(SocketEvents.recieveMessage);
     socketService.off(SocketEvents.sendMessageError);
-    socketService.socket.disconnect();
-    socketService.socket.destroy();
-    socketService.socket.close();
-    socketService.socket.dispose();
   }
 }

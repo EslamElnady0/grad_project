@@ -10,6 +10,7 @@ import 'package:grad_project/core/flavors/flavors_functions.dart';
 import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/helpers/shared_pref_helper.dart';
 import 'package:timeago/timeago.dart' as timeago;
+import 'core/cubits/socket_cubit/global_socket_cubit.dart';
 import 'core/di/dependency_injection.dart';
 import 'core/routes/student_router.dart';
 import 'core/theme/app_theme.dart';
@@ -23,7 +24,7 @@ Future<void> main() async {
   timeago.setLocaleMessages('en', timeago.EnMessages());
   bool isLogin = await SharedPrefHelper.getSecuredString(Constants.token) != '';
   await setupGetIt();
-  
+
   Bloc.observer = GradBlocObserver();
   FlavorsFunctions.setupStudentsFlover();
   await Firebase.initializeApp(
@@ -50,21 +51,24 @@ class GradProjectStudentApp extends StatelessWidget {
       designSize: const Size(320, 812),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (context, child) => MaterialApp.router(
-        title: 'Grad Project Students',
-        themeMode: ThemeMode.light,
-        debugShowCheckedModeBanner: false,
-        theme: AppTheme.lightTheme,
-        darkTheme: AppTheme.darkTheme,
-        locale: const Locale('ar'),
-        routerConfig: StudentRouter.getRouter(isLogin),
-        localizationsDelegates: const [
-          S.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: S.delegate.supportedLocales,
+      builder: (context, child) => BlocProvider(
+        create: (context) => getIt<SocketCubit>(),
+        child: MaterialApp.router(
+          title: 'Grad Project Students',
+          themeMode: ThemeMode.light,
+          debugShowCheckedModeBanner: false,
+          theme: AppTheme.lightTheme,
+          darkTheme: AppTheme.darkTheme,
+          locale: const Locale('ar'),
+          routerConfig: StudentRouter.getRouter(isLogin),
+          localizationsDelegates: const [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: S.delegate.supportedLocales,
+        ),
       ),
     );
   }

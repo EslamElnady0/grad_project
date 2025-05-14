@@ -1,7 +1,9 @@
 import 'package:get_it/get_it.dart';
 import 'package:dio/dio.dart';
+import 'package:grad_project/core/cubits/socket_cubit/global_socket_cubit.dart';
 import 'package:grad_project/core/data/data%20sources/get_course_materials_remote_data_source.dart';
 import 'package:grad_project/core/data/repos/get_course_materials_repo.dart';
+import 'package:grad_project/core/data/repos/socket_repo.dart';
 import 'package:grad_project/core/logic/get_course_materials_cubit/get_course_materials_cubit.dart';
 import 'package:grad_project/features/annoucements/data/data%20sources/annoucements_remote_data_source.dart';
 import 'package:grad_project/features/annoucements/data/repos/annoucements_repo.dart';
@@ -49,7 +51,7 @@ import '../../features/auth/logic/cubit/login_cubit.dart';
 import '../../features/chat/data/data sources/chat_local_data_source.dart';
 import '../../features/chat/data/data sources/chat_remote_data_source.dart';
 import '../../features/chat/data/repos/chat_repo.dart';
-import '../../features/chat/data/services/socket_service.dart';
+import '../services/socket_service.dart';
 import '../../features/chat/logic/chat_cubit/chat_cubit.dart';
 import '../../features/lecture_manager/logic/add_materials_cubit/add_materials_cubit.dart';
 import '../../features/lecture_manager/ui/cubit/file_upload_cubit.dart';
@@ -58,8 +60,6 @@ import '../../features/quizes/logic/start_students_quiz_cubit/start_students_qui
 import '../../features/quizes/logic/update_quiz_cubit/update_quiz_cubit.dart';
 import '../data/data sources/all_courses_remote_data_source.dart';
 import '../data/repos/all_courses_repo.dart';
-import '../helpers/constants.dart';
-import '../helpers/shared_pref_helper.dart';
 import '../logic/all_courses_cubit/all_courses_cubit.dart';
 import '../networking/api_service.dart';
 import '../networking/dio_factory.dart';
@@ -169,19 +169,22 @@ Future<void> setupGetIt() async {
   //toDo:------------------------------ Chat API ------------------------------//
   getIt.registerLazySingleton<ChatRemoteDataSource>(
       () => ChatRemoteDataSource(dio));
+  getIt.registerLazySingleton<SocketRepo>(() => SocketRepo(SocketService()));
+  getIt.registerLazySingleton<SocketCubit>(() => SocketCubit(getIt()));
   getIt.registerLazySingleton<ChatLocalDataSource>(
       () => ChatLocalDataSourceImpl());
-  String token = await SharedPrefHelper.getSecuredString(Constants.token);
+  // String token = await SharedPrefHelper.getSecuredString(Constants.token);
   getIt.registerLazySingleton<ChatRepo>(() => ChatRepo(
       remoteDataSource: getIt(),
       localDataSource: getIt(),
-      socketService: SocketService(token: token)));
+      socketService: SocketService()));
   getIt.registerFactory<ChatGroupsCubit>(() => ChatGroupsCubit(getIt()));
   getIt.registerFactory<GetGroupDetailsCubit>(
       () => GetGroupDetailsCubit(getIt()));
   getIt.registerFactory<GetLatestMessagesCubit>(
       () => GetLatestMessagesCubit(getIt()));
   getIt.registerFactory<InnerChatCubit>(() => InnerChatCubit(getIt()));
+
   //toDo:***************************************************************************//
   //********************************* UI ***************************************//
   //toDo:***************************************************************************//

@@ -2,16 +2,22 @@ import 'dart:developer';
 import 'package:socket_io_client/socket_io_client.dart' as io;
 
 class SocketService {
-  late io.Socket socket;
-  final String token;
+  static final SocketService _instance = SocketService._internal();
+  factory SocketService() => _instance;
 
-  SocketService({required this.token});
-  Future<void> init({Function? onConnect}) async {
-    log(token);
+  late io.Socket socket;
+  late String _token;
+  bool _isInitialized = false;
+
+  SocketService._internal();
+  static bool get isInitialized => _instance._isInitialized;
+  Future<void> init({required String token, Function? onConnect}) async {
+    if (_isInitialized) return;
+    _token = token;
     socket = io.io(
       'wss://ngu-question-hub.azurewebsites.net',
       io.OptionBuilder()
-          .setTransports(['websocket']).setQuery({'token': token}).build(),
+          .setTransports(['websocket']).setQuery({'token': _token}).build(),
     );
 
     socket.onConnect((_) {
@@ -26,6 +32,8 @@ class SocketService {
     socket.onDisconnect((_) {
       log('Socket disconnected');
     });
+
+    _isInitialized = true;
   }
 
   void connect() {
@@ -36,8 +44,10 @@ class SocketService {
   void disconnect() => socket.disconnect();
 
   void emit(String event, dynamic data) => socket.emit(event, data);
+
   void once(String event, Function(dynamic) handler) =>
       socket.once(event, handler);
+
   void on(String event, Function(dynamic) handler) {
     log('Listening to event: $event');
     socket.on(event, (data) {
@@ -47,6 +57,15 @@ class SocketService {
   }
 
   void off(String event) => socket.off(event);
+
+  void dispose() {
+    log('Disposing socket...');
+    socket.dispose();
+    socket.close();
+    socket.destroy();
+    socket.disconnect();
+    _isInitialized = false;
+  }
 }
 
 class SocketEvents {

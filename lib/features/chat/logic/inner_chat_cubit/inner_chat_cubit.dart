@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../data/models/get_messages_response.dart';
@@ -11,28 +10,6 @@ class InnerChatCubit extends Cubit<InnerChatState> {
   final ChatRepo _repo;
 
   InnerChatCubit(this._repo) : super(InnerChatInitial());
-  Future<void> init({Function? onConnected}) async {
-    await _repo.initSocket(onConnected: onConnected);
-  }
-
-  void registerUser(BuildContext context) {
-    emit(InnerChatLoading());
-    _repo.registerUser(
-      {},
-      onSuccess: () async {
-        emit(InnerChatRegistered());
-        await context.read<GetLatestMessagesCubit>().getLatestMessages();
-        if (context.mounted) {
-          recieveMessage(context);
-        }
-        log("user registered successfully");
-      },
-      onFailure: (error) {
-        emit(InnerChatError(error));
-        log("user registration failed");
-      },
-    );
-  }
 
   void sendMessage(String messageText, BuildContext context) {
     emit(InnerChatSending());
