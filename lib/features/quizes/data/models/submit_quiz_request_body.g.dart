@@ -10,7 +10,8 @@ SubmitQuizRequestBody _$SubmitQuizRequestBodyFromJson(
         Map<String, dynamic> json) =>
     SubmitQuizRequestBody(
       questions: (json['questions'] as List<dynamic>)
-          .map((e) => QuestionModel.fromJson(e as Map<String, dynamic>))
+          .map(
+              (e) => QuestionSubmitionModel.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -20,27 +21,16 @@ Map<String, dynamic> _$SubmitQuizRequestBodyToJson(
       'questions': instance.questions.map((e) => e.toJson()).toList(),
     };
 
-QuestionModel _$QuestionModelFromJson(Map<String, dynamic> json) =>
-    QuestionModel(
-      question: json['question'] as String,
-      answers: (json['answers'] as List<dynamic>)
-          .map((e) => Answer.fromJson(e as Map<String, dynamic>))
-          .toList(),
+QuestionSubmitionModel _$QuestionSubmitionModelFromJson(
+        Map<String, dynamic> json) =>
+    QuestionSubmitionModel(
+      questionId: json['question'] as String,
+      answerId: json['answer'] as String,
     );
 
-Map<String, dynamic> _$QuestionModelToJson(QuestionModel instance) =>
+Map<String, dynamic> _$QuestionSubmitionModelToJson(
+        QuestionSubmitionModel instance) =>
     <String, dynamic>{
-      'question': instance.question,
-      'answers': instance.answers.map((e) => e.toJson()).toList(),
-    };
-
-AnswerModel _$AnswerModelFromJson(Map<String, dynamic> json) => AnswerModel(
-      answer: json['answer'] as String,
-      correct: (json['correct'] as num).toInt(),
-    );
-
-Map<String, dynamic> _$AnswerModelToJson(AnswerModel instance) =>
-    <String, dynamic>{
-      'answer': instance.answer,
-      'correct': instance.correct,
+      'question': instance.questionId,
+      'answer': instance.answerId,
     };

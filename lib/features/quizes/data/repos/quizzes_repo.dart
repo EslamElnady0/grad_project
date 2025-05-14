@@ -11,6 +11,7 @@ import '../data sources/quizzes_remote_data_source.dart';
 import '../models/get_quiz_using_id_response.dart';
 import '../models/get_quizzes_request_query_params_model.dart';
 import '../models/submit_quiz_request_body.dart';
+import '../models/submit_quiz_response.dart';
 
 class QuizzesRepo {
   final QuizzesRemoteDataSource remoteDataSource;
@@ -100,13 +101,13 @@ class QuizzesRepo {
     }
   }
 
-  Future<ApiResult<dynamic>> submitQuiz(
+  Future<ApiResult<SubmitQuizResponse>> submitQuiz(
       {required SubmitQuizRequestBody submitQuizRequestModel,
       required String quizId}) async {
     try {
       final result =
           await remoteDataSource.submitQuiz(quizId, submitQuizRequestModel);
-      return ApiResult.success(result.data);
+      return ApiResult.success(result);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));
     }

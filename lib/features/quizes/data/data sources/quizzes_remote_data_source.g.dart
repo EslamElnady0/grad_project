@@ -224,7 +224,7 @@ class _QuizzesRemoteDataSource implements QuizzesRemoteDataSource {
   }
 
   @override
-  Future<dynamic> submitQuiz(
+  Future<SubmitQuizResponse> submitQuiz(
     String quizId,
     SubmitQuizRequestBody submitQuizRequestModel,
   ) async {
@@ -233,7 +233,7 @@ class _QuizzesRemoteDataSource implements QuizzesRemoteDataSource {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(submitQuizRequestModel.toJson());
-    final _options = _setStreamType<dynamic>(
+    final _options = _setStreamType<SubmitQuizResponse>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -243,8 +243,14 @@ class _QuizzesRemoteDataSource implements QuizzesRemoteDataSource {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch(_options);
-    final _value = _result.data;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SubmitQuizResponse _value;
+    try {
+      _value = SubmitQuizResponse.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 

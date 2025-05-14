@@ -1,10 +1,9 @@
-import 'package:grad_project/features/quizes/data/models/get_quiz_using_id_response.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'submit_quiz_request_body.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class SubmitQuizRequestBody {
-  List<QuestionModel> questions;
+  List<QuestionSubmitionModel> questions;
 
   SubmitQuizRequestBody({required this.questions});
 
@@ -15,33 +14,20 @@ class SubmitQuizRequestBody {
 }
 
 @JsonSerializable(explicitToJson: true)
-class QuestionModel {
-  final String question;
-  final List<Answer> answers;
+class QuestionSubmitionModel {
+  @JsonKey(name: 'question')
+  final String questionId;
 
-  QuestionModel({
-    required this.question,
-    required this.answers,
+  @JsonKey(name: 'answer')
+  final String answerId;
+
+  QuestionSubmitionModel({
+    required this.questionId,
+    required this.answerId,
   });
 
-  factory QuestionModel.fromJson(Map<String, dynamic> json) =>
-      _$QuestionModelFromJson(json);
+  factory QuestionSubmitionModel.fromJson(Map<String, dynamic> json) =>
+      _$QuestionSubmitionModelFromJson(json);
 
-  Map<String, dynamic> toJson() => _$QuestionModelToJson(this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class AnswerModel {
-  final String answer;
-  final int correct;
-
-  AnswerModel({
-    required this.answer,
-    required this.correct,
-  });
-
-  factory AnswerModel.fromJson(Map<String, dynamic> json) =>
-      _$AnswerModelFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AnswerModelToJson(this);
+  Map<String, dynamic> toJson() => _$QuestionSubmitionModelToJson(this);
 }

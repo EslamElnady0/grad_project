@@ -12,6 +12,7 @@ class CustomMcqChoiceWidget extends StatelessWidget {
   final int index;
   final String choice;
   final int questionIndex;
+  final String answerId;
 
   const CustomMcqChoiceWidget({
     super.key,
@@ -19,6 +20,7 @@ class CustomMcqChoiceWidget extends StatelessWidget {
     required this.index,
     required this.choice,
     required this.questionIndex,
+    required this.answerId,
   });
 
   @override
@@ -29,7 +31,7 @@ class CustomMcqChoiceWidget extends StatelessWidget {
           onTap: () {
             context.read<QuizCubit>().selectAnswer(
                   questionIndex,
-                  Constants.dummyChoices[index],
+                  answerId,
                 );
           },
           child: Container(

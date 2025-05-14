@@ -32,6 +32,7 @@ import 'package:grad_project/features/quizes/data/repos/quizzes_repo.dart';
 import 'package:grad_project/features/quizes/logic/delete_quiz_cubit/delete_quiz_cubit.dart';
 import 'package:grad_project/features/quizes/logic/get_quizzes_cubit/get_quizzes_cubit.dart';
 import 'package:grad_project/features/quizes/logic/quizzes_cubit/quizzes_cubit.dart';
+import 'package:grad_project/features/quizes/logic/submit_quiz_cubit/submit_quiz_cubit.dart';
 import 'package:grad_project/features/quizes/ui/cubit/add_quiz_cubit/add_quiz_cubit.dart';
 import 'package:grad_project/features/quizes/ui/widgets/question_list_widget.dart';
 import 'package:grad_project/features/subjects/ui/manager/subjects_filter_cubit.dart';
@@ -119,6 +120,7 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<GetQuizByIdCubit>(() => GetQuizByIdCubit(getIt()));
   getIt.registerFactory<StartStudentsQuizCubit>(
       () => StartStudentsQuizCubit(getIt()));
+  getIt.registerFactory<SubmitQuizCubit>(() => SubmitQuizCubit(getIt()));
   //toDo:------------------------------Add Materials------------------------------//
   getIt.registerLazySingleton<AddMaterialsRepo>(() => AddMaterialsRepo(dio));
   getIt.registerFactory<AddMaterialsCubit>(() => AddMaterialsCubit(getIt()));
