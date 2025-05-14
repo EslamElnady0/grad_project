@@ -36,9 +36,10 @@ class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
         ...quizzes,
         ...assignments,
       ];
-
+      final List<ActivityModel> scheduled =
+          combined.where((a) => a.status != "finished").toList();
       setState(() {
-        activities = combined;
+        activities = scheduled;
         activities.sort((a, b) {
           final aDate = DateTime.parse(a.date);
           final bDate = DateTime.parse(b.date);

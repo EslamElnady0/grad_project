@@ -4,7 +4,6 @@ import 'package:grad_project/core/widgets/full_screen_image_view.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/academic_progress_view.dart';
 import 'package:grad_project/features/auth/ui/views/forget_password_view.dart';
 import 'package:grad_project/features/auth/ui/views/confirm_account_view.dart';
-import 'package:grad_project/features/chat/ui/views/chat_view.dart';
 import 'package:grad_project/features/final_results/presentation/views/final_results_view.dart';
 import 'package:grad_project/features/forum/ui/views/answers_view.dart';
 import 'package:grad_project/features/map/presentation/views/internal_map_view.dart';
@@ -14,15 +13,18 @@ import 'package:grad_project/features/quizes/ui/views/quiz_view.dart';
 import 'package:grad_project/features/time_schedule/presentation/views/time_schedule_view.dart';
 import 'package:grad_project/features/weekly_schedule/ui/screens/weekly_schedule_view.dart';
 import '../../features/auth/ui/views/auth_view.dart';
+import '../../features/chat/logic/get_latest_messages_cubit/get_latest_messages_cubit.dart';
+import '../../features/chat/logic/inner_chat_cubit/inner_chat_cubit.dart';
+import '../../features/chat/ui/views/chat_view.dart';
 import '../../features/home/ui/cubit/bottom_nav_bar_cubit.dart';
 import '../../features/home/ui/views/home_view.dart';
 import '../../features/subjects/ui/views/materials_view.dart';
+import '../di/dependency_injection.dart';
 
 abstract class StudentRouter {
   static GoRouter getRouter(bool isLogin) {
     return GoRouter(
-      initialLocation: 
-      isLogin ? HomeView.routeName : AuthView.routeName,
+      initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
       routes: [
         GoRoute(
           path: HomeView.routeName,
@@ -41,7 +43,17 @@ abstract class StudentRouter {
         ),
         GoRoute(
           path: ChatView.routeName,
-          builder: (context, state) => const ChatView(),
+          builder: (context, state) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => getIt<InnerChatCubit>(),
+              ),
+              BlocProvider(
+                create: (context) => getIt<GetLatestMessagesCubit>(),
+              ),
+            ],
+            child: const ChatView(),
+          ),
         ),
         GoRoute(
           path: ConfirmAccountView.routeName,
@@ -78,10 +90,9 @@ abstract class StudentRouter {
                 )),
         GoRoute(
             path: AnswersView.routeName,
-            builder: (context, state) =>  AnswersView(
+            builder: (context, state) => AnswersView(
                   questionId: state.extra as String,
                 )),
-            
         GoRoute(
             path: TimeScheduleView.routeName,
             builder: (context, state) => const TimeScheduleView()),

@@ -18,6 +18,7 @@ class UserAvatarAndName extends StatelessWidget {
         ? Column(
             children: [
               Text(sender,
+                  textDirection: TextDirection.ltr,
                   style: AppTextStyles.font10GraySemiBold
                       .copyWith(color: AppColors.black)),
               vGap(4),

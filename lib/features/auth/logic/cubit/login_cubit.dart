@@ -12,13 +12,12 @@ class LoginCubit extends Cubit<LoginState> {
   final LoginRepo _loginRepo;
   LoginCubit(this._loginRepo) : super(const LoginState.initial());
 
-
   final formKey = GlobalKey<FormState>();
 
-  void emitLoginStates(
-   {required String email,
-   required String password,}
-  ) async {
+  void emitLoginStates({
+    required String email,
+    required String password,
+  }) async {
     emit(const LoginState.loading());
     final response = await _loginRepo.login(
       LoginRequestModel(
@@ -27,15 +26,17 @@ class LoginCubit extends Cubit<LoginState> {
       ),
     );
     response.when(success: (loginResponse) async {
-      await saveUserToken(loginResponse.data?[0].accessToken ?? '');
+      await saveUserToken(loginResponse.data?[0].accessToken ?? '',
+          loginResponse.data?[0].user?.id.toString() ?? '');
       emit(LoginState.success(loginResponse));
     }, failure: (apiErrorModel) {
       emit(LoginState.error(apiErrorModel));
     });
   }
 
-  Future<void> saveUserToken(String token) async {
+  Future<void> saveUserToken(String token, String userId) async {
     await SharedPrefHelper.setSecuredString(Constants.token, token);
+    await SharedPrefHelper.setData(Constants.userId, userId);
     DioFactory.setTokenIntoHeaderAfterLogin(token);
   }
 }

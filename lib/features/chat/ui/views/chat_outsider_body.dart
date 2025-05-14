@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/features/chat/logic/chat_cubit/chat_cubit.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../generated/l10n.dart';
@@ -7,8 +9,19 @@ import '../../../home/ui/widgets/home_screens_header_row.dart';
 import '../../../home/ui/widgets/title_text_widget.dart';
 import '../widgets/outsider chat view/chat_levels_container.dart';
 
-class ChatOutsiderBody extends StatelessWidget {
+class ChatOutsiderBody extends StatefulWidget {
   const ChatOutsiderBody({super.key});
+
+  @override
+  State<ChatOutsiderBody> createState() => _ChatOutsiderBodyState();
+}
+
+class _ChatOutsiderBodyState extends State<ChatOutsiderBody> {
+  @override
+  void initState() {
+    context.read<ChatGroupsCubit>().getChatGroups();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

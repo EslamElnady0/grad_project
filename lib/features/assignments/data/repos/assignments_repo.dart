@@ -8,7 +8,6 @@ import 'package:grad_project/features/assignments/data/models/create_assignment_
 import 'package:grad_project/features/assignments/data/models/create_assignment_response_model.dart';
 import 'package:grad_project/features/assignments/data/models/get_assignments_request_query_params_model.dart';
 import 'package:grad_project/features/assignments/data/models/get_assignments_response_model.dart';
-import 'package:grad_project/features/assignments/data/models/upload_assignment_solution_model.dart';
 import 'package:grad_project/features/time_schedule/data/models/activity_response_model.dart';
 
 class AssignmentsRepo {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
@@ -12,11 +11,17 @@ class CustomMcqChoiceWidget extends StatelessWidget {
   final bool isSelected;
   final int index;
   final String choice;
-  const CustomMcqChoiceWidget(
-      {super.key,
-      required this.isSelected,
-      required this.index,
-      required this.choice});
+  final int questionIndex;
+  final String answerId;
+
+  const CustomMcqChoiceWidget({
+    super.key,
+    required this.isSelected,
+    required this.index,
+    required this.choice,
+    required this.questionIndex,
+    required this.answerId,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +30,8 @@ class CustomMcqChoiceWidget extends StatelessWidget {
         InkWell(
           onTap: () {
             context.read<QuizCubit>().selectAnswer(
-                  Constants.dummyChoices[index],
+                  questionIndex,
+                  answerId,
                 );
           },
           child: Container(
@@ -51,7 +57,7 @@ class CustomMcqChoiceWidget extends StatelessWidget {
         hGap(10),
         Expanded(
           child: Text(
-            "${Constants.dummyChoices[index]} ${Constants.dummyAnswers[index]}",
+            "${Constants.dummyChoices[index]} $choice",
             style: AppTextStyles.font13BlackSemiBold,
             maxLines: 10,
           ),

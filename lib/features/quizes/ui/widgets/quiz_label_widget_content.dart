@@ -4,17 +4,15 @@ import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
-import 'package:provider/provider.dart';
-import '../../data/models/get_quizzes_response.dart';
 
 class QuizLabelWidgetContent extends StatelessWidget {
+  final String title;
   final Widget trailing;
-  const QuizLabelWidgetContent({super.key, required this.trailing});
+  const QuizLabelWidgetContent(
+      {super.key, required this.trailing, required this.title});
 
   @override
   Widget build(BuildContext context) {
-    final quizModel = context.read<QuizModel>();
-
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -41,15 +39,15 @@ class QuizLabelWidgetContent extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  quizModel.title,
+                  title,
                   style: AppTextStyles.font16BlackSemiBold,
                 ),
-                vGap(5),
-                Text(
-                  //TO BE ADJUSTED
-                  quizModel.course.name,
-                  style: AppTextStyles.font10GraySemiBold,
-                ),
+                // vGap(5),
+                // Text(
+                //   //TO BE ADJUSTED
+                //   "",
+                //   style: AppTextStyles.font10GraySemiBold,
+                // ),
               ],
             ),
           ],

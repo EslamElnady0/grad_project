@@ -27,6 +27,7 @@ class QuizLabelWidget extends StatelessWidget {
         ],
       ),
       child: QuizLabelWidgetContent(
+        title: quizModel.title,
         trailing: OutlinedButton(
           onPressed: () {},
           style: OutlinedButton.styleFrom(
