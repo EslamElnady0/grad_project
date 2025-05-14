@@ -27,7 +27,7 @@ class _ChatViewBodyState extends State<ChatViewBody> {
   void initState() {
     super.initState();
     getUserId();
-    context.read<InnerChatCubit>().recieveMessage(context);
+    context.read<InnerChatCubit>().setChatViewActive(true);
     context.read<GetLatestMessagesCubit>().getLatestMessages();
     context.read<InnerChatCubit>().scrollController.addListener(_onScroll);
   }
@@ -54,6 +54,12 @@ class _ChatViewBodyState extends State<ChatViewBody> {
         });
       }
     }
+  }
+
+  @override
+  void dispose() {
+    context.read<InnerChatCubit>().setChatViewActive(false);
+    super.dispose();
   }
 
   @override

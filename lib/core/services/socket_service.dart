@@ -76,4 +76,7 @@ class SocketEvents {
   static const String sendMessage = 'Send-Message';
   static const String sendMessageError = 'send-message-error';
   static const String recieveMessage = 'recieve-message';
+  static const String messageDelivered = 'Message-Delivered';
+  static const String messageDeliveredToError = 'message-deliveredTo-error';
+  static const String messageDeliveredToSuccess = 'message-deliveredTo-success';
 }

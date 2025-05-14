@@ -38,7 +38,7 @@ class _HomeViewState extends State<HomeView> {
       if (!SocketService.isInitialized) {
         context.read<SocketCubit>().init().whenComplete(() {
           if (mounted) {
-            context.read<SocketCubit>().registerUser();
+            context.read<SocketCubit>().registerUser(context: context);
           }
         });
       }

@@ -69,13 +69,6 @@ class ChatRepo {
     });
   }
 
-  void recieveMessage({required Function onSuccess}) {
-    socketService.on(SocketEvents.recieveMessage, (data) {
-      onSuccess(data);
-      log(data.toString());
-    });
-  }
-
   void dispose() {
     socketService.off(SocketEvents.recieveMessage);
     socketService.off(SocketEvents.sendMessageError);

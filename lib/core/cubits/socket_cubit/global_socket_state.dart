@@ -12,6 +12,10 @@ class SocketConnected extends SocketState {}
 
 class SocketDisconnected extends SocketState {}
 
+class SocketMessageDelivered extends SocketState {}
+
+class SocketMessageReceived extends SocketState {}
+
 class SocketError extends SocketState {
   final String message;
   SocketError(this.message);
