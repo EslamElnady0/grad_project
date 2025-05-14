@@ -69,8 +69,27 @@ class ChatRepo {
     });
   }
 
+  void messageSeen(
+    String messageId, {
+    required Function onSuccess,
+    required Function(String error) onFailure,
+  }) {
+    socketService.emit(SocketEvents.messageSeen, {'messageId': messageId});
+
+    socketService.once(SocketEvents.messageSeenSuccess, (data) {
+      log("message seen success");
+      onSuccess(data);
+    });
+    socketService.once(SocketEvents.messageSeenError, (error) {
+      log("message sending failed");
+      onFailure(error.toString());
+    });
+  }
+
   void dispose() {
     socketService.off(SocketEvents.recieveMessage);
     socketService.off(SocketEvents.sendMessageError);
+    socketService.off(SocketEvents.messageSeenSuccess);
+    socketService.off(SocketEvents.messageSeenError);
   }
 }

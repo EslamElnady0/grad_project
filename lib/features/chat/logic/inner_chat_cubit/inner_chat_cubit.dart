@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/events/new_message_event.dart';
@@ -22,6 +21,7 @@ class InnerChatCubit extends Cubit<InnerChatState> {
             curve: Curves.ease,
           );
         });
+        messageSeen(event.message.id);
       }
     });
   }
@@ -36,6 +36,17 @@ class InnerChatCubit extends Cubit<InnerChatState> {
       messageText,
       onSuccess: (data) {
         emit(InnerChatMessageSent());
+      },
+      onFailure: (error) => emit(InnerChatError(error)),
+    );
+  }
+
+  void messageSeen(String messageId) {
+    emit(InnerChatSeeningMessage());
+    _repo.messageSeen(
+      messageId,
+      onSuccess: (data) {
+        emit(InnerChatMessageSeen());
       },
       onFailure: (error) => emit(InnerChatError(error)),
     );

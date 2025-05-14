@@ -79,4 +79,7 @@ class SocketEvents {
   static const String messageDelivered = 'Message-Delivered';
   static const String messageDeliveredToError = 'message-deliveredTo-error';
   static const String messageDeliveredToSuccess = 'message-deliveredTo-success';
+  static const String messageSeen = 'Message-Seen';
+  static const String messageSeenError = 'mmessage-seen-error';
+  static const String messageSeenSuccess = 'message-seen-success';
 }

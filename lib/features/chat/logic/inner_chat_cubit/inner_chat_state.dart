@@ -8,7 +8,11 @@ class InnerChatRegistered extends InnerChatState {}
 
 class InnerChatSending extends InnerChatState {}
 
+class InnerChatSeeningMessage extends InnerChatState {}
+
 class InnerChatMessageSent extends InnerChatState {}
+
+class InnerChatMessageSeen extends InnerChatState {}
 
 class InnerChatMessageReceived extends InnerChatState {}
 
