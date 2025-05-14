@@ -13,6 +13,7 @@ class InternalMapView extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScaffold(
       body: BlocProvider(
+        //
         create: (context) => MapCubit(),
         child: const InternalMapViewBody(),
       ),
