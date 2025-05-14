@@ -172,6 +172,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "edit_news": MessageLookupByLibrary.simpleMessage(
       "✏️ Edit your announcement to keep your students informed with the latest details and updates",
     ),
+    "edit_profile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "endsAt": MessageLookupByLibrary.simpleMessage("Ends at"),
     "ends_in": MessageLookupByLibrary.simpleMessage("Ends In"),
@@ -180,6 +181,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "enter_code": MessageLookupByLibrary.simpleMessage(
       "Enter the 6-digit code that was sent to you.",
+    ),
+    "enter_new_password": MessageLookupByLibrary.simpleMessage(
+      "Enter new password",
     ),
     "enter_student_name_or_code": MessageLookupByLibrary.simpleMessage(
       "Enter student name or code",

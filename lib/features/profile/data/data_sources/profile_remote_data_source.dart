@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:grad_project/core/networking/api_constants.dart';
 import 'package:grad_project/features/profile/data/models/get_profile_response_model.dart';
+import 'package:grad_project/features/profile/data/models/update_profile_response_model.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'profile_remote_data_source.g.dart';
@@ -17,12 +20,17 @@ abstract class ProfileRemoteDataSource {
   @GET("${ApiConstants.teachers}${ApiConstants.profile}")
   Future<TeacherProfileResponseModel> getTeacherProfile();
 
-  // @POST(ApiConstants.profile)
-  // @MultiPart()
-  // Future<ProfileResponseModel> updateProfile(
-  //   @Part(name: 'name') String name,
-  //   @Part(name: 'email') String email,
-  //   @Part(name: 'phone') String phone,
-  //   @Part(name: 'image') File image,
-  // );
+  @POST(ApiConstants.update)
+  @MultiPart()
+  Future<UpdateProfileResponseModel> updateStudentProfile(
+    @Part(name: 'password') String? password,
+    @Part(name: 'avatar') File? avatar,
+  );
+
+  @POST("${ApiConstants.teachers}${ApiConstants.update}")
+  @MultiPart()
+  Future<UpdateProfileResponseModel> updateTeacherProfile(
+    @Part(name: 'password') String? password,
+    @Part(name: 'avatar') File? avatar,
+  );
 }

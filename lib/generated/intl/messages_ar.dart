@@ -164,12 +164,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "edit_news": MessageLookupByLibrary.simpleMessage(
       "✏️ عدّل إعلانك لضمان بقاء طلابك على اطلاع بأحدث التفاصيل والتحديثات",
     ),
+    "edit_profile": MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
     "email": MessageLookupByLibrary.simpleMessage("الإيميل"),
     "endsAt": MessageLookupByLibrary.simpleMessage("ينتهي"),
     "ends_in": MessageLookupByLibrary.simpleMessage("ينتهي في "),
     "enterYourQuestion": MessageLookupByLibrary.simpleMessage("ادخل سؤالك"),
     "enter_code": MessageLookupByLibrary.simpleMessage(
       "أدخل الكود المكون من 6 أرقام اللي اتبعت ليك.",
+    ),
+    "enter_new_password": MessageLookupByLibrary.simpleMessage(
+      "ادخل كلمة سر جديدة",
     ),
     "enter_student_name_or_code": MessageLookupByLibrary.simpleMessage(
       "ادخل اسم الطالب أو الكود",

@@ -290,5 +290,7 @@
   "university_code":"الكود الجامعي",
   "national_id":"الرقم القومي",
   "nationality":"الجنسية",
-  "department":"القسم"
+  "department":"القسم",
+  "edit_profile":"تعديل الملف الشخصي",
+  "enter_new_password":"ادخل كلمة سر جديدة"
 }

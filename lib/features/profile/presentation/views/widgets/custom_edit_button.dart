@@ -5,19 +5,20 @@ import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
-import 'package:grad_project/features/time_schedule/presentation/views/edit_profile_view.dart';
+import 'package:grad_project/features/profile/presentation/views/edit_profile_view.dart';
 import 'package:grad_project/generated/l10n.dart';
 
 class CustomEditButton extends StatelessWidget {
   const CustomEditButton({
-    super.key,
+    super.key,required this.currentAvatarUrl,
   });
 
+final String? currentAvatarUrl;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(EditProfileView.routeName);
+        GoRouter.of(context).push(EditProfileView.routeName,extra: currentAvatarUrl,);
       },
       child: Container(
         width: 100,

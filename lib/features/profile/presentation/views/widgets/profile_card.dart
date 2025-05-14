@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:grad_project/core/flavors/flavors_functions.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
@@ -33,8 +34,8 @@ class ProfileCard extends StatelessWidget {
           CircleAvatar(
             radius: 70,
             backgroundImage: profileModel.avatarUrl != null
-                ? NetworkImage(
-                    "https://img.freepik.com/premium-vector/man-avatar-profile-picture-isolated-background-avatar-profile-picture-man_1293239-4841.jpg?semt=ais_hybrid&w=740")
+                ? CachedNetworkImageProvider(
+                    "https://${profileModel.avatarUrl}")
                 : const AssetImage(Assets.imagesTestPicture),
           ),
           vGap(10),
@@ -44,13 +45,13 @@ class ProfileCard extends StatelessWidget {
               style: AppTextStyles.font14WhiteSemiBold,
               children: [
                 TextSpan(text: "${profileModel.name}\n"),
-                FlavorsFunctions.isStudent()
-                    ? TextSpan(
-                        text: "طالب في كلية الحاسبات والمعلومات\n",
-                        style: AppTextStyles.font8WhiteSemiBold)
-                    : TextSpan(
-                        text: "مدرس في كلية الحاسبات والمعلومات",
-                        style: AppTextStyles.font8WhiteSemiBold),
+                // FlavorsFunctions.isStudent()
+                //     ? TextSpan(
+                //         text: "طالب في كلية الحاسبات والمعلومات\n",
+                //         style: AppTextStyles.font8WhiteSemiBold)
+                //     : TextSpan(
+                //         text: "مدرس في كلية الحاسبات والمعلومات",
+                //         style: AppTextStyles.font8WhiteSemiBold),
               ],
             ),
           ),

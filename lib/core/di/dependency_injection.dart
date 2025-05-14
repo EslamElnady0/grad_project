@@ -26,7 +26,9 @@ import 'package:grad_project/features/assignments/logic/cubits/create_assignment
 import 'package:grad_project/features/profile/data/data_sources/profile_local_data_source.dart';
 import 'package:grad_project/features/profile/data/data_sources/profile_remote_data_source.dart';
 import 'package:grad_project/features/profile/data/repos/profile_repo.dart';
+import 'package:grad_project/features/profile/logic/avatar_upload_cubit/avatar_upload_cubit.dart';
 import 'package:grad_project/features/profile/logic/get_profile_cubit/get_profile_cubit.dart';
+import 'package:grad_project/features/profile/logic/update_profile_cubit/update_profile_cubit.dart';
 import 'package:grad_project/features/quizes/data/data%20sources/quizzes_local_data_source.dart';
 import 'package:grad_project/features/quizes/data/data%20sources/quizzes_remote_data_source.dart';
 import 'package:grad_project/features/quizes/data/repos/quizzes_repo.dart';
@@ -116,10 +118,11 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<ToggleLikeCubit>(() => ToggleLikeCubit(getIt()));
   getIt.registerFactory<QuestionAndAnswersCubit>(() => QuestionAndAnswersCubit(getIt()));
     //toDo:------------------------------ Profile API ------------------------------//
-    getIt.registerLazySingleton<ProfileRemoteDataSource>(() => ProfileRemoteDataSource(dio));
-    getIt.registerLazySingleton<ProfileLocalDataSource>(() => ProfileLocalDataSourceImpl());
-    getIt.registerLazySingleton<ProfileRepo>(() => ProfileRepo(remoteDataSource: getIt(),localDataSource: getIt(),));
-    getIt.registerFactory<GetProfileCubit>(() => GetProfileCubit(getIt()));
+  getIt.registerLazySingleton<ProfileRemoteDataSource>(() => ProfileRemoteDataSource(dio));
+  getIt.registerLazySingleton<ProfileLocalDataSource>(() => ProfileLocalDataSourceImpl());
+  getIt.registerLazySingleton<ProfileRepo>(() => ProfileRepo(remoteDataSource: getIt(),localDataSource: getIt(),));
+  getIt.registerFactory<GetProfileCubit>(() => GetProfileCubit(getIt()));
+  getIt.registerFactory<UpdateProfileCubit>(() => UpdateProfileCubit(getIt()),);
   //toDo:***************************************************************************//
   //********************************* UI ***************************************//
   //toDo:***************************************************************************//
@@ -130,5 +133,6 @@ Future<void> setupGetIt() async {
   //toDo:------------------------------Subjects Ui------------------------------
   getIt.registerLazySingleton<FileUploadCubit>(() => FileUploadCubit());
   getIt.registerFactory<SubjectsFilterCubit>(() => SubjectsFilterCubit());
-
+  //toDo:------------------------------ Profile UI ------------------------------//
+  getIt.registerFactory<AvatarUploadCubit>(() => AvatarUploadCubit());
 }

@@ -56,7 +56,7 @@ class MainInfoColumn extends StatelessWidget {
                 ],
               )
             : vGap(0),
-        const CustomEditButton()
+         CustomEditButton(currentAvatarUrl: profileModel.avatarUrl,)
       ],
     );
   }

@@ -26,4 +26,5 @@ class ApiConstants {
   static const String questionLike = "qlike";
   static const String answerlike = "alike";
   static const String profile = "/profile";
+  static const String update = "/update";
 }

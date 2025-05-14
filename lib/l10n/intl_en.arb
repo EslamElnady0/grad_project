@@ -290,5 +290,7 @@
   "university_code":"ID",
   "national_id":"National ID",
   "nationality":"Nationality",
-  "department":"department"
+  "department":"department",
+  "edit_profile":"Edit Profile",
+  "enter_new_password":"Enter new password"
 }

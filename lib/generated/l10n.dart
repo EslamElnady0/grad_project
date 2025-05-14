@@ -2314,6 +2314,26 @@ class S {
   String get department {
     return Intl.message('department', name: 'department', desc: '', args: []);
   }
+
+  /// `Edit Profile`
+  String get edit_profile {
+    return Intl.message(
+      'Edit Profile',
+      name: 'edit_profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter new password`
+  String get enter_new_password {
+    return Intl.message(
+      'Enter new password',
+      name: 'enter_new_password',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
