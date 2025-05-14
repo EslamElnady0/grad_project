@@ -24,8 +24,7 @@ import '../di/dependency_injection.dart';
 abstract class StudentRouter {
   static GoRouter getRouter(bool isLogin) {
     return GoRouter(
-      //initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
-      initialLocation: TimeScheduleView.routeName,
+      initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
       routes: [
         GoRoute(
           path: HomeView.routeName,
