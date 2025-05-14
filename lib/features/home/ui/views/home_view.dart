@@ -27,7 +27,9 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   @override
   void initState() {
-    assignTokenAndInitSocket();
+    if (FlavorsFunctions.isStudent()) {
+      assignTokenAndInitSocket();
+    }
 
     super.initState();
   }

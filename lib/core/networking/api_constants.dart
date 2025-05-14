@@ -25,6 +25,8 @@ class ApiConstants {
   static const String students = "/students";
   static const String questionLike = "qlike";
   static const String answerlike = "alike";
+  static const String profile = "/profile";
+  static const String update = "/update";
   static const String chatGroups = "/chat/group";
   static const String groupDetails = "/chat/group/detials";
   static const String messages = "/chat/messages";

@@ -214,6 +214,10 @@ class Assets {
   /// assets/images/svgs/location_icon.svg
   static const String imagesSvgsLocationIcon = "assets/images/svgs/location_icon.svg";
 
+  /// Assets for imagesSvgsLockIcon
+  /// assets/images/svgs/lock_icon.svg
+  static const String imagesSvgsLockIcon = "assets/images/svgs/lock_icon.svg";
+
   /// Assets for imagesSvgsLogOut
   /// assets/images/svgs/log_out.svg
   static const String imagesSvgsLogOut = "assets/images/svgs/log_out.svg";

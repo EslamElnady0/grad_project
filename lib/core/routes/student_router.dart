@@ -10,6 +10,7 @@ import 'package:grad_project/features/map/presentation/views/internal_map_view.d
 import 'package:grad_project/features/profile/presentation/views/profile_view.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_details_view.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_view.dart';
+import 'package:grad_project/features/profile/presentation/views/edit_profile_view.dart';
 import 'package:grad_project/features/time_schedule/presentation/views/time_schedule_view.dart';
 import 'package:grad_project/features/weekly_schedule/ui/screens/weekly_schedule_view.dart';
 import '../../features/auth/ui/views/auth_view.dart';
@@ -104,7 +105,10 @@ abstract class StudentRouter {
           builder: (context, state) => FullScreenImageView(
             imageUrl: state.extra as String,
           ),
-        )
+        ),
+        GoRoute(
+            path: EditProfileView.routeName,
+            builder: (context, state) => const EditProfileView())
       ],
     );
   }

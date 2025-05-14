@@ -153,6 +153,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "days": MessageLookupByLibrary.simpleMessage("Days"),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
+    "department": MessageLookupByLibrary.simpleMessage("department"),
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
       "🤔 You haven\'t searched for anything yet!",
     ),
@@ -171,6 +172,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "edit_news": MessageLookupByLibrary.simpleMessage(
       "✏️ Edit your announcement to keep your students informed with the latest details and updates",
     ),
+    "edit_profile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "endsAt": MessageLookupByLibrary.simpleMessage("Ends at"),
     "ends_in": MessageLookupByLibrary.simpleMessage("Ends In"),
@@ -179,6 +181,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "enter_code": MessageLookupByLibrary.simpleMessage(
       "Enter the 6-digit code that was sent to you.",
+    ),
+    "enter_new_password": MessageLookupByLibrary.simpleMessage(
+      "Enter new password",
     ),
     "enter_student_name_or_code": MessageLookupByLibrary.simpleMessage(
       "Enter student name or code",
@@ -262,6 +267,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "multipleChoice": MessageLookupByLibrary.simpleMessage("Multiple Choice"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
+    "national_id": MessageLookupByLibrary.simpleMessage("National ID"),
+    "nationality": MessageLookupByLibrary.simpleMessage("Nationality"),
     "news": MessageLookupByLibrary.simpleMessage("News"),
     "news_content": MessageLookupByLibrary.simpleMessage("Annoucement Content"),
     "news_content_description": MessageLookupByLibrary.simpleMessage(
@@ -505,6 +512,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "understandBeforeAnswering": MessageLookupByLibrary.simpleMessage(
       "Make sure you fully understand the question before answering.",
     ),
+    "university_code": MessageLookupByLibrary.simpleMessage("ID"),
     "unknown": MessageLookupByLibrary.simpleMessage("Unknown"),
     "update_lecture_status": MessageLookupByLibrary.simpleMessage(
       "Update lecture status",

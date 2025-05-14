@@ -147,6 +147,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "days": MessageLookupByLibrary.simpleMessage("الأيام"),
     "delete": MessageLookupByLibrary.simpleMessage("حذف"),
+    "department": MessageLookupByLibrary.simpleMessage("القسم"),
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
       "🤔 لم تبحث عن شيء بعد! ",
     ),
@@ -163,12 +164,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "edit_news": MessageLookupByLibrary.simpleMessage(
       "✏️ عدّل إعلانك لضمان بقاء طلابك على اطلاع بأحدث التفاصيل والتحديثات",
     ),
+    "edit_profile": MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
     "email": MessageLookupByLibrary.simpleMessage("الإيميل"),
     "endsAt": MessageLookupByLibrary.simpleMessage("ينتهي"),
     "ends_in": MessageLookupByLibrary.simpleMessage("ينتهي في "),
     "enterYourQuestion": MessageLookupByLibrary.simpleMessage("ادخل سؤالك"),
     "enter_code": MessageLookupByLibrary.simpleMessage(
       "أدخل الكود المكون من 6 أرقام اللي اتبعت ليك.",
+    ),
+    "enter_new_password": MessageLookupByLibrary.simpleMessage(
+      "ادخل كلمة سر جديدة",
     ),
     "enter_student_name_or_code": MessageLookupByLibrary.simpleMessage(
       "ادخل اسم الطالب أو الكود",
@@ -248,6 +253,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "multipleChoice": MessageLookupByLibrary.simpleMessage("إختيارات متعددة"),
     "name": MessageLookupByLibrary.simpleMessage("الإسم"),
+    "national_id": MessageLookupByLibrary.simpleMessage("الرقم القومي"),
+    "nationality": MessageLookupByLibrary.simpleMessage("الجنسية"),
     "news": MessageLookupByLibrary.simpleMessage("الأخبار"),
     "news_content": MessageLookupByLibrary.simpleMessage("محتوي الخبر"),
     "news_content_description": MessageLookupByLibrary.simpleMessage(
@@ -478,6 +485,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "understandBeforeAnswering": MessageLookupByLibrary.simpleMessage(
       "تأكد من فهم السؤال جيدًا قبل البدء بالإجابة.",
     ),
+    "university_code": MessageLookupByLibrary.simpleMessage("الكود الجامعي"),
     "unknown": MessageLookupByLibrary.simpleMessage("غير معروف"),
     "update_lecture_status": MessageLookupByLibrary.simpleMessage(
       "تحديث حالة المحاضرة",
