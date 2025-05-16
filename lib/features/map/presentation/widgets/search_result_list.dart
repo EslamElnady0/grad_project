@@ -60,35 +60,39 @@ class SearchResultList<T> extends StatelessWidget {
           code = item.code;
         }
 
-        return Container(
+        return Card(
+          elevation: 2,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16.r),
+          ),
           margin: EdgeInsets.symmetric(
             horizontal: 12.w,
             vertical: 6.h,
           ),
-          decoration: BoxDecoration(
+          child: Container(
+            decoration: BoxDecoration(
               gradient: Constants.whiteGrad,
               borderRadius: BorderRadius.circular(16.r),
-              boxShadow: const [
-                BoxShadow(
-                  color: Colors.grey,
-                  blurRadius: 16.0,
-                  offset: Offset(2.0, 2.0),
-                )
-              ]),
-          child: ListTile(
-            contentPadding: EdgeInsets.symmetric(
-              horizontal: 16.w,
-              vertical: 4.h,
             ),
-            title: Text(
-              name,
-              style: AppTextStyles.font14DarkBlueMedium,
+            child: Column(
+              children: [
+                ListTile(
+                  contentPadding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 4.h,
+                  ),
+                  title: Text(
+                    name,
+                    style: AppTextStyles.font14DarkBlueMedium,
+                  ),
+                  subtitle: Text(
+                    '${S.of(context).code}: $code',
+                    style: AppTextStyles.font12DarkBlueMedium,
+                  ),
+                  onTap: () => onItemSelected(item),
+                ),
+              ],
             ),
-            subtitle: Text(
-              '${S.of(context).code}: $code',
-              style: AppTextStyles.font12DarkBlueMedium,
-            ),
-            onTap: () => onItemSelected(item),
           ),
         );
       },
