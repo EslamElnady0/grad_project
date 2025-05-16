@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/events/map%20events/add_destination_event.dart';
-import 'package:grad_project/core/events/new_message_event.dart';
 import 'package:grad_project/core/helpers/extensions.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
@@ -10,6 +9,7 @@ import 'package:grad_project/features/map/data/model/get_halls_response.dart';
 import 'package:grad_project/features/map/presentation/widgets/search_result_list.dart';
 import 'package:grad_project/generated/l10n.dart';
 import 'package:latlong2/latlong.dart';
+import '../../../../core/events/message events/new_message_event.dart';
 import '../view models/get_halls_cubit/get_halls_cubit.dart';
 
 class HallsSection extends StatelessWidget {
