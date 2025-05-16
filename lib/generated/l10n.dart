@@ -2349,6 +2349,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Route Details`
+  String get route_details {
+    return Intl.message(
+      'Route Details',
+      name: 'route_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Duration`
+  String get duration {
+    return Intl.message('Duration', name: 'duration', desc: '', args: []);
+  }
+
+  /// `Distance`
+  String get distance {
+    return Intl.message('Distance', name: 'distance', desc: '', args: []);
+  }
+
+  /// `h`
+  String get hour {
+    return Intl.message('h', name: 'hour', desc: '', args: []);
+  }
+
+  /// `m`
+  String get meter {
+    return Intl.message('m', name: 'meter', desc: '', args: []);
+  }
+
+  /// `min`
+  String get min {
+    return Intl.message('min', name: 'min', desc: '', args: []);
+  }
+
+  /// `km`
+  String get km {
+    return Intl.message('km', name: 'km', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -155,8 +155,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "discoverYourWay": MessageLookupByLibrary.simpleMessage(
       "🔍 اكتشف طريقك بسهولة داخل الجامعة.",
     ),
+    "distance": MessageLookupByLibrary.simpleMessage("المسافة"),
     "done": MessageLookupByLibrary.simpleMessage("تم"),
     "download": MessageLookupByLibrary.simpleMessage("تحميل"),
+    "duration": MessageLookupByLibrary.simpleMessage("المدة"),
     "eLearning": MessageLookupByLibrary.simpleMessage("التعليم الإلكتروني"),
     "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
     "editAnnouncement": MessageLookupByLibrary.simpleMessage("تعديل خبر"),
@@ -213,6 +215,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "goodLuck": MessageLookupByLibrary.simpleMessage("بالتوفيق! 🍀"),
     "grade": MessageLookupByLibrary.simpleMessage("التقدير"),
     "group": MessageLookupByLibrary.simpleMessage("مجموعة"),
+    "hour": MessageLookupByLibrary.simpleMessage("ساعة"),
     "images": MessageLookupByLibrary.simpleMessage("صور"),
     "in_progress": MessageLookupByLibrary.simpleMessage("قيد التنفيذ"),
     "incompleteQuestionError": MessageLookupByLibrary.simpleMessage(
@@ -220,6 +223,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "interested": MessageLookupByLibrary.simpleMessage("مهتم"),
     "internalMap": MessageLookupByLibrary.simpleMessage("الخريطة الداخلية"),
+    "km": MessageLookupByLibrary.simpleMessage("كيلومتر"),
     "lecture": MessageLookupByLibrary.simpleMessage("محاضرة"),
     "lectureDescription": MessageLookupByLibrary.simpleMessage("وصف المحاضرة"),
     "lectureDescriptionHint": MessageLookupByLibrary.simpleMessage(
@@ -245,7 +249,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "maximumNumberOfQuestions": MessageLookupByLibrary.simpleMessage(
       "تجاوزت الحد الاقصي لعدد الاسئلة الذي اختارته",
     ),
+    "meter": MessageLookupByLibrary.simpleMessage("متر"),
     "midterm": MessageLookupByLibrary.simpleMessage("الميدتيرم"),
+    "min": MessageLookupByLibrary.simpleMessage("دقيقة"),
     "minute": MessageLookupByLibrary.simpleMessage("دقيقة"),
     "monday": MessageLookupByLibrary.simpleMessage("الإثنين"),
     "mostSreached": MessageLookupByLibrary.simpleMessage(
@@ -372,6 +378,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "reviewTopics": MessageLookupByLibrary.simpleMessage(
       "خصص وقتًا للمراجعة وفهم المواضيع الرئيسية.",
     ),
+    "route_details": MessageLookupByLibrary.simpleMessage("تفاصيل المسار"),
     "saturday": MessageLookupByLibrary.simpleMessage("السبت"),
     "scheduleQuiz": MessageLookupByLibrary.simpleMessage("جدولة الكويز"),
     "scheduleQuizHelper": MessageLookupByLibrary.simpleMessage(

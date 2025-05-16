@@ -161,8 +161,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "discoverYourWay": MessageLookupByLibrary.simpleMessage(
       "🔍 Easily discover your way around the university.",
     ),
+    "distance": MessageLookupByLibrary.simpleMessage("Distance"),
     "done": MessageLookupByLibrary.simpleMessage("Done"),
     "download": MessageLookupByLibrary.simpleMessage("download"),
+    "duration": MessageLookupByLibrary.simpleMessage("Duration"),
     "eLearning": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "edit": MessageLookupByLibrary.simpleMessage("Edit"),
     "editAnnouncement": MessageLookupByLibrary.simpleMessage(
@@ -225,6 +227,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "goodLuck": MessageLookupByLibrary.simpleMessage("Good Luck! 🍀"),
     "grade": MessageLookupByLibrary.simpleMessage("Grade"),
     "group": MessageLookupByLibrary.simpleMessage("Group"),
+    "hour": MessageLookupByLibrary.simpleMessage("h"),
     "images": MessageLookupByLibrary.simpleMessage("Images"),
     "in_progress": MessageLookupByLibrary.simpleMessage("In Progress"),
     "incompleteQuestionError": MessageLookupByLibrary.simpleMessage(
@@ -232,6 +235,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "interested": MessageLookupByLibrary.simpleMessage("like"),
     "internalMap": MessageLookupByLibrary.simpleMessage("Internal Map"),
+    "km": MessageLookupByLibrary.simpleMessage("km"),
     "lecture": MessageLookupByLibrary.simpleMessage("Lecture"),
     "lectureDescription": MessageLookupByLibrary.simpleMessage(
       "Lecture Description",
@@ -259,7 +263,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "maximumNumberOfQuestions": MessageLookupByLibrary.simpleMessage(
       "Maximum number of questions reached",
     ),
+    "meter": MessageLookupByLibrary.simpleMessage("m"),
     "midterm": MessageLookupByLibrary.simpleMessage("Midterm"),
+    "min": MessageLookupByLibrary.simpleMessage("min"),
     "minute": MessageLookupByLibrary.simpleMessage("Minute"),
     "monday": MessageLookupByLibrary.simpleMessage("Monday"),
     "mostSreached": MessageLookupByLibrary.simpleMessage(
@@ -393,6 +399,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "reviewTopics": MessageLookupByLibrary.simpleMessage(
       "Set aside time to review and understand key topics.",
     ),
+    "route_details": MessageLookupByLibrary.simpleMessage("Route Details"),
     "saturday": MessageLookupByLibrary.simpleMessage("Saturday"),
     "scheduleQuiz": MessageLookupByLibrary.simpleMessage("Schedule Quiz"),
     "scheduleQuizHelper": MessageLookupByLibrary.simpleMessage(

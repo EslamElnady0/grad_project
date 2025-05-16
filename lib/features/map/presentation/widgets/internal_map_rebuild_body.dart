@@ -45,6 +45,7 @@ class _InternalMapRebuildBodyState extends State<InternalMapRebuildBody> {
           _isBottomSheetOpen = true;
           showModalBottomSheet(
               context: ctx,
+              isDismissible: true,
               isScrollControlled: true,
               backgroundColor: Colors.transparent,
               builder: (context) => CustomDraggableBottomSheet(

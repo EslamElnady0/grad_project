@@ -10,21 +10,7 @@ class FlutterMapWithLayers extends StatelessWidget {
   final MapState state;
   const FlutterMapWithLayers(
       {super.key, required this.mapController, required this.state});
-  // Format distance (meters to km or m)
-  // String formatDistance(double distance) {
-  //   if (distance < 1000) {
-  //     return '${distance.toStringAsFixed(0)} m';
-  //   }
-  //   return '${(distance / 1000).toStringAsFixed(1)} km';
-  // }
 
-  // // Format duration (seconds to min or hr)
-  // String formatDuration(double duration) {
-  //   if (duration < 3600) {
-  //     return '${(duration / 60).toStringAsFixed(1)} min';
-  //   }
-  //   return '${(duration / 3600).toStringAsFixed(1)} hr';
-  // }
   @override
   Widget build(BuildContext context) {
     return FlutterMap(
