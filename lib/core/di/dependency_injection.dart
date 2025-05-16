@@ -57,6 +57,9 @@ import '../../features/auth/logic/cubit/login_cubit.dart';
 import '../../features/chat/data/data sources/chat_local_data_source.dart';
 import '../../features/chat/data/data sources/chat_remote_data_source.dart';
 import '../../features/chat/data/repos/chat_repo.dart';
+import '../../features/map/data/data sources/map_remote_data_source.dart';
+import '../../features/map/data/repos/map_repo.dart';
+import '../../features/map/presentation/view models/map cubit/map_cubit.dart';
 import '../services/socket_service.dart';
 import '../../features/chat/logic/chat_cubit/chat_cubit.dart';
 import '../../features/lecture_manager/logic/add_materials_cubit/add_materials_cubit.dart';
@@ -191,12 +194,28 @@ Future<void> setupGetIt() async {
       () => GetLatestMessagesCubit(getIt()));
   getIt.registerFactory<InnerChatCubit>(() => InnerChatCubit(getIt()));
 
-    //toDo:------------------------------ Profile API ------------------------------//
-  getIt.registerLazySingleton<ProfileRemoteDataSource>(() => ProfileRemoteDataSource(dio));
-  getIt.registerLazySingleton<ProfileLocalDataSource>(() => ProfileLocalDataSourceImpl());
-  getIt.registerLazySingleton<ProfileRepo>(() => ProfileRepo(remoteDataSource: getIt(),localDataSource: getIt(),));
+  //toDo:------------------------------ Profile API ------------------------------//
+  getIt.registerLazySingleton<ProfileRemoteDataSource>(
+      () => ProfileRemoteDataSource(dio));
+  getIt.registerLazySingleton<ProfileLocalDataSource>(
+      () => ProfileLocalDataSourceImpl());
+  getIt.registerLazySingleton<ProfileRepo>(() => ProfileRepo(
+        remoteDataSource: getIt(),
+        localDataSource: getIt(),
+      ));
   getIt.registerFactory<GetProfileCubit>(() => GetProfileCubit(getIt()));
-  getIt.registerFactory<UpdateProfileCubit>(() => UpdateProfileCubit(getIt()),);
+  getIt.registerFactory<UpdateProfileCubit>(
+    () => UpdateProfileCubit(getIt()),
+  );
+  //toDo:------------------------------ Map API ------------------------------//
+  getIt.registerLazySingleton<MapRemoteDataSource>(
+      () => MapRemoteDataSource(dio));
+
+  getIt.registerLazySingleton<MapRepo>(() => MapRepo(
+      mapRemoteDataSource: getIt(),
+      orsApiKey: "5b3ce3597851110001cf6248b9608669b259480a99bcc69f2180c468"));
+  getIt.registerFactory<MapCubit>(() => MapCubit(getIt()));
+
   //toDo:***************************************************************************//
   //********************************* UI ***************************************//
   //toDo:***************************************************************************//
