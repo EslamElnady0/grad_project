@@ -20,9 +20,9 @@ class InternalMapRebuildBody extends StatefulWidget {
 
 class _InternalMapRebuildBodyState extends State<InternalMapRebuildBody> {
   final mapController = MapController();
-  bool _isBottomSheetOpen = false;
   MapState? _previousState;
 
+  @override
   @override
   void dispose() {
     mapController.dispose();
@@ -36,16 +36,14 @@ class _InternalMapRebuildBodyState extends State<InternalMapRebuildBody> {
       buildWhen: (previous, current) => previous != current,
       listener: (ctx, state) {
         // Show bottom sheet when a new route is fetched
-        if (!_isBottomSheetOpen &&
-            state.distance != null &&
+        if (state.distance != null &&
             state.duration != null &&
             (_previousState == null ||
                 _previousState!.distance == null ||
                 _previousState!.duration == null ||
-                // Check if distance or duration changed (new route)
+                _previousState!.destName != state.destName ||
                 _previousState!.distance != state.distance ||
                 _previousState!.duration != state.duration)) {
-          _isBottomSheetOpen = true;
           showModalBottomSheet(
               context: ctx,
               isDismissible: true,
@@ -53,19 +51,16 @@ class _InternalMapRebuildBodyState extends State<InternalMapRebuildBody> {
               backgroundColor: Colors.transparent,
               builder: (context) => CustomDraggableBottomSheet(
                     state: state,
-                  )).whenComplete(() {
-            _isBottomSheetOpen = false;
-          });
+                    destinationName: state.destName,
+                  )).whenComplete(() {});
         }
         // Close bottom sheet when route is reset
-        if (_isBottomSheetOpen &&
-            state.distance == null &&
+        if (state.distance == null &&
             state.duration == null &&
             (_previousState != null &&
                 (_previousState!.distance != null ||
                     _previousState!.duration != null))) {
           Navigator.pop(ctx, false);
-          _isBottomSheetOpen = false;
         }
         _previousState = state;
       },

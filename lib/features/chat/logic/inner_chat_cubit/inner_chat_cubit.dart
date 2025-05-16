@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/events/new_message_event.dart';
+import '../../../../core/events/message events/new_message_event.dart';
 import '../../data/repos/chat_repo.dart';
 import 'inner_chat_state.dart';
 

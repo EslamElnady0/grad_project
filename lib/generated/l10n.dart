@@ -2404,6 +2404,41 @@ class S {
   String get street {
     return Intl.message('Street', name: 'street', desc: '', args: []);
   }
+
+  /// `Halls`
+  String get halls {
+    return Intl.message('Halls', name: 'halls', desc: '', args: []);
+  }
+
+  /// `No Halls Found`
+  String get noHallsFound {
+    return Intl.message(
+      'No Halls Found',
+      name: 'noHallsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Code`
+  String get code {
+    return Intl.message('Code', name: 'code', desc: '', args: []);
+  }
+
+  /// `Buildings`
+  String get buildings {
+    return Intl.message('Buildings', name: 'buildings', desc: '', args: []);
+  }
+
+  /// `No Buildings Found`
+  String get noBuildingsFound {
+    return Intl.message(
+      'No Buildings Found',
+      name: 'noBuildingsFound',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

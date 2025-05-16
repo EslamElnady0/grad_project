@@ -7,6 +7,7 @@ class MapState extends Equatable {
   final List<Marker> markers;
   final List<LatLng> routePoints;
   final List<RouteInstruction> instructions;
+  final String destName;
   final String? error;
   final bool recenter;
   final double? distance;
@@ -15,6 +16,7 @@ class MapState extends Equatable {
   const MapState({
     this.isLoading = false,
     this.currentLocation,
+    this.destName = '',
     this.markers = const [],
     this.routePoints = const [],
     this.instructions = const [],
@@ -61,6 +63,7 @@ class MapState extends Equatable {
     bool? recenter,
     double? distance,
     double? duration,
+    String? destName,
   }) {
     return MapState(
       isLoading: isLoading ?? this.isLoading,
@@ -70,6 +73,7 @@ class MapState extends Equatable {
       instructions: instructions ?? this.instructions,
       error: error,
       recenter: recenter ?? this.recenter,
+      destName: destName ?? this.destName,
       distance: distance ?? this.distance,
       duration: duration ?? this.duration,
     );
@@ -85,6 +89,7 @@ class MapState extends Equatable {
         error,
         recenter,
         distance,
-        duration
+        duration,
+        destName
       ];
 }

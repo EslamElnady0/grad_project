@@ -103,6 +103,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "average_score": MessageLookupByLibrary.simpleMessage(
       "Average student score in this quiz",
     ),
+    "buildings": MessageLookupByLibrary.simpleMessage("Buildings"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "chat": MessageLookupByLibrary.simpleMessage("Chat"),
     "choose_assignment_deadline": MessageLookupByLibrary.simpleMessage(
@@ -118,6 +119,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "clickheretoaddmorefiles": MessageLookupByLibrary.simpleMessage(
       "Click here to add more files",
     ),
+    "code": MessageLookupByLibrary.simpleMessage("Code"),
     "college": MessageLookupByLibrary.simpleMessage("College"),
     "community": MessageLookupByLibrary.simpleMessage("Community"),
     "complete": MessageLookupByLibrary.simpleMessage("complete"),
@@ -227,6 +229,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "goodLuck": MessageLookupByLibrary.simpleMessage("Good Luck! 🍀"),
     "grade": MessageLookupByLibrary.simpleMessage("Grade"),
     "group": MessageLookupByLibrary.simpleMessage("Group"),
+    "halls": MessageLookupByLibrary.simpleMessage("Halls"),
     "hour": MessageLookupByLibrary.simpleMessage("h"),
     "images": MessageLookupByLibrary.simpleMessage("Images"),
     "in_progress": MessageLookupByLibrary.simpleMessage("In Progress"),
@@ -287,9 +290,13 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
     "next_seven_days": MessageLookupByLibrary.simpleMessage("Next 7 Days"),
+    "noBuildingsFound": MessageLookupByLibrary.simpleMessage(
+      "No Buildings Found",
+    ),
     "noFilesUploaded": MessageLookupByLibrary.simpleMessage(
       "No files uploaded yet",
     ),
+    "noHallsFound": MessageLookupByLibrary.simpleMessage("No Halls Found"),
     "not_started": MessageLookupByLibrary.simpleMessage("Not Started"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
       "Allowed Attempts",

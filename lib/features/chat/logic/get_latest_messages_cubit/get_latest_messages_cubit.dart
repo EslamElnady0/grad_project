@@ -5,7 +5,7 @@ import 'package:grad_project/features/chat/data/models/get_messages_response.dar
 import 'package:grad_project/features/chat/data/repos/chat_repo.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../../core/events/new_message_event.dart';
+import '../../../../core/events/message events/new_message_event.dart';
 part 'get_latest_messages_state.dart';
 part 'get_latest_messages_cubit.freezed.dart';
 

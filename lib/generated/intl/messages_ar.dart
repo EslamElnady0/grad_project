@@ -97,6 +97,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "average_score": MessageLookupByLibrary.simpleMessage(
       "متوسط درجات الطلاب في هذا الاختبار",
     ),
+    "buildings": MessageLookupByLibrary.simpleMessage("المباني"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
     "choose_assignment_deadline": MessageLookupByLibrary.simpleMessage(
@@ -112,6 +113,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "clickheretoaddmorefiles": MessageLookupByLibrary.simpleMessage(
       "اضعط هنا لإضافة المزيد من الملفات",
     ),
+    "code": MessageLookupByLibrary.simpleMessage("الكود"),
     "college": MessageLookupByLibrary.simpleMessage("الكلية"),
     "community": MessageLookupByLibrary.simpleMessage("المنتدي"),
     "complete": MessageLookupByLibrary.simpleMessage("إكتمل"),
@@ -215,6 +217,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "goodLuck": MessageLookupByLibrary.simpleMessage("بالتوفيق! 🍀"),
     "grade": MessageLookupByLibrary.simpleMessage("التقدير"),
     "group": MessageLookupByLibrary.simpleMessage("مجموعة"),
+    "halls": MessageLookupByLibrary.simpleMessage("القاعات"),
     "hour": MessageLookupByLibrary.simpleMessage("ساعة"),
     "images": MessageLookupByLibrary.simpleMessage("صور"),
     "in_progress": MessageLookupByLibrary.simpleMessage("قيد التنفيذ"),
@@ -273,8 +276,14 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
     "next_seven_days": MessageLookupByLibrary.simpleMessage("7 أيام القادمة"),
+    "noBuildingsFound": MessageLookupByLibrary.simpleMessage(
+      "لم يتم العثور على مباني",
+    ),
     "noFilesUploaded": MessageLookupByLibrary.simpleMessage(
       "لم يتم رفع أي ملفات بعد",
+    ),
+    "noHallsFound": MessageLookupByLibrary.simpleMessage(
+      "لم يتم العثور على قاعات",
     ),
     "not_started": MessageLookupByLibrary.simpleMessage("لم يبدأ"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(

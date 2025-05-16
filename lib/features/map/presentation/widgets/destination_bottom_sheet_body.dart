@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:grad_project/core/helpers/extensions.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/map/presentation/views/instructions_view.dart';
@@ -12,13 +13,9 @@ import '../view models/map cubit/map_cubit.dart';
 
 class DestinationBottomSheetBody extends StatelessWidget {
   final ScrollController scrollController;
-  final String? destinationName;
   final MapState state;
   const DestinationBottomSheetBody(
-      {super.key,
-      required this.scrollController,
-      this.destinationName,
-      required this.state});
+      {super.key, required this.scrollController, required this.state});
   String formatDistance(double distance, BuildContext context) {
     if (distance < 1000) {
       return '${distance.toStringAsFixed(0)} ${S.of(context).meter}';
@@ -81,11 +78,11 @@ class DestinationBottomSheetBody extends StatelessWidget {
             ),
             vGap(24),
             CurrentLocationDestinationContainer(
-              destination: destinationName ??
-                  (state.markers.length > 1
-                      ? "${state.markers[1].point.latitude.toStringAsFixed(6)}, ${state.markers[1].point.longitude.toStringAsFixed(6)}"
-                      : "غير معروف"),
-            ),
+                destination: state.destName.isNullOrEmpty()
+                    ? (state.markers.length > 1
+                        ? "${state.markers[1].point.latitude.toStringAsFixed(6)}, ${state.markers[1].point.longitude.toStringAsFixed(6)}"
+                        : "غير معروف")
+                    : state.destName),
             vGap(30),
             Align(
                 alignment: Alignment.center,

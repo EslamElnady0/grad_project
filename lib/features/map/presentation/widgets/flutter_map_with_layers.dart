@@ -19,7 +19,7 @@ class FlutterMapWithLayers extends StatelessWidget {
         initialCenter: state.currentLocation!,
         initialZoom: 17.0,
         onTap: (tapPosition, point) =>
-            context.read<MapCubit>().addDestination(point),
+            context.read<MapCubit>().addDestination(point, ""),
       ),
       children: [
         TileLayer(

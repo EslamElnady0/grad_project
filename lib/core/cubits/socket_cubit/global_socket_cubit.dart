@@ -6,7 +6,7 @@ import 'package:grad_project/core/helpers/extensions.dart';
 import 'package:grad_project/core/helpers/shared_pref_helper.dart';
 import '../../../features/chat/data/models/get_messages_response.dart';
 import '../../data/repos/socket_repo.dart';
-import '../../events/new_message_event.dart';
+import '../../events/message events/new_message_event.dart';
 import '../../helpers/constants.dart';
 import 'global_socket_state.dart';
 

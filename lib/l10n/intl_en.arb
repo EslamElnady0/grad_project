@@ -303,5 +303,10 @@
   "min": "min",
   "km": "km",
   "instructions": "Instructions",
-  "street": "Street"
+  "street": "Street",
+  "halls": "Halls",
+  "noHallsFound": "No Halls Found",
+  "code": "Code",
+  "buildings": "Buildings",
+  "noBuildingsFound": "No Buildings Found"
 }

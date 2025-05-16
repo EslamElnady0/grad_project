@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/core/di/dependency_injection.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
+import 'package:grad_project/features/map/presentation/view%20models/get_buildings_cubit/get_buildings_cubit.dart';
+import 'package:grad_project/features/map/presentation/view%20models/get_halls_cubit/get_halls_cubit.dart';
 import '../view models/map cubit/map_cubit.dart';
 import 'destination_bottom_sheet_body.dart';
 import 'search_halls_and_buildings_bottom_sheet_body.dart';
@@ -40,10 +44,19 @@ class CustomDraggableBottomSheet extends StatelessWidget {
               ? DestinationBottomSheetBody(
                   scrollController: scrollController,
                   state: state,
-                  destinationName: destinationName,
                 )
-              : SearchHallsAndBuildingsBottomSheetBody(
-                  scrollController: scrollController,
+              : MultiBlocProvider(
+                  providers: [
+                    BlocProvider(
+                      create: (context) => getIt<GetHallsCubit>(),
+                    ),
+                    BlocProvider(
+                      create: (context) => getIt<GetBuildingsCubit>(),
+                    ),
+                  ],
+                  child: SearchHallsAndBuildingsBottomSheetBody(
+                    scrollController: scrollController,
+                  ),
                 )),
     );
   }

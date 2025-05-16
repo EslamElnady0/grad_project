@@ -3,9 +3,13 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
+import 'package:grad_project/core/events/map%20events/add_destination_event.dart';
+import 'package:grad_project/core/events/new_message_event.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
+import 'package:grad_project/features/map/data/model/get_halls_response.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:location/location.dart';
+import '../../../data/model/get_buildings_response.dart';
 import '../../../data/model/route_response.dart';
 import '../../../data/repos/map_repo.dart';
 import 'package:rxdart/rxdart.dart';
@@ -14,8 +18,18 @@ part 'map_state.dart';
 class MapCubit extends Cubit<MapState> {
   final MapRepo _mapRepo;
   StreamSubscription<LocationData>? _locationSubscription;
-
-  MapCubit(this._mapRepo) : super(const MapState.initial());
+  StreamSubscription<AddDestinationEvent>? _addDestinationSubscription;
+  MapCubit(this._mapRepo) : super(const MapState.initial()) {
+    _addDestinationSubscription =
+        eventBus.on<AddDestinationEvent>().listen((event) {
+      var object = event.destObject;
+      if (object is HallData) {
+        addDestination(event.destination, "${object.name} ${object.code}");
+      } else if (object is BuildingModel) {
+        addDestination(event.destination, "${object.name} ${object.code}");
+      }
+    });
+  }
 
   void init() async {
     emit(const MapState.loading());
@@ -61,7 +75,7 @@ class MapCubit extends Cubit<MapState> {
     }
   }
 
-  void addDestination(LatLng destination) async {
+  void addDestination(LatLng destination, String? destName) async {
     if (state.currentLocation == null) return;
 
     emit(state.copyWith(isLoading: true));
@@ -89,6 +103,7 @@ class MapCubit extends Cubit<MapState> {
         routePoints: route.routePoints,
         instructions: route.instructions,
         distance: route.distance,
+        destName: destName,
         duration: route.duration,
         isLoading: false,
       ));
@@ -114,6 +129,7 @@ class MapCubit extends Cubit<MapState> {
       routePoints: [],
       instructions: [],
       distance: null,
+      destName: null,
       duration: null,
       error: null,
     ));
@@ -132,6 +148,7 @@ class MapCubit extends Cubit<MapState> {
   @override
   Future<void> close() {
     _locationSubscription?.cancel();
+    _addDestinationSubscription?.cancel();
     return super.close();
   }
 }
