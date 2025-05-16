@@ -52,7 +52,7 @@ class _InternalMapRebuildBodyState extends State<InternalMapRebuildBody> {
               builder: (context) => CustomDraggableBottomSheet(
                     state: state,
                     destinationName: state.destName,
-                  )).whenComplete(() {});
+                  ));
         }
         // Close bottom sheet when route is reset
         if (state.distance == null &&

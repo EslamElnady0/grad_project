@@ -308,5 +308,6 @@
   "noHallsFound": "No Halls Found",
   "code": "Code",
   "buildings": "Buildings",
-  "noBuildingsFound": "No Buildings Found"
+  "noBuildingsFound": "No Buildings Found",
+  "retry": "Retry"
 }

@@ -35,11 +35,11 @@ class _SearchHallsAndBuildingsBottomSheetBodyState
     searchController = TextEditingController();
     showDropdownNotifier = ValueNotifier<bool>(false);
     searchQueryNotifier = ValueNotifier<String>('');
-    context.read<GetBuildingsCubit>().getBuildings().whenComplete(() {
-      if (mounted) {
-        context.read<GetHallsCubit>().getHalls();
-      }
-    });
+    Future.wait([
+      context.read<GetBuildingsCubit>().getBuildings(),
+      context.read<GetHallsCubit>().getHalls()
+    ]);
+
     super.initState();
   }
 

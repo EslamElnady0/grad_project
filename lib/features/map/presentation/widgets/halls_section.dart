@@ -57,6 +57,17 @@ class HallsSection extends StatelessWidget {
                 },
               );
             },
+            getHallsFailure: (error) => Padding(
+              padding: EdgeInsets.all(16.w),
+              child: TextButton(
+                onPressed: () => context.read<GetHallsCubit>().getHalls(),
+                child: Text(
+                  "error, ${S.of(context).retry}",
+                  textAlign: TextAlign.center,
+                  style: AppTextStyles.font14DarkBlueMedium,
+                ),
+              ),
+            ),
             orElse: () => Padding(
               padding: EdgeInsets.all(16.w),
               child: const CircularProgressIndicator(

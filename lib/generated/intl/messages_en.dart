@@ -404,6 +404,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "results_description": MessageLookupByLibrary.simpleMessage(
       "📊 View students’ quiz results, including grades!",
     ),
+    "retry": MessageLookupByLibrary.simpleMessage("Retry"),
     "reviewTopics": MessageLookupByLibrary.simpleMessage(
       "Set aside time to review and understand key topics.",
     ),

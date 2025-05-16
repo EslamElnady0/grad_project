@@ -385,6 +385,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "results_description": MessageLookupByLibrary.simpleMessage(
       "📊 استعرض نتائج الطلاب في الكويزات، بما في ذلك الدرجات!",
     ),
+    "retry": MessageLookupByLibrary.simpleMessage("اعادة المحاولة"),
     "reviewTopics": MessageLookupByLibrary.simpleMessage(
       "خصص وقتًا للمراجعة وفهم المواضيع الرئيسية.",
     ),
