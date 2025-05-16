@@ -23,13 +23,14 @@ class MapCubit extends Cubit<MapState> {
         width: 80.0,
         height: 80.0,
         point: LatLng(location.latitude!, location.longitude!),
-        child: const Icon(Icons.my_location, color: Colors.blue, size: 40.0),
+        child: const Icon(Icons.my_location,
+            color: AppColors.darkblue, size: 35.0),
       );
       emit(MapState.loaded(
         currentLocation: LatLng(location.latitude!, location.longitude!),
         markers: [marker],
-        routePoints: [],
-        instructions: [],
+        routePoints: const [],
+        instructions: const [],
       ));
 
       // Listen to location changes
