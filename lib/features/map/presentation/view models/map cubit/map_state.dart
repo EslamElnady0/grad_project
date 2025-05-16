@@ -1,7 +1,7 @@
 part of 'map_cubit.dart';
 
 @immutable
-class MapState {
+class MapState extends Equatable {
   final bool isLoading;
   final LatLng? currentLocation;
   final List<Marker> markers;
@@ -9,8 +9,8 @@ class MapState {
   final List<RouteInstruction> instructions;
   final String? error;
   final bool recenter;
-  final double? distance; // New: Store route distance (e.g., in meters)
-  final double? duration; // New: Store route duration (e.g., in seconds)
+  final double? distance;
+  final double? duration;
 
   const MapState({
     this.isLoading = false,
@@ -20,8 +20,8 @@ class MapState {
     this.instructions = const [],
     this.error,
     this.recenter = false,
-    this.distance, // Initialize as null
-    this.duration, // Initialize as null
+    this.distance,
+    this.duration,
   });
 
   const MapState.initial() : this();
@@ -33,8 +33,8 @@ class MapState {
     required List<Marker> markers,
     required List<LatLng> routePoints,
     required List<RouteInstruction> instructions,
-    double? distance, // Add to loaded constructor
-    double? duration, // Add to loaded constructor
+    double? distance,
+    double? duration,
   }) : this(
           isLoading: false,
           currentLocation: currentLocation,
@@ -59,8 +59,8 @@ class MapState {
     List<RouteInstruction>? instructions,
     String? error,
     bool? recenter,
-    double? distance, // Add to copyWith
-    double? duration, // Add to copyWith
+    double? distance,
+    double? duration,
   }) {
     return MapState(
       isLoading: isLoading ?? this.isLoading,
@@ -74,4 +74,17 @@ class MapState {
       duration: duration ?? this.duration,
     );
   }
+
+  @override
+  List<Object?> get props => [
+        isLoading,
+        currentLocation,
+        markers,
+        routePoints,
+        instructions,
+        error,
+        recenter,
+        distance,
+        duration
+      ];
 }

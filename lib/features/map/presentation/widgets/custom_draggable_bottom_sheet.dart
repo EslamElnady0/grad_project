@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
+import 'package:grad_project/features/map/presentation/views/instructions_view.dart';
 import 'package:grad_project/features/map/presentation/widgets/current_location_destination_container.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/widgets/custom_secondary_gradient_button.dart';
@@ -102,7 +104,10 @@ class CustomDraggableBottomSheet extends StatelessWidget {
                 Align(
                     alignment: Alignment.center,
                     child: CustomSecondaryGradientButton(
-                      onTap: () {},
+                      onTap: () {
+                        GoRouter.of(context).push(InstructionsView.routeName,
+                            extra: state.instructions);
+                      },
                       title: S.of(context).start,
                     )),
               ],

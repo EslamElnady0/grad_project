@@ -19,8 +19,8 @@ class InternalMapRebuildBody extends StatefulWidget {
 
 class _InternalMapRebuildBodyState extends State<InternalMapRebuildBody> {
   final mapController = MapController();
-  bool _isBottomSheetOpen = false; // Track if bottom sheet is open
-  MapState? _previousState; // Track previous state to detect changes
+  bool _isBottomSheetOpen = false;
+  MapState? _previousState;
 
   @override
   void dispose() {
@@ -31,6 +31,8 @@ class _InternalMapRebuildBodyState extends State<InternalMapRebuildBody> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<MapCubit, MapState>(
+      listenWhen: (previous, current) => previous != current,
+      buildWhen: (previous, current) => previous != current,
       listener: (ctx, state) {
         // Show bottom sheet when a new route is fetched
         if (!_isBottomSheetOpen &&

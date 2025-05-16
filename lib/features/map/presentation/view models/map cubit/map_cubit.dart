@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
@@ -37,7 +38,7 @@ class MapCubit extends Cubit<MapState> {
       // Debounce location updates to reduce rebuilds
       _locationSubscription = _mapRepo
           .onLocationChanged()
-          .debounceTime(const Duration(milliseconds: 500)) // Adjust as needed
+          .debounceTime(const Duration(milliseconds: 1000))
           .listen((newLocation) {
         final updatedMarker = Marker(
           width: 80.0,
@@ -87,8 +88,8 @@ class MapCubit extends Cubit<MapState> {
         markers: [state.markers[0], destinationMarker],
         routePoints: route.routePoints,
         instructions: route.instructions,
-        distance: route.distance, // Store distance
-        duration: route.duration, // Store duration
+        distance: route.distance,
+        duration: route.duration,
         isLoading: false,
       ));
     }, failure: (e) {
@@ -106,14 +107,14 @@ class MapCubit extends Cubit<MapState> {
       height: 80.0,
       point: state.currentLocation!,
       child:
-          const Icon(Icons.my_location, color: AppColors.darkblue, size: 40.0),
+          const Icon(Icons.my_location, color: AppColors.darkblue, size: 35.0),
     );
     emit(state.copyWith(
       markers: [marker],
       routePoints: [],
       instructions: [],
-      distance: null, // Clear distance
-      duration: null, // Clear duration
+      distance: null,
+      duration: null,
       error: null,
     ));
   }

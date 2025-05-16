@@ -221,6 +221,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "incompleteQuestionError": MessageLookupByLibrary.simpleMessage(
       "يجب أن تحتوي جميع الأسئلة على سؤال، وإجابة واحدة على الأقل، وإجابة صحيحة مختارة.",
     ),
+    "instructions": MessageLookupByLibrary.simpleMessage("التعليمات"),
     "interested": MessageLookupByLibrary.simpleMessage("مهتم"),
     "internalMap": MessageLookupByLibrary.simpleMessage("الخريطة الداخلية"),
     "km": MessageLookupByLibrary.simpleMessage("كيلومتر"),
@@ -455,6 +456,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "stayConfident": MessageLookupByLibrary.simpleMessage(
       "تنفّس بعمق وثق بقدراتك!",
     ),
+    "street": MessageLookupByLibrary.simpleMessage("شارع"),
     "student_grade": MessageLookupByLibrary.simpleMessage("درجة الطالب"),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage("طالب نشط الآن"),
     "students_count": MessageLookupByLibrary.simpleMessage("عدد الطلاب:"),

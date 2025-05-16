@@ -233,6 +233,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "incompleteQuestionError": MessageLookupByLibrary.simpleMessage(
       "All questions must have a question, at least one answer, and a selected correct answer.",
     ),
+    "instructions": MessageLookupByLibrary.simpleMessage("Instructions"),
     "interested": MessageLookupByLibrary.simpleMessage("like"),
     "internalMap": MessageLookupByLibrary.simpleMessage("Internal Map"),
     "km": MessageLookupByLibrary.simpleMessage("km"),
@@ -478,6 +479,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "stayConfident": MessageLookupByLibrary.simpleMessage(
       "Take deep breaths and trust your abilities!",
     ),
+    "street": MessageLookupByLibrary.simpleMessage("Street"),
     "student_grade": MessageLookupByLibrary.simpleMessage("Student Grade"),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage(
       "students online now",

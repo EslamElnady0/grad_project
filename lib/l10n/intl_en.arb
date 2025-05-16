@@ -301,5 +301,7 @@
   "hour": "h",
   "meter": "m",
   "min": "min",
-  "km": "km"
+  "km": "km",
+  "instructions": "Instructions",
+  "street": "Street"
 }
