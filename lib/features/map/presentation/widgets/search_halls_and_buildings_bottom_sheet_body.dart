@@ -2,17 +2,38 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../../core/widgets/custom_search_text_field.dart';
 import '../../../../generated/l10n.dart';
 
-class SearchHallsAndBuildingsBottomSheetBody extends StatelessWidget {
+class SearchHallsAndBuildingsBottomSheetBody extends StatefulWidget {
   final ScrollController scrollController;
   const SearchHallsAndBuildingsBottomSheetBody(
       {super.key, required this.scrollController});
 
   @override
+  State<SearchHallsAndBuildingsBottomSheetBody> createState() =>
+      _SearchHallsAndBuildingsBottomSheetBodyState();
+}
+
+class _SearchHallsAndBuildingsBottomSheetBodyState
+    extends State<SearchHallsAndBuildingsBottomSheetBody> {
+  late TextEditingController searchController;
+  @override
+  void initState() {
+    searchController = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    searchController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      controller: scrollController,
+      controller: widget.scrollController,
       child: Padding(
         padding: EdgeInsets.all(16.w),
         child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
@@ -35,6 +56,11 @@ class SearchHallsAndBuildingsBottomSheetBody extends StatelessWidget {
             maxLines: 3,
           ),
           vGap(16),
+          CustomSearchTextField(
+            hintText: S.of(context).searchForBuilding,
+            onChanged: (p0) {},
+            controller: searchController,
+          ),
         ]),
       ),
     );
