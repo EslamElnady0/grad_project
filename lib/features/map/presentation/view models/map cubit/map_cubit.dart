@@ -7,6 +7,7 @@ import 'package:latlong2/latlong.dart';
 import 'package:location/location.dart';
 import '../../../data/model/route_response.dart';
 import '../../../data/repos/map_repo.dart';
+import 'package:rxdart/rxdart.dart';
 part 'map_state.dart';
 
 class MapCubit extends Cubit<MapState> {
@@ -33,9 +34,11 @@ class MapCubit extends Cubit<MapState> {
         instructions: const [],
       ));
 
-      // Listen to location changes
-      _locationSubscription =
-          _mapRepo.onLocationChanged().listen((newLocation) {
+      // Debounce location updates to reduce rebuilds
+      _locationSubscription = _mapRepo
+          .onLocationChanged()
+          .debounceTime(const Duration(milliseconds: 500)) // Adjust as needed
+          .listen((newLocation) {
         final updatedMarker = Marker(
           width: 80.0,
           height: 80.0,
@@ -48,8 +51,7 @@ class MapCubit extends Cubit<MapState> {
               LatLng(newLocation.latitude!, newLocation.longitude!),
           markers: [
             updatedMarker,
-            if (state.markers.length > 1)
-              state.markers[1], // Keep destination marker
+            if (state.markers.length > 1) state.markers[1],
           ],
         ));
       });
@@ -67,6 +69,14 @@ class MapCubit extends Cubit<MapState> {
         await _mapRepo.getRoute(state.currentLocation!, destination);
 
     routeResponse.when(success: (route) {
+      if (route.routePoints.isEmpty) {
+        // Handle empty route case
+        emit(state.copyWith(
+          error: "No route found",
+          isLoading: false,
+        ));
+        return;
+      }
       final destinationMarker = Marker(
         width: 80.0,
         height: 80.0,
@@ -74,12 +84,11 @@ class MapCubit extends Cubit<MapState> {
         child: const Icon(Icons.location_on, color: Colors.red, size: 40.0),
       );
       emit(state.copyWith(
-        markers: [
-          state.markers[0],
-          destinationMarker
-        ], // Keep current location marker
+        markers: [state.markers[0], destinationMarker],
         routePoints: route.routePoints,
         instructions: route.instructions,
+        distance: route.distance, // Store distance
+        duration: route.duration, // Store duration
         isLoading: false,
       ));
     }, failure: (e) {
@@ -103,6 +112,8 @@ class MapCubit extends Cubit<MapState> {
       markers: [marker],
       routePoints: [],
       instructions: [],
+      distance: null, // Clear distance
+      duration: null, // Clear duration
       error: null,
     ));
   }

@@ -9,6 +9,8 @@ class MapState {
   final List<RouteInstruction> instructions;
   final String? error;
   final bool recenter;
+  final double? distance; // New: Store route distance (e.g., in meters)
+  final double? duration; // New: Store route duration (e.g., in seconds)
 
   const MapState({
     this.isLoading = false,
@@ -18,6 +20,8 @@ class MapState {
     this.instructions = const [],
     this.error,
     this.recenter = false,
+    this.distance, // Initialize as null
+    this.duration, // Initialize as null
   });
 
   const MapState.initial() : this();
@@ -29,12 +33,16 @@ class MapState {
     required List<Marker> markers,
     required List<LatLng> routePoints,
     required List<RouteInstruction> instructions,
+    double? distance, // Add to loaded constructor
+    double? duration, // Add to loaded constructor
   }) : this(
           isLoading: false,
           currentLocation: currentLocation,
           markers: markers,
           routePoints: routePoints,
           instructions: instructions,
+          distance: distance,
+          duration: duration,
         );
 
   const MapState.error(String error)
@@ -51,6 +59,8 @@ class MapState {
     List<RouteInstruction>? instructions,
     String? error,
     bool? recenter,
+    double? distance, // Add to copyWith
+    double? duration, // Add to copyWith
   }) {
     return MapState(
       isLoading: isLoading ?? this.isLoading,
@@ -60,6 +70,8 @@ class MapState {
       instructions: instructions ?? this.instructions,
       error: error,
       recenter: recenter ?? this.recenter,
+      distance: distance ?? this.distance,
+      duration: duration ?? this.duration,
     );
   }
 }

@@ -3,19 +3,79 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
+import 'package:grad_project/features/map/presentation/widgets/custom_draggable_bottom_sheet.dart';
+import '../../../../core/theme/app_text_styles.dart';
 import '../view models/map cubit/map_cubit.dart';
+import 'custom_map_action_button.dart';
+import 'flutter_map_with_layers.dart';
+import 'recenter_button.dart';
 
-class InternalMapRebuildBody extends StatelessWidget {
+class InternalMapRebuildBody extends StatefulWidget {
   const InternalMapRebuildBody({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final mapController = MapController();
+  State<InternalMapRebuildBody> createState() => _InternalMapRebuildBodyState();
+}
 
-    return BlocBuilder<MapCubit, MapState>(
+class _InternalMapRebuildBodyState extends State<InternalMapRebuildBody> {
+  final mapController = MapController();
+  bool _isBottomSheetOpen = false; // Track if bottom sheet is open
+  MapState? _previousState; // Track previous state to detect changes
+
+  @override
+  void dispose() {
+    mapController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocConsumer<MapCubit, MapState>(
+      listener: (ctx, state) {
+        // Show bottom sheet when a new route is fetched
+        if (!_isBottomSheetOpen &&
+            state.distance != null &&
+            state.duration != null &&
+            (_previousState == null ||
+                _previousState!.distance == null ||
+                _previousState!.duration == null ||
+                // Check if distance or duration changed (new route)
+                _previousState!.distance != state.distance ||
+                _previousState!.duration != state.duration)) {
+          _isBottomSheetOpen = true;
+          showModalBottomSheet(
+              context: ctx,
+              isScrollControlled: true,
+              backgroundColor: Colors.transparent,
+              builder: (context) => CustomDraggableBottomSheet(
+                    state: state,
+                    onClosePressed: () {
+                      Navigator.pop(context);
+                      _isBottomSheetOpen = false;
+                    },
+                  )).whenComplete(() {
+            _isBottomSheetOpen = false;
+          });
+        }
+        // Close bottom sheet when route is reset
+        if (_isBottomSheetOpen &&
+            state.distance == null &&
+            state.duration == null &&
+            (_previousState != null &&
+                (_previousState!.distance != null ||
+                    _previousState!.duration != null))) {
+          Navigator.pop(ctx, false);
+          _isBottomSheetOpen = false;
+        }
+        _previousState = state;
+      },
       builder: (context, state) {
         if (state.isLoading && state.currentLocation == null) {
-          return const Center(child: CircularProgressIndicator());
+          return const Center(
+            child: CircularProgressIndicator(
+              color: AppColors.darkblue,
+            ),
+          );
         }
 
         if (state.error != null && state.currentLocation == null) {
@@ -25,46 +85,26 @@ class InternalMapRebuildBody extends StatelessWidget {
         if (state.currentLocation == null) {
           return const Center(child: Text('Unable to load location'));
         }
-
-        // Recenter map if requested
         if (state.recenter) {
           mapController.move(state.currentLocation!, 17.0);
           context.read<MapCubit>().clearRecenter();
         }
         return Stack(
           children: [
-            FlutterMap(
+            FlutterMapWithLayers(
               mapController: mapController,
-              options: MapOptions(
-                initialCenter: state.currentLocation!,
-                initialZoom: 17.0,
-                onTap: (tapPosition, point) =>
-                    context.read<MapCubit>().addDestination(point),
-              ),
-              children: [
-                TileLayer(
-                  urlTemplate: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-                  subdomains: const ['a', 'b', 'c'],
-                ),
-                MarkerLayer(markers: state.markers),
-                if (state.routePoints.isNotEmpty) // Add this condition
-                  PolylineLayer(
-                    polylines: [
-                      Polyline(
-                        points: state.routePoints,
-                        strokeWidth: 4.0,
-                        color: Colors.blue,
-                      ),
-                    ],
-                  ),
-              ],
+              state: state,
             ),
             if (state.isLoading)
               Container(
                 color: Colors.black.withOpacity(0.2),
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
-                child: const Center(child: CircularProgressIndicator()),
+                child: const Center(
+                  child: CircularProgressIndicator(
+                    color: AppColors.darkblue,
+                  ),
+                ),
               ),
             if (state.error != null)
               Positioned(
@@ -83,58 +123,25 @@ class InternalMapRebuildBody extends StatelessWidget {
             Positioned(
               top: 10,
               left: 10,
-              child: Container(
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey,
-                      blurRadius: 2.0,
-                      spreadRadius: 0.0,
-                      offset: Offset(2.0, 2.0),
-                    ),
-                  ],
-                ),
-                child: IconButton(
-                  padding: EdgeInsets.zero,
-                  onPressed: () => context.read<MapCubit>().reset(),
-                  icon: const Icon(Icons.refresh),
-                  color: AppColors.darkblue,
-                ),
+              child: CustomMapActionButton(
+                onPressed: () => context.read<MapCubit>().reset(),
+                tooltip: "reset",
+                child: const Icon(Icons.refresh),
               ),
             ),
-            // Instructions button, visible only if there are instructions
-            // if (state.instructions.isNotEmpty)
-            //   Positioned(
-            //     top: 60,
-            //     left: 10,
-            //     child: ElevatedButton.icon(
-            //       onPressed: () {
-            //         // Navigator.push(
-            //         //   context,
-            //         //   MaterialPageRoute(
-            //         //     builder: (context) => InstructionsScreen(
-            //         //       instructions: state.instructions,
-            //         //     ),
-            //         //   ),
-            //         // );
-            //       },
-            //       icon: const Icon(Icons.directions),
-            //       label: const Text('Instructions'),
-            //     ),
-            //   ),
+            Positioned(
+              top: 60.h,
+              left: 10.w,
+              child: CustomMapActionButton(
+                onPressed: () => mapController.rotate(0),
+                tooltip: "North",
+                child: Text("N", style: AppTextStyles.font14DarkBlueMedium),
+              ),
+            ),
             PositionedDirectional(
               bottom: 20.h,
               start: 10.w,
-              child: FloatingActionButton(
-                backgroundColor: AppColors.white,
-                onPressed: () => context.read<MapCubit>().recenter(),
-                child: const Icon(
-                  Icons.my_location,
-                  color: AppColors.darkblue,
-                ),
-              ),
+              child: const RecenterButton(),
             ),
           ],
         );
