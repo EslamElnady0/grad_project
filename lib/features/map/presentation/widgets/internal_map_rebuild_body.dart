@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/map/presentation/widgets/custom_draggable_bottom_sheet.dart';
 import '../../../../core/theme/app_text_styles.dart';
@@ -52,10 +53,6 @@ class _InternalMapRebuildBodyState extends State<InternalMapRebuildBody> {
               backgroundColor: Colors.transparent,
               builder: (context) => CustomDraggableBottomSheet(
                     state: state,
-                    onClosePressed: () {
-                      Navigator.pop(context);
-                      _isBottomSheetOpen = false;
-                    },
                   )).whenComplete(() {
             _isBottomSheetOpen = false;
           });
@@ -126,19 +123,38 @@ class _InternalMapRebuildBodyState extends State<InternalMapRebuildBody> {
             Positioned(
               top: 10,
               left: 10,
-              child: CustomMapActionButton(
-                onPressed: () => context.read<MapCubit>().reset(),
-                tooltip: "reset",
-                child: const Icon(Icons.refresh),
-              ),
-            ),
-            Positioned(
-              top: 60.h,
-              left: 10.w,
-              child: CustomMapActionButton(
-                onPressed: () => mapController.rotate(0),
-                tooltip: "North",
-                child: Text("N", style: AppTextStyles.font14DarkBlueMedium),
+              child: Column(
+                children: [
+                  CustomMapActionButton(
+                    onPressed: () => context.read<MapCubit>().reset(),
+                    tooltip: "reset",
+                    child: const Icon(
+                      Icons.refresh,
+                    ),
+                  ),
+                  vGap(10),
+                  CustomMapActionButton(
+                    onPressed: () => mapController.rotate(0),
+                    tooltip: "North",
+                    child: Text("N", style: AppTextStyles.font14DarkBlueMedium),
+                  ),
+                  vGap(10),
+                  CustomMapActionButton(
+                    onPressed: () => showModalBottomSheet(
+                        context: context,
+                        isDismissible: true,
+                        isScrollControlled: true,
+                        backgroundColor: Colors.transparent,
+                        builder: (context) => CustomDraggableBottomSheet(
+                              isSearch: true,
+                              state: state,
+                            )),
+                    tooltip: "Search",
+                    child: const Icon(
+                      Icons.search,
+                    ),
+                  ),
+                ],
               ),
             ),
             PositionedDirectional(
