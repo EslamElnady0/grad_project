@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:escape_parent_padding/escapable_padding.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
@@ -54,22 +55,43 @@ class InstructionsViewBody extends StatelessWidget {
               itemBuilder: (context, index) {
                 final step = instructions[index];
                 return Card(
-                  elevation: 2,
-                  margin: EdgeInsets.symmetric(vertical: 6.w),
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      backgroundColor: AppColors.darkblue,
-                      child: Text(
-                        '${index + 1}',
-                        style: AppTextStyles.font14WhiteBold,
-                      ),
+                  elevation: 4,
+                  margin: EdgeInsets.symmetric(vertical: 8.h),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.r),
+                  ),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      gradient: Constants.whiteGrad,
+                      borderRadius: BorderRadius.circular(12.r),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.3),
+                          blurRadius: 6.0,
+                          spreadRadius: 1.0,
+                          offset: Offset(0, 2),
+                        ),
+                      ],
                     ),
-                    title: FutureBuilder<String>(
+                    child: ListTile(
+                      contentPadding:
+                          EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                      leading: CircleAvatar(
+                        backgroundColor: AppColors.darkblue,
+                        radius: 20.r,
+                        child: Text(
+                          '${index + 1}',
+                          style: AppTextStyles.font14WhiteBold,
+                        ),
+                      ),
+                      title: FutureBuilder<String>(
                         future: translateInstruction(step.instruction),
                         builder: (context, snapshot) {
                           if (snapshot.hasData) {
-                            return Text(snapshot.data!,
-                                style: AppTextStyles.font14BlackBold);
+                            return Text(
+                              snapshot.data!,
+                              style: AppTextStyles.font14BlackBold,
+                            );
                           }
                           return Skeletonizer(
                             enabled: true,
@@ -78,24 +100,55 @@ class InstructionsViewBody extends StatelessWidget {
                               style: AppTextStyles.font14BlackBold,
                             ),
                           );
-                        }),
-                    subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        if (step.name.isNotEmpty)
-                          Text(
-                            '${S.of(context).street}: ${step.name}',
-                            style: AppTextStyles.font11BlackMedium,
+                        },
+                      ),
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          if (step.name.isNotEmpty)
+                            Padding(
+                              padding: EdgeInsets.only(top: 4.h),
+                              child: Text(
+                                '${S.of(context).street}: ${step.name}',
+                                style: AppTextStyles.font11BlackMedium,
+                              ),
+                            ),
+                          Padding(
+                            padding: EdgeInsets.only(top: 4.h),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.directions,
+                                  color: AppColors.darkblue,
+                                  size: 16.w,
+                                ),
+                                SizedBox(width: 4.w),
+                                Text(
+                                  '${S.of(context).distance}: ${step.distance.toStringAsFixed(1)} ${S.of(context).meter}',
+                                  style: AppTextStyles.font11BlackMedium,
+                                ),
+                              ],
+                            ),
                           ),
-                        Text(
-                          '${S.of(context).distance}: ${step.distance.toStringAsFixed(1)}  ${S.of(context).meter}',
-                          style: AppTextStyles.font11BlackMedium,
-                        ),
-                        Text(
-                          '${S.of(context).duration}: ${(step.duration / 60).toStringAsFixed(1)}  ${S.of(context).min}',
-                          style: AppTextStyles.font11BlackMedium,
-                        ),
-                      ],
+                          Padding(
+                            padding: EdgeInsets.only(top: 4.h),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.timer,
+                                  color: AppColors.darkblue,
+                                  size: 16.w,
+                                ),
+                                SizedBox(width: 4.w),
+                                Text(
+                                  '${S.of(context).duration}: ${(step.duration / 60).toStringAsFixed(1)} ${S.of(context).min}',
+                                  style: AppTextStyles.font11BlackMedium,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 );
