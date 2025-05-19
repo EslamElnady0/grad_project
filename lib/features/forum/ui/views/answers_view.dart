@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/di/dependency_injection.dart';
 import 'package:grad_project/core/widgets/custom_scaffold.dart';
+import 'package:grad_project/features/chat/ui/cubit/file_picker_cubit.dart';
 import 'package:grad_project/features/forum/data/models/question_and_answers_response_model.dart';
 import 'package:grad_project/features/forum/logic/question_and_answers/question_and_answers_cubit.dart';
 import 'package:grad_project/features/forum/logic/toggle_like_cubit/toggle_like_cubit.dart';
@@ -49,17 +50,20 @@ class AnswersView extends StatelessWidget {
             );
           },
         ),
-        bottomNavigationBar: ChatViewFooter(
-  onSend: (text) {
-    print('Send this message: $text');
-  },
-  onTextChanged: (text) {
-    print('Typing: $text');
-  },
-  onAttach: () {
-    print('Open attachments dialog');
-  },
-),
+        bottomNavigationBar: BlocProvider(
+          create: (context) => FilePickerCubit(),
+          child: TextEntryFooter(
+            onSend: (text, files) {
+              print('Send this message: $text');
+            },
+            onTextChanged: (text) {
+              print('Typing: $text');
+            },
+            // onAttach: () {
+            //   print('Open attachments dialog');
+            // },
+          ),
+        ),
       ),
     );
   }

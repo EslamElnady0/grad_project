@@ -4,13 +4,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/helpers/shared_pref_helper.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
+import 'package:grad_project/core/widgets/text%20entry%20footer/text_entry_footer.dart';
 import 'package:grad_project/features/chat/logic/get_latest_messages_cubit/get_latest_messages_cubit.dart';
 import 'package:grad_project/features/chat/logic/inner_chat_cubit/inner_chat_cubit.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../../core/helpers/spacing.dart';
 import '../../../data/models/get_messages_response.dart';
+import '../../cubit/file_picker_cubit.dart';
 import 'chat_message_widget.dart';
-import '../../../../../core/widgets/text entry footer/text_entry_footer.dart';
 
 class ChatViewBody extends StatefulWidget {
   const ChatViewBody({super.key});
@@ -92,51 +93,51 @@ class _ChatViewBodyState extends State<ChatViewBody> {
             },
           ),
         ),
-        ChatViewFooter(
-          onSend: (text) {
-            context.read<InnerChatCubit>().sendMessage(text, context);
-          },
-          onTextChanged: (text) {},
-          onAttach: () {},
+        BlocProvider(
+          create: (context) => FilePickerCubit(),
+          child: TextEntryFooter(
+            onSend: (text, files) {
+              context.read<InnerChatCubit>().sendMessage(text, context);
+            },
+            onTextChanged: (text) {},
+          ),
         ),
       ],
     );
   }
-}
 
-Widget _buildPaginationLoader() {
-  return BlocBuilder<GetLatestMessagesCubit, GetLatestMessagesState>(
+  Widget _buildPaginationLoader() {
+    return BlocBuilder<GetLatestMessagesCubit, GetLatestMessagesState>(
       builder: (context, state) => state.maybeWhen(
-            orElse: () => const SizedBox.shrink(),
-            getLatestMessagesLoading: () {
-              {
-                return const Center(
-                    child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8),
-                  child: CircularProgressIndicator(
-                      color: AppColors.darkblue, strokeWidth: 2),
-                ));
-              }
-            },
-          ));
-}
+        orElse: () => const SizedBox.shrink(),
+        getLatestMessagesLoading: () => const Center(
+          child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 8),
+            child: CircularProgressIndicator(
+                color: AppColors.darkblue, strokeWidth: 2),
+          ),
+        ),
+      ),
+    );
+  }
 
-Widget _buildLoadingMessages() {
-  return Skeletonizer(
-    enabled: true,
-    child: ListView.separated(
-      reverse: true,
-      itemCount: 10,
-      padding: EdgeInsets.symmetric(horizontal: 10.w),
-      itemBuilder: (context, index) {
-        final msg = Constants.dummyMessages[index];
-        return ChatMessageWidget(
-          sender: msg["sender"],
-          message: msg["message"],
-          isMe: msg["isMe"],
-        );
-      },
-      separatorBuilder: (context, index) => vGap(12),
-    ),
-  );
+  Widget _buildLoadingMessages() {
+    return Skeletonizer(
+      enabled: true,
+      child: ListView.separated(
+        reverse: true,
+        itemCount: 10,
+        padding: EdgeInsets.symmetric(horizontal: 10.w),
+        itemBuilder: (context, index) {
+          final msg = Constants.dummyMessages[index];
+          return ChatMessageWidget(
+            sender: msg["sender"],
+            message: msg["message"],
+            isMe: msg["isMe"],
+          );
+        },
+        separatorBuilder: (context, index) => vGap(12),
+      ),
+    );
+  }
 }
