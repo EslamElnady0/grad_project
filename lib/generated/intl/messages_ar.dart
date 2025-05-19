@@ -97,6 +97,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "average_score": MessageLookupByLibrary.simpleMessage(
       "متوسط درجات الطلاب في هذا الاختبار",
     ),
+    "buildings": MessageLookupByLibrary.simpleMessage("المباني"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
     "choose_assignment_deadline": MessageLookupByLibrary.simpleMessage(
@@ -112,6 +113,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "clickheretoaddmorefiles": MessageLookupByLibrary.simpleMessage(
       "اضعط هنا لإضافة المزيد من الملفات",
     ),
+    "code": MessageLookupByLibrary.simpleMessage("الكود"),
     "college": MessageLookupByLibrary.simpleMessage("الكلية"),
     "community": MessageLookupByLibrary.simpleMessage("المنتدي"),
     "complete": MessageLookupByLibrary.simpleMessage("إكتمل"),
@@ -155,8 +157,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "discoverYourWay": MessageLookupByLibrary.simpleMessage(
       "🔍 اكتشف طريقك بسهولة داخل الجامعة.",
     ),
+    "distance": MessageLookupByLibrary.simpleMessage("المسافة"),
     "done": MessageLookupByLibrary.simpleMessage("تم"),
     "download": MessageLookupByLibrary.simpleMessage("تحميل"),
+    "duration": MessageLookupByLibrary.simpleMessage("المدة"),
     "eLearning": MessageLookupByLibrary.simpleMessage("التعليم الإلكتروني"),
     "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
     "editAnnouncement": MessageLookupByLibrary.simpleMessage("تعديل خبر"),
@@ -213,13 +217,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "goodLuck": MessageLookupByLibrary.simpleMessage("بالتوفيق! 🍀"),
     "grade": MessageLookupByLibrary.simpleMessage("التقدير"),
     "group": MessageLookupByLibrary.simpleMessage("مجموعة"),
+    "halls": MessageLookupByLibrary.simpleMessage("القاعات"),
+    "hour": MessageLookupByLibrary.simpleMessage("ساعة"),
     "images": MessageLookupByLibrary.simpleMessage("صور"),
     "in_progress": MessageLookupByLibrary.simpleMessage("قيد التنفيذ"),
     "incompleteQuestionError": MessageLookupByLibrary.simpleMessage(
       "يجب أن تحتوي جميع الأسئلة على سؤال، وإجابة واحدة على الأقل، وإجابة صحيحة مختارة.",
     ),
+    "instructions": MessageLookupByLibrary.simpleMessage("التعليمات"),
     "interested": MessageLookupByLibrary.simpleMessage("مهتم"),
     "internalMap": MessageLookupByLibrary.simpleMessage("الخريطة الداخلية"),
+    "km": MessageLookupByLibrary.simpleMessage("كيلومتر"),
     "lecture": MessageLookupByLibrary.simpleMessage("محاضرة"),
     "lectureDescription": MessageLookupByLibrary.simpleMessage("وصف المحاضرة"),
     "lectureDescriptionHint": MessageLookupByLibrary.simpleMessage(
@@ -245,7 +253,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "maximumNumberOfQuestions": MessageLookupByLibrary.simpleMessage(
       "تجاوزت الحد الاقصي لعدد الاسئلة الذي اختارته",
     ),
+    "meter": MessageLookupByLibrary.simpleMessage("متر"),
     "midterm": MessageLookupByLibrary.simpleMessage("الميدتيرم"),
+    "min": MessageLookupByLibrary.simpleMessage("دقيقة"),
     "minute": MessageLookupByLibrary.simpleMessage("دقيقة"),
     "monday": MessageLookupByLibrary.simpleMessage("الإثنين"),
     "mostSreached": MessageLookupByLibrary.simpleMessage(
@@ -266,8 +276,14 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
     "next_seven_days": MessageLookupByLibrary.simpleMessage("7 أيام القادمة"),
+    "noBuildingsFound": MessageLookupByLibrary.simpleMessage(
+      "لم يتم العثور على مباني",
+    ),
     "noFilesUploaded": MessageLookupByLibrary.simpleMessage(
       "لم يتم رفع أي ملفات بعد",
+    ),
+    "noHallsFound": MessageLookupByLibrary.simpleMessage(
+      "لم يتم العثور على قاعات",
     ),
     "not_started": MessageLookupByLibrary.simpleMessage("لم يبدأ"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
@@ -369,9 +385,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "results_description": MessageLookupByLibrary.simpleMessage(
       "📊 استعرض نتائج الطلاب في الكويزات، بما في ذلك الدرجات!",
     ),
+    "retry": MessageLookupByLibrary.simpleMessage("اعادة المحاولة"),
     "reviewTopics": MessageLookupByLibrary.simpleMessage(
       "خصص وقتًا للمراجعة وفهم المواضيع الرئيسية.",
     ),
+    "route_details": MessageLookupByLibrary.simpleMessage("تفاصيل المسار"),
     "saturday": MessageLookupByLibrary.simpleMessage("السبت"),
     "scheduleQuiz": MessageLookupByLibrary.simpleMessage("جدولة الكويز"),
     "scheduleQuizHelper": MessageLookupByLibrary.simpleMessage(
@@ -448,6 +466,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "stayConfident": MessageLookupByLibrary.simpleMessage(
       "تنفّس بعمق وثق بقدراتك!",
     ),
+    "street": MessageLookupByLibrary.simpleMessage("شارع"),
     "student_grade": MessageLookupByLibrary.simpleMessage("درجة الطالب"),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage("طالب نشط الآن"),
     "students_count": MessageLookupByLibrary.simpleMessage("عدد الطلاب:"),

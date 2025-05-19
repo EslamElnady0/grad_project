@@ -5,6 +5,7 @@ class ApiConstants {
       "https://nextgenedu-database.azurewebsites.net/api/";
   static const String apiBaseUrlSecond =
       "https://ngu-question-hub.azurewebsites.net/";
+  static const String mapBaseUrl = "https://api.openrouteservice.org/v2/";
   static String login =
       FlavorsFunctions.isStudent() ? "login" : "dashboard/login";
   static String table =
@@ -31,4 +32,7 @@ class ApiConstants {
   static const String groupDetails = "/chat/group/detials";
   static const String messages = "/chat/messages";
   static const String oldMessages = "/chat/messages/old";
+  static const String directions = "directions";
+  static const String buildings = "buildings";
+  static const String halls = "halls";
 }

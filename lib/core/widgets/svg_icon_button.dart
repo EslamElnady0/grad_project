@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
@@ -21,7 +23,10 @@ class SvgIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onPressed,
+      onTap: () {
+        log("pressed iconPath : $iconPath");
+        onPressed();
+      },
       child: Transform.rotate(
         angle: localized == true
             ? Intl.getCurrentLocale() == 'en'

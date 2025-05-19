@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grad_project/core/di/dependency_injection.dart';
 import 'package:grad_project/core/widgets/custom_scaffold.dart';
 import 'package:grad_project/features/map/presentation/view%20models/map%20cubit/map_cubit.dart';
 
@@ -13,7 +14,7 @@ class InternalMapView extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScaffold(
       body: BlocProvider(
-        create: (context) => MapCubit(),
+        create: (context) => getIt<MapCubit>()..init(),
         child: const InternalMapViewBody(),
       ),
     );

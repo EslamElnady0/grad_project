@@ -12,17 +12,20 @@ class CustomSearchTextField extends StatelessWidget {
   final TextEditingController controller;
   final void Function(String)? onChanged;
   final void Function(String)? onSubmitted;
+  final void Function()? onTap;
   const CustomSearchTextField(
       {super.key,
       required this.hintText,
       this.focusNode,
       required this.controller,
       this.onChanged,
-      this.onSubmitted});
+      this.onSubmitted,
+      this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onTap: onTap,
       onChanged: onChanged,
       onSubmitted: onSubmitted,
       focusNode: focusNode,

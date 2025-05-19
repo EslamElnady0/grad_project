@@ -6,6 +6,7 @@ import 'package:grad_project/features/auth/ui/views/forget_password_view.dart';
 import 'package:grad_project/features/auth/ui/views/confirm_account_view.dart';
 import 'package:grad_project/features/final_results/presentation/views/final_results_view.dart';
 import 'package:grad_project/features/forum/ui/views/answers_view.dart';
+import 'package:grad_project/features/map/presentation/views/instructions_view.dart';
 import 'package:grad_project/features/map/presentation/views/internal_map_view.dart';
 import 'package:grad_project/features/profile/presentation/views/profile_view.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_details_view.dart';
@@ -26,6 +27,7 @@ abstract class StudentRouter {
   static GoRouter getRouter(bool isLogin) {
     return GoRouter(
       initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
+      //initialLocation: InternalMapView.routeName,
       routes: [
         GoRoute(
           path: HomeView.routeName,
@@ -108,7 +110,10 @@ abstract class StudentRouter {
         ),
         GoRoute(
             path: EditProfileView.routeName,
-            builder: (context, state) => const EditProfileView())
+            builder: (context, state) => const EditProfileView()),
+        GoRoute(
+            path: InstructionsView.routeName,
+            builder: (context, state) => const InstructionsView())
       ],
     );
   }
