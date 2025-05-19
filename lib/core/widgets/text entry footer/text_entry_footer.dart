@@ -2,8 +2,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
@@ -13,9 +11,9 @@ import 'package:grad_project/core/widgets/text%20entry%20footer/emoji_picker_ico
 import 'package:grad_project/core/widgets/text%20entry%20footer/mention_icon_button.dart';
 import 'package:grad_project/generated/l10n.dart';
 import 'package:intl/intl.dart';
-import 'package:path/path.dart' as path;
-
 import '../../../features/chat/ui/cubit/file_picker_cubit.dart';
+import 'chat_send_button.dart';
+import 'selected_files_list.dart';
 
 class TextEntryFooter extends StatefulWidget {
   const TextEntryFooter({
@@ -48,90 +46,9 @@ class _TextEntryFooterState extends State<TextEntryFooter> {
     super.dispose();
   }
 
-  Widget _buildSelectedFiles(List<File> files) {
-    if (files.isEmpty) return const SizedBox.shrink();
-
-    return Container(
-      height: 80.h,
-      margin: EdgeInsets.only(bottom: 10.h),
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: files.length,
-        itemBuilder: (context, index) {
-          final file = files[index];
-          final isImage = ['.jpg', '.jpeg', '.png']
-              .contains(path.extension(file.path).toLowerCase());
-
-          return Container(
-            margin: EdgeInsets.symmetric(horizontal: 5.w),
-            width: 80.w,
-            child: Stack(
-              children: [
-                Column(
-                  children: [
-                    Container(
-                      height: 60.h,
-                      width: 60.w,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.r),
-                        border: Border.all(color: AppColors.gray, width: 1),
-                      ),
-                      child: isImage
-                          ? ClipRRect(
-                              borderRadius: BorderRadius.circular(8.r),
-                              child: Image.file(
-                                file,
-                                fit: BoxFit.cover,
-                                errorBuilder: (context, error, stackTrace) =>
-                                    const Icon(Icons.broken_image),
-                              ),
-                            )
-                          : Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(Icons.insert_drive_file,
-                                    size: 30.sp,
-                                    color: AppColors.primaryColordark),
-                                Text(
-                                  path.basename(file.path),
-                                  style: AppTextStyles.font10grayRegular,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.center,
-                                ),
-                              ],
-                            ),
-                    ),
-                  ],
-                ),
-                Positioned(
-                  top: 0,
-                  right: 0,
-                  child: GestureDetector(
-                    onTap: () =>
-                        context.read<FilePickerCubit>().removeFile(index),
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        color: Colors.red,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(Icons.close,
-                          size: 16.sp, color: AppColors.white),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          );
-        },
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<FilePickerCubit, FilePickerState>(
-      buildWhen: (previous, current) => current != previous,
-      listenWhen: (previous, current) => current != previous,
       listener: (context, state) {
         if (state is FilePickerError) {
           ScaffoldMessenger.of(context).showSnackBar(
@@ -140,6 +57,8 @@ class _TextEntryFooterState extends State<TextEntryFooter> {
         }
       },
       builder: (context, state) {
+        final files = state.files;
+
         return Container(
           padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
           decoration: BoxDecoration(
@@ -155,7 +74,7 @@ class _TextEntryFooterState extends State<TextEntryFooter> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              _buildSelectedFiles(state.files),
+              SelectedFilesList(files: files),
               Row(
                 children: [
                   const ChatAddAttachmentsButton(),
@@ -163,15 +82,15 @@ class _TextEntryFooterState extends State<TextEntryFooter> {
                   Expanded(
                     child: TextFormField(
                       controller: _controller,
-                      style: AppTextStyles.font12grayMedium
-                          .copyWith(color: AppColors.black),
-                      cursorColor: AppColors.black,
                       maxLines: 5,
                       minLines: 1,
                       textAlign: Intl.getCurrentLocale() == 'ar'
                           ? TextAlign.right
                           : TextAlign.left,
                       onChanged: widget.onTextChanged,
+                      style: AppTextStyles.font12grayMedium
+                          .copyWith(color: AppColors.black),
+                      cursorColor: AppColors.black,
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: AppColors.white,
@@ -187,26 +106,15 @@ class _TextEntryFooterState extends State<TextEntryFooter> {
                     ),
                   ),
                   hGap(8),
-                  GestureDetector(
-                    onTap: () {
+                  SendButton(
+                    onPressed: () {
                       if (_controller.text.trim().isNotEmpty ||
-                          state.files.isNotEmpty) {
-                        widget.onSend(_controller.text.trim(), state.files);
+                          files.isNotEmpty) {
+                        widget.onSend(_controller.text.trim(), files);
                         _controller.clear();
                         context.read<FilePickerCubit>().clearFiles();
                       }
                     },
-                    child: Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: AppColors.primaryColordark,
-                        borderRadius: BorderRadius.circular(12.r),
-                      ),
-                      child: SvgPicture.asset(
-                        Assets.imagesSvgsSendIcon,
-                        height: 20.h,
-                      ),
-                    ),
                   ),
                 ],
               ),
