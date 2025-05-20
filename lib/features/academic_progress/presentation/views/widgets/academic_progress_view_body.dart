@@ -49,7 +49,7 @@ class AcademicProgressViewBody extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CustomDropDownButton(
-                  initialValue: S.of(context).first_semester,
+                  value: S.of(context).first_semester,
                   values: [
                     S.of(context).first_semester,
                     S.of(context).second_semester,

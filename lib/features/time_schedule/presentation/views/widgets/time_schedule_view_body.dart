@@ -7,6 +7,8 @@ import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
 import 'package:grad_project/core/widgets/custom_search_text_field.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
 import 'package:grad_project/features/time_schedule/data/models/activity_response_model.dart';
+import 'package:grad_project/features/time_schedule/logic/activity_filter_cubit/activity_filter_cubit.dart';
+import 'package:grad_project/features/time_schedule/logic/activity_filter_cubit/activity_filter_state.dart';
 import 'package:grad_project/features/time_schedule/logic/get_students_assignments_cubit/get_students_assignments_cubit.dart';
 import 'package:grad_project/features/time_schedule/logic/get_students_assignments_cubit/get_students_assignments_state.dart';
 import 'package:grad_project/features/time_schedule/logic/get_students_quizzes_cubit/get_students_quizzes_cubit.dart';
@@ -26,6 +28,8 @@ class TimeScheduleViewBody extends StatefulWidget {
 class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
   List<ActivityModel> activities = [];
 
+  String selectedType = '';
+  String selectedStatus = '';
 
   List<ActivityModel> _mergeAndSortActivities(GetStudentsQuizzesState quizState,
       GetStudentsAssignmentsState assignmentState) {
@@ -38,8 +42,6 @@ class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
         ...quizzes,
         ...assignments,
       ];
-      // final List<ActivityModel> scheduled =
-      //     combined.where((a) => a.status != "finished").toList();
       setState(() {
         activities = combined;
         activities.sort((a, b) {
@@ -56,14 +58,23 @@ class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize dropdown values if empty
+    if (selectedStatus.isEmpty) {
+      selectedStatus = S.of(context).scheduled;
+    }
+    if (selectedType.isEmpty) {
+      selectedType = S.of(context).assignments;
+    }
+
     final quizState = context.watch<GetStudentsQuizzesCubit>().state;
     final assignmentState = context.watch<GetStudentsAssignmentsCubit>().state;
 
-      String selectedType =S.of(context).assignment;
-      String selectedStatus = S.of(context).scheduled;
-
     List<ActivityModel> activities =
         _mergeAndSortActivities(quizState, assignmentState);
+    context
+        .read<ActivityFilterCubit>()
+        .filterActivities(activities, selectedType, selectedStatus);
+
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: 16.w,
@@ -86,37 +97,55 @@ class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 CustomDropDownButton(
-                  initialValue: S.of(context).scheduled,
+                  value: selectedStatus,
                   values: [S.of(context).scheduled, S.of(context).previous],
-                  onChanged: (value){
+                  onChanged: (value) {
                     setState(() {
-                      selectedStatus = value;
+                      if (value != null) {
+                        selectedStatus = value;
+                      }
+                      context.read<ActivityFilterCubit>().filterActivities(
+                          activities, selectedType, selectedStatus);
                     });
                   },
                 ),
                 CustomDropDownButton(
-                  initialValue: S.of(context).assignments,
-                  values: [S.of(context).quizzes, S.of(context).assignments],
-                  onChanged: (value){
-                    setState(() {
-                      selectedType = value;
-                    });
-                  }
-                ),
+                    value: selectedType,
+                    values: [S.of(context).quizzes, S.of(context).assignments],
+                    onChanged: (value) {
+                      setState(() {
+                        if (value != null) {
+                          selectedType = value;
+                        }
+                        context.read<ActivityFilterCubit>().filterActivities(
+                            activities, selectedType, selectedStatus);
+                      });
+                    }),
               ],
             ),
             vGap(15),
-            quizState.maybeWhen(
-              orElse: () => _buildLoadingState(),
-              getStudentsQuizzesSuccess: (data) {
-                return assignmentState.maybeWhen(
+
+            BlocBuilder<ActivityFilterCubit, ActivityFilterState>(
+              builder: (context, state) {
+                return state.maybeWhen(
                   orElse: () => _buildLoadingState(),
-                  getStudentsAssignmentsSuccess: (data) {
-                    return _buildSuccessState(activities);
+                  success: (data) {
+                    return _buildSuccessState(data);
                   },
                 );
               },
             ),
+            // quizState.maybeWhen(
+            //   orElse: () => _buildLoadingState(),
+            //   getStudentsQuizzesSuccess: (data) {
+            //     return assignmentState.maybeWhen(
+            //       orElse: () => _buildLoadingState(),
+            //       getStudentsAssignmentsSuccess: (data) {
+            //         return _buildSuccessState(activities);
+            //       },
+            //     );
+            //   },
+            // ),
           ],
         ),
       ),
