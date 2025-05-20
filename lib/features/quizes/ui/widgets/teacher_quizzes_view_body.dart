@@ -60,6 +60,7 @@ class TeacherQuizzesViewBody extends StatelessWidget {
             CustomDropDownButton(
               initialValue: S.of(context).next_seven_days,
               values: [S.of(context).next_seven_days],
+              onChanged: (value) {},
             ),
           ],
         )),

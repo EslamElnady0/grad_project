@@ -10,10 +10,12 @@ class CustomDropDownButton extends StatelessWidget {
     super.key,
     required this.values,
     required this.initialValue,
+    required this.onChanged,
   });
 
   final List<String> values;
   final String initialValue;
+  final void Function(String) onChanged;
 
   @override
   Widget build(BuildContext context) {

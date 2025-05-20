@@ -4,7 +4,7 @@ import '../../../quizes/data/models/get_quizzes_response.dart';
 part 'activity_response_model.g.dart';
 
 @JsonSerializable()
-class ActivityModel {
+ class ActivityModel {
   final int id;
   final String title;
   final String description;
@@ -14,6 +14,7 @@ class ActivityModel {
   final String date;
   final Course course;
   final String teacher;
+   String get type => 'activity';
 
   ActivityModel({
     required this.id,
@@ -37,6 +38,8 @@ class StudentQuizModel extends ActivityModel {
   @JsonKey(name: "start_time")
   final String time;
   final int duration;
+  @override
+  String get type => 'quiz';
 
   StudentQuizModel({
     required super.id,
@@ -61,6 +64,8 @@ class StudentQuizModel extends ActivityModel {
 class StudentAssignmentModel extends ActivityModel {
   final String time;
   final String file;
+  @override
+  String get type => 'assignment';
 
   StudentAssignmentModel({
     required super.id,

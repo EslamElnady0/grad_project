@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
+import 'package:grad_project/core/theme/app_colors.dart';
+import 'package:grad_project/core/widgets/custom_drop_down_button.dart';
 import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
 import 'package:grad_project/core/widgets/custom_search_text_field.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
@@ -25,6 +27,7 @@ class TimeScheduleViewBody extends StatefulWidget {
 class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
   List<ActivityModel> activities = [];
 
+
   List<ActivityModel> _mergeAndSortActivities(GetStudentsQuizzesState quizState,
       GetStudentsAssignmentsState assignmentState) {
     if (quizState is GetStudentsQuizzesSuccess &&
@@ -36,10 +39,10 @@ class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
         ...quizzes,
         ...assignments,
       ];
-      final List<ActivityModel> scheduled =
-          combined.where((a) => a.status != "finished").toList();
+      // final List<ActivityModel> scheduled =
+      //     combined.where((a) => a.status != "finished").toList();
       setState(() {
-        activities = scheduled;
+        activities = combined;
         activities.sort((a, b) {
           final aDate = DateTime.parse(a.date);
           final bDate = DateTime.parse(b.date);
@@ -56,6 +59,9 @@ class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
   Widget build(BuildContext context) {
     final quizState = context.watch<GetStudentsQuizzesCubit>().state;
     final assignmentState = context.watch<GetStudentsAssignmentsCubit>().state;
+
+      String selectedType =S.of(context).assignment;
+      String selectedStatus = S.of(context).scheduled;
 
     List<ActivityModel> activities =
         _mergeAndSortActivities(quizState, assignmentState);
@@ -77,33 +83,29 @@ class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
               controller: TextEditingController(),
             ),
             vGap(15),
-            /*Container(
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Colors.black12,
-                      blurRadius: 10,
-                      spreadRadius: 1,
-                      offset: Offset(0, 1),
-                    ),
-                  ],
-                  color: AppColors.white,
-                  borderRadius: BorderRadius.circular(20)),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CustomDropDownButton(
-                    initialValue: S.of(context).next_seven_days,
-                    values: [S.of(context).next_seven_days],
-                  ),
-                  CustomDropDownButton(
-                    initialValue: S.of(context).assignments,
-                    values: [S.of(context).quizzes, S.of(context).assignments],
-                  ),
-                ],
-              ),
-            ),*/
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                CustomDropDownButton(
+                  initialValue: S.of(context).scheduled,
+                  values: [S.of(context).scheduled, S.of(context).previous],
+                  onChanged: (value){
+                    setState(() {
+                      selectedStatus = value;
+                    });
+                  },
+                ),
+                CustomDropDownButton(
+                  initialValue: S.of(context).assignments,
+                  values: [S.of(context).quizzes, S.of(context).assignments],
+                  onChanged: (value){
+                    setState(() {
+                      selectedType = value;
+                    });
+                  }
+                ),
+              ],
+            ),
             vGap(15),
             quizState.maybeWhen(
               orElse: () => _buildLoadingState(),
