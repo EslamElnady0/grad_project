@@ -54,6 +54,7 @@ class AcademicProgressViewBody extends StatelessWidget {
                     S.of(context).first_semester,
                     S.of(context).second_semester,
                   ],
+                  onChanged: (value) {},
                 ),
                 hGap(15),
                 Container(
