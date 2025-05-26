@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:socket_io_client/socket_io_client.dart' as io;
+import 'dart:async';
 
 class SocketService {
   static final SocketService _instance = SocketService._internal();
@@ -9,11 +10,27 @@ class SocketService {
   late String _token;
   bool _isInitialized = false;
 
+  // Retry/reconnect strategy
+  // int _reconnectAttempts = 0;
+  // Timer? _reconnectTimer;
+  // final int _maxReconnectDelaySeconds = 60;
+  // final int _maxAttempts = 10;
+
   SocketService._internal();
+
   static bool get isInitialized => _instance._isInitialized;
+
   Future<void> init({required String token, Function? onConnect}) async {
     if (_isInitialized) return;
     _token = token;
+
+    _connectSocket(onConnect: onConnect);
+    _isInitialized = true;
+  }
+
+  void _connectSocket({Function? onConnect}) {
+    if (_isInitialized) return;
+    log('Socket connecting...');
     socket = io.io(
       'wss://ngu-question-hub.azurewebsites.net',
       io.OptionBuilder()
@@ -22,26 +39,33 @@ class SocketService {
 
     socket.onConnect((_) {
       log('Socket connected ✅');
+      //  _reconnectAttempts = 0;
+      //   _reconnectTimer?.cancel();
       if (onConnect != null) onConnect();
     });
 
     socket.onConnectError((data) {
       log('Socket connection error: $data');
+      // _scheduleReconnect();
     });
 
     socket.onDisconnect((_) {
       log('Socket disconnected');
+      //  _scheduleReconnect();
     });
-
-    _isInitialized = true;
   }
 
-  void connect() {
+  void connect({Function()? onConnect}) {
     log('Socket connecting...');
-    socket.connect();
+    _connectSocket();
+    onConnect != null ? onConnect() : null;
   }
 
-  void disconnect() => socket.disconnect();
+  void disconnect() {
+    socket.disconnect();
+    _isInitialized = false;
+    // _reconnectTimer?.cancel();
+  }
 
   void emit(String event, dynamic data) => socket.emit(event, data);
 
@@ -65,7 +89,33 @@ class SocketService {
     socket.destroy();
     socket.disconnect();
     _isInitialized = false;
+    //  _reconnectTimer?.cancel();
   }
+  // void _scheduleReconnect() {
+  //   if (_reconnectAttempts >= _maxAttempts) {
+  //     log('Max reconnect attempts reached. Giving up.');
+  //     return;
+  //   }
+  //   _reconnectAttempts++;
+  //   int delaySeconds = _calculateBackoff(_reconnectAttempts);
+  //   log('Reconnecting in $delaySeconds seconds... (attempt $_reconnectAttempts)');
+  //   _reconnectTimer?.cancel();
+  //   _reconnectTimer = Timer(Duration(seconds: delaySeconds), () {
+  //     if (!_isInitialized) return;
+  //     log('Attempting to reconnect...');
+  //     socket.dispose();
+  //     socket.close();
+  //     socket.destroy();
+  //     _connectSocket();
+  //   });
+  // }
+
+  // int _calculateBackoff(int attempt) {
+  //   // Exponential backoff with cap
+  //   int delay = (2 << (attempt - 1));
+  //   if (delay > _maxReconnectDelaySeconds) return _maxReconnectDelaySeconds;
+  //   return delay;
+  // }
 }
 
 class SocketEvents {

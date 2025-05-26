@@ -4,7 +4,9 @@ import 'package:grad_project/core/cubits/socket_cubit/global_socket_cubit.dart';
 import 'package:grad_project/core/data/data%20sources/get_course_materials_remote_data_source.dart';
 import 'package:grad_project/core/data/repos/get_course_materials_repo.dart';
 import 'package:grad_project/core/data/repos/socket_repo.dart';
+import 'package:grad_project/core/lifecycle/app_lifecycle_cubit.dart';
 import 'package:grad_project/core/logic/get_course_materials_cubit/get_course_materials_cubit.dart';
+import 'package:grad_project/core/networking/network_monitor.dart';
 import 'package:grad_project/features/annoucements/data/data%20sources/annoucements_remote_data_source.dart';
 import 'package:grad_project/features/annoucements/data/repos/annoucements_repo.dart';
 import 'package:grad_project/features/annoucements/logic/add_annoucements_cubit/add_annoucements_cubit.dart';
@@ -180,10 +182,13 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<QuestionAndAnswersCubit>(
       () => QuestionAndAnswersCubit(getIt()));
   //toDo:------------------------------ Chat API ------------------------------//
+  getIt.registerLazySingleton<AppLifecycleCubit>(() => AppLifecycleCubit());
+  getIt.registerLazySingleton<NetworkMonitor>(() => NetworkMonitor());
   getIt.registerLazySingleton<ChatRemoteDataSource>(
       () => ChatRemoteDataSource(dio));
   getIt.registerLazySingleton<SocketRepo>(() => SocketRepo(SocketService()));
-  getIt.registerLazySingleton<SocketCubit>(() => SocketCubit(getIt()));
+  getIt.registerLazySingleton<SocketCubit>(
+      () => SocketCubit(getIt(), getIt(), getIt()));
   getIt.registerLazySingleton<ChatLocalDataSource>(
       () => ChatLocalDataSourceImpl());
   // String token = await SharedPrefHelper.getSecuredString(Constants.token);
