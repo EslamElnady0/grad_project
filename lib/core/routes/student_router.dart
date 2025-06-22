@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/widgets/full_screen_image_view.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/academic_progress_view.dart';
+import 'package:grad_project/features/assignments/presentation/views/assignment_details_view.dart';
 import 'package:grad_project/features/auth/ui/views/forget_password_view.dart';
 import 'package:grad_project/features/auth/ui/views/confirm_account_view.dart';
 import 'package:grad_project/features/final_results/presentation/views/final_results_view.dart';
@@ -113,7 +114,10 @@ abstract class StudentRouter {
             builder: (context, state) => const EditProfileView()),
         GoRoute(
             path: InstructionsView.routeName,
-            builder: (context, state) => const InstructionsView())
+            builder: (context, state) => const InstructionsView()),
+        GoRoute(
+            path: AssignmentDetailsView.routeName,
+            builder: (context, state) => const AssignmentDetailsView())
       ],
     );
   }
