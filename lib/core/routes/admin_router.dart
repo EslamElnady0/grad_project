@@ -11,7 +11,7 @@ import 'package:grad_project/features/auth/ui/views/confirm_account_view.dart';
 import 'package:grad_project/features/dashboard/ui/views/registered_students_view.dart';
 import 'package:grad_project/features/forum/ui/views/answers_view.dart';
 import 'package:grad_project/features/forum/ui/views/forum_views.dart';
-import 'package:grad_project/features/lecture_manager/ui/screens/qr_attendance_view.dart';
+import 'package:grad_project/features/subjects/ui/views/qr_attendance_view.dart';
 import 'package:grad_project/features/map/presentation/views/internal_map_view.dart';
 import 'package:grad_project/features/profile/presentation/views/profile_view.dart';
 import 'package:grad_project/features/quizes/ui/views/add_quiz_view.dart';
@@ -24,7 +24,7 @@ import '../../features/auth/ui/views/auth_view.dart';
 import '../../features/chat/ui/views/chat_view.dart';
 import '../../features/home/ui/cubit/bottom_nav_bar_cubit.dart';
 import '../../features/home/ui/views/home_view.dart';
-import '../../features/lecture_manager/ui/screens/add_lecture_view.dart';
+import '../../features/subjects/ui/views/add_lecture_view.dart';
 import '../../features/quizes/ui/views/teacher_quizzes_view.dart';
 import '../../features/subjects/ui/views/materials_view.dart';
 

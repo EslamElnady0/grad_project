@@ -3,9 +3,9 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/data/models/teachers_courses_response.dart';
-import 'package:grad_project/features/lecture_manager/ui/screens/add_lecture_view.dart';
-import 'package:grad_project/features/lecture_manager/ui/screens/qr_attendance_view.dart';
-import 'package:grad_project/features/lecture_manager/ui/widgets/show_update_lecture_status_dialog.dart';
+import 'package:grad_project/features/subjects/ui/views/add_lecture_view.dart';
+import 'package:grad_project/features/subjects/ui/views/qr_attendance_view.dart';
+import 'package:grad_project/features/subjects/ui/widgets/show_update_lecture_status_dialog.dart';
 
 import '../../../../core/helpers/app_assets.dart';
 import '../../../../core/helpers/localizationa.dart';
