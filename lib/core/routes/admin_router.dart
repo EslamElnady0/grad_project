@@ -5,6 +5,7 @@ import 'package:grad_project/features/annoucements/ui/views/update_annoucement_v
 import 'package:grad_project/features/assignments/presentation/views/assignment_details_view.dart';
 import 'package:grad_project/features/assignments/presentation/views/assignment_results_view.dart';
 import 'package:grad_project/features/assignments/presentation/views/create_assignment_view.dart';
+import 'package:grad_project/features/assignments/presentation/views/edit_assignment_view.dart';
 import 'package:grad_project/features/assignments/presentation/views/pdf_web_view.dart';
 import 'package:grad_project/features/assignments/presentation/views/teachers_assignments_view.dart';
 import 'package:grad_project/features/auth/ui/views/forget_password_view.dart';
@@ -134,6 +135,9 @@ abstract class AdminRouter {
         GoRoute(
             path: PdfWebViewPage.routeName,
             builder: (context, state) => const PdfWebViewPage()),
+        GoRoute(
+            path: EditAssignmentView.routeName,
+            builder: (context, state) => const EditAssignmentView()),
       ],
     );
   }
