@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:grad_project/core/widgets/full_screen_image_view.dart';
 import 'package:grad_project/features/annoucements/ui/views/add_annoucement_view.dart';
 import 'package:grad_project/features/annoucements/ui/views/update_annoucement_view.dart';
 import 'package:grad_project/features/assignments/presentation/views/assignment_results_view.dart';
@@ -125,7 +126,13 @@ abstract class AdminRouter {
             builder: (context, state) => const AssignmentResultsView()),
         GoRoute(
             path: EditProfileView.routeName,
-            builder: (context, state) => const EditProfileView())
+            builder: (context, state) => const EditProfileView()),
+                GoRoute(
+          path: FullScreenImageView.routeName,
+          builder: (context, state) => FullScreenImageView(
+            imageUrl: state.extra as String,
+          ),
+        ),
       ],
     );
   }
