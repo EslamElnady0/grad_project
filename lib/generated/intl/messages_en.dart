@@ -83,6 +83,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "assignment_details": MessageLookupByLibrary.simpleMessage(
       "Assignment Details",
     ),
+    "assignment_preview": MessageLookupByLibrary.simpleMessage(
+      "Assignment Preview",
+    ),
     "assignment_title": MessageLookupByLibrary.simpleMessage(
       "Assignment Title",
     ),
@@ -154,6 +157,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "You have to specify date and time for the quiz.",
     ),
     "days": MessageLookupByLibrary.simpleMessage("Days"),
+    "deadline": MessageLookupByLibrary.simpleMessage("Deadline"),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
     "department": MessageLookupByLibrary.simpleMessage("department"),
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
@@ -328,6 +332,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "prepareWell": MessageLookupByLibrary.simpleMessage(
       "📚 Prepare in Advance",
     ),
+    "preview": MessageLookupByLibrary.simpleMessage("preview"),
     "previous": MessageLookupByLibrary.simpleMessage("Previous"),
     "previous_assignments": MessageLookupByLibrary.simpleMessage(
       "Previous Assignments",

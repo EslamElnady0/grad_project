@@ -79,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "assignment_details": MessageLookupByLibrary.simpleMessage(
       "تفاصيل الأسايمنت",
     ),
+    "assignment_preview": MessageLookupByLibrary.simpleMessage("عرض الأسايمنت"),
     "assignment_title": MessageLookupByLibrary.simpleMessage("عنوان الأسايمنت"),
     "assignment_title_hint_text": MessageLookupByLibrary.simpleMessage(
       " أدخل عنوانًا يعبر عن محتوى الأسايمنت بشكل واضح.",
@@ -148,6 +149,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يجب تحديد التاريخ والوقت للاختبار.",
     ),
     "days": MessageLookupByLibrary.simpleMessage("الأيام"),
+    "deadline": MessageLookupByLibrary.simpleMessage("موعد التسليم"),
     "delete": MessageLookupByLibrary.simpleMessage("حذف"),
     "department": MessageLookupByLibrary.simpleMessage("القسم"),
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
@@ -314,6 +316,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "postponed": MessageLookupByLibrary.simpleMessage("مؤجل."),
     "prepareWell": MessageLookupByLibrary.simpleMessage("📚 استعد مسبقًا"),
+    "preview": MessageLookupByLibrary.simpleMessage("عرض"),
     "previous": MessageLookupByLibrary.simpleMessage("السابق"),
     "previous_assignments": MessageLookupByLibrary.simpleMessage(
       "اسايمينتات سابقة",

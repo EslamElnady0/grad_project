@@ -2444,6 +2444,26 @@ class S {
   String get retry {
     return Intl.message('Retry', name: 'retry', desc: '', args: []);
   }
+
+  /// `Deadline`
+  String get deadline {
+    return Intl.message('Deadline', name: 'deadline', desc: '', args: []);
+  }
+
+  /// `preview`
+  String get preview {
+    return Intl.message('preview', name: 'preview', desc: '', args: []);
+  }
+
+  /// `Assignment Preview`
+  String get assignment_preview {
+    return Intl.message(
+      'Assignment Preview',
+      name: 'assignment_preview',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

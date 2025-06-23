@@ -309,5 +309,8 @@
   "code": "Code",
   "buildings": "Buildings",
   "noBuildingsFound": "No Buildings Found",
-  "retry": "Retry"
+  "retry": "Retry",
+  "deadline": "Deadline",
+  "preview":"preview",
+  "assignment_preview": "Assignment Preview"
 }

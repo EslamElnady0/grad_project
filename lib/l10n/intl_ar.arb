@@ -309,5 +309,8 @@
   "code": "الكود",
   "buildings": "المباني",
   "noBuildingsFound": "لم يتم العثور على مباني",
-  "retry": "اعادة المحاولة"
+  "retry": "اعادة المحاولة",
+  "deadline": "موعد التسليم",
+  "preview": "عرض",
+  "assignment_preview": "عرض الأسايمنت"
 }
