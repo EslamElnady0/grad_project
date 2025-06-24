@@ -32,6 +32,7 @@ class ApiConstants {
   static const String groupDetails = "/chat/group/detials";
   static const String messages = "/chat/messages";
   static const String oldMessages = "/chat/messages/old";
+  static const String parking = "/parking";
   static const String directions = "directions";
   static const String buildings = "buildings";
   static const String halls = "halls";

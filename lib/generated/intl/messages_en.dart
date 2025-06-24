@@ -314,6 +314,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "once": MessageLookupByLibrary.simpleMessage("Once"),
     "open": MessageLookupByLibrary.simpleMessage("open"),
     "other": MessageLookupByLibrary.simpleMessage("Other"),
+    "parkingSlots": MessageLookupByLibrary.simpleMessage("Parking Slots"),
+    "parkingSlotsDescription": MessageLookupByLibrary.simpleMessage(
+      "🚗 Browse available parking slots and easily check for empty spaces",
+    ),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "percentage": MessageLookupByLibrary.simpleMessage("Percentage"),

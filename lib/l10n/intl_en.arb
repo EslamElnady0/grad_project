@@ -309,5 +309,7 @@
   "code": "Code",
   "buildings": "Buildings",
   "noBuildingsFound": "No Buildings Found",
-  "retry": "Retry"
+  "retry": "Retry",
+  "parkingSlots": "Parking Slots",
+  "parkingSlotsDescription": "🚗 Browse available parking slots and easily check for empty spaces"
 }

@@ -30,6 +30,10 @@ class Assets {
   /// assets/images/map_trail.png
   static const String imagesMapTrail = "assets/images/map_trail.png";
 
+  /// Assets for imagesParkingCar
+  /// assets/images/parking_car.png
+  static const String imagesParkingCar = "assets/images/parking_car.png";
+
   /// Assets for imagesProtect
   /// assets/images/protect.png
   static const String imagesProtect = "assets/images/protect.png";

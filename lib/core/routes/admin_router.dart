@@ -24,13 +24,15 @@ import '../../features/chat/ui/views/chat_view.dart';
 import '../../features/home/ui/cubit/bottom_nav_bar_cubit.dart';
 import '../../features/home/ui/views/home_view.dart';
 import '../../features/lecture_manager/ui/screens/add_lecture_view.dart';
+import '../../features/parking/ui/views/parking_view.dart';
 import '../../features/quizes/ui/views/teacher_quizzes_view.dart';
 import '../../features/subjects/ui/views/materials_view.dart';
 
 abstract class AdminRouter {
   static GoRouter getRouter(bool isLogin) {
     return GoRouter(
-      initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
+      // initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
+      initialLocation: ParkingView.routeName,
       routes: [
         GoRoute(
           path: HomeView.routeName,
@@ -125,7 +127,10 @@ abstract class AdminRouter {
             builder: (context, state) => const AssignmentResultsView()),
         GoRoute(
             path: EditProfileView.routeName,
-            builder: (context, state) => const EditProfileView())
+            builder: (context, state) => const EditProfileView()),
+        GoRoute(
+            path: ParkingView.routeName,
+            builder: (context, state) => const ParkingView()),
       ],
     );
   }

@@ -302,6 +302,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "once": MessageLookupByLibrary.simpleMessage("مرة واحدة"),
     "open": MessageLookupByLibrary.simpleMessage("فتح"),
     "other": MessageLookupByLibrary.simpleMessage("اخري"),
+    "parkingSlots": MessageLookupByLibrary.simpleMessage("مواقف السيارات"),
+    "parkingSlotsDescription": MessageLookupByLibrary.simpleMessage(
+      "🚗 استعرض المواقف المتاحة وتحقق من الأماكن الخالية بسهولة",
+    ),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "pending": MessageLookupByLibrary.simpleMessage("معلق"),
     "percentage": MessageLookupByLibrary.simpleMessage("النسبة المئوية"),
