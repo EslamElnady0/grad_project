@@ -26,7 +26,7 @@ class PaginatedAnnouncementData {
   final List<Announcement> data;
 
   @JsonKey(name: 'first_page_url')
-  final String firstPageUrl;
+  final String? firstPageUrl;
 
   final num? from;
 
@@ -34,14 +34,14 @@ class PaginatedAnnouncementData {
   final num lastPage;
 
   @JsonKey(name: 'last_page_url')
-  final String lastPageUrl;
+  final String? lastPageUrl;
 
   final List<Link> links;
 
   @JsonKey(name: 'next_page_url')
   final String? nextPageUrl;
 
-  final String path;
+  final String? path;
 
   @JsonKey(name: 'per_page')
   final num perPage;
@@ -55,13 +55,13 @@ class PaginatedAnnouncementData {
   PaginatedAnnouncementData({
     required this.currentPage,
     required this.data,
-    required this.firstPageUrl,
+    this.firstPageUrl,
     required this.from,
     required this.lastPage,
-    required this.lastPageUrl,
+    this.lastPageUrl,
     required this.links,
     required this.nextPageUrl,
-    required this.path,
+    this.path,
     required this.perPage,
     required this.prevPageUrl,
     required this.to,
@@ -77,7 +77,7 @@ class PaginatedAnnouncementData {
 @JsonSerializable()
 class Announcement {
   final num? id;
-  final String title;
+  final String? title;
   final String body;
   final String date;
   final String time;
@@ -89,7 +89,7 @@ class Announcement {
 
   Announcement({
     required this.id,
-    required this.title,
+    this.title,
     required this.body,
     required this.date,
     required this.time,
@@ -175,7 +175,7 @@ class User {
 @JsonSerializable()
 class Link {
   final String? url;
-  final String label;
+  final String? label;
   final bool active;
 
   Link({

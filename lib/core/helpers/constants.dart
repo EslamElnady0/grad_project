@@ -6,6 +6,7 @@ import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/academic_progress_view.dart';
 import 'package:grad_project/features/annoucements/ui/views/annoucements_body.dart';
 import 'package:grad_project/features/assignments/presentation/views/assignment_home_view.dart';
+import 'package:grad_project/features/auth/ui/views/auth_view.dart';
 import 'package:grad_project/features/dashboard/ui/views/dashboard_body.dart';
 import 'package:grad_project/features/final_results/presentation/views/final_results_view.dart';
 import 'package:grad_project/features/forum/ui/views/forum_views.dart';
@@ -138,7 +139,10 @@ class Constants {
       DrawerItemModel(
         title: S.of(context).logout,
         iconPath: Assets.imagesSvgsLogOut,
-        onTap: () {},
+        onTap: () {
+          //toDo: remove token and apply pushAndRemoveUntil
+          GoRouter.of(context).pushReplacementNamed(AuthView.routeName);
+        },
       ),
     ];
   }
