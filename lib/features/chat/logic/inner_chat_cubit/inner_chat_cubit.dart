@@ -51,6 +51,26 @@ class InnerChatCubit extends Cubit<InnerChatState> {
     );
   }
 
+  void typingState(String typingState) {
+    emit(InnerChatTyping());
+    _repo.typingState(
+        //pass text or record
+        typingState: typingState,
+        onSuccess: (data) {
+          emit(InnerChatTypingSuccess());
+        },
+        onFailure: (error) => emit(InnerChatError(error)));
+  }
+
+  void stopTyping() {
+    emit(InnerChatStopTyping());
+    _repo.stopTyping(
+        onSuccess: (data) {
+          emit(InnerChatStopTypingSuccess());
+        },
+        onFailure: (error) => emit(InnerChatError(error)));
+  }
+
   @override
   Future<void> close() {
     _repo.dispose();
