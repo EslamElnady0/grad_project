@@ -75,17 +75,10 @@ class _ChatViewBodyState extends State<ChatViewBody> {
                   if (index == messages.length) {
                     return _buildPaginationLoader();
                   }
-                  final msg = messages[index];
-                  final parts = msg.sender.name.trim().split(RegExp(r'\s+'));
-                  final firstName = parts.isNotEmpty ? parts[0] : '';
-                  final secondInitial = parts.length > 1 && parts[1].isNotEmpty
-                      ? '${parts[1][0]}.'
-                      : '';
-                  final displayName = '$firstName $secondInitial';
+
                   return ChatMessageWidget(
-                    sender: displayName,
-                    message: msg.content ?? " ",
-                    isMe: msg.sender.id.toString() == userId,
+                    message: messages[index],
+                    userId: userId,
                   );
                 },
                 separatorBuilder: (_, __) => vGap(12),
@@ -131,9 +124,8 @@ class _ChatViewBodyState extends State<ChatViewBody> {
         itemBuilder: (context, index) {
           final msg = Constants.dummyMessages[index];
           return ChatMessageWidget(
-            sender: msg["sender"],
-            message: msg["message"],
-            isMe: msg["isMe"],
+            message: msg,
+            userId: userId,
           );
         },
         separatorBuilder: (context, index) => vGap(12),
