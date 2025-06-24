@@ -23,7 +23,7 @@ class Message {
   final String id;
   final Sender sender;
   final String? content;
-  final Status status;
+  Status status;
   final DateTime createdAt;
 
   Message({

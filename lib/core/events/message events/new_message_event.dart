@@ -7,3 +7,8 @@ class NewMessageEvent {
   final Message message;
   NewMessageEvent(this.message);
 }
+
+class MessageSeenEvent {
+  final Message message;
+  MessageSeenEvent(this.message);
+}

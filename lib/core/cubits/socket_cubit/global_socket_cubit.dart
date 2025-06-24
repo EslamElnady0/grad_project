@@ -103,8 +103,11 @@ class SocketCubit extends Cubit<SocketState> {
   void messageDeliveredTo(String messageId) {
     _repo.messageDeliveredToUser(
       {"messageId": messageId},
-      onSuccess: () {
+      onSuccess: (data) {
+        Map<String, dynamic> rawMessage = data["data"];
+        Message mgs = Message.fromJson(rawMessage);
         emit(SocketMessageDelivered());
+        eventBus.fire(MessageSeenEvent(mgs));
       },
       onFailure: (error) {
         emit(SocketError(error));

@@ -42,7 +42,7 @@ class SocketRepo {
 
     _socketService.on(SocketEvents.messageDeliveredToSuccess, (data) {
       log("successfully message delivered : $data");
-      onSuccess();
+      onSuccess(data);
     });
 
     _socketService.once(SocketEvents.messageDeliveredToError, (error) {
