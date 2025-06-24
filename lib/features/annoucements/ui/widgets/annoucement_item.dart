@@ -59,7 +59,7 @@ class AnnoucementItem extends StatelessWidget {
           ),
           vGap(12),
           Text(
-            announcementModel.title,
+            announcementModel.title ?? "",
             style: AppTextStyles.font10greenMedium
                 .copyWith(color: AppColors.black),
           ),

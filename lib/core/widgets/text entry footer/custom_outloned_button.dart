@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../theme/app_text_styles.dart';
-
 
 class CustomOutlinedButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -36,7 +34,7 @@ class CustomOutlinedButton extends StatelessWidget {
           Text(
             title,
             style: AppTextStyles.font17WhiteSemiBold.copyWith(
-              color: AppColors.blackLight, 
+              color: AppColors.blackLight,
             ),
           ),
         ],

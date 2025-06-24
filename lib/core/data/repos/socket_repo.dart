@@ -6,6 +6,7 @@ class SocketRepo {
   final SocketService _socketService;
 
   SocketRepo(this._socketService);
+  SocketService get socketService => _socketService;
 
   Future<void> initSocket(
       {Function? onConnected, required String token}) async {
