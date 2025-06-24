@@ -63,7 +63,7 @@ class ChatRepo {
   }) {
     socketService.emit(SocketEvents.sendMessage, {'text': messageText});
     //todo: send message success action
-    socketService.once(SocketEvents.sendMessageError, (error) {
+    socketService.on(SocketEvents.sendMessageError, (error) {
       log("message sending failed");
       onFailure(error.toString());
     });
@@ -76,18 +76,18 @@ class ChatRepo {
   }) {
     socketService.emit(SocketEvents.messageSeen, {'messageId': messageId});
 
-    socketService.once(SocketEvents.messageSeenSuccess, (data) {
+    socketService.on(SocketEvents.messageSeenSuccess, (data) {
       log("message seen success");
       onSuccess(data);
     });
-    socketService.once(SocketEvents.messageSeenError, (error) {
+    socketService.on(SocketEvents.messageSeenError, (error) {
       log("message sending failed");
       onFailure(error.toString());
     });
   }
 
   void dispose() {
-    socketService.off(SocketEvents.recieveMessage);
+    //socketService.off(SocketEvents.recieveMessage);
     socketService.off(SocketEvents.sendMessageError);
     socketService.off(SocketEvents.messageSeenSuccess);
     socketService.off(SocketEvents.messageSeenError);
