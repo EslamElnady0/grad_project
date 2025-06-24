@@ -21,7 +21,8 @@ class GetLatestMessagesCubit extends Cubit<GetLatestMessagesState> {
     _messageSubscription = eventBus.on<NewMessageEvent>().listen((event) {
       addMessage(event.message);
     });
-    _messageSeenSubscription = eventBus.on<MessageSeenEvent>().listen((event) {
+    _messageSeenSubscription =
+        eventBus.on<MessageUpdatedEvent>().listen((event) {
       updateMessage(event.message);
     });
   }

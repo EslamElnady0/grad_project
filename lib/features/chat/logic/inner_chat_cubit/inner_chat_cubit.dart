@@ -45,7 +45,7 @@ class InnerChatCubit extends Cubit<InnerChatState> {
         Map<String, dynamic> rawMessage = data["data"];
         Message mgs = Message.fromJson(rawMessage);
         emit(InnerChatMessageSeen());
-        eventBus.fire(MessageSeenEvent(mgs));
+        eventBus.fire(MessageUpdatedEvent(mgs));
       },
       onFailure: (error) => emit(InnerChatError(error)),
     );

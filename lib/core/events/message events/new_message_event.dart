@@ -8,7 +8,7 @@ class NewMessageEvent {
   NewMessageEvent(this.message);
 }
 
-class MessageSeenEvent {
+class MessageUpdatedEvent {
   final Message message;
-  MessageSeenEvent(this.message);
+  MessageUpdatedEvent(this.message);
 }

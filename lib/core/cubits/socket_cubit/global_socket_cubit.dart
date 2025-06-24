@@ -107,7 +107,7 @@ class SocketCubit extends Cubit<SocketState> {
         Map<String, dynamic> rawMessage = data["data"];
         Message mgs = Message.fromJson(rawMessage);
         emit(SocketMessageDelivered());
-        eventBus.fire(MessageSeenEvent(mgs));
+        eventBus.fire(MessageUpdatedEvent(mgs));
       },
       onFailure: (error) {
         emit(SocketError(error));
