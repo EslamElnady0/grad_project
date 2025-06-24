@@ -58,8 +58,9 @@ class TeacherQuizzesViewBody extends StatelessWidget {
             ),
             hGap(8),
             CustomDropDownButton(
-              initialValue: S.of(context).next_seven_days,
+              value: S.of(context).next_seven_days,
               values: [S.of(context).next_seven_days],
+              onChanged: (value) {},
             ),
           ],
         )),

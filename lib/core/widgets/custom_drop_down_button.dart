@@ -9,11 +9,13 @@ class CustomDropDownButton extends StatelessWidget {
   const CustomDropDownButton({
     super.key,
     required this.values,
-    required this.initialValue,
+    required this.value,
+    required this.onChanged,
   });
 
   final List<String> values;
-  final String initialValue;
+  final String value;
+  final void Function(String?) onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -26,15 +28,13 @@ class CustomDropDownButton extends StatelessWidget {
         child: DropdownButton(
           borderRadius: BorderRadius.circular(12),
           dropdownColor: AppColors.primaryColordark,
-          value: initialValue,
+          value: value,
           icon: Padding(
             padding: const EdgeInsets.only(right: 12),
             child: SvgPicture.asset(Assets.imagesSvgsDropdown),
           ),
           items: customDropDownMenuItems(values: values),
-          onChanged: (value) {
-            value = value;
-          },
+          onChanged: onChanged,
         ),
       ),
     );
