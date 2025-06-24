@@ -177,6 +177,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Edit Announcement",
     ),
     "editQuiz": MessageLookupByLibrary.simpleMessage("Edit Quiz"),
+    "edit_assignment": MessageLookupByLibrary.simpleMessage("Edit Assignment"),
+    "edit_assignment_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "✏️ Edit the assignment details to keep your students informed with the latest updates and requirements.",
+    ),
     "edit_news": MessageLookupByLibrary.simpleMessage(
       "✏️ Edit your announcement to keep your students informed with the latest details and updates",
     ),

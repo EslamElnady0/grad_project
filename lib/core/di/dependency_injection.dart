@@ -12,6 +12,7 @@ import 'package:grad_project/features/annoucements/logic/delete_annoucement_cubi
 import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/get_announcement_cubit.dart';
 import 'package:grad_project/features/annoucements/logic/get_teacher_cources_cubit/get_teacher_cources_cubit.dart';
 import 'package:grad_project/features/annoucements/logic/update_annoucement_cubit/update_annoucement_cubit.dart';
+import 'package:grad_project/features/assignments/logic/cubits/edit_assignment_cubit/edit_assignment_cubit.dart';
 import 'package:grad_project/features/assignments/logic/cubits/get_assignments_cubit/get_assignments_cubit.dart';
 import 'package:grad_project/features/chat/logic/inner_chat_cubit/inner_chat_cubit.dart';
 import 'package:grad_project/features/forum/data/data%20sources/questions_local_data_source.dart';
@@ -132,6 +133,7 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<GetAssignmentsCubit>(() => GetAssignmentsCubit(getIt()));
   getIt.registerFactory<GetStudentsAssignmentsCubit>(() => GetStudentsAssignmentsCubit(getIt()));
   getIt.registerFactory<UploadAssignmentSolutionCubit>(() => UploadAssignmentSolutionCubit(getIt()));
+  getIt.registerFactory<EditAssignmentCubit>(() => EditAssignmentCubit(getIt()));
   //toDo:------------------------------ Questions API ------------------------------//
   getIt.registerLazySingleton<QuestionsRemoteDataSource>(() => QuestionsRemoteDataSource(dio));
   getIt.registerLazySingleton<QuestionsLocalDataSource>(() => QuestionsLocalDataSourceImpl());

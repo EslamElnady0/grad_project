@@ -24,8 +24,10 @@ class CustomAssignmentButton extends StatelessWidget {
       onTap: () {
         isDone
             ? GoRouter.of(context).push(AssignmentResultsView.routeName)
-            : GoRouter.of(context)
-                .push(AssignmentDetailsView.routeName, extra: assignmentModel);
+            : {
+                GoRouter.of(context).push(AssignmentDetailsView.routeName,
+                    extra: assignmentModel)
+              };
       },
       child: Container(
         width: double.infinity,

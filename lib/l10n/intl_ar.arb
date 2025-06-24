@@ -312,5 +312,7 @@
   "retry": "اعادة المحاولة",
   "deadline": "موعد التسليم",
   "preview": "عرض",
-  "assignment_preview": "عرض الأسايمنت"
+  "assignment_preview": "عرض الأسايمنت",
+  "edit_assignment": "تعديل الأسايمنت",
+  "edit_assignment_welcome_message": "✏️ عدّل تفاصيل الأسايمنت لتحديث المعلومات أو المواعيد أو الملفات المرفقة."
 }

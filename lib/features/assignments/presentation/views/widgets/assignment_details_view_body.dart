@@ -43,28 +43,33 @@ class AssignmentDetailsViewBody extends StatelessWidget {
                   vGap(16),
                   Row(
                     children: [
-                      CustomButton(
-                        assignmentModel: assignmentModel,
-                        onTap: () {
-                          GoRouter.of(context).push(
-                            PdfWebViewPage.routeName,
-                            extra: assignmentModel.file,
-                          );
-                        },
-                        text: S.of(context).preview,
-                      ),
-                      hGap(20),
-                      CustomButton(
+                      Expanded(
+                        child: CustomButton(
                           assignmentModel: assignmentModel,
-                          onTap: () async {
-                            await downloadPdfFile(
-                              context,
-                              assignmentModel.file,
+                          onTap: () {
+                            GoRouter.of(context).push(
+                              PdfWebViewPage.routeName,
+                              extra: assignmentModel.file,
                             );
                           },
-                          text: S.of(context).download),
+                          text: S.of(context).preview,
+                        ),
+                      ),
+                      hGap(20),
+                      Expanded(
+                        child: CustomButton(
+                            assignmentModel: assignmentModel,
+                            onTap: () async {
+                              await downloadPdfFile(
+                                context,
+                                assignmentModel.file,
+                              );
+                            },
+                            text: S.of(context).download),
+                      ),
                     ],
                   ),
+                  vGap(20),
                   CustomButton(
                       assignmentModel: assignmentModel,
                       onTap: () {
