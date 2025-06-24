@@ -80,7 +80,10 @@ class SocketService {
     });
   }
 
-  void off(String event) => socket.off(event);
+  void off(String event) {
+    log('Unsubscribing from event: $event');
+    socket.off(event);
+  }
 
   void dispose() {
     log('Disposing socket...');
