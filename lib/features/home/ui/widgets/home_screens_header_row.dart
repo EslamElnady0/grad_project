@@ -18,8 +18,9 @@ class HomeScreensHeaderRow extends StatelessWidget {
         children: [
           SvgIconButton(
               iconPath: Assets.imagesSvgsMenuIcon, onPressed: onMenuTap),
-          SvgIconButton(
-              iconPath: Assets.imagesSvgsSearchIcon, onPressed: onSearchTap),
+          const Spacer(),
+          // SvgIconButton(
+          //     iconPath: Assets.imagesSvgsSearchIcon, onPressed: onSearchTap),
         ],
       ),
     );
