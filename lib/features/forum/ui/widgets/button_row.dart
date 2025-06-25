@@ -24,6 +24,7 @@ class ButtonRow extends StatelessWidget {
           content: Text(S.of(context).no_answers_available,
            style:  AppTextStyles.font16WhiteSemiBold.copyWith(fontSize: 14.sp),
           ),
+
         ),
       );  
     } else {

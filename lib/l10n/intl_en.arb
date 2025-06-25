@@ -310,6 +310,10 @@
   "buildings": "Buildings",
   "noBuildingsFound": "No Buildings Found",
   "retry": "Retry",
+  "manage_materials_and_display": "Manage and display materials",
+  "no_answers_available": "No answers available for this question",
+
+
   "parkingSlots": "Parking Slots",
   "parkingSlotsDescription": "🚗 Browse available parking slots and easily check for empty spaces",
   "studentsAnswersReview": "Student Answers Review",

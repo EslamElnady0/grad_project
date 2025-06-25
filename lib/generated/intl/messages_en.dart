@@ -266,7 +266,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "main_info": MessageLookupByLibrary.simpleMessage("Main information"),
     "manageTime": MessageLookupByLibrary.simpleMessage("⏰ Manage Your Time"),
     "manage_materials_and_display": MessageLookupByLibrary.simpleMessage(
-      "Manage Materials and Display",
+      "Manage and display materials"
     ),
     "material": MessageLookupByLibrary.simpleMessage("Material"),
     "material_description": MessageLookupByLibrary.simpleMessage(
@@ -312,7 +312,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "No Students Found",
     ),
     "no_answers_available": MessageLookupByLibrary.simpleMessage(
-      "No answers available yet",
+      "No answers available for this question",
     ),
     "not_started": MessageLookupByLibrary.simpleMessage("Not Started"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(

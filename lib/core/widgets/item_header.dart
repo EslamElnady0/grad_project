@@ -23,12 +23,13 @@ class ItemHeader extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        DoctorInfoSection(
-          name: name,
-          specialization: specialization,
-          imageUrl: imageUrl, 
+        Expanded(
+          child: DoctorInfoSection(
+            name: name,
+            specialization: specialization,
+            imageUrl: imageUrl, 
+          ),
         ),
-        const Spacer(),
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [

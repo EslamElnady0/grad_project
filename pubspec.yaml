@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  auto_size_text: ^3.0.0
   awesome_dialog: ^3.2.1
   blueprint_cli: ^0.0.2+1
   build_runner: ^2.4.15

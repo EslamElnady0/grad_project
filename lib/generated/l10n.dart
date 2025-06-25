@@ -2445,6 +2445,26 @@ class S {
     return Intl.message('Retry', name: 'retry', desc: '', args: []);
   }
 
+  /// `Manage and display materials`
+  String get manage_materials_and_display {
+    return Intl.message(
+      'Manage and display materials',
+      name: 'manage_materials_and_display',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No answers available for this question`
+  String get no_answers_available {
+    return Intl.message(
+      'No answers available for this question',
+      name: 'no_answers_available',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Parking Slots`
   String get parkingSlots {
     return Intl.message(

@@ -2,27 +2,62 @@ C/C++ Structured LogK
 I
 GC:\flutter\packages\flutter_tools\gradle\src\main\groovy\CMakeLists.txtC
 A
-?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	�����2� �����2d
+<<<<<<< aaaa
+?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	¨ìãÅú2§ õ ÜÚÏ2d
 b
-`D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\additional_project_files.txt	�����2 �����2a
+`D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\additional_project_files.txt	¨ìãÅú2 ‹ìãÅú2a
 _
-]D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\android_gradle_build.json	�����2� �����2f
+]D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\android_gradle_build.json	¨ìãÅú2˜ ‘ìãÅú2f
 d
-bD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\android_gradle_build_mini.json	�����2� �����2S
+bD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\android_gradle_build_mini.json	¨ìãÅú2õ £ìãÅú2S
 Q
-OD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\build.ninja	�����2�� �����2W
+OD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\build.ninja	¨ìãÅú2¿Ó ßëãÅú2W
 U
-SD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\build.ninja.txt	�����2\
+SD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\build.ninja.txt	¨ìãÅú2\
 Z
-XD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\build_file_index.txt	�����2G �����2]
+XD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\build_file_index.txt	¨ìãÅú2
+G ¥ìãÅú2]
 [
-YD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\compile_commands.json	�����2	a
+YD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\compile_commands.json	¨ìãÅú2	a
 _
-]D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\compile_commands.json.bin	�����2
+]D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\compile_commands.json.bin	¨ìãÅú2
 g
 e
-cD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\metadata_generation_command.txt	�����2� �����2Z
+cD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\metadata_generation_command.txt	¨ìãÅú2  ¤ìãÅú2Z
 X
-VD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\prefab_config.json	�����2( �����2_
+VD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\prefab_config.json	¨ìãÅú2
+( ¤ìãÅú2_
 ]
-[D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\symbol_folder_index.txt	�����2R �����2
+[D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\symbol_folder_index.txt	¨ìãÅú2
+
+R ¤ìãÅú2
+=======
+?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	ž¤ñÁú2§ õ ÜÚÏ2d
+b
+`D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\additional_project_files.txt	Ÿ¤ñÁú2 ¶ù±ýå2a
+_
+]D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\android_gradle_build.json	Ÿ¤ñÁú2˜ ºù±ýå2f
+d
+bD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\android_gradle_build_mini.json	Ÿ¤ñÁú2õ ½ù±ýå2S
+Q
+OD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\build.ninja	Ÿ¤ñÁú2¿Ó ¸÷±ýå2W
+U
+SD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\build.ninja.txt	Ÿ¤ñÁú2\
+Z
+XD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\build_file_index.txt	Ÿ¤ñÁú2
+G Áù±ýå2]
+[
+YD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\compile_commands.json	Ÿ¤ñÁú2	a
+_
+]D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\compile_commands.json.bin	Ÿ¤ñÁú2
+g
+e
+cD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\metadata_generation_command.txt	Ÿ¤ñÁú2  ¾ù±ýå2Z
+X
+VD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\prefab_config.json	Ÿ¤ñÁú2
+( ¿ù±ýå2_
+]
+[D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\x86_64\symbol_folder_index.txt	Ÿ¤ñÁú2
+
+R Àù±ýå2
+>>>>>>> development
