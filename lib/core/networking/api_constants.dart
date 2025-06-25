@@ -21,7 +21,7 @@ class ApiConstants {
   static const String docCourses = "teachers/courses";
   static const String quizzes = "/quizzes";
   static const String questions = "questions";
-
+  static const String answers = "/answers";
   static const String assignments = "/assignments";
   static const String students = "/students";
   static const String questionLike = "qlike";
@@ -32,6 +32,7 @@ class ApiConstants {
   static const String groupDetails = "/chat/group/detials";
   static const String messages = "/chat/messages";
   static const String oldMessages = "/chat/messages/old";
+  static const String parking = "/parking";
   static const String directions = "directions";
   static const String buildings = "buildings";
   static const String halls = "halls";

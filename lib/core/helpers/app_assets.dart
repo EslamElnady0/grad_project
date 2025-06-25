@@ -30,6 +30,10 @@ class Assets {
   /// assets/images/map_trail.png
   static const String imagesMapTrail = "assets/images/map_trail.png";
 
+  /// Assets for imagesParkingCar
+  /// assets/images/parking_car.png
+  static const String imagesParkingCar = "assets/images/parking_car.png";
+
   /// Assets for imagesProtect
   /// assets/images/protect.png
   static const String imagesProtect = "assets/images/protect.png";
@@ -253,6 +257,10 @@ class Assets {
   /// Assets for imagesSvgsPaperIcon
   /// assets/images/svgs/paper_icon.svg
   static const String imagesSvgsPaperIcon = "assets/images/svgs/paper_icon.svg";
+
+  /// Assets for imagesSvgsParkingIcon
+  /// assets/images/svgs/parking_icon.svg
+  static const String imagesSvgsParkingIcon = "assets/images/svgs/parking_icon.svg";
 
   /// Assets for imagesSvgsPdfIcon
   /// assets/images/svgs/pdf_icon.svg

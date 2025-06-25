@@ -79,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "assignment_details": MessageLookupByLibrary.simpleMessage(
       "تفاصيل الأسايمنت",
     ),
+    "assignment_preview": MessageLookupByLibrary.simpleMessage("عرض الأسايمنت"),
     "assignment_title": MessageLookupByLibrary.simpleMessage("عنوان الأسايمنت"),
     "assignment_title_hint_text": MessageLookupByLibrary.simpleMessage(
       " أدخل عنوانًا يعبر عن محتوى الأسايمنت بشكل واضح.",
@@ -148,6 +149,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يجب تحديد التاريخ والوقت للاختبار.",
     ),
     "days": MessageLookupByLibrary.simpleMessage("الأيام"),
+    "deadline": MessageLookupByLibrary.simpleMessage("موعد التسليم"),
     "delete": MessageLookupByLibrary.simpleMessage("حذف"),
     "department": MessageLookupByLibrary.simpleMessage("القسم"),
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
@@ -165,6 +167,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
     "editAnnouncement": MessageLookupByLibrary.simpleMessage("تعديل خبر"),
     "editQuiz": MessageLookupByLibrary.simpleMessage("تعديل كويز"),
+    "edit_assignment": MessageLookupByLibrary.simpleMessage("تعديل الأسايمنت"),
+    "edit_assignment_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "✏️ عدّل تفاصيل الأسايمنت لتحديث المعلومات أو المواعيد أو الملفات المرفقة.",
+    ),
     "edit_news": MessageLookupByLibrary.simpleMessage(
       "✏️ عدّل إعلانك لضمان بقاء طلابك على اطلاع بأحدث التفاصيل والتحديثات",
     ),
@@ -288,6 +294,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "noHallsFound": MessageLookupByLibrary.simpleMessage(
       "لم يتم العثور على قاعات",
     ),
+    "noStudentsFound": MessageLookupByLibrary.simpleMessage(
+      "لم يتم العثور على طلاب",
+    ),
     "no_answers_available": MessageLookupByLibrary.simpleMessage(
       "لا توجد إجابات متاحة لهذا السؤال",
     ),
@@ -308,6 +317,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "once": MessageLookupByLibrary.simpleMessage("مرة واحدة"),
     "open": MessageLookupByLibrary.simpleMessage("فتح"),
     "other": MessageLookupByLibrary.simpleMessage("اخري"),
+    "parkingSlots": MessageLookupByLibrary.simpleMessage("مواقف السيارات"),
+    "parkingSlotsDescription": MessageLookupByLibrary.simpleMessage(
+      "🚗 استعرض المواقف المتاحة وتحقق من الأماكن الخالية بسهولة",
+    ),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "pending": MessageLookupByLibrary.simpleMessage("معلق"),
     "percentage": MessageLookupByLibrary.simpleMessage("النسبة المئوية"),
@@ -320,6 +333,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "postponed": MessageLookupByLibrary.simpleMessage("مؤجل."),
     "prepareWell": MessageLookupByLibrary.simpleMessage("📚 استعد مسبقًا"),
+    "preview": MessageLookupByLibrary.simpleMessage("عرض"),
     "previous": MessageLookupByLibrary.simpleMessage("السابق"),
     "previous_assignments": MessageLookupByLibrary.simpleMessage(
       "اسايمينتات سابقة",
@@ -473,7 +487,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "تنفّس بعمق وثق بقدراتك!",
     ),
     "street": MessageLookupByLibrary.simpleMessage("شارع"),
+    "studentDegree": MessageLookupByLibrary.simpleMessage("درجة الطالب"),
     "student_grade": MessageLookupByLibrary.simpleMessage("درجة الطالب"),
+    "studentsAnswersReview": MessageLookupByLibrary.simpleMessage(
+      "مراجعة الإجابات",
+    ),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage("طالب نشط الآن"),
     "students_count": MessageLookupByLibrary.simpleMessage("عدد الطلاب:"),
     "students_management": MessageLookupByLibrary.simpleMessage("إدارة الطلاب"),

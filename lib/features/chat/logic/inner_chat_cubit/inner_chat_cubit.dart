@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/events/message events/new_message_event.dart';
+import '../../data/models/get_messages_response.dart';
 import '../../data/repos/chat_repo.dart';
 import 'inner_chat_state.dart';
 
@@ -41,10 +42,34 @@ class InnerChatCubit extends Cubit<InnerChatState> {
     _repo.messageSeen(
       messageId,
       onSuccess: (data) {
+        Map<String, dynamic> rawMessage = data["data"];
+        Message mgs = Message.fromJson(rawMessage);
         emit(InnerChatMessageSeen());
+        eventBus.fire(MessageUpdatedEvent(mgs));
       },
       onFailure: (error) => emit(InnerChatError(error)),
     );
+  }
+
+  void changeTypingState(String typingState) {
+    emit(InnerChatTyping());
+    _repo.typingState(
+        //pass text or record
+        typingState: typingState,
+        onSuccess: (data) {
+          emit(InnerChatTypingSuccess());
+          //fire typing event
+        },
+        onFailure: (error) => emit(InnerChatError(error)));
+  }
+
+  void stopTyping() {
+    emit(InnerChatStopTyping());
+    _repo.stopTyping(
+        onSuccess: (data) {
+          emit(InnerChatStopTypingSuccess());
+        },
+        onFailure: (error) => emit(InnerChatError(error)));
   }
 
   @override

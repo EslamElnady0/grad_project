@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CustomHollowButton extends StatelessWidget {
   final Widget child;
   final Color borderColor;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final double? borderWidth;
   final EdgeInsetsGeometry? padding;
 

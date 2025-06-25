@@ -6,12 +6,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/cubits/bloc_observer.dart';
+import 'package:grad_project/core/cubits/socket_cubit/global_socket_state.dart';
 import 'package:grad_project/core/flavors/flavors_functions.dart';
 import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/helpers/shared_pref_helper.dart';
 import 'package:timeago/timeago.dart' as timeago;
 import 'core/cubits/socket_cubit/global_socket_cubit.dart';
 import 'core/di/dependency_injection.dart';
+import 'core/lifecycle/app_lifecycle_cubit.dart';
 import 'core/routes/student_router.dart';
 import 'core/theme/app_theme.dart';
 import 'firebase_options_student.dart';
@@ -51,24 +53,36 @@ class GradProjectStudentApp extends StatelessWidget {
       designSize: const Size(320, 812),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (context, child) => BlocProvider(
-        create: (context) => getIt<SocketCubit>(),
-        child: MaterialApp.router(
-          title: 'Grad Project Students',
-          themeMode: ThemeMode.light,
-          debugShowCheckedModeBanner: false,
-          theme: AppTheme.lightTheme,
-          darkTheme: AppTheme.darkTheme,
-          locale: const Locale('ar'),
-          routerConfig: StudentRouter.getRouter(isLogin),
-          localizationsDelegates: const [
-            S.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: S.delegate.supportedLocales,
-        ),
+      builder: (context, child) => MultiBlocProvider(
+        providers: [
+          BlocProvider(create: (context) => getIt<AppLifecycleCubit>()),
+          BlocProvider(create: (context) => getIt<SocketCubit>()),
+        ],
+        child: Builder(builder: (context) {
+          return BlocListener<SocketCubit, SocketState>(
+            listener: (context, state) {
+              if (state is SocketNeedsRegisterUser) {
+                context.read<SocketCubit>().registerUser(context: context);
+              }
+            },
+            child: MaterialApp.router(
+              title: 'Grad Project Students',
+              themeMode: ThemeMode.light,
+              debugShowCheckedModeBanner: false,
+              theme: AppTheme.lightTheme,
+              darkTheme: AppTheme.darkTheme,
+              locale: const Locale('ar'),
+              routerConfig: StudentRouter.getRouter(isLogin),
+              localizationsDelegates: const [
+                S.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: S.delegate.supportedLocales,
+            ),
+          );
+        }),
       ),
     );
   }

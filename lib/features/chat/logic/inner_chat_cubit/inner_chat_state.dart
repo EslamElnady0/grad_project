@@ -20,3 +20,17 @@ class InnerChatError extends InnerChatState {
   final String message;
   InnerChatError(this.message);
 }
+
+class InnerChatTyping extends InnerChatState {}
+
+class InnerChatTypingSuccess extends InnerChatState {}
+
+class InnerChatStopTyping extends InnerChatState {}
+
+class InnerChatStopTypingSuccess extends InnerChatState {}
+
+class InnerChatUserTyping extends InnerChatState {
+  final String userName;
+  final String type;
+  InnerChatUserTyping({required this.userName, required this.type});
+}

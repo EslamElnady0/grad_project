@@ -22,7 +22,7 @@ class UpdateAnnoucementViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     Announcement announcement = context.read<Announcement>();
     context.read<UpdateAnnoucementCubit>().titleController.text =
-        announcement.title;
+        announcement.title ?? "";
     context.read<UpdateAnnoucementCubit>().descController.text =
         announcement.body;
 

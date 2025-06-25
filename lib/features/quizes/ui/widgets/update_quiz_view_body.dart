@@ -47,7 +47,6 @@ class UpdateQuizViewBody extends StatelessWidget {
               .format(DateTime.parse(data.data.date));
           addQuizCubit.selectedStartTime = data.data.startTime;
           addQuizCubit.selectedTime = data.data.duration;
-          addQuizCubit.finalDegree = data.data.totalDegree;
           questionListCubit.addQuestionsFromApiCall(data.data.questions);
 
           return Padding(
@@ -99,8 +98,6 @@ class UpdateQuizViewBody extends StatelessWidget {
                         onPressed: () {
                           questionListCubit.addQuestion(
                             context: context,
-                            selectedQuestionsCount:
-                                addQuizCubit.selectedQuestionsCount,
                             scrollController: addQuizCubit.scrollController,
                           );
                         },
@@ -124,11 +121,14 @@ class UpdateQuizViewBody extends StatelessWidget {
                           }
                           final newQuestions =
                               buildNewQuestions(questionDataList);
+                          final totalDegree = (questionDataList.length *
+                                  addQuizCubit.selectedQuestionGrade)
+                              .toString();
                           final quizRequestModel = QuizRequestModel(
                             courseId: data.data.course.id.toString(),
                             title: addQuizCubit.titleController.text,
                             description: addQuizCubit.descController.text,
-                            totalDegree: addQuizCubit.finalDegree.toString(),
+                            totalDegree: totalDegree,
                             questionDegree:
                                 addQuizCubit.selectedQuestionGrade.toString(),
                             date: addQuizCubit.selectedDate!,

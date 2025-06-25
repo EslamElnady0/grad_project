@@ -83,6 +83,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "assignment_details": MessageLookupByLibrary.simpleMessage(
       "Assignment Details",
     ),
+    "assignment_preview": MessageLookupByLibrary.simpleMessage(
+      "Assignment Preview",
+    ),
     "assignment_title": MessageLookupByLibrary.simpleMessage(
       "Assignment Title",
     ),
@@ -154,6 +157,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "You have to specify date and time for the quiz.",
     ),
     "days": MessageLookupByLibrary.simpleMessage("Days"),
+    "deadline": MessageLookupByLibrary.simpleMessage("Deadline"),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
     "department": MessageLookupByLibrary.simpleMessage("department"),
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
@@ -173,6 +177,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Edit Announcement",
     ),
     "editQuiz": MessageLookupByLibrary.simpleMessage("Edit Quiz"),
+    "edit_assignment": MessageLookupByLibrary.simpleMessage("Edit Assignment"),
+    "edit_assignment_welcome_message": MessageLookupByLibrary.simpleMessage(
+      "✏️ Edit the assignment details to keep your students informed with the latest updates and requirements.",
+    ),
     "edit_news": MessageLookupByLibrary.simpleMessage(
       "✏️ Edit your announcement to keep your students informed with the latest details and updates",
     ),
@@ -300,6 +308,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "No files uploaded yet",
     ),
     "noHallsFound": MessageLookupByLibrary.simpleMessage("No Halls Found"),
+    "noStudentsFound": MessageLookupByLibrary.simpleMessage(
+      "No Students Found",
+    ),
     "no_answers_available": MessageLookupByLibrary.simpleMessage(
       "No answers available for this question",
     ),
@@ -320,6 +331,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "once": MessageLookupByLibrary.simpleMessage("Once"),
     "open": MessageLookupByLibrary.simpleMessage("open"),
     "other": MessageLookupByLibrary.simpleMessage("Other"),
+    "parkingSlots": MessageLookupByLibrary.simpleMessage("Parking Slots"),
+    "parkingSlotsDescription": MessageLookupByLibrary.simpleMessage(
+      "🚗 Browse available parking slots and easily check for empty spaces",
+    ),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "percentage": MessageLookupByLibrary.simpleMessage("Percentage"),
@@ -334,6 +349,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "prepareWell": MessageLookupByLibrary.simpleMessage(
       "📚 Prepare in Advance",
     ),
+    "preview": MessageLookupByLibrary.simpleMessage("preview"),
     "previous": MessageLookupByLibrary.simpleMessage("Previous"),
     "previous_assignments": MessageLookupByLibrary.simpleMessage(
       "Previous Assignments",
@@ -494,7 +510,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Take deep breaths and trust your abilities!",
     ),
     "street": MessageLookupByLibrary.simpleMessage("Street"),
+    "studentDegree": MessageLookupByLibrary.simpleMessage("Student Degree"),
     "student_grade": MessageLookupByLibrary.simpleMessage("Student Grade"),
+    "studentsAnswersReview": MessageLookupByLibrary.simpleMessage(
+      "Student Answers Review",
+    ),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage(
       "students online now",
     ),

@@ -2464,6 +2464,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Parking Slots`
+  String get parkingSlots {
+    return Intl.message(
+      'Parking Slots',
+      name: 'parkingSlots',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `🚗 Browse available parking slots and easily check for empty spaces`
+  String get parkingSlotsDescription {
+    return Intl.message(
+      '🚗 Browse available parking slots and easily check for empty spaces',
+      name: 'parkingSlotsDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Student Answers Review`
+  String get studentsAnswersReview {
+    return Intl.message(
+      'Student Answers Review',
+      name: 'studentsAnswersReview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Student Degree`
+  String get studentDegree {
+    return Intl.message(
+      'Student Degree',
+      name: 'studentDegree',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Students Found`
+  String get noStudentsFound {
+    return Intl.message(
+      'No Students Found',
+      name: 'noStudentsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Deadline`
+  String get deadline {
+    return Intl.message('Deadline', name: 'deadline', desc: '', args: []);
+  }
+
+  /// `preview`
+  String get preview {
+    return Intl.message('preview', name: 'preview', desc: '', args: []);
+  }
+
+  /// `Assignment Preview`
+  String get assignment_preview {
+    return Intl.message(
+      'Assignment Preview',
+      name: 'assignment_preview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Assignment`
+  String get edit_assignment {
+    return Intl.message(
+      'Edit Assignment',
+      name: 'edit_assignment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `✏️ Edit the assignment details to keep your students informed with the latest updates and requirements.`
+  String get edit_assignment_welcome_message {
+    return Intl.message(
+      '✏️ Edit the assignment details to keep your students informed with the latest updates and requirements.',
+      name: 'edit_assignment_welcome_message',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

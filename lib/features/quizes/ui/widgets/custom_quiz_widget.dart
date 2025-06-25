@@ -18,6 +18,7 @@ import 'package:grad_project/generated/l10n.dart';
 import 'package:provider/provider.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
+import '../views/quiz_results_view.dart';
 import 'activity_pop_up_menu.dart';
 
 class CustomQuizWidget extends StatelessWidget {
@@ -158,7 +159,8 @@ class CustomQuizButton extends StatelessWidget {
         !isDone
             ? GoRouter.of(context)
                 .push(QuizDetailsView.routeName, extra: quizModel)
-            : null;
+            : GoRouter.of(context).push(QuizResultsView.routeName,
+                extra: quizModel?.id.toString());
       },
       child: Container(
         width: double.infinity,

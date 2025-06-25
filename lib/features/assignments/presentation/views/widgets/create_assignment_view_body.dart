@@ -49,9 +49,16 @@ class CreateAssignmentViewBody extends StatelessWidget {
               descController: createAssignmentCubit.descController,
             ),
             vGap(12),
-            const Row(
+            Row(
               children: [
-                AssignmentDegreeWidget(),
+                AssignmentDegreeWidget(
+                  valueText:
+                      "${createAssignmentCubit.selectedAssignmentDegree} ${S.of(context).single_grade}",
+                  titleText: S.of(context).assignment_degree,
+                  typeLabel: S.of(context).single_grade,
+                  contentList: createAssignmentCubit.assignmentDegreeList,
+                  onSelected: createAssignmentCubit.selectAssignmentDegree,
+                )
               ],
             ),
             vGap(15),
@@ -69,7 +76,12 @@ class CreateAssignmentViewBody extends StatelessWidget {
               ],
             ),
             vGap(8),
-            const DateAndTimeSection(),
+            DateAndTimeSection(
+              selectedDate: createAssignmentCubit.selectedDate,
+              selectedTime: createAssignmentCubit.selectedTime,
+              onDateSelected: createAssignmentCubit.selectDate,
+              onTimeSelected: createAssignmentCubit.selectTime,
+            ),
             vGap(20),
             CustomTextAndIconButton(
               text: S.of(context).add_file,

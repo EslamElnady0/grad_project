@@ -7,9 +7,11 @@ import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/svg_icon_button.dart';
 import '../../../../../core/helpers/app_assets.dart';
 import '../../../../../generated/l10n.dart';
+import '../../../data/models/chat_groups_response.dart';
 
 class ChatViewAppBar extends StatelessWidget {
-  const ChatViewAppBar({super.key});
+  final DepartmentChatGroup chatGroupData;
+  const ChatViewAppBar({super.key, required this.chatGroupData});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,7 @@ class ChatViewAppBar extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Level 1",
+                chatGroupData.name,
                 style: AppTextStyles.font16BlackSemiBold,
               ),
               Text.rich(TextSpan(
@@ -50,11 +52,11 @@ class ChatViewAppBar extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          SvgIconButton(
-              iconPath: Assets.imagesSvgsSearchIcon, onPressed: () {}),
-          hGap(20),
-          SvgIconButton(
-              iconPath: Assets.imagesSvgsMoreOptionsIcon, onPressed: () {}),
+          // SvgIconButton(
+          //     iconPath: Assets.imagesSvgsSearchIcon, onPressed: () {}),
+          // hGap(20),
+          // SvgIconButton(
+          //     iconPath: Assets.imagesSvgsMoreOptionsIcon, onPressed: () {}),
         ],
       ),
     );

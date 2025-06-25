@@ -29,16 +29,16 @@ class AdminAddAnnoucementRow extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            CustomTextAndIconButton(
-              primaryButton: false,
-              text: S.of(context).filter,
-              onTap: () {},
-              color: AppColors.darkblue,
-              icon: const Icon(
-                Icons.tune,
-                color: AppColors.white,
-              ),
-            ),
+            // CustomTextAndIconButton(
+            //   primaryButton: false,
+            //   text: S.of(context).filter,
+            //   onTap: () {},
+            //   color: AppColors.darkblue,
+            //   icon: const Icon(
+            //     Icons.tune,
+            //     color: AppColors.white,
+            //   ),
+            // ),
           ]),
         ),
         vGap(12)

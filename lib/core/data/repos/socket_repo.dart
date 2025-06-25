@@ -6,6 +6,7 @@ class SocketRepo {
   final SocketService _socketService;
 
   SocketRepo(this._socketService);
+  SocketService get socketService => _socketService;
 
   Future<void> initSocket(
       {Function? onConnected, required String token}) async {
@@ -21,12 +22,12 @@ class SocketRepo {
     log("registering user .....");
     _socketService.emit(SocketEvents.userRegister, userData);
 
-    _socketService.once(SocketEvents.userRegisterSuccess, (_) {
+    _socketService.on(SocketEvents.userRegisterSuccess, (_) {
       log("user registered successfully");
       onSuccess();
     });
 
-    _socketService.once(SocketEvents.userRegisterError, (error) {
+    _socketService.on(SocketEvents.userRegisterError, (error) {
       log("user registration failed");
       onFailure(error.toString());
     });
@@ -41,10 +42,10 @@ class SocketRepo {
 
     _socketService.on(SocketEvents.messageDeliveredToSuccess, (data) {
       log("successfully message delivered : $data");
-      onSuccess();
+      onSuccess(data);
     });
 
-    _socketService.once(SocketEvents.messageDeliveredToError, (error) {
+    _socketService.on(SocketEvents.messageDeliveredToError, (error) {
       log("successfully message is not delivered : $error");
       onFailure(error.toString());
     });
@@ -58,9 +59,9 @@ class SocketRepo {
   }
 
   void disposeSocket() {
-    _socketService.off(SocketEvents.recieveMessage);
+    // _socketService.off(SocketEvents.recieveMessage);
     _socketService.off(SocketEvents.sendMessageError);
-    _socketService.off(SocketEvents.messageDeliveredToSuccess);
+    // _socketService.off(SocketEvents.messageDeliveredToSuccess);
     _socketService.off(SocketEvents.sendMessage);
     _socketService.off(SocketEvents.userRegisterSuccess);
     _socketService.off(SocketEvents.userRegisterError);

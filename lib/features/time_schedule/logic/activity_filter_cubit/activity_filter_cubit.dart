@@ -21,18 +21,16 @@ class ActivityFilterCubit extends Cubit<ActivityFilterState> {
         typeFilter = null;
       }
 
-      String? statusFilter;
-      if (selectedStatus == S.current.scheduled || selectedStatus == '') {
-        statusFilter = 'scheduled';
-      } else if (selectedStatus == S.current.previous) {
-        statusFilter = 'finished';
-      } else if (selectedStatus == S.current.all) {
-        statusFilter = null;
+      List<String> statusFilter;
+      if (selectedStatus == S.current.previous) {
+        statusFilter = ['finished'];
+      } else {
+        statusFilter = ['scheduled', 'started'];
       }
 
       List<ActivityModel> filteredActivities = activities.where((activity) {
         bool typeMatch = activity.type == typeFilter;
-        bool statusMatch = activity.status == statusFilter;
+        bool statusMatch = statusFilter.contains(activity.status);
         return typeMatch && statusMatch;
       }).toList();
 

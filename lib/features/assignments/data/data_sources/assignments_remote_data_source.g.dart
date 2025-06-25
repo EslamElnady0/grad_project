@@ -180,6 +180,65 @@ class _AssignmentsRemoteDataSource implements AssignmentsRemoteDataSource {
     return _value;
   }
 
+  @override
+  Future<EditAssignmentResponseModel> editAssignment(
+    int assignmentId,
+    int courseId,
+    String title,
+    String description,
+    String totalDegree,
+    String date,
+    String time,
+    File? file,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final _data = FormData();
+    _data.fields.add(MapEntry('course_id', courseId.toString()));
+    _data.fields.add(MapEntry('title', title));
+    _data.fields.add(MapEntry('description', description));
+    _data.fields.add(MapEntry('total_degree', totalDegree));
+    _data.fields.add(MapEntry('date', date));
+    _data.fields.add(MapEntry('time', time));
+    if (file != null) {
+      _data.files.add(
+        MapEntry(
+          'file',
+          MultipartFile.fromFileSync(
+            file.path,
+            filename: file.path.split(Platform.pathSeparator).last,
+          ),
+        ),
+      );
+    }
+    final _options = _setStreamType<EditAssignmentResponseModel>(
+      Options(
+        method: 'POST',
+        headers: _headers,
+        extra: _extra,
+        contentType: 'multipart/form-data',
+      )
+          .compose(
+            _dio.options,
+            'teachers/assignments/${assignmentId}',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late EditAssignmentResponseModel _value;
+    try {
+      _value = EditAssignmentResponseModel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||

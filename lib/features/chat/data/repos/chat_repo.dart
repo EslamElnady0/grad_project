@@ -63,7 +63,7 @@ class ChatRepo {
   }) {
     socketService.emit(SocketEvents.sendMessage, {'text': messageText});
     //todo: send message success action
-    socketService.once(SocketEvents.sendMessageError, (error) {
+    socketService.on(SocketEvents.sendMessageError, (error) {
       log("message sending failed");
       onFailure(error.toString());
     });
@@ -76,20 +76,76 @@ class ChatRepo {
   }) {
     socketService.emit(SocketEvents.messageSeen, {'messageId': messageId});
 
-    socketService.once(SocketEvents.messageSeenSuccess, (data) {
+    socketService.on(SocketEvents.messageSeenSuccess, (data) {
       log("message seen success");
       onSuccess(data);
     });
-    socketService.once(SocketEvents.messageSeenError, (error) {
+    socketService.on(SocketEvents.messageSeenError, (error) {
       log("message sending failed");
       onFailure(error.toString());
     });
   }
 
+  void openChat({
+    required Function(dynamic data) onSuccess,
+    required Function(String error) onFailure,
+  }) {
+    socketService.emit(SocketEvents.openChat, {});
+    socketService.on(SocketEvents.openChatSuccess, (data) {
+      onSuccess(data);
+    });
+    socketService.on(SocketEvents.openChatError, (error) {
+      onFailure(error.toString());
+    });
+    socketService.on(SocketEvents.typingSuccess, (data) {
+      onSuccess(data);
+    });
+    socketService.on(SocketEvents.typingError, (error) {
+      onFailure(error.toString());
+    });
+    socketService.on(SocketEvents.stopTypingSuccess, (data) {
+      onSuccess(data);
+    });
+    socketService.on(SocketEvents.stopTypingError, (error) {
+      onFailure(error.toString());
+    });
+  }
+
+  void typingState({
+    required String typingState,
+    required Function(dynamic data) onSuccess,
+    required Function(String error) onFailure,
+  }) {
+    socketService.emit(SocketEvents.typing, {
+      "type": typingState,
+    });
+    socketService.once(SocketEvents.typingSuccess, (data) {
+      onSuccess(data);
+    });
+    socketService.once(SocketEvents.typingError, (error) {
+      onFailure(error.toString());
+    });
+  }
+
+  void stopTyping({
+    required Function(dynamic data) onSuccess,
+    required Function(String error) onFailure,
+  }) {
+    socketService.emit(SocketEvents.stopTyping, {});
+    socketService.once(SocketEvents.stopTypingSuccess, (data) {
+      onSuccess(data);
+    });
+    socketService.once(SocketEvents.stopTypingError, (error) {
+      onFailure(error.toString());
+    });
+  }
+
   void dispose() {
-    socketService.off(SocketEvents.recieveMessage);
+    //socketService.off(SocketEvents.recieveMessage);
     socketService.off(SocketEvents.sendMessageError);
     socketService.off(SocketEvents.messageSeenSuccess);
     socketService.off(SocketEvents.messageSeenError);
+    // socketService.off(SocketEvents.openChatSuccess);
+    // socketService.off(SocketEvents.openChatError);
   }
 }
