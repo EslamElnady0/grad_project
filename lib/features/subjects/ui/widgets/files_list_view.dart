@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:grad_project/core/helpers/file_utils.dart';
 
-import 'package:grad_project/features/lecture_manager/ui/cubit/file_upload_cubit.dart';
+import 'package:grad_project/features/subjects/ui/manager/file_upload_cubit.dart';
 
 import 'package:path/path.dart' as path;
 

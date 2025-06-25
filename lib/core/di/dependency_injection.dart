@@ -25,7 +25,6 @@ import 'package:grad_project/features/forum/logic/question_and_answers/question_
 import 'package:grad_project/features/forum/logic/toggle_like_cubit/toggle_like_cubit.dart';
 import 'package:grad_project/features/chat/logic/get_group_details_cubit/get_group_details_cubit.dart';
 import 'package:grad_project/features/chat/logic/get_latest_messages_cubit/get_latest_messages_cubit.dart';
-import 'package:grad_project/features/lecture_manager/data/repos/add_materials_repo.dart';
 import 'package:grad_project/features/assignments/data/data_sources/assignments_local_data_source.dart';
 import 'package:grad_project/features/assignments/data/data_sources/assignments_remote_data_source.dart';
 import 'package:grad_project/features/assignments/data/repos/assignments_repo.dart';
@@ -49,6 +48,9 @@ import 'package:grad_project/features/quizes/logic/quizzes_cubit/quizzes_cubit.d
 import 'package:grad_project/features/quizes/logic/submit_quiz_cubit/submit_quiz_cubit.dart';
 import 'package:grad_project/features/quizes/ui/cubit/add_quiz_cubit/add_quiz_cubit.dart';
 import 'package:grad_project/features/quizes/ui/widgets/question_list_widget.dart';
+import 'package:grad_project/features/subjects/data/repos/add_materials_repo.dart';
+import 'package:grad_project/features/subjects/logic/add_materials/add_materials_cubit.dart';
+import 'package:grad_project/features/subjects/ui/manager/file_upload_cubit.dart';
 import 'package:grad_project/features/subjects/ui/manager/subjects_filter_cubit.dart';
 import 'package:grad_project/features/time_schedule/logic/activity_filter_cubit/activity_filter_cubit.dart';
 import 'package:grad_project/features/time_schedule/logic/get_students_assignments_cubit/get_students_assignments_cubit.dart';
@@ -75,8 +77,6 @@ import '../../features/quizes/logic/quiz_details_cubit/quiz_details_cubit.dart';
 import '../../features/quizes/logic/student_quiz_answers_cubit/student_quiz_answers_cubit.dart';
 import '../services/socket_service.dart';
 import '../../features/chat/logic/chat_cubit/chat_cubit.dart';
-import '../../features/lecture_manager/logic/add_materials_cubit/add_materials_cubit.dart';
-import '../../features/lecture_manager/ui/cubit/file_upload_cubit.dart';
 import '../../features/quizes/logic/get_quiz_by_id_cubit/get_quiz_by_id_cubit.dart';
 import '../../features/quizes/logic/start_students_quiz_cubit/start_students_quiz_cubit.dart';
 import '../../features/quizes/logic/update_quiz_cubit/update_quiz_cubit.dart';

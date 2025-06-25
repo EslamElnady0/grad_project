@@ -2534,6 +2534,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Manage Materials and Display`
+  String get manage_materials_and_display {
+    return Intl.message(
+      'Manage Materials and Display',
+      name: 'manage_materials_and_display',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No answers available yet`
+  String get no_answers_available {
+    return Intl.message(
+      'No answers available yet',
+      name: 'no_answers_available',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

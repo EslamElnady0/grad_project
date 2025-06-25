@@ -315,10 +315,11 @@
   "studentsAnswersReview": "Student Answers Review",
   "studentDegree": "Student Degree",
   "noStudentsFound": "No Students Found",
-  "retry": "Retry",
   "deadline": "Deadline",
   "preview":"preview",
   "assignment_preview": "Assignment Preview",
   "edit_assignment": "Edit Assignment",
-  "edit_assignment_welcome_message": "✏️ Edit the assignment details to keep your students informed with the latest updates and requirements."
+  "edit_assignment_welcome_message": "✏️ Edit the assignment details to keep your students informed with the latest updates and requirements.",
+  "manage_materials_and_display": "Manage Materials and Display",
+  "no_answers_available": "No answers available yet"
 }

@@ -7,7 +7,7 @@ import 'package:path/path.dart' as path;
 import '../../../../core/helpers/file_utils.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../generated/l10n.dart';
-import '../cubit/file_upload_cubit.dart';
+import '../manager/file_upload_cubit.dart';
 
 class FileUploadDialog extends StatelessWidget {
   const FileUploadDialog({super.key});
