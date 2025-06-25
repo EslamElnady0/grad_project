@@ -75,8 +75,6 @@ class AddQuizViewBody extends StatelessWidget {
                   onPressed: () {
                     questionListCubit.addQuestion(
                       context: context,
-                      selectedQuestionsCount:
-                          addQuizCubit.selectedQuestionsCount,
                       scrollController: addQuizCubit.scrollController,
                     );
                   },
@@ -107,7 +105,9 @@ class AddQuizViewBody extends StatelessWidget {
                       courseId: courseId.toString(),
                       title: addQuizCubit.titleController.text,
                       description: addQuizCubit.descController.text,
-                      totalDegree: addQuizCubit.finalDegree.toString(),
+                      totalDegree: (questionDataList.length *
+                              addQuizCubit.selectedQuestionGrade)
+                          .toString(),
                       questionDegree:
                           addQuizCubit.selectedQuestionGrade.toString(),
                       date: addQuizCubit.selectedDate!,

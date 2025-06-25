@@ -12,21 +12,8 @@ class QuestionListCubit extends Cubit<List<QuestionData>> {
 
   void addQuestion({
     required BuildContext context,
-    required int selectedQuestionsCount,
     required ScrollController scrollController,
   }) {
-    if (state.length >= selectedQuestionsCount) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            S.of(context).maximumNumberOfQuestions,
-            style: AppTextStyles.font12WhiteMedium,
-          ),
-        ),
-      );
-      return;
-    }
-
     final updatedList = List<QuestionData>.from(state)
       ..add(QuestionData(
         question: '',
