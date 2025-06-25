@@ -257,6 +257,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "main_info": MessageLookupByLibrary.simpleMessage("Main information"),
     "manageTime": MessageLookupByLibrary.simpleMessage("⏰ Manage Your Time"),
+    "manage_materials_and_display": MessageLookupByLibrary.simpleMessage(
+      "Manage and display materials",
+    ),
     "material": MessageLookupByLibrary.simpleMessage("Material"),
     "material_description": MessageLookupByLibrary.simpleMessage(
       "🎓📚 Everything you need for your course in one place: lectures, sections, assignments, quizzes, videos, midterms, and final exams!",

@@ -243,6 +243,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "main_info": MessageLookupByLibrary.simpleMessage("المعلومات الأساسية"),
     "manageTime": MessageLookupByLibrary.simpleMessage("⏰ نظم وقتك جيدًا"),
+    "manage_materials_and_display": MessageLookupByLibrary.simpleMessage(
+      "عرض المواد وإدارتها",
+    ),
     "material": MessageLookupByLibrary.simpleMessage("ماتريال"),
     "material_description": MessageLookupByLibrary.simpleMessage(
       "🎓📚 كل اللي محتاجه لمادتك في مكان واحد: محاضرات، سكاشن، اسايمنتات، كويزات، فيديوهات، ميدتيرم، وامتحانات نهائية!",

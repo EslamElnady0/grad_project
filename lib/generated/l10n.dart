@@ -2444,6 +2444,16 @@ class S {
   String get retry {
     return Intl.message('Retry', name: 'retry', desc: '', args: []);
   }
+
+  /// `Manage and display materials`
+  String get manage_materials_and_display {
+    return Intl.message(
+      'Manage and display materials',
+      name: 'manage_materials_and_display',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

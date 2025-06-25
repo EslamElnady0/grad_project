@@ -309,5 +309,6 @@
   "code": "Code",
   "buildings": "Buildings",
   "noBuildingsFound": "No Buildings Found",
-  "retry": "Retry"
+  "retry": "Retry",
+  "manage_materials_and_display": "Manage and display materials"
 }
