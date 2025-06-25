@@ -27,7 +27,8 @@ class ChatLevelsListView extends StatelessWidget {
               return ChatLevelsItem(
                 onTap: () {
                   isMyChat
-                      ? GoRouter.of(context).push(ChatView.routeName)
+                      ? GoRouter.of(context).push(ChatView.routeName,
+                          extra: data.allDepartChats[index])
                       : null;
                 },
                 title: data.allDepartChats[index].name,
