@@ -297,6 +297,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "No files uploaded yet",
     ),
     "noHallsFound": MessageLookupByLibrary.simpleMessage("No Halls Found"),
+    "noStudentsFound": MessageLookupByLibrary.simpleMessage(
+      "No Students Found",
+    ),
     "not_started": MessageLookupByLibrary.simpleMessage("Not Started"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
       "Allowed Attempts",

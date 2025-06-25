@@ -2484,6 +2484,16 @@ class S {
       args: [],
     );
   }
+
+  /// `No Students Found`
+  String get noStudentsFound {
+    return Intl.message(
+      'No Students Found',
+      name: 'noStudentsFound',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

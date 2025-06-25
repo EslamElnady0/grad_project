@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_text_styles.dart';
+import '../../../../generated/l10n.dart';
 import '../../logic/quiz_details_cubit/quiz_details_cubit.dart';
 import '../models/student_answers_review_navigation.dart';
 import '../views/students_answers_review_view.dart';
@@ -25,7 +27,9 @@ class StudentsResultsListViewBlocBuilder extends StatelessWidget {
             final students = data.data.students;
             final maxDegree = data.data.maxDegree;
             if (students.isEmpty) {
-              return const Center(child: Text('No students found.'));
+              return Center(
+                  child: Text(S.of(context).noStudentsFound,
+                      style: AppTextStyles.font16BlackBold));
             }
             return ListView.separated(
               itemCount: students.length,

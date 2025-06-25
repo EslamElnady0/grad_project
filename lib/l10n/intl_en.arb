@@ -313,5 +313,6 @@
   "parkingSlots": "Parking Slots",
   "parkingSlotsDescription": "🚗 Browse available parking slots and easily check for empty spaces",
   "studentsAnswersReview": "Student Answers Review",
-  "studentDegree": "Student Degree"
+  "studentDegree": "Student Degree",
+  "noStudentsFound": "No Students Found"
 }

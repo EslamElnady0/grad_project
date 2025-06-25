@@ -285,6 +285,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "noHallsFound": MessageLookupByLibrary.simpleMessage(
       "لم يتم العثور على قاعات",
     ),
+    "noStudentsFound": MessageLookupByLibrary.simpleMessage(
+      "لم يتم العثور على طلاب",
+    ),
     "not_started": MessageLookupByLibrary.simpleMessage("لم يبدأ"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
       "المرات المسموح بها",
