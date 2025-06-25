@@ -6,6 +6,8 @@ import 'package:grad_project/features/assignments/data/data_sources/assignments_
 import 'package:grad_project/features/assignments/data/models/assignments_solution_response_model.dart';
 import 'package:grad_project/features/assignments/data/models/create_assignment_request_model.dart';
 import 'package:grad_project/features/assignments/data/models/create_assignment_response_model.dart';
+import 'package:grad_project/features/assignments/data/models/edit_assignment_request_model.dart';
+import 'package:grad_project/features/assignments/data/models/edit_assignment_response_model.dart';
 import 'package:grad_project/features/assignments/data/models/get_assignments_request_query_params_model.dart';
 import 'package:grad_project/features/assignments/data/models/get_assignments_response_model.dart';
 import 'package:grad_project/features/time_schedule/data/models/activity_response_model.dart';
@@ -67,6 +69,27 @@ class AssignmentsRepo {
       final response = await remoteDataSource.uploadAssignmentSolution(
         UploadAssignmentSolutionModel.id,
         File(UploadAssignmentSolutionModel.file.path),
+      );
+      return ApiResult.success(response);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
+  Future<ApiResult<EditAssignmentResponseModel>> editAssignment(
+      EditAssignmentRequestModel editAssignmentRequestModel) async {
+    try {
+      final response = await remoteDataSource.editAssignment(
+        editAssignmentRequestModel.assignmentId,
+        editAssignmentRequestModel.courseId,
+        editAssignmentRequestModel.title,
+        editAssignmentRequestModel.description,
+        editAssignmentRequestModel.totalDegree,
+        editAssignmentRequestModel.date,
+        editAssignmentRequestModel.time,
+        editAssignmentRequestModel.file != null
+            ? File(editAssignmentRequestModel.file!.path)
+            : null,
       );
       return ApiResult.success(response);
     } catch (e) {
