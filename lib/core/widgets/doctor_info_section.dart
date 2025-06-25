@@ -14,28 +14,35 @@ final String? imageUrl ;
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [
-        CircleAvatar(
-          radius: 20.r,
-          backgroundImage: imageUrl ==null?
-          const AssetImage(Assets.imagesAvatarDoc) :
-        CachedNetworkImageProvider(imageUrl!),
-        ),
-        hGap(8),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              name,
-              style: AppTextStyles.font13BlackSemiBold,
-            ),
-            Text(
+  children: [
+    CircleAvatar(
+      radius: 20.r,
+      backgroundImage: imageUrl == null
+          ? const AssetImage(Assets.imagesAvatarDoc)
+          : CachedNetworkImageProvider(imageUrl!) as ImageProvider,
+    ),
+    hGap(8),
+    Expanded( // 👈 الحل هنا
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            name,
+            style: AppTextStyles.font13BlackSemiBold,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
+          ),
+          Text(
             specialization,
-              style: AppTextStyles.font9GrayMedium,
-            ),
-          ],
-        )
-      ],
-    );
+            style: AppTextStyles.font9GrayMedium,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
+          ),
+        ],
+      ),
+    ),
+  ],
+)
+;
   }
 }
