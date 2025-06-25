@@ -58,6 +58,7 @@ class InnerChatCubit extends Cubit<InnerChatState> {
         typingState: typingState,
         onSuccess: (data) {
           emit(InnerChatTypingSuccess());
+          //fire typing event
         },
         onFailure: (error) => emit(InnerChatError(error)));
   }

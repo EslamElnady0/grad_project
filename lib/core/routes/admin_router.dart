@@ -31,8 +31,8 @@ import '../../features/subjects/ui/views/materials_view.dart';
 abstract class AdminRouter {
   static GoRouter getRouter(bool isLogin) {
     return GoRouter(
-      // initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
-      initialLocation: ParkingView.routeName,
+      initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
+      // initialLocation: ParkingView.routeName,
       routes: [
         GoRoute(
           path: HomeView.routeName,

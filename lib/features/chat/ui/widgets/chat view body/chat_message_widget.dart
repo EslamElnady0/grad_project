@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:intl/intl.dart';
-
 import '../../../data/models/get_messages_response.dart';
 import 'user_avatar_and_name.dart';
 

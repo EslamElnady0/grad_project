@@ -10,6 +10,7 @@ import '../data sources/quizzes_local_data_source.dart';
 import '../data sources/quizzes_remote_data_source.dart';
 import '../models/get_quiz_using_id_response.dart';
 import '../models/get_quizzes_request_query_params_model.dart';
+import '../models/quiz_details_response.dart';
 import '../models/submit_quiz_request_body.dart';
 import '../models/submit_quiz_response.dart';
 
@@ -107,6 +108,16 @@ class QuizzesRepo {
     try {
       final result =
           await remoteDataSource.submitQuiz(quizId, submitQuizRequestModel);
+      return ApiResult.success(result);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
+  Future<ApiResult<QuizDetailsResponse>> getStudentsQuizAnswers(
+      String quizId) async {
+    try {
+      final result = await remoteDataSource.getStudentsQuizAnswers(quizId);
       return ApiResult.success(result);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));
