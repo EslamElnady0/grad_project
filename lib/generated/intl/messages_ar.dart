@@ -288,6 +288,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "noHallsFound": MessageLookupByLibrary.simpleMessage(
       "لم يتم العثور على قاعات",
     ),
+    "no_answers_available": MessageLookupByLibrary.simpleMessage(
+      "لا توجد إجابات متاحة لهذا السؤال",
+    ),
     "not_started": MessageLookupByLibrary.simpleMessage("لم يبدأ"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
       "المرات المسموح بها",

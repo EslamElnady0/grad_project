@@ -2454,6 +2454,16 @@ class S {
       args: [],
     );
   }
+
+  /// `No answers available for this question`
+  String get no_answers_available {
+    return Intl.message(
+      'No answers available for this question',
+      name: 'no_answers_available',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

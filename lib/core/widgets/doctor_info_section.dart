@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,36 +14,35 @@ final String? imageUrl ;
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [
-        CircleAvatar(
-          radius: 20.r,
-          backgroundImage: imageUrl == null
-              ? const AssetImage(Assets.imagesAvatarDoc)
-              : CachedNetworkImageProvider(imageUrl!) as ImageProvider,
-        ),
-        hGap(8),
-        Flexible(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              AutoSizeText(
-                name,
-                style: AppTextStyles.font13BlackSemiBold,
-                maxLines: 1,
-                minFontSize: 8,
-                overflow: TextOverflow.ellipsis,
-              ),
-              AutoSizeText(
-                specialization,
-                style: AppTextStyles.font9GrayMedium,
-                maxLines: 1,
-                minFontSize: 6,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ],
+  children: [
+    CircleAvatar(
+      radius: 20.r,
+      backgroundImage: imageUrl == null
+          ? const AssetImage(Assets.imagesAvatarDoc)
+          : CachedNetworkImageProvider(imageUrl!) as ImageProvider,
+    ),
+    hGap(8),
+    Expanded( // 👈 الحل هنا
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            name,
+            style: AppTextStyles.font13BlackSemiBold,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
           ),
-        ),
-      ],
-    );
+          Text(
+            specialization,
+            style: AppTextStyles.font9GrayMedium,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
+          ),
+        ],
+      ),
+    ),
+  ],
+)
+;
   }
 }
