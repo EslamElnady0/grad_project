@@ -71,6 +71,8 @@ import '../../features/map/presentation/view models/map cubit/map_cubit.dart';
 import '../../features/parking/data/data sources/parking_remote_data_source.dart';
 import '../../features/parking/data/repos/parking_repo.dart';
 import '../../features/parking/logic/parking_cubit/parking_cubit.dart';
+import '../../features/quizes/logic/quiz_details_cubit/quiz_details_cubit.dart';
+import '../../features/quizes/logic/student_quiz_answers_cubit/student_quiz_answers_cubit.dart';
 import '../services/socket_service.dart';
 import '../../features/chat/logic/chat_cubit/chat_cubit.dart';
 import '../../features/lecture_manager/logic/add_materials_cubit/add_materials_cubit.dart';
@@ -141,6 +143,10 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<StartStudentsQuizCubit>(
       () => StartStudentsQuizCubit(getIt()));
   getIt.registerFactory<SubmitQuizCubit>(() => SubmitQuizCubit(getIt()));
+  getIt.registerFactory<QuizDetailsCubit>(() => QuizDetailsCubit(getIt()));
+  getIt.registerFactory<StudentQuizAnswersCubit>(
+      () => StudentQuizAnswersCubit(getIt()));
+
   //toDo:------------------------------Add Materials------------------------------//
   getIt.registerLazySingleton<AddMaterialsRepo>(() => AddMaterialsRepo(dio));
   getIt.registerFactory<AddMaterialsCubit>(() => AddMaterialsCubit(getIt()));

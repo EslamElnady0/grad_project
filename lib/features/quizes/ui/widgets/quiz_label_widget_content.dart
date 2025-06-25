@@ -7,9 +7,8 @@ import 'package:grad_project/core/theme/app_text_styles.dart';
 
 class QuizLabelWidgetContent extends StatelessWidget {
   final String title;
-  final Widget trailing;
-  const QuizLabelWidgetContent(
-      {super.key, required this.trailing, required this.title});
+  final Widget? trailing;
+  const QuizLabelWidgetContent({super.key, this.trailing, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +51,7 @@ class QuizLabelWidgetContent extends StatelessWidget {
             ),
           ],
         ),
-        trailing
+        trailing ?? SizedBox.shrink()
       ],
     );
   }

@@ -19,9 +19,7 @@ class AddQuizCubit extends Cubit<AddQuizState> {
   }
 
   int selectedTime = 5;
-  int selectedQuestionsCount = 5;
   int selectedQuestionGrade = 1;
-  int finalDegree = 5;
   String? selectedDate;
   String? selectedStartTime;
   String? selectedEndTime;
@@ -31,12 +29,7 @@ class AddQuizCubit extends Cubit<AddQuizState> {
     15,
     20,
   ];
-  final List<int> questionsCount = [
-    5,
-    10,
-    15,
-    20,
-  ];
+
   final List<int> questionGrade = [
     1,
     2,

@@ -135,4 +135,16 @@ class SocketEvents {
   static const String messageSeen = 'Message-Seen';
   static const String messageSeenError = 'mmessage-seen-error';
   static const String messageSeenSuccess = 'message-seen-success';
+  static const String openChat = 'Open-Chat';
+  static const String openChatError = 'open-chat-error';
+  static const String openChatSuccess = 'open-chat-success';
+  static const String unSeen = 'Un-Seen';
+  static const String unSeenError = 'un-seen-error';
+  static const String unSeenSuccess = 'un-seen-success';
+  static const String typing = 'Typing';
+  static const String typingError = 'typing-error';
+  static const String typingSuccess = 'typing-success';
+  static const String stopTyping = 'Stop-Typing';
+  static const String stopTypingError = 'stop-typing-error';
+  static const String stopTypingSuccess = 'stop-typing-success';
 }

@@ -2465,6 +2465,36 @@ class S {
     );
   }
 
+  /// `Student Answers Review`
+  String get studentsAnswersReview {
+    return Intl.message(
+      'Student Answers Review',
+      name: 'studentsAnswersReview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Student Degree`
+  String get studentDegree {
+    return Intl.message(
+      'Student Degree',
+      name: 'studentDegree',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Students Found`
+  String get noStudentsFound {
+    return Intl.message(
+      'No Students Found',
+      name: 'noStudentsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Deadline`
   String get deadline {
     return Intl.message('Deadline', name: 'deadline', desc: '', args: []);

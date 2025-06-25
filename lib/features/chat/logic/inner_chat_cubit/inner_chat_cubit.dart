@@ -21,7 +21,7 @@ class InnerChatCubit extends Cubit<InnerChatState> {
             curve: Curves.ease,
           );
         });
-        messageSeen(event.message);
+        messageSeen(event.message.id);
       }
     });
   }
@@ -37,10 +37,10 @@ class InnerChatCubit extends Cubit<InnerChatState> {
     );
   }
 
-  void messageSeen(Message message) {
+  void messageSeen(String messageId) {
     emit(InnerChatSeeningMessage());
     _repo.messageSeen(
-      message.id,
+      messageId,
       onSuccess: (data) {
         Map<String, dynamic> rawMessage = data["data"];
         Message mgs = Message.fromJson(rawMessage);
@@ -49,6 +49,27 @@ class InnerChatCubit extends Cubit<InnerChatState> {
       },
       onFailure: (error) => emit(InnerChatError(error)),
     );
+  }
+
+  void changeTypingState(String typingState) {
+    emit(InnerChatTyping());
+    _repo.typingState(
+        //pass text or record
+        typingState: typingState,
+        onSuccess: (data) {
+          emit(InnerChatTypingSuccess());
+          //fire typing event
+        },
+        onFailure: (error) => emit(InnerChatError(error)));
+  }
+
+  void stopTyping() {
+    emit(InnerChatStopTyping());
+    _repo.stopTyping(
+        onSuccess: (data) {
+          emit(InnerChatStopTypingSuccess());
+        },
+        onFailure: (error) => emit(InnerChatError(error)));
   }
 
   @override
