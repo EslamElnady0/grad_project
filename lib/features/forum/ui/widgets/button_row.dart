@@ -21,7 +21,9 @@ class ButtonRow extends StatelessWidget {
     if ((questionModel?.answers ?? 0) == 0) {
       ScaffoldMessenger.of(context).showSnackBar(
        SnackBar(
-          content: Text(S.of(context).no_answers_available),
+          content: Text(S.of(context).no_answers_available,
+           style:  AppTextStyles.font16WhiteSemiBold.copyWith(fontSize: 14.sp),
+          ),
         ),
       );  
     } else {
