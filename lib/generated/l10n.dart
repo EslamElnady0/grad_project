@@ -28,10 +28,9 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -2490,6 +2489,46 @@ class S {
     return Intl.message(
       'No Students Found',
       name: 'noStudentsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Deadline`
+  String get deadline {
+    return Intl.message('Deadline', name: 'deadline', desc: '', args: []);
+  }
+
+  /// `preview`
+  String get preview {
+    return Intl.message('preview', name: 'preview', desc: '', args: []);
+  }
+
+  /// `Assignment Preview`
+  String get assignment_preview {
+    return Intl.message(
+      'Assignment Preview',
+      name: 'assignment_preview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Assignment`
+  String get edit_assignment {
+    return Intl.message(
+      'Edit Assignment',
+      name: 'edit_assignment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `✏️ Edit the assignment details to keep your students informed with the latest updates and requirements.`
+  String get edit_assignment_welcome_message {
+    return Intl.message(
+      '✏️ Edit the assignment details to keep your students informed with the latest updates and requirements.',
+      name: 'edit_assignment_welcome_message',
       desc: '',
       args: [],
     );

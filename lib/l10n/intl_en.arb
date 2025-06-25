@@ -314,5 +314,11 @@
   "parkingSlotsDescription": "🚗 Browse available parking slots and easily check for empty spaces",
   "studentsAnswersReview": "Student Answers Review",
   "studentDegree": "Student Degree",
-  "noStudentsFound": "No Students Found"
+  "noStudentsFound": "No Students Found",
+  "retry": "Retry",
+  "deadline": "Deadline",
+  "preview":"preview",
+  "assignment_preview": "Assignment Preview",
+  "edit_assignment": "Edit Assignment",
+  "edit_assignment_welcome_message": "✏️ Edit the assignment details to keep your students informed with the latest updates and requirements."
 }

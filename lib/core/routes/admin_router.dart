@@ -2,8 +2,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/features/annoucements/ui/views/add_annoucement_view.dart';
 import 'package:grad_project/features/annoucements/ui/views/update_annoucement_view.dart';
+import 'package:grad_project/features/assignments/presentation/views/assignment_details_view.dart';
 import 'package:grad_project/features/assignments/presentation/views/assignment_results_view.dart';
 import 'package:grad_project/features/assignments/presentation/views/create_assignment_view.dart';
+import 'package:grad_project/features/assignments/presentation/views/edit_assignment_view.dart';
+import 'package:grad_project/features/assignments/presentation/views/pdf_web_view.dart';
 import 'package:grad_project/features/assignments/presentation/views/teachers_assignments_view.dart';
 import 'package:grad_project/features/auth/ui/views/forget_password_view.dart';
 import 'package:grad_project/features/auth/ui/views/confirm_account_view.dart';
@@ -139,6 +142,15 @@ abstract class AdminRouter {
         GoRoute(
             path: StudentsAnswersReviewView.routeName,
             builder: (context, state) => const StudentsAnswersReviewView()),
+        GoRoute(
+            path: AssignmentDetailsView.routeName,
+            builder: (context, state) => const AssignmentDetailsView()),
+        GoRoute(
+            path: PdfWebViewPage.routeName,
+            builder: (context, state) => const PdfWebViewPage()),
+        GoRoute(
+            path: EditAssignmentView.routeName,
+            builder: (context, state) => const EditAssignmentView()),
       ],
     );
   }
