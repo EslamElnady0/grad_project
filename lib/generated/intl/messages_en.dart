@@ -266,7 +266,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "main_info": MessageLookupByLibrary.simpleMessage("Main information"),
     "manageTime": MessageLookupByLibrary.simpleMessage("⏰ Manage Your Time"),
     "manage_materials_and_display": MessageLookupByLibrary.simpleMessage(
-      "Manage and display materials",
+      "Manage and display materials"
     ),
     "material": MessageLookupByLibrary.simpleMessage("Material"),
     "material_description": MessageLookupByLibrary.simpleMessage(

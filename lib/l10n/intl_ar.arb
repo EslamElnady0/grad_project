@@ -313,16 +313,24 @@
   "studentsAnswersReview": "مراجعة الإجابات",
   "studentDegree": "درجة الطالب",
   "noStudentsFound": "لم يتم العثور على طلاب",
+<<<<<<< aaaa
+=======
 
+>>>>>>> development
   "deadline": "موعد التسليم",
   "preview": "عرض",
   "assignment_preview": "عرض الأسايمنت",
   "edit_assignment": "تعديل الأسايمنت",
   "edit_assignment_welcome_message": "✏️ عدّل تفاصيل الأسايمنت لتحديث المعلومات أو المواعيد أو الملفات المرفقة.",
+<<<<<<< aaaa
+  "manage_materials_and_display": "إدارة المواد والعرض",
+  "no_answers_available": "لا توجد إجابات متاحة"
+=======
   "noHallsFound": "لم يتم العثور على قاعات",
   "code": "الكود",
   "buildings": "المباني",
   
    "manage_materials_and_display": "عرض المواد وإدارتها",
    "no_answers_available": "لا توجد إجابات متاحة لهذا السؤال"
+>>>>>>> development
 }

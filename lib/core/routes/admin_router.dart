@@ -14,7 +14,10 @@ import 'package:grad_project/features/auth/ui/views/confirm_account_view.dart';
 import 'package:grad_project/features/dashboard/ui/views/registered_students_view.dart';
 import 'package:grad_project/features/forum/ui/views/answers_view.dart';
 import 'package:grad_project/features/forum/ui/views/forum_views.dart';
+<<<<<<< aaaa
+=======
 import 'package:grad_project/features/subjects/ui/views/qr_attendance_view.dart';
+>>>>>>> development
 import 'package:grad_project/features/map/presentation/views/internal_map_view.dart';
 import 'package:grad_project/features/profile/presentation/views/profile_view.dart';
 import 'package:grad_project/features/quizes/ui/views/add_quiz_view.dart';
@@ -22,12 +25,20 @@ import 'package:grad_project/features/quizes/ui/views/quiz_details_view.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_view.dart';
 import 'package:grad_project/features/quizes/ui/views/update_quiz_view.dart';
 import 'package:grad_project/features/profile/presentation/views/edit_profile_view.dart';
+import 'package:grad_project/features/subjects/ui/views/add_lecture_view.dart';
+import 'package:grad_project/features/subjects/ui/views/qr_attendance_view.dart';
 import 'package:grad_project/features/weekly_schedule/ui/screens/weekly_schedule_view.dart';
 import '../../features/auth/ui/views/auth_view.dart';
 import '../../features/chat/ui/views/chat_view.dart';
 import '../../features/home/ui/cubit/bottom_nav_bar_cubit.dart';
 import '../../features/home/ui/views/home_view.dart';
+<<<<<<< aaaa
+import '../../features/parking/ui/views/parking_view.dart';
+import '../../features/quizes/ui/views/quiz_results_view.dart';
+import '../../features/quizes/ui/views/students_answers_review_view.dart';
+=======
 import '../../features/subjects/ui/views/add_lecture_view.dart';
+>>>>>>> development
 import '../../features/quizes/ui/views/teacher_quizzes_view.dart';
 import '../../features/subjects/ui/views/materials_view.dart';
 
@@ -131,12 +142,38 @@ abstract class AdminRouter {
         GoRoute(
             path: EditProfileView.routeName,
             builder: (context, state) => const EditProfileView()),
+<<<<<<< aaaa
+        GoRoute(
+            path: ParkingView.routeName,
+            builder: (context, state) => const ParkingView()),
+        GoRoute(
+            path: QuizResultsView.routeName,
+            builder: (context, state) => const QuizResultsView()),
+        GoRoute(
+            path: StudentsAnswersReviewView.routeName,
+            builder: (context, state) => const StudentsAnswersReviewView()),
+        GoRoute(
+            path: AssignmentDetailsView.routeName,
+            builder: (context, state) => const AssignmentDetailsView()),
+        GoRoute(
+            path: PdfWebViewPage.routeName,
+            builder: (context, state) => const PdfWebViewPage()),
+        GoRoute(
+            path: EditAssignmentView.routeName,
+            builder: (context, state) => const EditAssignmentView()),
+               GoRoute(
+=======
                 GoRoute(
+>>>>>>> development
           path: FullScreenImageView.routeName,
           builder: (context, state) => FullScreenImageView(
             imageUrl: state.extra as String,
           ),
+<<<<<<< aaaa
+        )
+=======
         ),
+>>>>>>> development
       ],
     );
   }
