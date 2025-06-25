@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/features/quizes/ui/models/question_data.dart';
-import '../../../../generated/l10n.dart';
 import '../../data/models/get_quiz_using_id_response.dart';
 import 'question_container.dart';
 part '../../ui/cubit/question_list_cubit/question_list_cubit.dart';

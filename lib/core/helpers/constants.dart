@@ -16,7 +16,6 @@ import 'package:grad_project/features/subjects/ui/views/lecture_manager_view.dar
 import 'package:grad_project/features/profile/presentation/views/profile_view.dart';
 import 'package:grad_project/features/quizes/ui/models/quiz_advice_model.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_management_view_body.dart';
-import 'package:grad_project/features/subjects/ui/views/lecture_manager_view.dart';
 import 'package:grad_project/features/subjects/ui/views/subjects_view.dart';
 import 'package:grad_project/features/time_schedule/presentation/views/time_schedule_view.dart';
 import '../../features/chat/data/models/get_messages_response.dart';

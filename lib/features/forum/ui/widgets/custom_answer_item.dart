@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:grad_project/core/helpers/app_assets.dart';
-import 'package:grad_project/core/networking/api_constants.dart';
 import 'package:grad_project/features/forum/data/models/question_and_answers_response_model.dart';
-import 'package:grad_project/features/forum/logic/toggle_like_cubit/toggle_like_cubit.dart';
 import 'package:grad_project/features/forum/ui/widgets/custom_like_toggle_answer.dart';
-import 'package:grad_project/features/forum/ui/widgets/custom_like_toggle_question.dart';
 import 'package:grad_project/generated/l10n.dart';
 import 'package:skeletonizer/skeletonizer.dart';
-
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
@@ -32,8 +25,8 @@ class CustomAnswerItem extends StatelessWidget {
         child: Row(
           children: [
             Expanded(
-              child:  Skeleton.leaf(
-            enabled: true,
+              child: Skeleton.leaf(
+                enabled: true,
                 child: Container(
                   decoration: BoxDecoration(
                     border: Border.all(color: AppColors.darkblue),
@@ -61,13 +54,11 @@ class CustomAnswerItem extends StatelessWidget {
               ),
             ),
             hGap(8),
-       CustomLikeToggleAnswer(
+            CustomLikeToggleAnswer(
               questionId: answerModel?.id ?? "",
               likesCount: answerModel?.likes ?? 0,
               value: answerModel?.user?.liked ?? false,
             ),
-           
-         
           ],
         ),
       ),

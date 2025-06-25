@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-<<<<<<< aaaa
-=======
-import 'package:flutter/widgets.dart';
->>>>>>> development
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/data/models/teachers_courses_response.dart';
@@ -90,14 +86,14 @@ class LectureManagerItem extends StatelessWidget {
                       icon: Image.asset(Assets.imagesQr),
                       primaryButton: true),
                   vGap(12),
-                   CustomTextAndIconButton(
+                  CustomTextAndIconButton(
                       text: S.of(context).manage_materials_and_display,
                       width: double.infinity,
                       onTap: () {
-                         GoRouter.of(context).push(MaterialsView.routeName ,
-                              extra: courseData.id);
+                        GoRouter.of(context).push(MaterialsView.routeName,
+                            extra: courseData.id);
                       },
-                      icon:const Icon( Icons.library_books ,
+                      icon: const Icon(Icons.library_books,
                           color: AppColors.white),
                       primaryButton: true),
                   vGap(12),
