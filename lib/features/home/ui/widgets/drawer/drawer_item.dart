@@ -35,6 +35,8 @@ class DrawerItem extends StatelessWidget {
               aspectRatio: 1,
               child: SvgPicture.asset(
                 iconPath,
+                colorFilter:
+                    const ColorFilter.mode(AppColors.white, BlendMode.srcIn),
               ),
             ),
           ),
@@ -56,7 +58,7 @@ class DrawerItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(10.r))
           : null;
     } else if (FlavorsFunctions.isAdmin()) {
-      return index == 5
+      return index == 6
           ? BoxDecoration(
               color: AppColors.darkerBlue,
               borderRadius: BorderRadius.circular(10.r))

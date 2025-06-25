@@ -12,6 +12,7 @@ import 'package:grad_project/features/final_results/presentation/views/final_res
 import 'package:grad_project/features/forum/ui/views/forum_views.dart';
 import 'package:grad_project/features/home/ui/models/drawer_item_model.dart';
 import 'package:grad_project/features/lecture_manager/ui/screens/lecture_manager_view.dart';
+import 'package:grad_project/features/parking/ui/views/parking_view.dart';
 import 'package:grad_project/features/profile/presentation/views/profile_view.dart';
 import 'package:grad_project/features/quizes/ui/models/quiz_advice_model.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_management_view_body.dart';
@@ -184,6 +185,13 @@ class Constants {
         iconPath: Assets.imagesSvgsPerson,
         onTap: () {
           GoRouter.of(context).push(ProfileView.routeName);
+        },
+      ),
+      DrawerItemModel(
+        title: S.of(context).parkingSlots,
+        iconPath: Assets.imagesSvgsParkingIcon,
+        onTap: () {
+          GoRouter.of(context).push(ParkingView.routeName);
         },
       ),
       DrawerItemModel(

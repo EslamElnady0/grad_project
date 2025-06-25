@@ -258,6 +258,10 @@ class Assets {
   /// assets/images/svgs/paper_icon.svg
   static const String imagesSvgsPaperIcon = "assets/images/svgs/paper_icon.svg";
 
+  /// Assets for imagesSvgsParkingIcon
+  /// assets/images/svgs/parking_icon.svg
+  static const String imagesSvgsParkingIcon = "assets/images/svgs/parking_icon.svg";
+
   /// Assets for imagesSvgsPdfIcon
   /// assets/images/svgs/pdf_icon.svg
   static const String imagesSvgsPdfIcon = "assets/images/svgs/pdf_icon.svg";
