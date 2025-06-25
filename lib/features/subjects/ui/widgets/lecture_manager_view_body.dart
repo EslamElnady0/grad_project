@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/logic/all_courses_cubit/all_courses_cubit.dart';
-import 'package:grad_project/features/lecture_manager/ui/widgets/lecture_manager_item.dart';
+import 'package:grad_project/features/subjects/ui/widgets/lecture_manager_item.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../generated/l10n.dart';
