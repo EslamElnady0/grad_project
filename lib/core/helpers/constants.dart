@@ -248,19 +248,13 @@ class Constants {
   static List<Message> dummyMessages = [
     Message(
         id: "1",
-        content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd  fsdfsdffsdfsdffsdfsdf",
+        content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
         sender: Sender(id: 1, name: "John Doe", avatar: ""),
         createdAt: DateTime.now(),
         status: Status(deliveredTo: [], seenBy: [])),
     Message(
         id: "1",
         content: "Hello fsdfsdffsdfsdffsdfsdf",
-        sender: Sender(id: 1, name: "John Doe", avatar: ""),
-        createdAt: DateTime.now(),
-        status: Status(deliveredTo: [], seenBy: [])),
-    Message(
-        id: "1",
-        content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
         sender: Sender(id: 1, name: "John Doe", avatar: ""),
         createdAt: DateTime.now(),
         status: Status(deliveredTo: [], seenBy: [])),

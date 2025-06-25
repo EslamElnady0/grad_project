@@ -1,11 +1,8 @@
 import 'dart:async';
-import 'dart:developer';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/features/chat/data/models/get_messages_response.dart';
 import 'package:grad_project/features/chat/data/repos/chat_repo.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
 import '../../../../core/events/message events/new_message_event.dart';
 part 'get_latest_messages_state.dart';
 part 'get_latest_messages_cubit.freezed.dart';
@@ -36,9 +33,7 @@ class GetLatestMessagesCubit extends Cubit<GetLatestMessagesState> {
   Future<void> getLatestMessages() async {
     emit(const GetLatestMessagesState.getLatestMessagesLoading());
     _repo.openChat(
-      onSuccess: (data) {
-        log('Open chat success: $data');
-      },
+      onSuccess: (data) {},
       onFailure: (error) => emit(GetLatestMessagesFailure(error)),
     );
     final result = await _repo.getLatestMessages();

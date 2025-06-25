@@ -97,6 +97,18 @@ class ChatRepo {
     socketService.on(SocketEvents.openChatError, (error) {
       onFailure(error.toString());
     });
+    socketService.on(SocketEvents.typingSuccess, (data) {
+      onSuccess(data);
+    });
+    socketService.on(SocketEvents.typingError, (error) {
+      onFailure(error.toString());
+    });
+    socketService.on(SocketEvents.stopTypingSuccess, (data) {
+      onSuccess(data);
+    });
+    socketService.on(SocketEvents.stopTypingError, (error) {
+      onFailure(error.toString());
+    });
   }
 
   void typingState({
@@ -107,10 +119,10 @@ class ChatRepo {
     socketService.emit(SocketEvents.typing, {
       "type": typingState,
     });
-    socketService.on(SocketEvents.typingSuccess, (data) {
+    socketService.once(SocketEvents.typingSuccess, (data) {
       onSuccess(data);
     });
-    socketService.on(SocketEvents.typingError, (error) {
+    socketService.once(SocketEvents.typingError, (error) {
       onFailure(error.toString());
     });
   }
@@ -120,10 +132,10 @@ class ChatRepo {
     required Function(String error) onFailure,
   }) {
     socketService.emit(SocketEvents.stopTyping, {});
-    socketService.on(SocketEvents.stopTypingSuccess, (data) {
+    socketService.once(SocketEvents.stopTypingSuccess, (data) {
       onSuccess(data);
     });
-    socketService.on(SocketEvents.stopTypingError, (error) {
+    socketService.once(SocketEvents.stopTypingError, (error) {
       onFailure(error.toString());
     });
   }

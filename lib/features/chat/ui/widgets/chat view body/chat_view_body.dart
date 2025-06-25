@@ -12,6 +12,7 @@ import '../../../../../core/helpers/spacing.dart';
 import '../../../data/models/get_messages_response.dart';
 import '../../cubit/file_picker_cubit.dart';
 import 'chat_message_widget.dart';
+import 'package:grad_project/core/helpers/debouncer.dart';
 
 class ChatViewBody extends StatefulWidget {
   const ChatViewBody({super.key});
@@ -23,6 +24,9 @@ class ChatViewBody extends StatefulWidget {
 class _ChatViewBodyState extends State<ChatViewBody> {
   String userId = '';
   bool _isFetchingOlder = false;
+  final Debouncer _typingDebouncer =
+      Debouncer(delay: const Duration(milliseconds: 1000));
+  bool _isTyping = false;
 
   @override
   void initState() {
@@ -75,7 +79,6 @@ class _ChatViewBodyState extends State<ChatViewBody> {
                   if (index == messages.length) {
                     return _buildPaginationLoader();
                   }
-
                   return ChatMessageWidget(
                     message: messages[index],
                     userId: userId,
@@ -92,7 +95,22 @@ class _ChatViewBodyState extends State<ChatViewBody> {
             onSend: (text, files) {
               context.read<InnerChatCubit>().sendMessage(text, context);
             },
-            onTextChanged: (text) {},
+            onTextChanged: (text) {
+              if (text.isNotEmpty && !_isTyping) {
+                _isTyping = true;
+                context.read<InnerChatCubit>().changeTypingState(text);
+              } else if (text.isEmpty && _isTyping) {
+                _isTyping = false;
+                context.read<InnerChatCubit>().stopTyping();
+              } else if (text.isNotEmpty) {
+                _typingDebouncer.run(() {
+                  if (_isTyping) {
+                    _isTyping = false;
+                    context.read<InnerChatCubit>().stopTyping();
+                  }
+                });
+              }
+            },
           ),
         ),
       ],

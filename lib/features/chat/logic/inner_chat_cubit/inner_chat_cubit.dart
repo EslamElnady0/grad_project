@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/events/message events/new_message_event.dart';
@@ -21,7 +22,7 @@ class InnerChatCubit extends Cubit<InnerChatState> {
             curve: Curves.ease,
           );
         });
-        messageSeen(event.message);
+        messageSeen(event.message.id);
       }
     });
   }
@@ -37,10 +38,10 @@ class InnerChatCubit extends Cubit<InnerChatState> {
     );
   }
 
-  void messageSeen(Message message) {
+  void messageSeen(String messageId) {
     emit(InnerChatSeeningMessage());
     _repo.messageSeen(
-      message.id,
+      messageId,
       onSuccess: (data) {
         Map<String, dynamic> rawMessage = data["data"];
         Message mgs = Message.fromJson(rawMessage);
@@ -51,7 +52,7 @@ class InnerChatCubit extends Cubit<InnerChatState> {
     );
   }
 
-  void typingState(String typingState) {
+  void changeTypingState(String typingState) {
     emit(InnerChatTyping());
     _repo.typingState(
         //pass text or record

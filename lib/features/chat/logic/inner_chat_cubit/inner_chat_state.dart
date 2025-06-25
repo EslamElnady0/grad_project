@@ -28,3 +28,9 @@ class InnerChatTypingSuccess extends InnerChatState {}
 class InnerChatStopTyping extends InnerChatState {}
 
 class InnerChatStopTypingSuccess extends InnerChatState {}
+
+class InnerChatUserTyping extends InnerChatState {
+  final String userName;
+  final String type;
+  InnerChatUserTyping({required this.userName, required this.type});
+}
