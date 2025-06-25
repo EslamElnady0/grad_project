@@ -9,10 +9,10 @@ import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/show_snak_bar.dart';
 import 'package:grad_project/core/widgets/custom_text_and_icon_button.dart';
 import 'package:grad_project/core/widgets/custom_text_button.dart';
-import 'package:grad_project/features/lecture_manager/logic/add_materials_cubit/add_materials_cubit.dart';
-import 'package:grad_project/features/lecture_manager/ui/cubit/file_upload_cubit.dart';
+import 'package:grad_project/features/subjects/logic/add_materials/add_materials_cubit.dart';
+import 'package:grad_project/features/subjects/ui/manager/file_upload_cubit.dart';
 import 'package:grad_project/core/widgets/dispaly_list.dart';
-import 'package:grad_project/features/lecture_manager/ui/widgets/files_list_view.dart';
+import 'package:grad_project/features/subjects/ui/widgets/files_list_view.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/widgets/custom_text_form_field_and_icon.dart';

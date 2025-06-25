@@ -315,10 +315,11 @@
   "studentsAnswersReview": "مراجعة الإجابات",
   "studentDegree": "درجة الطالب",
   "noStudentsFound": "لم يتم العثور على طلاب",
-  "retry": "اعادة المحاولة",
   "deadline": "موعد التسليم",
   "preview": "عرض",
   "assignment_preview": "عرض الأسايمنت",
   "edit_assignment": "تعديل الأسايمنت",
-  "edit_assignment_welcome_message": "✏️ عدّل تفاصيل الأسايمنت لتحديث المعلومات أو المواعيد أو الملفات المرفقة."
+  "edit_assignment_welcome_message": "✏️ عدّل تفاصيل الأسايمنت لتحديث المعلومات أو المواعيد أو الملفات المرفقة.",
+  "manage_materials_and_display": "إدارة المواد والعرض",
+  "no_answers_available": "لا توجد إجابات متاحة"
 }

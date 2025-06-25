@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:grad_project/core/widgets/full_screen_image_view.dart';
 import 'package:grad_project/features/annoucements/ui/views/add_annoucement_view.dart';
 import 'package:grad_project/features/annoucements/ui/views/update_annoucement_view.dart';
 import 'package:grad_project/features/assignments/presentation/views/assignment_details_view.dart';
@@ -13,7 +14,6 @@ import 'package:grad_project/features/auth/ui/views/confirm_account_view.dart';
 import 'package:grad_project/features/dashboard/ui/views/registered_students_view.dart';
 import 'package:grad_project/features/forum/ui/views/answers_view.dart';
 import 'package:grad_project/features/forum/ui/views/forum_views.dart';
-import 'package:grad_project/features/lecture_manager/ui/screens/qr_attendance_view.dart';
 import 'package:grad_project/features/map/presentation/views/internal_map_view.dart';
 import 'package:grad_project/features/profile/presentation/views/profile_view.dart';
 import 'package:grad_project/features/quizes/ui/views/add_quiz_view.dart';
@@ -21,12 +21,13 @@ import 'package:grad_project/features/quizes/ui/views/quiz_details_view.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_view.dart';
 import 'package:grad_project/features/quizes/ui/views/update_quiz_view.dart';
 import 'package:grad_project/features/profile/presentation/views/edit_profile_view.dart';
+import 'package:grad_project/features/subjects/ui/views/add_lecture_view.dart';
+import 'package:grad_project/features/subjects/ui/views/qr_attendance_view.dart';
 import 'package:grad_project/features/weekly_schedule/ui/screens/weekly_schedule_view.dart';
 import '../../features/auth/ui/views/auth_view.dart';
 import '../../features/chat/ui/views/chat_view.dart';
 import '../../features/home/ui/cubit/bottom_nav_bar_cubit.dart';
 import '../../features/home/ui/views/home_view.dart';
-import '../../features/lecture_manager/ui/screens/add_lecture_view.dart';
 import '../../features/parking/ui/views/parking_view.dart';
 import '../../features/quizes/ui/views/quiz_results_view.dart';
 import '../../features/quizes/ui/views/students_answers_review_view.dart';
@@ -151,6 +152,12 @@ abstract class AdminRouter {
         GoRoute(
             path: EditAssignmentView.routeName,
             builder: (context, state) => const EditAssignmentView()),
+               GoRoute(
+          path: FullScreenImageView.routeName,
+          builder: (context, state) => FullScreenImageView(
+            imageUrl: state.extra as String,
+          ),
+        )
       ],
     );
   }

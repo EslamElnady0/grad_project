@@ -249,6 +249,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "main_info": MessageLookupByLibrary.simpleMessage("المعلومات الأساسية"),
     "manageTime": MessageLookupByLibrary.simpleMessage("⏰ نظم وقتك جيدًا"),
+    "manage_materials_and_display": MessageLookupByLibrary.simpleMessage(
+      "إدارة المواد والعرض",
+    ),
     "material": MessageLookupByLibrary.simpleMessage("ماتريال"),
     "material_description": MessageLookupByLibrary.simpleMessage(
       "🎓📚 كل اللي محتاجه لمادتك في مكان واحد: محاضرات، سكاشن، اسايمنتات، كويزات، فيديوهات، ميدتيرم، وامتحانات نهائية!",
@@ -293,6 +296,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "noStudentsFound": MessageLookupByLibrary.simpleMessage(
       "لم يتم العثور على طلاب",
+    ),
+    "no_answers_available": MessageLookupByLibrary.simpleMessage(
+      "لا توجد إجابات متاحة",
     ),
     "not_started": MessageLookupByLibrary.simpleMessage("لم يبدأ"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(

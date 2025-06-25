@@ -16,6 +16,24 @@ import '../../data/models/get_all_questions_response_model.dart';
 class ButtonRow extends StatelessWidget {
   const ButtonRow({super.key, this.questionModel});
   final QuestionModel? questionModel;
+
+  void _handleViewAnswers(BuildContext context) {
+    if ((questionModel?.answers ?? 0) == 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+       SnackBar(
+          content: Text(S.of(context).no_answers_available,
+           style:  AppTextStyles.font16WhiteSemiBold.copyWith(fontSize: 14.sp),
+          ),
+        ),
+      );  
+    } else {
+      GoRouter.of(context).push(
+        AnswersView.routeName,
+        extra: questionModel?.id ?? '',
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -27,13 +45,8 @@ class ButtonRow extends StatelessWidget {
         ),
 
         const Spacer(),
-        ElevatedButton.icon(
-          onPressed: () {
-            GoRouter.of(context).push(AnswersView.routeName,
-            extra: questionModel?.id?? '',
-                
-            );
-          },
+        ElevatedButton.icon(       
+          onPressed: () => _handleViewAnswers(context),
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.darkblue,
             foregroundColor: AppColors.white,
