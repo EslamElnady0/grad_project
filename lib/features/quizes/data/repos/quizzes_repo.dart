@@ -11,6 +11,7 @@ import '../data sources/quizzes_remote_data_source.dart';
 import '../models/get_quiz_using_id_response.dart';
 import '../models/get_quizzes_request_query_params_model.dart';
 import '../models/quiz_details_response.dart';
+import '../models/student_quiz_answers_response.dart';
 import '../models/submit_quiz_request_body.dart';
 import '../models/submit_quiz_response.dart';
 
@@ -118,6 +119,17 @@ class QuizzesRepo {
       String quizId) async {
     try {
       final result = await remoteDataSource.getStudentsQuizAnswers(quizId);
+      return ApiResult.success(result);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
+  Future<ApiResult<StudentQuizAnswersResponse>> getStudentQuizAnswers(
+      String quizId, String studentId) async {
+    try {
+      final result =
+          await remoteDataSource.getStudentQuizAnswers(quizId, studentId);
       return ApiResult.success(result);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));

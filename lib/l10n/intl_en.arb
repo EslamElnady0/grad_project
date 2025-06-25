@@ -311,5 +311,7 @@
   "noBuildingsFound": "No Buildings Found",
   "retry": "Retry",
   "parkingSlots": "Parking Slots",
-  "parkingSlotsDescription": "🚗 Browse available parking slots and easily check for empty spaces"
+  "parkingSlotsDescription": "🚗 Browse available parking slots and easily check for empty spaces",
+  "studentsAnswersReview": "Student Answers Review",
+  "studentDegree": "Student Degree"
 }

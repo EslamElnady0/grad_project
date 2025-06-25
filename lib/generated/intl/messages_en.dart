@@ -492,7 +492,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Take deep breaths and trust your abilities!",
     ),
     "street": MessageLookupByLibrary.simpleMessage("Street"),
+    "studentDegree": MessageLookupByLibrary.simpleMessage("Student Degree"),
     "student_grade": MessageLookupByLibrary.simpleMessage("Student Grade"),
+    "studentsAnswersReview": MessageLookupByLibrary.simpleMessage(
+      "Student Answers Review",
+    ),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage(
       "students online now",
     ),

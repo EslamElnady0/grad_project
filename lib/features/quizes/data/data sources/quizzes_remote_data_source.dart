@@ -10,6 +10,7 @@ import 'package:retrofit/retrofit.dart';
 import '../../../../core/networking/api_constants.dart';
 import '../models/get_quiz_using_id_response.dart';
 import '../models/quiz_details_response.dart';
+import '../models/student_quiz_answers_response.dart';
 part 'quizzes_remote_data_source.g.dart';
 
 //if this file is created for the first time or modified
@@ -62,5 +63,11 @@ abstract class QuizzesRemoteDataSource {
       "${ApiConstants.teachers}${ApiConstants.quizzes}${ApiConstants.answers}/{quizId}")
   Future<QuizDetailsResponse> getStudentsQuizAnswers(
     @Path("quizId") String quizId,
+  );
+  @GET(
+      "${ApiConstants.teachers}${ApiConstants.quizzes}${ApiConstants.answers}/{quizId}/{studentId}")
+  Future<StudentQuizAnswersResponse> getStudentQuizAnswers(
+    @Path("quizId") String quizId,
+    @Path("studentId") String studentId,
   );
 }

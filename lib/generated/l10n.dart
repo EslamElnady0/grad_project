@@ -2464,6 +2464,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Student Answers Review`
+  String get studentsAnswersReview {
+    return Intl.message(
+      'Student Answers Review',
+      name: 'studentsAnswersReview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Student Degree`
+  String get studentDegree {
+    return Intl.message(
+      'Student Degree',
+      name: 'studentDegree',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

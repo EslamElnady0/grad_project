@@ -16,6 +16,7 @@ class CustomWhiteDropShadowedContainer extends StatelessWidget {
     return Container(
         margin: margin,
         width: width ?? double.infinity,
+        alignment: Alignment.center,
         padding:
             padding ?? const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
         decoration: BoxDecoration(

@@ -471,7 +471,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "تنفّس بعمق وثق بقدراتك!",
     ),
     "street": MessageLookupByLibrary.simpleMessage("شارع"),
+    "studentDegree": MessageLookupByLibrary.simpleMessage("درجة الطالب"),
     "student_grade": MessageLookupByLibrary.simpleMessage("درجة الطالب"),
+    "studentsAnswersReview": MessageLookupByLibrary.simpleMessage(
+      "مراجعة الإجابات",
+    ),
     "studentsOnlineNow": MessageLookupByLibrary.simpleMessage("طالب نشط الآن"),
     "students_count": MessageLookupByLibrary.simpleMessage("عدد الطلاب:"),
     "students_management": MessageLookupByLibrary.simpleMessage("إدارة الطلاب"),
