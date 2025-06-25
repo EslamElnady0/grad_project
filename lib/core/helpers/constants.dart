@@ -6,6 +6,7 @@ import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/academic_progress_view.dart';
 import 'package:grad_project/features/annoucements/ui/views/annoucements_body.dart';
 import 'package:grad_project/features/assignments/presentation/views/assignment_home_view.dart';
+import 'package:grad_project/features/auth/ui/views/auth_view.dart';
 import 'package:grad_project/features/dashboard/ui/views/dashboard_body.dart';
 import 'package:grad_project/features/final_results/presentation/views/final_results_view.dart';
 import 'package:grad_project/features/forum/ui/views/forum_views.dart';
@@ -16,6 +17,7 @@ import 'package:grad_project/features/quizes/ui/models/quiz_advice_model.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_management_view_body.dart';
 import 'package:grad_project/features/subjects/ui/views/subjects_view.dart';
 import 'package:grad_project/features/time_schedule/presentation/views/time_schedule_view.dart';
+import '../../features/chat/data/models/get_messages_response.dart';
 import '../../features/chat/ui/views/chat_outsider_body.dart';
 import '../../features/home/ui/models/bottom_nav_bar_item_model.dart';
 import '../../features/map/presentation/views/internal_map_view.dart';
@@ -138,7 +140,10 @@ class Constants {
       DrawerItemModel(
         title: S.of(context).logout,
         iconPath: Assets.imagesSvgsLogOut,
-        onTap: () {},
+        onTap: () {
+          //toDo: remove token and apply pushAndRemoveUntil
+          GoRouter.of(context).pushReplacementNamed(AuthView.routeName);
+        },
       ),
     ];
   }
@@ -240,106 +245,97 @@ class Constants {
     const QuizManagementViewBody(),
     const AssignmentHomeView()
   ];
-  static const List<Map<String, dynamic>> dummyMessages = [
-    {
-      "sender": "أنت",
-      "message":
-          "شباب في حد عنده فكرة عن مشروع البرمجة اللي عندنا الأسبوع الجاي؟",
-      "isMe": true
-    },
-    {
-      "sender": "أحمد",
-      "message": "أنا عندي فكرة 🌟 ليه ما نعملش تطبيق لإدارة المهام؟",
-      "isMe": false
-    },
-    {
-      "sender": "أنت",
-      "message":
-          "شباب في حد عنده فكرة عن مشروع البرمجة اللي عندنا الأسبوع الجاي؟",
-      "isMe": true
-    },
-    {
-      "sender": "أحمد",
-      "message": "أنا عندي فكرة 🌟 ليه ما نعملش تطبيق لإدارة المهام؟",
-      "isMe": false
-    },
-    {
-      "sender": "أنت",
-      "message":
-          "شباب في حد عنده فكرة عن مشروع البرمجة اللي عندنا الأسبوع الجاي؟",
-      "isMe": true
-    },
-    {
-      "sender": "أحمد",
-      "message": "أنا عندي فكرة 🌟 ليه ما نعملش تطبيق لإدارة المهام؟",
-      "isMe": false
-    },
-    {
-      "sender": "أنت",
-      "message":
-          "شباب في حد عنده فكرة عن مشروع البرمجة اللي عندنا الأسبوع الجاي؟",
-      "isMe": true
-    },
-    {
-      "sender": "أحمد",
-      "message": "أنا عندي فكرة 🌟 ليه ما نعملش تطبيق لإدارة المهام؟",
-      "isMe": false
-    },
-    {
-      "sender": "أنت",
-      "message":
-          "شباب في حد عنده فكرة عن مشروع البرمجة اللي عندنا الأسبوع الجاي؟",
-      "isMe": true
-    },
-    {
-      "sender": "أحمد",
-      "message": "أنا عندي فكرة 🌟 ليه ما نعملش تطبيق لإدارة المهام؟",
-      "isMe": false
-    },
-    {
-      "sender": "أنت",
-      "message":
-          "شباب في حد عنده فكرة عن مشروع البرمجة اللي عندنا الأسبوع الجاي؟",
-      "isMe": true
-    },
-    {
-      "sender": "أحمد",
-      "message": "أنا عندي فكرة 🌟 ليه ما نعملش تطبيق لإدارة المهام؟",
-      "isMe": false
-    },
-    {
-      "sender": "أنت",
-      "message":
-          "شباب في حد عنده فكرة عن مشروع البرمجة اللي عندنا الأسبوع الجاي؟",
-      "isMe": true
-    },
-    {
-      "sender": "أحمد",
-      "message": "أنا عندي فكرة 🌟 ليه ما نعملش تطبيق لإدارة المهام؟",
-      "isMe": false
-    },
-    {
-      "sender": "أنت",
-      "message":
-          "شباب في حد عنده فكرة عن مشروع البرمجة اللي عندنا الأسبوع الجاي؟",
-      "isMe": true
-    },
-    {
-      "sender": "أحمد",
-      "message": "أنا عندي فكرة 🌟 ليه ما نعملش تطبيق لإدارة المهام؟",
-      "isMe": false
-    },
-    {
-      "sender": "أنت",
-      "message":
-          "شباب في حد عنده فكرة عن مشروع البرمجة اللي عندنا الأسبوع الجاي؟",
-      "isMe": true
-    },
-    {
-      "sender": "أحمد",
-      "message": "أنا عندي فكرة 🌟 ليه ما نعملش تطبيق لإدارة المهام؟",
-      "isMe": false
-    },
+  static List<Message> dummyMessages = [
+    Message(
+        id: "1",
+        content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd  fsdfsdffsdfsdffsdfsdf",
+        sender: Sender(id: 1, name: "John Doe", avatar: ""),
+        createdAt: DateTime.now(),
+        status: Status(deliveredTo: [], seenBy: [])),
+    Message(
+        id: "1",
+        content: "Hello fsdfsdffsdfsdffsdfsdf",
+        sender: Sender(id: 1, name: "John Doe", avatar: ""),
+        createdAt: DateTime.now(),
+        status: Status(deliveredTo: [], seenBy: [])),
+    Message(
+        id: "1",
+        content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
+        sender: Sender(id: 1, name: "John Doe", avatar: ""),
+        createdAt: DateTime.now(),
+        status: Status(deliveredTo: [], seenBy: [])),
+    Message(
+        id: "1",
+        content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
+        sender: Sender(id: 1, name: "John Doe", avatar: ""),
+        createdAt: DateTime.now(),
+        status: Status(deliveredTo: [], seenBy: [])),
+    Message(
+        id: "1",
+        content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
+        sender: Sender(id: 1, name: "John Doe", avatar: ""),
+        createdAt: DateTime.now(),
+        status: Status(deliveredTo: [], seenBy: [])),
+    Message(
+        id: "1",
+        content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
+        sender: Sender(id: 1, name: "John Doe", avatar: ""),
+        createdAt: DateTime.now(),
+        status: Status(deliveredTo: [], seenBy: [])),
+    Message(
+        id: "1",
+        content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
+        sender: Sender(id: 1, name: "John Doe", avatar: ""),
+        createdAt: DateTime.now(),
+        status: Status(deliveredTo: [], seenBy: [])),
+    Message(
+        id: "1",
+        content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
+        sender: Sender(id: 1, name: "John Doe", avatar: ""),
+        createdAt: DateTime.now(),
+        status: Status(deliveredTo: [], seenBy: [])),
+    Message(
+        id: "1",
+        content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
+        sender: Sender(id: 1, name: "John Doe", avatar: ""),
+        createdAt: DateTime.now(),
+        status: Status(deliveredTo: [], seenBy: [])),
+    Message(
+        id: "1",
+        content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
+        sender: Sender(id: 1, name: "John Doe", avatar: ""),
+        createdAt: DateTime.now(),
+        status: Status(deliveredTo: [], seenBy: [])),
+    Message(
+        id: "1",
+        content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
+        sender: Sender(id: 1, name: "John Doe", avatar: ""),
+        createdAt: DateTime.now(),
+        status: Status(deliveredTo: [], seenBy: [])),
+    Message(
+        id: "1",
+        content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
+        sender: Sender(id: 1, name: "John Doe", avatar: ""),
+        createdAt: DateTime.now(),
+        status: Status(deliveredTo: [], seenBy: [])),
+    Message(
+        id: "1",
+        content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
+        sender: Sender(id: 1, name: "John Doe", avatar: ""),
+        createdAt: DateTime.now(),
+        status: Status(deliveredTo: [], seenBy: [])),
+    Message(
+        id: "1",
+        content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
+        sender: Sender(id: 1, name: "John Doe", avatar: ""),
+        createdAt: DateTime.now(),
+        status: Status(deliveredTo: [], seenBy: [])),
+    Message(
+        id: "1",
+        content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
+        sender: Sender(id: 1, name: "John Doe", avatar: ""),
+        createdAt: DateTime.now(),
+        status: Status(deliveredTo: [], seenBy: [])),
   ];
   static const List<String> dummyAnswers = [
     "To allow multiple inheritance",

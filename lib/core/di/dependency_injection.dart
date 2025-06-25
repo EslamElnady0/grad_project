@@ -4,7 +4,9 @@ import 'package:grad_project/core/cubits/socket_cubit/global_socket_cubit.dart';
 import 'package:grad_project/core/data/data%20sources/get_course_materials_remote_data_source.dart';
 import 'package:grad_project/core/data/repos/get_course_materials_repo.dart';
 import 'package:grad_project/core/data/repos/socket_repo.dart';
+import 'package:grad_project/core/lifecycle/app_lifecycle_cubit.dart';
 import 'package:grad_project/core/logic/get_course_materials_cubit/get_course_materials_cubit.dart';
+import 'package:grad_project/core/networking/network_monitor.dart';
 import 'package:grad_project/features/annoucements/data/data%20sources/annoucements_remote_data_source.dart';
 import 'package:grad_project/features/annoucements/data/repos/annoucements_repo.dart';
 import 'package:grad_project/features/annoucements/logic/add_annoucements_cubit/add_annoucements_cubit.dart';
@@ -66,6 +68,9 @@ import '../../features/map/data/data sources/building_and_halls_remote_data_sour
 import '../../features/map/data/data sources/map_remote_data_source.dart';
 import '../../features/map/data/repos/map_repo.dart';
 import '../../features/map/presentation/view models/map cubit/map_cubit.dart';
+import '../../features/parking/data/data sources/parking_remote_data_source.dart';
+import '../../features/parking/data/repos/parking_repo.dart';
+import '../../features/parking/logic/parking_cubit/parking_cubit.dart';
 import '../services/socket_service.dart';
 import '../../features/chat/logic/chat_cubit/chat_cubit.dart';
 import '../../features/lecture_manager/logic/add_materials_cubit/add_materials_cubit.dart';
@@ -89,90 +94,161 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
   //toDo:------------------------------ Annoucements API ------------------------------//
-  getIt.registerLazySingleton<AnnoucementsRemoteDataSource>(() => AnnoucementsRemoteDataSource(dio));
-  getIt.registerLazySingleton<AnnoucementsLocalDataSource>(() => AnnoucementsLocalDataSourceImpl());
-  getIt.registerLazySingleton<AnnoucementsRepo>(() => AnnoucementsRepo(remoteDataSource: getIt(),localDataSource: getIt(),));
-  getIt.registerFactory<GetCourcesToFilterCubit>(() => GetCourcesToFilterCubit(getIt()));
-  getIt.registerFactory<AddAnnoucementsCubit>(() => AddAnnoucementsCubit(getIt(), getIt()));
-  getIt.registerFactory<GetAnnouncementCubit>(() => GetAnnouncementCubit(getIt()));
-  getIt.registerFactory<UpdateAnnoucementCubit>(() => UpdateAnnoucementCubit(getIt()));
-  getIt.registerFactory<DeleteAnnoucementCubit>(() => DeleteAnnoucementCubit(getIt()));
+  getIt.registerLazySingleton<AnnoucementsRemoteDataSource>(
+      () => AnnoucementsRemoteDataSource(dio));
+  getIt.registerLazySingleton<AnnoucementsLocalDataSource>(
+      () => AnnoucementsLocalDataSourceImpl());
+  getIt.registerLazySingleton<AnnoucementsRepo>(() => AnnoucementsRepo(
+        remoteDataSource: getIt(),
+        localDataSource: getIt(),
+      ));
+  getIt.registerFactory<GetCourcesToFilterCubit>(
+      () => GetCourcesToFilterCubit(getIt()));
+  getIt.registerFactory<AddAnnoucementsCubit>(
+      () => AddAnnoucementsCubit(getIt(), getIt()));
+  getIt.registerFactory<GetAnnouncementCubit>(
+      () => GetAnnouncementCubit(getIt()));
+  getIt.registerFactory<UpdateAnnoucementCubit>(
+      () => UpdateAnnoucementCubit(getIt()));
+  getIt.registerFactory<DeleteAnnoucementCubit>(
+      () => DeleteAnnoucementCubit(getIt()));
   //toDo:------------------------------ Courses API ------------------------------//
-  getIt.registerLazySingleton<AllCoursesRemoteDataSource>(() => AllCoursesRemoteDataSource(dio));
-  getIt.registerLazySingleton<AllCoursesRepo>(() => AllCoursesRepo(remoteDataSource: getIt(),));
+  getIt.registerLazySingleton<AllCoursesRemoteDataSource>(
+      () => AllCoursesRemoteDataSource(dio));
+  getIt.registerLazySingleton<AllCoursesRepo>(() => AllCoursesRepo(
+        remoteDataSource: getIt(),
+      ));
   getIt.registerFactory<AllCoursesCubit>(() => AllCoursesCubit(getIt()));
   //toDo:------------------------------ Courses Materials ------------------------------//
-  getIt.registerLazySingleton<GetCourseMaterialsRemoteDataSource>(() => GetCourseMaterialsRemoteDataSource(dio));
-  getIt.registerLazySingleton<GetCourseMaterialsRepo>(() => GetCourseMaterialsRepo(remoteDataSource: getIt()));
-  getIt.registerFactory<GetCourseMaterialsCubit>(() => GetCourseMaterialsCubit(getIt()));
+  getIt.registerLazySingleton<GetCourseMaterialsRemoteDataSource>(
+      () => GetCourseMaterialsRemoteDataSource(dio));
+  getIt.registerLazySingleton<GetCourseMaterialsRepo>(
+      () => GetCourseMaterialsRepo(remoteDataSource: getIt()));
+  getIt.registerFactory<GetCourseMaterialsCubit>(
+      () => GetCourseMaterialsCubit(getIt()));
   //toDo:------------------------------ Quiz Logic ----------------------------//
-  getIt.registerLazySingleton<QuizzesRemoteDataSource>(() => QuizzesRemoteDataSource(dio));
-  getIt.registerLazySingleton<QuizzesLocalDataSource>(() => QuizzesLocalDataSourceImpl());
-  getIt.registerLazySingleton<QuizzesRepo>(() => QuizzesRepo(remoteDataSource: getIt(), localDataSource: getIt()));
+  getIt.registerLazySingleton<QuizzesRemoteDataSource>(
+      () => QuizzesRemoteDataSource(dio));
+  getIt.registerLazySingleton<QuizzesLocalDataSource>(
+      () => QuizzesLocalDataSourceImpl());
+  getIt.registerLazySingleton<QuizzesRepo>(
+      () => QuizzesRepo(remoteDataSource: getIt(), localDataSource: getIt()));
   getIt.registerFactory<QuizzesCubit>(() => QuizzesCubit(getIt()));
   getIt.registerFactory<GetQuizzesCubit>(() => GetQuizzesCubit(getIt()));
   getIt.registerFactory<UpdateQuizCubit>(() => UpdateQuizCubit(getIt()));
   getIt.registerFactory<DeleteQuizCubit>(() => DeleteQuizCubit(getIt()));
   getIt.registerFactory<GetQuizByIdCubit>(() => GetQuizByIdCubit(getIt()));
-  getIt.registerFactory<StartStudentsQuizCubit>(() => StartStudentsQuizCubit(getIt()));
+  getIt.registerFactory<StartStudentsQuizCubit>(
+      () => StartStudentsQuizCubit(getIt()));
   getIt.registerFactory<SubmitQuizCubit>(() => SubmitQuizCubit(getIt()));
   //toDo:------------------------------Add Materials------------------------------//
   getIt.registerLazySingleton<AddMaterialsRepo>(() => AddMaterialsRepo(dio));
   getIt.registerFactory<AddMaterialsCubit>(() => AddMaterialsCubit(getIt()));
   //toDo:------------------------------ Get Tabel Api ------------------------------//
-  getIt.registerLazySingleton<GetTabelRemoteDataSource>(() => GetTabelRemoteDataSource(dio));
-  getIt.registerLazySingleton<GetTabelLocalDataSource>(() => GetTabelLocalDataSourceImpl());
-  getIt.registerLazySingleton<GetTabelRepo>(() => GetTabelRepo(remoteDataSource: getIt(),localDataSource: getIt(),));
+  getIt.registerLazySingleton<GetTabelRemoteDataSource>(
+      () => GetTabelRemoteDataSource(dio));
+  getIt.registerLazySingleton<GetTabelLocalDataSource>(
+      () => GetTabelLocalDataSourceImpl());
+  getIt.registerLazySingleton<GetTabelRepo>(() => GetTabelRepo(
+        remoteDataSource: getIt(),
+        localDataSource: getIt(),
+      ));
   getIt.registerFactory<GetTabelCubit>(() => GetTabelCubit(getIt()));
   //toDo:------------------------------ Assignments API ------------------------------//
-  getIt.registerLazySingleton<AssignmentsRemoteDataSource>(() => AssignmentsRemoteDataSource(dio));
-  getIt.registerLazySingleton<AssignmentsLocalDataSource>(() => AssignmentsLocalDataSourceImpl());
-  getIt.registerLazySingleton<AssignmentsRepo>(() => AssignmentsRepo(remoteDataSource: getIt(),localDataSource: getIt(),));
-  getIt.registerFactory<CreateAssignmentCubit>(() => CreateAssignmentCubit(getIt()));
+  getIt.registerLazySingleton<AssignmentsRemoteDataSource>(
+      () => AssignmentsRemoteDataSource(dio));
+  getIt.registerLazySingleton<AssignmentsLocalDataSource>(
+      () => AssignmentsLocalDataSourceImpl());
+  getIt.registerLazySingleton<AssignmentsRepo>(() => AssignmentsRepo(
+        remoteDataSource: getIt(),
+        localDataSource: getIt(),
+      ));
+  getIt.registerFactory<CreateAssignmentCubit>(
+      () => CreateAssignmentCubit(getIt()));
   getIt.registerFactory<AssignmentUploadCubit>(() => AssignmentUploadCubit());
-  getIt.registerFactory<GetAssignmentsCubit>(() => GetAssignmentsCubit(getIt()));
-  getIt.registerFactory<GetStudentsAssignmentsCubit>(() => GetStudentsAssignmentsCubit(getIt()));
-  getIt.registerFactory<UploadAssignmentSolutionCubit>(() => UploadAssignmentSolutionCubit(getIt()));
+  getIt
+      .registerFactory<GetAssignmentsCubit>(() => GetAssignmentsCubit(getIt()));
+  getIt.registerFactory<GetStudentsAssignmentsCubit>(
+      () => GetStudentsAssignmentsCubit(getIt()));
+  getIt.registerFactory<UploadAssignmentSolutionCubit>(
+      () => UploadAssignmentSolutionCubit(getIt()));
   getIt.registerFactory<EditAssignmentCubit>(() => EditAssignmentCubit(getIt()));
   //toDo:------------------------------ Questions API ------------------------------//
-  getIt.registerLazySingleton<QuestionsRemoteDataSource>(() => QuestionsRemoteDataSource(dio));
-  getIt.registerLazySingleton<QuestionsLocalDataSource>(() => QuestionsLocalDataSourceImpl());
-  getIt.registerLazySingleton<QuestionsRepo>(() => QuestionsRepo(remoteDataSource: getIt(),localDataSource: getIt(),));
-  getIt.registerFactory<GetAllQuestionsCubit>(() => GetAllQuestionsCubit(getIt()));
+  getIt.registerLazySingleton<QuestionsRemoteDataSource>(
+      () => QuestionsRemoteDataSource(dio));
+  getIt.registerLazySingleton<QuestionsLocalDataSource>(
+      () => QuestionsLocalDataSourceImpl());
+  getIt.registerLazySingleton<QuestionsRepo>(() => QuestionsRepo(
+        remoteDataSource: getIt(),
+        localDataSource: getIt(),
+      ));
+  getIt.registerFactory<GetAllQuestionsCubit>(
+      () => GetAllQuestionsCubit(getIt()));
   getIt.registerFactory<ToggleLikeCubit>(() => ToggleLikeCubit(getIt()));
-  getIt.registerFactory<QuestionAndAnswersCubit>(() => QuestionAndAnswersCubit(getIt()));
+  getIt.registerFactory<QuestionAndAnswersCubit>(
+      () => QuestionAndAnswersCubit(getIt()));
   //toDo:------------------------------ Chat API ------------------------------//
-  getIt.registerLazySingleton<ChatRemoteDataSource>(() => ChatRemoteDataSource(dio));
+  getIt.registerLazySingleton<AppLifecycleCubit>(() => AppLifecycleCubit());
+  getIt.registerLazySingleton<NetworkMonitor>(() => NetworkMonitor());
+  getIt.registerLazySingleton<ChatRemoteDataSource>(
+      () => ChatRemoteDataSource(dio));
   getIt.registerLazySingleton<SocketRepo>(() => SocketRepo(SocketService()));
-  getIt.registerLazySingleton<SocketCubit>(() => SocketCubit(getIt()));
-  getIt.registerLazySingleton<ChatLocalDataSource>(() => ChatLocalDataSourceImpl());
+  getIt.registerLazySingleton<SocketCubit>(
+      () => SocketCubit(getIt(), getIt(), getIt()));
+  getIt.registerLazySingleton<ChatLocalDataSource>(
+      () => ChatLocalDataSourceImpl());
+
   // String token = await SharedPrefHelper.getSecuredString(Constants.token);
-  getIt.registerLazySingleton<ChatRepo>(() => ChatRepo(remoteDataSource: getIt(),localDataSource: getIt(),socketService: SocketService()));
+  getIt.registerLazySingleton<ChatRepo>(() => ChatRepo(
+      remoteDataSource: getIt(),
+      localDataSource: getIt(),
+      socketService: SocketService()));
   getIt.registerFactory<ChatGroupsCubit>(() => ChatGroupsCubit(getIt()));
-  getIt.registerFactory<GetGroupDetailsCubit>(() => GetGroupDetailsCubit(getIt()));
-  getIt.registerFactory<GetLatestMessagesCubit>(() => GetLatestMessagesCubit(getIt()));
+  getIt.registerFactory<GetGroupDetailsCubit>(
+      () => GetGroupDetailsCubit(getIt()));
+  getIt.registerFactory<GetLatestMessagesCubit>(
+      () => GetLatestMessagesCubit(getIt()));
   getIt.registerFactory<InnerChatCubit>(() => InnerChatCubit(getIt()));
   //toDo:------------------------------ Profile API ------------------------------//
-  getIt.registerLazySingleton<ProfileRemoteDataSource>(() => ProfileRemoteDataSource(dio));
-  getIt.registerLazySingleton<ProfileLocalDataSource>(() => ProfileLocalDataSourceImpl());
-  getIt.registerLazySingleton<ProfileRepo>(() => ProfileRepo(remoteDataSource: getIt(),localDataSource: getIt(),));
+  getIt.registerLazySingleton<ProfileRemoteDataSource>(
+      () => ProfileRemoteDataSource(dio));
+  getIt.registerLazySingleton<ProfileLocalDataSource>(
+      () => ProfileLocalDataSourceImpl());
+  getIt.registerLazySingleton<ProfileRepo>(() => ProfileRepo(
+        remoteDataSource: getIt(),
+        localDataSource: getIt(),
+      ));
   getIt.registerFactory<GetProfileCubit>(() => GetProfileCubit(getIt()));
-  getIt.registerFactory<UpdateProfileCubit>(() => UpdateProfileCubit(getIt()),);
+  getIt.registerFactory<UpdateProfileCubit>(
+    () => UpdateProfileCubit(getIt()),
+  );
   //toDo:------------------------------ Map API ------------------------------//
-  getIt.registerLazySingleton<MapRemoteDataSource>(() => MapRemoteDataSource(dio));
-  getIt.registerLazySingleton<MapRepo>(() => MapRepo(mapRemoteDataSource: getIt(),orsApiKey: "5b3ce3597851110001cf6248b9608669b259480a99bcc69f2180c468"));
-  getIt.registerLazySingleton<BuildingAndHallsRemoteDataSource>(() => BuildingAndHallsRemoteDataSource(dio));
-  getIt.registerLazySingleton<HallsAndBuildingsRepo>(() => HallsAndBuildingsRepo(getIt()));
+  getIt.registerLazySingleton<MapRemoteDataSource>(
+      () => MapRemoteDataSource(dio));
+  getIt.registerLazySingleton<MapRepo>(() => MapRepo(
+      mapRemoteDataSource: getIt(),
+      orsApiKey: "5b3ce3597851110001cf6248b9608669b259480a99bcc69f2180c468"));
+  getIt.registerLazySingleton<BuildingAndHallsRemoteDataSource>(
+      () => BuildingAndHallsRemoteDataSource(dio));
+  getIt.registerLazySingleton<HallsAndBuildingsRepo>(
+      () => HallsAndBuildingsRepo(getIt()));
   getIt.registerFactory<MapCubit>(() => MapCubit(getIt()));
   getIt.registerFactory<GetHallsCubit>(() => GetHallsCubit(getIt()));
   getIt.registerFactory<GetBuildingsCubit>(() => GetBuildingsCubit(getIt()));
+  //toDo:------------------------------ Parking Logic ------------------------------//
+  getIt.registerLazySingleton<ParkingRemoteDataSource>(
+      () => ParkingRemoteDataSource(dio));
+  getIt.registerLazySingleton<ParkingRepo>(
+      () => ParkingRepo(remoteDataSource: getIt()));
+  getIt.registerFactory<ParkingCubit>(() => ParkingCubit(getIt()));
   //toDo:***************************************************************************//
   //********************************* UI ***************************************//
   //toDo:***************************************************************************//
   //toDo:------------------------------ Quiz UI ------------------------------//
   getIt.registerFactory<AddQuizCubit>(() => AddQuizCubit());
   getIt.registerFactory<QuestionListCubit>(() => QuestionListCubit());
-  getIt.registerFactory<GetStudentsQuizzesCubit>(() => GetStudentsQuizzesCubit(getIt()));
+  getIt.registerFactory<GetStudentsQuizzesCubit>(
+      () => GetStudentsQuizzesCubit(getIt()));
   //toDo:------------------------------Subjects Ui------------------------------
   getIt.registerLazySingleton<FileUploadCubit>(() => FileUploadCubit());
   getIt.registerFactory<SubjectsFilterCubit>(() => SubjectsFilterCubit());

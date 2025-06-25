@@ -12,6 +12,8 @@ class SocketConnected extends SocketState {}
 
 class SocketDisconnected extends SocketState {}
 
+class SocketNeedsRegisterUser extends SocketState {}
+
 class SocketMessageDelivered extends SocketState {}
 
 class SocketMessageReceived extends SocketState {}

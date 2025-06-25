@@ -14,11 +14,16 @@ class GetLatestMessagesCubit extends Cubit<GetLatestMessagesState> {
   final StreamController<List<Message>> _messagesStreamController =
       StreamController.broadcast();
   StreamSubscription? _messageSubscription;
+  StreamSubscription? _messageSeenSubscription;
 
   GetLatestMessagesCubit(this._repo)
       : super(const GetLatestMessagesState.initial()) {
     _messageSubscription = eventBus.on<NewMessageEvent>().listen((event) {
       addMessage(event.message);
+    });
+    _messageSeenSubscription =
+        eventBus.on<MessageUpdatedEvent>().listen((event) {
+      updateMessage(event.message);
     });
   }
 
@@ -68,10 +73,19 @@ class GetLatestMessagesCubit extends Cubit<GetLatestMessagesState> {
     _messagesStreamController.add(messagesList);
   }
 
+  void updateMessage(Message message) {
+    messagesList.firstWhere((element) => element.id == message.id).status =
+        message.status;
+    print('Updated message status for ID ${message.id}: ${message.status}');
+    _messagesStreamController.add(List.from(messagesList));
+    print('Emitted updated messagesList: $messagesList');
+  }
+
   @override
   Future<void> close() {
     _messagesStreamController.close();
     _messageSubscription?.cancel();
+    _messageSeenSubscription?.cancel();
     return super.close();
   }
 }

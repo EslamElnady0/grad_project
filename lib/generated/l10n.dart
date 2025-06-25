@@ -2445,6 +2445,26 @@ class S {
     return Intl.message('Retry', name: 'retry', desc: '', args: []);
   }
 
+  /// `Parking Slots`
+  String get parkingSlots {
+    return Intl.message(
+      'Parking Slots',
+      name: 'parkingSlots',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `🚗 Browse available parking slots and easily check for empty spaces`
+  String get parkingSlotsDescription {
+    return Intl.message(
+      '🚗 Browse available parking slots and easily check for empty spaces',
+      name: 'parkingSlotsDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Deadline`
   String get deadline {
     return Intl.message('Deadline', name: 'deadline', desc: '', args: []);
