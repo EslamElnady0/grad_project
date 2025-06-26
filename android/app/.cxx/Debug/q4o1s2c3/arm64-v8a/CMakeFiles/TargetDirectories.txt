@@ -1,0 +1,2 @@
+C:/Users/eslam/Desktop/projects/grad_project/android/app/.cxx/Debug/q4o1s2c3/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/eslam/Desktop/projects/grad_project/android/app/.cxx/Debug/q4o1s2c3/arm64-v8a/CMakeFiles/rebuild_cache.dir

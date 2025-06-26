@@ -8,13 +8,16 @@
             "name": "grad_project_students",
             "request": "launch",
             "program": "lib/grad_project_students_main.dart",
-            "type": "dart"
+            "type": "dart",
+            "args": ["--flavor","Student","--target","lib/grad_project_students_main.dart"]	
         },
         {
             "name": "grad_project_admin",
             "request": "launch",
             "program": "lib/grad_project_admin_main.dart",
-            "type": "dart"
+            "type": "dart",
+            "args": ["--flavor","Doctor","--target","lib/grad_project_admin_main.dart"]	
+
         },
         {
             "name": "grad_project (profile mode)",
