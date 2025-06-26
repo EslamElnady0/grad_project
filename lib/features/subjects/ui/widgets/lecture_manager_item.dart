@@ -77,15 +77,7 @@ class LectureManagerItem extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15.w),
                 child: Column(children: [
-                  CustomTextAndIconButton(
-                      text: S.of(context).qr_attendance,
-                      width: double.infinity,
-                      onTap: () {
-                        GoRouter.of(context).push(QrAttendanceView.routeName);
-                      },
-                      icon: Image.asset(Assets.imagesQr),
-                      primaryButton: true),
-                  vGap(12),
+
                   CustomTextAndIconButton(
                       text: S.of(context).manage_materials_and_display,
                       width: double.infinity,
