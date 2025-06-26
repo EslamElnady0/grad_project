@@ -45,7 +45,6 @@ class AssignmentDetailsViewBody extends StatelessWidget {
                     children: [
                       Expanded(
                         child: CustomButton(
-                          assignmentModel: assignmentModel,
                           onTap: () {
                             GoRouter.of(context).push(
                               PdfWebViewPage.routeName,
@@ -58,7 +57,6 @@ class AssignmentDetailsViewBody extends StatelessWidget {
                       hGap(20),
                       Expanded(
                         child: CustomButton(
-                            assignmentModel: assignmentModel,
                             onTap: () async {
                               await downloadPdfFile(
                                 context,
@@ -71,7 +69,6 @@ class AssignmentDetailsViewBody extends StatelessWidget {
                   ),
                   vGap(20),
                   CustomButton(
-                      assignmentModel: assignmentModel,
                       onTap: () {
                         GoRouter.of(context).push(
                           EditAssignmentView.routeName,

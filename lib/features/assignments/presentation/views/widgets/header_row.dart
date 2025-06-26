@@ -21,7 +21,7 @@ class HeaderRow extends StatelessWidget {
         hGap(10),
         CustomText(
           text: S.of(context).assignment,
-          width: 80,
+          width: 100,
         ),
         hGap(15),
         CustomText(
