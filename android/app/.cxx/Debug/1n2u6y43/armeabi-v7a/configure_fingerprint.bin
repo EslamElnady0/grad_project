@@ -2,62 +2,27 @@ C/C++ Structured LogK
 I
 GC:\flutter\packages\flutter_tools\gradle\src\main\groovy\CMakeLists.txtC
 A
-<<<<<<< aaaa
-?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	¦„ãÅú2§ õ ÜÚÏ2i
+?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	�����2� �����2i
 g
-eD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\additional_project_files.txt	¦„ãÅú2 „ãÅú2f
+eD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\additional_project_files.txt	�����2 �����2f
 d
-bD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\android_gradle_build.json	¦„ãÅú2¢ Ž„ãÅú2k
+bD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\android_gradle_build.json	�����2� �����2k
 i
-gD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\android_gradle_build_mini.json	¦„ãÅú2ÿ ‘„ãÅú2X
+gD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\android_gradle_build_mini.json	�����2� �����2X
 V
-TD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\build.ninja	¦„ãÅú2ØÓ ÖƒãÅú2\
+TD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\build.ninja	�����2�� æ���2\
 Z
-XD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\build.ninja.txt	§„ãÅú2a
+XD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\build.ninja.txt	�����2a
 _
-]D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\build_file_index.txt	§„ãÅú2
-G ¥„ãÅú2b
+]D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\build_file_index.txt	�����2G �����2b
 `
-^D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\compile_commands.json	§„ãÅú2	f
+^D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\compile_commands.json	�����2	f
 d
-bD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\compile_commands.json.bin	§„ãÅú2
+bD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\compile_commands.json.bin	�����2
 l
 j
-hD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\metadata_generation_command.txt	§„ãÅú2¹ ‘„ãÅú2_
+hD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\metadata_generation_command.txt	�����2� �����2_
 ]
-[D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\prefab_config.json	§„ãÅú2
-( ’„ãÅú2d
+[D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\prefab_config.json	�����2( �����2d
 b
-`D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\symbol_folder_index.txt	§„ãÅú2
-
-W ¥„ãÅú2
-=======
-?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	¨¢ñÁú2§ õ ÜÚÏ2i
-g
-eD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\additional_project_files.txt	¨¢ñÁú2 ÇÑ±ýå2f
-d
-bD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\android_gradle_build.json	¨¢ñÁú2¢ ØÑ±ýå2k
-i
-gD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\android_gradle_build_mini.json	¨¢ñÁú2ÿ ÛÑ±ýå2X
-V
-TD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\build.ninja	¨¢ñÁú2ØÓ ŸÐ±ýå2\
-Z
-XD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\build.ninja.txt	¨¢ñÁú2a
-_
-]D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\build_file_index.txt	¨¢ñÁú2
-G ÝÑ±ýå2b
-`
-^D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\compile_commands.json	¨¢ñÁú2	f
-d
-bD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\compile_commands.json.bin	¨¢ñÁú2
-l
-j
-hD:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\metadata_generation_command.txt	¨¢ñÁú2¹ ÜÑ±ýå2_
-]
-[D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\prefab_config.json	¨¢ñÁú2
-( ÜÑ±ýå2d
-b
-`D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\symbol_folder_index.txt	¨¢ñÁú2
-
-W ÝÑ±ýå2
->>>>>>> development
+`D:\work\flutter\grad_project\android\app\.cxx\Debug\1n2u6y43\armeabi-v7a\symbol_folder_index.txt	�����2W �����2

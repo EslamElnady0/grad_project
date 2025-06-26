@@ -1,2 +1,0 @@
-C:/Users/eslam/Desktop/grad_project/android/app/.cxx/Debug/j1x5e5j3/armeabi-v7a/CMakeFiles/edit_cache.dir
-C:/Users/eslam/Desktop/grad_project/android/app/.cxx/Debug/j1x5e5j3/armeabi-v7a/CMakeFiles/rebuild_cache.dir

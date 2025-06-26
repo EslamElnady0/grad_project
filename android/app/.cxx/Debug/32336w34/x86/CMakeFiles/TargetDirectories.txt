@@ -1,2 +1,0 @@
-C:/Users/siam/Downloads/grad_project/android/app/.cxx/Debug/32336w34/x86/CMakeFiles/edit_cache.dir
-C:/Users/siam/Downloads/grad_project/android/app/.cxx/Debug/32336w34/x86/CMakeFiles/rebuild_cache.dir
