@@ -23,8 +23,8 @@ class _AssignmentAnalysisWidgetState extends State<AssignmentAnalysisWidget> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     texts = [
-      "${S.of(context).number_of_students_who_handed_assignment} : ${widget.numberOfStudents}",
-      "${S.of(context).Average_student_scores_in_this_assignment} : ${widget.averageScore}",
+      "${S.of(context).number_of_students_who_handed_assignment} :\n ${widget.numberOfStudents}",
+      "${S.of(context).Average_student_scores_in_this_assignment} :\n ${widget.averageScore}",
     ];
   }
 

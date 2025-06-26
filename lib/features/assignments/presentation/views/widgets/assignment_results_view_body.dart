@@ -69,7 +69,7 @@ class AssignmentResultsViewBody extends StatelessWidget {
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: SizedBox(
-                width: 530.w,
+                width: 550.w,
                 child: ListView.separated(
                     itemBuilder: (context, index) {
                       if (index == 0) {

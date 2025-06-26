@@ -66,9 +66,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "answer": MessageLookupByLibrary.simpleMessage("إجابة"),
     "app_title": MessageLookupByLibrary.simpleMessage("التعليم الالكتروني"),
     "assignment": MessageLookupByLibrary.simpleMessage("الاسايمنت"),
-    "assignment_correction_welcome_message": MessageLookupByLibrary.simpleMessage(
-      "📑⚡ راجع الأسايمنتات المرسلة، قم بتقييم الإجابات، واعرض الدرجات مع إمكانية إرسال التعليقات لكل طالب.",
-    ),
+    "assignment_correction_welcome_message":
+        MessageLookupByLibrary.simpleMessage(
+          "📑⚡راجع الأسايمنتات المرسلة، قم بتقييم الإجابات.",
+        ),
     "assignment_degree": MessageLookupByLibrary.simpleMessage("درجة الأسايمنت"),
     "assignment_description": MessageLookupByLibrary.simpleMessage(
       "وصف الأسايمنت",

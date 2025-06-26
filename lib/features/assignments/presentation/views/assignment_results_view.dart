@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/di/dependency_injection.dart';
 import 'package:grad_project/core/widgets/custom_scaffold.dart';
+import 'package:grad_project/features/assignments/logic/cubits/assign_grade_cubit/assign_grade_cubit.dart';
 import 'package:grad_project/features/assignments/logic/cubits/get_assignments_answers_cubit/get_assignments_answers_cubit.dart';
 import 'package:grad_project/features/assignments/presentation/views/widgets/assignments_results_bloc_builder.dart';
 
@@ -14,9 +15,16 @@ class AssignmentResultsView extends StatelessWidget {
   Widget build(BuildContext context) {
     final assignmentId = GoRouterState.of(context).extra as int?;
     return CustomScaffold(
-      body: BlocProvider(
-        create: (context) => getIt<GetAssignmentsAnswersCubit>()
-          ..getAssignmentsAnswers(assignmentId!),
+      body: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => getIt<GetAssignmentsAnswersCubit>()
+              ..getAssignmentsAnswers(assignmentId!),
+          ),
+          BlocProvider(
+            create: (context) => getIt<AssignGradeCubit>(),
+          ),
+        ],
         child: const AssignmentResultsBlocBuilder(),
       ),
     );
