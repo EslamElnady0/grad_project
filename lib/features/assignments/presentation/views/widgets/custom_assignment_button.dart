@@ -23,7 +23,8 @@ class CustomAssignmentButton extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         isDone
-            ? GoRouter.of(context).push(AssignmentResultsView.routeName)
+            ? GoRouter.of(context).push(AssignmentResultsView.routeName,
+                extra: assignmentModel!.id)
             : {
                 GoRouter.of(context).push(AssignmentDetailsView.routeName,
                     extra: assignmentModel)

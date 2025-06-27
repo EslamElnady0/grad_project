@@ -34,7 +34,8 @@ class EvaluationRow extends StatelessWidget {
           ),
           hGap(5),
           const Expanded(
-            child: GradeSelector(),
+            // child: GradeSelector(),
+            child: SizedBox(),
           ),
         ],
       ),
