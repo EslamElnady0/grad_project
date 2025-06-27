@@ -3,6 +3,7 @@ import 'package:grad_project/core/networking/api_constants.dart';
 import 'package:grad_project/core/networking/api_result.dart';
 import 'package:grad_project/features/subjects/data/data_source/subjects_remote_data_source.dart';
 import 'package:grad_project/features/subjects/data/model/add_materials_response_model.dart';
+import 'package:grad_project/features/subjects/data/model/delete_course_material_response_model.dart';
 import '../../../../core/networking/api_error_handler.dart';
 
 class SubjectsRepo {
@@ -32,11 +33,12 @@ class SubjectsRepo {
   }
 
 
-  Future<ApiResult<void>> deleteCourseMaterial(int id) async {
+  Future<ApiResult<DeleteCourseMaterialResponseModel>> deleteCourseMaterial(int id) async {
     try {
-      await remoteDataSource.deleteCourseMaterial(id);
-      return const ApiResult.success(null);
+      final response = await remoteDataSource.deleteCourseMaterial(id);
+      return ApiResult.success(response);
     } catch (e) {
+     
       return ApiResult.failure(ApiErrorHandler.handle(e));
     }
   }

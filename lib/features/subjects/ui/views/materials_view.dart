@@ -33,12 +33,15 @@ class MaterialsView extends StatelessWidget {
       child:  CustomScaffold(
         body: BlocConsumer<DeleteCourseMaterialCubit, DeleteCourseMaterialState>(
           listener: (context, state) {
-           
+          
+            if (state is DeleteCourseMaterialSuccess) {
+              context.read<GetCourseMaterialsCubit>().get(courseId: courseId);
+            } 
           },
           builder: (context, state) {
             return CustomModalProgress(
-              isLoading:  state is DeleteCourseLoading,
-              child: MaterialsViewBody());
+              isLoading:  state is DeleteCourseMaterialLoading,
+              child: const MaterialsViewBody());
           },
         ),
       ),

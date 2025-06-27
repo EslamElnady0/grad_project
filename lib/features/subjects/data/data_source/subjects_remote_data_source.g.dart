@@ -20,22 +20,30 @@ class _SubjectsRemoteDataSource implements SubjectsRemoteDataSource {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<void> deleteCourseMaterial(int id) async {
+  Future<DeleteCourseMaterialResponseModel> deleteCourseMaterial(int id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<void>(
+    final _options = _setStreamType<DeleteCourseMaterialResponseModel>(
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'https://nextgenedu-database.azurewebsites.net/api/teachers/course-materials/${id}',
+            'teachers/course-materials/${id}',
             queryParameters: queryParameters,
             data: _data,
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    await _dio.fetch<void>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late DeleteCourseMaterialResponseModel _value;
+    try {
+      _value = DeleteCourseMaterialResponseModel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
