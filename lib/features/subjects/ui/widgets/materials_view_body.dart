@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/helpers/localizationa.dart';
+import 'package:grad_project/features/subjects/logic/delete_course_material/delete_course_material_cubit.dart';
 import 'package:grad_project/features/subjects/ui/widgets/custom_filter_button_row.dart';
 import 'package:grad_project/features/subjects/ui/widgets/custom_week_title.dart';
 import 'package:skeletonizer/skeletonizer.dart';
@@ -95,6 +96,10 @@ class MaterialsViewBody extends StatelessWidget {
     return CustomWeekTitle(
       day: weekNames[index],
       week: filteredWeek,
+      onDeleteMaterial: (item) {
+        // Use the context to call the delete function
+        context.read<DeleteCourseMaterialCubit>().deleteCourseMaterial(item.id!);
+      },
     );
   }
 

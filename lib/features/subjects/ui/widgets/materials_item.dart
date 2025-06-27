@@ -14,8 +14,9 @@ import '../../../../generated/l10n.dart';
 
 class MaterialsItem extends StatelessWidget {
   final CourseMaterialData item;
+  final VoidCallback? onDelete;
 
-  const MaterialsItem({super.key, required this.item});
+  const MaterialsItem({super.key, required this.item, this.onDelete});
 
 
   @override
@@ -73,7 +74,11 @@ class MaterialsItem extends StatelessWidget {
                   // Admin more options icon
                   if (FlavorsFunctions.isAdmin())
                     IconButton(
-                      onPressed: () => showAdminOptionsBottomSheet(context, item),
+                      onPressed: () => showAdminOptionsBottomSheet(
+                        context, 
+                        item, 
+                        onDeleteConfirmed: onDelete,
+                      ),
                       icon: const Icon(Icons.more_vert),
                       iconSize: 20,
                       padding: EdgeInsets.zero,

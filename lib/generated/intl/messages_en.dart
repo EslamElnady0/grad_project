@@ -273,6 +273,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Manage and display materials",
     ),
     "material": MessageLookupByLibrary.simpleMessage("Material"),
+    "material_deleted_successfully": MessageLookupByLibrary.simpleMessage(
+      "Material deleted successfully",
+    ),
     "material_description": MessageLookupByLibrary.simpleMessage(
       "🎓📚 Everything you need for your course in one place: lectures, sections, assignments, quizzes, videos, midterms, and final exams!",
     ),

@@ -322,5 +322,6 @@
   "buildings": "المباني",
   "manage_materials_and_display": "عرض المواد وإدارتها",
   "no_answers_available": "لا توجد إجابات متاحة لهذا السؤال",
-  "are_you_sure_you_want_to_delete_this_material": "هل أنت متأكد أنك تريد حذف هذه المادة؟"
+  "are_you_sure_you_want_to_delete_this_material": "هل أنت متأكد أنك تريد حذف هذه المادة؟" ,
+  "material_deleted_successfully": "تم حذف المادة بنجاح"
 }

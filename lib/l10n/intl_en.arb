@@ -322,5 +322,7 @@
   "assignment_preview": "Assignment Preview",
   "edit_assignment": "Edit Assignment",
   "edit_assignment_welcome_message": "✏️ Edit the assignment details to keep your students informed with the latest updates and requirements.",
-  "are_you_sure_you_want_to_delete_this_material": "Are you sure you want to delete this material?"
+  "are_you_sure_you_want_to_delete_this_material": "Are you sure you want to delete this material?",
+  "material_deleted_successfully": "Material deleted successfully"
+
 }

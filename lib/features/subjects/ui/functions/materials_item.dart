@@ -1,5 +1,6 @@
   // Function to open file
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/data/models/get_course_materials_response_model.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
@@ -216,7 +217,7 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
   }
 
   // Function to show admin options bottom sheet
-  void showAdminOptionsBottomSheet(BuildContext context, CourseMaterialData item) {
+  void showAdminOptionsBottomSheet(BuildContext context, CourseMaterialData item, {VoidCallback? onDeleteConfirmed}) {
     showModalBottomSheet(
       context: context,
       shape: RoundedRectangleBorder(
@@ -265,7 +266,7 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
                 ),
                 onTap: () {
                   Navigator.pop(context);
-                  deleteMaterial(context , item);
+                  deleteMaterial(context, item, onDeleteConfirmed: onDeleteConfirmed);
                 },
               ),
               
@@ -291,11 +292,11 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
   }
 
   // Function to delete material
-  void deleteMaterial(BuildContext context, CourseMaterialData item) {
+  void deleteMaterial(BuildContext context, CourseMaterialData item, {VoidCallback? onDeleteConfirmed}) {
     // Show confirmation dialog
     showDialog(
       context: context,
-      builder: (BuildContext context) {
+      builder: (BuildContext dialogContext) {
         return AlertDialog(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12.r),
@@ -309,7 +310,7 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
               ),
               hGap(8),
               Text(
-                S.of(context).delete,
+                S.of(dialogContext).delete,
                 style: AppTextStyles.font16BlackSemiBold.copyWith(
                   color: AppColors.redDark,
                 ),
@@ -321,14 +322,14 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                item.title ?? S.of(context).material,
+                item.title ?? S.of(dialogContext).material,
                 style: AppTextStyles.font14BlackSemiBold.copyWith(
                   color: AppColors.blackText,
                 ),
               ),
               vGap(8),
               Text(
-                S.of(context).are_you_sure_you_want_to_delete_this_material,
+                S.of(dialogContext).are_you_sure_you_want_to_delete_this_material,
                 style: AppTextStyles.font14BlackMedium.copyWith(
                   color: AppColors.gray,
                 ),
@@ -337,12 +338,12 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
           ),
           actions: [
             TextButton(
-              onPressed: () => Navigator.pop(context),
+              onPressed: () => Navigator.pop(dialogContext),
               style: TextButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
               ),
               child: Text(
-                S.of(context).cancel,
+                S.of(dialogContext).cancel,
                 style: AppTextStyles.font14BlackSemiBold.copyWith(
                   color: AppColors.primaryColordark,
                 ),
@@ -350,10 +351,20 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pop(context);
-                  final deleteCourseMaterialCubit = getIt<DeleteCourseMaterialCubit>();
-                 deleteCourseMaterialCubit.deleteCourseMaterial(item.id!);
-             //   performDeleteUsingCubit(context, item);
+                Navigator.pop(dialogContext);
+                // Call the callback if provided, otherwise use the cubit
+                if (onDeleteConfirmed != null) {
+                  onDeleteConfirmed();
+                } else {
+                  // Use the original context to access the cubit from the widget tree
+                  try {
+                    context.read<DeleteCourseMaterialCubit>().deleteCourseMaterial(item.id!);
+                  } catch (e) {
+                    // Fallback to getIt if context.read fails
+                    final deleteCourseMaterialCubit = getIt<DeleteCourseMaterialCubit>();
+                    deleteCourseMaterialCubit.deleteCourseMaterial(item.id!);
+                  }
+                }
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.redDark,
@@ -363,7 +374,7 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
                 ),
               ),
               child: Text(
-                S.of(context).delete,
+                S.of(dialogContext).delete,
                 style: AppTextStyles.font14BlackSemiBold.copyWith(
                   color: Colors.white,
                 ),
@@ -374,55 +385,3 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
       },
     );   
   }
-
-  // Function to perform delete using DeleteCourseMaterialCubit
-  // void performDeleteUsingCubit(BuildContext context, CourseMaterialData item) async {
-  //   if (item.id == null) return;
-
-  //   try {
-  //     // Get the cubit from dependency injection
-  //     final deleteCourseMaterialCubit = getIt<DeleteCourseMaterialCubit>();
-      
-  //     // Show loading toast
-  //     Fluttertoast.showToast(
-  //       msg: "Deleting material...",
-  //       toastLength: Toast.LENGTH_SHORT,
-  //       gravity: ToastGravity.BOTTOM,
-  //     );
-      
-  //     // Call the delete function
-  //     await deleteCourseMaterialCubit.deleteCourseMaterial(item.id!);
-      
-  //     // Listen to the state changes once
-  //     deleteCourseMaterialCubit.stream.take(1).listen((state) {
-  //       state.when(
-  //         initial: () {},
-  //         deleteLoading: () {
-  //           // Loading is already shown above
-  //         },
-  //         deleteSuccess: () {
-  //           Fluttertoast.showToast(
-  //             msg: "Material deleted successfully",
-  //             toastLength: Toast.LENGTH_SHORT,
-  //             gravity: ToastGravity.BOTTOM,
-  //           );
-  //           // Optionally refresh the materials list here
-  //           // This would typically involve calling a callback or using a state management solution
-  //         },
-  //         deleteFailure: (error) {
-  //           Fluttertoast.showToast(
-  //             msg: "Failed to delete material: $error",
-  //             toastLength: Toast.LENGTH_LONG,
-  //             gravity: ToastGravity.BOTTOM,
-  //           );
-  //         },
-  //       );
-  //     });
-  //   } catch (e) {
-  //     Fluttertoast.showToast(
-  //       msg: "Failed to delete material",
-  //       toastLength: Toast.LENGTH_SHORT,
-  //       gravity: ToastGravity.BOTTOM,
-  //     );
-  //   }
-  // }

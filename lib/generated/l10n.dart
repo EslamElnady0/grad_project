@@ -2564,6 +2564,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Material deleted successfully`
+  String get material_deleted_successfully {
+    return Intl.message(
+      'Material deleted successfully',
+      name: 'material_deleted_successfully',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

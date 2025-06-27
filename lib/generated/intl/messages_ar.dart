@@ -257,6 +257,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "عرض المواد وإدارتها",
     ),
     "material": MessageLookupByLibrary.simpleMessage("ماتريال"),
+    "material_deleted_successfully": MessageLookupByLibrary.simpleMessage(
+      "تم حذف المادة بنجاح",
+    ),
     "material_description": MessageLookupByLibrary.simpleMessage(
       "🎓📚 كل اللي محتاجه لمادتك في مكان واحد: محاضرات، سكاشن، اسايمنتات، كويزات، فيديوهات، ميدتيرم، وامتحانات نهائية!",
     ),

@@ -9,8 +9,14 @@ import '../manager/materials_filter_cubit.dart';
 class CustomWeekTitle extends StatelessWidget {
   final String day;
   final List<CourseMaterialData> week;
+  final Function(CourseMaterialData)? onDeleteMaterial;
 
-  const CustomWeekTitle({super.key, required this.day, required this.week});
+  const CustomWeekTitle({
+    super.key, 
+    required this.day, 
+    required this.week,
+    this.onDeleteMaterial,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +29,10 @@ class CustomWeekTitle extends StatelessWidget {
       onExpansionChanged: (expanded) {
         materialsFilterCubit.toggleExpandedTile(day);
       },
-      children: week.map((item) => MaterialsItem(item: item)).toList(),
+      children: week.map((item) => MaterialsItem(
+        item: item,
+        onDelete: onDeleteMaterial != null ? () => onDeleteMaterial!(item) : null,
+      )).toList(),
     );
   }
 }
