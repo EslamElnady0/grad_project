@@ -343,6 +343,7 @@
   },
   "week_skeleton_text": "Week One",
   "existing_file": "Existing file",
-  "new_file": "New file"
+  "new_file": "New file",
+  "onlyOneFileAllowed": "Only one file is allowed in edit mode."
 
 }

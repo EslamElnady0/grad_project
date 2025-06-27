@@ -2694,6 +2694,16 @@ class S {
   String get new_file {
     return Intl.message('New file', name: 'new_file', desc: '', args: []);
   }
+
+  /// `Only one file is allowed in edit mode.`
+  String get onlyOneFileAllowed {
+    return Intl.message(
+      'Only one file is allowed in edit mode.',
+      name: 'onlyOneFileAllowed',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

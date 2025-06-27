@@ -20,30 +20,36 @@ class FileUploadCubit extends Cubit<List<FileWithMetadata>> {
 
   bool _isPickingFiles = false;
 
-  void pickFiles() async {
-    if (_isPickingFiles) return; 
-    _isPickingFiles = true;
+void pickFiles({required bool isSingleFileMode}) async {
+  if (_isPickingFiles) return;
+  _isPickingFiles = true;
 
-    try {
-      final result = await FilePicker.platform.pickFiles(
-        type: FileType.any,
-        allowMultiple: true,
-      );
+  try {
+    final result = await FilePicker.platform.pickFiles(
+      type: FileType.any,
+      allowMultiple: !isSingleFileMode, // لو single, ميسمحش باختيار أكتر من واحد
+    );
 
-      if (result != null) {
-        final newFiles = result.files.map((file) => FileWithMetadata(
-          platformFile: file,
-          isExisting: false,
-        )).toList();
+    if (result != null) {
+      final newFiles = result.files.map((file) => FileWithMetadata(
+        platformFile: file,
+        isExisting: false,
+      )).toList();
+
+      if (isSingleFileMode) {
+        // استبدل القائمة كلها بالملف الجديد
+        emit(newFiles);
+      } else {
         emit([...state, ...newFiles]);
       }
-    } catch (e) {
-      // Handle any exceptions if needed
-      print('Error picking files: $e');
-    } finally {
-      _isPickingFiles = false; // Reset the flag
     }
+  } catch (e) {
+    print('Error picking files: $e');
+  } finally {
+    _isPickingFiles = false;
   }
+}
+
 
   void removeFile(int index) {
     final updatedFiles = List<FileWithMetadata>.from(state);

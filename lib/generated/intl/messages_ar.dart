@@ -345,6 +345,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "في الوقت المحدد (تلقائي).",
     ),
     "once": MessageLookupByLibrary.simpleMessage("مرة واحدة"),
+    "onlyOneFileAllowed": MessageLookupByLibrary.simpleMessage(
+      "مسموح برفع ملف واحد فقط في وضع التعديل",
+    ),
     "open": MessageLookupByLibrary.simpleMessage("فتح"),
     "other": MessageLookupByLibrary.simpleMessage("اخري"),
     "parkingSlots": MessageLookupByLibrary.simpleMessage("مواقف السيارات"),

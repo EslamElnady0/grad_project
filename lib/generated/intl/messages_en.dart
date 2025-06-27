@@ -359,6 +359,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "onMap": MessageLookupByLibrary.simpleMessage("On Map"),
     "on_time": MessageLookupByLibrary.simpleMessage("On time (automatic)."),
     "once": MessageLookupByLibrary.simpleMessage("Once"),
+    "onlyOneFileAllowed": MessageLookupByLibrary.simpleMessage(
+      "Only one file is allowed in edit mode.",
+    ),
     "open": MessageLookupByLibrary.simpleMessage("open"),
     "other": MessageLookupByLibrary.simpleMessage("Other"),
     "parkingSlots": MessageLookupByLibrary.simpleMessage("Parking Slots"),

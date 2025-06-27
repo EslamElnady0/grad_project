@@ -9,8 +9,8 @@ import '../../../../generated/l10n.dart';
 import '../manager/file_upload_cubit.dart';
 
 class FileUploadDialog extends StatelessWidget {
-  const FileUploadDialog({super.key});
-
+  const FileUploadDialog({super.key, required this.isSingleFileMode});
+final bool isSingleFileMode;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<FileUploadCubit, List<FileWithMetadata>>(
@@ -40,7 +40,7 @@ class FileUploadDialog extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 GestureDetector(
-                  onTap: fileUploadCubit.pickFiles,
+                  onTap: () => fileUploadCubit.pickFiles(isSingleFileMode: isSingleFileMode),
                   child: Container(
                     width: double.infinity,
                     padding: const EdgeInsets.symmetric(vertical: 24),

@@ -195,12 +195,13 @@ class _LectureFormContentState extends State<LectureFormContent> {
             style: AppTextStyles.font17WhiteSemiBold,
             text: S.of(context).uploadFiles,
             onTap: () {
-              showFileUploadDialog(context);
+ 
+  showFileUploadDialog(context, widget.isEdit);
             },
             icon: SvgPicture.asset(Assets.imagesSvgsPdfIcon),
             primaryButton: false,
           ),
-          const FilesListView(),
+          const FilesListView(), 
           vGap(12),
           Align(
             alignment: Alignment.centerLeft,
@@ -232,7 +233,7 @@ class _LectureFormContentState extends State<LectureFormContent> {
     // Get only new files for upload
     final newFiles = context.read<FileUploadCubit>().getNewFiles();
     
-    if (newFiles.isNotEmpty || widget.isEdit) {
+    if (newFiles.isNotEmpty ) {
       if (widget.isEdit && widget.materialModel != null) {
         await context.read<AddMaterialsCubit>().updateMaterials(
               materialId: widget.materialModel!.id!,
@@ -259,16 +260,16 @@ class _LectureFormContentState extends State<LectureFormContent> {
   }
 }
 
-void showFileUploadDialog(BuildContext context) {
+void showFileUploadDialog(BuildContext context, bool isSingleFileMode ) {
   showDialog(
     context: context,
     barrierDismissible: true,
     builder: (BuildContext dialogContext) {
       return BlocProvider.value(
         value: context.read<FileUploadCubit>(),
-        child: const Dialog(
+        child: Dialog(
           backgroundColor: Colors.transparent,
-          child: FileUploadDialog(),
+          child: FileUploadDialog( isSingleFileMode: isSingleFileMode ),
         ),
       );
     },

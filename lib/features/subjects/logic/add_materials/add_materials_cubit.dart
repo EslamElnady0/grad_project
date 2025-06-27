@@ -77,7 +77,7 @@ FormData data = FormData();
 for (var file in selectedFiles) {
   if (file.path != null) {
     data.files.add(MapEntry(
-      'material[]',
+      'material',
       MultipartFile.fromFileSync(file.path!, filename: file.name),
     ));
   }

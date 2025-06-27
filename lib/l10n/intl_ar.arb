@@ -343,5 +343,6 @@
   },
   "week_skeleton_text": "الأسبوع الأول",
   "existing_file": "ملف موجود",
-  "new_file": "ملف جديد"
+  "new_file": "ملف جديد",
+  "onlyOneFileAllowed": "مسموح برفع ملف واحد فقط في وضع التعديل"
 }
