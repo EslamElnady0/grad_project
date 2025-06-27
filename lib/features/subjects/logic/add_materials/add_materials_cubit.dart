@@ -7,7 +7,7 @@ part 'add_materials_state.dart';
 part 'add_materials_cubit.freezed.dart';
 
 class AddMaterialsCubit extends Cubit<AddMaterialsState> {
-  final AddMaterialsRepo _repo;
+  final SubjectsRepo _repo;
   AddMaterialsCubit(this._repo) : super(const AddMaterialsState.initial());
   Future<void> addMaterials(
       {required int id,

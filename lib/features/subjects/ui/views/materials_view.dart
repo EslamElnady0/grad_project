@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/di/dependency_injection.dart';
+import 'package:grad_project/core/flavors/flavors_functions.dart';
 import 'package:grad_project/core/logic/get_course_materials_cubit/get_course_materials_cubit.dart';
+import 'package:grad_project/core/widgets/custom_modal_progress.dart';
 import 'package:grad_project/core/widgets/custom_scaffold.dart';
+import 'package:grad_project/features/subjects/logic/delete_course_material/delete_course_material_cubit.dart';
 import 'package:grad_project/features/subjects/ui/widgets/materials_view_body.dart';
 
 import '../manager/materials_filter_cubit.dart';
@@ -17,15 +20,27 @@ class MaterialsView extends StatelessWidget {
     print("courseId/////////////////////: $courseId");
     return MultiBlocProvider(
       providers: [
+        if (FlavorsFunctions.isAdmin())
+          BlocProvider(
+            create: (context) => getIt<DeleteCourseMaterialCubit>(),
+          ),
         BlocProvider(
           create: (context) => MaterialsFilterCubit(),
         ),
         BlocProvider.value(
-          value:  getIt<GetCourseMaterialsCubit>()..get(courseId: courseId)
-        ),
+            value: getIt<GetCourseMaterialsCubit>()..get(courseId: courseId)),
       ],
-      child: const CustomScaffold(
-        body: MaterialsViewBody(),
+      child:  CustomScaffold(
+        body: BlocConsumer<DeleteCourseMaterialCubit, DeleteCourseMaterialState>(
+          listener: (context, state) {
+           
+          },
+          builder: (context, state) {
+            return CustomModalProgress(
+              isLoading:  state is DeleteCourseLoading,
+              child: MaterialsViewBody());
+          },
+        ),
       ),
     );
   }

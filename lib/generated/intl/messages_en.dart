@@ -67,6 +67,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "announcements": MessageLookupByLibrary.simpleMessage("Announcements"),
     "answer": MessageLookupByLibrary.simpleMessage("Answer"),
     "app_title": MessageLookupByLibrary.simpleMessage("E-Learning"),
+    "are_you_sure_you_want_to_delete_this_material":
+        MessageLookupByLibrary.simpleMessage(
+          "Are you sure you want to delete this material?",
+        ),
     "assignment": MessageLookupByLibrary.simpleMessage("Assignment"),
     "assignment_correction_welcome_message": MessageLookupByLibrary.simpleMessage(
       "📑⚡ Review submitted assignments, evaluate answers, and view grades with the ability to send comments to each student.",

@@ -1,15 +1,17 @@
 import 'package:dio/dio.dart';
 import 'package:grad_project/core/networking/api_constants.dart';
 import 'package:grad_project/core/networking/api_result.dart';
+import 'package:grad_project/features/subjects/data/data_source/subjects_remote_data_source.dart';
+import 'package:grad_project/features/subjects/data/model/add_materials_response_model.dart';
 import '../../../../core/networking/api_error_handler.dart';
 
-class AddMaterialsRepo {
+class SubjectsRepo {
   final Dio dio;
-
-  AddMaterialsRepo(this.dio);
+  final SubjectsRemoteDataSource remoteDataSource ;
+  SubjectsRepo({required this.dio , required this.remoteDataSource});  
   Future<ApiResult<AddMaterialsResponseModel>> upload({
     required int id,
-    required FormData data,
+    required FormData data, 
     required void Function(int sentBytes, int totalBytes)? onProgress,
   }) async {
     try {
@@ -28,11 +30,14 @@ class AddMaterialsRepo {
       return ApiResult.failure(ApiErrorHandler.handle(e));
     }
   }
-}
 
-class AddMaterialsResponseModel {
-  final int code;
-  final String message;
 
-  AddMaterialsResponseModel({required this.code, required this.message});
+  Future<ApiResult<void>> deleteCourseMaterial(int id) async {
+    try {
+      await remoteDataSource.deleteCourseMaterial(id);
+      return const ApiResult.success(null);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
 }

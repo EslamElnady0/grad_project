@@ -65,6 +65,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "announcements": MessageLookupByLibrary.simpleMessage("الأخبار المعلنه"),
     "answer": MessageLookupByLibrary.simpleMessage("إجابة"),
     "app_title": MessageLookupByLibrary.simpleMessage("التعليم الالكتروني"),
+    "are_you_sure_you_want_to_delete_this_material":
+        MessageLookupByLibrary.simpleMessage(
+          "هل أنت متأكد أنك تريد حذف هذه المادة؟",
+        ),
     "assignment": MessageLookupByLibrary.simpleMessage("الاسايمنت"),
     "assignment_correction_welcome_message": MessageLookupByLibrary.simpleMessage(
       "📑⚡ راجع الأسايمنتات المرسلة، قم بتقييم الإجابات، واعرض الدرجات مع إمكانية إرسال التعليقات لكل طالب.",
