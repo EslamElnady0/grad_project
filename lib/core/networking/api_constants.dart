@@ -30,4 +30,5 @@ class ApiConstants {
   static const String directions = "directions";
   static const String buildings = "buildings";
   static const String halls = "halls";
+  static const String answer = "/answer";
 }

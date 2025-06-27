@@ -2190,10 +2190,10 @@ class S {
     );
   }
 
-  /// `📑⚡ Review submitted assignments, evaluate answers, and view grades with the ability to send comments to each student.`
+  /// `📑⚡ Review submitted assignments, evaluate answers, and view grades`
   String get assignment_correction_welcome_message {
     return Intl.message(
-      '📑⚡ Review submitted assignments, evaluate answers, and view grades with the ability to send comments to each student.',
+      '📑⚡ Review submitted assignments, evaluate answers, and view grades',
       name: 'assignment_correction_welcome_message',
       desc: '',
       args: [],

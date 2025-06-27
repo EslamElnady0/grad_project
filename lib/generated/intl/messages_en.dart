@@ -72,9 +72,10 @@ class MessageLookup extends MessageLookupByLibrary {
           "Are you sure you want to delete this material?",
         ),
     "assignment": MessageLookupByLibrary.simpleMessage("Assignment"),
-    "assignment_correction_welcome_message": MessageLookupByLibrary.simpleMessage(
-      "📑⚡ Review submitted assignments, evaluate answers, and view grades with the ability to send comments to each student.",
-    ),
+    "assignment_correction_welcome_message":
+        MessageLookupByLibrary.simpleMessage(
+          "📑⚡ Review submitted assignments, evaluate answers, and view grades",
+        ),
     "assignment_degree": MessageLookupByLibrary.simpleMessage(
       "Assignment Degree",
     ),

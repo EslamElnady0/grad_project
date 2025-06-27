@@ -5,8 +5,11 @@ import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/generated/l10n.dart';
 
 class AssignmentAnalysisWidget extends StatefulWidget {
-  const AssignmentAnalysisWidget({super.key});
+  const AssignmentAnalysisWidget(
+      {super.key, required this.numberOfStudents, required this.averageScore});
 
+  final int numberOfStudents;
+  final double averageScore;
   @override
   State<AssignmentAnalysisWidget> createState() =>
       _AssignmentAnalysisWidgetState();
@@ -20,8 +23,8 @@ class _AssignmentAnalysisWidgetState extends State<AssignmentAnalysisWidget> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     texts = [
-      "${S.of(context).number_of_students_who_handed_assignment} : 50",
-      "${S.of(context).Average_student_scores_in_this_assignment} : 8"
+      "${S.of(context).number_of_students_who_handed_assignment} :\n ${widget.numberOfStudents}",
+      "${S.of(context).Average_student_scores_in_this_assignment} :\n ${widget.averageScore}",
     ];
   }
 
@@ -48,6 +51,7 @@ class _AssignmentAnalysisWidgetState extends State<AssignmentAnalysisWidget> {
             child: AnimatedSwitcher(
               duration: const Duration(milliseconds: 300),
               child: Text(
+                textAlign: TextAlign.center,
                 texts[index],
                 key: ValueKey(index),
                 style: AppTextStyles.font14DarkerBlueSemiBold,

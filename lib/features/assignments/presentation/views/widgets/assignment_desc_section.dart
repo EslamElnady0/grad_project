@@ -7,8 +7,16 @@ import 'package:grad_project/features/assignments/data/models/get_assignments_re
 import 'package:grad_project/generated/l10n.dart';
 
 class AssignmentDescSection extends StatelessWidget {
-  const AssignmentDescSection({super.key, required this.assignmentModel});
-  final AssignmentModel assignmentModel;
+  const AssignmentDescSection(
+      {super.key,
+      this.assignmentModel,
+      this.description,
+      this.date,
+      this.time});
+  final AssignmentModel? assignmentModel;
+  final String? description;
+  final String? date;
+  final String? time;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -24,13 +32,13 @@ class AssignmentDescSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                assignmentModel.description,
+                assignmentModel?.description ?? description ?? description!,
                 style: AppTextStyles.font12BlackSemiBold,
               ),
               const Divider(),
               Text(
-                "${S.of(context).deadline} : ${FormatDateAndTimeHelpers.formatDateToDayFullMonthAndYear(assignmentModel.date, context)}\nالساعة ${FormatDateAndTimeHelpers.convertTo12HourFormat(
-                  assignmentModel.time.substring(0, 5),
+                "${S.of(context).deadline} : ${FormatDateAndTimeHelpers.formatDateToDayFullMonthAndYear(assignmentModel?.date??date??date!, context)}\nالساعة ${FormatDateAndTimeHelpers.convertTo12HourFormat(
+                  assignmentModel?.time??time??time!.substring(0, 5),
                 )}",
                 style: AppTextStyles.font12BlackSemiBold,
               ),
