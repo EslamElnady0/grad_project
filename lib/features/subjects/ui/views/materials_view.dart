@@ -17,9 +17,9 @@ class MaterialsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print( "courseId************************************* $courseId");
     return MultiBlocProvider(
       providers: [
-        if (FlavorsFunctions.isAdmin())
           BlocProvider(
             create: (context) => getIt<DeleteCourseMaterialCubit>(),
           ),
