@@ -1,8 +1,8 @@
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:grad_project/core/data/models/get_course_materials_response_model.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/helpers/localizationa.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
@@ -24,20 +24,114 @@ class LectureFormContent extends StatefulWidget {
   const LectureFormContent({
     super.key,
     required this.id,
+    this.isEdit = false,
+    this.materialModel,
   });
   final int id;
+  final bool isEdit;
+  final CourseMaterialData? materialModel;
   @override
   State<LectureFormContent> createState() => _LectureFormContentState();
 }
 
 class _LectureFormContentState extends State<LectureFormContent> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final TextEditingController titleController = TextEditingController();
 
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
   int weekNumber = 0;
   int type = 0;
   late String title;
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.isEdit && widget.materialModel != null) {
+      _initializeFormWithMaterialData();
+    }
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Load existing files when in edit mode
+    if (widget.isEdit && widget.materialModel != null) {
+      _loadExistingFiles();
+    }
+  }
+
+  void _loadExistingFiles() {
+    final material = widget.materialModel!;
+    if (material.file != null && material.file!.isNotEmpty) {
+      print('Loading existing files: ${material.file}');
+      // Assuming file URLs are comma-separated or single URL
+      final fileUrls = material.file!.split(',').map((url) => url.trim()).where((url) => url.isNotEmpty).toList();
+      if (fileUrls.isNotEmpty) {
+        print('File URLs: $fileUrls');
+        context.read<FileUploadCubit>().loadExistingFiles(fileUrls);
+      }
+    } else {
+      print('No existing files found');
+    }
+  }
+
+  void _initializeFormWithMaterialData() {
+    final material = widget.materialModel!;
+    titleController.text = material.title ?? '';
+    title = material.title ?? '';
+    
+    // Parse week number from material.week
+    if (material.week != null) {
+      final weekStr = material.week!.replaceAll(RegExp(r'[^0-9]'), '');
+      weekNumber = int.tryParse(weekStr) ?? 1;
+    } else {
+      weekNumber = 1;
+    }
+    
+    // Parse type from material.type
+    if (material.type != null) {
+      final materialType = material.type!.toLowerCase();
+      if (materialType.contains('lecture')) {
+        type = 0; // lecture
+      } else if (materialType.contains('section')) {
+        type = 1; // section
+      } else {
+        type = 2; // other
+      }
+    } else {
+      type = 0;
+    }
+  }
+
+  String? _getInitialWeekValue(BuildContext context) {
+    if (widget.isEdit && weekNumber > 0) {
+      final weekNames = getLocalizedWeekNames(
+        List.generate(14, (index) => index + 1), 
+        context
+      );
+      // weekNumber is 1-based, array is 0-based
+      if (weekNumber <= weekNames.length) {
+        return weekNames[weekNumber - 1];
+      }
+    }
+    return null;
+  }
+
+  String? _getInitialTypeValue(BuildContext context) {
+    if (widget.isEdit) {
+      if (type == 0) return S.of(context).lecture;
+      if (type == 1) return S.of(context).section;
+      if (type == 2) return S.of(context).other;
+    }
+    return null;
+  }
+
+  @override
+  void dispose() {
+    titleController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -54,6 +148,7 @@ class _LectureFormContentState extends State<LectureFormContent> {
           ),
           vGap(5),
           CustomTextFormFieldAndicon(
+              controller: titleController,
               hintText: S.of(context).lectureTitleHint,
               onSaved: (value) {
                 title = value!;
@@ -69,8 +164,9 @@ class _LectureFormContentState extends State<LectureFormContent> {
           DisplayList(
             listValue: getLocalizedWeekNames(
                 List.generate(14, (index) => index + 1), context),
+            initialValue: _getInitialWeekValue(context),
             onSelected: (selectedWeek) {
-              weekNumber = selectedWeek;
+              weekNumber = selectedWeek + 1;
             },
           ),
           vGap(12),
@@ -86,6 +182,9 @@ class _LectureFormContentState extends State<LectureFormContent> {
               S.of(context).section,
               S.of(context).other
             ],
+            initialValue: widget.isEdit 
+                ? _getInitialTypeValue(context)
+                : null,
             onSelected: (selectedWeek) {
               type = selectedWeek;
             },
@@ -109,7 +208,7 @@ class _LectureFormContentState extends State<LectureFormContent> {
               primary: true,
               width: 100.w,
               fontSize: 18,
-              text: S.of(context).publish,
+              text: widget.isEdit ? S.of(context).edit : S.of(context).publish,
               onTap: () async {
                 if (formKey.currentState!.validate()) {
                   formKey.currentState!.save();
@@ -129,15 +228,28 @@ class _LectureFormContentState extends State<LectureFormContent> {
   }
 
   Future<void> callCubit(
-      List<PlatformFile> selectedFiles, BuildContext context) async {
-    if (selectedFiles.isNotEmpty) {
-      await context.read<AddMaterialsCubit>().addMaterials(
-            id: widget.id,
-            type: type,
-            selectedFiles: selectedFiles,
-            title: title,
-            weekNumber: weekNumber,
-          );
+      List<FileWithMetadata> selectedFiles, BuildContext context) async {
+    // Get only new files for upload
+    final newFiles = context.read<FileUploadCubit>().getNewFiles();
+    
+    if (newFiles.isNotEmpty || widget.isEdit) {
+      if (widget.isEdit && widget.materialModel != null) {
+        await context.read<AddMaterialsCubit>().updateMaterials(
+              materialId: widget.materialModel!.id!,
+              type: type,
+              selectedFiles: newFiles,
+              title: title,
+              weekNumber: weekNumber,
+            );
+      } else {
+        await context.read<AddMaterialsCubit>().addMaterials(
+              id: widget.id,
+              type: type,
+              selectedFiles: newFiles,
+              title: title,
+              weekNumber: weekNumber,
+            );
+      }
     } else {
       showSnakBar(
         context: context,

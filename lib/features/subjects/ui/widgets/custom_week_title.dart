@@ -10,12 +10,14 @@ class CustomWeekTitle extends StatelessWidget {
   final String day;
   final List<CourseMaterialData> week;
   final Function(CourseMaterialData)? onDeleteMaterial;
+  final int? courseId;
 
   const CustomWeekTitle({
     super.key, 
     required this.day, 
     required this.week,
     this.onDeleteMaterial,
+    this.courseId,
   });
 
   @override
@@ -31,6 +33,7 @@ class CustomWeekTitle extends StatelessWidget {
       },
       children: week.map((item) => MaterialsItem(
         item: item,
+        courseId: courseId,
         onDelete: onDeleteMaterial != null ? () => onDeleteMaterial!(item) : null,
       )).toList(),
     );

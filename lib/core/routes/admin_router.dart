@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:grad_project/core/data/models/get_course_materials_response_model.dart';
 import 'package:grad_project/core/widgets/full_screen_image_view.dart';
 import 'package:grad_project/features/annoucements/ui/views/add_annoucement_view.dart';
 import 'package:grad_project/features/annoucements/ui/views/update_annoucement_view.dart';
@@ -104,9 +105,21 @@ abstract class AdminRouter {
             builder: (context, state) => const QrAttendanceView()),
         GoRoute(
             path: AddLectureView.routeName,
-            builder: (context, state) => AddLectureView(
-                  id: state.extra as int,
-                )),
+            builder: (context, state) {
+              final extra = state.extra;
+              if (extra is Map<String, dynamic>) {
+                return AddLectureView(
+                  id: extra['courseId'] as int,
+                  isEdit: extra['isEdit'] as bool? ?? false,
+                  materialModel: extra['materialModel'] as CourseMaterialData?,
+                );
+              } else {
+                // Fallback for backward compatibility
+                return AddLectureView(
+                  id: extra as int,
+                );
+              }
+            }),
         GoRoute(
             path: AddQuizView.routeName,
             builder: (context, state) => const AddQuizView()),

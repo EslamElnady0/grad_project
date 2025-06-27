@@ -322,6 +322,26 @@
   "buildings": "المباني",
   "manage_materials_and_display": "عرض المواد وإدارتها",
   "no_answers_available": "لا توجد إجابات متاحة لهذا السؤال",
-  "are_you_sure_you_want_to_delete_this_material": "هل أنت متأكد أنك تريد حذف هذه المادة؟" ,
-  "material_deleted_successfully": "تم حذف المادة بنجاح"
+  "are_you_sure_you_want_to_delete_this_material": "هل أنت متأكد أنك تريد حذف هذه المادة؟",
+  "material_deleted_successfully": "تم حذف المادة بنجاح",
+  "no_file_url_available": "لا يوجد رابط للملف",
+  "error_opening_file": "خطأ في فتح الملف",
+  "file_viewer": "عارض الملف",
+  "cannot_open_file": "لا يمكن فتح الملف",
+  "starting_download": "بدء التحميل...",
+  "storage_permission_required": "مطلوب إذن التخزين",
+  "file_downloaded_successfully": "تم تحميل الملف بنجاح",
+  "cannot_access_downloads_folder": "لا يمكن الوصول إلى مجلد التحميلات",
+  "download_failed": "فشل التحميل",
+  "downloading_progress": "تحميل... {progress}%",
+  "@downloading_progress": {
+    "placeholders": {
+      "progress": {
+        "type": "int"
+      }
+    }
+  },
+  "week_skeleton_text": "الأسبوع الأول",
+  "existing_file": "ملف موجود",
+  "new_file": "ملف جديد"
 }

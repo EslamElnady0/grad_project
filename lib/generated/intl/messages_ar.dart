@@ -20,6 +20,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
+  static String m0(progress) => "تحميل... ${progress}%";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "Answers": MessageLookupByLibrary.simpleMessage("الإجابات"),
@@ -105,6 +107,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "buildings": MessageLookupByLibrary.simpleMessage("المباني"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
+    "cannot_access_downloads_folder": MessageLookupByLibrary.simpleMessage(
+      "لا يمكن الوصول إلى مجلد التحميلات",
+    ),
+    "cannot_open_file": MessageLookupByLibrary.simpleMessage(
+      "لا يمكن فتح الملف",
+    ),
     "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
     "choose_assignment_deadline": MessageLookupByLibrary.simpleMessage(
       "⏰ حدد الموعد النهائي لتسليم الأسايمنت وتوقيت إغلاقه.",
@@ -167,6 +175,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "distance": MessageLookupByLibrary.simpleMessage("المسافة"),
     "done": MessageLookupByLibrary.simpleMessage("تم"),
     "download": MessageLookupByLibrary.simpleMessage("تحميل"),
+    "download_failed": MessageLookupByLibrary.simpleMessage("فشل التحميل"),
+    "downloading_progress": m0,
     "duration": MessageLookupByLibrary.simpleMessage("المدة"),
     "eLearning": MessageLookupByLibrary.simpleMessage("التعليم الإلكتروني"),
     "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
@@ -193,10 +203,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_student_name_or_code": MessageLookupByLibrary.simpleMessage(
       "ادخل اسم الطالب أو الكود",
     ),
+    "error_opening_file": MessageLookupByLibrary.simpleMessage(
+      "خطأ في فتح الملف",
+    ),
     "evaluation": MessageLookupByLibrary.simpleMessage("تقييم"),
+    "existing_file": MessageLookupByLibrary.simpleMessage("ملف موجود"),
     "field_is_required": MessageLookupByLibrary.simpleMessage(
       "هذا الحقل مطلوب",
     ),
+    "file_downloaded_successfully": MessageLookupByLibrary.simpleMessage(
+      "تم تحميل الملف بنجاح",
+    ),
+    "file_viewer": MessageLookupByLibrary.simpleMessage("عارض الملف"),
     "filter": MessageLookupByLibrary.simpleMessage("تصفية"),
     "finalDegree": MessageLookupByLibrary.simpleMessage("نهائية"),
     "finalGrade": MessageLookupByLibrary.simpleMessage("الدرجة النهائية"),
@@ -282,6 +300,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "name": MessageLookupByLibrary.simpleMessage("الإسم"),
     "national_id": MessageLookupByLibrary.simpleMessage("الرقم القومي"),
     "nationality": MessageLookupByLibrary.simpleMessage("الجنسية"),
+    "new_file": MessageLookupByLibrary.simpleMessage("ملف جديد"),
     "news": MessageLookupByLibrary.simpleMessage("الأخبار"),
     "news_content": MessageLookupByLibrary.simpleMessage("محتوي الخبر"),
     "news_content_description": MessageLookupByLibrary.simpleMessage(
@@ -307,6 +326,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "no_answers_available": MessageLookupByLibrary.simpleMessage(
       "لا توجد إجابات متاحة لهذا السؤال",
+    ),
+    "no_file_url_available": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد رابط للملف",
     ),
     "not_started": MessageLookupByLibrary.simpleMessage("لم يبدأ"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
@@ -486,6 +508,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "إبدأ في الكتابة الأن..",
     ),
     "started": MessageLookupByLibrary.simpleMessage("بدأ"),
+    "starting_download": MessageLookupByLibrary.simpleMessage("بدء التحميل..."),
     "startsAt": MessageLookupByLibrary.simpleMessage("يبدأ "),
     "starts_in": MessageLookupByLibrary.simpleMessage("يبدأ في "),
     "status": MessageLookupByLibrary.simpleMessage("الحالة:"),
@@ -493,6 +516,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "stayCalm": MessageLookupByLibrary.simpleMessage("😌 استرخِ وابقَ هادئًا"),
     "stayConfident": MessageLookupByLibrary.simpleMessage(
       "تنفّس بعمق وثق بقدراتك!",
+    ),
+    "storage_permission_required": MessageLookupByLibrary.simpleMessage(
+      "مطلوب إذن التخزين",
     ),
     "street": MessageLookupByLibrary.simpleMessage("شارع"),
     "studentDegree": MessageLookupByLibrary.simpleMessage("درجة الطالب"),
@@ -559,6 +585,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "wednesday": MessageLookupByLibrary.simpleMessage("الأربعاء"),
     "week": MessageLookupByLibrary.simpleMessage("الأسبوع"),
+    "week_skeleton_text": MessageLookupByLibrary.simpleMessage("الأسبوع الأول"),
     "weeklySchedule": MessageLookupByLibrary.simpleMessage("الجدول الإسبوعي"),
     "weekly_schedule": MessageLookupByLibrary.simpleMessage("الجدول الاسبوعي"),
     "welcome_message": MessageLookupByLibrary.simpleMessage(

@@ -24,7 +24,7 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
       final fileUrl = item.file;
       if (fileUrl == null || fileUrl.isEmpty) {
         Fluttertoast.showToast(
-          msg: "No file URL available",
+          msg: S.of(context).no_file_url_available,
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.BOTTOM,
         );
@@ -66,7 +66,7 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
       }
     } catch (e) {
       Fluttertoast.showToast(
-        msg: "Error opening file",
+        msg: S.of(context).error_opening_file,
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.BOTTOM,
       );
@@ -81,9 +81,12 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
         MaterialPageRoute(
           builder: (context) => Scaffold(
             appBar: AppBar(
-              title: Text(item.title ?? "File Viewer"),
-              backgroundColor: Colors.blue,
-              foregroundColor: Colors.white,
+              title: Text(
+                item.title ?? S.of(context).file_viewer,
+                style: AppTextStyles.font16WhiteSemiBold,
+              ),
+              backgroundColor: AppColors.primaryColordark,
+              foregroundColor: AppColors.white,
             ),
             body: WebViewWidget(
               controller: WebViewController()
@@ -95,7 +98,7 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
       );
     } catch (e) {
       Fluttertoast.showToast(
-        msg: "Cannot open file",
+        msg: S.of(context).cannot_open_file,
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.BOTTOM,
       );
@@ -103,12 +106,12 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
   }
 
   // Function to download file
-  Future<void> downloadFile(CourseMaterialData item) async {
+  Future<void> downloadFile(BuildContext context, CourseMaterialData item) async {
     try {
       final fileUrl = item.file;
       if (fileUrl == null || fileUrl.isEmpty) {
-        Fluttertoast.showToast(  
-          msg: "No file URL available",
+        Fluttertoast.showToast(
+          msg: S.of(context).no_file_url_available,
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.BOTTOM,
         );
@@ -117,7 +120,7 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
 
       // Show loading message
       Fluttertoast.showToast(
-        msg: "Starting download...",
+        msg: S.of(context).starting_download,
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.BOTTOM,
       );
@@ -129,7 +132,7 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
           final managePermission = await Permission.manageExternalStorage.request();
           if (managePermission != PermissionStatus.granted) {
             Fluttertoast.showToast(
-              msg: "Storage permission required",
+              msg: S.of(context).storage_permission_required,
               toastLength: Toast.LENGTH_SHORT,
               gravity: ToastGravity.BOTTOM,
             );
@@ -176,7 +179,7 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
               final progress = (received / total * 100).toInt();
               if (progress % 20 == 0) { // Show progress every 20%
                 Fluttertoast.showToast(
-                  msg: "Downloading... $progress%",
+                  msg: S.of(context).downloading_progress(progress),
                   toastLength: Toast.LENGTH_SHORT,
                   gravity: ToastGravity.BOTTOM,
                 );
@@ -186,20 +189,20 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
         );
 
         Fluttertoast.showToast(
-          msg: "File downloaded successfully",
+          msg: S.of(context).file_downloaded_successfully,
           toastLength: Toast.LENGTH_LONG,
           gravity: ToastGravity.BOTTOM,
         );
       } else {
         Fluttertoast.showToast(
-          msg: "Cannot access downloads folder",
+          msg: S.of(context).cannot_access_downloads_folder,
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.BOTTOM,
         );
       }
     } catch (e) {
       Fluttertoast.showToast(
-        msg: "Download failed",
+        msg: S.of(context).download_failed,
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.BOTTOM,
       );
@@ -217,7 +220,12 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
   }
 
   // Function to show admin options bottom sheet
-  void showAdminOptionsBottomSheet(BuildContext context, CourseMaterialData item, {VoidCallback? onDeleteConfirmed}) {
+  void showAdminOptionsBottomSheet(
+    BuildContext context, 
+    CourseMaterialData item, {
+    int? courseId,
+    VoidCallback? onDeleteConfirmed,
+  }) {
     showModalBottomSheet(
       context: context,
       shape: RoundedRectangleBorder(
@@ -230,12 +238,12 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
             mainAxisSize: MainAxisSize.min,
             children: [
               // Handle bar
-              Container(
+                Container(
                 width: 40.w,
                 height: 4.h,
                 margin: EdgeInsets.only(bottom: 16.h),
                 decoration: BoxDecoration(
-                  color: Colors.grey[300],
+                  color: AppColors.gray,
                   borderRadius: BorderRadius.circular(2.r),
                 ),
               ),
@@ -251,7 +259,7 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
                 ),
                 onTap: () {
                   Navigator.pop(context);
-                  editMaterial(context, item);
+                  editMaterial(context, item, courseId: courseId);
                 },
               ),
               
@@ -279,15 +287,29 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
   }
 
   // Function to navigate to edit material
-  void editMaterial(BuildContext context, CourseMaterialData item) {
-    // Navigate to AddLectureView with the course ID
-    // Note: We need the course ID to pass to AddLectureView
-    // This might need to be passed down from the parent widget
-    if (item.id != null) {
+  void editMaterial(BuildContext context, CourseMaterialData item, {int? courseId}) {
+    // Navigate to AddLectureView with the course ID and edit parameters
+    if (courseId != null) {
       GoRouter.of(context).push(
         AddLectureView.routeName,
-        extra: item.id, // Using material ID as course ID for now
+        extra: {
+          'courseId': courseId,
+          'isEdit': true,
+          'materialModel': item,
+        },
       );
+    } else {
+      // Fallback: use material ID as course ID (original behavior)
+      if (item.id != null) {
+        GoRouter.of(context).push(
+          AddLectureView.routeName,
+          extra: {
+            'courseId': item.id!,
+            'isEdit': true,
+            'materialModel': item,
+          },
+        );
+      }
     }
   }
 
@@ -376,7 +398,7 @@ Future<void> openFile(BuildContext context , CourseMaterialData item)  async {
               child: Text(
                 S.of(dialogContext).delete,
                 style: AppTextStyles.font14BlackSemiBold.copyWith(
-                  color: Colors.white,
+                  color: AppColors.white,
                 ),
               ),
             ),

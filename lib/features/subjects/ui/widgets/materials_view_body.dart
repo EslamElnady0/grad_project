@@ -14,7 +14,8 @@ import '../../../home/ui/widgets/title_text_widget.dart';
 import '../manager/materials_filter_cubit.dart';
 
 class MaterialsViewBody extends StatelessWidget {
-  const MaterialsViewBody({super.key});
+  const MaterialsViewBody({super.key, required this.courseId});
+  final int courseId;
 
   @override
   Widget build(BuildContext context) {
@@ -96,6 +97,7 @@ class MaterialsViewBody extends StatelessWidget {
     return CustomWeekTitle(
       day: weekNames[index],
       week: filteredWeek,
+      courseId: courseId,
       onDeleteMaterial: (item) {
         // Use the context to call the delete function
         context.read<DeleteCourseMaterialCubit>().deleteCourseMaterial(item.id!);
@@ -106,13 +108,14 @@ class MaterialsViewBody extends StatelessWidget {
   Widget _buildLoadingState() {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
-        (context, index) => const Skeletonizer(
+        (context, index) => Skeletonizer(
           enabled: true,
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.0),
             child: CustomWeekTitle(
-              day: "الاسبوع     الاول",
+              day: S.of(context).week_skeleton_text,
               week: [],
+              courseId: courseId,
             ),
           ),
         ),

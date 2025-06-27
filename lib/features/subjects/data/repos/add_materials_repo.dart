@@ -32,6 +32,28 @@ class SubjectsRepo {
     }
   }
 
+  Future<ApiResult<AddMaterialsResponseModel>> updateMaterial({
+    required int materialId,
+    required FormData data, 
+    required void Function(int sentBytes, int totalBytes)? onProgress,
+  }) async {
+    try {
+   final response = await dio.post(
+ '${ApiConstants.apiBaseUrl}teachers/course-materials/$materialId${ApiConstants.update}',
+  data: data,
+  onSendProgress: onProgress,
+);
+
+      AddMaterialsResponseModel result = AddMaterialsResponseModel(
+        code: response.statusCode ?? 0,
+        message: response.data['message'] ?? 'Unknown error',
+      );
+      return ApiResult.success(result);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
 
   Future<ApiResult<DeleteCourseMaterialResponseModel>> deleteCourseMaterial(int id) async {
     try {

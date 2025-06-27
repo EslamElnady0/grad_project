@@ -11,16 +11,18 @@ class CustomTextFormFieldAndicon extends StatelessWidget {
   final String hintText;
   final String icon;
   final int maxLines;
-   final void Function(String?)? onSaved;
+  final void Function(String?)? onSaved;
   final TextInputType keyboardType;
+  final TextEditingController? controller;
 
   const CustomTextFormFieldAndicon({
     super.key,
     required this.hintText,
     required this.icon,
     this.maxLines = 1,
-  
-    this.keyboardType = TextInputType.text, this.onSaved,
+    this.keyboardType = TextInputType.text, 
+    this.onSaved,
+    this.controller,
   });
 
   @override
@@ -28,6 +30,7 @@ class CustomTextFormFieldAndicon extends StatelessWidget {
     return Stack(
       children: [
         TextFormField(
+          controller: controller,
           validator: (value) {
             if (value == null || value.isEmpty) {
               return S.of(context).pleaseEnterRequiredFields;

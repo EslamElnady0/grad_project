@@ -18,7 +18,6 @@ class MaterialsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print( "courseId************************************* $courseId");
     return MultiBlocProvider(
       providers: [
           BlocProvider(
@@ -46,7 +45,7 @@ class MaterialsView extends StatelessWidget {
           builder: (context, state) {
             return CustomModalProgress(
               isLoading:  state is DeleteCourseMaterialLoading,
-              child: const MaterialsViewBody());
+              child: MaterialsViewBody(courseId: courseId));
           },
         ),
       ),

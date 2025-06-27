@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:grad_project/core/data/models/get_course_materials_response_model.dart';
 import 'package:grad_project/core/helpers/file_utils.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
+import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/subjects/ui/functions/materials_item.dart';
 import '../../../../core/flavors/flavors_functions.dart';
 import '../../../../core/helpers/app_assets.dart';
@@ -15,8 +16,14 @@ import '../../../../generated/l10n.dart';
 class MaterialsItem extends StatelessWidget {
   final CourseMaterialData item;
   final VoidCallback? onDelete;
+  final int? courseId;
 
-  const MaterialsItem({super.key, required this.item, this.onDelete});
+  const MaterialsItem({
+    super.key, 
+    required this.item, 
+    this.onDelete,
+    this.courseId,
+  });
 
 
   @override
@@ -30,14 +37,14 @@ class MaterialsItem extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 12),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: AppColors.white,
                 borderRadius: BorderRadius.circular(10),
-                boxShadow: const [
+                boxShadow: [
                   BoxShadow(
-                    color: Colors.black12,
+                    color: AppColors.gray.withOpacity(0.3),
                     blurRadius: 5,
                     spreadRadius: 1,
-                    offset: Offset(0, 3),
+                    offset: const Offset(0, 3),
                   ),
                 ],
               ),
@@ -50,7 +57,7 @@ class MaterialsItem extends StatelessWidget {
                         getFileType(item.file),
                       ),
                       size: 20.sp,
-                      color: Colors.white,
+                      color: AppColors.white,
                     ),
                   ),
                   const SizedBox(width: 10),
@@ -77,6 +84,7 @@ class MaterialsItem extends StatelessWidget {
                       onPressed: () => showAdminOptionsBottomSheet(
                         context, 
                         item, 
+                        courseId: courseId,
                         onDeleteConfirmed: onDelete,
                       ),
                       icon: const Icon(Icons.more_vert),
@@ -106,7 +114,7 @@ class MaterialsItem extends StatelessWidget {
                   width: 70.w,
                   text: S.of(context).download,
                   style: AppTextStyles.font8WhiteSemiBold,
-                  onTap: () => downloadFile(item),
+                  onTap: () => downloadFile(context, item),
                   icon: SvgPicture.asset(Assets.imagesSvgsDewenloadIcon),
                   primaryButton: false,
                 ),

@@ -2574,6 +2574,126 @@ class S {
       args: [],
     );
   }
+
+  /// `No file URL available`
+  String get no_file_url_available {
+    return Intl.message(
+      'No file URL available',
+      name: 'no_file_url_available',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error opening file`
+  String get error_opening_file {
+    return Intl.message(
+      'Error opening file',
+      name: 'error_opening_file',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `File Viewer`
+  String get file_viewer {
+    return Intl.message('File Viewer', name: 'file_viewer', desc: '', args: []);
+  }
+
+  /// `Cannot open file`
+  String get cannot_open_file {
+    return Intl.message(
+      'Cannot open file',
+      name: 'cannot_open_file',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Starting download...`
+  String get starting_download {
+    return Intl.message(
+      'Starting download...',
+      name: 'starting_download',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Storage permission required`
+  String get storage_permission_required {
+    return Intl.message(
+      'Storage permission required',
+      name: 'storage_permission_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `File downloaded successfully`
+  String get file_downloaded_successfully {
+    return Intl.message(
+      'File downloaded successfully',
+      name: 'file_downloaded_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cannot access downloads folder`
+  String get cannot_access_downloads_folder {
+    return Intl.message(
+      'Cannot access downloads folder',
+      name: 'cannot_access_downloads_folder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Download failed`
+  String get download_failed {
+    return Intl.message(
+      'Download failed',
+      name: 'download_failed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Downloading... {progress}%`
+  String downloading_progress(int progress) {
+    return Intl.message(
+      'Downloading... $progress%',
+      name: 'downloading_progress',
+      desc: '',
+      args: [progress],
+    );
+  }
+
+  /// `Week One`
+  String get week_skeleton_text {
+    return Intl.message(
+      'Week One',
+      name: 'week_skeleton_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Existing file`
+  String get existing_file {
+    return Intl.message(
+      'Existing file',
+      name: 'existing_file',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New file`
+  String get new_file {
+    return Intl.message('New file', name: 'new_file', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
