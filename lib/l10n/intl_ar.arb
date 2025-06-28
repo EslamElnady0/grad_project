@@ -346,5 +346,13 @@
   "new_file": "ملف جديد",
   "onlyOneFileAllowed": "مسموح برفع ملف واحد فقط في وضع التعديل",
   "materialAddedSuccessfully": "تم إضافة المادة بنجاح",
-  "materialUpdatedSuccessfully": "تم تحديث المادة بنجاح"
+  "materialUpdatedSuccessfully": "تم تحديث المادة بنجاح",
+  "assignment_state": "حالة الأسايمنت",
+  "corrected": "تم التصحيح",
+  "not_corrected": "لم يتم التصحيح",
+  "Submission_state": "حالة التسليم",
+  "assignment_submitted": "تم التسليم",
+  "assignment_not_submitted": "لم يتم التسليم",
+  "student_assignment_details_welcome_message": "  📑 استعرض تفاصيل الأسايمنت الخاص بك، بما في ذلك الحالة، الدرجة، والتعليقات المقدمة من المعلم.",
+  "teacher_assignment_details_welcome_message": "📑 استعرض تفاصيل الأسايمنت الخاص بك."
 }

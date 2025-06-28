@@ -36,6 +36,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Overall_Grade": MessageLookupByLibrary.simpleMessage("Overall Grade"),
     "Section": MessageLookupByLibrary.simpleMessage("Section"),
     "SelectWeek": MessageLookupByLibrary.simpleMessage("Select Week"),
+    "Submission_state": MessageLookupByLibrary.simpleMessage(
+      "Submission State",
+    ),
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "Academic Progress",
     ),
@@ -90,9 +93,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "assignment_details": MessageLookupByLibrary.simpleMessage(
       "Assignment Details",
     ),
+    "assignment_not_submitted": MessageLookupByLibrary.simpleMessage(
+      "Not Submitted",
+    ),
     "assignment_preview": MessageLookupByLibrary.simpleMessage(
       "Assignment Preview",
     ),
+    "assignment_state": MessageLookupByLibrary.simpleMessage(
+      "Assignment State",
+    ),
+    "assignment_submitted": MessageLookupByLibrary.simpleMessage("Submitted"),
     "assignment_title": MessageLookupByLibrary.simpleMessage(
       "Assignment Title",
     ),
@@ -145,6 +155,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cooperateShareThoughts": MessageLookupByLibrary.simpleMessage(
       "Collaborate, share your ideas, and learn from your peers easily 📚",
     ),
+    "corrected": MessageLookupByLibrary.simpleMessage("Corrected"),
     "course_code": MessageLookupByLibrary.simpleMessage("Course Code"),
     "course_management_center": MessageLookupByLibrary.simpleMessage(
       "👨‍🏫 Easily manage your courses, from students to lectures and quizzes!",
@@ -350,6 +361,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_file_url_available": MessageLookupByLibrary.simpleMessage(
       "No file URL available",
     ),
+    "not_corrected": MessageLookupByLibrary.simpleMessage("Not Corrected"),
     "not_started": MessageLookupByLibrary.simpleMessage("Not Started"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
       "Allowed Attempts",
@@ -556,6 +568,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "street": MessageLookupByLibrary.simpleMessage("Street"),
     "studentDegree": MessageLookupByLibrary.simpleMessage("Student Degree"),
+    "student_assignment_details_welcome_message":
+        MessageLookupByLibrary.simpleMessage(
+          "📑 View your assignment details, including status, grade, and comments from the teacher.",
+        ),
     "student_grade": MessageLookupByLibrary.simpleMessage("Student Grade"),
     "studentsAnswersReview": MessageLookupByLibrary.simpleMessage(
       "Student Answers Review",
@@ -577,6 +593,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "sunday": MessageLookupByLibrary.simpleMessage("Sunday"),
     "teacher": MessageLookupByLibrary.simpleMessage("Teacher"),
+    "teacher_assignment_details_welcome_message":
+        MessageLookupByLibrary.simpleMessage(
+          "📑 View your assignment details.",
+        ),
     "testYourKnowledge": MessageLookupByLibrary.simpleMessage(
       "📋 Test your knowledge and prepare for the exam by answering the customized questions!",
     ),

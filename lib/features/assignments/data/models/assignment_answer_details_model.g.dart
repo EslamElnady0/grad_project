@@ -33,8 +33,10 @@ AssignmentAnswerDetailsModel _$AssignmentAnswerDetailsModelFromJson(
       status: json['status'] as String,
       teacher: json['teacher'] as String,
       file: json['file'] as String,
-      answerStatus:
-          AnswerStatus.fromJson(json['answer_status'] as Map<String, dynamic>),
+      answerStatus: json['answer_status'] == null
+          ? null
+          : AnswerStatus.fromJson(
+              json['answer_status'] as Map<String, dynamic>),
       course: Course.fromJson(json['course'] as Map<String, dynamic>),
     );
 

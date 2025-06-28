@@ -29,7 +29,7 @@ class AssignmentAnswerDetailsModel {
   final String teacher;
   final String file;
   @JsonKey(name: 'answer_status')
-  final AnswerStatus answerStatus;
+  final AnswerStatus? answerStatus;
   final Course course;
 
   AssignmentAnswerDetailsModel({

@@ -2724,6 +2724,81 @@ class S {
       args: [],
     );
   }
+
+  /// `Assignment State`
+  String get assignment_state {
+    return Intl.message(
+      'Assignment State',
+      name: 'assignment_state',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Corrected`
+  String get corrected {
+    return Intl.message('Corrected', name: 'corrected', desc: '', args: []);
+  }
+
+  /// `Not Corrected`
+  String get not_corrected {
+    return Intl.message(
+      'Not Corrected',
+      name: 'not_corrected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submission State`
+  String get Submission_state {
+    return Intl.message(
+      'Submission State',
+      name: 'Submission_state',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submitted`
+  String get assignment_submitted {
+    return Intl.message(
+      'Submitted',
+      name: 'assignment_submitted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Not Submitted`
+  String get assignment_not_submitted {
+    return Intl.message(
+      'Not Submitted',
+      name: 'assignment_not_submitted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `📑 View your assignment details, including status, grade, and comments from the teacher.`
+  String get student_assignment_details_welcome_message {
+    return Intl.message(
+      '📑 View your assignment details, including status, grade, and comments from the teacher.',
+      name: 'student_assignment_details_welcome_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `📑 View your assignment details.`
+  String get teacher_assignment_details_welcome_message {
+    return Intl.message(
+      '📑 View your assignment details.',
+      name: 'teacher_assignment_details_welcome_message',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

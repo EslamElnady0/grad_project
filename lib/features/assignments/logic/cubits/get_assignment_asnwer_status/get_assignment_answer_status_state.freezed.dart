@@ -19,25 +19,25 @@ mixin _$GetAssignmentAnswerStatusState<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getAssignmentsAnswersLoading,
-    required TResult Function(T data) getAssignmentsAnswersSuccess,
-    required TResult Function(String error) getAssignmentsAnswersFailure,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function(String error) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getAssignmentsAnswersLoading,
-    TResult? Function(T data)? getAssignmentsAnswersSuccess,
-    TResult? Function(String error)? getAssignmentsAnswersFailure,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function(String error)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getAssignmentsAnswersLoading,
-    TResult Function(T data)? getAssignmentsAnswersSuccess,
-    TResult Function(String error)? getAssignmentsAnswersFailure,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -45,33 +45,27 @@ mixin _$GetAssignmentAnswerStatusState<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(GetAssignmentAnswerStatusLoading<T> value)
-        getAssignmentsAnswersLoading,
+        loading,
     required TResult Function(GetAssignmentAnswerStatusSuccess<T> value)
-        getAssignmentsAnswersSuccess,
+        success,
     required TResult Function(GetAssignmentAnswerStatusFailure<T> value)
-        getAssignmentsAnswersFailure,
+        failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetAssignmentAnswerStatusLoading<T> value)?
-        getAssignmentsAnswersLoading,
-    TResult? Function(GetAssignmentAnswerStatusSuccess<T> value)?
-        getAssignmentsAnswersSuccess,
-    TResult? Function(GetAssignmentAnswerStatusFailure<T> value)?
-        getAssignmentsAnswersFailure,
+    TResult? Function(GetAssignmentAnswerStatusLoading<T> value)? loading,
+    TResult? Function(GetAssignmentAnswerStatusSuccess<T> value)? success,
+    TResult? Function(GetAssignmentAnswerStatusFailure<T> value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetAssignmentAnswerStatusLoading<T> value)?
-        getAssignmentsAnswersLoading,
-    TResult Function(GetAssignmentAnswerStatusSuccess<T> value)?
-        getAssignmentsAnswersSuccess,
-    TResult Function(GetAssignmentAnswerStatusFailure<T> value)?
-        getAssignmentsAnswersFailure,
+    TResult Function(GetAssignmentAnswerStatusLoading<T> value)? loading,
+    TResult Function(GetAssignmentAnswerStatusSuccess<T> value)? success,
+    TResult Function(GetAssignmentAnswerStatusFailure<T> value)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -143,9 +137,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getAssignmentsAnswersLoading,
-    required TResult Function(T data) getAssignmentsAnswersSuccess,
-    required TResult Function(String error) getAssignmentsAnswersFailure,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function(String error) failure,
   }) {
     return initial();
   }
@@ -154,9 +148,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getAssignmentsAnswersLoading,
-    TResult? Function(T data)? getAssignmentsAnswersSuccess,
-    TResult? Function(String error)? getAssignmentsAnswersFailure,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function(String error)? failure,
   }) {
     return initial?.call();
   }
@@ -165,9 +159,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getAssignmentsAnswersLoading,
-    TResult Function(T data)? getAssignmentsAnswersSuccess,
-    TResult Function(String error)? getAssignmentsAnswersFailure,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -181,11 +175,11 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(GetAssignmentAnswerStatusLoading<T> value)
-        getAssignmentsAnswersLoading,
+        loading,
     required TResult Function(GetAssignmentAnswerStatusSuccess<T> value)
-        getAssignmentsAnswersSuccess,
+        success,
     required TResult Function(GetAssignmentAnswerStatusFailure<T> value)
-        getAssignmentsAnswersFailure,
+        failure,
   }) {
     return initial(this);
   }
@@ -194,12 +188,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetAssignmentAnswerStatusLoading<T> value)?
-        getAssignmentsAnswersLoading,
-    TResult? Function(GetAssignmentAnswerStatusSuccess<T> value)?
-        getAssignmentsAnswersSuccess,
-    TResult? Function(GetAssignmentAnswerStatusFailure<T> value)?
-        getAssignmentsAnswersFailure,
+    TResult? Function(GetAssignmentAnswerStatusLoading<T> value)? loading,
+    TResult? Function(GetAssignmentAnswerStatusSuccess<T> value)? success,
+    TResult? Function(GetAssignmentAnswerStatusFailure<T> value)? failure,
   }) {
     return initial?.call(this);
   }
@@ -208,12 +199,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetAssignmentAnswerStatusLoading<T> value)?
-        getAssignmentsAnswersLoading,
-    TResult Function(GetAssignmentAnswerStatusSuccess<T> value)?
-        getAssignmentsAnswersSuccess,
-    TResult Function(GetAssignmentAnswerStatusFailure<T> value)?
-        getAssignmentsAnswersFailure,
+    TResult Function(GetAssignmentAnswerStatusLoading<T> value)? loading,
+    TResult Function(GetAssignmentAnswerStatusSuccess<T> value)? success,
+    TResult Function(GetAssignmentAnswerStatusFailure<T> value)? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -257,7 +245,7 @@ class _$GetAssignmentAnswerStatusLoadingImpl<T>
 
   @override
   String toString() {
-    return 'GetAssignmentAnswerStatusState<$T>.getAssignmentsAnswersLoading()';
+    return 'GetAssignmentAnswerStatusState<$T>.loading()';
   }
 
   @override
@@ -274,35 +262,35 @@ class _$GetAssignmentAnswerStatusLoadingImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getAssignmentsAnswersLoading,
-    required TResult Function(T data) getAssignmentsAnswersSuccess,
-    required TResult Function(String error) getAssignmentsAnswersFailure,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function(String error) failure,
   }) {
-    return getAssignmentsAnswersLoading();
+    return loading();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getAssignmentsAnswersLoading,
-    TResult? Function(T data)? getAssignmentsAnswersSuccess,
-    TResult? Function(String error)? getAssignmentsAnswersFailure,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function(String error)? failure,
   }) {
-    return getAssignmentsAnswersLoading?.call();
+    return loading?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getAssignmentsAnswersLoading,
-    TResult Function(T data)? getAssignmentsAnswersSuccess,
-    TResult Function(String error)? getAssignmentsAnswersFailure,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
-    if (getAssignmentsAnswersLoading != null) {
-      return getAssignmentsAnswersLoading();
+    if (loading != null) {
+      return loading();
     }
     return orElse();
   }
@@ -312,43 +300,37 @@ class _$GetAssignmentAnswerStatusLoadingImpl<T>
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(GetAssignmentAnswerStatusLoading<T> value)
-        getAssignmentsAnswersLoading,
+        loading,
     required TResult Function(GetAssignmentAnswerStatusSuccess<T> value)
-        getAssignmentsAnswersSuccess,
+        success,
     required TResult Function(GetAssignmentAnswerStatusFailure<T> value)
-        getAssignmentsAnswersFailure,
+        failure,
   }) {
-    return getAssignmentsAnswersLoading(this);
+    return loading(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetAssignmentAnswerStatusLoading<T> value)?
-        getAssignmentsAnswersLoading,
-    TResult? Function(GetAssignmentAnswerStatusSuccess<T> value)?
-        getAssignmentsAnswersSuccess,
-    TResult? Function(GetAssignmentAnswerStatusFailure<T> value)?
-        getAssignmentsAnswersFailure,
+    TResult? Function(GetAssignmentAnswerStatusLoading<T> value)? loading,
+    TResult? Function(GetAssignmentAnswerStatusSuccess<T> value)? success,
+    TResult? Function(GetAssignmentAnswerStatusFailure<T> value)? failure,
   }) {
-    return getAssignmentsAnswersLoading?.call(this);
+    return loading?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetAssignmentAnswerStatusLoading<T> value)?
-        getAssignmentsAnswersLoading,
-    TResult Function(GetAssignmentAnswerStatusSuccess<T> value)?
-        getAssignmentsAnswersSuccess,
-    TResult Function(GetAssignmentAnswerStatusFailure<T> value)?
-        getAssignmentsAnswersFailure,
+    TResult Function(GetAssignmentAnswerStatusLoading<T> value)? loading,
+    TResult Function(GetAssignmentAnswerStatusSuccess<T> value)? success,
+    TResult Function(GetAssignmentAnswerStatusFailure<T> value)? failure,
     required TResult orElse(),
   }) {
-    if (getAssignmentsAnswersLoading != null) {
-      return getAssignmentsAnswersLoading(this);
+    if (loading != null) {
+      return loading(this);
     }
     return orElse();
   }
@@ -407,7 +389,7 @@ class _$GetAssignmentAnswerStatusSuccessImpl<T>
 
   @override
   String toString() {
-    return 'GetAssignmentAnswerStatusState<$T>.getAssignmentsAnswersSuccess(data: $data)';
+    return 'GetAssignmentAnswerStatusState<$T>.success(data: $data)';
   }
 
   @override
@@ -436,35 +418,35 @@ class _$GetAssignmentAnswerStatusSuccessImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getAssignmentsAnswersLoading,
-    required TResult Function(T data) getAssignmentsAnswersSuccess,
-    required TResult Function(String error) getAssignmentsAnswersFailure,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function(String error) failure,
   }) {
-    return getAssignmentsAnswersSuccess(data);
+    return success(data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getAssignmentsAnswersLoading,
-    TResult? Function(T data)? getAssignmentsAnswersSuccess,
-    TResult? Function(String error)? getAssignmentsAnswersFailure,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function(String error)? failure,
   }) {
-    return getAssignmentsAnswersSuccess?.call(data);
+    return success?.call(data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getAssignmentsAnswersLoading,
-    TResult Function(T data)? getAssignmentsAnswersSuccess,
-    TResult Function(String error)? getAssignmentsAnswersFailure,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
-    if (getAssignmentsAnswersSuccess != null) {
-      return getAssignmentsAnswersSuccess(data);
+    if (success != null) {
+      return success(data);
     }
     return orElse();
   }
@@ -474,43 +456,37 @@ class _$GetAssignmentAnswerStatusSuccessImpl<T>
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(GetAssignmentAnswerStatusLoading<T> value)
-        getAssignmentsAnswersLoading,
+        loading,
     required TResult Function(GetAssignmentAnswerStatusSuccess<T> value)
-        getAssignmentsAnswersSuccess,
+        success,
     required TResult Function(GetAssignmentAnswerStatusFailure<T> value)
-        getAssignmentsAnswersFailure,
+        failure,
   }) {
-    return getAssignmentsAnswersSuccess(this);
+    return success(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetAssignmentAnswerStatusLoading<T> value)?
-        getAssignmentsAnswersLoading,
-    TResult? Function(GetAssignmentAnswerStatusSuccess<T> value)?
-        getAssignmentsAnswersSuccess,
-    TResult? Function(GetAssignmentAnswerStatusFailure<T> value)?
-        getAssignmentsAnswersFailure,
+    TResult? Function(GetAssignmentAnswerStatusLoading<T> value)? loading,
+    TResult? Function(GetAssignmentAnswerStatusSuccess<T> value)? success,
+    TResult? Function(GetAssignmentAnswerStatusFailure<T> value)? failure,
   }) {
-    return getAssignmentsAnswersSuccess?.call(this);
+    return success?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetAssignmentAnswerStatusLoading<T> value)?
-        getAssignmentsAnswersLoading,
-    TResult Function(GetAssignmentAnswerStatusSuccess<T> value)?
-        getAssignmentsAnswersSuccess,
-    TResult Function(GetAssignmentAnswerStatusFailure<T> value)?
-        getAssignmentsAnswersFailure,
+    TResult Function(GetAssignmentAnswerStatusLoading<T> value)? loading,
+    TResult Function(GetAssignmentAnswerStatusSuccess<T> value)? success,
+    TResult Function(GetAssignmentAnswerStatusFailure<T> value)? failure,
     required TResult orElse(),
   }) {
-    if (getAssignmentsAnswersSuccess != null) {
-      return getAssignmentsAnswersSuccess(this);
+    if (success != null) {
+      return success(this);
     }
     return orElse();
   }
@@ -578,7 +554,7 @@ class _$GetAssignmentAnswerStatusFailureImpl<T>
 
   @override
   String toString() {
-    return 'GetAssignmentAnswerStatusState<$T>.getAssignmentsAnswersFailure(error: $error)';
+    return 'GetAssignmentAnswerStatusState<$T>.failure(error: $error)';
   }
 
   @override
@@ -606,35 +582,35 @@ class _$GetAssignmentAnswerStatusFailureImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getAssignmentsAnswersLoading,
-    required TResult Function(T data) getAssignmentsAnswersSuccess,
-    required TResult Function(String error) getAssignmentsAnswersFailure,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function(String error) failure,
   }) {
-    return getAssignmentsAnswersFailure(error);
+    return failure(error);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getAssignmentsAnswersLoading,
-    TResult? Function(T data)? getAssignmentsAnswersSuccess,
-    TResult? Function(String error)? getAssignmentsAnswersFailure,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function(String error)? failure,
   }) {
-    return getAssignmentsAnswersFailure?.call(error);
+    return failure?.call(error);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getAssignmentsAnswersLoading,
-    TResult Function(T data)? getAssignmentsAnswersSuccess,
-    TResult Function(String error)? getAssignmentsAnswersFailure,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
-    if (getAssignmentsAnswersFailure != null) {
-      return getAssignmentsAnswersFailure(error);
+    if (failure != null) {
+      return failure(error);
     }
     return orElse();
   }
@@ -644,43 +620,37 @@ class _$GetAssignmentAnswerStatusFailureImpl<T>
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(GetAssignmentAnswerStatusLoading<T> value)
-        getAssignmentsAnswersLoading,
+        loading,
     required TResult Function(GetAssignmentAnswerStatusSuccess<T> value)
-        getAssignmentsAnswersSuccess,
+        success,
     required TResult Function(GetAssignmentAnswerStatusFailure<T> value)
-        getAssignmentsAnswersFailure,
+        failure,
   }) {
-    return getAssignmentsAnswersFailure(this);
+    return failure(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetAssignmentAnswerStatusLoading<T> value)?
-        getAssignmentsAnswersLoading,
-    TResult? Function(GetAssignmentAnswerStatusSuccess<T> value)?
-        getAssignmentsAnswersSuccess,
-    TResult? Function(GetAssignmentAnswerStatusFailure<T> value)?
-        getAssignmentsAnswersFailure,
+    TResult? Function(GetAssignmentAnswerStatusLoading<T> value)? loading,
+    TResult? Function(GetAssignmentAnswerStatusSuccess<T> value)? success,
+    TResult? Function(GetAssignmentAnswerStatusFailure<T> value)? failure,
   }) {
-    return getAssignmentsAnswersFailure?.call(this);
+    return failure?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetAssignmentAnswerStatusLoading<T> value)?
-        getAssignmentsAnswersLoading,
-    TResult Function(GetAssignmentAnswerStatusSuccess<T> value)?
-        getAssignmentsAnswersSuccess,
-    TResult Function(GetAssignmentAnswerStatusFailure<T> value)?
-        getAssignmentsAnswersFailure,
+    TResult Function(GetAssignmentAnswerStatusLoading<T> value)? loading,
+    TResult Function(GetAssignmentAnswerStatusSuccess<T> value)? success,
+    TResult Function(GetAssignmentAnswerStatusFailure<T> value)? failure,
     required TResult orElse(),
   }) {
-    if (getAssignmentsAnswersFailure != null) {
-      return getAssignmentsAnswersFailure(this);
+    if (failure != null) {
+      return failure(this);
     }
     return orElse();
   }

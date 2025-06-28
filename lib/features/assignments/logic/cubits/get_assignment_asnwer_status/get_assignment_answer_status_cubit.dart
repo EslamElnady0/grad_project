@@ -1,20 +1,21 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/features/assignments/data/repos/assignments_repo.dart';
-import 'package:grad_project/features/assignments/logic/cubits/get_assignments_answers_cubit/get_assignments_answers_state.dart';
+import 'package:grad_project/features/assignments/logic/cubits/get_assignment_asnwer_status/get_assignment_answer_status_state.dart';
 
-class GetAssignmentAnswerStatusCubit extends Cubit<GetAssignmentsAnswersState> {
+class GetAssignmentAnswerStatusCubit
+    extends Cubit<GetAssignmentAnswerStatusState> {
   final AssignmentsRepo _repo;
   GetAssignmentAnswerStatusCubit(this._repo)
-      : super(const GetAssignmentsAnswersState.initial());
+      : super(const GetAssignmentAnswerStatusState.initial());
 
-  Future<void> getAssignmentsAnswers(int assignmentId) async {
-    emit(const GetAssignmentsAnswersState.getAssignmentsAnswersLoading());
-    final result = await _repo.getAssignmentsAnswers(assignmentId);
+  Future<void> getAssignmentDetails(int assignmentId) async {
+    emit(const GetAssignmentAnswerStatusState.loading());
+    final result = await _repo.getAssignmentDetails(assignmentId);
     result.when(
-      success: (data) =>
-          emit(GetAssignmentsAnswersState.getAssignmentsAnswersSuccess(data)),
+      success: (data) => emit(
+          GetAssignmentAnswerStatusState.success(data)),
       failure: (error) => emit(
-          GetAssignmentsAnswersState.getAssignmentsAnswersFailure(
+          GetAssignmentAnswerStatusState.failure(
               error.getAllMessages())),
     );
   }

@@ -121,7 +121,7 @@ class AssignmentsRepo {
   }
 
 
-  Future<ApiResult<AssignmentAnswerDetailsModel>> getAssignmentDetails(
+  Future<ApiResult<StudentAssignmentAnswerModel>> getAssignmentDetails(
       int assignmentId) async {
     try {
       final response = await remoteDataSource.getAssignmentDetails(assignmentId);

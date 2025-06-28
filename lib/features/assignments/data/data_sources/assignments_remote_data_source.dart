@@ -75,7 +75,7 @@ abstract class AssignmentsRemoteDataSource {
   );
 
    @GET("${ApiConstants.assignments}/{id}")
-  Future<AssignmentAnswerDetailsModel> getAssignmentDetails(
+  Future<StudentAssignmentAnswerModel> getAssignmentDetails(
     @Path("id") int assignmentId,
   );
 }

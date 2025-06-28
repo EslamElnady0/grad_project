@@ -346,6 +346,14 @@
   "new_file": "New file",
   "onlyOneFileAllowed": "Only one file is allowed in edit mode.",
   "materialAddedSuccessfully": "Material added successfully",
-  "materialUpdatedSuccessfully": "Material updated successfully"
-
+  "materialUpdatedSuccessfully": "Material updated successfully",
+  "assignment_state": "Assignment State",
+  "corrected": "Corrected",
+  "not_corrected": "Not Corrected", 
+  "Submission_state": "Submission State",
+  "assignment_submitted": "Submitted",
+  "assignment_not_submitted": "Not Submitted",
+  "student_assignment_details_welcome_message": "📑 View your assignment details, including status, grade, and comments from the teacher.",
+  "teacher_assignment_details_welcome_message": "📑 View your assignment details."
 }
+

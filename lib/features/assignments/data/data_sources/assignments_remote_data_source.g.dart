@@ -302,14 +302,14 @@ class _AssignmentsRemoteDataSource implements AssignmentsRemoteDataSource {
   }
 
   @override
-  Future<AssignmentAnswerDetailsModel> getAssignmentDetails(
+  Future<StudentAssignmentAnswerModel> getAssignmentDetails(
     int assignmentId,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AssignmentAnswerDetailsModel>(
+    final _options = _setStreamType<StudentAssignmentAnswerModel>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -320,9 +320,9 @@ class _AssignmentsRemoteDataSource implements AssignmentsRemoteDataSource {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AssignmentAnswerDetailsModel _value;
+    late StudentAssignmentAnswerModel _value;
     try {
-      _value = AssignmentAnswerDetailsModel.fromJson(_result.data!);
+      _value = StudentAssignmentAnswerModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
