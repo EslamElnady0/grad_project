@@ -232,33 +232,33 @@ class _LectureFormContentState extends State<LectureFormContent> {
       List<FileWithMetadata> selectedFiles, BuildContext context) async {
     // Get only new files for upload
     final newFiles = context.read<FileUploadCubit>().getNewFiles();
-    
-    if (newFiles.isNotEmpty ) {
-      if (widget.isEdit && widget.materialModel != null) {
-        await context.read<AddMaterialsCubit>().updateMaterials(
-              materialId: widget.materialModel!.id!,
-              type: type,
-              selectedFiles: newFiles,
-              title: title,
-              weekNumber: weekNumber,
-            );
-      } else {
-        await context.read<AddMaterialsCubit>().addMaterials(
-              id: widget.id,
-              type: type,
-              selectedFiles: newFiles,
-              title: title,
-              weekNumber: weekNumber,
-            );
-      }
-    } else {
-      showSnakBar(
-        context: context,
-        message: S.of(context).pleaseUploadFiles,
-      );
-    }
+    final fileUploadCubit = context.read<FileUploadCubit>();
+    final existingFiles = fileUploadCubit.getExistingFileUrls();
+ if (newFiles.isNotEmpty || existingFiles.isNotEmpty) {
+  if (widget.isEdit && widget.materialModel != null) {
+    await context.read<AddMaterialsCubit>().updateMaterials(
+      materialId: widget.materialModel!.id!,
+      type: type,
+      selectedFiles: newFiles, // ممكن تبعت الملفات الجديدة بس لو الـ API بتاخد الجديد
+      title: title,
+      weekNumber: weekNumber,
+    );
+  } else {
+    await context.read<AddMaterialsCubit>().addMaterials(
+      id: widget.id,
+      type: type,
+      selectedFiles: newFiles,
+      title: title,
+      weekNumber: weekNumber,
+    );
   }
+} else {
+  showSnakBar(
+    context: context,
+    message: S.of(context).pleaseUploadFiles,
+  );
 }
+}}
 
 void showFileUploadDialog(BuildContext context, bool isSingleFileMode ) {
   showDialog(

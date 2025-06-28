@@ -276,6 +276,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "عرض المواد وإدارتها",
     ),
     "material": MessageLookupByLibrary.simpleMessage("ماتريال"),
+    "materialAddedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم إضافة المادة بنجاح",
+    ),
+    "materialUpdatedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم تحديث المادة بنجاح",
+    ),
     "material_deleted_successfully": MessageLookupByLibrary.simpleMessage(
       "تم حذف المادة بنجاح",
     ),

@@ -292,6 +292,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Manage and display materials",
     ),
     "material": MessageLookupByLibrary.simpleMessage("Material"),
+    "materialAddedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Material added successfully",
+    ),
+    "materialUpdatedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Material updated successfully",
+    ),
     "material_deleted_successfully": MessageLookupByLibrary.simpleMessage(
       "Material deleted successfully",
     ),

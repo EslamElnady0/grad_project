@@ -29,7 +29,7 @@ class MaterialsViewBody extends StatelessWidget {
             ),
             _buildMaterialsList(context, selectedFilters),
             const SliverToBoxAdapter(
-              child: SizedBox(height: 880), // Add some space at the bottom
+              child: SizedBox(height: 150), // Add some space at the bottom
             ),
           ],
         );

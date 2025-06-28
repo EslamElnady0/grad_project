@@ -90,6 +90,7 @@ class LectureManagerItem extends StatelessWidget {
                       primaryButton: true),
                   vGap(12),
                   CustomTextAndIconButton(
+                     
                       text: S.of(context).add_courses,
                       width: double.infinity,
                       onTap: () {
@@ -97,16 +98,8 @@ class LectureManagerItem extends StatelessWidget {
                             extra: courseData.id);
                       },
                       icon: Image.asset(Assets.imagesAddLecture),
-                      primaryButton: true),
-                  vGap(12),
-                  CustomTextAndIconButton(
-                      text: S.of(context).update_lecture_status,
-                      width: double.infinity,
-                      onTap: () {
-                        showUpdateLectureStatusDialog(context);
-                      },
-                      icon: Image.asset(Assets.imagesStateUpdate),
                       primaryButton: false),
+                  
                 ]),
               ),
             ],

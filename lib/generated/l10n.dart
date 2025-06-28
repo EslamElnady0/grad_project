@@ -2704,6 +2704,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Material added successfully`
+  String get materialAddedSuccessfully {
+    return Intl.message(
+      'Material added successfully',
+      name: 'materialAddedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Material updated successfully`
+  String get materialUpdatedSuccessfully {
+    return Intl.message(
+      'Material updated successfully',
+      name: 'materialUpdatedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

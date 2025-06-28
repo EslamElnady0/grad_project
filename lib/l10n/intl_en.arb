@@ -344,6 +344,8 @@
   "week_skeleton_text": "Week One",
   "existing_file": "Existing file",
   "new_file": "New file",
-  "onlyOneFileAllowed": "Only one file is allowed in edit mode."
+  "onlyOneFileAllowed": "Only one file is allowed in edit mode.",
+  "materialAddedSuccessfully": "Material added successfully",
+  "materialUpdatedSuccessfully": "Material updated successfully"
 
 }
