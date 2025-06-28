@@ -4,6 +4,7 @@ import 'package:grad_project/core/networking/api_result.dart';
 import 'package:grad_project/features/assignments/data/data_sources/assignments_local_data_source.dart';
 import 'package:grad_project/features/assignments/data/data_sources/assignments_remote_data_source.dart';
 import 'package:grad_project/features/assignments/data/models/assign_grade_response_model.dart';
+import 'package:grad_project/features/assignments/data/models/assignment_answer_details_model.dart';
 import 'package:grad_project/features/assignments/data/models/assignment_answers_model.dart';
 import 'package:grad_project/features/assignments/data/models/assignments_solution_response_model.dart';
 import 'package:grad_project/features/assignments/data/models/create_assignment_request_model.dart';
@@ -113,6 +114,17 @@ class AssignmentsRepo {
       int answerId, int degree) async {
     try {
       final response = await remoteDataSource.gradeAssignment(answerId, degree);
+      return ApiResult.success(response);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
+
+  Future<ApiResult<AssignmentAnswerDetailsModel>> getAssignmentDetails(
+      int assignmentId) async {
+    try {
+      final response = await remoteDataSource.getAssignmentDetails(assignmentId);
       return ApiResult.success(response);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));
