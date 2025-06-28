@@ -5,6 +5,21 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <!-- For Android 10+ (API 29+) add this too -->
     <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION"/>
+    <!-- Internet permission for url_launcher -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- For Android 11+ (API 30+) -->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+    <!-- Query permission for Android 11+ to launch URLs -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="http" />
+        </intent>
+    </queries>
 
 
 

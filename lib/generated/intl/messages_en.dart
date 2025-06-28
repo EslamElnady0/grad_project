@@ -20,6 +20,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(progress) => "Downloading... ${progress}%";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "Answers": MessageLookupByLibrary.simpleMessage("الإجابات"),
@@ -67,6 +69,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "announcements": MessageLookupByLibrary.simpleMessage("Announcements"),
     "answer": MessageLookupByLibrary.simpleMessage("Answer"),
     "app_title": MessageLookupByLibrary.simpleMessage("E-Learning"),
+    "are_you_sure_you_want_to_delete_this_material":
+        MessageLookupByLibrary.simpleMessage(
+          "Are you sure you want to delete this material?",
+        ),
     "assignment": MessageLookupByLibrary.simpleMessage("Assignment"),
     "assignment_correction_welcome_message":
         MessageLookupByLibrary.simpleMessage(
@@ -109,6 +115,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "buildings": MessageLookupByLibrary.simpleMessage("Buildings"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "cannot_access_downloads_folder": MessageLookupByLibrary.simpleMessage(
+      "Cannot access downloads folder",
+    ),
+    "cannot_open_file": MessageLookupByLibrary.simpleMessage(
+      "Cannot open file",
+    ),
     "chat": MessageLookupByLibrary.simpleMessage("Chat"),
     "choose_assignment_deadline": MessageLookupByLibrary.simpleMessage(
       "⏰ Specify the assignment submission deadline and closing time.",
@@ -171,6 +183,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "distance": MessageLookupByLibrary.simpleMessage("Distance"),
     "done": MessageLookupByLibrary.simpleMessage("Done"),
     "download": MessageLookupByLibrary.simpleMessage("download"),
+    "download_failed": MessageLookupByLibrary.simpleMessage("Download failed"),
+    "downloading_progress": m0,
     "duration": MessageLookupByLibrary.simpleMessage("Duration"),
     "eLearning": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "edit": MessageLookupByLibrary.simpleMessage("Edit"),
@@ -201,10 +215,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_student_name_or_code": MessageLookupByLibrary.simpleMessage(
       "Enter student name or code",
     ),
+    "error_opening_file": MessageLookupByLibrary.simpleMessage(
+      "Error opening file",
+    ),
     "evaluation": MessageLookupByLibrary.simpleMessage("Evaluate"),
+    "existing_file": MessageLookupByLibrary.simpleMessage("Existing file"),
     "field_is_required": MessageLookupByLibrary.simpleMessage(
       "This field is required",
     ),
+    "file_downloaded_successfully": MessageLookupByLibrary.simpleMessage(
+      "File downloaded successfully",
+    ),
+    "file_viewer": MessageLookupByLibrary.simpleMessage("File Viewer"),
     "filter": MessageLookupByLibrary.simpleMessage("Filter"),
     "finalDegree": MessageLookupByLibrary.simpleMessage("Final"),
     "finalGrade": MessageLookupByLibrary.simpleMessage("Final Grade"),
@@ -270,6 +292,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "Manage and display materials",
     ),
     "material": MessageLookupByLibrary.simpleMessage("Material"),
+    "materialAddedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Material added successfully",
+    ),
+    "materialUpdatedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Material updated successfully",
+    ),
+    "material_deleted_successfully": MessageLookupByLibrary.simpleMessage(
+      "Material deleted successfully",
+    ),
     "material_description": MessageLookupByLibrary.simpleMessage(
       "🎓📚 Everything you need for your course in one place: lectures, sections, assignments, quizzes, videos, midterms, and final exams!",
     ),
@@ -291,6 +322,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "national_id": MessageLookupByLibrary.simpleMessage("National ID"),
     "nationality": MessageLookupByLibrary.simpleMessage("Nationality"),
+    "new_file": MessageLookupByLibrary.simpleMessage("New file"),
     "news": MessageLookupByLibrary.simpleMessage("News"),
     "news_content": MessageLookupByLibrary.simpleMessage("Annoucement Content"),
     "news_content_description": MessageLookupByLibrary.simpleMessage(
@@ -315,6 +347,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_answers_available": MessageLookupByLibrary.simpleMessage(
       "No answers available for this question",
     ),
+    "no_file_url_available": MessageLookupByLibrary.simpleMessage(
+      "No file URL available",
+    ),
     "not_started": MessageLookupByLibrary.simpleMessage("Not Started"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
       "Allowed Attempts",
@@ -330,6 +365,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "onMap": MessageLookupByLibrary.simpleMessage("On Map"),
     "on_time": MessageLookupByLibrary.simpleMessage("On time (automatic)."),
     "once": MessageLookupByLibrary.simpleMessage("Once"),
+    "onlyOneFileAllowed": MessageLookupByLibrary.simpleMessage(
+      "Only one file is allowed in edit mode.",
+    ),
     "open": MessageLookupByLibrary.simpleMessage("open"),
     "other": MessageLookupByLibrary.simpleMessage("Other"),
     "parkingSlots": MessageLookupByLibrary.simpleMessage("Parking Slots"),
@@ -500,6 +538,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "startNow": MessageLookupByLibrary.simpleMessage("Start Now!"),
     "startWriting": MessageLookupByLibrary.simpleMessage("Start writing now.."),
     "started": MessageLookupByLibrary.simpleMessage("Started"),
+    "starting_download": MessageLookupByLibrary.simpleMessage(
+      "Starting download...",
+    ),
     "startsAt": MessageLookupByLibrary.simpleMessage("Starts at"),
     "starts_in": MessageLookupByLibrary.simpleMessage("Starts In"),
     "status": MessageLookupByLibrary.simpleMessage("Status:"),
@@ -509,6 +550,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "stayConfident": MessageLookupByLibrary.simpleMessage(
       "Take deep breaths and trust your abilities!",
+    ),
+    "storage_permission_required": MessageLookupByLibrary.simpleMessage(
+      "Storage permission required",
     ),
     "street": MessageLookupByLibrary.simpleMessage("Street"),
     "studentDegree": MessageLookupByLibrary.simpleMessage("Student Degree"),
@@ -579,6 +623,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "wednesday": MessageLookupByLibrary.simpleMessage("Wednesday"),
     "week": MessageLookupByLibrary.simpleMessage("Week"),
+    "week_skeleton_text": MessageLookupByLibrary.simpleMessage("Week One"),
     "weeklySchedule": MessageLookupByLibrary.simpleMessage("Weekly Schedule"),
     "weekly_schedule": MessageLookupByLibrary.simpleMessage("Weekly Schedule"),
     "welcome_message": MessageLookupByLibrary.simpleMessage(

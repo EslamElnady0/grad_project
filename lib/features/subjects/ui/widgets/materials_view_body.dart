@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/helpers/localizationa.dart';
+import 'package:grad_project/features/subjects/logic/delete_course_material/delete_course_material_cubit.dart';
 import 'package:grad_project/features/subjects/ui/widgets/custom_filter_button_row.dart';
 import 'package:grad_project/features/subjects/ui/widgets/custom_week_title.dart';
 import 'package:skeletonizer/skeletonizer.dart';
@@ -13,7 +14,8 @@ import '../../../home/ui/widgets/title_text_widget.dart';
 import '../manager/materials_filter_cubit.dart';
 
 class MaterialsViewBody extends StatelessWidget {
-  const MaterialsViewBody({super.key});
+  const MaterialsViewBody({super.key, required this.courseId});
+  final int courseId;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class MaterialsViewBody extends StatelessWidget {
             ),
             _buildMaterialsList(context, selectedFilters),
             const SliverToBoxAdapter(
-              child: SizedBox(height: 880), // Add some space at the bottom
+              child: SizedBox(height: 150), // Add some space at the bottom
             ),
           ],
         );
@@ -95,19 +97,25 @@ class MaterialsViewBody extends StatelessWidget {
     return CustomWeekTitle(
       day: weekNames[index],
       week: filteredWeek,
+      courseId: courseId,
+      onDeleteMaterial: (item) {
+        // Use the context to call the delete function
+        context.read<DeleteCourseMaterialCubit>().deleteCourseMaterial(item.id!);
+      },
     );
   }
 
   Widget _buildLoadingState() {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
-        (context, index) => const Skeletonizer(
+        (context, index) => Skeletonizer(
           enabled: true,
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.0),
             child: CustomWeekTitle(
-              day: "الاسبوع     الاول",
+              day: S.of(context).week_skeleton_text,
               week: [],
+              courseId: courseId,
             ),
           ),
         ),
