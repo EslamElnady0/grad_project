@@ -3,9 +3,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:grad_project/core/flavors/flavors_functions.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
-import 'package:grad_project/features/assignments/data/models/get_assignments_response_model.dart';
 import 'package:grad_project/features/assignments/presentation/views/edit_assignment_view.dart';
 import 'package:grad_project/features/assignments/presentation/views/pdf_web_view.dart';
 import 'package:grad_project/features/assignments/presentation/views/widgets/assignment_desc_section.dart';
@@ -18,7 +18,7 @@ import 'package:permission_handler/permission_handler.dart';
 class AssignmentDetailsViewBody extends StatelessWidget {
   const AssignmentDetailsViewBody({super.key, required this.assignmentModel});
 
-  final AssignmentModel assignmentModel;
+  final dynamic assignmentModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -61,6 +61,7 @@ class AssignmentDetailsViewBody extends StatelessWidget {
                               await downloadPdfFile(
                                 context,
                                 assignmentModel.file,
+                                assignmentModel.title,
                               );
                             },
                             text: S.of(context).download),
@@ -68,14 +69,16 @@ class AssignmentDetailsViewBody extends StatelessWidget {
                     ],
                   ),
                   vGap(20),
-                  CustomButton(
-                      onTap: () {
-                        GoRouter.of(context).push(
-                          EditAssignmentView.routeName,
-                          extra: assignmentModel,
-                        );
-                      },
-                      text: S.of(context).edit)
+                  FlavorsFunctions.isStudent()
+                      ? SizedBox()
+                      : CustomButton(
+                          onTap: () {
+                            GoRouter.of(context).push(
+                              EditAssignmentView.routeName,
+                              extra: assignmentModel,
+                            );
+                          },
+                          text: S.of(context).edit)
                 ],
               ),
             ),
@@ -86,7 +89,8 @@ class AssignmentDetailsViewBody extends StatelessWidget {
   }
 }
 
-Future<void> downloadPdfFile(BuildContext context, String url) async {
+Future<void> downloadPdfFile(
+    BuildContext context, String url, String title) async {
   try {
     var status = await Permission.storage.request();
     if (!status.isGranted) {
@@ -100,7 +104,7 @@ Future<void> downloadPdfFile(BuildContext context, String url) async {
 
     Directory dir = Directory('/storage/emulated/0/Download');
 
-    String fileName = url.split('/').last;
+    String fileName = title;
 
     String savePath = '${dir.path}/$fileName';
 
