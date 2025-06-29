@@ -1,7 +1,9 @@
+import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/di/dependency_injection.dart';
-import 'package:grad_project/core/helpers/image_helper.dart';
+import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_scaffold.dart';
 import 'package:grad_project/features/chat/ui/cubit/file_picker_cubit.dart';
 import 'package:grad_project/features/forum/data/models/question_and_answers_response_model.dart';
@@ -9,6 +11,7 @@ import 'package:grad_project/features/forum/logic/add_answer/add_answer_cubit.da
 import 'package:grad_project/features/forum/logic/question_and_answers/question_and_answers_cubit.dart';
 import 'package:grad_project/features/forum/logic/toggle_like_cubit/toggle_like_cubit.dart';
 import 'package:grad_project/features/forum/ui/widgets/answers_view_body.dart';
+import 'package:grad_project/generated/l10n.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../../core/widgets/text entry footer/text_entry_footer.dart';
@@ -60,11 +63,17 @@ class AnswersView extends StatelessWidget {
           child: BlocConsumer<AddAnswerCubit, AddAnswerState>(
             listener: (context, state) {
               if (state is AddAnswerSuccess) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Answer submitted successfully!')),
+                ScaffoldMessenger.of(context).showSnackBar(  
+                  SnackBar(
+                      content: Text(
+                       S.of(context).answerSubmittedSuccessfully,
+                       style: AppTextStyles.font12WhiteSemiBold,
+                        )),
                 );
                 // Refresh the question and answers
-                context.read<QuestionAndAnswersCubit>().getQuestionAndAnswers(questionId);
+                context
+                    .read<QuestionAndAnswersCubit>()
+                    .getQuestionAndAnswers(questionId);
               } else if (state is AddAnswerFailure) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text('Error: ${state.error}')),
@@ -75,26 +84,42 @@ class AnswersView extends StatelessWidget {
               return Stack(
                 children: [
                   TextEntryFooter(
-                    onSend: (text, files) {
+                    onSend: (text, files) async {
                       if (text.trim().isNotEmpty) {
-                        String? base64Image;
+                        String? fullBase64;
+
                         if (files.isNotEmpty) {
                           try {
-                            // Convert first image to base64
-                            base64Image = ImageHelper.fileToBase64(files.first);
+                            File imageFile = File(files.first.path);
+                            List<int> imageBytes =
+                                await imageFile.readAsBytes();
+                            String base64Image = base64Encode(imageBytes);
+
+                            // لو عايز تضيف header base64 image type
+                            fullBase64 = 'data:image/png;base64,$base64Image';
                           } catch (e) {
                             ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text('Error processing image: $e')),
+                              SnackBar(
+                                  content: Text('Error processing image: $e')),
                             );
                             return;
                           }
                         }
-                        
+
                         context.read<AddAnswerCubit>().addAnswer(
-                          questionId: questionId,
-                          body: text,
-                          image: base64Image,
-                        );
+                              questionId: questionId,
+                              body: text,
+                              image:
+                                  fullBase64, 
+                            );
+                      }else {
+                            ScaffoldMessenger.of(context).showSnackBar(  
+                  SnackBar(
+                      content: Text(
+                      S.of(context).pleaseEnterYourAnswer,
+                       style: AppTextStyles.font12WhiteSemiBold,
+                        )),
+                );
                       }
                     },
                     onTextChanged: (text) {

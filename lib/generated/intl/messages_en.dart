@@ -68,6 +68,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "all_days": MessageLookupByLibrary.simpleMessage("All Days"),
     "announcements": MessageLookupByLibrary.simpleMessage("Announcements"),
     "answer": MessageLookupByLibrary.simpleMessage("Answer"),
+    "answerSubmittedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Answer submitted successfully",
+    ),
     "app_title": MessageLookupByLibrary.simpleMessage("E-Learning"),
     "are_you_sure_you_want_to_delete_this_material":
         MessageLookupByLibrary.simpleMessage(
@@ -380,6 +383,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "place": MessageLookupByLibrary.simpleMessage("Place"),
     "pleaseEnterRequiredFields": MessageLookupByLibrary.simpleMessage(
       "Please enter the required fields",
+    ),
+    "pleaseEnterYourAnswer": MessageLookupByLibrary.simpleMessage(
+      "Please enter your answer",
     ),
     "pleaseUploadFiles": MessageLookupByLibrary.simpleMessage(
       "Please upload the files first",

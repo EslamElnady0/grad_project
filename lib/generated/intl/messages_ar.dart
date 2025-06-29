@@ -66,6 +66,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "all_days": MessageLookupByLibrary.simpleMessage("كل الأيام"),
     "announcements": MessageLookupByLibrary.simpleMessage("الأخبار المعلنه"),
     "answer": MessageLookupByLibrary.simpleMessage("إجابة"),
+    "answerSubmittedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم إرسال الإجابة بنجاح",
+    ),
     "app_title": MessageLookupByLibrary.simpleMessage("التعليم الالكتروني"),
     "are_you_sure_you_want_to_delete_this_material":
         MessageLookupByLibrary.simpleMessage(
@@ -366,6 +369,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "place": MessageLookupByLibrary.simpleMessage("المكان"),
     "pleaseEnterRequiredFields": MessageLookupByLibrary.simpleMessage(
       "من فضلك ادخل الحقول المطلوبة",
+    ),
+    "pleaseEnterYourAnswer": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل إجابتك",
     ),
     "pleaseUploadFiles": MessageLookupByLibrary.simpleMessage(
       "من فضلك ارفع الملفات اولاً",

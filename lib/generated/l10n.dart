@@ -2724,6 +2724,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Answer submitted successfully`
+  String get answerSubmittedSuccessfully {
+    return Intl.message(
+      'Answer submitted successfully',
+      name: 'answerSubmittedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your answer`
+  String get pleaseEnterYourAnswer {
+    return Intl.message(
+      'Please enter your answer',
+      name: 'pleaseEnterYourAnswer',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

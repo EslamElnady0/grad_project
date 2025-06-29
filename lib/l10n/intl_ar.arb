@@ -346,5 +346,7 @@
   "new_file": "ملف جديد",
   "onlyOneFileAllowed": "مسموح برفع ملف واحد فقط في وضع التعديل",
   "materialAddedSuccessfully": "تم إضافة المادة بنجاح",
-  "materialUpdatedSuccessfully": "تم تحديث المادة بنجاح"
+  "materialUpdatedSuccessfully": "تم تحديث المادة بنجاح",
+  "answerSubmittedSuccessfully": "تم إرسال الإجابة بنجاح",
+  "pleaseEnterYourAnswer": "من فضلك أدخل إجابتك"
 }

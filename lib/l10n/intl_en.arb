@@ -347,5 +347,7 @@
   "onlyOneFileAllowed": "Only one file is allowed in edit mode.",
   "materialAddedSuccessfully": "Material added successfully",
   "materialUpdatedSuccessfully": "Material updated successfully"
-
+  ,
+  "answerSubmittedSuccessfully": "Answer submitted successfully",
+    "pleaseEnterYourAnswer"  : "Please enter your answer"
 }
