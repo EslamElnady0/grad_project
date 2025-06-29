@@ -1,5 +1,7 @@
 import 'package:grad_project/core/networking/api_error_handler.dart';
 import 'package:grad_project/core/networking/api_result.dart';
+import 'package:grad_project/features/forum/data/models/add_answer_request_model.dart';
+import 'package:grad_project/features/forum/data/models/add_answer_response_model.dart';
 import 'package:grad_project/features/forum/data/models/get_all_questions_response_model.dart';
 import 'package:grad_project/features/forum/data/models/question_and_answers_response_model.dart';
 import 'package:grad_project/features/forum/data/models/toggle_like_response_model.dart';
@@ -42,6 +44,20 @@ class QuestionsRepo {
       return ApiResult.success(response); 
     } catch (e) {
      
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
+  Future<ApiResult<AddAnswerResponseModel>> addAnswer({
+    required String questionId,
+    required String body,
+    String? image,
+  }) async {
+    try {
+      final request = AddAnswerRequestModel(body: body, image: image);
+      final response = await remoteDataSource.addAnswer(questionId, request);
+      return ApiResult.success(response);
+    } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));
     }
   }

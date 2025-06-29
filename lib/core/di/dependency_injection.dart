@@ -89,6 +89,7 @@ import '../data/repos/all_courses_repo.dart';
 import '../logic/all_courses_cubit/all_courses_cubit.dart';
 import '../networking/api_service.dart';
 import '../networking/dio_factory.dart';
+import 'package:grad_project/features/forum/logic/add_answer/add_answer_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -202,6 +203,7 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<GetAllQuestionsCubit>(
       () => GetAllQuestionsCubit(getIt()));
   getIt.registerFactory<ToggleLikeCubit>(() => ToggleLikeCubit(getIt()));
+  getIt.registerFactory<AddAnswerCubit>(() => AddAnswerCubit(getIt()));
   getIt.registerFactory<QuestionAndAnswersCubit>(
       () => QuestionAndAnswersCubit(getIt()));
   //toDo:------------------------------ Chat API ------------------------------//

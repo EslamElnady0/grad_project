@@ -105,6 +105,37 @@ class _QuestionsRemoteDataSource implements QuestionsRemoteDataSource {
     return _value;
   }
 
+  @override
+  Future<AddAnswerResponseModel> addAnswer(
+    String questionId,
+    AddAnswerRequestModel addAnswerRequest,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(addAnswerRequest.toJson());
+    final _options = _setStreamType<AddAnswerResponseModel>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'questions/addanswer/${questionId}',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late AddAnswerResponseModel _value;
+    try {
+      _value = AddAnswerResponseModel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||
