@@ -13,10 +13,43 @@ class ChatRepo {
   final SocketService socketService;
   final ChatLocalDataSource localDataSource;
 
+  // Track active listeners to prevent duplicates
+  final Set<String> _activeListeners = {};
+
   ChatRepo(
       {required this.remoteDataSource,
       required this.localDataSource,
       required this.socketService});
+
+  /// Add a listener only if it's not already active
+  void _addListenerOnce(String event, Function(dynamic) callback) {
+    if (!_activeListeners.contains(event)) {
+      socketService.on(event, callback);
+      _activeListeners.add(event);
+      log('Added listener for event: $event');
+    } else {
+      log('Listener already exists for event: $event, skipping...');
+    }
+  }
+
+  /// Remove a specific listener and mark it as inactive
+  void _removeListener(String event) {
+    if (_activeListeners.contains(event)) {
+      socketService.off(event);
+      _activeListeners.remove(event);
+      log('Removed listener for event: $event');
+    }
+  }
+
+  /// Remove all active listeners
+  void _removeAllListeners() {
+    for (String event in _activeListeners.toList()) {
+      socketService.off(event);
+      log('Removed listener for event: $event');
+    }
+    _activeListeners.clear();
+  }
+
   Future<ApiResult<ChatGroupResponse>> getChatGroups() async {
     try {
       final response = await remoteDataSource.getChatGroups();
@@ -61,9 +94,12 @@ class ChatRepo {
     required Function onSuccess,
     required Function(String error) onFailure,
   }) {
+    // Remove existing listeners before adding new ones
+    _removeListener(SocketEvents.sendMessageError);
+
     socketService.emit(SocketEvents.sendMessage, {'text': messageText});
-    //todo: send message success action
-    socketService.on(SocketEvents.sendMessageError, (error) {
+
+    _addListenerOnce(SocketEvents.sendMessageError, (error) {
       log("message sending failed");
       onFailure(error.toString());
     });
@@ -74,14 +110,19 @@ class ChatRepo {
     required Function onSuccess,
     required Function(String error) onFailure,
   }) {
+    // Remove existing listeners before adding new ones
+    _removeListener(SocketEvents.messageSeenSuccess);
+    _removeListener(SocketEvents.messageSeenError);
+
     socketService.emit(SocketEvents.messageSeen, {'messageId': messageId});
 
-    socketService.on(SocketEvents.messageSeenSuccess, (data) {
+    _addListenerOnce(SocketEvents.messageSeenSuccess, (data) {
       log("message seen success");
       onSuccess(data);
     });
-    socketService.on(SocketEvents.messageSeenError, (error) {
-      log("message sending failed");
+
+    _addListenerOnce(SocketEvents.messageSeenError, (error) {
+      log("message seen failed");
       onFailure(error.toString());
     });
   }
@@ -90,23 +131,37 @@ class ChatRepo {
     required Function(dynamic data) onSuccess,
     required Function(String error) onFailure,
   }) {
+    // Remove existing listeners before adding new ones
+    _removeListener(SocketEvents.openChatSuccess);
+    _removeListener(SocketEvents.openChatError);
+    _removeListener(SocketEvents.typingSuccess);
+    _removeListener(SocketEvents.typingError);
+    _removeListener(SocketEvents.stopTypingSuccess);
+    _removeListener(SocketEvents.stopTypingError);
+
     socketService.emit(SocketEvents.openChat, {});
-    socketService.on(SocketEvents.openChatSuccess, (data) {
+
+    _addListenerOnce(SocketEvents.openChatSuccess, (data) {
       onSuccess(data);
     });
-    socketService.on(SocketEvents.openChatError, (error) {
+
+    _addListenerOnce(SocketEvents.openChatError, (error) {
       onFailure(error.toString());
     });
-    socketService.on(SocketEvents.typingSuccess, (data) {
+
+    _addListenerOnce(SocketEvents.typingSuccess, (data) {
       onSuccess(data);
     });
-    socketService.on(SocketEvents.typingError, (error) {
+
+    _addListenerOnce(SocketEvents.typingError, (error) {
       onFailure(error.toString());
     });
-    socketService.on(SocketEvents.stopTypingSuccess, (data) {
+
+    _addListenerOnce(SocketEvents.stopTypingSuccess, (data) {
       onSuccess(data);
     });
-    socketService.on(SocketEvents.stopTypingError, (error) {
+
+    _addListenerOnce(SocketEvents.stopTypingError, (error) {
       onFailure(error.toString());
     });
   }
@@ -116,13 +171,19 @@ class ChatRepo {
     required Function(dynamic data) onSuccess,
     required Function(String error) onFailure,
   }) {
+    // Remove existing listeners before adding new ones
+    _removeListener(SocketEvents.typingSuccess);
+    _removeListener(SocketEvents.typingError);
+
     socketService.emit(SocketEvents.typing, {
       "type": typingState,
     });
-    socketService.once(SocketEvents.typingSuccess, (data) {
+
+    _addListenerOnce(SocketEvents.typingSuccess, (data) {
       onSuccess(data);
     });
-    socketService.once(SocketEvents.typingError, (error) {
+
+    _addListenerOnce(SocketEvents.typingError, (error) {
       onFailure(error.toString());
     });
   }
@@ -131,21 +192,23 @@ class ChatRepo {
     required Function(dynamic data) onSuccess,
     required Function(String error) onFailure,
   }) {
+    // Remove existing listeners before adding new ones
+    _removeListener(SocketEvents.stopTypingSuccess);
+    _removeListener(SocketEvents.stopTypingError);
+
     socketService.emit(SocketEvents.stopTyping, {});
-    socketService.once(SocketEvents.stopTypingSuccess, (data) {
+
+    _addListenerOnce(SocketEvents.stopTypingSuccess, (data) {
       onSuccess(data);
     });
-    socketService.once(SocketEvents.stopTypingError, (error) {
+
+    _addListenerOnce(SocketEvents.stopTypingError, (error) {
       onFailure(error.toString());
     });
   }
 
   void dispose() {
-    //socketService.off(SocketEvents.recieveMessage);
-    socketService.off(SocketEvents.sendMessageError);
-    socketService.off(SocketEvents.messageSeenSuccess);
-    socketService.off(SocketEvents.messageSeenError);
-    // socketService.off(SocketEvents.openChatSuccess);
-    // socketService.off(SocketEvents.openChatError);
+    _removeAllListeners();
+    log('ChatRepo disposed - all listeners removed');
   }
 }

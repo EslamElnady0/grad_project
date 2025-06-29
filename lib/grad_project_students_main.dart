@@ -10,6 +10,7 @@ import 'package:grad_project/core/cubits/socket_cubit/global_socket_state.dart';
 import 'package:grad_project/core/flavors/flavors_functions.dart';
 import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/helpers/shared_pref_helper.dart';
+import 'package:grad_project/core/services/firebase_messaging_service.dart';
 import 'package:timeago/timeago.dart' as timeago;
 import 'core/cubits/socket_cubit/global_socket_cubit.dart';
 import 'core/di/dependency_injection.dart';
@@ -40,7 +41,7 @@ Future<void> main() async {
     FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
     return true;
   };
-
+  FirebaseMessagingService().initialize();
   runApp(GradProjectStudentApp(isLogin: isLogin));
 }
 

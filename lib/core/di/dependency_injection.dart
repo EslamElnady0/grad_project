@@ -2,8 +2,10 @@ import 'package:get_it/get_it.dart';
 import 'package:dio/dio.dart';
 import 'package:grad_project/core/cubits/socket_cubit/global_socket_cubit.dart';
 import 'package:grad_project/core/data/data%20sources/get_course_materials_remote_data_source.dart';
+import 'package:grad_project/core/data/data%20sources/sub_to_push_notifications_remote_data_source.dart';
 import 'package:grad_project/core/data/repos/get_course_materials_repo.dart';
 import 'package:grad_project/core/data/repos/socket_repo.dart';
+import 'package:grad_project/core/data/repos/sub_to_notification_repo.dart';
 import 'package:grad_project/core/lifecycle/app_lifecycle_cubit.dart';
 import 'package:grad_project/core/logic/get_course_materials_cubit/get_course_materials_cubit.dart';
 import 'package:grad_project/core/networking/network_monitor.dart';
@@ -97,9 +99,13 @@ Future<void> setupGetIt() async {
   // Dio & ApiService
   Dio dio = await DioFactory.getDio();
   getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
+  getIt.registerLazySingleton<SubToPushNotificationsRemoteDataSource>(
+      () => SubToPushNotificationsRemoteDataSource(dio));
+  getIt.registerLazySingleton<SubToNotificationRepo>(
+      () => SubToNotificationRepo(getIt()));
   //toDo:--------------------------------Auth API --------------------
   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
-  getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
+  getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt(), getIt()));
   //toDo:------------------------------ Annoucements API ------------------------------//
   getIt.registerLazySingleton<AnnoucementsRemoteDataSource>(
       () => AnnoucementsRemoteDataSource(dio));
@@ -153,10 +159,13 @@ Future<void> setupGetIt() async {
       () => StudentQuizAnswersCubit(getIt()));
 
   //toDo:------------------------------Subjects API------------------------------//
-  getIt.registerLazySingleton<SubjectsRemoteDataSource>( () => SubjectsRemoteDataSource(dio));
-  getIt.registerLazySingleton<SubjectsRepo>(() => SubjectsRepo(dio: dio, remoteDataSource: getIt()));
+  getIt.registerLazySingleton<SubjectsRemoteDataSource>(
+      () => SubjectsRemoteDataSource(dio));
+  getIt.registerLazySingleton<SubjectsRepo>(
+      () => SubjectsRepo(dio: dio, remoteDataSource: getIt()));
   getIt.registerFactory<AddMaterialsCubit>(() => AddMaterialsCubit(getIt()));
-  getIt.registerFactory<DeleteCourseMaterialCubit>(() => DeleteCourseMaterialCubit(getIt()));
+  getIt.registerFactory<DeleteCourseMaterialCubit>(
+      () => DeleteCourseMaterialCubit(getIt()));
   //toDo:------------------------------ Get Tabel Api ------------------------------//
   getIt.registerLazySingleton<GetTabelRemoteDataSource>(
       () => GetTabelRemoteDataSource(dio));
@@ -191,7 +200,8 @@ Future<void> setupGetIt() async {
       () => GetAssignmentsAnswersCubit(getIt()));
 
   getIt.registerFactory<AssignGradeCubit>(() => AssignGradeCubit(getIt()));
-  getIt.registerFactory<GetAssignmentAnswerStatusCubit>(() => GetAssignmentAnswerStatusCubit(getIt()));
+  getIt.registerFactory<GetAssignmentAnswerStatusCubit>(
+      () => GetAssignmentAnswerStatusCubit(getIt()));
   //toDo:------------------------------ Questions API ------------------------------//
   getIt.registerLazySingleton<QuestionsRemoteDataSource>(
       () => QuestionsRemoteDataSource(dio));

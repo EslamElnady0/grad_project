@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grad_project/core/data/models/sub_to_push_notifications_model.dart';
+import 'package:grad_project/core/data/repos/sub_to_notification_repo.dart';
 import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/features/auth/logic/cubit/login_state.dart';
 
@@ -10,7 +12,10 @@ import '../../data/repos/login_repo.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   final LoginRepo _loginRepo;
-  LoginCubit(this._loginRepo) : super(const LoginState.initial());
+  final SubToNotificationRepo _subToNotificationRepo;
+
+  LoginCubit(this._loginRepo, this._subToNotificationRepo)
+      : super(const LoginState.initial());
 
   final formKey = GlobalKey<FormState>();
 
@@ -28,6 +33,11 @@ class LoginCubit extends Cubit<LoginState> {
     response.when(success: (loginResponse) async {
       await saveUserToken(loginResponse.data?[0].accessToken ?? '',
           loginResponse.data?[0].user?.id.toString() ?? '');
+      await _subToNotificationRepo.saveToken(
+        SubToPushNotificationsModel(
+            userId: loginResponse.data?[0].user?.id.toString() ?? '',
+            deviceToken: loginResponse.data?[0].accessToken ?? ''),
+      );
       emit(LoginState.success(loginResponse));
     }, failure: (apiErrorModel) {
       emit(LoginState.error(apiErrorModel));
