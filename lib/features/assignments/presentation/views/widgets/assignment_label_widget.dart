@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
-import 'package:grad_project/features/assignments/data/models/get_assignments_response_model.dart';
 import 'package:grad_project/features/assignments/presentation/views/widgets/assignment_label_widget_content.dart';
 import 'package:grad_project/generated/l10n.dart';
 
 class AssignmentLabelWidget extends StatelessWidget {
   const AssignmentLabelWidget({super.key, required this.assignmentModel});
 
-  final AssignmentModel assignmentModel;
+  final dynamic assignmentModel;
   @override
   Widget build(BuildContext context) {
     return Container(

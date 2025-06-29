@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Overall_Grade": MessageLookupByLibrary.simpleMessage("تقدير تراكمي"),
     "Section": MessageLookupByLibrary.simpleMessage("سكشن"),
     "SelectWeek": MessageLookupByLibrary.simpleMessage("اختر الأسبوع"),
+    "Submission_state": MessageLookupByLibrary.simpleMessage("حالة التسليم"),
     "academicProgress": MessageLookupByLibrary.simpleMessage(
       "التقدم الأكاديمي",
     ),
@@ -86,7 +87,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "assignment_details": MessageLookupByLibrary.simpleMessage(
       "تفاصيل الأسايمنت",
     ),
+    "assignment_not_submitted": MessageLookupByLibrary.simpleMessage(
+      "لم يتم التسليم",
+    ),
     "assignment_preview": MessageLookupByLibrary.simpleMessage("عرض الأسايمنت"),
+    "assignment_state": MessageLookupByLibrary.simpleMessage("حالة الأسايمنت"),
+    "assignment_submitted": MessageLookupByLibrary.simpleMessage("تم التسليم"),
     "assignment_title": MessageLookupByLibrary.simpleMessage("عنوان الأسايمنت"),
     "assignment_title_hint_text": MessageLookupByLibrary.simpleMessage(
       " أدخل عنوانًا يعبر عن محتوى الأسايمنت بشكل واضح.",
@@ -137,6 +143,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cooperateShareThoughts": MessageLookupByLibrary.simpleMessage(
       "تعاون، شارك أفكارك، وتعلّم من زملائك بسهولة 📚",
     ),
+    "corrected": MessageLookupByLibrary.simpleMessage("تم التصحيح"),
     "course_code": MessageLookupByLibrary.simpleMessage("كود المقرر"),
     "course_management_center": MessageLookupByLibrary.simpleMessage(
       "👨‍🏫 مركز إدارة المواد الدراسية الخاصة بك بكل سهولة، من الطلاب إلى المحاضرات والكويزات!",
@@ -336,6 +343,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_file_url_available": MessageLookupByLibrary.simpleMessage(
       "لا يوجد رابط للملف",
     ),
+    "not_corrected": MessageLookupByLibrary.simpleMessage("لم يتم التصحيح"),
     "not_started": MessageLookupByLibrary.simpleMessage("لم يبدأ"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
       "المرات المسموح بها",
@@ -531,6 +539,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "street": MessageLookupByLibrary.simpleMessage("شارع"),
     "studentDegree": MessageLookupByLibrary.simpleMessage("درجة الطالب"),
+    "student_assignment_details_welcome_message":
+        MessageLookupByLibrary.simpleMessage(
+          "  📑 استعرض تفاصيل الأسايمنت الخاص بك، بما في ذلك الحالة، الدرجة، والتعليقات المقدمة من المعلم.",
+        ),
     "student_grade": MessageLookupByLibrary.simpleMessage("درجة الطالب"),
     "studentsAnswersReview": MessageLookupByLibrary.simpleMessage(
       "مراجعة الإجابات",
@@ -548,6 +560,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "sunday": MessageLookupByLibrary.simpleMessage("الأحد"),
     "teacher": MessageLookupByLibrary.simpleMessage("المعلم"),
+    "teacher_assignment_details_welcome_message":
+        MessageLookupByLibrary.simpleMessage(
+          "📑 استعرض تفاصيل الأسايمنت الخاص بك.",
+        ),
     "testYourKnowledge": MessageLookupByLibrary.simpleMessage(
       "📋 اختبر معلوماتك، واستعد للامتحان من خلال الإجابة على الأسئلة المخصصة!",
     ),
