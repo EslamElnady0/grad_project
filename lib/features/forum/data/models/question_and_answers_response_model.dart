@@ -44,7 +44,7 @@ class QuestionAndAnswerDataModel {
 class AnswerModel {
   @JsonKey(name: '_id')
   final String? id;
-
+  final String? imageUrl;
   final String? body;
   final int? likes;
   final UserModel? user;
@@ -56,6 +56,7 @@ class AnswerModel {
     this.likes,
     this.user,
     this.createdAt,
+    this.imageUrl,
   });
 
   factory AnswerModel.fromJson(Map<String, dynamic> json) =>

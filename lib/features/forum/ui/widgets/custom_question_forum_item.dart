@@ -55,7 +55,7 @@ class CustomQuestionForumItem extends StatelessWidget {
           if (questionModel != null &&
               questionModel!.imageUrl != null &&
               questionModel!.imageUrl!.isNotEmpty)
-            ShowQusetionImage(questionModel: questionModel)
+            ShowQusetionImage(imageUrl: questionModel!.imageUrl!)
         ],
       ),
     );

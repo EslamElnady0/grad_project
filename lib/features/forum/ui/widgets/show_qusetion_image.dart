@@ -3,16 +3,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/widgets/custom_cached_network_image.dart';
 import 'package:grad_project/core/widgets/full_screen_image_view.dart';
-import 'package:grad_project/features/forum/data/models/get_all_questions_response_model.dart';
 
 class ShowQusetionImage extends StatelessWidget {
   const ShowQusetionImage({
     super.key,
-    required this.questionModel,
+    required this.imageUrl,
+    this.height,
   });
 
-  final QuestionModel? questionModel;
-
+  final String imageUrl;
+  final double? height;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,19 +23,20 @@ class ShowQusetionImage extends StatelessWidget {
         children: [
      
           CustomCachedNetworkImage(
-            imageUrl: questionModel!.imageUrl!,
-            width: double.infinity,
+            imageUrl: imageUrl,      
+            width: height != null ?  null: double.infinity ,
+            height: height,
             borderRadius: 16.r,
           ),
     
      
-          Positioned(
+          Positioned(  
             top: 8.r,
             right: 8.r,
             child: GestureDetector(
               onTap: () {
               context.push(FullScreenImageView.routeName,
-                  extra: questionModel!.imageUrl!);
+                  extra: imageUrl);
               },
               child: Container(
                 padding: EdgeInsets.all(8.r),
