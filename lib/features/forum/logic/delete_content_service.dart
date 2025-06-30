@@ -58,6 +58,7 @@ class DeleteContentService {
     required BuildContext context,
     required String questionId,
     required String ownerId,
+    VoidCallback? onSuccess,
   }) async {
     // Check permissions first
     final hasPermission = await _hasDeletePermission(ownerId);
@@ -83,6 +84,8 @@ class DeleteContentService {
             context,
             S.of(context).deleted_successfully,
           );
+          // Call the success callback to refresh UI
+          onSuccess?.call();
         },
         failure: (error) {
           _showSnackBar(
@@ -106,6 +109,7 @@ class DeleteContentService {
     required BuildContext context,
     required String answerId,
     required String ownerId,
+    VoidCallback? onSuccess,
   }) async {
     // Check permissions first
     final hasPermission = await _hasDeletePermission(ownerId);
@@ -131,6 +135,8 @@ class DeleteContentService {
             context,
             S.of(context).deleted_successfully,
           );
+          // Call the success callback to refresh UI
+          onSuccess?.call();
         },
         failure: (error) {
           _showSnackBar(

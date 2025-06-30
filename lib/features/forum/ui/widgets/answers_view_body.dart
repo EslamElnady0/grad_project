@@ -9,8 +9,9 @@ import '../../../../generated/l10n.dart';
 import '../../../home/ui/widgets/title_text_widget.dart';
 
 class AnswersViewBody extends StatelessWidget {
-  const AnswersViewBody({super.key,  this.questionAndAnswerDataModel});
+  const AnswersViewBody({super.key,  this.questionAndAnswerDataModel, this.questionId});
 final QuestionAndAnswerDataModel? questionAndAnswerDataModel;
+final String? questionId;
   @override
   Widget build(BuildContext context) {
     
@@ -30,7 +31,13 @@ final QuestionAndAnswerDataModel? questionAndAnswerDataModel;
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0.w),
-            child: CustomQuestionForumItem(questionModel: questionAndAnswerDataModel?.question),
+            child: CustomQuestionForumItem(
+              questionModel: questionAndAnswerDataModel?.question,
+              onQuestionDeleted: () {
+                // Navigate back when question is deleted
+                Navigator.of(context).pop();
+              },
+            ),
           ),
           vGap(18),
           ListView.builder(
@@ -41,6 +48,7 @@ final QuestionAndAnswerDataModel? questionAndAnswerDataModel;
               padding: EdgeInsets.only(bottom: 8.h),
               child: CustomAnswerItem(
                 answerModel: questionAndAnswerDataModel?.answers?[index],
+                questionId: questionAndAnswerDataModel?.question?.id,
               ),
             ),
           ),

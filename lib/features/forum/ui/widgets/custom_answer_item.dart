@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/features/forum/data/models/question_and_answers_response_model.dart';
 import 'package:grad_project/features/forum/ui/widgets/custom_like_toggle_answer.dart';
 import 'package:grad_project/features/forum/ui/widgets/show_qusetion_image.dart';
 import 'package:grad_project/generated/l10n.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:grad_project/features/forum/logic/delete_content_service.dart';
+import 'package:grad_project/features/forum/logic/question_and_answers/question_and_answers_cubit.dart';
 import 'package:grad_project/core/di/dependency_injection.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/app_colors.dart';
@@ -16,9 +18,11 @@ class CustomAnswerItem extends StatelessWidget {
   const CustomAnswerItem({
     super.key,
     this.answerModel,
+    this.questionId,
   });
 
   final AnswerModel? answerModel;
+  final String? questionId;
 
   @override
   Widget build(BuildContext context) {
@@ -106,6 +110,17 @@ class CustomAnswerItem extends StatelessWidget {
         context: context,
         answerId: answerModel!.id!.toString(),
         ownerId: answerModel!.user!.id!.toString(),
+        onSuccess: () {
+          // Refresh the question and answers after successful deletion
+          if (questionId != null) {
+            try {
+              context.read<QuestionAndAnswersCubit>().getQuestionAndAnswers(questionId!);
+            } catch (e) {
+              // If cubit is not available in the context, ignore the error
+              // This can happen if the widget is used in different contexts
+            }
+          }
+        },
       );
     }
   }

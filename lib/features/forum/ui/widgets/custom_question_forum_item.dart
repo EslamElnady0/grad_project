@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/helpers/get_time_info.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
@@ -9,17 +10,18 @@ import 'package:grad_project/features/forum/data/models/get_all_questions_respon
 import 'package:grad_project/features/forum/ui/widgets/show_qusetion_image.dart';
 import 'package:grad_project/generated/l10n.dart';
 import 'package:grad_project/features/forum/logic/delete_content_service.dart';
+import 'package:grad_project/features/forum/logic/get_all_questions_cubit/get_all_questions_cubit.dart';
 import 'package:grad_project/core/di/dependency_injection.dart';
 
 class CustomQuestionForumItem extends StatelessWidget {
   const CustomQuestionForumItem({
     super.key,
-
     this.questionModel,
+    this.onQuestionDeleted,
   });
 
-
   final QuestionModel? questionModel;
+  final VoidCallback? onQuestionDeleted;
 
   @override
   Widget build(BuildContext context) {
@@ -93,6 +95,18 @@ class CustomQuestionForumItem extends StatelessWidget {
         context: context,
         questionId: questionModel!.id!,
         ownerId: questionModel!.user!.id!.toString(),
+        onSuccess: () {
+          // Call the deletion callback (e.g., navigate back or refresh)
+          onQuestionDeleted?.call();
+          
+          // Refresh the questions list after successful deletion
+          try {
+            context.read<GetAllQuestionsCubit>().getAllQuestions();
+          } catch (e) {
+            // If cubit is not available in the context, ignore the error
+            // This can happen if the widget is used in different contexts
+          }
+        },
       );
     }
   }

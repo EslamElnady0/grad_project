@@ -45,11 +45,13 @@ class AnswersView extends StatelessWidget {
                         answers: List.generate(
                   10,
                   (index) => AnswerModel(),
-                ))),
+                )),
+                    questionId: questionId),
               ),
               success: (data) {
                 return AnswersViewBody(
                   questionAndAnswerDataModel: data.data,
+                  questionId: questionId,
                 );
               },
               failure: (error) {
