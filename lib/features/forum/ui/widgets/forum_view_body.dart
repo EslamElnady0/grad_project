@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:grad_project/core/di/dependency_injection.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/widgets/custom_text_and_icon_button.dart';
 import 'package:grad_project/features/forum/data/models/get_all_questions_response_model.dart';
+import 'package:grad_project/features/forum/logic/add_question/add_question_cubit.dart';
+import 'package:grad_project/features/forum/logic/get_all_questions_cubit/get_all_questions_cubit.dart';
+import 'package:grad_project/features/forum/ui/widgets/add_question_bottom_sheet.dart';
 import 'package:grad_project/features/forum/ui/widgets/custom_forum_item.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theme/app_text_styles.dart';
@@ -12,8 +18,28 @@ import '../../../home/ui/widgets/title_text_widget.dart';
 
 class ForumViewsBody extends StatelessWidget {
   const ForumViewsBody({super.key, this.questions, this.totalQuestions});
-final    List<QuestionModel>? questions;
+  final List<QuestionModel>? questions;
   final int? totalQuestions;
+
+  void _showAddQuestionBottomSheet(BuildContext context) {
+    showModalBottomSheet<bool>(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (bottomSheetContext) {
+        return BlocProvider(
+          create: (context) => getIt<AddQuestionCubit>(),
+          child: AddQuestionBottomSheet(
+            onQuestionAdded: () {
+            context.pop();
+              // Refresh the questions list
+              context.read<GetAllQuestionsCubit>().getAllQuestions();
+            },
+          ),
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +69,7 @@ final    List<QuestionModel>? questions;
                   CustomTextAndIconButton(
                     primaryButton: true,
                     text: S.of(context).add_your_question,
-                    onTap: () {},
+                    onTap: () => _showAddQuestionBottomSheet(context),
                     icon: const Icon(Icons.add, color: AppColors.white,),
                   ),
                   const Spacer(),

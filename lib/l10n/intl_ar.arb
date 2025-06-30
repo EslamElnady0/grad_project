@@ -348,5 +348,7 @@
   "materialAddedSuccessfully": "تم إضافة المادة بنجاح",
   "materialUpdatedSuccessfully": "تم تحديث المادة بنجاح",
   "answerSubmittedSuccessfully": "تم إرسال الإجابة بنجاح",
-  "pleaseEnterYourAnswer": "من فضلك أدخل إجابتك"
+  "pleaseEnterYourAnswer": "من فضلك أدخل إجابتك",
+  "enterQuestionBodyFirst": "يجب اضافه نص السوال اولا.",
+  "loading": "جاري التحميل..."
 }

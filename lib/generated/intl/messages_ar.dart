@@ -196,6 +196,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "email": MessageLookupByLibrary.simpleMessage("الإيميل"),
     "endsAt": MessageLookupByLibrary.simpleMessage("ينتهي"),
     "ends_in": MessageLookupByLibrary.simpleMessage("ينتهي في "),
+    "enterQuestionBodyFirst": MessageLookupByLibrary.simpleMessage(
+      "يجب اضافه نص السوال اولا.",
+    ),
     "enterYourQuestion": MessageLookupByLibrary.simpleMessage("ادخل سؤالك"),
     "enter_code": MessageLookupByLibrary.simpleMessage(
       "أدخل الكود المكون من 6 أرقام اللي اتبعت ليك.",
@@ -271,6 +274,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "lectures": MessageLookupByLibrary.simpleMessage("المحاضرات"),
     "level": MessageLookupByLibrary.simpleMessage("الفرقة"),
+    "loading": MessageLookupByLibrary.simpleMessage("جاري التحميل..."),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "main_info": MessageLookupByLibrary.simpleMessage("المعلومات الأساسية"),

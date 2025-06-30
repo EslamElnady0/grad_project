@@ -25,6 +25,7 @@ import 'package:grad_project/features/forum/data/repos/questions_repo.dart';
 import 'package:grad_project/features/forum/logic/get_all_questions_cubit/get_all_questions_cubit.dart';
 import 'package:grad_project/features/forum/logic/question_and_answers/question_and_answers_cubit.dart';
 import 'package:grad_project/features/forum/logic/toggle_like_cubit/toggle_like_cubit.dart';
+import 'package:grad_project/features/forum/logic/add_question/add_question_cubit.dart';
 import 'package:grad_project/features/chat/logic/get_group_details_cubit/get_group_details_cubit.dart';
 import 'package:grad_project/features/chat/logic/get_latest_messages_cubit/get_latest_messages_cubit.dart';
 import 'package:grad_project/features/subjects/data/data_source/subjects_remote_data_source.dart';
@@ -204,6 +205,7 @@ Future<void> setupGetIt() async {
       () => GetAllQuestionsCubit(getIt()));
   getIt.registerFactory<ToggleLikeCubit>(() => ToggleLikeCubit(getIt()));
   getIt.registerFactory<AddAnswerCubit>(() => AddAnswerCubit(getIt()));
+  getIt.registerFactory<AddQuestionCubit>(() => AddQuestionCubit(getIt()));
   getIt.registerFactory<QuestionAndAnswersCubit>(
       () => QuestionAndAnswersCubit(getIt()));
   //toDo:------------------------------ Chat API ------------------------------//

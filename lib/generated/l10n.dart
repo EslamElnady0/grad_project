@@ -2744,6 +2744,21 @@ class S {
       args: [],
     );
   }
+
+  /// `You must enter the question text first.`
+  String get enterQuestionBodyFirst {
+    return Intl.message(
+      'You must enter the question text first.',
+      name: 'enterQuestionBodyFirst',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading...`
+  String get loading {
+    return Intl.message('Loading...', name: 'loading', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

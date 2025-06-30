@@ -349,5 +349,7 @@
   "materialUpdatedSuccessfully": "Material updated successfully"
   ,
   "answerSubmittedSuccessfully": "Answer submitted successfully",
-    "pleaseEnterYourAnswer"  : "Please enter your answer"
+    "pleaseEnterYourAnswer"  : "Please enter your answer",
+     "enterQuestionBodyFirst": "You must enter the question text first.",
+  "loading": "Loading..."
 }

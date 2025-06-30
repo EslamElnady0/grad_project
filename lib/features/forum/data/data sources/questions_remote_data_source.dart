@@ -2,6 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:grad_project/core/networking/api_constants.dart';
 import 'package:grad_project/features/forum/data/models/add_answer_request_model.dart';
 import 'package:grad_project/features/forum/data/models/add_answer_response_model.dart';
+import 'package:grad_project/features/forum/data/models/add_question_request_model.dart';
+import 'package:grad_project/features/forum/data/models/add_question_response_model.dart';
 import 'package:grad_project/features/forum/data/models/get_all_questions_response_model.dart';
 import 'package:grad_project/features/forum/data/models/question_and_answers_response_model.dart';
 import 'package:grad_project/features/forum/data/models/toggle_like_response_model.dart';
@@ -37,5 +39,10 @@ abstract class QuestionsRemoteDataSource {
   Future<AddAnswerResponseModel> addAnswer(
     @Path("questionId") String questionId,
     @Body() AddAnswerRequestModel addAnswerRequest,
+  );
+
+  @POST("${ApiConstants.questions}/add")
+  Future<AddQuestionResponseModel> addQuestion(
+    @Body() AddQuestionRequestModel addQuestionRequest,
   );
 }

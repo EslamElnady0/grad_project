@@ -206,6 +206,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "endsAt": MessageLookupByLibrary.simpleMessage("Ends at"),
     "ends_in": MessageLookupByLibrary.simpleMessage("Ends In"),
+    "enterQuestionBodyFirst": MessageLookupByLibrary.simpleMessage(
+      "You must enter the question text first.",
+    ),
     "enterYourQuestion": MessageLookupByLibrary.simpleMessage(
       "Enter your question",
     ),
@@ -287,6 +290,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "lectures": MessageLookupByLibrary.simpleMessage("Lectures"),
     "level": MessageLookupByLibrary.simpleMessage("Level"),
+    "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "login": MessageLookupByLibrary.simpleMessage("Log In"),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "main_info": MessageLookupByLibrary.simpleMessage("Main information"),
