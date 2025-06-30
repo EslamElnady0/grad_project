@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
-import 'package:grad_project/features/assignments/presentation/views/widgets/grade_selector.dart';
 import 'package:grad_project/generated/l10n.dart';
 
 class EvaluationRow extends StatelessWidget {

@@ -55,7 +55,7 @@ class StudentQuizQuestion {
   final String question;
   final List<StudentQuizAnswer> answers;
   @JsonKey(name: 'student_answer')
-  final int studentAnswer;
+  final int? studentAnswer;
 
   StudentQuizQuestion({
     required this.id,

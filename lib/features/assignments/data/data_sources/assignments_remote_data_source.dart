@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:grad_project/core/networking/api_constants.dart';
 import 'package:grad_project/features/assignments/data/models/assign_grade_response_model.dart';
+import 'package:grad_project/features/assignments/data/models/assignment_answer_details_model.dart';
 import 'package:grad_project/features/assignments/data/models/assignment_answers_model.dart';
 import 'package:grad_project/features/assignments/data/models/assignments_solution_response_model.dart';
 import 'package:grad_project/features/assignments/data/models/create_assignment_response_model.dart';
@@ -72,4 +73,10 @@ abstract class AssignmentsRemoteDataSource {
     @Path("id") int answerId,
     @Field("degree") int degree,
   );
+
+   @GET("${ApiConstants.assignments}/{id}")
+  Future<StudentAssignmentAnswerModel> getAssignmentDetails(
+    @Path("id") int assignmentId,
+  );
 }
+

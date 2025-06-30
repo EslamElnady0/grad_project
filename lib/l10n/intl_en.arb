@@ -372,5 +372,14 @@
   "select_department": "Select Department",
   "select_semester": "Select Semester",
   "you_can_only_delete_your_own_content": "You can only delete your own content.",
-  "deleted_successfully": "Deleted successfully!"
+  "deleted_successfully": "Deleted successfully!",
+  "assignment_state": "Assignment State",
+  "corrected": "Corrected",
+  "not_corrected": "Not Corrected", 
+  "Submission_state": "Submission State",
+  "assignment_submitted": "Submitted",
+  "assignment_not_submitted": "Not Submitted",
+  "student_assignment_details_welcome_message": "📑 View your assignment details, including status, grade, and comments from the teacher.",
+  "teacher_assignment_details_welcome_message": "📑 View your assignment details."
 }
+

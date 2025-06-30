@@ -16,6 +16,7 @@ import 'package:grad_project/features/annoucements/logic/get_teacher_cources_cub
 import 'package:grad_project/features/annoucements/logic/update_annoucement_cubit/update_annoucement_cubit.dart';
 import 'package:grad_project/features/assignments/logic/cubits/assign_grade_cubit/assign_grade_cubit.dart';
 import 'package:grad_project/features/assignments/logic/cubits/edit_assignment_cubit/edit_assignment_cubit.dart';
+import 'package:grad_project/features/assignments/logic/cubits/get_assignment_asnwer_status/get_assignment_answer_status_cubit.dart';
 import 'package:grad_project/features/assignments/logic/cubits/get_assignments_answers_cubit/get_assignments_answers_cubit.dart';
 import 'package:grad_project/features/assignments/logic/cubits/get_assignments_cubit/get_assignments_cubit.dart';
 import 'package:grad_project/features/chat/logic/inner_chat_cubit/inner_chat_cubit.dart';
@@ -194,6 +195,7 @@ Future<void> setupGetIt() async {
       () => GetAssignmentsAnswersCubit(getIt()));
 
   getIt.registerFactory<AssignGradeCubit>(() => AssignGradeCubit(getIt()));
+  getIt.registerFactory<GetAssignmentAnswerStatusCubit>(() => GetAssignmentAnswerStatusCubit(getIt()));
   //toDo:------------------------------ Questions API ------------------------------//
   getIt.registerLazySingleton<QuestionsRemoteDataSource>(
       () => QuestionsRemoteDataSource(dio));

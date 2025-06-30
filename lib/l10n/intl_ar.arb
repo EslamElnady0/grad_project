@@ -371,5 +371,13 @@
   "select_department": "اختر القسم",
   "select_semester": "اختر الترم",
   "you_can_only_delete_your_own_content": "يمكنك حذف المحتوى الخاص بك فقط.",
-  "deleted_successfully": "تم الحذف بنجاح!"
+  "deleted_successfully": "تم الحذف بنجاح!",
+  "assignment_state": "حالة الأسايمنت",
+  "corrected": "تم التصحيح",
+  "not_corrected": "لم يتم التصحيح",
+  "Submission_state": "حالة التسليم",
+  "assignment_submitted": "تم التسليم",
+  "assignment_not_submitted": "لم يتم التسليم",
+  "student_assignment_details_welcome_message": "  📑 استعرض تفاصيل الأسايمنت الخاص بك، بما في ذلك الحالة، الدرجة، والتعليقات المقدمة من المعلم.",
+  "teacher_assignment_details_welcome_message": "📑 استعرض تفاصيل الأسايمنت الخاص بك."
 }

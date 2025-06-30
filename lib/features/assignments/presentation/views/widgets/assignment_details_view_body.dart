@@ -1,15 +1,20 @@
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:grad_project/core/flavors/flavors_functions.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
-import 'package:grad_project/features/assignments/data/models/get_assignments_response_model.dart';
+import 'package:grad_project/features/assignments/logic/cubits/get_assignment_asnwer_status/get_assignment_answer_status_cubit.dart';
+import 'package:grad_project/features/assignments/logic/cubits/get_assignment_asnwer_status/get_assignment_answer_status_state.dart';
 import 'package:grad_project/features/assignments/presentation/views/edit_assignment_view.dart';
 import 'package:grad_project/features/assignments/presentation/views/pdf_web_view.dart';
 import 'package:grad_project/features/assignments/presentation/views/widgets/assignment_desc_section.dart';
+import 'package:grad_project/features/assignments/presentation/views/widgets/assignment_details_section.dart';
 import 'package:grad_project/features/assignments/presentation/views/widgets/assignment_label_widget.dart';
+import 'package:grad_project/features/assignments/presentation/views/widgets/assignment_solution_upload_button.dart';
 import 'package:grad_project/features/assignments/presentation/views/widgets/custom_button.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
 import 'package:grad_project/generated/l10n.dart';
@@ -18,7 +23,7 @@ import 'package:permission_handler/permission_handler.dart';
 class AssignmentDetailsViewBody extends StatelessWidget {
   const AssignmentDetailsViewBody({super.key, required this.assignmentModel});
 
-  final AssignmentModel assignmentModel;
+  final dynamic assignmentModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -26,12 +31,19 @@ class AssignmentDetailsViewBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomInnerScreensAppBar(title: S.of(context).assignment),
+          CustomInnerScreensAppBar(title: S.of(context).assignment_details),
           Expanded(
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  TitleTextWidget(text: S.of(context).testYourKnowledge),
+                  TitleTextWidget(
+                      text: FlavorsFunctions.isStudent()
+                          ? S
+                              .of(context)
+                              .student_assignment_details_welcome_message
+                          : S
+                              .of(context)
+                              .teacher_assignment_details_welcome_message),
                   vGap(10),
                   AssignmentLabelWidget(
                     assignmentModel: assignmentModel,
@@ -61,21 +73,46 @@ class AssignmentDetailsViewBody extends StatelessWidget {
                               await downloadPdfFile(
                                 context,
                                 assignmentModel.file,
+                                assignmentModel.title,
                               );
                             },
                             text: S.of(context).download),
                       ),
                     ],
                   ),
+                  FlavorsFunctions.isStudent()
+                      ? Column(children: [
+                          vGap(20),
+                          BlocBuilder<GetAssignmentAnswerStatusCubit,
+                              GetAssignmentAnswerStatusState>(
+                            builder: (context, state) {
+                              return state.maybeWhen(
+                                orElse: () => const SizedBox(),
+                                success: (data) {
+                                  return AssignmentDetailsSection(
+                                    answerStatus: data.data.answerStatus,
+                                  );
+                                },
+                              );
+                            },
+                          )
+                        ])
+                      : const SizedBox(),
                   vGap(20),
-                  CustomButton(
-                      onTap: () {
-                        GoRouter.of(context).push(
-                          EditAssignmentView.routeName,
-                          extra: assignmentModel,
-                        );
-                      },
-                      text: S.of(context).edit)
+                  FlavorsFunctions.isStudent()
+                      ? assignmentModel.status != "finished"
+                          ? AssignmentSolutionUploadButton(
+                              assignmentModel: assignmentModel,
+                            )
+                          : const SizedBox()
+                      : CustomButton(
+                          onTap: () {
+                            GoRouter.of(context).push(
+                              EditAssignmentView.routeName,
+                              extra: assignmentModel,
+                            );
+                          },
+                          text: S.of(context).edit)
                 ],
               ),
             ),
@@ -86,7 +123,8 @@ class AssignmentDetailsViewBody extends StatelessWidget {
   }
 }
 
-Future<void> downloadPdfFile(BuildContext context, String url) async {
+Future<void> downloadPdfFile(
+    BuildContext context, String url, String title) async {
   try {
     var status = await Permission.storage.request();
     if (!status.isGranted) {
@@ -100,7 +138,7 @@ Future<void> downloadPdfFile(BuildContext context, String url) async {
 
     Directory dir = Directory('/storage/emulated/0/Download');
 
-    String fileName = url.split('/').last;
+    String fileName = title;
 
     String savePath = '${dir.path}/$fileName';
 

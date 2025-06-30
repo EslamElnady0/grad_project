@@ -58,7 +58,7 @@ StudentQuizQuestion _$StudentQuizQuestionFromJson(Map<String, dynamic> json) =>
       answers: (json['answers'] as List<dynamic>)
           .map((e) => StudentQuizAnswer.fromJson(e as Map<String, dynamic>))
           .toList(),
-      studentAnswer: (json['student_answer'] as num).toInt(),
+      studentAnswer: (json['student_answer'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$StudentQuizQuestionToJson(
