@@ -57,9 +57,44 @@ class CustomAnswerItem extends StatelessWidget {
                             future: _canShowDeleteButton(),
                             builder: (context, snapshot) {
                               if (snapshot.hasData && snapshot.data == true) {
-                                return IconButton(
-                                  icon: const Icon(Icons.delete, color: AppColors.redDark, size: 20),
-                                  onPressed: () => _handleDeleteAnswer(context),
+                                return PopupMenuButton<String>(
+                                  icon: Icon(
+                                    Icons.more_vert,
+                                    color: AppColors.gray,
+                                    size: 18.sp,
+                                  ),
+                                  color: AppColors.white,
+                                  elevation: 8,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(12.r),
+                                  ),
+                                  offset: Offset(-8.w, 8.h),
+                                  itemBuilder: (BuildContext context) => [
+                                    PopupMenuItem<String>(
+                                      value: 'delete',
+                                      child: Row(
+                                        children: [
+                                          Icon(
+                                            Icons.delete_outline,
+                                            color: AppColors.redDark,
+                                            size: 16.sp,
+                                          ),
+                                          hGap(8),
+                                          Text(
+                                            S.of(context).delete,
+                                            style: AppTextStyles.font12BlackMedium.copyWith(
+                                              color: AppColors.redDark,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                  onSelected: (String value) {
+                                    if (value == 'delete') {
+                                      _handleDeleteAnswer(context);
+                                    }
+                                  },
                                 );
                               }
                               return const SizedBox.shrink();

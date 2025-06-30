@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/helpers/get_time_info.dart';
+import 'package:grad_project/core/helpers/localizationa.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
@@ -28,7 +29,10 @@ class CustomQuestionForumItem extends StatelessWidget {
       final timeInfo = getTimeInfo(context, questionModel?.createdAt);
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      padding: EdgeInsets.only(
+        left: isArabicLocale(context) ? 2.w : 16.w,
+        right: isArabicLocale(context) ? 16.w : 2.w,
+        top: 12.h, bottom: 12.h),
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.circular(16.r),
@@ -58,9 +62,44 @@ class CustomQuestionForumItem extends StatelessWidget {
                 future: _canShowDeleteButton(),
                 builder: (context, snapshot) {
                   if (snapshot.hasData && snapshot.data == true) {
-                    return IconButton(
-                      icon: const Icon(Icons.delete, color: AppColors.redDark),
-                      onPressed: () => _handleDeleteQuestion(context),
+                    return PopupMenuButton<String>(
+                      icon: Icon(
+                        Icons.more_vert,
+                        color: AppColors.gray,
+                        size: 20.sp,
+                      ),
+                      color: AppColors.white,
+                      elevation: 8,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12.r),
+                      ),
+                      offset: Offset(-8.w, 8.h),
+                      itemBuilder: (BuildContext context) => [
+                        PopupMenuItem<String>(
+                          value: 'delete',
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.delete_outline,
+                                color: AppColors.redDark,
+                                size: 18.sp,
+                              ),
+                              hGap(8),
+                              Text(
+                                S.of(context).delete,
+                                style: AppTextStyles.font12BlackMedium.copyWith(
+                                  color: AppColors.redDark,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                      onSelected: (String value) {
+                        if (value == 'delete') {
+                          _handleDeleteQuestion(context);
+                        }
+                      },
                     );
                   }
                   return const SizedBox.shrink();

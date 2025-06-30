@@ -27,6 +27,8 @@ class DeleteContentService {
 
   /// Shows a SnackBar with the given message using the forum's style
   void _showSnackBar(BuildContext context, String message, {bool isSuccess = true}) {
+    if (!context.mounted) return;
+    
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
