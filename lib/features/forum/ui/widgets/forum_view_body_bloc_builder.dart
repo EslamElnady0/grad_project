@@ -31,6 +31,18 @@ class ForumViewBodyBlocBuilder extends StatelessWidget {
             builder: (context, filterQuestionsState) {
               // Determine which state to use - filtered results take priority
               return filterQuestionsState.maybeWhen(
+                filterQuestionsLoading: () => const Skeletonizer(
+                  enabled: true,
+                  child: ForumViewsBody(
+                    questions: [
+                      QuestionModel(),
+                      QuestionModel(),
+                      QuestionModel(),
+                      QuestionModel(),
+                    ],
+                    totalQuestions: 0,
+                  ),
+                ),
                 filterQuestionsSuccess: (data) => ForumViewsBody(
                   questions: data.questions,
                   totalQuestions: data.totalQuestions,
