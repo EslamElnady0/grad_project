@@ -178,6 +178,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "days": MessageLookupByLibrary.simpleMessage("Days"),
     "deadline": MessageLookupByLibrary.simpleMessage("Deadline"),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
+    "deleted_successfully": MessageLookupByLibrary.simpleMessage(
+      "Deleted successfully!",
+    ),
     "department": MessageLookupByLibrary.simpleMessage("department"),
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
       "🤔 You haven\'t searched for anything yet!",
@@ -674,5 +677,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "youCanJoinToChat": MessageLookupByLibrary.simpleMessage(
       "👥 You can join your academic year\'s private group to connect with your classmates!",
     ),
+    "you_can_only_delete_your_own_content":
+        MessageLookupByLibrary.simpleMessage(
+          "You can only delete your own content.",
+        ),
   };
 }

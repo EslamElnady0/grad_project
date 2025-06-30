@@ -2944,6 +2944,26 @@ class S {
       args: [],
     );
   }
+
+  /// `You can only delete your own content.`
+  String get you_can_only_delete_your_own_content {
+    return Intl.message(
+      'You can only delete your own content.',
+      name: 'you_can_only_delete_your_own_content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Deleted successfully!`
+  String get deleted_successfully {
+    return Intl.message(
+      'Deleted successfully!',
+      name: 'deleted_successfully',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

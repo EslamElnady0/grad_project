@@ -27,6 +27,7 @@ import 'package:grad_project/features/forum/logic/filter_questions_cubit/filter_
 import 'package:grad_project/features/forum/logic/question_and_answers/question_and_answers_cubit.dart';
 import 'package:grad_project/features/forum/logic/toggle_like_cubit/toggle_like_cubit.dart';
 import 'package:grad_project/features/forum/logic/add_question/add_question_cubit.dart';
+import 'package:grad_project/features/forum/logic/delete_content_service.dart';
 import 'package:grad_project/features/chat/logic/get_group_details_cubit/get_group_details_cubit.dart';
 import 'package:grad_project/features/chat/logic/get_latest_messages_cubit/get_latest_messages_cubit.dart';
 import 'package:grad_project/features/subjects/data/data_source/subjects_remote_data_source.dart';
@@ -211,6 +212,8 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<AddQuestionCubit>(() => AddQuestionCubit(getIt()));
   getIt.registerFactory<QuestionAndAnswersCubit>(
       () => QuestionAndAnswersCubit(getIt()));
+  getIt.registerLazySingleton<DeleteContentService>(
+      () => DeleteContentService(getIt()));
   //toDo:------------------------------ Chat API ------------------------------//
   getIt.registerLazySingleton<AppLifecycleCubit>(() => AppLifecycleCubit());
   getIt.registerLazySingleton<NetworkMonitor>(() => NetworkMonitor());

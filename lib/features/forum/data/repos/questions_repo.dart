@@ -7,6 +7,7 @@ import 'package:grad_project/features/forum/data/models/add_question_response_mo
 import 'package:grad_project/features/forum/data/models/get_all_questions_response_model.dart';
 import 'package:grad_project/features/forum/data/models/question_and_answers_response_model.dart';
 import 'package:grad_project/features/forum/data/models/toggle_like_response_model.dart';
+import 'package:grad_project/features/annoucements/data/models/add_annoucement_response_body.dart';
 
 import '../data sources/questions_local_data_source.dart';
 import '../data sources/questions_remote_data_source.dart';
@@ -93,6 +94,30 @@ class QuestionsRepo {
     try {
       final request = AddQuestionRequestModel(body: body, image: image ?? '');
       final response = await remoteDataSource.addQuestion(request);
+      return ApiResult.success(response);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
+  Future<ApiResult<SimpleResponseBody>> deleteQuestion({
+    required String questionId,
+    required String ownerId,
+  }) async {
+    try {
+      final response = await remoteDataSource.deleteQuestion(questionId);
+      return ApiResult.success(response);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
+  Future<ApiResult<SimpleResponseBody>> deleteAnswer({
+    required String answerId,
+    required String ownerId,
+  }) async {
+    try {
+      final response = await remoteDataSource.deleteAnswer(answerId);
       return ApiResult.success(response);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));

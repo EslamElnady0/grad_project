@@ -37,6 +37,7 @@ class QuestionModel with _$QuestionModel {
 class UserModel with _$UserModel {
   const factory UserModel({
     String? name, 
+    int? id,
     String? avatar,
     int? semester,
     String? department,

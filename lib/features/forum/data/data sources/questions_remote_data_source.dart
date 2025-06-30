@@ -7,6 +7,7 @@ import 'package:grad_project/features/forum/data/models/add_question_response_mo
 import 'package:grad_project/features/forum/data/models/get_all_questions_response_model.dart';
 import 'package:grad_project/features/forum/data/models/question_and_answers_response_model.dart';
 import 'package:grad_project/features/forum/data/models/toggle_like_response_model.dart';
+import 'package:grad_project/features/annoucements/data/models/add_annoucement_response_body.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'questions_remote_data_source.g.dart';
@@ -53,5 +54,15 @@ abstract class QuestionsRemoteDataSource {
   @POST("${ApiConstants.questions}/add")
   Future<AddQuestionResponseModel> addQuestion(
     @Body() AddQuestionRequestModel addQuestionRequest,
+  );
+
+  @DELETE("${ApiConstants.questions}/delquestion/{questionId}")
+  Future<SimpleResponseBody> deleteQuestion(
+    @Path("questionId") String questionId
+  );
+
+  @DELETE("${ApiConstants.questions}/delanswer/{answerId}")
+  Future<SimpleResponseBody> deleteAnswer(
+    @Path("answerId") String answerId
   );
 }

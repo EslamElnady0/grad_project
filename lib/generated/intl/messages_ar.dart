@@ -170,6 +170,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "days": MessageLookupByLibrary.simpleMessage("الأيام"),
     "deadline": MessageLookupByLibrary.simpleMessage("موعد التسليم"),
     "delete": MessageLookupByLibrary.simpleMessage("حذف"),
+    "deleted_successfully": MessageLookupByLibrary.simpleMessage(
+      "تم الحذف بنجاح!",
+    ),
     "department": MessageLookupByLibrary.simpleMessage("القسم"),
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
       "🤔 لم تبحث عن شيء بعد! ",
@@ -643,5 +646,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "youCanJoinToChat": MessageLookupByLibrary.simpleMessage(
       "👥 يمكنك الانضمام إلى المجموعة الخاصة بعامك الدراسي فقط للتواصل مع زملائك!",
     ),
+    "you_can_only_delete_your_own_content":
+        MessageLookupByLibrary.simpleMessage("يمكنك حذف المحتوى الخاص بك فقط."),
   };
 }

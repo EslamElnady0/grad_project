@@ -369,5 +369,7 @@
   "apply_filter": "تطبيق الفلتر",
   "clear_filter": "مسح الفلتر",
   "select_department": "اختر القسم",
-  "select_semester": "اختر الترم"
+  "select_semester": "اختر الترم",
+  "you_can_only_delete_your_own_content": "يمكنك حذف المحتوى الخاص بك فقط.",
+  "deleted_successfully": "تم الحذف بنجاح!"
 }
