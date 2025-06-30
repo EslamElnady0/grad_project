@@ -40,6 +40,7 @@ abstract class StudentRouter {
         ),
         GoRoute(
           path: AuthView.routeName,
+          name: AuthView.routeName,
           builder: (context, state) => const AuthView(),
         ),
         GoRoute(

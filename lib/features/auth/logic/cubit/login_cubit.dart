@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/data/models/sub_to_push_notifications_model.dart';
 import 'package:grad_project/core/data/repos/sub_to_notification_repo.dart';
 import 'package:grad_project/core/helpers/constants.dart';
+import 'package:grad_project/core/services/firebase_messaging_service.dart';
 import 'package:grad_project/features/auth/logic/cubit/login_state.dart';
 
 import '../../../../core/helpers/shared_pref_helper.dart' show SharedPrefHelper;
@@ -36,7 +37,7 @@ class LoginCubit extends Cubit<LoginState> {
       await _subToNotificationRepo.saveToken(
         SubToPushNotificationsModel(
             userId: loginResponse.data?[0].user?.id.toString() ?? '',
-            deviceToken: loginResponse.data?[0].accessToken ?? ''),
+            deviceToken: FirebaseMessagingService().fcmToken ?? ''),
       );
       emit(LoginState.success(loginResponse));
     }, failure: (apiErrorModel) {

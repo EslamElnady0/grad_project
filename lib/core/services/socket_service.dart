@@ -138,6 +138,10 @@ class SocketEvents {
   static const String openChat = 'Open-Chat';
   static const String openChatError = 'open-chat-error';
   static const String openChatSuccess = 'open-chat-success';
+  static const String openChatInfo = 'open-chat-info';
+  static const String closeChat = 'Close-Chat';
+  static const String closeChatError = 'close-chat-error';
+  static const String closeChatSuccess = 'close-chat-success';
   static const String unSeen = 'Un-Seen';
   static const String unSeenError = 'un-seen-error';
   static const String unSeenSuccess = 'un-seen-success';

@@ -133,6 +133,7 @@ class ChatRepo {
   }) {
     // Remove existing listeners before adding new ones
     _removeListener(SocketEvents.openChatSuccess);
+    _removeListener(SocketEvents.openChatInfo);
     _removeListener(SocketEvents.openChatError);
     _removeListener(SocketEvents.typingSuccess);
     _removeListener(SocketEvents.typingError);
@@ -163,6 +164,9 @@ class ChatRepo {
 
     _addListenerOnce(SocketEvents.stopTypingError, (error) {
       onFailure(error.toString());
+    });
+    _addListenerOnce(SocketEvents.openChatInfo, (data) {
+      onSuccess(data);
     });
   }
 
@@ -207,8 +211,28 @@ class ChatRepo {
     });
   }
 
+  void closeChat({
+    required Function(dynamic data)? onSuccess,
+    required Function(String error)? onFailure,
+  }) {
+    // Remove existing listeners before adding new ones
+    _removeListener(SocketEvents.closeChatSuccess);
+    _removeListener(SocketEvents.closeChatError);
+
+    socketService.emit(SocketEvents.closeChat, {});
+
+    _addListenerOnce(SocketEvents.closeChatSuccess, (data) {
+      onSuccess != null ? onSuccess(data) : () {};
+    });
+
+    _addListenerOnce(SocketEvents.closeChatError, (error) {
+      onFailure != null ? onFailure(error.toString()) : () {};
+    });
+  }
+
   void dispose() {
     _removeAllListeners();
+    closeChat(onSuccess: (data) {}, onFailure: (error) {});
     log('ChatRepo disposed - all listeners removed');
   }
 }

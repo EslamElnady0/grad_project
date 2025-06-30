@@ -1,7 +1,17 @@
 import 'dart:async';
+
+import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+
+@pragma('vm:entry-point')
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp();
+  debugPrint('Handling a background message: ${message.messageId}');
+  debugPrint('Message data: ${message.data}');
+  debugPrint('Message notification: ${message.notification?.title}');
+}
 
 class FirebaseMessagingService {
   static final FirebaseMessagingService _instance =
@@ -16,13 +26,13 @@ class FirebaseMessagingService {
   String? _fcmToken;
   StreamSubscription<String?>? _tokenSubscription;
 
-  // Getters
+  /// Expose current FCM token
   String? get fcmToken => _fcmToken;
-  FirebaseMessaging get firebaseMessaging => _firebaseMessaging;
 
-  /// Initialize Firebase Messaging service
+  /// Initialize FCM and local notifications
   Future<void> initialize() async {
     try {
+      // Request notification permissions
       NotificationSettings settings =
           await _firebaseMessaging.requestPermission(
         alert: true,
@@ -43,31 +53,27 @@ class FirebaseMessagingService {
         debugPrint('User declined or has not accepted permission');
       }
 
-      // Initialize local notifications
+      // Initialize local notifications (creates channels, etc.)
       await _initializeLocalNotifications();
 
-      // Get FCM token
+      // Obtain FCM token
       await _getFCMToken();
 
       // Listen for token refresh
-      _tokenSubscription = _firebaseMessaging.onTokenRefresh.listen((token) {
-        _fcmToken = token;
-        debugPrint('FCM Token refreshed: $token');
-        // Here you can send the new token to your backend
-        _onTokenRefresh(token);
-      });
+      _tokenSubscription =
+          _firebaseMessaging.onTokenRefresh.listen(_onTokenRefresh);
 
-      // Handle background messages
+      // Register background handler (must be before runApp in main.dart)
       FirebaseMessaging.onBackgroundMessage(
           _firebaseMessagingBackgroundHandler);
 
       // Handle foreground messages
       FirebaseMessaging.onMessage.listen(_handleForegroundMessage);
 
-      // Handle when app is opened from notification
+      // Handle taps on terminated/background notifications
       FirebaseMessaging.onMessageOpenedApp.listen(_handleMessageOpenedApp);
 
-      // Check if app was opened from notification
+      // Check if app was launched by a notification tap
       RemoteMessage? initialMessage =
           await _firebaseMessaging.getInitialMessage();
       if (initialMessage != null) {
@@ -78,7 +84,7 @@ class FirebaseMessagingService {
     }
   }
 
-  /// Get FCM token
+  /// Obtain and store the FCM token
   Future<String?> _getFCMToken() async {
     try {
       _fcmToken = await _firebaseMessaging.getToken();
@@ -90,51 +96,54 @@ class FirebaseMessagingService {
     }
   }
 
-  /// Initialize local notifications
+  /// Create notification channel and initialize plugin
   Future<void> _initializeLocalNotifications() async {
-    const AndroidInitializationSettings initializationSettingsAndroid =
-        AndroidInitializationSettings('@mipmap/ic_launcher');
+    // Android channel definition
+    const AndroidNotificationChannel channel = AndroidNotificationChannel(
+      'high_importance_channel', // id
+      'High Importance Notifications', // name
+      description: 'This channel is used for important notifications.',
+      importance: Importance.max,
+    );
 
-    const DarwinInitializationSettings initializationSettingsIOS =
+    // Initialize plugin settings
+    const AndroidInitializationSettings androidSettings =
+        AndroidInitializationSettings('@mipmap/ic_launcher');
+    const DarwinInitializationSettings iosSettings =
         DarwinInitializationSettings(
       requestAlertPermission: false,
       requestBadgePermission: false,
       requestSoundPermission: false,
     );
-
-    const InitializationSettings initializationSettings =
-        InitializationSettings(
-      android: initializationSettingsAndroid,
-      iOS: initializationSettingsIOS,
+    const InitializationSettings initSettings = InitializationSettings(
+      android: androidSettings,
+      iOS: iosSettings,
     );
 
+    // Create the channel on Android
+    await _flutterLocalNotificationsPlugin
+        .resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin>()
+        ?.createNotificationChannel(channel);
+
+    // Initialize the plugin
     await _flutterLocalNotificationsPlugin.initialize(
-      initializationSettings,
+      initSettings,
       onDidReceiveNotificationResponse: _onNotificationTapped,
     );
   }
 
-  /// Handle foreground messages
+  /// Handle incoming foreground messages
   void _handleForegroundMessage(RemoteMessage message) {
-    debugPrint('Got a message whilst in the foreground!');
-    debugPrint('Message data: ${message.data}');
-
+    debugPrint('Received foreground message: ${message.data}');
     if (message.notification != null) {
-      debugPrint(
-          'Message also contained a notification: ${message.notification}');
       _showLocalNotification(message);
     }
   }
 
-  /// Handle when app is opened from notification
-  void _handleMessageOpenedApp(RemoteMessage message) {
-    debugPrint('App opened from notification: ${message.data}');
-    // Handle navigation or any other logic when app is opened from notification
-  }
-
-  /// Show local notification
+  /// Show a local notification for a RFP message
   Future<void> _showLocalNotification(RemoteMessage message) async {
-    const AndroidNotificationDetails androidPlatformChannelSpecifics =
+    const AndroidNotificationDetails androidDetails =
         AndroidNotificationDetails(
       'high_importance_channel',
       'High Importance Notifications',
@@ -142,39 +151,43 @@ class FirebaseMessagingService {
       importance: Importance.max,
       priority: Priority.high,
     );
-
-    const DarwinNotificationDetails iOSPlatformChannelSpecifics =
-        DarwinNotificationDetails(
+    const DarwinNotificationDetails iosDetails = DarwinNotificationDetails(
       presentAlert: true,
       presentBadge: true,
       presentSound: true,
     );
-
-    const NotificationDetails platformChannelSpecifics = NotificationDetails(
-      android: androidPlatformChannelSpecifics,
-      iOS: iOSPlatformChannelSpecifics,
+    const NotificationDetails platformDetails = NotificationDetails(
+      android: androidDetails,
+      iOS: iosDetails,
     );
-
     await _flutterLocalNotificationsPlugin.show(
       message.hashCode,
       message.notification?.title,
       message.notification?.body,
-      platformChannelSpecifics,
+      platformDetails,
       payload: message.data.toString(),
     );
   }
 
-  /// Handle notification tap
-  void _onNotificationTapped(NotificationResponse notificationResponse) {
-    debugPrint('Notification tapped: ${notificationResponse.payload}');
-    // Handle notification tap logic
+  /// Handle notification taps (foreground & background)
+  void _onNotificationTapped(NotificationResponse response) {
+    debugPrint('Notification tapped: ${response.payload}');
+    // TODO: Implement navigation or logic on notification tap
   }
 
-  /// Handle token refresh
-  void _onTokenRefresh(String token) {
-    // Send the new token to your backend
-    debugPrint('Token refreshed, send to backend: $token');
-    // TODO: Implement sending token to backend
+  /// Handle app opened via notification tap
+  void _handleMessageOpenedApp(RemoteMessage message) {
+    debugPrint('App opened from notification: ${message.data}');
+    // TODO: Implement navigation or logic on message open
+  }
+
+  /// Handle token refresh events
+  void _onTokenRefresh(String? token) {
+    if (token != null) {
+      _fcmToken = token;
+      debugPrint('FCM Token refreshed: $token');
+      // TODO: Send refreshed token to your backend
+    }
   }
 
   /// Subscribe to a topic
@@ -197,19 +210,8 @@ class FirebaseMessagingService {
     }
   }
 
-  /// Dispose resources
+  /// Clean up resources
   void dispose() {
     _tokenSubscription?.cancel();
   }
-}
-
-/// Background message handler
-@pragma('vm:entry-point')
-Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  // Ensure Firebase is initialized
-  // await Firebase.initializeApp();
-
-  debugPrint('Handling a background message: ${message.messageId}');
-  debugPrint('Message data: ${message.data}');
-  debugPrint('Message notification: ${message.notification?.title}');
 }
