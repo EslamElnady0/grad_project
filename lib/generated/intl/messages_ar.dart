@@ -404,6 +404,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "تحديد موعد لنشر الخبر كخبر علني !",
     ),
     "qr_attendance": MessageLookupByLibrary.simpleMessage("تسجيل حضور “QR”"),
+    "questionAddedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم اضافه السوال بنجاح.",
+    ),
     "questionGrade": MessageLookupByLibrary.simpleMessage("درجة السؤال"),
     "questionTypeHelper": MessageLookupByLibrary.simpleMessage(
       "اختر نوع الأسئلة التي تريد تضمينها في الكويز",

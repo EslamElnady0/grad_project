@@ -422,6 +422,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Set a time to publish the Annoucement as a public announcement!",
     ),
     "qr_attendance": MessageLookupByLibrary.simpleMessage("QR attendance"),
+    "questionAddedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Question added successfully.",
+    ),
     "questionGrade": MessageLookupByLibrary.simpleMessage("Question Grade"),
     "questionTypeHelper": MessageLookupByLibrary.simpleMessage(
       "Choose the type of questions you want to include in the quiz",

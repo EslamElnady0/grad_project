@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/di/dependency_injection.dart';
+import 'package:grad_project/core/flavors/flavors_functions.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/widgets/custom_text_and_icon_button.dart';
 import 'package:grad_project/features/forum/data/models/get_all_questions_response_model.dart';
@@ -31,7 +31,6 @@ class ForumViewsBody extends StatelessWidget {
           create: (context) => getIt<AddQuestionCubit>(),
           child: AddQuestionBottomSheet(
             onQuestionAdded: () {
-            context.pop();
               // Refresh the questions list
               context.read<GetAllQuestionsCubit>().getAllQuestions();
             },
@@ -66,6 +65,7 @@ class ForumViewsBody extends StatelessWidget {
                 ),
                 vGap(8),
                 Row(children: [
+                  if(FlavorsFunctions.isStudent())
                   CustomTextAndIconButton(
                     primaryButton: true,
                     text: S.of(context).add_your_question,

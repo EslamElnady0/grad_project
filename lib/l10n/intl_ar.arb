@@ -350,5 +350,6 @@
   "answerSubmittedSuccessfully": "تم إرسال الإجابة بنجاح",
   "pleaseEnterYourAnswer": "من فضلك أدخل إجابتك",
   "enterQuestionBodyFirst": "يجب اضافه نص السوال اولا.",
-  "loading": "جاري التحميل..."
+  "loading": "جاري التحميل...",
+  "questionAddedSuccessfully": "تم اضافه السوال بنجاح."
 }

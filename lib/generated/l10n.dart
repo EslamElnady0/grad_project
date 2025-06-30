@@ -2759,6 +2759,16 @@ class S {
   String get loading {
     return Intl.message('Loading...', name: 'loading', desc: '', args: []);
   }
+
+  /// `Question added successfully.`
+  String get questionAddedSuccessfully {
+    return Intl.message(
+      'Question added successfully.',
+      name: 'questionAddedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -206,15 +206,36 @@ class _AddQuestionBottomSheetState extends State<AddQuestionBottomSheet> {
           BlocConsumer<AddQuestionCubit, AddQuestionState>(
             listener: (context, state) {
               if (state is AddQuestionSuccess) {
-                // Call the callback function if provided
+                // Clear the form first
+                _questionController.clear();
+                setState(() {
+                  _selectedImage = null;
+                  _base64Image = null;
+                });
+                
+                // Close the bottom sheet
+                Navigator.of(context).pop(true);
+                
+                // Then call the callback function to refresh the questions list
                 if (widget.onQuestionAdded != null) {
                   widget.onQuestionAdded!();
-                } else {
-                  Navigator.of(context).pop(true); // Fallback behavior
                 }
+                
+                // Show success message
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(S.of(context).questionAddedSuccessfully,
+                    style: AppTextStyles.font14WhiteMedium,
+                    ),
+                
+                  ),
+                );
               } else if (state is AddQuestionFailure) {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(state.error)),
+                  SnackBar(
+                    content: Text(state.error),
+                    backgroundColor: AppColors.redlight,
+                  ),
                 );
               }
             },

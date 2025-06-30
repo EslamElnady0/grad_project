@@ -351,5 +351,6 @@
   "answerSubmittedSuccessfully": "Answer submitted successfully",
     "pleaseEnterYourAnswer"  : "Please enter your answer",
      "enterQuestionBodyFirst": "You must enter the question text first.",
-  "loading": "Loading..."
+  "loading": "Loading...",
+   "questionAddedSuccessfully": "Question added successfully."
 }

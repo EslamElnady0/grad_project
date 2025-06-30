@@ -1,12 +1,7 @@
-import 'package:json_annotation/json_annotation.dart';
-
-part 'add_question_response_model.g.dart';
-
-@JsonSerializable()
 class AddQuestionResponseModel {
   final int code;
   final String message;
-  final dynamic data;
+  final Object? data;
 
   AddQuestionResponseModel({
     required this.code,
@@ -14,8 +9,19 @@ class AddQuestionResponseModel {
     this.data,
   });
 
-  factory AddQuestionResponseModel.fromJson(Map<String, dynamic> json) =>
-      _$AddQuestionResponseModelFromJson(json);
+  factory AddQuestionResponseModel.fromJson(Map<String, dynamic> json) {
+    return AddQuestionResponseModel(
+      code: json['code'] as int? ?? 0,
+      message: json['message'] as String? ?? '',
+      data: json['data'],
+    );
+  }
 
-  Map<String, dynamic> toJson() => _$AddQuestionResponseModelToJson(this);
+  Map<String, dynamic> toJson() {
+    return {
+      'code': code,
+      'message': message,
+      'data': data,
+    };
+  }
 }
