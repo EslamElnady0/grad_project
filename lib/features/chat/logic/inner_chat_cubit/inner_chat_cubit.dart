@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grad_project/core/events/typing%20events/user_typing_event.dart';
 import '../../../../core/events/message events/new_message_event.dart';
 import '../../data/models/get_messages_response.dart';
 import '../../data/repos/chat_repo.dart';
@@ -9,7 +10,14 @@ import 'inner_chat_state.dart';
 class InnerChatCubit extends Cubit<InnerChatState> {
   ScrollController scrollController = ScrollController();
   final ChatRepo _repo;
+  final StreamController<List<UserTypingEvent>> _sendersSubscriptionController =
+      StreamController.broadcast();
   StreamSubscription? _messageSubscription;
+  StreamSubscription? _typingSubscription;
+
+  List<UserTypingEvent> senders = [];
+  Stream<List<UserTypingEvent>>? get sendersStream =>
+      _sendersSubscriptionController.stream;
 
   InnerChatCubit(this._repo) : super(InnerChatInitial()) {
     _messageSubscription = eventBus.on<NewMessageEvent>().listen((event) {
@@ -24,8 +32,17 @@ class InnerChatCubit extends Cubit<InnerChatState> {
         messageSeen(event.message.id);
       }
     });
+    _typingSubscription = eventBus.on<UserTypingEvent>().listen((event) {
+      if (event.type.isNotEmpty) {
+        senders.add(UserTypingEvent(user: event.user, type: event.type));
+        _sendersSubscriptionController.add(List.from(senders));
+      } else {
+        senders
+            .removeWhere((inListEvent) => inListEvent.user.id == event.user.id);
+        _sendersSubscriptionController.add(List.from(senders));
+      }
+    });
   }
-
   void sendMessage(String messageText, BuildContext context) {
     emit(InnerChatSending());
     _repo.sendMessage(
@@ -54,11 +71,9 @@ class InnerChatCubit extends Cubit<InnerChatState> {
   void changeTypingState(String typingState) {
     emit(InnerChatTyping());
     _repo.typingState(
-        //pass text or record
         typingState: typingState,
         onSuccess: (data) {
           emit(InnerChatTypingSuccess());
-          //fire typing event
         },
         onFailure: (error) => emit(InnerChatError(error)));
   }
@@ -77,6 +92,8 @@ class InnerChatCubit extends Cubit<InnerChatState> {
     _repo.dispose();
     scrollController.dispose();
     _messageSubscription?.cancel();
+    _typingSubscription?.cancel();
+    _sendersSubscriptionController.close();
     return super.close();
   }
 }

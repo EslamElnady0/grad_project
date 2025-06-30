@@ -14,6 +14,8 @@ import '../../cubit/file_picker_cubit.dart';
 import 'chat_message_widget.dart';
 import 'package:grad_project/core/helpers/debouncer.dart';
 
+import 'typing_status_stream.dart';
+
 class ChatViewBody extends StatefulWidget {
   const ChatViewBody({super.key});
 
@@ -89,6 +91,7 @@ class _ChatViewBodyState extends State<ChatViewBody> {
             },
           ),
         ),
+        TypingStatusStream(userId: userId),
         BlocProvider(
           create: (context) => FilePickerCubit(),
           child: TextEntryFooter(

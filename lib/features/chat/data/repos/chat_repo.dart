@@ -4,6 +4,7 @@ import 'package:grad_project/core/networking/api_result.dart';
 import 'package:grad_project/features/chat/data/models/chat_groups_response.dart';
 import 'package:grad_project/features/chat/data/models/get_messages_response.dart';
 import 'package:grad_project/features/chat/data/models/group_details_response.dart';
+import '../../../../core/events/typing events/user_typing_event.dart';
 import '../../../../core/networking/api_error_handler.dart';
 import '../data sources/chat_local_data_source.dart';
 import '../data sources/chat_remote_data_source.dart';
@@ -147,6 +148,12 @@ class ChatRepo {
     });
 
     _addListenerOnce(SocketEvents.typingSuccess, (data) {
+      log(data.toString());
+      Sender sender = Sender.fromJson(data["user"]);
+      eventBus.fire(UserTypingEvent(
+        type: data["type"],
+        user: sender,
+      ));
       onSuccess(data);
     });
 
@@ -155,6 +162,10 @@ class ChatRepo {
     });
 
     _addListenerOnce(SocketEvents.stopTypingSuccess, (data) {
+      eventBus.fire(UserTypingEvent(
+        type: "",
+        user: Sender.fromJson(data["user"]),
+      ));
       onSuccess(data);
     });
 
@@ -175,19 +186,9 @@ class ChatRepo {
     required Function(String error) onFailure,
   }) {
     // Remove existing listeners before adding new ones
-    _removeListener(SocketEvents.typingSuccess);
-    _removeListener(SocketEvents.typingError);
 
     socketService.emit(SocketEvents.typing, {
       "type": typingState,
-    });
-
-    _addListenerOnce(SocketEvents.typingSuccess, (data) {
-      onSuccess(data);
-    });
-
-    _addListenerOnce(SocketEvents.typingError, (error) {
-      onFailure(error.toString());
     });
   }
 
@@ -196,18 +197,8 @@ class ChatRepo {
     required Function(String error) onFailure,
   }) {
     // Remove existing listeners before adding new ones
-    _removeListener(SocketEvents.stopTypingSuccess);
-    _removeListener(SocketEvents.stopTypingError);
 
     socketService.emit(SocketEvents.stopTyping, {});
-
-    _addListenerOnce(SocketEvents.stopTypingSuccess, (data) {
-      onSuccess(data);
-    });
-
-    _addListenerOnce(SocketEvents.stopTypingError, (error) {
-      onFailure(error.toString());
-    });
   }
 
   void closeChat({
