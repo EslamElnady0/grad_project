@@ -554,6 +554,7 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UserModel {
   String? get name => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   String? get avatar => throw _privateConstructorUsedError;
   int? get semester => throw _privateConstructorUsedError;
   String? get department => throw _privateConstructorUsedError;
@@ -576,6 +577,7 @@ abstract class $UserModelCopyWith<$Res> {
   @useResult
   $Res call(
       {String? name,
+      int? id,
       String? avatar,
       int? semester,
       String? department,
@@ -598,6 +600,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
   @override
   $Res call({
     Object? name = freezed,
+    Object? id = freezed,
     Object? avatar = freezed,
     Object? semester = freezed,
     Object? department = freezed,
@@ -608,6 +611,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
       avatar: freezed == avatar
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
@@ -638,6 +645,7 @@ abstract class _$$UserModelImplCopyWith<$Res>
   @useResult
   $Res call(
       {String? name,
+      int? id,
       String? avatar,
       int? semester,
       String? department,
@@ -658,6 +666,7 @@ class __$$UserModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = freezed,
+    Object? id = freezed,
     Object? avatar = freezed,
     Object? semester = freezed,
     Object? department = freezed,
@@ -668,6 +677,10 @@ class __$$UserModelImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
       avatar: freezed == avatar
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
@@ -692,13 +705,20 @@ class __$$UserModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserModelImpl implements _UserModel {
   const _$UserModelImpl(
-      {this.name, this.avatar, this.semester, this.department, this.liked});
+      {this.name,
+      this.id,
+      this.avatar,
+      this.semester,
+      this.department,
+      this.liked});
 
   factory _$UserModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserModelImplFromJson(json);
 
   @override
   final String? name;
+  @override
+  final int? id;
   @override
   final String? avatar;
   @override
@@ -710,7 +730,7 @@ class _$UserModelImpl implements _UserModel {
 
   @override
   String toString() {
-    return 'UserModel(name: $name, avatar: $avatar, semester: $semester, department: $department, liked: $liked)';
+    return 'UserModel(name: $name, id: $id, avatar: $avatar, semester: $semester, department: $department, liked: $liked)';
   }
 
   @override
@@ -719,6 +739,7 @@ class _$UserModelImpl implements _UserModel {
         (other.runtimeType == runtimeType &&
             other is _$UserModelImpl &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.avatar, avatar) || other.avatar == avatar) &&
             (identical(other.semester, semester) ||
                 other.semester == semester) &&
@@ -730,7 +751,7 @@ class _$UserModelImpl implements _UserModel {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, name, avatar, semester, department, liked);
+      Object.hash(runtimeType, name, id, avatar, semester, department, liked);
 
   /// Create a copy of UserModel
   /// with the given fields replaced by the non-null parameter values.
@@ -751,6 +772,7 @@ class _$UserModelImpl implements _UserModel {
 abstract class _UserModel implements UserModel {
   const factory _UserModel(
       {final String? name,
+      final int? id,
       final String? avatar,
       final int? semester,
       final String? department,
@@ -761,6 +783,8 @@ abstract class _UserModel implements UserModel {
 
   @override
   String? get name;
+  @override
+  int? get id;
   @override
   String? get avatar;
   @override

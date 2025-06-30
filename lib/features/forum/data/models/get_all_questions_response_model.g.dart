@@ -53,6 +53,7 @@ Map<String, dynamic> _$$QuestionModelImplToJson(_$QuestionModelImpl instance) =>
 _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
     _$UserModelImpl(
       name: json['name'] as String?,
+      id: (json['id'] as num?)?.toInt(),
       avatar: json['avatar'] as String?,
       semester: (json['semester'] as num?)?.toInt(),
       department: json['department'] as String?,
@@ -62,6 +63,7 @@ _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
+      'id': instance.id,
       'avatar': instance.avatar,
       'semester': instance.semester,
       'department': instance.department,
