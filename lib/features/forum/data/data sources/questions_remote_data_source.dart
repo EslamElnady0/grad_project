@@ -24,6 +24,15 @@ abstract class QuestionsRemoteDataSource {
   @GET(ApiConstants.questions)
   Future<GetAllQuestionsResponseModel> getAllQuestions();
 
+  @GET(ApiConstants.questions)
+  Future<GetAllQuestionsResponseModel> getFilteredQuestions(
+    @Query("page") int? page,
+    @Query("department") int? department,
+    @Query("semester") int? semester,
+    @Query("likes") bool? likes,
+    @Query("myQuestions") bool? myQuestions,
+  );
+
   @POST("${ApiConstants.questions}/{like}/{questionId}")
   Future<ToggleLikeResponseModel> toggleLike(
     @Path("like") String like,

@@ -19,7 +19,7 @@ class QuestionsRepo {
     required this.remoteDataSource,
     required this.localDataSource,
   });
- Future<ApiResult<GetAllQuestionsResponseModel>> getAllQuestions() async {
+  Future<ApiResult<GetAllQuestionsResponseModel>> getAllQuestions() async {
     try {
       final response = await remoteDataSource.getAllQuestions();
       return ApiResult.success(response);
@@ -28,24 +28,46 @@ class QuestionsRepo {
     }
   }
 
-
-  Future<ApiResult<ToggleLikeResponseModel>> toggleLike({ required String questionId, required String like }) async {
+  Future<ApiResult<GetAllQuestionsResponseModel>> getFilteredQuestions({
+    int? page,
+    int? department,
+    int? semester,
+    bool? likes,
+    bool? myQuestions,
+  }) async {
     try {
-      final response = await remoteDataSource.toggleLike(
-       like,
-         questionId,
+      final response = await remoteDataSource.getFilteredQuestions(
+        page,
+        department,
+        semester,
+        likes,
+        myQuestions,
       );
-      return ApiResult.success(response); 
+      return ApiResult.success(response);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));
     }
   }
-    Future<ApiResult<QuestionAndAnswersResponseModel>> getQuestionAndAnswers(String questionId) async {
+
+  Future<ApiResult<ToggleLikeResponseModel>> toggleLike(
+      {required String questionId, required String like}) async {
+    try {
+      final response = await remoteDataSource.toggleLike(
+        like,
+        questionId,
+      );
+      return ApiResult.success(response);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
+  Future<ApiResult<QuestionAndAnswersResponseModel>> getQuestionAndAnswers(
+      String questionId) async {
     try {
       final response = await remoteDataSource.getQuestionAndAnswers(questionId);
-      return ApiResult.success(response); 
+      return ApiResult.success(response);
     } catch (e) {
-     
       return ApiResult.failure(ApiErrorHandler.handle(e));
     }
   }

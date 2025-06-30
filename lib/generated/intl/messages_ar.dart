@@ -42,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "academic_progress_welcome_message": MessageLookupByLibrary.simpleMessage(
       " !تعرّف على مستواك الأكاديمي بكل سهولة تفاصيل درجاتك وترتيبك في متناول يدك🎓",
     ),
+    "add": MessageLookupByLibrary.simpleMessage("اضافة"),
     "addLink": MessageLookupByLibrary.simpleMessage("إضافة رابط"),
     "addLinkDescrebtion": MessageLookupByLibrary.simpleMessage(
       "قم بإضافة رابط مباشر للمحتوى او المصدر!",
@@ -70,6 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم إرسال الإجابة بنجاح",
     ),
     "app_title": MessageLookupByLibrary.simpleMessage("التعليم الالكتروني"),
+    "apply_filter": MessageLookupByLibrary.simpleMessage("تطبيق الفلتر"),
     "are_you_sure_you_want_to_delete_this_material":
         MessageLookupByLibrary.simpleMessage(
           "هل أنت متأكد أنك تريد حذف هذه المادة؟",
@@ -127,6 +129,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "clearAnswerSelection": MessageLookupByLibrary.simpleMessage(
       "حذف تحديد الإجابة",
     ),
+    "clear_filter": MessageLookupByLibrary.simpleMessage("مسح الفلتر"),
     "clickheretoaddmorefiles": MessageLookupByLibrary.simpleMessage(
       "اضعط هنا لإضافة المزيد من الملفات",
     ),
@@ -222,6 +225,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "file_viewer": MessageLookupByLibrary.simpleMessage("عارض الملف"),
     "filter": MessageLookupByLibrary.simpleMessage("تصفية"),
+    "filter_questions": MessageLookupByLibrary.simpleMessage("تصفية الأسئلة"),
     "finalDegree": MessageLookupByLibrary.simpleMessage("نهائية"),
     "finalGrade": MessageLookupByLibrary.simpleMessage("الدرجة النهائية"),
     "finalResults": MessageLookupByLibrary.simpleMessage("النتائج النهائية"),
@@ -231,6 +235,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "final_results_welcome_message": MessageLookupByLibrary.simpleMessage(
       "📊 مرحباً بك في صفحة النتائج النهائية! هنا يمكنك الاطلاع على أدائك الأكاديمي ومعرفة درجاتك في المقررات المختلفة بكل سهولة ووضوح. نتمنى لك كل التوفيق والنجاح!",
     ),
+    "first_first": MessageLookupByLibrary.simpleMessage("أولى ترم أول"),
+    "first_second": MessageLookupByLibrary.simpleMessage("أولى ترم ثاني"),
     "first_semester": MessageLookupByLibrary.simpleMessage("ترم أول"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة السر؟",
@@ -242,6 +248,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "forum_welcome_message": MessageLookupByLibrary.simpleMessage(
       "💬 مرحباً بك في منتدى الأسئلة والإجابات!اطرح أسئلتك، وشارك معرفتك بالإجابة على أسئلة الآخرين، واستفد من خبرات زملائك هنا!",
     ),
+    "fourth_first": MessageLookupByLibrary.simpleMessage("رابعة ترم أول"),
+    "fourth_second": MessageLookupByLibrary.simpleMessage("رابعة ترم ثاني"),
     "from": MessageLookupByLibrary.simpleMessage("من"),
     "full_control_over_courses": MessageLookupByLibrary.simpleMessage(
       "📚 تحكم كامل بموادك الدراسية، من إضافة المحاضرات إلى متابعة تقدم الطلاب وإدارة الكويزات والأسايمنتات!",
@@ -274,6 +282,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "lectures": MessageLookupByLibrary.simpleMessage("المحاضرات"),
     "level": MessageLookupByLibrary.simpleMessage("الفرقة"),
+    "liked_questions": MessageLookupByLibrary.simpleMessage(
+      "الاسئلة المعجبة بها",
+    ),
     "loading": MessageLookupByLibrary.simpleMessage("جاري التحميل..."),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
@@ -310,6 +321,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "الاماكن الأكثر بحثاً!",
     ),
     "multipleChoice": MessageLookupByLibrary.simpleMessage("إختيارات متعددة"),
+    "my_questions": MessageLookupByLibrary.simpleMessage("اسئلتي"),
     "name": MessageLookupByLibrary.simpleMessage("الإسم"),
     "national_id": MessageLookupByLibrary.simpleMessage("الرقم القومي"),
     "nationality": MessageLookupByLibrary.simpleMessage("الجنسية"),
@@ -381,6 +393,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "من فضلك ارفع الملفات اولاً",
     ),
     "postponed": MessageLookupByLibrary.simpleMessage("مؤجل."),
+    "prep_first": MessageLookupByLibrary.simpleMessage("إعدادي ترم أول"),
+    "prep_second": MessageLookupByLibrary.simpleMessage("إعدادي ترم ثاني"),
     "prepareWell": MessageLookupByLibrary.simpleMessage("📚 استعد مسبقًا"),
     "preview": MessageLookupByLibrary.simpleMessage("عرض"),
     "previous": MessageLookupByLibrary.simpleMessage("السابق"),
@@ -495,6 +509,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "search_placeholder": MessageLookupByLibrary.simpleMessage(
       "أدخل اسم الطالب",
     ),
+    "second_first": MessageLookupByLibrary.simpleMessage("ثانية ترم أول"),
+    "second_second": MessageLookupByLibrary.simpleMessage("ثانية ترم ثاني"),
     "second_semester": MessageLookupByLibrary.simpleMessage("ترم ثاني"),
     "section": MessageLookupByLibrary.simpleMessage("سكشن"),
     "sections": MessageLookupByLibrary.simpleMessage("سكشن"),
@@ -509,6 +525,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "select_all_to_give_degree": MessageLookupByLibrary.simpleMessage(
       "تحديد الكل وإعطاء درجة",
     ),
+    "select_department": MessageLookupByLibrary.simpleMessage("اختر القسم"),
+    "select_semester": MessageLookupByLibrary.simpleMessage("اختر الترم"),
     "select_subjects": MessageLookupByLibrary.simpleMessage(
       "📚 يرجى اختيار المواد التي تود الاطلاع على منشوراتها وآخر مستجداتها!",
     ),
@@ -567,6 +585,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "text": MessageLookupByLibrary.simpleMessage("نصوص"),
     "theSearch": MessageLookupByLibrary.simpleMessage("البحث.."),
     "the_degree": MessageLookupByLibrary.simpleMessage("الدرجة"),
+    "third_first": MessageLookupByLibrary.simpleMessage("ثالثة ترم أول"),
+    "third_second": MessageLookupByLibrary.simpleMessage("ثالثة ترم ثاني"),
     "thursday": MessageLookupByLibrary.simpleMessage("الخميس"),
     "time": MessageLookupByLibrary.simpleMessage("الوقت"),
     "timeManagement": MessageLookupByLibrary.simpleMessage(

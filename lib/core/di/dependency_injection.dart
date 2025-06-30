@@ -23,6 +23,7 @@ import 'package:grad_project/features/forum/data/data%20sources/questions_local_
 import 'package:grad_project/features/forum/data/data%20sources/questions_remote_data_source.dart';
 import 'package:grad_project/features/forum/data/repos/questions_repo.dart';
 import 'package:grad_project/features/forum/logic/get_all_questions_cubit/get_all_questions_cubit.dart';
+import 'package:grad_project/features/forum/logic/filter_questions_cubit/filter_questions_cubit.dart';
 import 'package:grad_project/features/forum/logic/question_and_answers/question_and_answers_cubit.dart';
 import 'package:grad_project/features/forum/logic/toggle_like_cubit/toggle_like_cubit.dart';
 import 'package:grad_project/features/forum/logic/add_question/add_question_cubit.dart';
@@ -203,6 +204,8 @@ Future<void> setupGetIt() async {
       ));
   getIt.registerFactory<GetAllQuestionsCubit>(
       () => GetAllQuestionsCubit(getIt()));
+  getIt.registerFactory<FilterQuestionsCubit>(
+      () => FilterQuestionsCubit(getIt()));
   getIt.registerFactory<ToggleLikeCubit>(() => ToggleLikeCubit(getIt()));
   getIt.registerFactory<AddAnswerCubit>(() => AddAnswerCubit(getIt()));
   getIt.registerFactory<AddQuestionCubit>(() => AddQuestionCubit(getIt()));

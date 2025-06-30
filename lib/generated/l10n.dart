@@ -455,6 +455,16 @@ class S {
     return Intl.message('Filter', name: 'filter', desc: '', args: []);
   }
 
+  /// `Filter Questions`
+  String get filter_questions {
+    return Intl.message(
+      'Filter Questions',
+      name: 'filter_questions',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `View answers`
   String get view_answers {
     return Intl.message(
@@ -2755,16 +2765,181 @@ class S {
     );
   }
 
+  /// `Question added successfully`
+  String get questionAddedSuccessfully {
+    return Intl.message(
+      'Question added successfully',
+      name: 'questionAddedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Loading...`
   String get loading {
     return Intl.message('Loading...', name: 'loading', desc: '', args: []);
   }
 
-  /// `Question added successfully.`
-  String get questionAddedSuccessfully {
+  /// `Add`
+  String get add {
+    return Intl.message('Add', name: 'add', desc: '', args: []);
+  }
+
+  /// `Preparatory First`
+  String get prep_first {
     return Intl.message(
-      'Question added successfully.',
-      name: 'questionAddedSuccessfully',
+      'Preparatory First',
+      name: 'prep_first',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Preparatory Second`
+  String get prep_second {
+    return Intl.message(
+      'Preparatory Second',
+      name: 'prep_second',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `First Year First`
+  String get first_first {
+    return Intl.message(
+      'First Year First',
+      name: 'first_first',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `First Year Second`
+  String get first_second {
+    return Intl.message(
+      'First Year Second',
+      name: 'first_second',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Second Year First`
+  String get second_first {
+    return Intl.message(
+      'Second Year First',
+      name: 'second_first',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Second Year Second`
+  String get second_second {
+    return Intl.message(
+      'Second Year Second',
+      name: 'second_second',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Third Year First`
+  String get third_first {
+    return Intl.message(
+      'Third Year First',
+      name: 'third_first',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Third Year Second`
+  String get third_second {
+    return Intl.message(
+      'Third Year Second',
+      name: 'third_second',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fourth Year First`
+  String get fourth_first {
+    return Intl.message(
+      'Fourth Year First',
+      name: 'fourth_first',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fourth Year Second`
+  String get fourth_second {
+    return Intl.message(
+      'Fourth Year Second',
+      name: 'fourth_second',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Questions`
+  String get my_questions {
+    return Intl.message(
+      'My Questions',
+      name: 'my_questions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Liked Questions`
+  String get liked_questions {
+    return Intl.message(
+      'Liked Questions',
+      name: 'liked_questions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Apply Filter`
+  String get apply_filter {
+    return Intl.message(
+      'Apply Filter',
+      name: 'apply_filter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clear Filter`
+  String get clear_filter {
+    return Intl.message(
+      'Clear Filter',
+      name: 'clear_filter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Department`
+  String get select_department {
+    return Intl.message(
+      'Select Department',
+      name: 'select_department',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Semester`
+  String get select_semester {
+    return Intl.message(
+      'Select Semester',
+      name: 'select_semester',
       desc: '',
       args: [],
     );

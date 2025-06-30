@@ -243,7 +243,7 @@ class _AddQuestionBottomSheetState extends State<AddQuestionBottomSheet> {
               return CustomTextAndIconButton(
                 text: state is AddQuestionLoading 
                     ? S.of(context).loading
-                    : S.of(context).add_to_send,
+                    : S.of(context).add,
                 primaryButton: true,
                 icon: state is AddQuestionLoading 
                     ? const SizedBox(

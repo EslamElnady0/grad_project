@@ -47,6 +47,46 @@ class _QuestionsRemoteDataSource implements QuestionsRemoteDataSource {
   }
 
   @override
+  Future<GetAllQuestionsResponseModel> getFilteredQuestions(
+    int? page,
+    int? department,
+    int? semester,
+    bool? likes,
+    bool? myQuestions,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'page': page,
+      r'department': department,
+      r'semester': semester,
+      r'likes': likes,
+      r'myQuestions': myQuestions,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<GetAllQuestionsResponseModel>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'questions',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late GetAllQuestionsResponseModel _value;
+    try {
+      _value = GetAllQuestionsResponseModel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
   Future<ToggleLikeResponseModel> toggleLike(
     String like,
     String questionId,
