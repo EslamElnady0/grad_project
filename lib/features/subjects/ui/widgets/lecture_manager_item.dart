@@ -4,9 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/data/models/teachers_courses_response.dart';
 import 'package:grad_project/features/subjects/ui/views/add_lecture_view.dart';
 import 'package:grad_project/features/subjects/ui/views/materials_view.dart';
-import 'package:grad_project/features/subjects/ui/views/qr_attendance_view.dart';
-import 'package:grad_project/features/subjects/ui/widgets/show_update_lecture_status_dialog.dart';
-
 import '../../../../core/helpers/app_assets.dart';
 import '../../../../core/helpers/localizationa.dart';
 import '../../../../core/helpers/spacing.dart';
@@ -77,7 +74,6 @@ class LectureManagerItem extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15.w),
                 child: Column(children: [
-
                   CustomTextAndIconButton(
                       text: S.of(context).manage_materials_and_display,
                       width: double.infinity,
@@ -90,7 +86,6 @@ class LectureManagerItem extends StatelessWidget {
                       primaryButton: true),
                   vGap(12),
                   CustomTextAndIconButton(
-                     
                       text: S.of(context).add_courses,
                       width: double.infinity,
                       onTap: () {
@@ -99,7 +94,6 @@ class LectureManagerItem extends StatelessWidget {
                       },
                       icon: Image.asset(Assets.imagesAddLecture),
                       primaryButton: false),
-                  
                 ]),
               ),
             ],
