@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/events/typing%20events/user_typing_event.dart';
-import '../../../../core/events/message events/new_message_event.dart';
+import '../../../../core/events/message events/messages_events.dart';
 import '../../data/models/get_messages_response.dart';
 import '../../data/repos/chat_repo.dart';
 import 'inner_chat_state.dart';

@@ -9,7 +9,7 @@ import 'package:grad_project/features/map/presentation/widgets/search_result_lis
 import 'package:grad_project/generated/l10n.dart';
 import 'package:latlong2/latlong.dart';
 import '../../../../core/events/map events/add_destination_event.dart';
-import '../../../../core/events/message events/new_message_event.dart';
+import '../../../../core/events/message events/messages_events.dart';
 import '../view models/get_buildings_cubit/get_buildings_cubit.dart';
 
 class BuildingsSection extends StatelessWidget {

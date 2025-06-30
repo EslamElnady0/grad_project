@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/features/chat/logic/chat_cubit/chat_cubit.dart';
-
 import '../../../../core/helpers/spacing.dart';
 import '../../../../generated/l10n.dart';
 import '../../../home/ui/widgets/home_screens_header_row.dart';
@@ -21,6 +20,11 @@ class _ChatOutsiderBodyState extends State<ChatOutsiderBody> {
   void initState() {
     context.read<ChatGroupsCubit>().getChatGroups();
     super.initState();
+
+    // Call unSeenMessages after the widget is built to ensure StreamBuilder is listening
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.read<ChatGroupsCubit>().unSeenMessages();
+    });
   }
 
   @override

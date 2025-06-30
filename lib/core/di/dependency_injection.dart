@@ -232,7 +232,8 @@ Future<void> setupGetIt() async {
       remoteDataSource: getIt(),
       localDataSource: getIt(),
       socketService: SocketService()));
-  getIt.registerFactory<ChatGroupsCubit>(() => ChatGroupsCubit(getIt()));
+  getIt.registerFactory<ChatGroupsCubit>(
+      () => ChatGroupsCubit(getIt(), getIt()));
   getIt.registerFactory<GetGroupDetailsCubit>(
       () => GetGroupDetailsCubit(getIt()));
   getIt.registerFactory<GetLatestMessagesCubit>(

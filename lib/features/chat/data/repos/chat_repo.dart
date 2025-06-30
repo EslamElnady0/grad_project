@@ -1,5 +1,5 @@
 import 'dart:developer';
-import 'package:grad_project/core/events/message%20events/new_message_event.dart';
+import 'package:grad_project/core/events/message%20events/messages_events.dart';
 import 'package:grad_project/core/networking/api_result.dart';
 import 'package:grad_project/features/chat/data/models/chat_groups_response.dart';
 import 'package:grad_project/features/chat/data/models/get_messages_response.dart';

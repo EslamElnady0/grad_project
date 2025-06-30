@@ -7,7 +7,33 @@ class SocketRepo {
 
   SocketRepo(this._socketService);
   SocketService get socketService => _socketService;
+  final Set<String> _activeListeners = {};
+  void _addListenerOnce(String event, Function(dynamic) callback) {
+    if (!_activeListeners.contains(event)) {
+      socketService.on(event, callback);
+      _activeListeners.add(event);
+    } else {
+      log('Listener already exists for event: $event, skipping...');
+    }
+  }
 
+  /// Remove a specific listener and mark it as inactive
+  void _removeListener(String event) {
+    if (_activeListeners.contains(event)) {
+      socketService.off(event);
+      _activeListeners.remove(event);
+    }
+  }
+
+  /// Remove all active listeners
+  void _removeAllListeners() {
+    for (String event in _activeListeners.toList()) {
+      socketService.off(event);
+    }
+    _activeListeners.clear();
+  }
+
+//----------------------------------------------------------------------------------------
   Future<void> initSocket(
       {Function? onConnected, required String token}) async {
     log("initializing socket ......");
@@ -41,12 +67,10 @@ class SocketRepo {
     _socketService.emit(SocketEvents.messageDelivered, userData);
 
     _socketService.on(SocketEvents.messageDeliveredToSuccess, (data) {
-      log("successfully message delivered : $data");
       onSuccess(data);
     });
 
     _socketService.on(SocketEvents.messageDeliveredToError, (error) {
-      log("successfully message is not delivered : $error");
       onFailure(error.toString());
     });
   }
@@ -58,6 +82,23 @@ class SocketRepo {
     });
   }
 
+  void unSeenMessages({
+    required Function onSuccess,
+    required Function(String error) onFailure,
+  }) {
+    _removeListener(SocketEvents.unSeenSuccess);
+    _removeListener(SocketEvents.unSeenError);
+
+    socketService.emit(SocketEvents.unSeen, {});
+    _addListenerOnce(SocketEvents.unSeenSuccess, (data) {
+      onSuccess(data);
+    });
+    _addListenerOnce(SocketEvents.unSeenError, (error) {
+      log("unseen messages error: $error");
+      onFailure(error.toString());
+    });
+  }
+
   void disposeSocket() {
     // _socketService.off(SocketEvents.recieveMessage);
     _socketService.off(SocketEvents.sendMessageError);
@@ -65,6 +106,7 @@ class SocketRepo {
     _socketService.off(SocketEvents.sendMessage);
     _socketService.off(SocketEvents.userRegisterSuccess);
     _socketService.off(SocketEvents.userRegisterError);
+    _removeAllListeners();
     _socketService.dispose();
   }
 }

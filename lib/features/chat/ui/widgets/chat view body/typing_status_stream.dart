@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/events/typing%20events/user_typing_event.dart';
 import 'package:grad_project/features/chat/logic/inner_chat_cubit/inner_chat_cubit.dart';
 
-import '../typing_indicator_widget.dart';
+import 'typing_indicator_widget.dart';
 
 class TypingStatusStream extends StatelessWidget {
   final String userId;
@@ -36,7 +36,7 @@ class TypingStatusStream extends StatelessWidget {
                     child: TypingIndicatorWidget(
                       isVisible: true,
                       userName: e.user.name,
-                      type: e.type,
+                      type: "text",
                     ),
                   ),
                 )
