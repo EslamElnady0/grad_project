@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/di/dependency_injection.dart';
 import 'package:grad_project/core/flavors/flavors_functions.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
+import 'package:grad_project/core/widgets/custom_app_bar.dart';
 import 'package:grad_project/core/widgets/custom_text_and_icon_button.dart';
 import 'package:grad_project/features/forum/data/models/get_all_questions_response_model.dart';
 import 'package:grad_project/features/forum/logic/add_question/add_question_cubit.dart';
@@ -81,13 +82,16 @@ class ForumViewsBody extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 16.0.w),
             child: Column(
               children: [
-                vGap(22),
+                if(FlavorsFunctions.isStudent())  vGap(22),
+                if(FlavorsFunctions.isStudent())
                 HomeScreensHeaderRow(
                   onMenuTap: () {
                     Scaffold.of(context).openDrawer();
                   },
                   onSearchTap: () {},
                 ),
+                if(!FlavorsFunctions.isStudent())
+                  CustomAppBar(title: S.of(context).forum),
                 vGap(12),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.w),

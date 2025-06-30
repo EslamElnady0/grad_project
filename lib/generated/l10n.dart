@@ -3039,6 +3039,11 @@ class S {
       args: [],
     );
   }
+
+  /// `Forum`
+  String get forum {
+    return Intl.message('Forum', name: 'forum', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
