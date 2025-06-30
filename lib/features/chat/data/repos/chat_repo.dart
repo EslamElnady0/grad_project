@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:grad_project/core/events/message%20events/new_message_event.dart';
 import 'package:grad_project/core/networking/api_result.dart';
 import 'package:grad_project/features/chat/data/models/chat_groups_response.dart';
 import 'package:grad_project/features/chat/data/models/get_messages_response.dart';
@@ -26,7 +27,6 @@ class ChatRepo {
     if (!_activeListeners.contains(event)) {
       socketService.on(event, callback);
       _activeListeners.add(event);
-      log('Added listener for event: $event');
     } else {
       log('Listener already exists for event: $event, skipping...');
     }
@@ -37,7 +37,6 @@ class ChatRepo {
     if (_activeListeners.contains(event)) {
       socketService.off(event);
       _activeListeners.remove(event);
-      log('Removed listener for event: $event');
     }
   }
 
@@ -45,7 +44,6 @@ class ChatRepo {
   void _removeAllListeners() {
     for (String event in _activeListeners.toList()) {
       socketService.off(event);
-      log('Removed listener for event: $event');
     }
     _activeListeners.clear();
   }
@@ -117,12 +115,10 @@ class ChatRepo {
     socketService.emit(SocketEvents.messageSeen, {'messageId': messageId});
 
     _addListenerOnce(SocketEvents.messageSeenSuccess, (data) {
-      log("message seen success");
       onSuccess(data);
     });
 
     _addListenerOnce(SocketEvents.messageSeenError, (error) {
-      log("message seen failed");
       onFailure(error.toString());
     });
   }
@@ -166,7 +162,10 @@ class ChatRepo {
       onFailure(error.toString());
     });
     _addListenerOnce(SocketEvents.openChatInfo, (data) {
-      onSuccess(data);
+      final joinningUser = data["sender"];
+      eventBus.fire(UserJoiningEvent(
+        Sender.fromJson(joinningUser),
+      ));
     });
   }
 

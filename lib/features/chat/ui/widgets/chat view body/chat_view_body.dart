@@ -98,7 +98,7 @@ class _ChatViewBodyState extends State<ChatViewBody> {
             onTextChanged: (text) {
               if (text.isNotEmpty && !_isTyping) {
                 _isTyping = true;
-                context.read<InnerChatCubit>().changeTypingState(text);
+                context.read<InnerChatCubit>().changeTypingState("text");
               } else if (text.isEmpty && _isTyping) {
                 _isTyping = false;
                 context.read<InnerChatCubit>().stopTyping();
