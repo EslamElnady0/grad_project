@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/events/typing%20events/user_typing_event.dart';
+import 'package:grad_project/features/chat/data/models/send_message_model.dart';
 import '../../../../core/events/message events/messages_events.dart';
 import '../../data/models/get_messages_response.dart';
 import '../../data/repos/chat_repo.dart';
@@ -43,10 +44,14 @@ class InnerChatCubit extends Cubit<InnerChatState> {
       }
     });
   }
-  void sendMessage(String messageText, BuildContext context) {
+  void sendMessage(
+      {String? messageText,
+      List<Attachment>? attachments,
+      required BuildContext context}) {
     emit(InnerChatSending());
+
     _repo.sendMessage(
-      messageText,
+      SendMessageModel(text: messageText, attachments: attachments),
       onSuccess: (data) {
         emit(InnerChatMessageSent());
       },

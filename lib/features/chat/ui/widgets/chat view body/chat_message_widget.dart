@@ -6,6 +6,7 @@ import 'package:intl/intl.dart';
 import '../../../data/models/get_messages_response.dart';
 import 'user_avatar_and_name.dart';
 
+/// Widget for displaying text messages in chat
 class ChatMessageWidget extends StatelessWidget {
   final Message message;
   final String userId;
@@ -74,7 +75,7 @@ class ChatMessageWidget extends StatelessWidget {
     );
   }
 
-  _buildMessageStatus(Status status, {double iconSize = 12}) {
+  Widget _buildMessageStatus(Status status, {double iconSize = 12}) {
     // Remove self from seenBy and deliveredTo
     final deliveredTo = status.deliveredTo.map((e) => e.id.toString()).toSet();
     final seenBy = status.seenBy.map((e) => e.id.toString()).toSet();

@@ -9,6 +9,7 @@ import '../../../../core/networking/api_error_handler.dart';
 import '../data sources/chat_local_data_source.dart';
 import '../data sources/chat_remote_data_source.dart';
 import '../../../../core/services/socket_service.dart';
+import '../models/send_message_model.dart';
 
 class ChatRepo {
   final ChatRemoteDataSource remoteDataSource;
@@ -89,14 +90,14 @@ class ChatRepo {
   //toDo:--------------------------------------- Sockets Methods -------------------------------------------------------
 
   void sendMessage(
-    String messageText, {
+    SendMessageModel message, {
     required Function onSuccess,
     required Function(String error) onFailure,
   }) {
     // Remove existing listeners before adding new ones
     _removeListener(SocketEvents.sendMessageError);
 
-    socketService.emit(SocketEvents.sendMessage, {'text': messageText});
+    socketService.emit(SocketEvents.sendMessage, message.toJson());
 
     _addListenerOnce(SocketEvents.sendMessageError, (error) {
       log("message sending failed");

@@ -36,7 +36,6 @@ class LoginCubit extends Cubit<LoginState> {
           loginResponse.data?[0].user?.id.toString() ?? '');
       await _subToNotificationRepo.saveToken(
         SubToPushNotificationsModel(
-            userId: loginResponse.data?[0].user?.id.toString() ?? '',
             deviceToken: FirebaseMessagingService().fcmToken ?? ''),
       );
       emit(LoginState.success(loginResponse));

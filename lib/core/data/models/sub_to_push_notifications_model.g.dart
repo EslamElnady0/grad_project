@@ -9,7 +9,6 @@ part of 'sub_to_push_notifications_model.dart';
 SubToPushNotificationsModel _$SubToPushNotificationsModelFromJson(
         Map<String, dynamic> json) =>
     SubToPushNotificationsModel(
-      userId: json['userId'] as String,
       deviceToken: json['token'] as String,
       platform: json['platform'] as String? ?? "android",
     );
@@ -17,7 +16,6 @@ SubToPushNotificationsModel _$SubToPushNotificationsModelFromJson(
 Map<String, dynamic> _$SubToPushNotificationsModelToJson(
         SubToPushNotificationsModel instance) =>
     <String, dynamic>{
-      'userId': instance.userId,
       'token': instance.deviceToken,
       'platform': instance.platform,
     };
