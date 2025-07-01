@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/di/dependency_injection.dart';
+import 'package:grad_project/core/flavors/flavors_functions.dart';
 import 'package:grad_project/core/widgets/custom_scaffold.dart';
 import 'package:grad_project/features/quizes/ui/cubit/quiz_cubit/quiz_cubit.dart';
 
@@ -20,10 +21,14 @@ class StudentsAnswersReviewView extends StatelessWidget {
     return CustomScaffold(
       body: MultiBlocProvider(
         providers: [
-          BlocProvider(
-            create: (context) => getIt<StudentQuizAnswersCubit>()
-              ..fetchStudentQuizAnswers(model.quizId, model.studentId),
-          ),
+          FlavorsFunctions.isAdmin()
+              ? BlocProvider(
+                  create: (context) => getIt<StudentQuizAnswersCubit>()
+                    ..fetchStudentQuizAnswers(model.quizId, model.studentId!),
+                )
+              : BlocProvider(
+                  create: (context) => getIt<StudentQuizAnswersCubit>()
+                    ..fetchStudentQuizAnswersForHimself(model.quizId)),
           BlocProvider(
             create: (context) => QuizCubit(),
           ),

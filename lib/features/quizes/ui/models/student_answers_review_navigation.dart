@@ -1,7 +1,6 @@
 class StudentAnswersReviewNavigation {
   final String quizId;
-  final String studentId;
+  final String? studentId;
 
-  StudentAnswersReviewNavigation(
-      {required this.quizId, required this.studentId});
+  StudentAnswersReviewNavigation({required this.quizId, this.studentId});
 }

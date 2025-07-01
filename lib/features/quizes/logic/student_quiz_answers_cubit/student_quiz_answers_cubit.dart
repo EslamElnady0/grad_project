@@ -20,4 +20,14 @@ class StudentQuizAnswersCubit extends Cubit<StudentQuizAnswersState> {
           emit(StudentQuizAnswersState.failure(error.getAllMessages())),
     );
   }
+
+  Future<void> fetchStudentQuizAnswersForHimself(String quizId) async {
+    emit(const StudentQuizAnswersState.loading());
+    final result = await repo.getStudentQuizAnswersForHimself(quizId);
+    result.when(
+      success: (data) => emit(StudentQuizAnswersState.success(data)),
+      failure: (error) =>
+          emit(StudentQuizAnswersState.failure(error.getAllMessages())),
+    );
+  }
 }
