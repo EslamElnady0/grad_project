@@ -7,6 +7,9 @@ import 'package:grad_project/features/quizes/ui/views/quiz_details_view.dart';
 import 'package:grad_project/features/time_schedule/data/models/activity_response_model.dart';
 import 'package:grad_project/generated/l10n.dart';
 
+import '../../../../quizes/ui/models/student_answers_review_navigation.dart';
+import '../../../../quizes/ui/views/students_answers_review_view.dart';
+
 class CustomStudentQuizButton extends StatelessWidget {
   final StudentQuizModel studentQuizModel;
 
@@ -21,17 +24,22 @@ class CustomStudentQuizButton extends StatelessWidget {
         id: studentQuizModel.id,
         title: studentQuizModel.title,
         description: studentQuizModel.description,
-        totalDegree:  studentQuizModel.totalDegree,
+        totalDegree: studentQuizModel.totalDegree,
         date: studentQuizModel.date,
-        startTime:  studentQuizModel.time,
-        duration:   studentQuizModel.duration,
-        status:   studentQuizModel.status,
+        startTime: studentQuizModel.time,
+        duration: studentQuizModel.duration,
+        status: studentQuizModel.status,
         course: studentQuizModel.course,
         teacher: studentQuizModel.teacher);
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context)
-            .push(QuizDetailsView.routeName, extra: quizModel);
+        studentQuizModel.status == 'finished'
+            ? GoRouter.of(context).push(StudentsAnswersReviewView.routeName,
+                extra: StudentAnswersReviewNavigation(
+                  quizId: studentQuizModel.id.toString(),
+                ))
+            : GoRouter.of(context)
+                .push(QuizDetailsView.routeName, extra: quizModel);
       },
       child: Container(
         width: double.infinity,

@@ -9,7 +9,7 @@ import 'package:grad_project/features/map/data/model/get_halls_response.dart';
 import 'package:grad_project/features/map/presentation/widgets/search_result_list.dart';
 import 'package:grad_project/generated/l10n.dart';
 import 'package:latlong2/latlong.dart';
-import '../../../../core/events/message events/new_message_event.dart';
+import '../../../../core/events/message events/messages_events.dart';
 import '../view models/get_halls_cubit/get_halls_cubit.dart';
 
 class HallsSection extends StatelessWidget {

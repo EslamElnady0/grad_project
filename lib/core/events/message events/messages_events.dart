@@ -12,3 +12,14 @@ class MessageUpdatedEvent {
   final Message message;
   MessageUpdatedEvent(this.message);
 }
+
+class UserJoiningEvent {
+  final Sender user;
+  UserJoiningEvent(this.user);
+}
+
+class UnSeenMessagesEvent {
+  final int count;
+
+  UnSeenMessagesEvent({required this.count});
+}

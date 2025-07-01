@@ -8,7 +8,7 @@ import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/map/data/model/get_halls_response.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:location/location.dart';
-import '../../../../../core/events/message events/new_message_event.dart';
+import '../../../../../core/events/message events/messages_events.dart';
 import '../../../data/model/get_buildings_response.dart';
 import '../../../data/model/route_response.dart';
 import '../../../data/repos/map_repo.dart';

@@ -14,6 +14,7 @@ import 'package:grad_project/features/profile/presentation/views/profile_view.da
 import 'package:grad_project/features/quizes/ui/views/quiz_details_view.dart';
 import 'package:grad_project/features/quizes/ui/views/quiz_view.dart';
 import 'package:grad_project/features/profile/presentation/views/edit_profile_view.dart';
+import 'package:grad_project/features/quizes/ui/views/students_answers_review_view.dart';
 import 'package:grad_project/features/time_schedule/presentation/views/time_schedule_view.dart';
 import 'package:grad_project/features/weekly_schedule/ui/screens/weekly_schedule_view.dart';
 import '../../features/auth/ui/views/auth_view.dart';
@@ -40,6 +41,7 @@ abstract class StudentRouter {
         ),
         GoRoute(
           path: AuthView.routeName,
+          name: AuthView.routeName,
           builder: (context, state) => const AuthView(),
         ),
         GoRoute(
@@ -122,6 +124,9 @@ abstract class StudentRouter {
         GoRoute(
             path: PdfWebViewPage.routeName,
             builder: (context, state) => const PdfWebViewPage()),
+        GoRoute(
+            path: StudentsAnswersReviewView.routeName,
+            builder: (context, state) => const StudentsAnswersReviewView()),
       ],
     );
   }

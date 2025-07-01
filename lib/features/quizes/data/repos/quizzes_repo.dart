@@ -135,4 +135,16 @@ class QuizzesRepo {
       return ApiResult.failure(ApiErrorHandler.handle(e));
     }
   }
+
+  Future<ApiResult<StudentQuizAnswersResponse>> getStudentQuizAnswersForHimself(
+    String quizId,
+  ) async {
+    try {
+      final result =
+          await remoteDataSource.getStudentQuizAnswersForHimself(quizId);
+      return ApiResult.success(result);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
 }

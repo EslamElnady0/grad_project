@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,14 +6,17 @@ import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/helpers/shared_pref_helper.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/widgets/text%20entry%20footer/text_entry_footer.dart';
+import 'package:grad_project/features/chat/data/models/send_message_model.dart';
 import 'package:grad_project/features/chat/logic/get_latest_messages_cubit/get_latest_messages_cubit.dart';
 import 'package:grad_project/features/chat/logic/inner_chat_cubit/inner_chat_cubit.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../../core/helpers/spacing.dart';
 import '../../../data/models/get_messages_response.dart';
 import '../../cubit/file_picker_cubit.dart';
-import 'chat_message_widget.dart';
+import 'chat_message_factory.dart';
 import 'package:grad_project/core/helpers/debouncer.dart';
+
+import 'typing_status_stream.dart';
 
 class ChatViewBody extends StatefulWidget {
   const ChatViewBody({super.key});
@@ -79,7 +83,7 @@ class _ChatViewBodyState extends State<ChatViewBody> {
                   if (index == messages.length) {
                     return _buildPaginationLoader();
                   }
-                  return ChatMessageWidget(
+                  return ChatMessageFactory(
                     message: messages[index],
                     userId: userId,
                   );
@@ -89,16 +93,34 @@ class _ChatViewBodyState extends State<ChatViewBody> {
             },
           ),
         ),
+        TypingStatusStream(userId: userId),
         BlocProvider(
           create: (context) => FilePickerCubit(),
           child: TextEntryFooter(
             onSend: (text, files) {
-              context.read<InnerChatCubit>().sendMessage(text, context);
+              List<Attachment> attachments = [];
+              if (files.isNotEmpty) {
+                Base64Encoder encoder = const Base64Encoder();
+                attachments = files.map((file) {
+                  String base64String = encoder.convert(file.readAsBytesSync());
+                  return Attachment(
+                    base64: base64String,
+                    name: file.path.split('/').last,
+                    type: fileExtensions.contains(file.path.split('.').last)
+                        ? 'file'
+                        : null,
+                  );
+                }).toList();
+              }
+              context.read<InnerChatCubit>().sendMessage(
+                  messageText: text,
+                  attachments: attachments,
+                  context: context);
             },
             onTextChanged: (text) {
               if (text.isNotEmpty && !_isTyping) {
                 _isTyping = true;
-                context.read<InnerChatCubit>().changeTypingState(text);
+                context.read<InnerChatCubit>().changeTypingState("text");
               } else if (text.isEmpty && _isTyping) {
                 _isTyping = false;
                 context.read<InnerChatCubit>().stopTyping();
@@ -116,6 +138,18 @@ class _ChatViewBodyState extends State<ChatViewBody> {
       ],
     );
   }
+
+  List<String> fileExtensions = [
+    'pdf',
+    'doc',
+    'docx',
+    'xls',
+    'xlsx',
+    'ppt',
+    'pptx',
+    'zip',
+    'rar'
+  ];
 
   Widget _buildPaginationLoader() {
     return BlocBuilder<GetLatestMessagesCubit, GetLatestMessagesState>(
@@ -141,7 +175,7 @@ class _ChatViewBodyState extends State<ChatViewBody> {
         padding: EdgeInsets.symmetric(horizontal: 10.w),
         itemBuilder: (context, index) {
           final msg = Constants.dummyMessages[index];
-          return ChatMessageWidget(
+          return ChatMessageFactory(
             message: msg,
             userId: userId,
           );

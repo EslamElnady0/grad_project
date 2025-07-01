@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
+import 'package:grad_project/core/helpers/shared_pref_helper.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/academic_progress_view.dart';
 import 'package:grad_project/features/annoucements/ui/views/annoucements_body.dart';
@@ -197,7 +198,10 @@ class Constants {
       DrawerItemModel(
         title: S.of(context).logout,
         iconPath: Assets.imagesSvgsLogOut,
-        onTap: () {},
+        onTap: () {
+          GoRouter.of(context).push(AuthView.routeName);
+          SharedPrefHelper.clearAllData();
+        },
       ),
     ];
   }
@@ -259,84 +263,112 @@ class Constants {
         content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
         sender: Sender(id: 1, name: "John Doe", avatar: ""),
         createdAt: DateTime.now(),
+        attachments: [],
+        messageType: "text",
         status: Status(deliveredTo: [], seenBy: [])),
     Message(
         id: "1",
         content: "Hello fsdfsdffsdfsdffsdfsdf",
         sender: Sender(id: 1, name: "John Doe", avatar: ""),
         createdAt: DateTime.now(),
+        attachments: [],
+        messageType: "text",
         status: Status(deliveredTo: [], seenBy: [])),
     Message(
         id: "1",
         content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
         sender: Sender(id: 1, name: "John Doe", avatar: ""),
         createdAt: DateTime.now(),
+        attachments: [],
+        messageType: "text",
         status: Status(deliveredTo: [], seenBy: [])),
     Message(
         id: "1",
         content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
         sender: Sender(id: 1, name: "John Doe", avatar: ""),
         createdAt: DateTime.now(),
+        attachments: [],
+        messageType: "text",
         status: Status(deliveredTo: [], seenBy: [])),
     Message(
         id: "1",
         content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
         sender: Sender(id: 1, name: "John Doe", avatar: ""),
         createdAt: DateTime.now(),
+        attachments: [],
+        messageType: "text",
         status: Status(deliveredTo: [], seenBy: [])),
     Message(
         id: "1",
         content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
         sender: Sender(id: 1, name: "John Doe", avatar: ""),
         createdAt: DateTime.now(),
+        attachments: [],
+        messageType: "text",
         status: Status(deliveredTo: [], seenBy: [])),
     Message(
         id: "1",
         content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
         sender: Sender(id: 1, name: "John Doe", avatar: ""),
         createdAt: DateTime.now(),
+        attachments: [],
+        messageType: "text",
         status: Status(deliveredTo: [], seenBy: [])),
     Message(
         id: "1",
         content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
         sender: Sender(id: 1, name: "John Doe", avatar: ""),
         createdAt: DateTime.now(),
+        attachments: [],
+        messageType: "text",
         status: Status(deliveredTo: [], seenBy: [])),
     Message(
         id: "1",
         content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
         sender: Sender(id: 1, name: "John Doe", avatar: ""),
         createdAt: DateTime.now(),
+        attachments: [],
+        messageType: "text",
         status: Status(deliveredTo: [], seenBy: [])),
     Message(
         id: "1",
         content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
         sender: Sender(id: 1, name: "John Doe", avatar: ""),
         createdAt: DateTime.now(),
+        attachments: [],
+        messageType: "text",
         status: Status(deliveredTo: [], seenBy: [])),
     Message(
         id: "1",
         content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
         sender: Sender(id: 1, name: "John Doe", avatar: ""),
         createdAt: DateTime.now(),
+        attachments: [],
+        messageType: "text",
         status: Status(deliveredTo: [], seenBy: [])),
     Message(
         id: "1",
         content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
         sender: Sender(id: 1, name: "John Doe", avatar: ""),
         createdAt: DateTime.now(),
+        attachments: [],
+        messageType: "text",
         status: Status(deliveredTo: [], seenBy: [])),
     Message(
         id: "1",
         content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
         sender: Sender(id: 1, name: "John Doe", avatar: ""),
         createdAt: DateTime.now(),
+        attachments: [],
+        messageType: "text",
         status: Status(deliveredTo: [], seenBy: [])),
     Message(
         id: "1",
         content: "Hello fsjkhfksdfjsdfkjjfljfsjfsd ",
         sender: Sender(id: 1, name: "John Doe", avatar: ""),
         createdAt: DateTime.now(),
+        attachments: [],
+        messageType: "text",
         status: Status(deliveredTo: [], seenBy: [])),
   ];
   static const List<String> dummyAnswers = [
