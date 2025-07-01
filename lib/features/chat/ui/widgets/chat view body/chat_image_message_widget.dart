@@ -5,6 +5,7 @@ import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:intl/intl.dart';
 import '../../../data/models/get_messages_response.dart';
 import 'user_avatar_and_name.dart';
+import 'package:photo_view/photo_view.dart';
 
 class ChatImageMessageWidget extends StatelessWidget {
   final Message message;
@@ -319,8 +320,7 @@ class ChatImageMessageWidget extends StatelessWidget {
 
 class FullScreenImageView extends StatelessWidget {
   final String imageUrl;
-  const FullScreenImageView({Key? key, required this.imageUrl})
-      : super(key: key);
+  const FullScreenImageView({super.key, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -332,8 +332,19 @@ class FullScreenImageView extends StatelessWidget {
         elevation: 0,
       ),
       body: Center(
-        child: InteractiveViewer(
-          child: Image.network(imageUrl),
+        child: PhotoView(
+          imageProvider: NetworkImage(imageUrl),
+          backgroundDecoration: const BoxDecoration(color: Colors.black),
+          minScale: PhotoViewComputedScale.contained * 1.0,
+          maxScale: PhotoViewComputedScale.covered * 3.0,
+          errorBuilder: (context, error, stackTrace) {
+            return Center(
+              child: Text(
+                'Failed to load image',
+                style: AppTextStyles.font14WhiteSemiBold,
+              ),
+            );
+          },
         ),
       ),
     );

@@ -1,9 +1,13 @@
+import 'dart:convert';
+import 'dart:io';
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:open_file/open_file.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:intl/intl.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../../data/models/get_messages_response.dart';
 import 'user_avatar_and_name.dart';
 
@@ -96,6 +100,9 @@ class _ChatTextWithFilesWidgetState extends State<ChatTextWithFilesWidget> {
 
     return Column(
       children: attachments.map((attachment) {
+        // Parse base64 data to get file info
+        final fileInfo = _parseBase64File(attachment.fileUrl, attachment.name);
+
         return Container(
           margin: EdgeInsets.only(bottom: 4.h),
           padding: EdgeInsets.all(8.r),
@@ -107,7 +114,7 @@ class _ChatTextWithFilesWidgetState extends State<ChatTextWithFilesWidget> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Icon(
-                _getFileIcon(attachment.fileType),
+                _getFileIcon(fileInfo.fileType),
                 color: Colors.white,
                 size: 20.r,
               ),
@@ -117,14 +124,14 @@ class _ChatTextWithFilesWidgetState extends State<ChatTextWithFilesWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      attachment.name ?? 'File',
+                      fileInfo.fileName,
                       style: AppTextStyles.font10GraySemiBold
                           .copyWith(color: Colors.white, fontSize: 10.sp),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text(
-                      _getFileTypeText(attachment.fileType),
+                      _getFileTypeText(fileInfo.fileType),
                       style: AppTextStyles.font10GraySemiBold
                           .copyWith(color: Colors.white70, fontSize: 8.sp),
                     ),
@@ -133,7 +140,7 @@ class _ChatTextWithFilesWidgetState extends State<ChatTextWithFilesWidget> {
               ),
               SizedBox(width: 8.w),
               IconButton(
-                onPressed: () => _openFileOnline(attachment),
+                onPressed: () => _openBase64File(fileInfo),
                 icon: Icon(
                   Icons.open_in_new,
                   color: Colors.white,
@@ -150,6 +157,44 @@ class _ChatTextWithFilesWidgetState extends State<ChatTextWithFilesWidget> {
         );
       }).toList(),
     );
+  }
+
+  // IconData _getFileIcon(String fileType) {
+  //   final type = fileType.toLowerCase();
+  //   if (type.contains('pdf')) {
+  //     return Icons.picture_as_pdf;
+  //   } else if (type.contains('doc') || type.contains('docx')) {
+  //     return Icons.description;
+  //   } else if (type.contains('xls') || type.contains('xlsx')) {
+  //     return Icons.table_chart;
+  //   } else if (type.contains('ppt') || type.contains('pptx')) {
+  //     return Icons.slideshow;
+  //   } else if (type.contains('txt')) {
+  //     return Icons.text_snippet;
+  //   } else if (type.contains('zip') || type.contains('rar')) {
+  //     return Icons.folder_zip;
+  //   } else {
+  //     return Icons.insert_drive_file;
+  //   }
+  // }
+
+  String _getFileTypeText(String fileType) {
+    final type = fileType.toLowerCase();
+    if (type.contains('pdf')) {
+      return 'PDF Document';
+    } else if (type.contains('doc') || type.contains('docx')) {
+      return 'Word Document';
+    } else if (type.contains('xls') || type.contains('xlsx')) {
+      return 'Excel Spreadsheet';
+    } else if (type.contains('ppt') || type.contains('pptx')) {
+      return 'PowerPoint Presentation';
+    } else if (type.contains('txt')) {
+      return 'Text File';
+    } else if (type.contains('zip') || type.contains('rar')) {
+      return 'Compressed File';
+    } else {
+      return 'File';
+    }
   }
 
   IconData _getFileIcon(String fileType) {
@@ -171,22 +216,99 @@ class _ChatTextWithFilesWidgetState extends State<ChatTextWithFilesWidget> {
     }
   }
 
-  String _getFileTypeText(String fileType) {
-    final type = fileType.toLowerCase();
-    if (type.contains('pdf')) {
-      return 'PDF Document';
-    } else if (type.contains('doc') || type.contains('docx')) {
-      return 'Word Document';
-    } else if (type.contains('xls') || type.contains('xlsx')) {
-      return 'Excel Spreadsheet';
-    } else if (type.contains('ppt') || type.contains('pptx')) {
-      return 'PowerPoint Presentation';
-    } else if (type.contains('txt')) {
-      return 'Text File';
-    } else if (type.contains('zip') || type.contains('rar')) {
-      return 'Compressed File';
-    } else {
-      return 'File';
+  Base64FileInfo _parseBase64File(String base64Data, String? originalName) {
+    try {
+      // Decode base64 to get file bytes
+      final bytes = base64Decode(base64Data);
+
+      // Try to determine file type from original name or bytes
+      String fileType = 'unknown';
+      String fileName =
+          originalName ?? 'file_${DateTime.now().millisecondsSinceEpoch}';
+
+      if (originalName != null && originalName.contains('.')) {
+        fileType = originalName.split('.').last.toLowerCase();
+      } else {
+        // Try to determine file type from file signature (magic bytes)
+        fileType = _detectFileTypeFromBytes(bytes);
+      }
+
+      return Base64FileInfo(
+        fileName: fileName,
+        fileType: fileType,
+        fileBytes: bytes,
+        base64Data: base64Data,
+      );
+    } catch (e) {
+      // If base64 decoding fails, treat as regular file
+      return Base64FileInfo(
+        fileName: originalName ?? 'file',
+        fileType: 'unknown',
+        fileBytes: Uint8List(0),
+        base64Data: base64Data,
+      );
+    }
+  }
+
+  String _detectFileTypeFromBytes(Uint8List bytes) {
+    if (bytes.length < 4) return 'unknown';
+
+    // Check for common file signatures
+    if (bytes.length >= 4 &&
+        bytes[0] == 0x25 &&
+        bytes[1] == 0x50 &&
+        bytes[2] == 0x44 &&
+        bytes[3] == 0x46) {
+      return 'pdf';
+    } else if (bytes.length >= 2 && bytes[0] == 0xFF && bytes[1] == 0xD8) {
+      return 'jpg';
+    } else if (bytes.length >= 8 &&
+        bytes[0] == 0x89 &&
+        bytes[1] == 0x50 &&
+        bytes[2] == 0x4E &&
+        bytes[3] == 0x47) {
+      return 'png';
+    } else if (bytes.length >= 4 &&
+        bytes[0] == 0x50 &&
+        bytes[1] == 0x4B &&
+        bytes[2] == 0x03 &&
+        bytes[3] == 0x04) {
+      return 'zip';
+    } else if (bytes.length >= 4 &&
+        bytes[0] == 0xD0 &&
+        bytes[1] == 0xCF &&
+        bytes[2] == 0x11 &&
+        bytes[3] == 0xE0) {
+      return 'doc';
+    }
+
+    return 'unknown';
+  }
+
+  Future<void> _openBase64File(Base64FileInfo fileInfo) async {
+    try {
+      // Get the app documents directory for Android
+      final appDir = await getApplicationDocumentsDirectory();
+      final filePath = '${appDir.path}/${fileInfo.fileName}';
+      final file = File(filePath);
+
+      // Write the base64 data to the file
+      await file.writeAsBytes(fileInfo.fileBytes);
+
+      // Open the file using open_file package (works on Android)
+      final result = await OpenFile.open(filePath);
+
+      if (result.type != ResultType.done) {
+        throw Exception('Failed to open file: ${result.message}');
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Error opening file: $e'),
+          backgroundColor: Colors.red,
+          duration: const Duration(seconds: 2),
+        ),
+      );
     }
   }
 
@@ -205,29 +327,19 @@ class _ChatTextWithFilesWidgetState extends State<ChatTextWithFilesWidget> {
       return Icon(Icons.check, color: Colors.white, size: iconSize);
     }
   }
+}
 
-  Future<void> _openFileOnline(MessageAttachement attachment) async {
-    try {
-      final url = Uri.parse(attachment.fileUrl);
-      if (await canLaunchUrl(url)) {
-        await launchUrl(url, mode: LaunchMode.externalApplication);
-      } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Could not open file'),
-            backgroundColor: Colors.red,
-            duration: Duration(seconds: 2),
-          ),
-        );
-      }
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Error opening file: $e'),
-          backgroundColor: Colors.red,
-          duration: const Duration(seconds: 2),
-        ),
-      );
-    }
-  }
+/// Helper class to store base64 file information
+class Base64FileInfo {
+  final String fileName;
+  final String fileType;
+  final Uint8List fileBytes;
+  final String base64Data;
+
+  Base64FileInfo({
+    required this.fileName,
+    required this.fileType,
+    required this.fileBytes,
+    required this.base64Data,
+  });
 }

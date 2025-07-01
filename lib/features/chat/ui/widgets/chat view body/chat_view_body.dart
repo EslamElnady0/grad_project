@@ -106,6 +106,9 @@ class _ChatViewBodyState extends State<ChatViewBody> {
                   return Attachment(
                     base64: base64String,
                     name: file.path.split('/').last,
+                    type: fileExtensions.contains(file.path.split('.').last)
+                        ? 'file'
+                        : null,
                   );
                 }).toList();
               }
@@ -135,6 +138,18 @@ class _ChatViewBodyState extends State<ChatViewBody> {
       ],
     );
   }
+
+  List<String> fileExtensions = [
+    'pdf',
+    'doc',
+    'docx',
+    'xls',
+    'xlsx',
+    'ppt',
+    'pptx',
+    'zip',
+    'rar'
+  ];
 
   Widget _buildPaginationLoader() {
     return BlocBuilder<GetLatestMessagesCubit, GetLatestMessagesState>(

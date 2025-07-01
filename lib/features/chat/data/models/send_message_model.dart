@@ -25,7 +25,7 @@ class Attachment {
     return {
       'base64': base64,
       'name': name,
-      'type': type,
+      if (type != null) 'type': type,
     };
   }
 }

@@ -95,14 +95,8 @@ class ChatRepo {
     required Function(String error) onFailure,
   }) {
     // Remove existing listeners before adding new ones
-    _removeListener(SocketEvents.sendMessageError);
 
     socketService.emit(SocketEvents.sendMessage, message.toJson());
-
-    _addListenerOnce(SocketEvents.sendMessageError, (error) {
-      log("message sending failed");
-      onFailure(error.toString());
-    });
   }
 
   void messageSeen(
@@ -137,6 +131,7 @@ class ChatRepo {
     _removeListener(SocketEvents.typingError);
     _removeListener(SocketEvents.stopTypingSuccess);
     _removeListener(SocketEvents.stopTypingError);
+    _removeListener(SocketEvents.sendMessageError);
 
     socketService.emit(SocketEvents.openChat, {});
 
@@ -178,6 +173,11 @@ class ChatRepo {
       eventBus.fire(UserJoiningEvent(
         Sender.fromJson(joinningUser),
       ));
+    });
+
+    _addListenerOnce(SocketEvents.sendMessageError, (error) {
+      log("message sending failed error: $error");
+      onFailure(error.toString());
     });
   }
 
