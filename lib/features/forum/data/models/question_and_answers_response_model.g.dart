@@ -53,11 +53,13 @@ AnswerModel _$AnswerModelFromJson(Map<String, dynamic> json) => AnswerModel(
           ? null
           : UserModel.fromJson(json['user'] as Map<String, dynamic>),
       createdAt: json['createdAt'] as String?,
+      imageUrl: json['imageUrl'] as String?,
     );
 
 Map<String, dynamic> _$AnswerModelToJson(AnswerModel instance) =>
     <String, dynamic>{
       '_id': instance.id,
+      'imageUrl': instance.imageUrl,
       'body': instance.body,
       'likes': instance.likes,
       'user': instance.user,

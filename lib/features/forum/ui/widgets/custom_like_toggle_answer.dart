@@ -58,7 +58,7 @@ class _CustomLikeToggleAnswerState extends State<CustomLikeToggleAnswer> {
       child:  Skeleton.leaf(
             enabled: true,
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 12.w),
+          padding: EdgeInsets.symmetric(horizontal: 12.w , vertical: 8.h),
           decoration: BoxDecoration(
             color: AppColors.darkblue,
             borderRadius: BorderRadius.circular(16),

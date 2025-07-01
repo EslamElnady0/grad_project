@@ -4,12 +4,16 @@ import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/generated/l10n.dart';
 import 'package:translator/translator.dart';
 
+bool _containsArabic(String text) {
+  return RegExp(r'[\u0600-\u06FF]').hasMatch(text);
+}
+
 Future<void> showErrorDialog(BuildContext context, String message,
     {bool doublePop = false, bool translate = true}) async {
   final translator = GoogleTranslator();
 
   if (translate) {
-    if (isArabicLocale(context)) {
+    if (isArabicLocale(context) && !_containsArabic(message)) {
       final translation =
           await translator.translate(message, from: 'en', to: 'ar');
       message = translation.text;

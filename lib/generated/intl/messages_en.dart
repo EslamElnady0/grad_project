@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "academic_progress_welcome_message": MessageLookupByLibrary.simpleMessage(
       "🎓Find out your academic level with ease. Details of your grades and ranking are at your fingertips!",
     ),
+    "add": MessageLookupByLibrary.simpleMessage("Add"),
     "addLink": MessageLookupByLibrary.simpleMessage("Add Link"),
     "addLinkDescrebtion": MessageLookupByLibrary.simpleMessage(
       "Add a link to the study material.",
@@ -71,7 +72,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "all_days": MessageLookupByLibrary.simpleMessage("All Days"),
     "announcements": MessageLookupByLibrary.simpleMessage("Announcements"),
     "answer": MessageLookupByLibrary.simpleMessage("Answer"),
+    "answerSubmittedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Answer submitted successfully",
+    ),
     "app_title": MessageLookupByLibrary.simpleMessage("E-Learning"),
+    "apply_filter": MessageLookupByLibrary.simpleMessage("Apply Filter"),
     "are_you_sure_you_want_to_delete_this_material":
         MessageLookupByLibrary.simpleMessage(
           "Are you sure you want to delete this material?",
@@ -142,6 +147,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "clearAnswerSelection": MessageLookupByLibrary.simpleMessage(
       "Clear Answer Selection",
     ),
+    "clear_filter": MessageLookupByLibrary.simpleMessage("Clear Filter"),
     "clickheretoaddmorefiles": MessageLookupByLibrary.simpleMessage(
       "Click here to add more files",
     ),
@@ -183,6 +189,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "days": MessageLookupByLibrary.simpleMessage("Days"),
     "deadline": MessageLookupByLibrary.simpleMessage("Deadline"),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
+    "deleted_successfully": MessageLookupByLibrary.simpleMessage(
+      "Deleted successfully!",
+    ),
     "department": MessageLookupByLibrary.simpleMessage("department"),
     "didntSreachYet": MessageLookupByLibrary.simpleMessage(
       "🤔 You haven\'t searched for anything yet!",
@@ -214,6 +223,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "endsAt": MessageLookupByLibrary.simpleMessage("Ends at"),
     "ends_in": MessageLookupByLibrary.simpleMessage("Ends In"),
+    "enterQuestionBodyFirst": MessageLookupByLibrary.simpleMessage(
+      "You must enter the question text first.",
+    ),
     "enterYourQuestion": MessageLookupByLibrary.simpleMessage(
       "Enter your question",
     ),
@@ -239,6 +251,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "file_viewer": MessageLookupByLibrary.simpleMessage("File Viewer"),
     "filter": MessageLookupByLibrary.simpleMessage("Filter"),
+    "filter_questions": MessageLookupByLibrary.simpleMessage(
+      "Filter Questions",
+    ),
     "finalDegree": MessageLookupByLibrary.simpleMessage("Final"),
     "finalGrade": MessageLookupByLibrary.simpleMessage("Final Grade"),
     "finalResults": MessageLookupByLibrary.simpleMessage("Final Results"),
@@ -248,6 +263,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "final_results_welcome_message": MessageLookupByLibrary.simpleMessage(
       "📊 Welcome to the final results page! Here you can easily and clearly review your academic performance and grades in various courses. We wish you all the best and success!",
     ),
+    "first_first": MessageLookupByLibrary.simpleMessage("First Year First"),
+    "first_second": MessageLookupByLibrary.simpleMessage("First Year Second"),
     "first_semester": MessageLookupByLibrary.simpleMessage("1st Semester"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "Forgot your password?",
@@ -261,6 +278,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "forum_welcome_message": MessageLookupByLibrary.simpleMessage(
       "💬 Welcome to the Q&A forum! Ask your questions, share your knowledge by answering others\' questions, and benefit from your peers\' experiences here!",
     ),
+    "fourth_first": MessageLookupByLibrary.simpleMessage("Fourth Year First"),
+    "fourth_second": MessageLookupByLibrary.simpleMessage("Fourth Year Second"),
     "from": MessageLookupByLibrary.simpleMessage("From"),
     "full_control_over_courses": MessageLookupByLibrary.simpleMessage(
       "📚 Full control over your courses, from adding lectures to tracking student progress and managing quizzes and assignments!",
@@ -295,6 +314,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "lectures": MessageLookupByLibrary.simpleMessage("Lectures"),
     "level": MessageLookupByLibrary.simpleMessage("Level"),
+    "liked_questions": MessageLookupByLibrary.simpleMessage("Liked Questions"),
+    "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "login": MessageLookupByLibrary.simpleMessage("Log In"),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "main_info": MessageLookupByLibrary.simpleMessage("Main information"),
@@ -330,6 +351,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Most searched places!",
     ),
     "multipleChoice": MessageLookupByLibrary.simpleMessage("Multiple Choice"),
+    "my_questions": MessageLookupByLibrary.simpleMessage("My Questions"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "national_id": MessageLookupByLibrary.simpleMessage("National ID"),
     "nationality": MessageLookupByLibrary.simpleMessage("Nationality"),
@@ -393,10 +415,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseEnterRequiredFields": MessageLookupByLibrary.simpleMessage(
       "Please enter the required fields",
     ),
+    "pleaseEnterYourAnswer": MessageLookupByLibrary.simpleMessage(
+      "Please enter your answer",
+    ),
     "pleaseUploadFiles": MessageLookupByLibrary.simpleMessage(
       "Please upload the files first",
     ),
     "postponed": MessageLookupByLibrary.simpleMessage("Postponed."),
+    "prep_first": MessageLookupByLibrary.simpleMessage("Preparatory First"),
+    "prep_second": MessageLookupByLibrary.simpleMessage("Preparatory Second"),
     "prepareWell": MessageLookupByLibrary.simpleMessage(
       "📚 Prepare in Advance",
     ),
@@ -424,6 +451,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Set a time to publish the Annoucement as a public announcement!",
     ),
     "qr_attendance": MessageLookupByLibrary.simpleMessage("QR attendance"),
+    "questionAddedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Question added successfully",
+    ),
     "questionGrade": MessageLookupByLibrary.simpleMessage("Question Grade"),
     "questionTypeHelper": MessageLookupByLibrary.simpleMessage(
       "Choose the type of questions you want to include in the quiz",
@@ -517,6 +547,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "search_placeholder": MessageLookupByLibrary.simpleMessage(
       "Enter the student’s name",
     ),
+    "second_first": MessageLookupByLibrary.simpleMessage("Second Year First"),
+    "second_second": MessageLookupByLibrary.simpleMessage("Second Year Second"),
     "second_semester": MessageLookupByLibrary.simpleMessage("2nd Semester"),
     "section": MessageLookupByLibrary.simpleMessage("Section"),
     "sections": MessageLookupByLibrary.simpleMessage("Sections"),
@@ -531,6 +563,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "select_all_to_give_degree": MessageLookupByLibrary.simpleMessage(
       "Select all and give a score",
     ),
+    "select_department": MessageLookupByLibrary.simpleMessage(
+      "Select Department",
+    ),
+    "select_semester": MessageLookupByLibrary.simpleMessage("Select Semester"),
     "select_subjects": MessageLookupByLibrary.simpleMessage(
       "📚 Please select the subjects you want to check for posts and updates!",
     ),
@@ -603,6 +639,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "text": MessageLookupByLibrary.simpleMessage("Texts"),
     "theSearch": MessageLookupByLibrary.simpleMessage("Search.."),
     "the_degree": MessageLookupByLibrary.simpleMessage("Degree"),
+    "third_first": MessageLookupByLibrary.simpleMessage("Third Year First"),
+    "third_second": MessageLookupByLibrary.simpleMessage("Third Year Second"),
     "thursday": MessageLookupByLibrary.simpleMessage("Thursday"),
     "time": MessageLookupByLibrary.simpleMessage("Time"),
     "timeManagement": MessageLookupByLibrary.simpleMessage(
@@ -659,5 +697,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "youCanJoinToChat": MessageLookupByLibrary.simpleMessage(
       "👥 You can join your academic year\'s private group to connect with your classmates!",
     ),
+    "you_can_only_delete_your_own_content":
+        MessageLookupByLibrary.simpleMessage(
+          "You can only delete your own content.",
+        ),
   };
 }

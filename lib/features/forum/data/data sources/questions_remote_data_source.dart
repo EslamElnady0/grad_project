@@ -1,8 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:grad_project/core/networking/api_constants.dart';
+import 'package:grad_project/features/forum/data/models/add_answer_request_model.dart';
+import 'package:grad_project/features/forum/data/models/add_answer_response_model.dart';
+import 'package:grad_project/features/forum/data/models/add_question_request_model.dart';
+import 'package:grad_project/features/forum/data/models/add_question_response_model.dart';
 import 'package:grad_project/features/forum/data/models/get_all_questions_response_model.dart';
 import 'package:grad_project/features/forum/data/models/question_and_answers_response_model.dart';
 import 'package:grad_project/features/forum/data/models/toggle_like_response_model.dart';
+import 'package:grad_project/features/annoucements/data/models/add_annoucement_response_body.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'questions_remote_data_source.g.dart';
@@ -20,6 +25,15 @@ abstract class QuestionsRemoteDataSource {
   @GET(ApiConstants.questions)
   Future<GetAllQuestionsResponseModel> getAllQuestions();
 
+  @GET(ApiConstants.questions)
+  Future<GetAllQuestionsResponseModel> getFilteredQuestions(
+    @Query("page") int? page,
+    @Query("department") int? department,
+    @Query("semester") int? semester,
+    @Query("likes") bool? likes,
+    @Query("myQuestions") bool? myQuestions,
+  );
+
   @POST("${ApiConstants.questions}/{like}/{questionId}")
   Future<ToggleLikeResponseModel> toggleLike(
     @Path("like") String like,
@@ -29,5 +43,26 @@ abstract class QuestionsRemoteDataSource {
   @GET("${ApiConstants.questions}/{questionId}")
   Future<QuestionAndAnswersResponseModel> getQuestionAndAnswers(
     @Path("questionId") String questionId,
+  );
+
+  @POST("${ApiConstants.questions}/addanswer/{questionId}")
+  Future<AddAnswerResponseModel> addAnswer(
+    @Path("questionId") String questionId,
+    @Body() AddAnswerRequestModel addAnswerRequest,
+  );
+
+  @POST("${ApiConstants.questions}/add")
+  Future<AddQuestionResponseModel> addQuestion(
+    @Body() AddQuestionRequestModel addQuestionRequest,
+  );
+
+  @DELETE("${ApiConstants.questions}/delquestion/{questionId}")
+  Future<SimpleResponseBody> deleteQuestion(
+    @Path("questionId") String questionId
+  );
+
+  @DELETE("${ApiConstants.questions}/delanswer/{answerId}")
+  Future<SimpleResponseBody> deleteAnswer(
+    @Path("answerId") String answerId
   );
 }
