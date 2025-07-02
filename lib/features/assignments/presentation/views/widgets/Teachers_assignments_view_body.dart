@@ -9,7 +9,7 @@ import 'package:grad_project/features/assignments/data/models/get_assignments_re
 import 'package:grad_project/features/assignments/logic/cubits/get_assignments_cubit/get_assignments_cubit.dart';
 import 'package:grad_project/features/assignments/logic/cubits/get_assignments_cubit/get_assignments_state.dart';
 import 'package:grad_project/features/assignments/presentation/views/widgets/custom_assignment_widget.dart';
-import 'package:grad_project/features/assignments/presentation/views/widgets/custom_asssignment_widget_skeleton.dart';
+import 'package:grad_project/features/assignments/presentation/views/widgets/custom_assignment_widget_skeleton.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
 import 'package:grad_project/generated/l10n.dart';
 import 'package:skeletonizer/skeletonizer.dart';
