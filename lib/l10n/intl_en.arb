@@ -395,8 +395,8 @@
   "attendance_type": "Attendance Type",
   "postponed_reason": "Postponed Reason",
   "no_reason_provided": "No reason provided",
-  "lecture_details": "Lecture Details"
-  
+  "lecture_details": "Lecture Details",
+  "change": "Change"
 
 }
 

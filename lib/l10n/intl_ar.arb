@@ -394,6 +394,7 @@
   "attendance_type": "نوع الحضور",
   "postponed_reason": "سبب التأجيل",
   "no_reason_provided": "لم يتم تقديم سبب",
-  "lecture_details": "تفاصيل المحاضرة"
-  
+  "lecture_details": "تفاصيل المحاضرة",
+  "change": "تغيير"
+
 }

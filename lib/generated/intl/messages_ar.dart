@@ -128,6 +128,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cannot_open_file": MessageLookupByLibrary.simpleMessage(
       "لا يمكن فتح الملف",
     ),
+    "change": MessageLookupByLibrary.simpleMessage("تغيير"),
     "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
     "choose_assignment_deadline": MessageLookupByLibrary.simpleMessage(
       "⏰ حدد الموعد النهائي لتسليم الأسايمنت وتوقيت إغلاقه.",
