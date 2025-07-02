@@ -5,7 +5,6 @@ import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/widgets/custom_drop_down_button.dart';
 import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
-import 'package:grad_project/core/widgets/custom_search_text_field.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
 import 'package:grad_project/features/time_schedule/data/models/activity_response_model.dart';
 import 'package:grad_project/features/time_schedule/logic/activity_filter_cubit/activity_filter_cubit.dart';

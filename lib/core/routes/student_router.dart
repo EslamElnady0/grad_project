@@ -7,7 +7,6 @@ import 'package:grad_project/features/assignments/presentation/views/assignment_
 import 'package:grad_project/features/assignments/presentation/views/pdf_web_view.dart';
 import 'package:grad_project/features/auth/ui/views/forget_password_view.dart';
 import 'package:grad_project/features/auth/ui/views/confirm_account_view.dart';
-import 'package:grad_project/features/final_results/presentation/views/final_results_view.dart';
 import 'package:grad_project/features/forum/ui/views/answers_view.dart';
 import 'package:grad_project/features/map/presentation/views/instructions_view.dart';
 import 'package:grad_project/features/map/presentation/views/internal_map_view.dart';
@@ -106,9 +105,6 @@ abstract class StudentRouter {
         GoRoute(
             path: TimeScheduleView.routeName,
             builder: (context, state) => const TimeScheduleView()),
-        GoRoute(
-            path: FinalResultsView.routeName,
-            builder: (context, state) => const FinalResultsView()),
         GoRoute(
           path: FullScreenImageView.routeName,
           builder: (context, state) => FullScreenImageView(
