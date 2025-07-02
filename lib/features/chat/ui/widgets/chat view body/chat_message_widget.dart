@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
@@ -91,36 +92,65 @@ class ChatMessageWidget extends StatelessWidget {
   Widget _buildMessageContent(String? content) {
     final text = content ?? " ";
     final urlPattern = RegExp(
-        r'^(https?:\/\/|www\.)[\w\-]+(\.[\w\-]+)+([\w\-\.,@?^=%&:/~+#]*)?$',
-        caseSensitive: false);
-    final isLink = urlPattern.hasMatch(text.trim());
-    if (isLink) {
-      return GestureDetector(
-        onTap: () async {
-          final url = text.startsWith('http') ? text : 'https://${text.trim()}';
-          if (await canLaunchUrl(Uri.parse(url))) {
-            await launchUrl(Uri.parse(url),
-                mode: LaunchMode.externalApplication);
-          }
-        },
-        child: Text(
-          text,
+      r'(https?:\/\/[^\s]+|www\.[^\s]+)',
+      caseSensitive: false,
+    );
+
+    final spans = <TextSpan>[];
+    int start = 0;
+
+    // Find all matches of links
+    for (final match in urlPattern.allMatches(text)) {
+      if (match.start > start) {
+        // Add non-link text before this match
+        spans.add(TextSpan(
+          text: text.substring(start, match.start),
+          style: AppTextStyles.font10GraySemiBold.copyWith(
+            color: Colors.white,
+            fontSize: 11.sp,
+          ),
+        ));
+      }
+
+      final urlText = match.group(0)!;
+      final fullUrl = urlText.startsWith('http') ? urlText : 'https://$urlText';
+
+      // Add link text
+      spans.add(
+        TextSpan(
+          text: urlText,
           style: AppTextStyles.font10GraySemiBold.copyWith(
             color: Colors.white,
             fontSize: 11.sp,
             decoration: TextDecoration.underline,
             decorationColor: Colors.white,
           ),
+          recognizer: TapGestureRecognizer()
+            ..onTap = () async {
+              final uri = Uri.parse(fullUrl);
+              if (await canLaunchUrl(uri)) {
+                await launchUrl(uri, mode: LaunchMode.externalApplication);
+              }
+            },
         ),
       );
-    } else {
-      return Text(
-        text,
+
+      start = match.end;
+    }
+
+    // Add any remaining non-link text
+    if (start < text.length) {
+      spans.add(TextSpan(
+        text: text.substring(start),
         style: AppTextStyles.font10GraySemiBold.copyWith(
           color: Colors.white,
           fontSize: 11.sp,
         ),
-      );
+      ));
     }
+
+    return RichText(
+      text: TextSpan(children: spans),
+    );
   }
 }
