@@ -33,6 +33,7 @@ class ChatLevelsListView extends StatelessWidget {
                 },
                 title: data.allDepartChats[index].name,
                 isMyChat: isMyChat,
+                imageUrl: data.allDepartChats[index].imageurl,
               );
             },
             separatorBuilder: (context, index) => vGap(12),

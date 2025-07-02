@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
@@ -5,6 +6,7 @@ import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:intl/intl.dart';
 import '../../../data/models/get_messages_response.dart';
 import 'user_avatar_and_name.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 /// Widget for displaying text messages in chat
 class ChatMessageWidget extends StatelessWidget {
@@ -43,11 +45,7 @@ class ChatMessageWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      message.content ?? " ",
-                      style: AppTextStyles.font10GraySemiBold
-                          .copyWith(color: Colors.white, fontSize: 11.sp),
-                    ),
+                    _buildMessageContent(message.content),
                     const SizedBox(height: 4),
                     Row(
                       mainAxisSize: MainAxisSize.min,
@@ -89,5 +87,70 @@ class ChatMessageWidget extends StatelessWidget {
     } else {
       return Icon(Icons.check, color: Colors.white, size: iconSize);
     }
+  }
+
+  Widget _buildMessageContent(String? content) {
+    final text = content ?? " ";
+    final urlPattern = RegExp(
+      r'(https?:\/\/[^\s]+|www\.[^\s]+)',
+      caseSensitive: false,
+    );
+
+    final spans = <TextSpan>[];
+    int start = 0;
+
+    // Find all matches of links
+    for (final match in urlPattern.allMatches(text)) {
+      if (match.start > start) {
+        // Add non-link text before this match
+        spans.add(TextSpan(
+          text: text.substring(start, match.start),
+          style: AppTextStyles.font10GraySemiBold.copyWith(
+            color: Colors.white,
+            fontSize: 11.sp,
+          ),
+        ));
+      }
+
+      final urlText = match.group(0)!;
+      final fullUrl = urlText.startsWith('http') ? urlText : 'https://$urlText';
+
+      // Add link text
+      spans.add(
+        TextSpan(
+          text: urlText,
+          style: AppTextStyles.font10GraySemiBold.copyWith(
+            color: Colors.white,
+            fontSize: 11.sp,
+            decoration: TextDecoration.underline,
+            decorationColor: Colors.white,
+          ),
+          recognizer: TapGestureRecognizer()
+            ..onTap = () async {
+              final uri = Uri.parse(fullUrl);
+              if (await canLaunchUrl(uri)) {
+                await launchUrl(uri, mode: LaunchMode.externalApplication);
+              }
+            },
+        ),
+      );
+
+      start = match.end;
+    }
+
+    // Add any remaining non-link text
+    if (start < text.length) {
+      spans.add(TextSpan(
+        text: text.substring(start),
+        style: AppTextStyles.font10GraySemiBold.copyWith(
+          color: Colors.white,
+          fontSize: 11.sp,
+        ),
+      ));
+    }
+
+    return RichText(
+      text: TextSpan(children: spans),
+    );
   }
 }

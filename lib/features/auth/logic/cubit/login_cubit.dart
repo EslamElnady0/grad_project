@@ -32,8 +32,10 @@ class LoginCubit extends Cubit<LoginState> {
       ),
     );
     response.when(success: (loginResponse) async {
-      await saveUserToken(loginResponse.data?[0].accessToken ?? '',
-          loginResponse.data?[0].user?.id.toString() ?? '');
+      await saveUserToken(
+          loginResponse.data?[0].accessToken ?? '',
+          loginResponse.data?[0].user?.id.toString() ?? '',
+          loginResponse.data?[0].user?.uniCode ?? '');
       await _subToNotificationRepo.saveToken(
         SubToPushNotificationsModel(
             deviceToken: FirebaseMessagingService().fcmToken ?? ''),
@@ -44,9 +46,11 @@ class LoginCubit extends Cubit<LoginState> {
     });
   }
 
-  Future<void> saveUserToken(String token, String userId) async {
+  Future<void> saveUserToken(
+      String token, String userId, String userUniCode) async {
     await SharedPrefHelper.setSecuredString(Constants.token, token);
     await SharedPrefHelper.setData(Constants.userId, userId);
+    await SharedPrefHelper.setData(Constants.userUniCode, userUniCode);
     DioFactory.setTokenIntoHeaderAfterLogin(token);
   }
 }

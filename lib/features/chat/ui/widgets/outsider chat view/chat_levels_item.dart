@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/events/message%20events/messages_events.dart';
@@ -66,11 +64,9 @@ class ChatLevelsItem extends StatelessWidget {
                             .unSeenMessagesStream,
                         builder: (context, snapshot) {
                           if (!snapshot.hasData) {
-                            log("StreamBuilder: No data, returning SizedBox.shrink()");
                             return const SizedBox.shrink();
                           }
                           final data = snapshot.data!;
-                          log("StreamBuilder: Data received, count: ${data.count}");
                           return data.count != 0
                               ? CircleAvatar(
                                   radius: 12.r,

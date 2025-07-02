@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/events/typing%20events/user_typing_event.dart';
 import 'package:grad_project/features/chat/data/models/send_message_model.dart';
 import '../../../../core/events/message events/messages_events.dart';
-import '../../data/models/get_messages_response.dart';
 import '../../data/repos/chat_repo.dart';
 import 'inner_chat_state.dart';
 
@@ -48,48 +47,28 @@ class InnerChatCubit extends Cubit<InnerChatState> {
       {String? messageText,
       List<Attachment>? attachments,
       required BuildContext context}) {
-    emit(InnerChatSending());
-
     _repo.sendMessage(
-      SendMessageModel(text: messageText, attachments: attachments),
-      onSuccess: (data) {
-        emit(InnerChatMessageSent());
-      },
-      onFailure: (error) => emit(InnerChatError(error)),
-    );
+        SendMessageModel(text: messageText, attachments: attachments));
   }
 
   void messageSeen(String messageId) {
-    emit(InnerChatSeeningMessage());
-    _repo.messageSeen(
-      messageId,
-      onSuccess: (data) {
-        Map<String, dynamic> rawMessage = data["data"];
-        Message mgs = Message.fromJson(rawMessage);
-        emit(InnerChatMessageSeen());
-        eventBus.fire(MessageUpdatedEvent(mgs));
-      },
-      onFailure: (error) => emit(InnerChatError(error)),
-    );
+    _repo.messageSeen(messageId);
   }
 
   void changeTypingState(String typingState) {
-    emit(InnerChatTyping());
-    _repo.typingState(
-        typingState: typingState,
-        onSuccess: (data) {
-          emit(InnerChatTypingSuccess());
-        },
-        onFailure: (error) => emit(InnerChatError(error)));
+    _repo.typingState(typingState: typingState);
   }
 
   void stopTyping() {
-    emit(InnerChatStopTyping());
-    _repo.stopTyping(
-        onSuccess: (data) {
-          emit(InnerChatStopTypingSuccess());
-        },
-        onFailure: (error) => emit(InnerChatError(error)));
+    _repo.stopTyping();
+  }
+
+  void closeChat() {
+    _repo.closeChat();
+  }
+
+  void openChat() {
+    _repo.openChat();
   }
 
   @override

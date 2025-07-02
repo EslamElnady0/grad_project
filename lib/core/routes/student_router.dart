@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:grad_project/core/services/firebase_messaging_service.dart';
 import 'package:grad_project/core/widgets/full_screen_image_view.dart';
 import 'package:grad_project/features/academic_progress/presentation/views/academic_progress_view.dart';
 import 'package:grad_project/features/assignments/presentation/views/assignment_details_view.dart';
@@ -23,6 +24,7 @@ import '../../features/chat/logic/inner_chat_cubit/inner_chat_cubit.dart';
 import '../../features/chat/ui/views/chat_view.dart';
 import '../../features/home/ui/cubit/bottom_nav_bar_cubit.dart';
 import '../../features/home/ui/views/home_view.dart';
+import '../../features/smart_assistant/ui/views/smart_assistant_view.dart';
 import '../../features/subjects/ui/views/materials_view.dart';
 import '../di/dependency_injection.dart';
 
@@ -31,6 +33,7 @@ abstract class StudentRouter {
     return GoRouter(
       initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
       //initialLocation: InternalMapView.routeName,
+      navigatorKey: rootNavigatorKey,
       routes: [
         GoRoute(
           path: HomeView.routeName,
@@ -127,6 +130,9 @@ abstract class StudentRouter {
         GoRoute(
             path: StudentsAnswersReviewView.routeName,
             builder: (context, state) => const StudentsAnswersReviewView()),
+        GoRoute(
+            path: SmartAssistantView.routeName,
+            builder: (context, state) => const SmartAssistantView()),
       ],
     );
   }

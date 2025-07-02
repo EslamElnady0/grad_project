@@ -89,40 +89,15 @@ class ChatRepo {
 
   //toDo:--------------------------------------- Sockets Methods -------------------------------------------------------
 
-  void sendMessage(
-    SendMessageModel message, {
-    required Function onSuccess,
-    required Function(String error) onFailure,
-  }) {
-    // Remove existing listeners before adding new ones
-
+  void sendMessage(SendMessageModel message) {
     socketService.emit(SocketEvents.sendMessage, message.toJson());
   }
 
-  void messageSeen(
-    String messageId, {
-    required Function onSuccess,
-    required Function(String error) onFailure,
-  }) {
-    // Remove existing listeners before adding new ones
-    _removeListener(SocketEvents.messageSeenSuccess);
-    _removeListener(SocketEvents.messageSeenError);
-
+  void messageSeen(String messageId) {
     socketService.emit(SocketEvents.messageSeen, {'messageId': messageId});
-
-    _addListenerOnce(SocketEvents.messageSeenSuccess, (data) {
-      onSuccess(data);
-    });
-
-    _addListenerOnce(SocketEvents.messageSeenError, (error) {
-      onFailure(error.toString());
-    });
   }
 
-  void openChat({
-    required Function(dynamic data) onSuccess,
-    required Function(String error) onFailure,
-  }) {
+  void openChat() {
     // Remove existing listeners before adding new ones
     _removeListener(SocketEvents.openChatSuccess);
     _removeListener(SocketEvents.openChatInfo);
@@ -132,17 +107,13 @@ class ChatRepo {
     _removeListener(SocketEvents.stopTypingSuccess);
     _removeListener(SocketEvents.stopTypingError);
     _removeListener(SocketEvents.sendMessageError);
+    _removeListener(SocketEvents.unSeenSuccess);
+    _removeListener(SocketEvents.unSeenError);
 
     socketService.emit(SocketEvents.openChat, {});
 
-    _addListenerOnce(SocketEvents.openChatSuccess, (data) {
-      onSuccess(data);
-    });
-
-    _addListenerOnce(SocketEvents.openChatError, (error) {
-      onFailure(error.toString());
-    });
-
+    _addListenerOnce(SocketEvents.openChatSuccess, (data) {});
+    _addListenerOnce(SocketEvents.openChatError, (error) {});
     _addListenerOnce(SocketEvents.typingSuccess, (data) {
       log(data.toString());
       Sender sender = Sender.fromJson(data["user"]);
@@ -150,24 +121,18 @@ class ChatRepo {
         type: data["type"],
         user: sender,
       ));
-      onSuccess(data);
     });
 
-    _addListenerOnce(SocketEvents.typingError, (error) {
-      onFailure(error.toString());
-    });
+    _addListenerOnce(SocketEvents.typingError, (error) {});
 
     _addListenerOnce(SocketEvents.stopTypingSuccess, (data) {
       eventBus.fire(UserTypingEvent(
         type: "",
         user: Sender.fromJson(data["user"]),
       ));
-      onSuccess(data);
     });
 
-    _addListenerOnce(SocketEvents.stopTypingError, (error) {
-      onFailure(error.toString());
-    });
+    _addListenerOnce(SocketEvents.stopTypingError, (error) {});
     _addListenerOnce(SocketEvents.openChatInfo, (data) {
       final joinningUser = data["sender"];
       eventBus.fire(UserJoiningEvent(
@@ -177,35 +142,31 @@ class ChatRepo {
 
     _addListenerOnce(SocketEvents.sendMessageError, (error) {
       log("message sending failed error: $error");
-      onFailure(error.toString());
+    });
+    _addListenerOnce(SocketEvents.messageSeenSuccess, (data) {
+      Map<String, dynamic> rawMessage = data["data"];
+      Message mgs = Message.fromJson(rawMessage);
+      eventBus.fire(MessageUpdatedEvent(mgs));
+    });
+
+    _addListenerOnce(SocketEvents.messageSeenError, (error) {
+      log("message seen error: $error");
     });
   }
 
   void typingState({
     required String typingState,
-    required Function(dynamic data) onSuccess,
-    required Function(String error) onFailure,
   }) {
-    // Remove existing listeners before adding new ones
-
     socketService.emit(SocketEvents.typing, {
       "type": typingState,
     });
   }
 
-  void stopTyping({
-    required Function(dynamic data) onSuccess,
-    required Function(String error) onFailure,
-  }) {
-    // Remove existing listeners before adding new ones
-
+  void stopTyping() {
     socketService.emit(SocketEvents.stopTyping, {});
   }
 
-  void closeChat({
-    required Function(dynamic data)? onSuccess,
-    required Function(String error)? onFailure,
-  }) {
+  void closeChat() {
     // Remove existing listeners before adding new ones
     _removeListener(SocketEvents.closeChatSuccess);
     _removeListener(SocketEvents.closeChatError);
@@ -213,17 +174,17 @@ class ChatRepo {
     socketService.emit(SocketEvents.closeChat, {});
 
     _addListenerOnce(SocketEvents.closeChatSuccess, (data) {
-      onSuccess != null ? onSuccess(data) : () {};
+      log('Chat closed successfully');
     });
 
     _addListenerOnce(SocketEvents.closeChatError, (error) {
-      onFailure != null ? onFailure(error.toString()) : () {};
+      log('Error closing chat: $error');
     });
   }
 
   void dispose() {
     _removeAllListeners();
-    closeChat(onSuccess: (data) {}, onFailure: (error) {});
+    closeChat();
     log('ChatRepo disposed - all listeners removed');
   }
 }
