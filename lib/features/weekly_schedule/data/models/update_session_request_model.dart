@@ -9,8 +9,7 @@ class UpdateSessionRequestModel {
   final String from;
   final String to;
   final String attendance;
-  @JsonKey(name: 'hall_id')
-  final int hallId;
+
 
   UpdateSessionRequestModel({
     required this.day,
@@ -18,7 +17,7 @@ class UpdateSessionRequestModel {
     required this.from,
     required this.to,
     required this.attendance,
-    required this.hallId,
+
   });
 
   factory UpdateSessionRequestModel.fromJson(Map<String, dynamic> json) =>

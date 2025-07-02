@@ -14,7 +14,6 @@ UpdateSessionRequestModel _$UpdateSessionRequestModelFromJson(
       from: json['from'] as String,
       to: json['to'] as String,
       attendance: json['attendance'] as String,
-      hallId: (json['hall_id'] as num).toInt(),
     );
 
 Map<String, dynamic> _$UpdateSessionRequestModelToJson(
@@ -25,5 +24,4 @@ Map<String, dynamic> _$UpdateSessionRequestModelToJson(
       'from': instance.from,
       'to': instance.to,
       'attendance': instance.attendance,
-      'hall_id': instance.hallId,
     };

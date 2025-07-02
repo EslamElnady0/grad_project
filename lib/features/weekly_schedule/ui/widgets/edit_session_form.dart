@@ -30,7 +30,7 @@ class _EditSessionFormState extends State<EditSessionForm> {
   late TextEditingController _dateController;
   late TextEditingController _fromController;
   late TextEditingController _toController;
-  late TextEditingController _hallIdController;
+  
   
   String _selectedDay = '';
   String _selectedAttendance = '';
@@ -57,16 +57,15 @@ class _EditSessionFormState extends State<EditSessionForm> {
     Map<String, dynamic> data = widget.lecture.postponed ?? {
       'date': '2025-05-24',
       'day': 'sunday',
-      'from': '08:30',
+      'from': '8:30',
       'to': '10:30',
       'hall_id': 1,
       'attendance': 'offline'
     };
     
     _dateController = TextEditingController(text: data['date'] ?? '2025-05-24');
-    _fromController = TextEditingController(text: data['from'] ?? '08:30');
+    _fromController = TextEditingController(text: data['from'] ?? '8:30');
     _toController = TextEditingController(text: data['to'] ?? '10:30');
-    _hallIdController = TextEditingController(text: (data['hall_id'] ?? 1).toString());
     _selectedDay = data['day'] ?? 'sunday';
     _selectedAttendance = data['attendance'] ?? 'offline';
   }
@@ -76,7 +75,6 @@ class _EditSessionFormState extends State<EditSessionForm> {
     _dateController.dispose();
     _fromController.dispose();
     _toController.dispose();
-    _hallIdController.dispose();
     super.dispose();
   }
 
@@ -118,8 +116,7 @@ class _EditSessionFormState extends State<EditSessionForm> {
                       _buildTimeFields(),
                       vGap(12),
                       _buildAttendanceSelector(),
-                      vGap(12),
-                      _buildHallIdField(),
+                    
                       vGap(20),
                       _buildSubmitButton(),
                       vGap(16),
@@ -203,9 +200,12 @@ class _EditSessionFormState extends State<EditSessionForm> {
         TextFormField(
           controller: _dateController,
           style: AppTextStyles.font14BlackMedium,
+          readOnly: true,
+          onTap: () => _selectDate(context),
           decoration: InputDecoration(
             hintText: S.of(context).date_format_hint,
             hintStyle: AppTextStyles.font12GrayMedium,
+            suffixIcon: Icon(Icons.calendar_today, color: AppColors.gray),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8.r),
               borderSide: BorderSide(color: AppColors.gray),
@@ -222,6 +222,9 @@ class _EditSessionFormState extends State<EditSessionForm> {
           validator: (value) {
             if (value == null || value.isEmpty) {
               return S.of(context).please_fill_all_fields;
+            }
+            if (!_isValidDateFormat(value)) {
+              return S.of(context).date_format_hint;
             }
             return null;
           },
@@ -245,9 +248,12 @@ class _EditSessionFormState extends State<EditSessionForm> {
               TextFormField(
                 controller: _fromController,
                 style: AppTextStyles.font14BlackMedium,
+                readOnly: true,
+                onTap: () => _selectTime(context, _fromController),
                 decoration: InputDecoration(
                   hintText: S.of(context).time_format_hint,
                   hintStyle: AppTextStyles.font12GrayMedium,
+                  suffixIcon: Icon(Icons.access_time, color: AppColors.gray),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8.r),
                     borderSide: BorderSide(color: AppColors.gray),
@@ -264,6 +270,9 @@ class _EditSessionFormState extends State<EditSessionForm> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return S.of(context).please_fill_all_fields;
+                  }
+                  if (!_isValidTimeFormat(value)) {
+                    return S.of(context).time_format_hint;
                   }
                   return null;
                 },
@@ -284,9 +293,12 @@ class _EditSessionFormState extends State<EditSessionForm> {
               TextFormField(
                 controller: _toController,
                 style: AppTextStyles.font14BlackMedium,
+                readOnly: true,
+                onTap: () => _selectTime(context, _toController),
                 decoration: InputDecoration(
                   hintText: S.of(context).time_format_hint,
                   hintStyle: AppTextStyles.font12GrayMedium,
+                  suffixIcon: Icon(Icons.access_time, color: AppColors.gray),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8.r),
                     borderSide: BorderSide(color: AppColors.gray),
@@ -303,6 +315,15 @@ class _EditSessionFormState extends State<EditSessionForm> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return S.of(context).please_fill_all_fields;
+                  }
+                  if (!_isValidTimeFormat(value)) {
+                    return S.of(context).time_format_hint;
+                  }
+                  // Validate that end time is after start time
+                  if (_fromController.text.isNotEmpty && _isValidTimeFormat(_fromController.text)) {
+                    if (!_isTimeAfter(value, _fromController.text)) {
+                      return S.of(context).invalid_time_range;
+                    }
                   }
                   return null;
                 },
@@ -354,45 +375,7 @@ class _EditSessionFormState extends State<EditSessionForm> {
     );
   }
 
-  Widget _buildHallIdField() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          S.of(context).select_hall,
-          style: AppTextStyles.font14BlackMedium,
-        ),
-        vGap(6),
-        TextFormField(
-          controller: _hallIdController,
-          style: AppTextStyles.font14BlackMedium,
-          keyboardType: TextInputType.number,
-          decoration: InputDecoration(
-            hintText: S.of(context).hall_id_hint,
-            hintStyle: AppTextStyles.font12GrayMedium,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.r),
-              borderSide: BorderSide(color: AppColors.gray),
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.r),
-              borderSide: BorderSide(color: AppColors.gray),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.r),
-              borderSide: BorderSide(color: AppColors.primaryColordark),
-            ),
-          ),
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return S.of(context).please_fill_all_fields;
-            }
-            return null;
-          },
-        ),
-      ],
-    );
-  }
+
 
   Widget _buildSubmitButton() {
     return BlocConsumer<UpdateSessionCubit, UpdateSessionState>(
@@ -449,14 +432,107 @@ class _EditSessionFormState extends State<EditSessionForm> {
         from: _fromController.text,
         to: _toController.text,
         attendance: _selectedAttendance,
-        hallId: int.parse(_hallIdController.text),
+   
       );
+
+    
+     
 
       context.read<UpdateSessionCubit>().updateSession(
         widget.lecture.id,
         requestModel,
       );
     }
+  }
+
+  // Time picker helper method
+  Future<void> _selectTime(BuildContext context, TextEditingController controller) async {
+    // Parse current time or default to 8:00
+    TimeOfDay initialTime = TimeOfDay(hour: 8, minute: 0);
+    if (controller.text.isNotEmpty && _isValidTimeFormat(controller.text)) {
+      final parts = controller.text.split(':');
+      initialTime = TimeOfDay(
+        hour: int.parse(parts[0]),
+        minute: int.parse(parts[1]),
+      );
+    }
+
+    final TimeOfDay? selectedTime = await showTimePicker(
+      context: context,
+      initialTime: initialTime,
+      builder: (BuildContext context, Widget? child) {
+        return MediaQuery(
+          data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: true),
+          child: child!,
+        );
+      },
+    );
+
+    if (selectedTime != null) {
+      // Format to H:i format (24-hour format without leading zeros for hours)
+      final formattedTime = '${selectedTime.hour}:${selectedTime.minute.toString().padLeft(2, '0')}';
+      controller.text = formattedTime;
+    }
+  }
+
+  // Date picker helper method
+  Future<void> _selectDate(BuildContext context) async {
+    // Parse current date or default to today
+    DateTime initialDate = DateTime.now();
+    if (_dateController.text.isNotEmpty && _isValidDateFormat(_dateController.text)) {
+      try {
+        initialDate = DateTime.parse(_dateController.text);
+      } catch (e) {
+        initialDate = DateTime.now();
+      }
+    }
+
+    final DateTime? selectedDate = await showDatePicker(
+      context: context,
+      initialDate: initialDate,
+      firstDate: DateTime.now().subtract(Duration(days: 365)),
+      lastDate: DateTime.now().add(Duration(days: 365)),
+    );
+
+    if (selectedDate != null) {
+      // Format to YYYY-MM-DD format
+      final formattedDate = '${selectedDate.year}-${selectedDate.month.toString().padLeft(2, '0')}-${selectedDate.day.toString().padLeft(2, '0')}';
+      _dateController.text = formattedDate;
+    }
+  }
+
+  // Date format validation (YYYY-MM-DD format)
+  bool _isValidDateFormat(String date) {
+    final dateRegex = RegExp(r'^\d{4}-\d{2}-\d{2}$');
+    if (!dateRegex.hasMatch(date)) return false;
+    
+    try {
+      DateTime.parse(date);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  // Time format validation (H:i format - accepts both 8:30 and 08:30)
+  bool _isValidTimeFormat(String time) {
+    final timeRegex = RegExp(r'^([0-9]|[01][0-9]|2[0-3]):[0-5][0-9]$');
+    return timeRegex.hasMatch(time);
+  }
+
+  // Check if time1 is after time2
+  bool _isTimeAfter(String time1, String time2) {
+    if (!_isValidTimeFormat(time1) || !_isValidTimeFormat(time2)) {
+      return false;
+    }
+    
+    final parts1 = time1.split(':');
+    final parts2 = time2.split(':');
+    
+    final minutes1 = int.parse(parts1[0]) * 60 + int.parse(parts1[1]);
+    final minutes2 = int.parse(parts2[0]) * 60 + int.parse(parts2[1]);
+    
+    return minutes1 > minutes2;
   }
 
   String _getDayDisplayName(String day, BuildContext context) {
