@@ -116,6 +116,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى تقديم إجابتين على الأقل لكل سؤال",
     ),
     "attendance": MessageLookupByLibrary.simpleMessage("الحضور"),
+    "attendance_type": MessageLookupByLibrary.simpleMessage("نوع الحضور"),
     "average_score": MessageLookupByLibrary.simpleMessage(
       "متوسط درجات الطلاب في هذا الاختبار",
     ),
@@ -276,6 +277,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "grade": MessageLookupByLibrary.simpleMessage("التقدير"),
     "group": MessageLookupByLibrary.simpleMessage("مجموعة"),
     "hall": MessageLookupByLibrary.simpleMessage("القاعة"),
+    "hall_details": MessageLookupByLibrary.simpleMessage("تفاصيل القاعة"),
     "halls": MessageLookupByLibrary.simpleMessage("القاعات"),
     "hour": MessageLookupByLibrary.simpleMessage("ساعة"),
     "images": MessageLookupByLibrary.simpleMessage("صور"),
@@ -296,6 +298,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "lectureTitleHint": MessageLookupByLibrary.simpleMessage(
       "أدخل عنوانًا واضحًا يعكس موضوع المحاضرة بدقة!",
     ),
+    "lecture_details": MessageLookupByLibrary.simpleMessage("تفاصيل المحاضرة"),
     "lectures": MessageLookupByLibrary.simpleMessage("المحاضرات"),
     "level": MessageLookupByLibrary.simpleMessage("الفرقة"),
     "liked_questions": MessageLookupByLibrary.simpleMessage(
@@ -371,6 +374,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_file_url_available": MessageLookupByLibrary.simpleMessage(
       "لا يوجد رابط للملف",
     ),
+    "no_reason_provided": MessageLookupByLibrary.simpleMessage(
+      "لم يتم تقديم سبب",
+    ),
     "not_corrected": MessageLookupByLibrary.simpleMessage("لم يتم التصحيح"),
     "not_started": MessageLookupByLibrary.simpleMessage("لم يبدأ"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
@@ -391,6 +397,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "مسموح برفع ملف واحد فقط في وضع التعديل",
     ),
     "open": MessageLookupByLibrary.simpleMessage("فتح"),
+    "original_date": MessageLookupByLibrary.simpleMessage("التاريخ الأصلي"),
+    "original_day": MessageLookupByLibrary.simpleMessage("اليوم الأصلي"),
+    "original_time_from": MessageLookupByLibrary.simpleMessage("من"),
+    "original_time_to": MessageLookupByLibrary.simpleMessage("إلى"),
     "other": MessageLookupByLibrary.simpleMessage("اخري"),
     "parkingSlots": MessageLookupByLibrary.simpleMessage("مواقف السيارات"),
     "parkingSlotsDescription": MessageLookupByLibrary.simpleMessage(
@@ -410,6 +420,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "من فضلك ارفع الملفات اولاً",
     ),
     "postponed": MessageLookupByLibrary.simpleMessage("مؤجل."),
+    "postponed_lecture_details": MessageLookupByLibrary.simpleMessage(
+      "تفاصيل المحاضرة المؤجلة",
+    ),
+    "postponed_lecture_info": MessageLookupByLibrary.simpleMessage(
+      "📅 تم تأجيل هذه المحاضرة. إليك التفاصيل الأصلية:",
+    ),
+    "postponed_reason": MessageLookupByLibrary.simpleMessage("سبب التأجيل"),
     "prep_first": MessageLookupByLibrary.simpleMessage("إعدادي ترم أول"),
     "prep_second": MessageLookupByLibrary.simpleMessage("إعدادي ترم ثاني"),
     "prepareWell": MessageLookupByLibrary.simpleMessage("📚 استعد مسبقًا"),

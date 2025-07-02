@@ -128,6 +128,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please provide at least two answers for each question",
     ),
     "attendance": MessageLookupByLibrary.simpleMessage("Attendance"),
+    "attendance_type": MessageLookupByLibrary.simpleMessage("Attendance Type"),
     "average_score": MessageLookupByLibrary.simpleMessage(
       "Average student score in this quiz",
     ),
@@ -296,6 +297,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "grade": MessageLookupByLibrary.simpleMessage("Grade"),
     "group": MessageLookupByLibrary.simpleMessage("Group"),
     "hall": MessageLookupByLibrary.simpleMessage("Hall"),
+    "hall_details": MessageLookupByLibrary.simpleMessage("Hall Details"),
     "halls": MessageLookupByLibrary.simpleMessage("Halls"),
     "hour": MessageLookupByLibrary.simpleMessage("h"),
     "images": MessageLookupByLibrary.simpleMessage("Images"),
@@ -318,6 +320,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "lectureTitleHint": MessageLookupByLibrary.simpleMessage(
       "Enter a clear title that accurately reflects the lecture topic!",
     ),
+    "lecture_details": MessageLookupByLibrary.simpleMessage("Lecture Details"),
     "lectures": MessageLookupByLibrary.simpleMessage("Lectures"),
     "level": MessageLookupByLibrary.simpleMessage("Level"),
     "liked_questions": MessageLookupByLibrary.simpleMessage("Liked Questions"),
@@ -389,6 +392,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_file_url_available": MessageLookupByLibrary.simpleMessage(
       "No file URL available",
     ),
+    "no_reason_provided": MessageLookupByLibrary.simpleMessage(
+      "No reason provided",
+    ),
     "not_corrected": MessageLookupByLibrary.simpleMessage("Not Corrected"),
     "not_started": MessageLookupByLibrary.simpleMessage("Not Started"),
     "numOfTimesAllowed": MessageLookupByLibrary.simpleMessage(
@@ -409,6 +415,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Only one file is allowed in edit mode.",
     ),
     "open": MessageLookupByLibrary.simpleMessage("open"),
+    "original_date": MessageLookupByLibrary.simpleMessage("Original Date"),
+    "original_day": MessageLookupByLibrary.simpleMessage("Original Day"),
+    "original_time_from": MessageLookupByLibrary.simpleMessage("From"),
+    "original_time_to": MessageLookupByLibrary.simpleMessage("To"),
     "other": MessageLookupByLibrary.simpleMessage("Other"),
     "parkingSlots": MessageLookupByLibrary.simpleMessage("Parking Slots"),
     "parkingSlotsDescription": MessageLookupByLibrary.simpleMessage(
@@ -428,6 +438,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please upload the files first",
     ),
     "postponed": MessageLookupByLibrary.simpleMessage("Postponed."),
+    "postponed_lecture_details": MessageLookupByLibrary.simpleMessage(
+      "Postponed Lecture Details",
+    ),
+    "postponed_lecture_info": MessageLookupByLibrary.simpleMessage(
+      "📅 This lecture has been postponed. Here are the original details:",
+    ),
+    "postponed_reason": MessageLookupByLibrary.simpleMessage(
+      "Postponed Reason",
+    ),
     "prep_first": MessageLookupByLibrary.simpleMessage("Preparatory First"),
     "prep_second": MessageLookupByLibrary.simpleMessage("Preparatory Second"),
     "prepareWell": MessageLookupByLibrary.simpleMessage(

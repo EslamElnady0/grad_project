@@ -384,7 +384,19 @@
 ,"forum" : "Forum",
   "Changethestatusofthelecture":  "Change the status of the lecture",
   "course": "Course", 
-  "hall": "Hall"
+  "hall": "Hall",
+  "postponed_lecture_details": "Postponed Lecture Details",
+  "postponed_lecture_info": "📅 This lecture has been postponed. Here are the original details:",
+  "original_date": "Original Date",
+  "original_day": "Original Day",
+  "original_time_from": "From",
+  "original_time_to": "To",
+  "hall_details": "Hall Details",
+  "attendance_type": "Attendance Type",
+  "postponed_reason": "Postponed Reason",
+  "no_reason_provided": "No reason provided",
+  "lecture_details": "Lecture Details"
+  
 
 }
 

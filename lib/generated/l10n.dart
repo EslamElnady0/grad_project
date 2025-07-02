@@ -3064,6 +3064,106 @@ class S {
   String get hall {
     return Intl.message('Hall', name: 'hall', desc: '', args: []);
   }
+
+  /// `Postponed Lecture Details`
+  String get postponed_lecture_details {
+    return Intl.message(
+      'Postponed Lecture Details',
+      name: 'postponed_lecture_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `📅 This lecture has been postponed. Here are the original details:`
+  String get postponed_lecture_info {
+    return Intl.message(
+      '📅 This lecture has been postponed. Here are the original details:',
+      name: 'postponed_lecture_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Original Date`
+  String get original_date {
+    return Intl.message(
+      'Original Date',
+      name: 'original_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Original Day`
+  String get original_day {
+    return Intl.message(
+      'Original Day',
+      name: 'original_day',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `From`
+  String get original_time_from {
+    return Intl.message('From', name: 'original_time_from', desc: '', args: []);
+  }
+
+  /// `To`
+  String get original_time_to {
+    return Intl.message('To', name: 'original_time_to', desc: '', args: []);
+  }
+
+  /// `Hall Details`
+  String get hall_details {
+    return Intl.message(
+      'Hall Details',
+      name: 'hall_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Attendance Type`
+  String get attendance_type {
+    return Intl.message(
+      'Attendance Type',
+      name: 'attendance_type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Postponed Reason`
+  String get postponed_reason {
+    return Intl.message(
+      'Postponed Reason',
+      name: 'postponed_reason',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No reason provided`
+  String get no_reason_provided {
+    return Intl.message(
+      'No reason provided',
+      name: 'no_reason_provided',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lecture Details`
+  String get lecture_details {
+    return Intl.message(
+      'Lecture Details',
+      name: 'lecture_details',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
