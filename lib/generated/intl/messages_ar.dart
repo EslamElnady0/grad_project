@@ -515,7 +515,7 @@ class MessageLookup extends MessageLookupByLibrary {
       " ابحث عن مبني، مدرج، قاعة، الخ..!",
     ),
     "search_for_task": MessageLookupByLibrary.simpleMessage(
-      "البحث حسب نوع النشاط او الاسم",
+      "ابحث عن كويز أو تكليف",
     ),
     "search_placeholder": MessageLookupByLibrary.simpleMessage(
       "أدخل اسم الطالب",
