@@ -5,6 +5,7 @@ import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:intl/intl.dart';
 import '../../../data/models/get_messages_response.dart';
 import 'user_avatar_and_name.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 /// Widget for displaying text messages in chat
 class ChatMessageWidget extends StatelessWidget {
@@ -43,11 +44,7 @@ class ChatMessageWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      message.content ?? " ",
-                      style: AppTextStyles.font10GraySemiBold
-                          .copyWith(color: Colors.white, fontSize: 11.sp),
-                    ),
+                    _buildMessageContent(message.content),
                     const SizedBox(height: 4),
                     Row(
                       mainAxisSize: MainAxisSize.min,
@@ -88,6 +85,42 @@ class ChatMessageWidget extends StatelessWidget {
       return Icon(Icons.done_all, color: Colors.white, size: iconSize);
     } else {
       return Icon(Icons.check, color: Colors.white, size: iconSize);
+    }
+  }
+
+  Widget _buildMessageContent(String? content) {
+    final text = content ?? " ";
+    final urlPattern = RegExp(
+        r'^(https?:\/\/|www\.)[\w\-]+(\.[\w\-]+)+([\w\-\.,@?^=%&:/~+#]*)?$',
+        caseSensitive: false);
+    final isLink = urlPattern.hasMatch(text.trim());
+    if (isLink) {
+      return GestureDetector(
+        onTap: () async {
+          final url = text.startsWith('http') ? text : 'https://${text.trim()}';
+          if (await canLaunchUrl(Uri.parse(url))) {
+            await launchUrl(Uri.parse(url),
+                mode: LaunchMode.externalApplication);
+          }
+        },
+        child: Text(
+          text,
+          style: AppTextStyles.font10GraySemiBold.copyWith(
+            color: Colors.white,
+            fontSize: 11.sp,
+            decoration: TextDecoration.underline,
+            decorationColor: Colors.white,
+          ),
+        ),
+      );
+    } else {
+      return Text(
+        text,
+        style: AppTextStyles.font10GraySemiBold.copyWith(
+          color: Colors.white,
+          fontSize: 11.sp,
+        ),
+      );
     }
   }
 }
