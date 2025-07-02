@@ -3169,6 +3169,111 @@ class S {
   String get change {
     return Intl.message('Change', name: 'change', desc: '', args: []);
   }
+
+  /// `Edit Session Details`
+  String get edit_session_details {
+    return Intl.message(
+      'Edit Session Details',
+      name: 'edit_session_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `📝 Modify the session details and save changes`
+  String get edit_session_info {
+    return Intl.message(
+      '📝 Modify the session details and save changes',
+      name: 'edit_session_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Day`
+  String get select_day {
+    return Intl.message('Select Day', name: 'select_day', desc: '', args: []);
+  }
+
+  /// `Select Date`
+  String get select_date {
+    return Intl.message('Select Date', name: 'select_date', desc: '', args: []);
+  }
+
+  /// `Start Time`
+  String get start_time {
+    return Intl.message('Start Time', name: 'start_time', desc: '', args: []);
+  }
+
+  /// `End Time`
+  String get end_time {
+    return Intl.message('End Time', name: 'end_time', desc: '', args: []);
+  }
+
+  /// `Select Hall`
+  String get select_hall {
+    return Intl.message('Select Hall', name: 'select_hall', desc: '', args: []);
+  }
+
+  /// `Online`
+  String get online {
+    return Intl.message('Online', name: 'online', desc: '', args: []);
+  }
+
+  /// `Offline`
+  String get offline {
+    return Intl.message('Offline', name: 'offline', desc: '', args: []);
+  }
+
+  /// `Session updated successfully`
+  String get session_updated_successfully {
+    return Intl.message(
+      'Session updated successfully',
+      name: 'session_updated_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please fill all required fields`
+  String get please_fill_all_fields {
+    return Intl.message(
+      'Please fill all required fields',
+      name: 'please_fill_all_fields',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `End time must be after start time`
+  String get invalid_time_range {
+    return Intl.message(
+      'End time must be after start time',
+      name: 'invalid_time_range',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `YYYY-MM-DD`
+  String get date_format_hint {
+    return Intl.message(
+      'YYYY-MM-DD',
+      name: 'date_format_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `HH:MM`
+  String get time_format_hint {
+    return Intl.message('HH:MM', name: 'time_format_hint', desc: '', args: []);
+  }
+
+  /// `Hall ID`
+  String get hall_id_hint {
+    return Intl.message('Hall ID', name: 'hall_id_hint', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

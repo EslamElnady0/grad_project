@@ -192,6 +192,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "dateAndTimeError": MessageLookupByLibrary.simpleMessage(
       "You have to specify date and time for the quiz.",
     ),
+    "date_format_hint": MessageLookupByLibrary.simpleMessage("YYYY-MM-DD"),
     "days": MessageLookupByLibrary.simpleMessage("Days"),
     "deadline": MessageLookupByLibrary.simpleMessage("Deadline"),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
@@ -226,7 +227,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "✏️ Edit your announcement to keep your students informed with the latest details and updates",
     ),
     "edit_profile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
+    "edit_session_details": MessageLookupByLibrary.simpleMessage(
+      "Edit Session Details",
+    ),
+    "edit_session_info": MessageLookupByLibrary.simpleMessage(
+      "📝 Modify the session details and save changes",
+    ),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "end_time": MessageLookupByLibrary.simpleMessage("End Time"),
     "endsAt": MessageLookupByLibrary.simpleMessage("Ends at"),
     "ends_in": MessageLookupByLibrary.simpleMessage("Ends In"),
     "enterQuestionBodyFirst": MessageLookupByLibrary.simpleMessage(
@@ -299,6 +307,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "group": MessageLookupByLibrary.simpleMessage("Group"),
     "hall": MessageLookupByLibrary.simpleMessage("Hall"),
     "hall_details": MessageLookupByLibrary.simpleMessage("Hall Details"),
+    "hall_id_hint": MessageLookupByLibrary.simpleMessage("Hall ID"),
     "halls": MessageLookupByLibrary.simpleMessage("Halls"),
     "hour": MessageLookupByLibrary.simpleMessage("h"),
     "images": MessageLookupByLibrary.simpleMessage("Images"),
@@ -309,6 +318,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "instructions": MessageLookupByLibrary.simpleMessage("Instructions"),
     "interested": MessageLookupByLibrary.simpleMessage("like"),
     "internalMap": MessageLookupByLibrary.simpleMessage("Internal Map"),
+    "invalid_time_range": MessageLookupByLibrary.simpleMessage(
+      "End time must be after start time",
+    ),
     "km": MessageLookupByLibrary.simpleMessage("km"),
     "lecture": MessageLookupByLibrary.simpleMessage("Lecture"),
     "lectureDescription": MessageLookupByLibrary.simpleMessage(
@@ -408,10 +420,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "number_of_subjects": MessageLookupByLibrary.simpleMessage(
       "Subjects count",
     ),
+    "offline": MessageLookupByLibrary.simpleMessage("Offline"),
     "ok": MessageLookupByLibrary.simpleMessage("OK"),
     "onMap": MessageLookupByLibrary.simpleMessage("On Map"),
     "on_time": MessageLookupByLibrary.simpleMessage("On time (automatic)."),
     "once": MessageLookupByLibrary.simpleMessage("Once"),
+    "online": MessageLookupByLibrary.simpleMessage("Online"),
     "onlyOneFileAllowed": MessageLookupByLibrary.simpleMessage(
       "Only one file is allowed in edit mode.",
     ),
@@ -437,6 +451,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "pleaseUploadFiles": MessageLookupByLibrary.simpleMessage(
       "Please upload the files first",
+    ),
+    "please_fill_all_fields": MessageLookupByLibrary.simpleMessage(
+      "Please fill all required fields",
     ),
     "postponed": MessageLookupByLibrary.simpleMessage("Postponed."),
     "postponed_lecture_details": MessageLookupByLibrary.simpleMessage(
@@ -589,9 +606,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "select_all_to_give_degree": MessageLookupByLibrary.simpleMessage(
       "Select all and give a score",
     ),
+    "select_date": MessageLookupByLibrary.simpleMessage("Select Date"),
+    "select_day": MessageLookupByLibrary.simpleMessage("Select Day"),
     "select_department": MessageLookupByLibrary.simpleMessage(
       "Select Department",
     ),
+    "select_hall": MessageLookupByLibrary.simpleMessage("Select Hall"),
     "select_semester": MessageLookupByLibrary.simpleMessage("Select Semester"),
     "select_subjects": MessageLookupByLibrary.simpleMessage(
       "📚 Please select the subjects you want to check for posts and updates!",
@@ -600,6 +620,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "semester_1": MessageLookupByLibrary.simpleMessage("First Semester"),
     "semester_2": MessageLookupByLibrary.simpleMessage("Second Semester"),
     "sent": MessageLookupByLibrary.simpleMessage("sent"),
+    "session_updated_successfully": MessageLookupByLibrary.simpleMessage(
+      "Session updated successfully",
+    ),
     "setTime": MessageLookupByLibrary.simpleMessage("Set Time"),
     "show": MessageLookupByLibrary.simpleMessage("Show"),
     "showDirections": MessageLookupByLibrary.simpleMessage("Show Directions"),
@@ -611,6 +634,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "start": MessageLookupByLibrary.simpleMessage("Start"),
     "startNow": MessageLookupByLibrary.simpleMessage("Start Now!"),
     "startWriting": MessageLookupByLibrary.simpleMessage("Start writing now.."),
+    "start_time": MessageLookupByLibrary.simpleMessage("Start Time"),
     "started": MessageLookupByLibrary.simpleMessage("Started"),
     "starting_download": MessageLookupByLibrary.simpleMessage(
       "Starting download...",
@@ -674,6 +698,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "timeRemaining": MessageLookupByLibrary.simpleMessage("Time Remaining"),
     "timeSchedule": MessageLookupByLibrary.simpleMessage("Time Schedule"),
+    "time_format_hint": MessageLookupByLibrary.simpleMessage("HH:MM"),
     "time_schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
       "Welcome! Here you can view the upcoming quiz dates and submit the fees for each subject.⏰",
     ),

@@ -396,7 +396,22 @@
   "postponed_reason": "Postponed Reason",
   "no_reason_provided": "No reason provided",
   "lecture_details": "Lecture Details",
-  "change": "Change"
+  "change": "Change",
+  "edit_session_details": "Edit Session Details",
+  "edit_session_info": "📝 Modify the session details and save changes",
+  "select_day": "Select Day",
+  "select_date": "Select Date",
+  "start_time": "Start Time",
+  "end_time": "End Time",
+  "select_hall": "Select Hall",
+  "online": "Online",
+  "offline": "Offline",
+  "session_updated_successfully": "Session updated successfully",
+  "please_fill_all_fields": "Please fill all required fields",
+  "invalid_time_range": "End time must be after start time",
+  "date_format_hint": "YYYY-MM-DD",
+  "time_format_hint": "HH:MM",
+  "hall_id_hint": "Hall ID"
 
 }
 

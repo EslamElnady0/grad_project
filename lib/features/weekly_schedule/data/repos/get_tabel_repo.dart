@@ -2,6 +2,8 @@ import 'package:grad_project/core/networking/api_constants.dart';
 import 'package:grad_project/core/networking/api_error_handler.dart';
 import 'package:grad_project/core/networking/api_result.dart';
 import 'package:grad_project/features/weekly_schedule/data/models/get_table_response_model.dart';
+import 'package:grad_project/features/weekly_schedule/data/models/update_session_request_model.dart';
+import 'package:grad_project/features/weekly_schedule/data/models/update_session_response_model.dart';
 
 import '../data sources/get_tabel_local_data_source.dart';
 import '../data sources/get_tabel_remote_data_source.dart';
@@ -21,5 +23,11 @@ class GetTabelRepo {
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));
     }
+  }
+    Future<UpdateSessionResponseModel> updateSession(
+    int sessionId,
+    UpdateSessionRequestModel requestModel,
+  ) async {
+    return await remoteDataSource.updateSession(sessionId, requestModel);
   }
 }

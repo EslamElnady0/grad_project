@@ -4,6 +4,8 @@ import 'package:retrofit/retrofit.dart';
 
 import '../../features/auth/data/models/login_request_model.dart';
 import '../../features/auth/data/models/login_response_model.dart';
+import '../../features/weekly_schedule/data/models/update_session_request_model.dart';
+import '../../features/weekly_schedule/data/models/update_session_response_model.dart';
 
 
 part 'api_service.g.dart';
@@ -17,5 +19,6 @@ abstract class ApiService {
     @Path() String loginEndpoint,
     @Body() LoginRequestModel loginRequestBody,
   );
- 
+
+
 }

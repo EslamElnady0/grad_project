@@ -58,6 +58,7 @@ import 'package:grad_project/features/quizes/ui/cubit/add_quiz_cubit/add_quiz_cu
 import 'package:grad_project/features/quizes/ui/widgets/question_list_widget.dart';
 import 'package:grad_project/features/subjects/logic/add_materials/add_materials_cubit.dart';
 import 'package:grad_project/features/subjects/logic/delete_course_material/delete_course_material_cubit.dart';
+import 'package:grad_project/features/weekly_schedule/logic/update_session_cubit.dart';
 import 'package:grad_project/features/subjects/ui/manager/file_upload_cubit.dart';
 import 'package:grad_project/features/subjects/ui/manager/subjects_filter_cubit.dart';
 import 'package:grad_project/features/time_schedule/logic/activity_filter_cubit/activity_filter_cubit.dart';
@@ -171,6 +172,11 @@ Future<void> setupGetIt() async {
         localDataSource: getIt(),
       ));
   getIt.registerFactory<GetTabelCubit>(() => GetTabelCubit(getIt()));
+  
+  // Weekly Schedule Update Session
+ 
+  getIt.registerFactory<UpdateSessionCubit>(() => UpdateSessionCubit(getIt()));
+  
   //toDo:------------------------------ Assignments API ------------------------------//
   getIt.registerLazySingleton<AssignmentsRemoteDataSource>(
       () => AssignmentsRemoteDataSource(dio));
