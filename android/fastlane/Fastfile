@@ -25,7 +25,7 @@ platform :android do
             app: "1:759640137262:android:9d9cb5bd7b6c528c8809bf",
             android_artifact_type: "APK",
             android_artifact_path: "../build/app/outputs/flutter-apk/app-doctor-release.apk",
-            testers: "eslamelnady254@gmail.com,ebrahimfathy2822@gmail.com,osama.m.selim110@gmail.com,devosamagasser@gmail.com,aali571110@gmail.com",
+            testers: "eslamelnady254@gmail.com,ebrahimfathy2822@gmail.com,osama.m.selim110@gmail.com,devosamagasser@gmail.com,ahmedaliami361@gmail.com",
            # groups: "dev",
             release_notes: options[:message] || "Default release note",
             )
@@ -44,7 +44,7 @@ platform :android do
             app: "1:759640137262:android:5b0ddcab071f1c648809bf",
             android_artifact_type: "APK",
             android_artifact_path: "../build/app/outputs/flutter-apk/app-student-release.apk",
-            testers: "eslamelnady254@gmail.com,ebrahimfathy2822@gmail.com,osama.m.selim110@gmail.com,devosamagasser@gmail.com,aali571110@gmail.com",
+            testers: "eslamelnady254@gmail.com,ebrahimfathy2822@gmail.com,osama.m.selim110@gmail.com,devosamagasser@gmail.com,ahmedaliami361@gmail.com",
            # groups: "dev",
             release_notes: options[:message] || "Default release note",
             )

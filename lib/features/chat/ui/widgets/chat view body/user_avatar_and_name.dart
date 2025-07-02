@@ -29,8 +29,6 @@ class UserAvatarAndName extends StatelessWidget {
               vGap(4),
               CircleAvatar(
                 radius: 18.r,
-                backgroundImage: NetworkImage(sender.avatar),
-                onBackgroundImageError: (_, __) {},
                 child: ClipOval(
                   child: Image.network(
                     sender.avatar,
