@@ -409,7 +409,7 @@
   "please_fill_all_fields": "يرجى ملء جميع الحقول المطلوبة",
   "invalid_time_range": "يجب أن يكون وقت النهاية بعد وقت البداية",
   "date_format_hint": "سنة-شهر-يوم",
-  "time_format_hint": "ساعة:دقيقة",
+  "time_format_hint": "يرجى إدخال الوقت بصيغة صحيحة (ساعة:دقيقة)",
   "hall_id_hint": "رقم القاعة"
 
 }

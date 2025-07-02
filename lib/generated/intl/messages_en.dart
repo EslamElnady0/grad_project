@@ -698,7 +698,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "timeRemaining": MessageLookupByLibrary.simpleMessage("Time Remaining"),
     "timeSchedule": MessageLookupByLibrary.simpleMessage("Time Schedule"),
-    "time_format_hint": MessageLookupByLibrary.simpleMessage("HH:MM"),
+    "time_format_hint": MessageLookupByLibrary.simpleMessage(
+      "Please enter time in correct format (HH:MM)",
+    ),
     "time_schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
       "Welcome! Here you can view the upcoming quiz dates and submit the fees for each subject.⏰",
     ),

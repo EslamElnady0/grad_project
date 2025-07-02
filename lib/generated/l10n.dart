@@ -3265,9 +3265,14 @@ class S {
     );
   }
 
-  /// `HH:MM`
+  /// `Please enter time in correct format (HH:MM)`
   String get time_format_hint {
-    return Intl.message('HH:MM', name: 'time_format_hint', desc: '', args: []);
+    return Intl.message(
+      'Please enter time in correct format (HH:MM)',
+      name: 'time_format_hint',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Hall ID`

@@ -410,7 +410,7 @@
   "please_fill_all_fields": "Please fill all required fields",
   "invalid_time_range": "End time must be after start time",
   "date_format_hint": "YYYY-MM-DD",
-  "time_format_hint": "HH:MM",
+  "time_format_hint": "Please enter time in correct format (HH:MM)",
   "hall_id_hint": "Hall ID"
 
 }

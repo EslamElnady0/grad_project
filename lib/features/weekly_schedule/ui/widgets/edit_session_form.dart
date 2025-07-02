@@ -217,15 +217,6 @@ class _EditSessionFormState extends State<EditSessionForm> {
               borderSide: BorderSide(color: AppColors.primaryColordark),
             ),
           ),
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return S.of(context).please_fill_all_fields;
-            }
-            if (!_isValidDateFormat(value)) {
-              return S.of(context).date_format_hint;
-            }
-            return null;
-          },
         ),
       ],
     );
@@ -265,15 +256,6 @@ class _EditSessionFormState extends State<EditSessionForm> {
                     borderSide: BorderSide(color: AppColors.primaryColordark),
                   ),
                 ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return S.of(context).please_fill_all_fields;
-                  }
-                  if (!_isValidTimeFormat(value)) {
-                    return S.of(context).time_format_hint;
-                  }
-                  return null;
-                },
               ),
             ],
           ),
@@ -310,22 +292,6 @@ class _EditSessionFormState extends State<EditSessionForm> {
                     borderSide: BorderSide(color: AppColors.primaryColordark),
                   ),
                 ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return S.of(context).please_fill_all_fields;
-                  }
-                  if (!_isValidTimeFormat(value)) {
-                    return S.of(context).time_format_hint;
-                  }
-                  // Validate that end time is after start time
-                  if (_fromController.text.isNotEmpty &&
-                      _isValidTimeFormat(_fromController.text)) {
-                    if (!_isTimeAfter(value, _fromController.text)) {
-                      return S.of(context).invalid_time_range;
-                    }
-                  }
-                  return null;
-                },
               ),
             ],
           ),
@@ -425,28 +391,99 @@ class _EditSessionFormState extends State<EditSessionForm> {
   }
 
   void _submitForm(BuildContext context) {
-    if (_formKey.currentState!.validate()) {
-      final requestModel = UpdateSessionRequestModel(
-        day: _selectedDay,
-        date: _dateController.text,
-        from: _fromController.text,
-        to: _toController.text,
-        attendance: _selectedAttendance,
-      );
-
-      // Debug print to check the exact format being sent
-      print('Sending request with:');
-      print('Day: ${requestModel.day}');
-      print('Date: ${requestModel.date}');
-      print('From: ${requestModel.from}');
-      print('To: ${requestModel.to}');
-      print('Attendance: ${requestModel.attendance}');
-
-      context.read<UpdateSessionCubit>().updateSession(
-            widget.lecture.id,
-            requestModel,
-          );
+    // Custom validation instead of using form validation
+    String? validationError = _validateForm();
+    
+    if (validationError != null) {
+      _showValidationDialog(context, validationError);
+      return;
     }
+
+    final requestModel = UpdateSessionRequestModel(
+      day: _selectedDay,
+      date: _dateController.text,
+      from: _fromController.text,
+      to: _toController.text,
+      attendance: _selectedAttendance,
+    );
+
+    // Debug print to check the exact format being sent
+    print('Sending request with:');
+    print('Day: ${requestModel.day}');
+    print('Date: ${requestModel.date}');
+    print('From: ${requestModel.from}');
+    print('To: ${requestModel.to}');
+    print('Attendance: ${requestModel.attendance}');
+
+    context.read<UpdateSessionCubit>().updateSession(
+          widget.lecture.id,
+          requestModel,
+        );
+  }
+
+  String? _validateForm() {
+    // Check if date is empty or invalid
+    if (_dateController.text.isEmpty) {
+      return S.of(context).please_fill_all_fields;
+    }
+    if (!_isValidDateFormat(_dateController.text)) {
+      return S.of(context).date_format_hint;
+    }
+
+    // Check if start time is empty or invalid
+    if (_fromController.text.isEmpty) {
+      return S.of(context).please_fill_all_fields;
+    }
+    if (!_isValidTimeFormat(_fromController.text)) {
+      return S.of(context).time_format_hint;
+    }
+
+    // Check if end time is empty or invalid
+    if (_toController.text.isEmpty) {
+      return S.of(context).please_fill_all_fields;
+    }
+    if (!_isValidTimeFormat(_toController.text)) {
+      return S.of(context).time_format_hint;
+    }
+
+    // Check if end time is after start time
+    if (!_isTimeAfter(_toController.text, _fromController.text)) {
+      return S.of(context).invalid_time_range;
+    }
+
+    return null; // No validation errors
+  }
+
+  void _showValidationDialog(BuildContext context, String message) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(
+            'خطأ في البيانات',
+            style: AppTextStyles.font16BlackBold,
+          ),
+          content: Text(
+            message,
+            style: AppTextStyles.font14BlackMedium,
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text(
+                'موافق',
+                style: AppTextStyles.font14BlackMedium.copyWith(
+                  color: AppColors.primaryColordark,
+                ),
+              ),
+            ),
+          ],
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12.r),
+          ),
+        );
+      },
+    );
   }
 
   // Time picker helper method
@@ -535,7 +572,7 @@ class _EditSessionFormState extends State<EditSessionForm> {
     return timeRegex.hasMatch(time);
   }
 
-  // Check if time1 is after time2
+ // Check if time1 is after time2
   bool _isTimeAfter(String time1, String time2) {
     if (!_isValidTimeFormat(time1) || !_isValidTimeFormat(time2)) {
       return false;
