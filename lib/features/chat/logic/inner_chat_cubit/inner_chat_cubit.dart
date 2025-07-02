@@ -63,6 +63,14 @@ class InnerChatCubit extends Cubit<InnerChatState> {
     _repo.stopTyping();
   }
 
+  void closeChat() {
+    _repo.closeChat();
+  }
+
+  void openChat() {
+    _repo.openChat();
+  }
+
   @override
   Future<void> close() {
     _repo.dispose();

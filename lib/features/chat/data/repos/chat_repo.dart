@@ -166,10 +166,7 @@ class ChatRepo {
     socketService.emit(SocketEvents.stopTyping, {});
   }
 
-  void closeChat({
-    required Function(dynamic data)? onSuccess,
-    required Function(String error)? onFailure,
-  }) {
+  void closeChat() {
     // Remove existing listeners before adding new ones
     _removeListener(SocketEvents.closeChatSuccess);
     _removeListener(SocketEvents.closeChatError);
@@ -177,17 +174,17 @@ class ChatRepo {
     socketService.emit(SocketEvents.closeChat, {});
 
     _addListenerOnce(SocketEvents.closeChatSuccess, (data) {
-      onSuccess != null ? onSuccess(data) : () {};
+      log('Chat closed successfully');
     });
 
     _addListenerOnce(SocketEvents.closeChatError, (error) {
-      onFailure != null ? onFailure(error.toString()) : () {};
+      log('Error closing chat: $error');
     });
   }
 
   void dispose() {
     _removeAllListeners();
-    closeChat(onSuccess: (data) {}, onFailure: (error) {});
+    closeChat();
     log('ChatRepo disposed - all listeners removed');
   }
 }
