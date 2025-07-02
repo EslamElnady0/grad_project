@@ -8,7 +8,6 @@ import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_text_button.dart';
 import 'package:grad_project/features/weekly_schedule/data/models/get_table_response_model.dart';
 import 'package:grad_project/features/weekly_schedule/data/models/update_session_request_model.dart';
-import 'package:grad_project/features/weekly_schedule/logic/get_tabel_cubit/get_tabel_cubit.dart';
 import 'package:grad_project/features/weekly_schedule/logic/update_session_cubit.dart';
 import 'package:grad_project/features/weekly_schedule/logic/update_session_state.dart';
 import 'package:grad_project/generated/l10n.dart';
@@ -60,7 +59,6 @@ class _EditSessionFormState extends State<EditSessionForm> {
           'day': 'sunday',
           'from': '8:30',
           'to': '10:30',
-          'hall_id': 1,
           'attendance': 'offline'
         };
 
@@ -382,8 +380,8 @@ class _EditSessionFormState extends State<EditSessionForm> {
     return BlocConsumer<UpdateSessionCubit, UpdateSessionState>(
       listener: (context, state) {
         if (state is UpdateSessionSuccess) {
-          Navigator.of(context).pop();
-          context.read<GetTabelCubit>().getTable();
+          // Pop with result to indicate success and need to refresh
+          Navigator.of(context).pop(true);
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text(S.of(context).session_updated_successfully),
