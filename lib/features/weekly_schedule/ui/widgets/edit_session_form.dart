@@ -394,15 +394,35 @@ class _EditSessionFormState extends State<EditSessionForm> {
           Navigator.of(context).pop(true);
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text(S.of(context).session_updated_successfully),
+              content: Text(
+                S.of(context).session_updated_successfully,
+                style: AppTextStyles.font14BlackMedium.copyWith(
+                  color: AppColors.white,
+                ),
+              ),
               backgroundColor: AppColors.primaryColordark,
+              behavior: SnackBarBehavior.floating,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.r),
+              ),
+              margin: EdgeInsets.all(16.w),
             ),
           );
         } else if (state is UpdateSessionError) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text(state.error),
+              content: Text(
+                state.error,
+                style: AppTextStyles.font14BlackMedium.copyWith(
+                  color: AppColors.white,
+                ),
+              ),
               backgroundColor: AppColors.redDark,
+              behavior: SnackBarBehavior.floating,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.r),
+              ),
+              margin: EdgeInsets.all(16.w),
             ),
           );
         }
@@ -468,31 +488,31 @@ class _EditSessionFormState extends State<EditSessionForm> {
   String? _validateForm() {
     // Check if date is empty or invalid
     if (_dateController.text.isEmpty) {
-      return 'يرجى ملء جميع الحقول المطلوبة';
+      return S.of(context).please_fill_all_fields;
     }
     if (!_isValidDateFormat(_dateController.text)) {
-      return 'صيغة التاريخ غير صحيحة. يجب أن تكون YYYY-MM-DD';
+      return S.of(context).date_format_hint;
     }
 
     // Check if start time is empty or invalid
     if (_fromController.text.isEmpty) {
-      return 'يرجى ملء جميع الحقول المطلوبة';
+      return S.of(context).please_fill_all_fields;
     }
     if (!_isValidTimeFormat(_fromController.text)) {
-      return 'صيغة وقت البداية غير صحيحة. يجب أن تكون HH:MM';
+      return S.of(context).time_format_hint;
     }
 
     // Check if end time is empty or invalid
     if (_toController.text.isEmpty) {
-      return 'يرجى ملء جميع الحقول المطلوبة';
+      return S.of(context).please_fill_all_fields;
     }
     if (!_isValidTimeFormat(_toController.text)) {
-      return 'صيغة وقت النهاية غير صحيحة. يجب أن تكون HH:MM';
+      return S.of(context).time_format_hint;
     }
 
     // Check if end time is after start time
     if (!_isTimeAfter(_toController.text, _fromController.text)) {
-      return 'وقت النهاية يجب أن يكون بعد وقت البداية';
+      return S.of(context).invalid_time_range;
     }
 
     return null; // No validation errors
@@ -503,8 +523,9 @@ class _EditSessionFormState extends State<EditSessionForm> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
+          backgroundColor: AppColors.white,
           title: Text(
-            'خطأ في البيانات',
+            'خطأ في البيانات', // We'll keep this as is since no direct localization is available
             style: AppTextStyles.font16BlackBold,
           ),
           content: Text(
@@ -515,7 +536,7 @@ class _EditSessionFormState extends State<EditSessionForm> {
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
               child: Text(
-                'موافق',
+                S.of(context).confirm,
                 style: AppTextStyles.font14BlackMedium.copyWith(
                   color: AppColors.primaryColordark,
                 ),
@@ -558,9 +579,33 @@ class _EditSessionFormState extends State<EditSessionForm> {
       context: context,
       initialTime: initialTime,
       builder: (BuildContext context, Widget? child) {
-        return MediaQuery(
-          data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: true),
-          child: child!,
+        return Theme(
+          data: Theme.of(context).copyWith(
+            timePickerTheme: TimePickerThemeData(
+              backgroundColor: AppColors.white,
+              hourMinuteTextColor: AppColors.black,
+              hourMinuteColor: AppColors.gray.withOpacity(0.1),
+              dayPeriodTextColor: AppColors.black,
+              dayPeriodColor: AppColors.primaryColordark.withOpacity(0.1),
+              dialHandColor: AppColors.primaryColordark,
+              dialBackgroundColor: AppColors.gray.withOpacity(0.1),
+              dialTextColor: AppColors.black,
+              entryModeIconColor: AppColors.primaryColordark,
+              helpTextStyle: AppTextStyles.font14BlackMedium,
+              hourMinuteTextStyle: AppTextStyles.font16BlackBold,
+              dayPeriodTextStyle: AppTextStyles.font14BlackMedium,
+            ),
+            textButtonTheme: TextButtonThemeData(
+              style: TextButton.styleFrom(
+                foregroundColor: AppColors.primaryColordark,
+                textStyle: AppTextStyles.font14BlackMedium,
+              ),
+            ),
+          ),
+          child: MediaQuery(
+            data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: true),
+            child: child!,
+          ),
         );
       },
     );
@@ -597,6 +642,69 @@ class _EditSessionFormState extends State<EditSessionForm> {
       initialDate: initialDate,
       firstDate: DateTime.now().subtract(Duration(days: 365)),
       lastDate: DateTime.now().add(Duration(days: 365)),
+      builder: (BuildContext context, Widget? child) {
+        return Theme(
+          data: Theme.of(context).copyWith(
+            datePickerTheme: DatePickerThemeData(
+              backgroundColor: AppColors.white,
+              headerBackgroundColor: AppColors.primaryColordark,
+              headerForegroundColor: AppColors.white,
+              dayForegroundColor: WidgetStateProperty.resolveWith((states) {
+                if (states.contains(WidgetState.selected)) {
+                  return AppColors.white;
+                }
+                return AppColors.black;
+              }),
+              dayBackgroundColor: WidgetStateProperty.resolveWith((states) {
+                if (states.contains(WidgetState.selected)) {
+                  return AppColors.primaryColordark;
+                }
+                return Colors.transparent;
+              }),
+              todayForegroundColor: WidgetStateProperty.resolveWith((states) {
+                if (states.contains(WidgetState.selected)) {
+                  return AppColors.white;
+                }
+                return AppColors.primaryColordark;
+              }),
+              todayBackgroundColor: WidgetStateProperty.resolveWith((states) {
+                if (states.contains(WidgetState.selected)) {
+                  return AppColors.primaryColordark;
+                }
+                return Colors.transparent;
+              }),
+              yearForegroundColor: WidgetStateProperty.resolveWith((states) {
+                if (states.contains(WidgetState.selected)) {
+                  return AppColors.white;
+                }
+                return AppColors.black;
+              }),
+              yearBackgroundColor: WidgetStateProperty.resolveWith((states) {
+                if (states.contains(WidgetState.selected)) {
+                  return AppColors.primaryColordark;
+                }
+                return Colors.transparent;
+              }),
+              weekdayStyle: AppTextStyles.font14BlackMedium,
+              dayStyle: AppTextStyles.font14BlackMedium,
+              yearStyle: AppTextStyles.font14BlackMedium,
+              headerHeadlineStyle: AppTextStyles.font16BlackBold.copyWith(
+                color: AppColors.white,
+              ),
+              headerHelpStyle: AppTextStyles.font14BlackMedium.copyWith(
+                color: AppColors.white,
+              ),
+            ),
+            textButtonTheme: TextButtonThemeData(
+              style: TextButton.styleFrom(
+                foregroundColor: AppColors.primaryColordark,
+                textStyle: AppTextStyles.font14BlackMedium,
+              ),
+            ),
+          ),
+          child: child!,
+        );
+      },
     );
 
     if (selectedDate != null) {
