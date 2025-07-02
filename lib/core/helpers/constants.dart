@@ -9,7 +9,6 @@ import 'package:grad_project/features/annoucements/ui/views/annoucements_body.da
 import 'package:grad_project/features/assignments/presentation/views/assignment_home_view.dart';
 import 'package:grad_project/features/auth/ui/views/auth_view.dart';
 import 'package:grad_project/features/dashboard/ui/views/dashboard_body.dart';
-import 'package:grad_project/features/final_results/presentation/views/final_results_view.dart';
 import 'package:grad_project/features/forum/ui/views/forum_views.dart';
 import 'package:grad_project/features/home/ui/models/drawer_item_model.dart';
 import 'package:grad_project/features/parking/ui/views/parking_view.dart';
@@ -120,20 +119,13 @@ class Constants {
           GoRouter.of(context).push(InternalMapView.routeName);
         },
       ),
-      DrawerItemModel(
-        title: S.of(context).academicProgress,
-        iconPath: Assets.imagesSvgsTimeCheck,
-        onTap: () {
-          GoRouter.of(context).push(AcademicProgressView.routeName);
-        },
-      ),
-      DrawerItemModel(
-        title: S.of(context).finalResults,
-        iconPath: Assets.imagesSvgsGradHat,
-        onTap: () {
-          GoRouter.of(context).push(FinalResultsView.routeName);
-        },
-      ),
+      // DrawerItemModel(
+      //   title: S.of(context).academicProgress,
+      //   iconPath: Assets.imagesSvgsTimeCheck,
+      //   onTap: () {
+      //     GoRouter.of(context).push(AcademicProgressView.routeName);
+      //   },
+      // ),
       DrawerItemModel(
         title: S.of(context).smart_assistant,
         iconPath: Assets.imagesSvgsRobotLineIcon,

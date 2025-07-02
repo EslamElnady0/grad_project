@@ -9,7 +9,7 @@ class ActivityFilterCubit extends Cubit<ActivityFilterState> {
   ActivityFilterCubit() : super(const ActivityFilterInitialState());
 
   void filterActivities(List<ActivityModel> activities, String selectedType,
-      String selectedStatus) {
+      String selectedStatus) async {
     emit(const ActivityFilterLoadingState());
     try {
       String? typeFilter;
@@ -29,7 +29,7 @@ class ActivityFilterCubit extends Cubit<ActivityFilterState> {
       }
 
       List<ActivityModel> filteredActivities = activities.where((activity) {
-        bool typeMatch = activity.type == typeFilter;
+        bool typeMatch = activity.type == typeFilter || typeFilter == null;
         bool statusMatch = statusFilter.contains(activity.status);
         return typeMatch && statusMatch;
       }).toList();
@@ -40,6 +40,7 @@ class ActivityFilterCubit extends Cubit<ActivityFilterState> {
         return aDate.compareTo(bDate);
       });
 
+      await Future.delayed(const Duration(milliseconds: 300));
       emit(ActivityFilterSuccessState(activities: filteredActivities));
     } catch (e) {
       emit(ActivityFilterErrorState(e.toString()));
