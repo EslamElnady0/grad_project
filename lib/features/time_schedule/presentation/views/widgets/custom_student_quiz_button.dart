@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/features/quizes/data/models/get_quizzes_response.dart';
@@ -45,11 +46,16 @@ class CustomStudentQuizButton extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.symmetric(vertical: 14),
         decoration: BoxDecoration(
-          color: AppColors.darkblue,
+          gradient:
+              quizModel.status != 'finished' ? Constants.secondaryGrad : null,
+          color: quizModel.status == 'finished' ? AppColors.darkblue : null,
           borderRadius: BorderRadius.circular(16),
         ),
         child: Center(
-          child: Text(S.of(context).quizDetails,
+          child: Text(
+              quizModel.status == 'finished'
+                  ? S.of(context).studentsAnswersReview
+                  : S.of(context).quizDetails,
               style: AppTextStyles.font12WhiteMedium),
         ),
       ),

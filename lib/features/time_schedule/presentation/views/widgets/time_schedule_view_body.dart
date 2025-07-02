@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
+import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/widgets/custom_drop_down_button.dart';
 import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
 import 'package:grad_project/core/widgets/custom_search_text_field.dart';
@@ -31,6 +32,8 @@ class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
   String selectedType = '';
   String selectedStatus = '';
 
+  bool _isFirstLoad = true;
+
   List<ActivityModel> _mergeAndSortActivities(GetStudentsQuizzesState quizState,
       GetStudentsAssignmentsState assignmentState) {
     if (quizState is GetStudentsQuizzesSuccess &&
@@ -54,16 +57,33 @@ class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
     return activities;
   }
 
-  final List<bool> isQuiz = const [true, false, true, true, true, false];
+  Future<void> _onRefresh() async {
+    final quizCubit = context.read<GetStudentsQuizzesCubit>();
+    final assignmentCubit = context.read<GetStudentsAssignmentsCubit>();
+    final filterCubit = context.read<ActivityFilterCubit>();
+
+    await Future.wait([
+      quizCubit.getStudentsQuizzes(),
+      assignmentCubit.getStudentsAssignments(),
+    ]);
+
+    final quizState = quizCubit.state;
+    final assignmentState = assignmentCubit.state;
+
+    final refreshedActivities =
+        _mergeAndSortActivities(quizState, assignmentState);
+
+    filterCubit.filterActivities(
+        refreshedActivities, selectedType, selectedStatus);
+  }
 
   @override
   Widget build(BuildContext context) {
-    // Initialize dropdown values if empty
     if (selectedStatus.isEmpty) {
       selectedStatus = S.of(context).scheduled;
     }
     if (selectedType.isEmpty) {
-      selectedType = S.of(context).assignments;
+      selectedType = S.of(context).all;
     }
 
     final quizState = context.watch<GetStudentsQuizzesCubit>().state;
@@ -71,101 +91,120 @@ class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
 
     List<ActivityModel> activities =
         _mergeAndSortActivities(quizState, assignmentState);
-    context
-        .read<ActivityFilterCubit>()
-        .filterActivities(activities, selectedType, selectedStatus);
+
+    if (_isFirstLoad &&
+        quizState is GetStudentsQuizzesSuccess &&
+        assignmentState is GetStudentsAssignmentsSuccess) {
+      _isFirstLoad = false;
+      context
+          .read<ActivityFilterCubit>()
+          .filterActivities(activities, selectedType, selectedStatus);
+    }
 
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: 16.w,
         vertical: 10.h,
       ),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            CustomInnerScreensAppBar(title: S.of(context).timeSchedule),
-            TitleTextWidget(
-              text: S.of(context).time_schedule_welcome_message,
-            ),
-            vGap(15),
-            CustomSearchTextField(
-              hintText: S.of(context).search_for_task,
-              controller: TextEditingController(),
-            ),
-            vGap(15),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                CustomDropDownButton(
-                  value: selectedStatus,
-                  values: [S.of(context).scheduled, S.of(context).previous],
+      child: Column(
+        children: [
+          CustomInnerScreensAppBar(title: S.of(context).timeSchedule),
+          TitleTextWidget(
+            text: S.of(context).time_schedule_welcome_message,
+          ),
+          // vGap(15),
+          // CustomSearchTextField(
+          //   hintText: S.of(context).search_for_task,
+          //   controller: TextEditingController(),
+          // ),
+          vGap(15),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              CustomDropDownButton(
+                value: selectedStatus,
+                values: [S.of(context).scheduled, S.of(context).previous],
+                onChanged: (value) {
+                  setState(() {
+                    if (value != null) {
+                      selectedStatus = value;
+                    }
+                    context.read<ActivityFilterCubit>().filterActivities(
+                        activities, selectedType, selectedStatus);
+                  });
+                },
+              ),
+              CustomDropDownButton(
+                  value: selectedType,
+                  values: [
+                    S.of(context).quizzes,
+                    S.of(context).assignments,
+                    S.of(context).all
+                  ],
                   onChanged: (value) {
                     setState(() {
                       if (value != null) {
-                        selectedStatus = value;
+                        selectedType = value;
                       }
                       context.read<ActivityFilterCubit>().filterActivities(
                           activities, selectedType, selectedStatus);
                     });
-                  },
-                ),
-                CustomDropDownButton(
-                    value: selectedType,
-                    values: [S.of(context).quizzes, S.of(context).assignments],
-                    onChanged: (value) {
-                      setState(() {
-                        if (value != null) {
-                          selectedType = value;
-                        }
-                        context.read<ActivityFilterCubit>().filterActivities(
-                            activities, selectedType, selectedStatus);
-                      });
-                    }),
-              ],
-            ),
-            vGap(15),
+                  }),
+            ],
+          ),
+          vGap(15),
 
-            BlocBuilder<ActivityFilterCubit, ActivityFilterState>(
+          Expanded(
+            child: BlocBuilder<ActivityFilterCubit, ActivityFilterState>(
               builder: (context, state) {
                 return state.maybeWhen(
                   orElse: () => _buildLoadingState(),
                   success: (data) {
-                    return _buildSuccessState(data);
+                    return _buildSuccessState(
+                      data,
+                      _onRefresh,
+                    );
                   },
                 );
               },
             ),
-            // quizState.maybeWhen(
-            //   orElse: () => _buildLoadingState(),
-            //   getStudentsQuizzesSuccess: (data) {
-            //     return assignmentState.maybeWhen(
-            //       orElse: () => _buildLoadingState(),
-            //       getStudentsAssignmentsSuccess: (data) {
-            //         return _buildSuccessState(activities);
-            //       },
-            //     );
-            //   },
-            // ),
-          ],
-        ),
+          ),
+          // quizState.maybeWhen(
+          //   orElse: () => _buildLoadingState(),
+          //   getStudentsQuizzesSuccess: (data) {
+          //     return assignmentState.maybeWhen(
+          //       orElse: () => _buildLoadingState(),
+          //       getStudentsAssignmentsSuccess: (data) {
+          //         return _buildSuccessState(activities);
+          //       },
+          //     );
+          //   },
+          // ),
+        ],
       ),
     );
   }
 }
 
-Widget _buildSuccessState(List<ActivityModel> data) {
-  return ListView.separated(
-    shrinkWrap: true,
-    physics: const NeverScrollableScrollPhysics(),
-    padding: EdgeInsets.only(top: 10.h),
-    itemBuilder: (context, index) {
-      return data[index] is StudentQuizModel
-          ? CustomStudentQuizWidget(quizModel: data[index] as StudentQuizModel)
-          : CustomStudentAssignmentWidget(
-              assignmentModel: data[index] as StudentAssignmentModel);
-    },
-    separatorBuilder: (context, index) => vGap(12),
-    itemCount: data.length,
+Widget _buildSuccessState(
+    List<ActivityModel> data, Future<void> Function() onRefresh) {
+  return RefreshIndicator(
+    onRefresh: onRefresh,
+    color: AppColors.primaryColorlight,
+    child: ListView.separated(
+      shrinkWrap: true,
+      physics: const AlwaysScrollableScrollPhysics(),
+      padding: EdgeInsets.only(top: 10.h),
+      itemBuilder: (context, index) {
+        return data[index] is StudentQuizModel
+            ? CustomStudentQuizWidget(
+                quizModel: data[index] as StudentQuizModel)
+            : CustomStudentAssignmentWidget(
+                assignmentModel: data[index] as StudentAssignmentModel);
+      },
+      separatorBuilder: (context, index) => vGap(12),
+      itemCount: data.length,
+    ),
   );
 }
 
