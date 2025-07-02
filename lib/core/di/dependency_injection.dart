@@ -172,9 +172,6 @@ Future<void> setupGetIt() async {
         localDataSource: getIt(),
       ));
   getIt.registerFactory<GetTabelCubit>(() => GetTabelCubit(getIt()));
-  
-  // Weekly Schedule Update Session
- 
   getIt.registerFactory<UpdateSessionCubit>(() => UpdateSessionCubit(getIt()));
   
   //toDo:------------------------------ Assignments API ------------------------------//

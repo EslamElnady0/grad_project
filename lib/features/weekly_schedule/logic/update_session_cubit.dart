@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/features/weekly_schedule/data/models/update_session_request_model.dart';
 import 'package:grad_project/features/weekly_schedule/data/repos/get_tabel_repo.dart';
-import 'package:grad_project/features/weekly_schedule/data/repositories/weekly_schedule_repository.dart';
 import 'package:grad_project/features/weekly_schedule/logic/update_session_state.dart';
 
 class UpdateSessionCubit extends Cubit<UpdateSessionState> {
