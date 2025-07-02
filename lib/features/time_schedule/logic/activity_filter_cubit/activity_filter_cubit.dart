@@ -8,8 +8,19 @@ import 'package:grad_project/generated/l10n.dart';
 class ActivityFilterCubit extends Cubit<ActivityFilterState> {
   ActivityFilterCubit() : super(const ActivityFilterInitialState());
 
+  List<ActivityModel> _fullActivityList = [];
+   String _selectedType = '';
+  String _selectedStatus = '';
+
+  void setFullActivityList(List<ActivityModel> activities) {
+    _fullActivityList = activities;
+  }
+
   void filterActivities(List<ActivityModel> activities, String selectedType,
-      String selectedStatus) {
+      String selectedStatus) async {
+
+           _selectedType = selectedType;
+    _selectedStatus = selectedStatus;
     emit(const ActivityFilterLoadingState());
     try {
       String? typeFilter;
@@ -29,7 +40,7 @@ class ActivityFilterCubit extends Cubit<ActivityFilterState> {
       }
 
       List<ActivityModel> filteredActivities = activities.where((activity) {
-        bool typeMatch = activity.type == typeFilter;
+        bool typeMatch = activity.type == typeFilter || typeFilter == null;
         bool statusMatch = statusFilter.contains(activity.status);
         return typeMatch && statusMatch;
       }).toList();
@@ -39,7 +50,7 @@ class ActivityFilterCubit extends Cubit<ActivityFilterState> {
         final bDate = DateTime.parse(b.date);
         return aDate.compareTo(bDate);
       });
-
+      await Future.delayed(const Duration(milliseconds: 300));
       emit(ActivityFilterSuccessState(activities: filteredActivities));
     } catch (e) {
       emit(ActivityFilterErrorState(e.toString()));
@@ -60,5 +71,19 @@ class ActivityFilterCubit extends Cubit<ActivityFilterState> {
     } else {
       emit(const ActivityFilterLoadingState());
     }
+  }
+
+  void searchActivitiesByTitle(String query) {
+    if (query.trim().isEmpty) {
+      // ⬇️ Now restore based on current filters
+      filterActivities(_fullActivityList,_selectedType, _selectedStatus);
+      return;
+    }
+
+    final filtered = _fullActivityList.where((activity) {
+      return activity.title.toLowerCase().contains(query.toLowerCase());
+    }).toList();
+
+    emit(ActivityFilterSuccessState(activities: filtered));
   }
 }
