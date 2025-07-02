@@ -57,16 +57,60 @@ class _EditSessionFormState extends State<EditSessionForm> {
         {
           'date': '2025-05-24',
           'day': 'sunday',
-          'from': '8:30',
+          'from': '08:30',
           'to': '10:30',
           'attendance': 'offline'
         };
 
+    // Debug print to see what data we're getting
+    print('Original data from postponed:');
+    print('from: "${data['from']}"');
+    print('to: "${data['to']}"');
+
+    // Clean and validate the time format from data
+    String fromTime = _cleanTimeFormat(data['from'] ?? '08:30');
+    String toTime = _cleanTimeFormat(data['to'] ?? '10:30');
+
+    print('Cleaned times:');
+    print('fromTime: "$fromTime"');
+    print('toTime: "$toTime"');
+
     _dateController = TextEditingController(text: data['date'] ?? '2025-05-24');
-    _fromController = TextEditingController(text: data['from'] ?? '8:30');
-    _toController = TextEditingController(text: data['to'] ?? '10:30');
+    _fromController = TextEditingController(text: fromTime);
+    _toController = TextEditingController(text: toTime);
     _selectedDay = data['day'] ?? 'sunday';
     _selectedAttendance = data['attendance'] ?? 'offline';
+  }
+
+  // Helper method to clean and format time
+  String _cleanTimeFormat(String timeStr) {
+    // Remove any non-digit and non-colon characters
+    String cleaned = timeStr.replaceAll(RegExp(r'[^\d:]'), '');
+    
+    // Check if it's already in correct format
+    if (_isValidTimeFormat(cleaned)) {
+      return cleaned;
+    }
+    
+    // Try to parse and reformat
+    try {
+      if (cleaned.contains(':')) {
+        final parts = cleaned.split(':');
+        if (parts.length >= 2) {
+          final hour = int.parse(parts[0]);
+          final minute = int.parse(parts[1]);
+          
+          if (hour >= 0 && hour <= 23 && minute >= 0 && minute <= 59) {
+            return '${hour.toString().padLeft(2, '0')}:${minute.toString().padLeft(2, '0')}';
+          }
+        }
+      }
+    } catch (e) {
+      print('Error cleaning time format: $e');
+    }
+    
+    // Return default time if all else fails
+    return '08:30';
   }
 
   @override
@@ -424,31 +468,31 @@ class _EditSessionFormState extends State<EditSessionForm> {
   String? _validateForm() {
     // Check if date is empty or invalid
     if (_dateController.text.isEmpty) {
-      return S.of(context).please_fill_all_fields;
+      return 'يرجى ملء جميع الحقول المطلوبة';
     }
     if (!_isValidDateFormat(_dateController.text)) {
-      return S.of(context).date_format_hint;
+      return 'صيغة التاريخ غير صحيحة. يجب أن تكون YYYY-MM-DD';
     }
 
     // Check if start time is empty or invalid
     if (_fromController.text.isEmpty) {
-      return S.of(context).please_fill_all_fields;
+      return 'يرجى ملء جميع الحقول المطلوبة';
     }
     if (!_isValidTimeFormat(_fromController.text)) {
-      return S.of(context).time_format_hint;
+      return 'صيغة وقت البداية غير صحيحة. يجب أن تكون HH:MM';
     }
 
     // Check if end time is empty or invalid
     if (_toController.text.isEmpty) {
-      return S.of(context).please_fill_all_fields;
+      return 'يرجى ملء جميع الحقول المطلوبة';
     }
     if (!_isValidTimeFormat(_toController.text)) {
-      return S.of(context).time_format_hint;
+      return 'صيغة وقت النهاية غير صحيحة. يجب أن تكون HH:MM';
     }
 
     // Check if end time is after start time
     if (!_isTimeAfter(_toController.text, _fromController.text)) {
-      return S.of(context).invalid_time_range;
+      return 'وقت النهاية يجب أن يكون بعد وقت البداية';
     }
 
     return null; // No validation errors
@@ -492,11 +536,22 @@ class _EditSessionFormState extends State<EditSessionForm> {
     // Parse current time or default to 8:00
     TimeOfDay initialTime = TimeOfDay(hour: 8, minute: 0);
     if (controller.text.isNotEmpty && _isValidTimeFormat(controller.text)) {
-      final parts = controller.text.split(':');
-      initialTime = TimeOfDay(
-        hour: int.parse(parts[0]),
-        minute: int.parse(parts[1]),
-      );
+      try {
+        final parts = controller.text.split(':');
+        if (parts.length == 2) {
+          final hour = int.parse(parts[0]);
+          final minute = int.parse(parts[1]);
+          
+          // Validate hour and minute ranges
+          if (hour >= 0 && hour <= 23 && minute >= 0 && minute <= 59) {
+            initialTime = TimeOfDay(hour: hour, minute: minute);
+          }
+        }
+      } catch (e) {
+        // If parsing fails, keep default time
+        print('Error parsing time from controller: $e');
+        initialTime = TimeOfDay(hour: 8, minute: 0);
+      }
     }
 
     final TimeOfDay? selectedTime = await showTimePicker(
@@ -569,7 +624,20 @@ class _EditSessionFormState extends State<EditSessionForm> {
   bool _isValidTimeFormat(String time) {
     // Accept formats like: 02:00, 14:30, 2:00, 23:59
     final timeRegex = RegExp(r'^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$');
-    return timeRegex.hasMatch(time);
+    if (!timeRegex.hasMatch(time)) return false;
+    
+    // Additional validation to ensure valid time
+    try {
+      final parts = time.split(':');
+      if (parts.length != 2) return false;
+      
+      final hour = int.parse(parts[0]);
+      final minute = int.parse(parts[1]);
+      
+      return hour >= 0 && hour <= 23 && minute >= 0 && minute <= 59;
+    } catch (e) {
+      return false;
+    }
   }
 
  // Check if time1 is after time2

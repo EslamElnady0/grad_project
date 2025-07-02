@@ -661,9 +661,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "timeRemaining": MessageLookupByLibrary.simpleMessage("الوقت المتبقي"),
     "timeSchedule": MessageLookupByLibrary.simpleMessage("الجدول الزمني"),
-    "time_format_hint": MessageLookupByLibrary.simpleMessage(
-      "يرجى إدخال الوقت بصيغة صحيحة (ساعة:دقيقة)",
-    ),
+    "time_format_hint": MessageLookupByLibrary.simpleMessage("ساعة:دقيقة"),
     "time_schedule_welcome_message": MessageLookupByLibrary.simpleMessage(
       "مرحباً بك!هنا يمكنك الاطلاع على مواعيد الكويزات القادمة وتسليم التكاليف لكل مادة.⏰",
     ),
