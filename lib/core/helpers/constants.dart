@@ -23,6 +23,7 @@ import '../../features/chat/data/models/get_messages_response.dart';
 import '../../features/chat/ui/views/chat_outsider_body.dart';
 import '../../features/home/ui/models/bottom_nav_bar_item_model.dart';
 import '../../features/map/presentation/views/internal_map_view.dart';
+import '../../features/smart_assistant/ui/views/smart_assistant_view.dart';
 import '../../features/weekly_schedule/ui/screens/weekly_schedule_view.dart';
 import '../../generated/l10n.dart';
 import '../widgets/decorated_input_border.dart';
@@ -31,6 +32,7 @@ class Constants {
   const Constants._();
   static const String token = "token";
   static const String userId = "userId";
+  static const String userUniCode = "userUniCode";
   static const LinearGradient primaryGrad = LinearGradient(
     colors: [AppColors.primaryColorlight, AppColors.primaryColordark],
     begin: Alignment.topCenter,
@@ -130,6 +132,13 @@ class Constants {
         iconPath: Assets.imagesSvgsGradHat,
         onTap: () {
           GoRouter.of(context).push(FinalResultsView.routeName);
+        },
+      ),
+      DrawerItemModel(
+        title: S.of(context).smart_assistant,
+        iconPath: Assets.imagesSvgsRobotLineIcon,
+        onTap: () {
+          GoRouter.of(context).push(SmartAssistantView.routeName);
         },
       ),
       DrawerItemModel(

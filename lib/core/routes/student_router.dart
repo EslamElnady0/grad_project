@@ -23,6 +23,7 @@ import '../../features/chat/logic/inner_chat_cubit/inner_chat_cubit.dart';
 import '../../features/chat/ui/views/chat_view.dart';
 import '../../features/home/ui/cubit/bottom_nav_bar_cubit.dart';
 import '../../features/home/ui/views/home_view.dart';
+import '../../features/smart_assistant/ui/views/smart_assistant_view.dart';
 import '../../features/subjects/ui/views/materials_view.dart';
 import '../di/dependency_injection.dart';
 
@@ -127,6 +128,9 @@ abstract class StudentRouter {
         GoRoute(
             path: StudentsAnswersReviewView.routeName,
             builder: (context, state) => const StudentsAnswersReviewView()),
+        GoRoute(
+            path: SmartAssistantView.routeName,
+            builder: (context, state) => const SmartAssistantView()),
       ],
     );
   }

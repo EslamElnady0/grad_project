@@ -5,7 +5,8 @@ gradle-wrapper.jar
 /gradlew.bat
 /local.properties
 GeneratedPluginRegistrant.java
-
+grad-proj-doctor-firebase-adminsdk-fbsvc-d59d52f0b7.json
+grad-proj-student-key.json
 # Remember to never publicly share your keystore.
 # See https://flutter.dev/to/reference-keystore
 key.properties

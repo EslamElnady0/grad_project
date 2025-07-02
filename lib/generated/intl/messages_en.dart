@@ -582,6 +582,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "show_image": MessageLookupByLibrary.simpleMessage("Show Image"),
     "single_grade": MessageLookupByLibrary.simpleMessage("Grade"),
+    "smart_assistant": MessageLookupByLibrary.simpleMessage("Smart Assistant"),
     "start": MessageLookupByLibrary.simpleMessage("Start"),
     "startNow": MessageLookupByLibrary.simpleMessage("Start Now!"),
     "startWriting": MessageLookupByLibrary.simpleMessage("Start writing now.."),

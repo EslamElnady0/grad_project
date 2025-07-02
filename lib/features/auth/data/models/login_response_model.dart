@@ -48,7 +48,8 @@ class User {
 
   String? type;
   String? avatar;
-
+  @JsonKey(name: 'uni_code')
+  String? uniCode;
   User({
     this.id,
     this.name,
@@ -57,10 +58,10 @@ class User {
     this.updatedAt,
     this.type,
     this.avatar,
+    this.uniCode,
   });
 
-  factory User.fromJson(Map<String, dynamic> json) =>
-      _$UserFromJson(json);
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
   Map<String, dynamic> toJson() => _$UserToJson(this);
 }

@@ -3039,6 +3039,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Smart Assistant`
+  String get smart_assistant {
+    return Intl.message(
+      'Smart Assistant',
+      name: 'smart_assistant',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

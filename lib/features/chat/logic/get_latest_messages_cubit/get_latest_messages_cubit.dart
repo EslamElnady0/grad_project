@@ -37,10 +37,7 @@ class GetLatestMessagesCubit extends Cubit<GetLatestMessagesState> {
   /// execute open chat to mark all messages as seen and get latest messages
   Future<void> getLatestMessages() async {
     emit(const GetLatestMessagesState.getLatestMessagesLoading());
-    _repo.openChat(
-      onSuccess: (data) {},
-      onFailure: (error) => emit(GetLatestMessagesFailure(error)),
-    );
+    _repo.openChat();
     final result = await _repo.getLatestMessages();
     result.when(
       success: (data) {

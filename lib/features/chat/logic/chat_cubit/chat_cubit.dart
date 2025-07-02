@@ -34,13 +34,7 @@ class ChatGroupsCubit extends Cubit<ChatState> {
   }
 
   void unSeenMessages() {
-    _socketRepo.unSeenMessages(
-      onSuccess: (data) {
-        int count = data["count"];
-        eventBus.fire(UnSeenMessagesEvent(count: count));
-      },
-      onFailure: (error) {},
-    );
+    _socketRepo.unSeenMessages();
   }
 
   @override

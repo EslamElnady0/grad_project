@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/core/theme/app_colors.dart';
 import '../../../../../core/helpers/spacing.dart';
 import '../../models/drawer_item_model.dart';
 import 'drawer_item.dart';
@@ -16,7 +17,7 @@ class DrawerItemsListView extends StatelessWidget {
         iconPath: drawerItems[index].iconPath,
         title: drawerItems[index].title,
         onTap: drawerItems[index].onTap,
-        index: index,
+        color: drawerItems.length - 1 == index ? AppColors.darkblue : null,
       ),
       itemCount: drawerItems.length,
       separatorBuilder: (context, index) => vGap(12),

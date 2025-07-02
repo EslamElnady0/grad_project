@@ -1,5 +1,7 @@
 import 'dart:developer';
 
+import '../../../features/chat/data/models/get_messages_response.dart';
+import '../../events/message events/messages_events.dart';
 import '../../services/socket_service.dart';
 
 class SocketRepo {
@@ -45,67 +47,63 @@ class SocketRepo {
     required Function onSuccess,
     required Function(String error) onFailure,
   }) {
+    _removeListener(SocketEvents.userRegisterSuccess);
+    _removeListener(SocketEvents.userRegisterError);
+    _removeListener(SocketEvents.messageDeliveredToError);
+    _removeListener(SocketEvents.messageDeliveredToSuccess);
+    _removeListener(SocketEvents.unSeenSuccess);
+    _removeListener(SocketEvents.unSeenError);
+
     log("registering user .....");
     _socketService.emit(SocketEvents.userRegister, userData);
 
-    _socketService.on(SocketEvents.userRegisterSuccess, (_) {
+    _addListenerOnce(SocketEvents.userRegisterSuccess, (_) {
       log("user registered successfully");
+      // unseen listeners success and failure
+      _addListenerOnce(SocketEvents.unSeenSuccess, (data) {
+        int count = data["count"];
+        eventBus.fire(UnSeenMessagesEvent(count: count));
+      });
+      _addListenerOnce(SocketEvents.unSeenError, (error) {
+        log("through log : unseen error: $error");
+      });
+      // message delivered listeners success and failure
+      _addListenerOnce(SocketEvents.messageDeliveredToSuccess, (data) {
+        Map<String, dynamic> rawMessage = data["data"];
+        Message mgs = Message.fromJson(rawMessage);
+        eventBus.fire(MessageUpdatedEvent(mgs));
+      });
+      _addListenerOnce(SocketEvents.messageDeliveredToError, (data) {
+        log("message delivered error: $data");
+      });
+      recieveMessage();
       onSuccess();
     });
 
-    _socketService.on(SocketEvents.userRegisterError, (error) {
+    _addListenerOnce(SocketEvents.userRegisterError, (error) {
       log("user registration failed");
       onFailure(error.toString());
     });
   }
 
-  void messageDeliveredToUser(
-    Map<String, dynamic> userData, {
-    required Function onSuccess,
-    required Function(String error) onFailure,
-  }) {
+  void messageDeliveredToUser(Map<String, dynamic> userData) {
     _socketService.emit(SocketEvents.messageDelivered, userData);
+  }
 
-    _socketService.on(SocketEvents.messageDeliveredToSuccess, (data) {
-      onSuccess(data);
-    });
-
-    _socketService.on(SocketEvents.messageDeliveredToError, (error) {
-      onFailure(error.toString());
+  void recieveMessage() {
+    _removeListener(SocketEvents.recieveMessage);
+    _addListenerOnce(SocketEvents.recieveMessage, (data) {
+      final newMessage = Message.fromJson(data["data"]);
+      messageDeliveredToUser({"messageId": newMessage.id});
+      eventBus.fire(NewMessageEvent(newMessage));
     });
   }
 
-  void recieveMessage({required Function onSuccess}) {
-    _socketService.on(SocketEvents.recieveMessage, (data) {
-      onSuccess(data);
-      log(data.toString());
-    });
-  }
-
-  void unSeenMessages({
-    required Function onSuccess,
-    required Function(String error) onFailure,
-  }) {
-    _removeListener(SocketEvents.unSeenSuccess);
-    _removeListener(SocketEvents.unSeenError);
-
+  void unSeenMessages() {
     socketService.emit(SocketEvents.unSeen, {});
-    _addListenerOnce(SocketEvents.unSeenSuccess, (data) {
-      onSuccess(data);
-    });
-    _addListenerOnce(SocketEvents.unSeenError, (error) {
-      log("unseen messages error: $error");
-      onFailure(error.toString());
-    });
   }
 
   void disposeSocket() {
-    // _socketService.off(SocketEvents.recieveMessage);
-    _socketService.off(SocketEvents.sendMessageError);
-    // _socketService.off(SocketEvents.messageDeliveredToSuccess);
-    _socketService.off(SocketEvents.sendMessage);
-    _socketService.off(SocketEvents.userRegisterSuccess);
-    _socketService.off(SocketEvents.userRegisterError);
     _removeAllListeners();
     _socketService.dispose();
   }

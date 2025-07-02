@@ -553,6 +553,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "show_image": MessageLookupByLibrary.simpleMessage("عرض الصوره"),
     "single_grade": MessageLookupByLibrary.simpleMessage("درجة"),
+    "smart_assistant": MessageLookupByLibrary.simpleMessage("المساعد الذكي"),
     "start": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "startNow": MessageLookupByLibrary.simpleMessage("ابدأ الآن!"),
     "startWriting": MessageLookupByLibrary.simpleMessage(
