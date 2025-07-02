@@ -8,6 +8,7 @@ import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_text_button.dart';
 import 'package:grad_project/features/weekly_schedule/data/models/get_table_response_model.dart';
 import 'package:grad_project/features/weekly_schedule/data/models/update_session_request_model.dart';
+import 'package:grad_project/features/weekly_schedule/logic/get_tabel_cubit/get_tabel_cubit.dart';
 import 'package:grad_project/features/weekly_schedule/logic/update_session_cubit.dart';
 import 'package:grad_project/features/weekly_schedule/logic/update_session_state.dart';
 import 'package:grad_project/generated/l10n.dart';
@@ -26,24 +27,23 @@ class EditSessionForm extends StatefulWidget {
 
 class _EditSessionFormState extends State<EditSessionForm> {
   final _formKey = GlobalKey<FormState>();
-  
+
   late TextEditingController _dateController;
   late TextEditingController _fromController;
   late TextEditingController _toController;
-  
-  
+
   String _selectedDay = '';
   String _selectedAttendance = '';
-  
+
   final List<String> _days = [
     'saturday',
-    'sunday', 
+    'sunday',
     'monday',
     'tuesday',
     'wednesday',
     'thursday'
   ];
-  
+
   final List<String> _attendanceTypes = ['online', 'offline'];
 
   @override
@@ -54,15 +54,16 @@ class _EditSessionFormState extends State<EditSessionForm> {
 
   void _initializeControllers() {
     // Initialize with current data if postponed exists, otherwise with default values
-    Map<String, dynamic> data = widget.lecture.postponed ?? {
-      'date': '2025-05-24',
-      'day': 'sunday',
-      'from': '8:30',
-      'to': '10:30',
-      'hall_id': 1,
-      'attendance': 'offline'
-    };
-    
+    Map<String, dynamic> data = widget.lecture.postponed ??
+        {
+          'date': '2025-05-24',
+          'day': 'sunday',
+          'from': '8:30',
+          'to': '10:30',
+          'hall_id': 1,
+          'attendance': 'offline'
+        };
+
     _dateController = TextEditingController(text: data['date'] ?? '2025-05-24');
     _fromController = TextEditingController(text: data['from'] ?? '8:30');
     _toController = TextEditingController(text: data['to'] ?? '10:30');
@@ -98,7 +99,7 @@ class _EditSessionFormState extends State<EditSessionForm> {
               padding: EdgeInsets.fromLTRB(20.w, 20.w, 20.w, 0),
               child: _buildHeader(),
             ),
-            
+      
             // Scrollable content
             Flexible(
               child: SingleChildScrollView(
@@ -116,7 +117,6 @@ class _EditSessionFormState extends State<EditSessionForm> {
                       _buildTimeFields(),
                       vGap(12),
                       _buildAttendanceSelector(),
-                    
                       vGap(20),
                       _buildSubmitButton(),
                       vGap(16),
@@ -320,7 +320,8 @@ class _EditSessionFormState extends State<EditSessionForm> {
                     return S.of(context).time_format_hint;
                   }
                   // Validate that end time is after start time
-                  if (_fromController.text.isNotEmpty && _isValidTimeFormat(_fromController.text)) {
+                  if (_fromController.text.isNotEmpty &&
+                      _isValidTimeFormat(_fromController.text)) {
                     if (!_isTimeAfter(value, _fromController.text)) {
                       return S.of(context).invalid_time_range;
                     }
@@ -358,7 +359,9 @@ class _EditSessionFormState extends State<EditSessionForm> {
                 return DropdownMenuItem<String>(
                   value: attendance,
                   child: Text(
-                    attendance == 'online' ? S.of(context).online : S.of(context).offline,
+                    attendance == 'online'
+                        ? S.of(context).online
+                        : S.of(context).offline,
                     style: AppTextStyles.font14BlackMedium,
                   ),
                 );
@@ -375,13 +378,12 @@ class _EditSessionFormState extends State<EditSessionForm> {
     );
   }
 
-
-
   Widget _buildSubmitButton() {
     return BlocConsumer<UpdateSessionCubit, UpdateSessionState>(
       listener: (context, state) {
         if (state is UpdateSessionSuccess) {
           Navigator.of(context).pop();
+          context.read<GetTabelCubit>().getTable();
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text(S.of(context).session_updated_successfully),
@@ -413,7 +415,7 @@ class _EditSessionFormState extends State<EditSessionForm> {
             ),
           );
         }
-        
+
         return CustomTextButton(
           fontSize: 14,
           text: S.of(context).change,
@@ -432,21 +434,18 @@ class _EditSessionFormState extends State<EditSessionForm> {
         from: _fromController.text,
         to: _toController.text,
         attendance: _selectedAttendance,
-   
       );
-
-    
-     
 
       context.read<UpdateSessionCubit>().updateSession(
-        widget.lecture.id,
-        requestModel,
-      );
+            widget.lecture.id,
+            requestModel,
+          );
     }
   }
 
   // Time picker helper method
-  Future<void> _selectTime(BuildContext context, TextEditingController controller) async {
+  Future<void> _selectTime(
+      BuildContext context, TextEditingController controller) async {
     // Parse current time or default to 8:00
     TimeOfDay initialTime = TimeOfDay(hour: 8, minute: 0);
     if (controller.text.isNotEmpty && _isValidTimeFormat(controller.text)) {
@@ -470,7 +469,8 @@ class _EditSessionFormState extends State<EditSessionForm> {
 
     if (selectedTime != null) {
       // Format to H:i format (24-hour format without leading zeros for hours)
-      final formattedTime = '${selectedTime.hour}:${selectedTime.minute.toString().padLeft(2, '0')}';
+      final formattedTime =
+          '${selectedTime.hour}:${selectedTime.minute.toString().padLeft(2, '0')}';
       controller.text = formattedTime;
     }
   }
@@ -479,7 +479,8 @@ class _EditSessionFormState extends State<EditSessionForm> {
   Future<void> _selectDate(BuildContext context) async {
     // Parse current date or default to today
     DateTime initialDate = DateTime.now();
-    if (_dateController.text.isNotEmpty && _isValidDateFormat(_dateController.text)) {
+    if (_dateController.text.isNotEmpty &&
+        _isValidDateFormat(_dateController.text)) {
       try {
         initialDate = DateTime.parse(_dateController.text);
       } catch (e) {
@@ -496,7 +497,8 @@ class _EditSessionFormState extends State<EditSessionForm> {
 
     if (selectedDate != null) {
       // Format to YYYY-MM-DD format
-      final formattedDate = '${selectedDate.year}-${selectedDate.month.toString().padLeft(2, '0')}-${selectedDate.day.toString().padLeft(2, '0')}';
+      final formattedDate =
+          '${selectedDate.year}-${selectedDate.month.toString().padLeft(2, '0')}-${selectedDate.day.toString().padLeft(2, '0')}';
       _dateController.text = formattedDate;
     }
   }
@@ -505,7 +507,7 @@ class _EditSessionFormState extends State<EditSessionForm> {
   bool _isValidDateFormat(String date) {
     final dateRegex = RegExp(r'^\d{4}-\d{2}-\d{2}$');
     if (!dateRegex.hasMatch(date)) return false;
-    
+
     try {
       DateTime.parse(date);
       return true;
@@ -525,13 +527,13 @@ class _EditSessionFormState extends State<EditSessionForm> {
     if (!_isValidTimeFormat(time1) || !_isValidTimeFormat(time2)) {
       return false;
     }
-    
+
     final parts1 = time1.split(':');
     final parts2 = time2.split(':');
-    
+
     final minutes1 = int.parse(parts1[0]) * 60 + int.parse(parts1[1]);
     final minutes2 = int.parse(parts2[0]) * 60 + int.parse(parts2[1]);
-    
+
     return minutes1 > minutes2;
   }
 
