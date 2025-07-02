@@ -1520,10 +1520,10 @@ class S {
     );
   }
 
-  /// `Search by activity type or name`
+  /// `Search for a quiz or assignment`
   String get search_for_task {
     return Intl.message(
-      'Search by activity type or name',
+      'Search for a quiz or assignment',
       name: 'search_for_task',
       desc: '',
       args: [],

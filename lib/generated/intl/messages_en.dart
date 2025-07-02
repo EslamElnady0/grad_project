@@ -542,7 +542,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Search for a building, lecture hall, room, etc..!",
     ),
     "search_for_task": MessageLookupByLibrary.simpleMessage(
-      "Search by activity type or name",
+      "Search for a quiz or assignment",
     ),
     "search_placeholder": MessageLookupByLibrary.simpleMessage(
       "Enter the student’s name",

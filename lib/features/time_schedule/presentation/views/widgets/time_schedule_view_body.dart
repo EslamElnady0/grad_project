@@ -5,6 +5,7 @@ import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/widgets/custom_drop_down_button.dart';
 import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
+import 'package:grad_project/core/widgets/custom_search_text_field.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
 import 'package:grad_project/features/time_schedule/data/models/activity_response_model.dart';
 import 'package:grad_project/features/time_schedule/logic/activity_filter_cubit/activity_filter_cubit.dart';
@@ -32,6 +33,7 @@ class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
   String selectedStatus = '';
 
   bool _isFirstLoad = true;
+  final TextEditingController searchController = TextEditingController();
 
   List<ActivityModel> _mergeAndSortActivities(GetStudentsQuizzesState quizState,
       GetStudentsAssignmentsState assignmentState) {
@@ -74,6 +76,8 @@ class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
 
     filterCubit.filterActivities(
         refreshedActivities, selectedType, selectedStatus);
+
+    searchController.clear();
   }
 
   @override
@@ -95,9 +99,9 @@ class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
         quizState is GetStudentsQuizzesSuccess &&
         assignmentState is GetStudentsAssignmentsSuccess) {
       _isFirstLoad = false;
-      context
-          .read<ActivityFilterCubit>()
-          .filterActivities(activities, selectedType, selectedStatus);
+      final filterCubit = context.read<ActivityFilterCubit>();
+      filterCubit.setFullActivityList(activities); // 💡 Important
+      filterCubit.filterActivities(activities, selectedType, selectedStatus);
     }
 
     return Padding(
@@ -111,11 +115,16 @@ class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
           TitleTextWidget(
             text: S.of(context).time_schedule_welcome_message,
           ),
-          // vGap(15),
-          // CustomSearchTextField(
-          //   hintText: S.of(context).search_for_task,
-          //   controller: TextEditingController(),
-          // ),
+          vGap(15),
+          CustomSearchTextField(
+            hintText: S.of(context).search_for_task,
+            controller: searchController,
+            onChanged: (value) {
+              context
+                  .read<ActivityFilterCubit>()
+                  .searchActivitiesByTitle(value);
+            },
+          ),
           vGap(15),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -131,6 +140,7 @@ class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
                     context.read<ActivityFilterCubit>().filterActivities(
                         activities, selectedType, selectedStatus);
                   });
+                  searchController.clear();
                 },
               ),
               CustomDropDownButton(
@@ -148,6 +158,7 @@ class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
                       context.read<ActivityFilterCubit>().filterActivities(
                           activities, selectedType, selectedStatus);
                     });
+                    searchController.clear();
                   }),
             ],
           ),

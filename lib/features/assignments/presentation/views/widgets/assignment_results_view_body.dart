@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
+import 'package:grad_project/core/widgets/custom_search_text_field.dart';
 import 'package:grad_project/features/assignments/data/models/assignment_answers_model.dart';
 import 'package:grad_project/features/assignments/presentation/views/pdf_web_view.dart';
 import 'package:grad_project/features/assignments/presentation/views/widgets/assignment_analysis_widget.dart';
@@ -14,15 +15,41 @@ import 'package:grad_project/features/assignments/presentation/views/widgets/hea
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
 import 'package:grad_project/generated/l10n.dart';
 
-class AssignmentResultsViewBody extends StatelessWidget {
+class AssignmentResultsViewBody extends StatefulWidget {
   const AssignmentResultsViewBody(
       {super.key, required this.assignmentAnswersModel});
 
   final AssignmentAnswersModel assignmentAnswersModel;
 
   @override
+  State<AssignmentResultsViewBody> createState() => _AssignmentResultsViewBodyState();
+}
+
+class _AssignmentResultsViewBodyState extends State<AssignmentResultsViewBody> {
+  late List<Answer> allAnswers;
+  late List<Answer> filteredAnswers;
+  late TextEditingController _searchController;
+
+  @override
+  void initState() {
+    super.initState();
+    allAnswers = widget.assignmentAnswersModel.data.answers;
+    filteredAnswers = List.from(allAnswers);
+    _searchController = TextEditingController();
+  }
+
+  void _onSearchChanged(String query) {
+    final lowerQuery = query.toLowerCase();
+    setState(() {
+      filteredAnswers = allAnswers.where((answer) {
+        return answer.student.toLowerCase().contains(lowerQuery) ||
+            answer.code.toLowerCase().contains(lowerQuery);
+      }).toList();
+    });
+  }
+  @override
   Widget build(BuildContext context) {
-    AssignmentDetails assignmentDetails = assignmentAnswersModel.data;
+    AssignmentDetails assignmentDetails = widget.assignmentAnswersModel.data;
     double averageScore = assignmentDetails.answers.isNotEmpty
         ? assignmentDetails.answers
                 .map((e) => e.degree)
@@ -64,19 +91,23 @@ class AssignmentResultsViewBody extends StatelessWidget {
               averageScore: averageScore,
             ),
             vGap(10),
-            // const CustomSearchBar(),
+            CustomSearchTextField(
+              controller: _searchController,
+              hintText: S.of(context).enter_student_name_or_code,
+              onChanged: _onSearchChanged,
+            ),
             vGap(10),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: SizedBox(
-                width: 550.w,
+                width: 650.w,
                 child: ListView.separated(
                     itemBuilder: (context, index) {
                       if (index == 0) {
                         return const HeaderRow();
                       } else {
                         return AssignmentRow(
-                          answer: assignmentDetails.answers[index - 1],
+                          answer: filteredAnswers[index - 1],
                           totalDegree: assignmentDetails.totalDegree,
                         );
                       }
@@ -86,7 +117,7 @@ class AssignmentResultsViewBody extends StatelessWidget {
                     },
                     physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
-                    itemCount: assignmentDetails.answers.length + 1),
+                    itemCount: filteredAnswers.length + 1),
               ),
             )
           ],
