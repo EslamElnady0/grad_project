@@ -3274,6 +3274,11 @@ class S {
   String get hall_id_hint {
     return Intl.message('Hall ID', name: 'hall_id_hint', desc: '', args: []);
   }
+
+  /// `Doctor`
+  String get doctor {
+    return Intl.message('Doctor', name: 'doctor', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

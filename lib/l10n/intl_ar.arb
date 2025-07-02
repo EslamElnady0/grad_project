@@ -410,6 +410,8 @@
   "invalid_time_range": "يجب أن يكون وقت النهاية بعد وقت البداية",
   "date_format_hint": "سنة-شهر-يوم",
   "time_format_hint": "ساعة:دقيقة",
-  "hall_id_hint": "رقم القاعة"
+  "hall_id_hint": "رقم القاعة",
+  "doctor" : "دكتور"
+   
 
 }

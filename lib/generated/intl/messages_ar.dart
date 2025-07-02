@@ -196,6 +196,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "🔍 اكتشف طريقك بسهولة داخل الجامعة.",
     ),
     "distance": MessageLookupByLibrary.simpleMessage("المسافة"),
+    "doctor": MessageLookupByLibrary.simpleMessage("دكتور"),
     "done": MessageLookupByLibrary.simpleMessage("تم"),
     "download": MessageLookupByLibrary.simpleMessage("تحميل"),
     "download_failed": MessageLookupByLibrary.simpleMessage("فشل التحميل"),
