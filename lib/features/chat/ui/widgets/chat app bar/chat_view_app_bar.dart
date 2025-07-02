@@ -29,8 +29,12 @@ class ChatViewAppBar extends StatelessWidget {
               onPressed: () => GoRouter.of(context).pop()),
           hGap(10),
           CircleAvatar(
-            backgroundImage: NetworkImage(
-              chatGroupData.imageurl ?? "",
+            backgroundImage: chatGroupData.imageurl != null
+                ? NetworkImage(chatGroupData.imageurl!)
+                : const AssetImage(Assets.imagesAvatarDoc),
+            onBackgroundImageError: (exception, stackTrace) => Image.asset(
+              Assets.imagesAvatarDoc,
+              fit: BoxFit.cover,
             ),
             radius: 20.r,
           ),
