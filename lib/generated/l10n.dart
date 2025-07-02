@@ -3044,6 +3044,26 @@ class S {
   String get forum {
     return Intl.message('Forum', name: 'forum', desc: '', args: []);
   }
+
+  /// `Change the status of the lecture`
+  String get Changethestatusofthelecture {
+    return Intl.message(
+      'Change the status of the lecture',
+      name: 'Changethestatusofthelecture',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Course`
+  String get course {
+    return Intl.message('Course', name: 'course', desc: '', args: []);
+  }
+
+  /// `Hall`
+  String get hall {
+    return Intl.message('Hall', name: 'hall', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

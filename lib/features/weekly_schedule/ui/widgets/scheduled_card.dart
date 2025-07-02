@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/core/flavors/flavors_functions.dart';
+import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/features/weekly_schedule/data/models/get_table_response_model.dart';
+import 'package:grad_project/features/weekly_schedule/ui/widgets/show_status_bottom_sheet.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/helpers/localizationa.dart';
 import '../../../../core/theme/app_colors.dart';
@@ -102,13 +105,13 @@ class ScheduleCard extends StatelessWidget {
                       _buildTableCell(lecture.from, rowHeight),
                       _buildTableCell(lecture.to, rowHeight),
                       _buildTableCell(
-                          "${lecture.hall.building} (${lecture.hall.hallName})",
+                          "${lecture.hall.building} (${lecture.hall.hallName})(${lecture.hall.hallCode})",
                           rowHeight),
                       _buildTableCell(S.of(context).showDirections, rowHeight,
                           isButton: true, hallResponse: lecture.hall),
                       _buildTableCell(lecture.type, rowHeight),
                       _buildTableCell(lecture.attendance, rowHeight),
-                      _buildTableCell(lecture.status, rowHeight),
+                      _buildStatusTableCell(lecture.status, rowHeight, lecture, context),
                     ],
                   );
                 })
@@ -153,4 +156,41 @@ class ScheduleCard extends StatelessWidget {
       ),
     );
   }
+
+  Widget _buildStatusTableCell(String status, double height, SessionResponse lecture, BuildContext context) {
+    return SizedBox(
+      height: height,
+      child: 
+    
+             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+               children: [
+             
+                Container(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                child: Text(
+                  status,
+                  style: AppTextStyles.font11BlackSemiBold.copyWith(
+                    color: AppColors.darkblue,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+  if(FlavorsFunctions.isAdmin()) const Spacer(),
+               if(FlavorsFunctions.isAdmin()) GestureDetector(
+                    onTap: () => showStatusBottomSheet(lecture, context),
+                    child: Icon(
+                      Icons.more_vert,
+                      color: AppColors.primaryColordark,
+                      size: 20.sp,
+                    ),
+                  ),
+         if(FlavorsFunctions.isAdmin())         hGap(5)
+               ],
+             )
+            
+      
+    );
+  }
+
 }

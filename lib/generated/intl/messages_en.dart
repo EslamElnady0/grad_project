@@ -32,6 +32,9 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "Average student scores in this assignment",
         ),
+    "Changethestatusofthelecture": MessageLookupByLibrary.simpleMessage(
+      "Change the status of the lecture",
+    ),
     "Group": MessageLookupByLibrary.simpleMessage("Group"),
     "Overall_Grade": MessageLookupByLibrary.simpleMessage("Overall Grade"),
     "Section": MessageLookupByLibrary.simpleMessage("Section"),
@@ -162,6 +165,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Collaborate, share your ideas, and learn from your peers easily 📚",
     ),
     "corrected": MessageLookupByLibrary.simpleMessage("Corrected"),
+    "course": MessageLookupByLibrary.simpleMessage("Course"),
     "course_code": MessageLookupByLibrary.simpleMessage("Course Code"),
     "course_management_center": MessageLookupByLibrary.simpleMessage(
       "👨‍🏫 Easily manage your courses, from students to lectures and quizzes!",
@@ -291,6 +295,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "goodLuck": MessageLookupByLibrary.simpleMessage("Good Luck! 🍀"),
     "grade": MessageLookupByLibrary.simpleMessage("Grade"),
     "group": MessageLookupByLibrary.simpleMessage("Group"),
+    "hall": MessageLookupByLibrary.simpleMessage("Hall"),
     "halls": MessageLookupByLibrary.simpleMessage("Halls"),
     "hour": MessageLookupByLibrary.simpleMessage("h"),
     "images": MessageLookupByLibrary.simpleMessage("Images"),

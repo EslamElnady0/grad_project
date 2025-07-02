@@ -32,6 +32,9 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "متوسط درجات الطلاب في هذا الأسايمنت",
         ),
+    "Changethestatusofthelecture": MessageLookupByLibrary.simpleMessage(
+      "تغيير حالة المحاضرة",
+    ),
     "Group": MessageLookupByLibrary.simpleMessage("مجموعة"),
     "Overall_Grade": MessageLookupByLibrary.simpleMessage("تقدير تراكمي"),
     "Section": MessageLookupByLibrary.simpleMessage("سكشن"),
@@ -150,6 +153,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تعاون، شارك أفكارك، وتعلّم من زملائك بسهولة 📚",
     ),
     "corrected": MessageLookupByLibrary.simpleMessage("تم التصحيح"),
+    "course": MessageLookupByLibrary.simpleMessage("المادة"),
     "course_code": MessageLookupByLibrary.simpleMessage("كود المقرر"),
     "course_management_center": MessageLookupByLibrary.simpleMessage(
       "👨‍🏫 مركز إدارة المواد الدراسية الخاصة بك بكل سهولة، من الطلاب إلى المحاضرات والكويزات!",
@@ -271,6 +275,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "goodLuck": MessageLookupByLibrary.simpleMessage("بالتوفيق! 🍀"),
     "grade": MessageLookupByLibrary.simpleMessage("التقدير"),
     "group": MessageLookupByLibrary.simpleMessage("مجموعة"),
+    "hall": MessageLookupByLibrary.simpleMessage("القاعة"),
     "halls": MessageLookupByLibrary.simpleMessage("القاعات"),
     "hour": MessageLookupByLibrary.simpleMessage("ساعة"),
     "images": MessageLookupByLibrary.simpleMessage("صور"),
