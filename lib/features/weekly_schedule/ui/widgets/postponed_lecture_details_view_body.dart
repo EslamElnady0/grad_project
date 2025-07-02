@@ -77,25 +77,7 @@ class PostponedLectureDetailsViewBody extends StatelessWidget {
               PostponedDetailRow(context: context, label: S.of(context).code, value: lecture.hall.hallCode),
             ]),
           
-          vGap(16),
-          
-          // Postponed Reason Card
-          PostponedDetailCard(context: context, title: S.of(context).postponed_reason, children: [
-              Container(
-                width: double.infinity,
-                padding: EdgeInsets.all(12.w),
-                decoration: BoxDecoration(
-                  color: AppColors.veryLightGray,
-                  borderRadius: BorderRadius.circular(8.r),
-                  border: Border.all(color: AppColors.gray.withOpacity(0.3)),
-                ),
-                child: Text(
-                  postponedData['reason'] ?? S.of(context).no_reason_provided,
-                  style: AppTextStyles.font12GrayMedium,
-                ),
-              ),
-            ]),
-          
+         
           vGap(30),
         ],
       ),

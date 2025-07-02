@@ -434,6 +434,14 @@ class _EditSessionFormState extends State<EditSessionForm> {
         attendance: _selectedAttendance,
       );
 
+      // Debug print to check the exact format being sent
+      print('Sending request with:');
+      print('Day: ${requestModel.day}');
+      print('Date: ${requestModel.date}');
+      print('From: ${requestModel.from}');
+      print('To: ${requestModel.to}');
+      print('Attendance: ${requestModel.attendance}');
+
       context.read<UpdateSessionCubit>().updateSession(
             widget.lecture.id,
             requestModel,
@@ -466,10 +474,16 @@ class _EditSessionFormState extends State<EditSessionForm> {
     );
 
     if (selectedTime != null) {
-      // Format to H:i format (24-hour format without leading zeros for hours)
-      final formattedTime =
-          '${selectedTime.hour}:${selectedTime.minute.toString().padLeft(2, '0')}';
+      // Always use 24-hour format with leading zeros for consistency
+      // This should match server expectations for H:i format
+      final hour = selectedTime.hour.toString().padLeft(2, '0');
+      final minute = selectedTime.minute.toString().padLeft(2, '0');
+      final formattedTime = '$hour:$minute';
       controller.text = formattedTime;
+      
+      // Debug print to verify format
+      print('Time picker selected: ${selectedTime.hour}:${selectedTime.minute}');
+      print('Formatted time: $formattedTime');
     }
   }
 
@@ -514,9 +528,10 @@ class _EditSessionFormState extends State<EditSessionForm> {
     }
   }
 
-  // Time format validation (H:i format - accepts both 8:30 and 08:30)
+  // Time format validation (accepts both HH:MM and H:MM formats)
   bool _isValidTimeFormat(String time) {
-    final timeRegex = RegExp(r'^([0-9]|[01][0-9]|2[0-3]):[0-5][0-9]$');
+    // Accept formats like: 02:00, 14:30, 2:00, 23:59
+    final timeRegex = RegExp(r'^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$');
     return timeRegex.hasMatch(time);
   }
 
