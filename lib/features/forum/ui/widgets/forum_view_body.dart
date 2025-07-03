@@ -20,9 +20,15 @@ import '../../../home/ui/widgets/home_screens_header_row.dart';
 import '../../../home/ui/widgets/title_text_widget.dart';
 
 class ForumViewsBody extends StatelessWidget {
-  const ForumViewsBody({super.key, this.questions, this.totalQuestions});
+  const ForumViewsBody({
+    super.key, 
+    this.questions, 
+    this.totalQuestions,
+    this.isLoadingMore = false,
+  });
   final List<QuestionModel>? questions;
   final int? totalQuestions;
+  final bool isLoadingMore;
 
   void _showAddQuestionBottomSheet(BuildContext context) {
     showModalBottomSheet<bool>(
@@ -34,8 +40,8 @@ class ForumViewsBody extends StatelessWidget {
           create: (context) => getIt<AddQuestionCubit>(),
           child: AddQuestionBottomSheet(
             onQuestionAdded: () {
-              // Refresh the questions list
-              context.read<GetAllQuestionsCubit>().getAllQuestions();
+              // Refresh the questions list from the beginning
+              context.read<GetAllQuestionsCubit>().getAllQuestions(isRefresh: true);
             },
           ),
         );
@@ -76,7 +82,25 @@ class ForumViewsBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
-    return CustomScrollView(slivers: [
+    return RefreshIndicator(
+      color: AppColors.darkblue,
+      onRefresh: () async {
+        await context.read<GetAllQuestionsCubit>().getAllQuestions(isRefresh: true);
+      },
+      child: NotificationListener<ScrollNotification>(
+        onNotification: (scrollInfo) {
+          // تحقق من الوصول إلى 70% من المحتوى
+          if (scrollInfo is ScrollUpdateNotification && 
+              scrollInfo.metrics.pixels >= scrollInfo.metrics.maxScrollExtent * 0.7) {
+            // تحميل المزيد من الأسئلة إذا لم يكن هناك تحميل جاري
+            final cubit = context.read<GetAllQuestionsCubit>();
+            if (cubit.hasMoreData && !cubit.isLoadingMore) {
+              cubit.loadMoreQuestions();
+            }
+          }
+          return false;
+        },
+        child: CustomScrollView(slivers: [
       SliverToBoxAdapter(
         child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0.w),
@@ -128,15 +152,36 @@ class ForumViewsBody extends StatelessWidget {
       ),
       SliverList(
         delegate: SliverChildBuilderDelegate(
-          (context, index) =>  CustomForumItem(
-          questionModel: questions?[index],
-          ),
-          childCount: questions?.length ?? 0,
+          (context, index) {
+            // إذا كان هذا آخر عنصر وهناك تحميل للمزيد، أظهر loading indicator
+            if (index == (questions?.length ?? 0) && isLoadingMore) {
+              return Padding(
+                padding: EdgeInsets.all(16.0.w),
+                child: const Center(
+                  child: CircularProgressIndicator(
+                    color: AppColors.darkblue,
+                  ),
+                ),
+              );
+            }
+            
+            // إذا كان هذا العنصر خارج نطاق الأسئلة، لا تعرض شيئاً
+            if (index >= (questions?.length ?? 0)) {
+              return const SizedBox.shrink();
+            }
+            
+            return CustomForumItem(
+              questionModel: questions?[index],
+            );
+          },
+          childCount: (questions?.length ?? 0) + (isLoadingMore ? 1 : 0),
         ),
       ),
       SliverToBoxAdapter(
         child: vGap(150),
       ),
-    ]); 
+    ]),
+      ),
+    );
   }
 }

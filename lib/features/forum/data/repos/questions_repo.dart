@@ -20,9 +20,15 @@ class QuestionsRepo {
     required this.remoteDataSource,
     required this.localDataSource,
   });
-  Future<ApiResult<GetAllQuestionsResponseModel>> getAllQuestions() async {
+  Future<ApiResult<GetAllQuestionsResponseModel>> getAllQuestions({int? page}) async {
     try {
-      final response = await remoteDataSource.getAllQuestions();
+      final response = await remoteDataSource.getFilteredQuestions(
+        page,
+        null,
+        null,
+        null,
+        null,
+      );
       return ApiResult.success(response);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));
