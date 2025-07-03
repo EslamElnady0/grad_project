@@ -264,6 +264,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "failedToLoadMessages": MessageLookupByLibrary.simpleMessage(
       "Failed to load messages",
     ),
+    "failedToLoadQuizzes": MessageLookupByLibrary.simpleMessage(
+      "Failed to load quizzes",
+    ),
     "failedToSendMessage": MessageLookupByLibrary.simpleMessage(
       "Failed to send message",
     ),

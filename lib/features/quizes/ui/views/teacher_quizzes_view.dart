@@ -23,7 +23,7 @@ class TeacherQuizzesView extends StatelessWidget {
             create: (context) => getIt<GetQuizzesCubit>()
               ..getQuizzes(
                   courseId: queryParamsModel.courseId,
-                  quizStatus: queryParamsModel.quizStatus,
+                  quizStatus: "",
                   fromDate: queryParamsModel.fromDate),
           ),
           BlocProvider(

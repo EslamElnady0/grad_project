@@ -390,5 +390,6 @@
   "chatConnectionError": "خطأ في اتصال الدردشة",
   "noChatGroupsAvailable": "لا توجد مجموعات دردشة متاحة",
   "noMessagesAvailable": "لا توجد رسائل متاحة",
-  "failedToLoadCourses": "فشل تحميل المواد الدراسية"
+  "failedToLoadCourses": "فشل تحميل المواد الدراسية",
+  "failedToLoadQuizzes": "فشل تحميل الكويزات"
 }
