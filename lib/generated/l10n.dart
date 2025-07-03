@@ -3139,6 +3139,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Failed to load courses`
+  String get failedToLoadCourses {
+    return Intl.message(
+      'Failed to load courses',
+      name: 'failedToLoadCourses',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

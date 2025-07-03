@@ -242,6 +242,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "failedToLoadChats": MessageLookupByLibrary.simpleMessage(
       "فشل تحميل مجموعات الدردشة",
     ),
+    "failedToLoadCourses": MessageLookupByLibrary.simpleMessage(
+      "فشل تحميل المواد الدراسية",
+    ),
     "failedToLoadMessages": MessageLookupByLibrary.simpleMessage(
       "فشل تحميل الرسائل",
     ),

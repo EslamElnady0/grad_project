@@ -389,5 +389,6 @@
   "failedToLeaveChat": "Failed to leave chat group",
   "chatConnectionError": "Chat connection error",
   "noChatGroupsAvailable": "No chat groups available",
-  "noMessagesAvailable": "No messages available"
+  "noMessagesAvailable": "No messages available",
+  "failedToLoadCourses": "Failed to load courses"
 }
