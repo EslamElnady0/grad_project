@@ -137,6 +137,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Cannot open file",
     ),
     "chat": MessageLookupByLibrary.simpleMessage("Chat"),
+    "chatConnectionError": MessageLookupByLibrary.simpleMessage(
+      "Chat connection error",
+    ),
     "choose_assignment_deadline": MessageLookupByLibrary.simpleMessage(
       "⏰ Specify the assignment submission deadline and closing time.",
     ),
@@ -243,6 +246,24 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "evaluation": MessageLookupByLibrary.simpleMessage("Evaluate"),
     "existing_file": MessageLookupByLibrary.simpleMessage("Existing file"),
+    "failedToJoinChat": MessageLookupByLibrary.simpleMessage(
+      "Failed to join chat group",
+    ),
+    "failedToLeaveChat": MessageLookupByLibrary.simpleMessage(
+      "Failed to leave chat group",
+    ),
+    "failedToLoadAnnouncements": MessageLookupByLibrary.simpleMessage(
+      "Failed to load announcements",
+    ),
+    "failedToLoadChats": MessageLookupByLibrary.simpleMessage(
+      "Failed to load chat groups",
+    ),
+    "failedToLoadMessages": MessageLookupByLibrary.simpleMessage(
+      "Failed to load messages",
+    ),
+    "failedToSendMessage": MessageLookupByLibrary.simpleMessage(
+      "Failed to send message",
+    ),
     "field_is_required": MessageLookupByLibrary.simpleMessage(
       "This field is required",
     ),
@@ -370,10 +391,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "noBuildingsFound": MessageLookupByLibrary.simpleMessage(
       "No Buildings Found",
     ),
+    "noChatGroupsAvailable": MessageLookupByLibrary.simpleMessage(
+      "No chat groups available",
+    ),
     "noFilesUploaded": MessageLookupByLibrary.simpleMessage(
       "No files uploaded yet",
     ),
     "noHallsFound": MessageLookupByLibrary.simpleMessage("No Halls Found"),
+    "noMessagesAvailable": MessageLookupByLibrary.simpleMessage(
+      "No messages available",
+    ),
     "noStudentsFound": MessageLookupByLibrary.simpleMessage(
       "No Students Found",
     ),

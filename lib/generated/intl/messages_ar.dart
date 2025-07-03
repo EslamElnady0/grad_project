@@ -125,6 +125,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "لا يمكن فتح الملف",
     ),
     "chat": MessageLookupByLibrary.simpleMessage("الدردشة"),
+    "chatConnectionError": MessageLookupByLibrary.simpleMessage(
+      "خطأ في اتصال الدردشة",
+    ),
     "choose_assignment_deadline": MessageLookupByLibrary.simpleMessage(
       "⏰ حدد الموعد النهائي لتسليم الأسايمنت وتوقيت إغلاقه.",
     ),
@@ -227,6 +230,24 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "evaluation": MessageLookupByLibrary.simpleMessage("تقييم"),
     "existing_file": MessageLookupByLibrary.simpleMessage("ملف موجود"),
+    "failedToJoinChat": MessageLookupByLibrary.simpleMessage(
+      "فشل الانضمام لمجموعة الدردشة",
+    ),
+    "failedToLeaveChat": MessageLookupByLibrary.simpleMessage(
+      "فشل مغادرة مجموعة الدردشة",
+    ),
+    "failedToLoadAnnouncements": MessageLookupByLibrary.simpleMessage(
+      "فشل تحميل الاخبار",
+    ),
+    "failedToLoadChats": MessageLookupByLibrary.simpleMessage(
+      "فشل تحميل مجموعات الدردشة",
+    ),
+    "failedToLoadMessages": MessageLookupByLibrary.simpleMessage(
+      "فشل تحميل الرسائل",
+    ),
+    "failedToSendMessage": MessageLookupByLibrary.simpleMessage(
+      "فشل إرسال الرسالة",
+    ),
     "field_is_required": MessageLookupByLibrary.simpleMessage(
       "هذا الحقل مطلوب",
     ),
@@ -350,11 +371,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "noBuildingsFound": MessageLookupByLibrary.simpleMessage(
       "لم يتم العثور على مباني",
     ),
+    "noChatGroupsAvailable": MessageLookupByLibrary.simpleMessage(
+      "لا توجد مجموعات دردشة متاحة",
+    ),
     "noFilesUploaded": MessageLookupByLibrary.simpleMessage(
       "لم يتم رفع أي ملفات بعد",
     ),
     "noHallsFound": MessageLookupByLibrary.simpleMessage(
       "لم يتم العثور على قاعات",
+    ),
+    "noMessagesAvailable": MessageLookupByLibrary.simpleMessage(
+      "لا توجد رسائل متاحة",
     ),
     "noStudentsFound": MessageLookupByLibrary.simpleMessage(
       "لم يتم العثور على طلاب",

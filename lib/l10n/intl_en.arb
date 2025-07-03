@@ -380,5 +380,14 @@
   "assignment_not_submitted": "Not Submitted",
   "student_assignment_details_welcome_message": "📑 View your assignment details, including status, grade, and comments from the teacher.",
   "teacher_assignment_details_welcome_message": "📑 View your assignment details.",
-  "smart_assistant": "Smart Assistant"
+  "smart_assistant": "Smart Assistant",
+  "failedToLoadAnnouncements": "Failed to load announcements",
+  "failedToLoadChats": "Failed to load chat groups",
+  "failedToLoadMessages": "Failed to load messages",
+  "failedToSendMessage": "Failed to send message",
+  "failedToJoinChat": "Failed to join chat group",
+  "failedToLeaveChat": "Failed to leave chat group",
+  "chatConnectionError": "Chat connection error",
+  "noChatGroupsAvailable": "No chat groups available",
+  "noMessagesAvailable": "No messages available"
 }

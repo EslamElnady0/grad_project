@@ -3049,6 +3049,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Failed to load announcements`
+  String get failedToLoadAnnouncements {
+    return Intl.message(
+      'Failed to load announcements',
+      name: 'failedToLoadAnnouncements',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load chat groups`
+  String get failedToLoadChats {
+    return Intl.message(
+      'Failed to load chat groups',
+      name: 'failedToLoadChats',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load messages`
+  String get failedToLoadMessages {
+    return Intl.message(
+      'Failed to load messages',
+      name: 'failedToLoadMessages',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to send message`
+  String get failedToSendMessage {
+    return Intl.message(
+      'Failed to send message',
+      name: 'failedToSendMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to join chat group`
+  String get failedToJoinChat {
+    return Intl.message(
+      'Failed to join chat group',
+      name: 'failedToJoinChat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to leave chat group`
+  String get failedToLeaveChat {
+    return Intl.message(
+      'Failed to leave chat group',
+      name: 'failedToLeaveChat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chat connection error`
+  String get chatConnectionError {
+    return Intl.message(
+      'Chat connection error',
+      name: 'chatConnectionError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No chat groups available`
+  String get noChatGroupsAvailable {
+    return Intl.message(
+      'No chat groups available',
+      name: 'noChatGroupsAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No messages available`
+  String get noMessagesAvailable {
+    return Intl.message(
+      'No messages available',
+      name: 'noMessagesAvailable',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

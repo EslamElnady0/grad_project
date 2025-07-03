@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grad_project/core/logic/all_courses_cubit/all_courses_cubit.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
+import 'package:grad_project/core/widgets/failure_state_widget.dart';
 import 'package:grad_project/features/annoucements/data/models/paginated_announcements_response.dart';
 import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/get_announcement_cubit.dart';
 import 'package:skeletonizer/skeletonizer.dart';
+import '../../../../generated/l10n.dart';
 import '../ui cubit/announcement_filter_cubit.dart';
 import 'annoucement_item.dart';
 
@@ -23,6 +26,8 @@ class AnnoucementsListView extends StatelessWidget {
             return state.maybeWhen(
               getAnnouncementSuccess: (data) =>
                   _buildAnnouncementsList(context, data, selectedFilters),
+              getAnnouncementFailure: (error) =>
+                  _buildFailureState(context, error),
               orElse: () => _buildLoadingList(),
             );
           },
@@ -43,6 +48,18 @@ class AnnoucementsListView extends StatelessWidget {
     );
   }
 
+  Widget _buildFailureState(BuildContext context, String error) {
+    return FailureStateWidget(
+      errorMessage: error,
+      title: S.of(context).failedToLoadAnnouncements,
+      icon: Icons.announcement_outlined,
+      onRetry: () {
+        context.read<GetAnnouncementCubit>().getAnnouncement();
+        context.read<AllCoursesCubit>().get();
+      },
+    );
+  }
+
   Widget _buildAnnouncementsList(BuildContext context,
       PaginatedAnnouncementsResponse data, Set<String> selectedFilters) {
     final items = data.data.data;
@@ -57,9 +74,10 @@ class AnnoucementsListView extends StatelessWidget {
       color: AppColors.primaryColorlight,
       onRefresh: () async {
         context.read<GetAnnouncementCubit>().getAnnouncement();
+        context.read<AllCoursesCubit>().get();
       },
       child: ListView.builder(
-        physics: const BouncingScrollPhysics(),
+        physics: const AlwaysScrollableScrollPhysics(),
         padding: EdgeInsets.zero,
         itemCount: filteredItems.length,
         itemBuilder: (context, index) {
