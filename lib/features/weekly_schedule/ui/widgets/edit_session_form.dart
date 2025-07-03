@@ -396,33 +396,18 @@ class _EditSessionFormState extends State<EditSessionForm> {
             SnackBar(
               content: Text(
                 S.of(context).session_updated_successfully,
-                style: AppTextStyles.font14BlackMedium.copyWith(
-                  color: AppColors.white,
+                style: AppTextStyles.font14WhiteMedium,
                 ),
-              ),
               backgroundColor: AppColors.primaryColordark,
-              behavior: SnackBarBehavior.floating,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.r),
-              ),
-              margin: EdgeInsets.all(16.w),
+              behavior: SnackBarBehavior.fixed, // Changed from floating
             ),
           );
         } else if (state is UpdateSessionError) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text(
-                state.error,
-                style: AppTextStyles.font14BlackMedium.copyWith(
-                  color: AppColors.white,
-                ),
-              ),
-              backgroundColor: AppColors.redDark,
-              behavior: SnackBarBehavior.floating,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.r),
-              ),
-              margin: EdgeInsets.all(16.w),
+              content: Text(state.error),
+              backgroundColor: Colors.red,
+              behavior: SnackBarBehavior.fixed, // Changed from floating
             ),
           );
         }
