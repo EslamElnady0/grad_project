@@ -253,6 +253,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_student_name_or_code": MessageLookupByLibrary.simpleMessage(
       "Enter student name or code",
     ),
+    "error_occurred_deleting_answer": MessageLookupByLibrary.simpleMessage(
+      "An error occurred while deleting the answer",
+    ),
+    "error_occurred_deleting_question": MessageLookupByLibrary.simpleMessage(
+      "An error occurred while deleting the question",
+    ),
     "error_opening_file": MessageLookupByLibrary.simpleMessage(
       "Error opening file",
     ),

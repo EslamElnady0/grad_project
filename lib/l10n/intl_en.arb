@@ -412,6 +412,8 @@
   "date_format_hint": "YYYY-MM-DD",
   "time_format_hint": "HH:MM",
   "hall_id_hint": "Hall ID",
+  "error_occurred_deleting_question": "An error occurred while deleting the question",
+  "error_occurred_deleting_answer": "An error occurred while deleting the answer",
 
  "doctor"  : "Doctor"
  

@@ -237,6 +237,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_student_name_or_code": MessageLookupByLibrary.simpleMessage(
       "ادخل اسم الطالب أو الكود",
     ),
+    "error_occurred_deleting_answer": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ أثناء حذف الإجابة",
+    ),
+    "error_occurred_deleting_question": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ أثناء حذف السؤال",
+    ),
     "error_opening_file": MessageLookupByLibrary.simpleMessage(
       "خطأ في فتح الملف",
     ),

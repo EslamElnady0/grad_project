@@ -129,7 +129,7 @@ class DeleteContentService {
         Navigator.of(context).pop();
         _showSnackBar(
           context,
-          'An error occurred while deleting the question',
+          S.of(context).error_occurred_deleting_question,
           isSuccess: false,
         );
       }
@@ -209,7 +209,7 @@ class DeleteContentService {
         Navigator.of(context).pop();
         _showSnackBar(
           context,
-          'An error occurred while deleting the answer',
+          S.of(context).error_occurred_deleting_answer,
           isSuccess: false,
         );
       }

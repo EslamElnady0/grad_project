@@ -411,6 +411,8 @@
   "date_format_hint": "سنة-شهر-يوم",
   "time_format_hint": "ساعة:دقيقة",
   "hall_id_hint": "رقم القاعة",
+  "error_occurred_deleting_question": "حدث خطأ أثناء حذف السؤال",
+  "error_occurred_deleting_answer": "حدث خطأ أثناء حذف الإجابة",
   "doctor" : "دكتور"
    
 

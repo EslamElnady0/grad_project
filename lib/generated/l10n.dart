@@ -3275,6 +3275,26 @@ class S {
     return Intl.message('Hall ID', name: 'hall_id_hint', desc: '', args: []);
   }
 
+  /// `An error occurred while deleting the question`
+  String get error_occurred_deleting_question {
+    return Intl.message(
+      'An error occurred while deleting the question',
+      name: 'error_occurred_deleting_question',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An error occurred while deleting the answer`
+  String get error_occurred_deleting_answer {
+    return Intl.message(
+      'An error occurred while deleting the answer',
+      name: 'error_occurred_deleting_answer',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Doctor`
   String get doctor {
     return Intl.message('Doctor', name: 'doctor', desc: '', args: []);
