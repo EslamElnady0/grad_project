@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/flavors/flavors_functions.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/features/weekly_schedule/data/models/get_table_response_model.dart';
-import 'package:grad_project/features/weekly_schedule/ui/widgets/edit_status_bottom_sheet.dart';
+import 'package:grad_project/features/weekly_schedule/ui/widgets/edit_session/edit_status_bottom_sheet.dart';
 import 'package:grad_project/features/weekly_schedule/ui/widgets/status_table_cell.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/helpers/localizationa.dart';

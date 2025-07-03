@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/features/weekly_schedule/data/models/get_table_response_model.dart';
 import 'package:grad_project/features/weekly_schedule/logic/get_tabel_cubit/get_tabel_cubit.dart';
-import 'package:grad_project/features/weekly_schedule/ui/widgets/edit_session_form.dart';
+import 'package:grad_project/features/weekly_schedule/ui/widgets/edit_session/edit_session_form.dart';
 
 void editStatusBottomSheet(SessionResponse lecture, BuildContext context) async {
   final result = await showModalBottomSheet<bool>(

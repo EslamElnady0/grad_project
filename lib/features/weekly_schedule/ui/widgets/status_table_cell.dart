@@ -6,7 +6,7 @@ import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/features/weekly_schedule/data/models/get_table_response_model.dart';
-import 'package:grad_project/features/weekly_schedule/ui/widgets/edit_status_bottom_sheet.dart';
+import 'package:grad_project/features/weekly_schedule/ui/widgets/edit_session/edit_status_bottom_sheet.dart';
 import 'package:grad_project/features/weekly_schedule/ui/screens/postponed_lecture_details_view.dart';
 
 class StatusTableCell extends StatelessWidget {
