@@ -7,9 +7,8 @@ import 'package:grad_project/features/quizes/data/models/get_quizzes_response.da
 import 'package:grad_project/features/quizes/ui/views/quiz_details_view.dart';
 import 'package:grad_project/features/time_schedule/data/models/activity_response_model.dart';
 import 'package:grad_project/generated/l10n.dart';
-
-import '../../../../quizes/ui/models/student_answers_review_navigation.dart';
-import '../../../../quizes/ui/views/students_answers_review_view.dart';
+import '../../../quizes/ui/models/student_answers_review_navigation.dart';
+import '../../../quizes/ui/views/students_answers_review_view.dart';
 
 class CustomStudentQuizButton extends StatelessWidget {
   final StudentQuizModel studentQuizModel;
