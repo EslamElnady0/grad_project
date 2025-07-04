@@ -70,6 +70,10 @@ class _TypingIndicatorWidgetState extends State<TypingIndicatorWidget>
 
     _dotController.repeat();
     _glowController.repeat(reverse: true);
+
+    if (widget.isVisible) {
+      _slideController.value = 1.0;
+    }
   }
 
   @override
@@ -102,6 +106,7 @@ class _TypingIndicatorWidgetState extends State<TypingIndicatorWidget>
             child: Container(
               margin: EdgeInsets.only(bottom: 8.h),
               child: Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
                     padding: EdgeInsets.symmetric(
@@ -109,7 +114,7 @@ class _TypingIndicatorWidgetState extends State<TypingIndicatorWidget>
                       vertical: 8.h,
                     ),
                     decoration: BoxDecoration(
-                      color: AppColors.gray.withOpacity(0.8),
+                      color: AppColors.black.withOpacity(0.8),
                       borderRadius: BorderRadius.circular(20.r),
                     ),
                     child: Row(

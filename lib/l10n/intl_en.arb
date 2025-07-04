@@ -187,7 +187,7 @@
   "noFilesUploaded": "No files uploaded yet",
   "addLinkDescrebtion": "Add a link to the study material.",
   "time_schedule_welcome_message": "Welcome! Here you can view the upcoming quiz dates and submit the fees for each subject.⏰",
-  "search_for_task": "Search by activity type or name",
+  "search_for_task": "Search for a quiz or assignment",
   "next_seven_days": "Next 7 Days",
   "quiz_details": "Quiz Details",
   "add_to_send": "Add to send",
@@ -347,8 +347,7 @@
   "new_file": "New file",
   "onlyOneFileAllowed": "Only one file is allowed in edit mode.",
   "materialAddedSuccessfully": "Material added successfully",
-  "materialUpdatedSuccessfully": "Material updated successfully"
-  ,
+  "materialUpdatedSuccessfully": "Material updated successfully",
   "answerSubmittedSuccessfully": "Answer submitted successfully",
   "pleaseEnterYourAnswer": "Please enter your answer",
   "enterQuestionBodyFirst": "You must enter the question text first.",
@@ -375,7 +374,7 @@
   "deleted_successfully": "Deleted successfully!",
   "assignment_state": "Assignment State",
   "corrected": "Corrected",
-  "not_corrected": "Not Corrected", 
+  "not_corrected": "Not Corrected",
   "Submission_state": "Submission State",
   "assignment_submitted": "Submitted",
   "assignment_not_submitted": "Not Submitted",
@@ -416,6 +415,6 @@
   "error_occurred_deleting_answer": "An error occurred while deleting the answer",
 
  "doctor"  : "Doctor"
- 
+ ,
+  "smart_assistant": "Smart Assistant"
 }
-

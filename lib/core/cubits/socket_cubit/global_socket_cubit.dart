@@ -4,9 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/helpers/extensions.dart';
 import 'package:grad_project/core/helpers/shared_pref_helper.dart';
-import '../../../features/chat/data/models/get_messages_response.dart';
 import '../../data/repos/socket_repo.dart';
-import '../../events/message events/new_message_event.dart';
 import '../../helpers/constants.dart';
 import '../../lifecycle/app_lifecycle_cubit.dart';
 import '../../networking/network_monitor.dart';
@@ -92,7 +90,6 @@ class SocketCubit extends Cubit<SocketState> {
       onSuccess: () {
         _isUserRegistered = true;
         emit(SocketRegistered());
-        recieveMessage(context: context);
       },
       onFailure: (error) {
         emit(SocketError(error));
@@ -101,27 +98,7 @@ class SocketCubit extends Cubit<SocketState> {
   }
 
   void messageDeliveredTo(String messageId) {
-    _repo.messageDeliveredToUser(
-      {"messageId": messageId},
-      onSuccess: (data) {
-        Map<String, dynamic> rawMessage = data["data"];
-        Message mgs = Message.fromJson(rawMessage);
-        emit(SocketMessageDelivered());
-        eventBus.fire(MessageUpdatedEvent(mgs));
-      },
-      onFailure: (error) {
-        emit(SocketError(error));
-      },
-    );
-  }
-
-  void recieveMessage({required BuildContext context}) {
-    _repo.recieveMessage(onSuccess: (data) {
-      final newMessage = Message.fromJson(data["data"]);
-      messageDeliveredTo(newMessage.id);
-      eventBus.fire(NewMessageEvent(newMessage));
-      emit(SocketMessageReceived());
-    });
+    //  _repo.messageDeliveredToUser({"messageId": messageId});
   }
 
   void disposeSocket() {

@@ -28,13 +28,29 @@ class AssignmentRow extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SizedBox(
-            width: 200,
+            width: 150,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Align(
                 alignment: Alignment.center,
                 child: Text(
                   answer.student,
+                  style: AppTextStyles.font12DarkerBlueSemiBold,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ),
+          ),
+          hGap(10),
+          SizedBox(
+            width: 150,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Align(
+                alignment: Alignment.center,
+                child: Text(
+                  answer.code,
                   style: AppTextStyles.font12DarkerBlueSemiBold,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,

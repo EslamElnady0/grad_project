@@ -563,7 +563,7 @@ class MessageLookup extends MessageLookupByLibrary {
       " ابحث عن مبني، مدرج، قاعة، الخ..!",
     ),
     "search_for_task": MessageLookupByLibrary.simpleMessage(
-      "البحث حسب نوع النشاط او الاسم",
+      "ابحث عن كويز أو تكليف",
     ),
     "search_placeholder": MessageLookupByLibrary.simpleMessage(
       "أدخل اسم الطالب",
@@ -607,6 +607,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "show_image": MessageLookupByLibrary.simpleMessage("عرض الصوره"),
     "single_grade": MessageLookupByLibrary.simpleMessage("درجة"),
+    "smart_assistant": MessageLookupByLibrary.simpleMessage("المساعد الذكي"),
     "start": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "startNow": MessageLookupByLibrary.simpleMessage("ابدأ الآن!"),
     "startWriting": MessageLookupByLibrary.simpleMessage(

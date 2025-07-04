@@ -1520,10 +1520,10 @@ class S {
     );
   }
 
-  /// `Search by activity type or name`
+  /// `Search for a quiz or assignment`
   String get search_for_task {
     return Intl.message(
-      'Search by activity type or name',
+      'Search for a quiz or assignment',
       name: 'search_for_task',
       desc: '',
       args: [],
@@ -3298,6 +3298,16 @@ class S {
   /// `Doctor`
   String get doctor {
     return Intl.message('Doctor', name: 'doctor', desc: '', args: []);
+  }
+
+  /// `Smart Assistant`
+  String get smart_assistant {
+    return Intl.message(
+      'Smart Assistant',
+      name: 'smart_assistant',
+      desc: '',
+      args: [],
+    );
   }
 }
 

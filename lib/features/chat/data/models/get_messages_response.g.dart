@@ -27,6 +27,10 @@ Message _$MessageFromJson(Map<String, dynamic> json) => Message(
       content: json['content'] as String?,
       status: Status.fromJson(json['status'] as Map<String, dynamic>),
       createdAt: DateTime.parse(json['createdAt'] as String),
+      messageType: json['messageType'] as String?,
+      attachments: (json['attachments'] as List<dynamic>?)
+          ?.map((e) => MessageAttachement.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$MessageToJson(Message instance) => <String, dynamic>{
@@ -34,6 +38,8 @@ Map<String, dynamic> _$MessageToJson(Message instance) => <String, dynamic>{
       'sender': instance.sender,
       'content': instance.content,
       'status': instance.status,
+      'messageType': instance.messageType,
+      'attachments': instance.attachments,
       'createdAt': instance.createdAt.toIso8601String(),
     };
 
@@ -61,4 +67,18 @@ Status _$StatusFromJson(Map<String, dynamic> json) => Status(
 Map<String, dynamic> _$StatusToJson(Status instance) => <String, dynamic>{
       'deliveredTo': instance.deliveredTo,
       'seenBy': instance.seenBy,
+    };
+
+MessageAttachement _$MessageAttachementFromJson(Map<String, dynamic> json) =>
+    MessageAttachement(
+      fileUrl: json['fileUrl'] as String,
+      fileType: json['fileType'] as String,
+      name: json['name'] as String?,
+    );
+
+Map<String, dynamic> _$MessageAttachementToJson(MessageAttachement instance) =>
+    <String, dynamic>{
+      'fileUrl': instance.fileUrl,
+      'fileType': instance.fileType,
+      'name': instance.name,
     };

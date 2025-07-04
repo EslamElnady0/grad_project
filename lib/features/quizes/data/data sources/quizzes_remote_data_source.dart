@@ -70,4 +70,7 @@ abstract class QuizzesRemoteDataSource {
     @Path("quizId") String quizId,
     @Path("studentId") String studentId,
   );
+  @GET("${ApiConstants.quizzes}${ApiConstants.answers}/{quizId}")
+  Future<StudentQuizAnswersResponse> getStudentQuizAnswersForHimself(
+      @Path("quizId") String quizId);
 }

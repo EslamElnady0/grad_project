@@ -16,7 +16,12 @@ class HeaderRow extends StatelessWidget {
       children: [
         CustomText(
           text: S.of(context).name,
-          width: 200,
+          width: 150,
+        ),
+        hGap(10),
+        CustomText(
+          text: S.of(context).code,
+          width: 150,
         ),
         hGap(10),
         CustomText(

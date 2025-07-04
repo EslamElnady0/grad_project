@@ -30,7 +30,10 @@ class UserAvatarAndName extends StatelessWidget {
               CircleAvatar(
                 radius: 18.r,
                 backgroundImage: NetworkImage(sender.avatar),
-                onBackgroundImageError: (_, __) {},
+                onBackgroundImageError: (exception, stackTrace) => Image.asset(
+                  Assets.imagesAvatarDoc,
+                  fit: BoxFit.cover,
+                ),
                 child: ClipOval(
                   child: Image.network(
                     sender.avatar,

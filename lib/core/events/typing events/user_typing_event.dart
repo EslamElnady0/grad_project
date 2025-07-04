@@ -1,7 +1,8 @@
 import 'package:equatable/equatable.dart';
+import 'package:grad_project/features/chat/data/models/get_messages_response.dart';
 
 class UserTypingEvent extends Equatable {
-  final User user;
+  final Sender user;
   final String type;
 
   const UserTypingEvent({
@@ -11,19 +12,4 @@ class UserTypingEvent extends Equatable {
 
   @override
   List<Object?> get props => [user, type];
-}
-
-class User extends Equatable {
-  final int id;
-  final String name;
-  final String avatar;
-
-  const User({
-    required this.id,
-    required this.name,
-    required this.avatar,
-  });
-
-  @override
-  List<Object?> get props => [id, name, avatar];
 }

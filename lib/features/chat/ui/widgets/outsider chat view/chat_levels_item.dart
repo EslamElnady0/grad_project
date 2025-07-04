@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/core/events/message%20events/messages_events.dart';
 import 'package:grad_project/core/helpers/font_weight_helper.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
-
+import 'package:grad_project/features/chat/logic/chat_cubit/chat_cubit.dart';
+import 'package:provider/provider.dart';
 import '../../../../../core/helpers/app_assets.dart';
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/theme/app_text_styles.dart';
@@ -56,7 +58,30 @@ class ChatLevelsItem extends StatelessWidget {
                 const Spacer(),
                 !isMyChat
                     ? const Icon(Icons.lock, color: AppColors.darkerBlue)
-                    : const SizedBox.shrink()
+                    : StreamBuilder<UnSeenMessagesEvent>(
+                        stream: context
+                            .read<ChatGroupsCubit>()
+                            .unSeenMessagesStream,
+                        builder: (context, snapshot) {
+                          if (!snapshot.hasData) {
+                            return const SizedBox.shrink();
+                          }
+                          final data = snapshot.data!;
+                          return data.count != 0
+                              ? CircleAvatar(
+                                  radius: 12.r,
+                                  backgroundColor: AppColors.primaryColordark,
+                                  child: Text(
+                                    data.count.toString(),
+                                    style: AppTextStyles.font12WhiteSemiBold
+                                        .copyWith(
+                                      fontWeight: FontWeightHelper.bold,
+                                    ),
+                                  ),
+                                )
+                              : const SizedBox.shrink();
+                        },
+                      )
               ],
             ),
           ),

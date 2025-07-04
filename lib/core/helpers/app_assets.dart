@@ -286,6 +286,10 @@ class Assets {
   /// assets/images/svgs/quiz_menu_icon.svg
   static const String imagesSvgsQuizMenuIcon = "assets/images/svgs/quiz_menu_icon.svg";
 
+  /// Assets for imagesSvgsRobotLineIcon
+  /// assets/images/svgs/robot_line_icon.svg
+  static const String imagesSvgsRobotLineIcon = "assets/images/svgs/robot_line_icon.svg";
+
   /// Assets for imagesSvgsScheduledIcon
   /// assets/images/svgs/Scheduled_icon.svg
   static const String imagesSvgsScheduledIcon = "assets/images/svgs/Scheduled_icon.svg";
