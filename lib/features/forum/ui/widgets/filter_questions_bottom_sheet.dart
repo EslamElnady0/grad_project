@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grad_project/core/helpers/localizationa.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_text_and_icon_button.dart';
@@ -29,14 +30,37 @@ class _FilterQuestionsBottomSheetState extends State<FilterQuestionsBottomSheet>
   bool likedQuestions = false;
   bool myQuestions = false;
 
-  final Map<int, String> departments = {
-    1: 'computer_science',
-    2: 'information_systems',
-    3: 'artificial_intelligence',
-    4: 'data_science',
-    5: 'information_technology',
-  };
 
+  Map<int, String> _getDepartments(BuildContext context) {
+    return isArabicLocale(context) ? departmentsArabic : departmentsEnglish;
+  }
+
+  Map<int, String> departmentsArabic = {
+    1: 'عام',
+    2: 'هندسة الحاسبات والنظم',
+    3: 'الهندسة المدنية',
+    4: 'الهندسة الميكانيكية',
+    5: 'الهندسة الكهربية',
+    6: 'هندسة الإلكترونيات والاتصالات الكهربية',
+    7: 'هندسة القوى والآلات الكهربية',
+    8: 'هندسة القوى والآلات الميكانيكية',
+    9: 'الهندسة المعمارية',
+    10: 'هندسة الإنتاج والتصميم الميكانيكي',
+    11: 'الهندسة الصناعية',
+  };
+  Map<int, String> departmentsEnglish = {
+    1: 'General',
+    2: 'Computer Science',
+    3: 'Civil Engineering',
+    4: 'Mechanical Engineering',
+    5: 'Electrical Engineering',
+    6: 'Electronics and Communications Engineering',
+    7: 'Power and Electrical Machines Engineering',
+    8: 'Power and Mechanical Machines Engineering',
+    9: 'Architecture',
+    10: 'Production and Mechanical Design Engineering',
+    11: 'Industrial Engineering',
+  };
   final Map<int, String> semesters = {
     1: 'prep_first',
     2: 'prep_second',
@@ -95,16 +119,19 @@ class _FilterQuestionsBottomSheetState extends State<FilterQuestionsBottomSheet>
               child: DropdownButtonHideUnderline(
                 child: DropdownButton<int>(
                   value: selectedDepartment,
+                  isExpanded: true,
                   hint: Text(
                     S.of(context).select_department,
                     style: AppTextStyles.font12grayMedium,
                   ),
-                  items: departments.entries.map((entry) {
+                  items: _getDepartments(context).entries.map((entry) {
                     return DropdownMenuItem<int>(
                       value: entry.key,
                       child: Text(
                         _getLocalizedText(context, entry.value),
                         style: AppTextStyles.font14BlackRegular,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
                       ),
                     );
                   }).toList(),
@@ -134,6 +161,7 @@ class _FilterQuestionsBottomSheetState extends State<FilterQuestionsBottomSheet>
               child: DropdownButtonHideUnderline(
                 child: DropdownButton<int>(
                   value: selectedSemester,
+                  isExpanded: true,
                   hint: Text(
                     S.of(context).select_semester,
                     style: AppTextStyles.font12grayMedium,
@@ -144,6 +172,8 @@ class _FilterQuestionsBottomSheetState extends State<FilterQuestionsBottomSheet>
                       child: Text(
                         _getLocalizedText(context, entry.value),
                         style: AppTextStyles.font14BlackRegular,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
                       ),
                     );
                   }).toList(),
