@@ -19,3 +19,15 @@ Map<String, dynamic> _$SubToPushNotificationsModelToJson(
       'token': instance.deviceToken,
       'platform': instance.platform,
     };
+
+UnSubPushNotificationsModel _$UnSubPushNotificationsModelFromJson(
+        Map<String, dynamic> json) =>
+    UnSubPushNotificationsModel(
+      deviceToken: json['token'] as String,
+    );
+
+Map<String, dynamic> _$UnSubPushNotificationsModelToJson(
+        UnSubPushNotificationsModel instance) =>
+    <String, dynamic>{
+      'token': instance.deviceToken,
+    };
