@@ -3419,6 +3419,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Failed to load parking slots`
+  String get failedToLoadParkingSlots {
+    return Intl.message(
+      'Failed to load parking slots',
+      name: 'failedToLoadParkingSlots',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

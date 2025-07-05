@@ -425,5 +425,6 @@
   "noChatGroupsAvailable": "No chat groups available",
   "noMessagesAvailable": "No messages available",
   "failedToLoadCourses": "Failed to load courses",
-  "failedToLoadQuizzes": "Failed to load quizzes"
+  "failedToLoadQuizzes": "Failed to load quizzes",
+  "failedToLoadParkingSlots": "Failed to load parking slots"
 }

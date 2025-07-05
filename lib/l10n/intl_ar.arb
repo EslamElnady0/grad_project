@@ -425,5 +425,6 @@
   "noChatGroupsAvailable": "لا توجد مجموعات دردشة متاحة",
   "noMessagesAvailable": "لا توجد رسائل متاحة",
   "failedToLoadCourses": "فشل تحميل المواد الدراسية",
-  "failedToLoadQuizzes": "فشل تحميل الكويزات"
+  "failedToLoadQuizzes": "فشل تحميل الكويزات",
+  "failedToLoadParkingSlots": "فشل تحميل مواقف السيارات"
 }

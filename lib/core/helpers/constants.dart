@@ -154,13 +154,13 @@ class Constants {
   static List<DrawerItemModel> doctorDrawerItemsLocalized(
       BuildContext context) {
     return [
-      DrawerItemModel(
-        title: S.of(context).students_management,
-        iconPath: Assets.imagesSvgsTwoPersonsIcon,
-        onTap: () {
-          // GoRouter.of(context).push(WeeklyScheduleView.routeName);
-        },
-      ),
+      // DrawerItemModel(
+      //   title: S.of(context).students_management,
+      //   iconPath: Assets.imagesSvgsTwoPersonsIcon,
+      //   onTap: () {
+      //     // GoRouter.of(context).push(WeeklyScheduleView.routeName);
+      //   },
+      // ),
       DrawerItemModel(
         title: S.of(context).forum_management,
         iconPath: Assets.imagesSvgsCommentBubbleIcon,
@@ -175,13 +175,13 @@ class Constants {
           GoRouter.of(context).push(WeeklyScheduleView.routeName);
         },
       ),
-      DrawerItemModel(
-        title: S.of(context).finalResults,
-        iconPath: Assets.imagesSvgsTimeCheck,
-        onTap: () {
-          // GoRouter.of(context).push(AcademicProgressView.routeName);
-        },
-      ),
+      // DrawerItemModel(
+      //   title: S.of(context).finalResults,
+      //   iconPath: Assets.imagesSvgsTimeCheck,
+      //   onTap: () {
+      //     // GoRouter.of(context).push(AcademicProgressView.routeName);
+      //   },
+      // ),
       DrawerItemModel(
         title: S.of(context).profile,
         iconPath: Assets.imagesSvgsPerson,
