@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/helpers/shared_pref_helper.dart';
+import 'package:grad_project/core/services/firebase_messaging_service.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/annoucements/ui/views/annoucements_body.dart';
 import 'package:grad_project/features/assignments/presentation/views/assignment_home_view.dart';
@@ -24,6 +26,7 @@ import '../../features/map/presentation/views/internal_map_view.dart';
 import '../../features/smart_assistant/ui/views/smart_assistant_view.dart';
 import '../../features/weekly_schedule/ui/screens/weekly_schedule_view.dart';
 import '../../generated/l10n.dart';
+import '../logic/unsub_to_notifications_cubit/unsub_to_notifications_cubit.dart';
 import '../widgets/decorated_input_border.dart';
 
 class Constants {
@@ -143,9 +146,9 @@ class Constants {
         title: S.of(context).logout,
         iconPath: Assets.imagesSvgsLogOut,
         onTap: () {
-          SharedPrefHelper.clearAllData();
-          SharedPrefHelper.clearAllSecuredData();
-          GoRouter.of(context).goNamed(AuthView.routeName);
+          context
+              .read<UnsubToNotificationsCubit>()
+              .unsubscribe(FirebaseMessagingService().fcmToken ?? "");
         },
       ),
     ];

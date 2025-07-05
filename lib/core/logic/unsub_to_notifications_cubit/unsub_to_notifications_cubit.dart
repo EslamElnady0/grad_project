@@ -14,7 +14,7 @@ class UnsubToNotificationsCubit extends Cubit<UnsubToNotificationsState> {
     final response = await _repo.unsubscribe(deviceToken);
     response.when(
       success: (data) {
-        emit(const UnsubToNotificationsState.unsubToNotificationsSuccess());
+        emit(const UnsubToNotificationsState.unsubToNotificationsSuccess(null));
       },
       failure: (error) {
         emit(UnsubToNotificationsState.unsubToNotificationsFailure(

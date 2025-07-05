@@ -9,12 +9,18 @@ import 'package:grad_project/features/home/ui/cubit/bottom_nav_bar_cubit.dart';
 import 'package:grad_project/features/home/ui/widgets/bottom%20nav%20bar/custom_admin_bottom_navigation_bar.dart';
 import 'package:grad_project/features/home/ui/widgets/bottom%20nav%20bar/custom_student_bottom_nav_bar.dart';
 import '../../../../core/di/dependency_injection.dart';
+import '../../../../core/helpers/shared_pref_helper.dart';
 import '../../../../core/logic/all_courses_cubit/all_courses_cubit.dart';
+import '../../../../core/logic/unsub_to_notifications_cubit/unsub_to_notifications_cubit.dart';
 import '../../../../core/widgets/custom_scaffold.dart';
 import '../../../annoucements/logic/get_announcement_cubit/get_announcement_cubit.dart';
 import '../../../annoucements/ui/ui cubit/announcement_filter_cubit.dart';
+import '../../../auth/ui/views/auth_view.dart';
 import '../widgets/drawer/custom_doctor_drawer.dart';
 import '../widgets/drawer/custom_drawer.dart';
+import 'package:go_router/go_router.dart';
+import 'package:grad_project/core/widgets/show_error_dialog.dart';
+import 'package:grad_project/core/widgets/show_loading_dialog.dart';
 
 class HomeView extends StatefulWidget {
   static const String routeName = "/home";
@@ -63,17 +69,49 @@ class _HomeViewState extends State<HomeView> {
         BlocProvider(
           create: (context) => getIt<ChatGroupsCubit>(),
         ),
+        if (FlavorsFunctions.isStudent())
+          BlocProvider(
+            create: (context) => getIt<UnsubToNotificationsCubit>(),
+          ),
       ],
       child: CustomScaffold(
         extendBody: true,
-        body: BlocBuilder<BottomNavBarCubit, BottomNavBarState>(
-          builder: (context, state) {
-            return FlavorsFunctions.isStudent()
-                ? Constants
-                    .homeBodies[context.read<BottomNavBarCubit>().currentIndex]
-                : Constants.adminHomeBodies[
-                    context.read<BottomNavBarCubit>().currentIndex];
-          },
+        body: Column(
+          children: [
+            Expanded(
+              child: BlocBuilder<BottomNavBarCubit, BottomNavBarState>(
+                builder: (context, state) {
+                  return FlavorsFunctions.isStudent()
+                      ? Constants.homeBodies[
+                          context.read<BottomNavBarCubit>().currentIndex]
+                      : Constants.adminHomeBodies[
+                          context.read<BottomNavBarCubit>().currentIndex];
+                },
+              ),
+            ),
+            FlavorsFunctions.isStudent()
+                ? BlocListener<UnsubToNotificationsCubit,
+                    UnsubToNotificationsState>(
+                    listener: (context, state) => state.whenOrNull(
+                      unsubToNotificationsLoading: () =>
+                          showLoadingDialog(context),
+                      unsubToNotificationsSuccess: (data) {
+                        context.pop();
+                        context.goNamed(AuthView.routeName);
+                        SharedPrefHelper.clearAllData();
+                        SharedPrefHelper.clearAllSecuredData();
+                        return;
+                      },
+                      unsubToNotificationsFailure: (error) {
+                        context.pop();
+                        showErrorDialog(context, error);
+                        return;
+                      },
+                    ),
+                    child: Container(),
+                  )
+                : const SizedBox.shrink()
+          ],
         ),
         bottomNavigationBar: FlavorsFunctions.isStudent()
             ? const CustomStudentBottomNavigationBar()

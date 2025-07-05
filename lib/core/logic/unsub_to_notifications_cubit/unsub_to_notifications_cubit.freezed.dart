@@ -20,7 +20,7 @@ mixin _$UnsubToNotificationsState<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() unsubToNotificationsLoading,
-    required TResult Function() unsubToNotificationsSuccess,
+    required TResult Function(T data) unsubToNotificationsSuccess,
     required TResult Function(String error) unsubToNotificationsFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$UnsubToNotificationsState<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? unsubToNotificationsLoading,
-    TResult? Function()? unsubToNotificationsSuccess,
+    TResult? Function(T data)? unsubToNotificationsSuccess,
     TResult? Function(String error)? unsubToNotificationsFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$UnsubToNotificationsState<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? unsubToNotificationsLoading,
-    TResult Function()? unsubToNotificationsSuccess,
+    TResult Function(T data)? unsubToNotificationsSuccess,
     TResult Function(String error)? unsubToNotificationsFailure,
     required TResult orElse(),
   }) =>
@@ -143,7 +143,7 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() unsubToNotificationsLoading,
-    required TResult Function() unsubToNotificationsSuccess,
+    required TResult Function(T data) unsubToNotificationsSuccess,
     required TResult Function(String error) unsubToNotificationsFailure,
   }) {
     return initial();
@@ -154,7 +154,7 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? unsubToNotificationsLoading,
-    TResult? Function()? unsubToNotificationsSuccess,
+    TResult? Function(T data)? unsubToNotificationsSuccess,
     TResult? Function(String error)? unsubToNotificationsFailure,
   }) {
     return initial?.call();
@@ -165,7 +165,7 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? unsubToNotificationsLoading,
-    TResult Function()? unsubToNotificationsSuccess,
+    TResult Function(T data)? unsubToNotificationsSuccess,
     TResult Function(String error)? unsubToNotificationsFailure,
     required TResult orElse(),
   }) {
@@ -274,7 +274,7 @@ class _$UnsubToNotificationsLoadingImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() unsubToNotificationsLoading,
-    required TResult Function() unsubToNotificationsSuccess,
+    required TResult Function(T data) unsubToNotificationsSuccess,
     required TResult Function(String error) unsubToNotificationsFailure,
   }) {
     return unsubToNotificationsLoading();
@@ -285,7 +285,7 @@ class _$UnsubToNotificationsLoadingImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? unsubToNotificationsLoading,
-    TResult? Function()? unsubToNotificationsSuccess,
+    TResult? Function(T data)? unsubToNotificationsSuccess,
     TResult? Function(String error)? unsubToNotificationsFailure,
   }) {
     return unsubToNotificationsLoading?.call();
@@ -296,7 +296,7 @@ class _$UnsubToNotificationsLoadingImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? unsubToNotificationsLoading,
-    TResult Function()? unsubToNotificationsSuccess,
+    TResult Function(T data)? unsubToNotificationsSuccess,
     TResult Function(String error)? unsubToNotificationsFailure,
     required TResult orElse(),
   }) {
@@ -365,6 +365,8 @@ abstract class _$$UnsubToNotificationsSuccessImplCopyWith<T, $Res> {
           _$UnsubToNotificationsSuccessImpl<T> value,
           $Res Function(_$UnsubToNotificationsSuccessImpl<T>) then) =
       __$$UnsubToNotificationsSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
 }
 
 /// @nodoc
@@ -379,38 +381,65 @@ class __$$UnsubToNotificationsSuccessImplCopyWithImpl<T, $Res>
 
   /// Create a copy of UnsubToNotificationsState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$UnsubToNotificationsSuccessImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$UnsubToNotificationsSuccessImpl<T>
     implements UnsubToNotificationsSuccess<T> {
-  const _$UnsubToNotificationsSuccessImpl();
+  const _$UnsubToNotificationsSuccessImpl(this.data);
+
+  @override
+  final T data;
 
   @override
   String toString() {
-    return 'UnsubToNotificationsState<$T>.unsubToNotificationsSuccess()';
+    return 'UnsubToNotificationsState<$T>.unsubToNotificationsSuccess(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UnsubToNotificationsSuccessImpl<T>);
+            other is _$UnsubToNotificationsSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  /// Create a copy of UnsubToNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnsubToNotificationsSuccessImplCopyWith<T,
+          _$UnsubToNotificationsSuccessImpl<T>>
+      get copyWith => __$$UnsubToNotificationsSuccessImplCopyWithImpl<T,
+          _$UnsubToNotificationsSuccessImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() unsubToNotificationsLoading,
-    required TResult Function() unsubToNotificationsSuccess,
+    required TResult Function(T data) unsubToNotificationsSuccess,
     required TResult Function(String error) unsubToNotificationsFailure,
   }) {
-    return unsubToNotificationsSuccess();
+    return unsubToNotificationsSuccess(data);
   }
 
   @override
@@ -418,10 +447,10 @@ class _$UnsubToNotificationsSuccessImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? unsubToNotificationsLoading,
-    TResult? Function()? unsubToNotificationsSuccess,
+    TResult? Function(T data)? unsubToNotificationsSuccess,
     TResult? Function(String error)? unsubToNotificationsFailure,
   }) {
-    return unsubToNotificationsSuccess?.call();
+    return unsubToNotificationsSuccess?.call(data);
   }
 
   @override
@@ -429,12 +458,12 @@ class _$UnsubToNotificationsSuccessImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? unsubToNotificationsLoading,
-    TResult Function()? unsubToNotificationsSuccess,
+    TResult Function(T data)? unsubToNotificationsSuccess,
     TResult Function(String error)? unsubToNotificationsFailure,
     required TResult orElse(),
   }) {
     if (unsubToNotificationsSuccess != null) {
-      return unsubToNotificationsSuccess();
+      return unsubToNotificationsSuccess(data);
     }
     return orElse();
   }
@@ -488,8 +517,17 @@ class _$UnsubToNotificationsSuccessImpl<T>
 
 abstract class UnsubToNotificationsSuccess<T>
     implements UnsubToNotificationsState<T> {
-  const factory UnsubToNotificationsSuccess() =
+  const factory UnsubToNotificationsSuccess(final T data) =
       _$UnsubToNotificationsSuccessImpl<T>;
+
+  T get data;
+
+  /// Create a copy of UnsubToNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UnsubToNotificationsSuccessImplCopyWith<T,
+          _$UnsubToNotificationsSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -568,7 +606,7 @@ class _$UnsubToNotificationsFailureImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() unsubToNotificationsLoading,
-    required TResult Function() unsubToNotificationsSuccess,
+    required TResult Function(T data) unsubToNotificationsSuccess,
     required TResult Function(String error) unsubToNotificationsFailure,
   }) {
     return unsubToNotificationsFailure(error);
@@ -579,7 +617,7 @@ class _$UnsubToNotificationsFailureImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? unsubToNotificationsLoading,
-    TResult? Function()? unsubToNotificationsSuccess,
+    TResult? Function(T data)? unsubToNotificationsSuccess,
     TResult? Function(String error)? unsubToNotificationsFailure,
   }) {
     return unsubToNotificationsFailure?.call(error);
@@ -590,7 +628,7 @@ class _$UnsubToNotificationsFailureImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? unsubToNotificationsLoading,
-    TResult Function()? unsubToNotificationsSuccess,
+    TResult Function(T data)? unsubToNotificationsSuccess,
     TResult Function(String error)? unsubToNotificationsFailure,
     required TResult orElse(),
   }) {
