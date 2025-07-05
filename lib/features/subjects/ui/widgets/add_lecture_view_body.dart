@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/data/models/get_course_materials_response_model.dart';
 import 'package:grad_project/core/widgets/custom_modal_progress.dart';
-import 'package:grad_project/core/widgets/show_error_dialog.dart';
+import 'package:grad_project/core/widgets/failure_state_widget.dart';
 import 'package:grad_project/core/widgets/show_snak_bar.dart';
 import 'package:grad_project/features/subjects/logic/add_materials/add_materials_cubit.dart';
 import 'package:grad_project/features/subjects/ui/widgets/lecture_form_content.dart';
@@ -22,6 +22,20 @@ class AddLectureViewBody extends StatelessWidget {
   final int id;
   final bool isEdit;
   final CourseMaterialData? materialModel;
+
+  Widget _buildFailureState(BuildContext context, String error) {
+    return FailureStateWidget(
+      errorMessage: error,
+      title: isEdit 
+          ? S.of(context).edit 
+          : S.of(context).addStudyContent,
+      icon: Icons.school_outlined,
+      onRetry: () {
+        // Reset the cubit to initial state to try again
+        context.read<AddMaterialsCubit>().resetState();
+      },
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AddMaterialsCubit, AddMaterialsState>(
@@ -36,12 +50,14 @@ class AddLectureViewBody extends StatelessWidget {
                   : S.of(context).materialAddedSuccessfully,
             );
           },
-          addMaterialsFailure: (error) {
-            showErrorDialog(context, error);
-          },
         );
       },
       builder: (context, state) {
+        // Handle failure state with FailureStateWidget
+        if (state is AddMaterialsFailure) {
+          return _buildFailureState(context, state.error);
+        }
+
         double progress = 0;
         if (state is AddMaterialsProgress) {
           progress = state.progress;
