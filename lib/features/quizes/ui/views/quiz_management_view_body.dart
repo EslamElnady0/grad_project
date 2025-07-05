@@ -6,9 +6,11 @@ import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/logic/all_courses_cubit/all_courses_cubit.dart';
 import 'package:grad_project/features/quizes/ui/widgets/custom_course_quiz_widget.dart';
 import 'package:skeletonizer/skeletonizer.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../../../../generated/l10n.dart';
 import '../../../home/ui/widgets/home_screens_header_row.dart';
 import '../../../home/ui/widgets/title_text_widget.dart';
+import 'package:grad_project/core/widgets/failure_state_widget.dart';
 
 class QuizManagementViewBody extends StatefulWidget {
   const QuizManagementViewBody({super.key});
@@ -49,6 +51,7 @@ class _QuizManagementViewBodyState extends State<QuizManagementViewBody> {
             builder: (context, state) => state.maybeWhen(
               orElse: () => _buildCoursesLoading(),
               allTeacherCoursesSuccess: (data) => _buildCoursesSuccess(data),
+              allCoursesFailure: (error) => _buildFailureState(context, error),
             ),
           ),
         ),
@@ -58,13 +61,18 @@ class _QuizManagementViewBodyState extends State<QuizManagementViewBody> {
   }
 
   Widget _buildCoursesSuccess(TeachersCoursesResponse data) {
-    return ListView.separated(
-      padding: EdgeInsets.zero,
-      itemCount: data.data.length,
-      separatorBuilder: (context, index) => vGap(16),
-      itemBuilder: (context, index) {
-        return CustomCourseQuizWidget(course: data.data[index]);
-      },
+    return RefreshIndicator(
+      color: AppColors.primaryColorlight,
+      onRefresh: () => context.read<AllCoursesCubit>().get(),
+      child: ListView.separated(
+        physics: const AlwaysScrollableScrollPhysics(),
+        padding: EdgeInsets.zero,
+        itemCount: data.data.length,
+        separatorBuilder: (context, index) => vGap(16),
+        itemBuilder: (context, index) {
+          return CustomCourseQuizWidget(course: data.data[index]);
+        },
+      ),
     );
   }
 
@@ -79,6 +87,17 @@ class _QuizManagementViewBodyState extends State<QuizManagementViewBody> {
           return const CourseQuizSkeleton();
         },
       ),
+    );
+  }
+
+  Widget _buildFailureState(BuildContext context, String error) {
+    return FailureStateWidget(
+      errorMessage: error,
+      title: S.of(context).failedToLoadCourses,
+      icon: Icons.menu_book_outlined,
+      onRetry: () {
+        context.read<AllCoursesCubit>().get();
+      },
     );
   }
 }

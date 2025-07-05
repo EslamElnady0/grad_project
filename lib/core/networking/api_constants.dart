@@ -38,4 +38,5 @@ class ApiConstants {
   static const String halls = "halls";
   static const String answer = "/answer";
   static const String saveNotification = "notification/save";
+  static const String removeNotification = "notification/remove";
 }

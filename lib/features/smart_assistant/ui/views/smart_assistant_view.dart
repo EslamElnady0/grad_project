@@ -23,6 +23,7 @@ class _SmartAssistantViewState extends State<SmartAssistantView> {
   @override
   void initState() {
     super.initState();
+    controller = WebViewController();
     _loadUserUniCodeAndInitWebView();
   }
 
@@ -34,7 +35,8 @@ class _SmartAssistantViewState extends State<SmartAssistantView> {
     final userUniCode = await SharedPrefHelper.getString(Constants.userUniCode);
     final url =
         'https://nextgenedu-database.azurewebsites.net/chat/$userUniCode';
-    controller = WebViewController()
+
+    controller
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setNavigationDelegate(
         NavigationDelegate(

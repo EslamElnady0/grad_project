@@ -1,67 +1,78 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/features/parking/data/enums/parking_enum.dart';
 import 'package:grad_project/features/parking/data/models/get_parking_slots_model.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../logic/parking_cubit/parking_cubit.dart';
 
 class ParkingSlotsGrid extends StatelessWidget {
   final List<ParkingSlot> slots;
-  const ParkingSlotsGrid({Key? key, required this.slots}) : super(key: key);
+  const ParkingSlotsGrid({super.key, required this.slots});
 
   @override
   Widget build(BuildContext context) {
     final crossAxisCount = 2;
     final rowCount = (slots.length / crossAxisCount).ceil();
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final cellWidth = constraints.maxWidth / crossAxisCount;
-        final cellHeight = cellWidth * 0.5; // match childAspectRatio
-        final gridHeight = cellHeight * rowCount;
-        return SizedBox(
-          width: constraints.maxWidth,
-          height: gridHeight,
-          child: Stack(
-            children: [
-              CustomPaint(
-                size: Size(constraints.maxWidth, gridHeight),
-                painter: _FullGridPainter(
-                  columns: crossAxisCount,
-                  rows: rowCount,
-                ),
-              ),
-              GridView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                padding: EdgeInsets.zero,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: crossAxisCount,
-                  mainAxisSpacing: 0,
-                  crossAxisSpacing: 0,
-                  childAspectRatio: 1 / 0.5,
-                ),
-                itemCount: slots.length,
-                itemBuilder: (context, index) {
-                  final slot = slots[index];
-                  return Center(
-                    child: slot.parkingEnum == ParkingEnum.full
-                        ? Transform.rotate(
-                            angle: index % 2 != 0 ? 3.14 : 0,
-                            child: Image.asset(
-                              Assets.imagesParkingCar,
-                            ),
-                          )
-                        : Text(
-                            slot.spotNumber.toString(),
-                            style: AppTextStyles.font22GreenSemiBold
-                                .copyWith(color: AppColors.black),
-                          ),
-                  );
-                },
-              ),
-            ],
-          ),
-        );
+    return RefreshIndicator(
+      color: AppColors.primaryColorlight,
+      onRefresh: () async {
+        await context.read<ParkingCubit>().fetchParkingSlots();
       },
+      child: SingleChildScrollView(
+        physics: const AlwaysScrollableScrollPhysics(),
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            final cellWidth = constraints.maxWidth / crossAxisCount;
+            final cellHeight = cellWidth * 0.5; // match childAspectRatio
+            final gridHeight = cellHeight * rowCount;
+            return SizedBox(
+              width: constraints.maxWidth,
+              height: gridHeight,
+              child: Stack(
+                children: [
+                  CustomPaint(
+                    size: Size(constraints.maxWidth, gridHeight),
+                    painter: _FullGridPainter(
+                      columns: crossAxisCount,
+                      rows: rowCount,
+                    ),
+                  ),
+                  GridView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    padding: EdgeInsets.zero,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: crossAxisCount,
+                      mainAxisSpacing: 0,
+                      crossAxisSpacing: 0,
+                      childAspectRatio: 1 / 0.5,
+                    ),
+                    itemCount: slots.length,
+                    itemBuilder: (context, index) {
+                      final slot = slots[index];
+                      return Center(
+                        child: slot.parkingEnum == ParkingEnum.full
+                            ? Transform.rotate(
+                                angle: index % 2 != 0 ? 3.14 : 0,
+                                child: Image.asset(
+                                  Assets.imagesParkingCar,
+                                ),
+                              )
+                            : Text(
+                                slot.spotNumber.toString(),
+                                style: AppTextStyles.font22GreenSemiBold
+                                    .copyWith(color: AppColors.black),
+                              ),
+                      );
+                    },
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
+      ),
     );
   }
 }

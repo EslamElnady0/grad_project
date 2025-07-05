@@ -86,6 +86,7 @@ import '../../features/parking/data/repos/parking_repo.dart';
 import '../../features/parking/logic/parking_cubit/parking_cubit.dart';
 import '../../features/quizes/logic/quiz_details_cubit/quiz_details_cubit.dart';
 import '../../features/quizes/logic/student_quiz_answers_cubit/student_quiz_answers_cubit.dart';
+import '../logic/unsub_to_notifications_cubit/unsub_to_notifications_cubit.dart';
 import '../services/socket_service.dart';
 import '../../features/chat/logic/chat_cubit/chat_cubit.dart';
 import '../../features/quizes/logic/get_quiz_by_id_cubit/get_quiz_by_id_cubit.dart';
@@ -111,6 +112,8 @@ Future<void> setupGetIt() async {
   //toDo:--------------------------------Auth API --------------------
   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt(), getIt()));
+  getIt.registerFactory<UnsubToNotificationsCubit>(
+      () => UnsubToNotificationsCubit(getIt()));
   //toDo:------------------------------ Annoucements API ------------------------------//
   getIt.registerLazySingleton<AnnoucementsRemoteDataSource>(
       () => AnnoucementsRemoteDataSource(dio));
@@ -182,7 +185,7 @@ Future<void> setupGetIt() async {
       ));
   getIt.registerFactory<GetTabelCubit>(() => GetTabelCubit(getIt()));
   getIt.registerFactory<UpdateSessionCubit>(() => UpdateSessionCubit(getIt()));
-  
+
   //toDo:------------------------------ Assignments API ------------------------------//
   getIt.registerLazySingleton<AssignmentsRemoteDataSource>(
       () => AssignmentsRemoteDataSource(dio));

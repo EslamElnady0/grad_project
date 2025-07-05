@@ -13,8 +13,8 @@ import 'package:grad_project/generated/l10n.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/helpers/app_assets.dart';
 import '../../../../core/theme/app_colors.dart';
-import '../../../../core/widgets/custom_drop_down_button.dart';
 import '../../../../core/widgets/custom_text_form_field.dart';
+import '../../../../core/widgets/failure_state_widget.dart';
 
 class TeacherQuizzesViewBody extends StatelessWidget {
   final GetQuizzesRequestQueryParamsModel queryParamsModel;
@@ -27,14 +27,14 @@ class TeacherQuizzesViewBody extends StatelessWidget {
         vGap(22),
         symmetricPaddingWidget(
             child: CustomInnerScreensAppBar(
-                title: queryParamsModel.quizStatus == "scheduled"
+                title: queryParamsModel.quizStatus != "finished"
                     ? S.of(context).scheduled_quizzes
                     : S.of(context).previous_quizzes)),
         vGap(12),
         symmetricPaddingWidget(
             horizontalPadding: 36.w,
             child: TitleTextWidget(
-                text: queryParamsModel.quizStatus == "scheduled"
+                text: queryParamsModel.quizStatus != "finished"
                     ? S.of(context).scheduled_quizzes_description
                     : S.of(context).previous_quizzes_description)),
         vGap(10),
@@ -43,6 +43,9 @@ class TeacherQuizzesViewBody extends StatelessWidget {
           children: [
             Expanded(
               child: CustomTextFormField(
+                onChanged: (value) {
+                  context.read<GetQuizzesCubit>().updateSearchQuery(value);
+                },
                 fillColor: AppColors.veryLightGray,
                 prefixIcon: Padding(
                   padding: const EdgeInsets.all(10),
@@ -56,12 +59,12 @@ class TeacherQuizzesViewBody extends StatelessWidget {
                 textInputType: TextInputType.text,
               ),
             ),
-            hGap(8),
-            CustomDropDownButton(
-              value: S.of(context).next_seven_days,
-              values: [S.of(context).next_seven_days],
-              onChanged: (value) {},
-            ),
+            // hGap(8),
+            // CustomDropDownButton(
+            //   value: S.of(context).next_seven_days,
+            //   values: [S.of(context).next_seven_days],
+            //   onChanged: (value) {},
+            // ),
           ],
         )),
         vGap(12),
@@ -69,34 +72,71 @@ class TeacherQuizzesViewBody extends StatelessWidget {
           child: BlocBuilder<GetQuizzesCubit, GetQuizzesState>(
               builder: (context, state) => state.maybeWhen(
                     orElse: () => _buildLoadingState(),
-                    getQuizzesSuccess: (data) => _buildSuccessState(data),
+                    getQuizzesSuccess: (data) =>
+                        _buildSuccessState(data, context),
+                    getQuizzesFailure: (error) =>
+                        _buildFailureState(context, error, queryParamsModel),
                   )),
         )
       ],
     );
   }
 
-  Widget _buildSuccessState(GetQuizzesResponse data) {
-    final sortedQuizzes = [...data.data]..sort((a, b) =>
-        DateTime.parse('${a.date} ${a.startTime}')
-            .compareTo(DateTime.parse('${b.date} ${b.startTime}')));
+  Widget _buildSuccessState(GetQuizzesResponse data, BuildContext context) {
+    final allQuizzes = data.data
+        .where((quiz) => queryParamsModel.quizStatus == "scheduled"
+            ? (quiz.status == "scheduled" || quiz.status == "started")
+            : quiz.status == "finished")
+        .toList();
+    final sortedQuizzes = allQuizzes
+      ..sort((a, b) {
+        DateTime dateA = DateTime.parse('${a.date} ${a.startTime}');
+        DateTime dateB = DateTime.parse('${b.date} ${b.startTime}');
+        return queryParamsModel.quizStatus == "finished"
+            ? dateB.compareTo(dateA)
+            : dateA.compareTo(dateB);
+      });
 
-    return ListView.separated(
-      padding: EdgeInsets.only(top: 10.h),
-      itemBuilder: (context, index) {
-        return Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w),
-          child: CustomQuizWidget(
-            queryParamsModel: queryParamsModel,
-            quizModel: sortedQuizzes[index],
-          ),
-        );
+    return RefreshIndicator(
+      color: AppColors.darkblue,
+      onRefresh: () async {
+        await context.read<GetQuizzesCubit>().getQuizzes(
+            courseId: queryParamsModel.courseId,
+            quizStatus: "",
+            fromDate: queryParamsModel.fromDate);
       },
-      separatorBuilder: (context, index) => vGap(12),
-      itemCount: sortedQuizzes.length,
-      physics: const BouncingScrollPhysics(),
+      child: ListView.separated(
+        padding: EdgeInsets.only(top: 10.h),
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: CustomQuizWidget(
+              queryParamsModel: queryParamsModel,
+              quizModel: sortedQuizzes[index],
+            ),
+          );
+        },
+        separatorBuilder: (context, index) => vGap(12),
+        itemCount: sortedQuizzes.length,
+        physics: const AlwaysScrollableScrollPhysics(),
+      ),
     );
   }
+}
+
+Widget _buildFailureState(BuildContext context, String error,
+    GetQuizzesRequestQueryParamsModel queryParamsModel) {
+  return FailureStateWidget(
+    errorMessage: error,
+    title: S.of(context).failedToLoadQuizzes,
+    icon: Icons.quiz_outlined,
+    onRetry: () {
+      context.read<GetQuizzesCubit>().getQuizzes(
+          courseId: queryParamsModel.courseId,
+          quizStatus: "",
+          fromDate: queryParamsModel.fromDate);
+    },
+  );
 }
 
 Widget _buildLoadingState() {

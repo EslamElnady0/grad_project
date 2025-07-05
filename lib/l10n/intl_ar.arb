@@ -379,9 +379,9 @@
   "assignment_submitted": "تم التسليم",
   "assignment_not_submitted": "لم يتم التسليم",
   "student_assignment_details_welcome_message": "  📑 استعرض تفاصيل الأسايمنت الخاص بك، بما في ذلك الحالة، الدرجة، والتعليقات المقدمة من المعلم.",
-  "teacher_assignment_details_welcome_message": "📑 استعرض تفاصيل الأسايمنت الخاص بك."
-  ,"forum" : "المنتدى",
-  "Changethestatusofthelecture":   "تغيير حالة المحاضرة",
+  "teacher_assignment_details_welcome_message": "📑 استعرض تفاصيل الأسايمنت الخاص بك.",
+  "forum": "المنتدى",
+  "Changethestatusofthelecture": "تغيير حالة المحاضرة",
   "course": "المادة",
   "hall": "القاعة",
   "postponed_lecture_details": "تفاصيل المحاضرة المؤجلة",
@@ -413,7 +413,18 @@
   "hall_id_hint": "رقم القاعة",
   "error_occurred_deleting_question": "حدث خطأ أثناء حذف السؤال",
   "error_occurred_deleting_answer": "حدث خطأ أثناء حذف الإجابة",
-  "doctor" : "دكتور",
-   
-  "smart_assistant": "المساعد الذكي"
+  "doctor": "دكتور",
+  "smart_assistant": "المساعد الذكي",
+  "failedToLoadAnnouncements": "فشل تحميل الاخبار",
+  "failedToLoadChats": "فشل تحميل مجموعات الدردشة",
+  "failedToLoadMessages": "فشل تحميل الرسائل",
+  "failedToSendMessage": "فشل إرسال الرسالة",
+  "failedToJoinChat": "فشل الانضمام لمجموعة الدردشة",
+  "failedToLeaveChat": "فشل مغادرة مجموعة الدردشة",
+  "chatConnectionError": "خطأ في اتصال الدردشة",
+  "noChatGroupsAvailable": "لا توجد مجموعات دردشة متاحة",
+  "noMessagesAvailable": "لا توجد رسائل متاحة",
+  "failedToLoadCourses": "فشل تحميل المواد الدراسية",
+  "failedToLoadQuizzes": "فشل تحميل الكويزات",
+  "failedToLoadParkingSlots": "فشل تحميل مواقف السيارات"
 }

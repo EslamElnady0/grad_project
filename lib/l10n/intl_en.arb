@@ -379,10 +379,10 @@
   "assignment_submitted": "Submitted",
   "assignment_not_submitted": "Not Submitted",
   "student_assignment_details_welcome_message": "📑 View your assignment details, including status, grade, and comments from the teacher.",
-  "teacher_assignment_details_welcome_message": "📑 View your assignment details."
-,"forum" : "Forum",
-  "Changethestatusofthelecture":  "Change the status of the lecture",
-  "course": "Course", 
+  "teacher_assignment_details_welcome_message": "📑 View your assignment details.",
+  "forum": "Forum",
+  "Changethestatusofthelecture": "Change the status of the lecture",
+  "course": "Course",
   "hall": "Hall",
   "postponed_lecture_details": "Postponed Lecture Details",
   "postponed_lecture_info": "📅 This lecture has been postponed. Here are the original details:",
@@ -413,8 +413,18 @@
   "hall_id_hint": "Hall ID",
   "error_occurred_deleting_question": "An error occurred while deleting the question",
   "error_occurred_deleting_answer": "An error occurred while deleting the answer",
-
- "doctor"  : "Doctor"
- ,
-  "smart_assistant": "Smart Assistant"
+  "doctor": "Doctor",
+  "smart_assistant": "Smart Assistant",
+  "failedToLoadAnnouncements": "Failed to load announcements",
+  "failedToLoadChats": "Failed to load chat groups",
+  "failedToLoadMessages": "Failed to load messages",
+  "failedToSendMessage": "Failed to send message",
+  "failedToJoinChat": "Failed to join chat group",
+  "failedToLeaveChat": "Failed to leave chat group",
+  "chatConnectionError": "Chat connection error",
+  "noChatGroupsAvailable": "No chat groups available",
+  "noMessagesAvailable": "No messages available",
+  "failedToLoadCourses": "Failed to load courses",
+  "failedToLoadQuizzes": "Failed to load quizzes",
+  "failedToLoadParkingSlots": "Failed to load parking slots"
 }

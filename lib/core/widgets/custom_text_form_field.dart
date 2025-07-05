@@ -18,8 +18,9 @@ class CustomTextFormField extends StatefulWidget {
     this.alignLabelWithHint,
     this.fillColor,
     this.contentPadding,
+    this.onChanged,
   });
-
+  final Function(String)? onChanged;
   final String hintText;
   final Widget? prefixIcon;
   final TextEditingController? controller;
@@ -50,6 +51,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     return TextFormField(
       obscureText: _isObscured,
       onSaved: widget.onSaved,
+      onChanged: widget.onChanged,
       controller: widget.controller,
       keyboardType: widget.textInputType,
       maxLines: _isObscured ? 1 : widget.maxLines,

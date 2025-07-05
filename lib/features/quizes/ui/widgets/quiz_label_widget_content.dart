@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/helpers/constants.dart';
+import 'package:grad_project/core/helpers/extensions.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 
@@ -34,24 +35,19 @@ class QuizLabelWidgetContent extends StatelessWidget {
               ),
             ),
             hGap(10),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: AppTextStyles.font16BlackSemiBold,
-                ),
-                // vGap(5),
-                // Text(
-                //   //TO BE ADJUSTED
-                //   "",
-                //   style: AppTextStyles.font10GraySemiBold,
-                // ),
-              ],
+            SizedBox(
+              width: context.width * 0.4,
+              child: Text(
+                title,
+                style: AppTextStyles.font16BlackSemiBold,
+                maxLines: 5,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
+            hGap(10),
           ],
         ),
-        trailing ?? SizedBox.shrink()
+        trailing ?? const SizedBox.shrink()
       ],
     );
   }

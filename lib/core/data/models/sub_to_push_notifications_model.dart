@@ -15,3 +15,16 @@ class SubToPushNotificationsModel {
       _$SubToPushNotificationsModelFromJson(json);
   Map<String, dynamic> toJson() => _$SubToPushNotificationsModelToJson(this);
 }
+
+@JsonSerializable()
+class UnSubPushNotificationsModel {
+  @JsonKey(name: 'token')
+  final String deviceToken;
+
+  UnSubPushNotificationsModel({
+    required this.deviceToken,
+  });
+  factory UnSubPushNotificationsModel.fromJson(Map<String, dynamic> json) =>
+      _$UnSubPushNotificationsModelFromJson(json);
+  Map<String, dynamic> toJson() => _$UnSubPushNotificationsModelToJson(this);
+}

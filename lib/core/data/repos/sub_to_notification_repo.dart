@@ -15,4 +15,14 @@ class SubToNotificationRepo {
       return ApiResult.failure(ApiErrorHandler.handle(e));
     }
   }
+
+  Future<ApiResult<void>> unsubscribe(String deviceToken) async {
+    try {
+      final result = remoteDataSource.removeNotification(
+          UnSubPushNotificationsModel(deviceToken: deviceToken));
+      return ApiResult.success(result);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
 }

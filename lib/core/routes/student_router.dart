@@ -25,7 +25,8 @@ import '../../features/home/ui/cubit/bottom_nav_bar_cubit.dart';
 import '../../features/home/ui/views/home_view.dart';
 import '../../features/smart_assistant/ui/views/smart_assistant_view.dart';
 import '../../features/subjects/ui/views/materials_view.dart';
-import '../../features/weekly_schedule/data/models/get_table_response_model.dart' show SessionResponse;
+import '../../features/weekly_schedule/data/models/get_table_response_model.dart'
+    show SessionResponse;
 import '../../features/weekly_schedule/ui/screens/postponed_lecture_details_view.dart';
 import '../di/dependency_injection.dart';
 
@@ -125,7 +126,7 @@ abstract class StudentRouter {
         GoRoute(
             path: PdfWebViewPage.routeName,
             builder: (context, state) => const PdfWebViewPage()),
-               GoRoute(
+        GoRoute(
           path: PostponedLectureDetailsView.routeName,
           builder: (context, state) {
             final args = state.extra as Map<String, dynamic>;
@@ -134,7 +135,13 @@ abstract class StudentRouter {
               postponedData: args['postponedData'] as Map<String, dynamic>,
             );
           },
-        )
+        ),
+        GoRoute(
+            path: SmartAssistantView.routeName,
+            builder: (context, state) => const SmartAssistantView()),
+        GoRoute(
+            path: StudentsAnswersReviewView.routeName,
+            builder: (context, state) => const StudentsAnswersReviewView()),
       ],
     );
   }
