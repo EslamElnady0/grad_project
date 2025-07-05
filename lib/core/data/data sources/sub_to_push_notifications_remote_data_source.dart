@@ -18,7 +18,7 @@ abstract class SubToPushNotificationsRemoteDataSource {
   Future<void> saveNotification(
     @Body() SubToPushNotificationsModel body,
   );
-  @POST(ApiConstants.removeNotification)
+  @DELETE(ApiConstants.removeNotification)
   Future<void> removeNotification(
     @Body() UnSubPushNotificationsModel body,
   );

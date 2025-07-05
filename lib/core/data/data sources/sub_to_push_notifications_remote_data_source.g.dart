@@ -52,7 +52,7 @@ class _SubToPushNotificationsRemoteDataSource
     final _data = <String, dynamic>{};
     _data.addAll(body.toJson());
     final _options = _setStreamType<void>(
-      Options(method: 'POST', headers: _headers, extra: _extra)
+      Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
             'notification/remove',
