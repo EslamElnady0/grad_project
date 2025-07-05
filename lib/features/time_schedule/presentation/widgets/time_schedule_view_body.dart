@@ -14,8 +14,8 @@ import 'package:grad_project/features/time_schedule/logic/get_students_assignmen
 import 'package:grad_project/features/time_schedule/logic/get_students_assignments_cubit/get_students_assignments_state.dart';
 import 'package:grad_project/features/time_schedule/logic/get_students_quizzes_cubit/get_students_quizzes_cubit.dart';
 import 'package:grad_project/features/time_schedule/logic/get_students_quizzes_cubit/get_students_quizzes_state.dart';
-import 'package:grad_project/features/time_schedule/presentation/views/widgets/custom_student_assignment_widget.dart';
-import 'package:grad_project/features/time_schedule/presentation/views/widgets/custom_student_quiz_widget.dart';
+import 'package:grad_project/features/time_schedule/presentation/widgets/custom_student_assignment_widget.dart';
+import 'package:grad_project/features/time_schedule/presentation/widgets/custom_student_quiz_widget.dart';
 import 'package:grad_project/generated/l10n.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 

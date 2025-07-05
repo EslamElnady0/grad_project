@@ -20,9 +20,19 @@ class WeeklyScheduleBlocBuilder extends StatelessWidget {
           tableResponseList: fakeData
         ),
       ),
-      getTabelSuccess: (data) => WeeklyScheduleViewBody(
-        tableResponseList: data.data, 
-      ),
+      getTabelSuccess: (data) {
+        if (data.data.isEmpty) {
+          return Center(
+            child: Text(
+              'No schedule data available',
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+          );
+        }
+        return WeeklyScheduleViewBody(
+          tableResponseList: data.data,
+        );
+      },
     getTabelFailure: (error) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         showErrorDialog(

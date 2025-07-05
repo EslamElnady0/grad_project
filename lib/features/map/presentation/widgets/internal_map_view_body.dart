@@ -5,8 +5,11 @@ import 'package:grad_project/generated/l10n.dart';
 import 'internal_map_rebuild_body.dart';
 
 class InternalMapViewBody extends StatelessWidget {
-  const InternalMapViewBody({super.key});
+  const InternalMapViewBody({
+    super.key,
+  });
 
+  @override
   @override
   Widget build(BuildContext context) {
     return Column(

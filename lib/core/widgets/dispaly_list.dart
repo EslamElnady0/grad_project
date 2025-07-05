@@ -19,6 +19,34 @@ class DisplayList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Handle empty list case
+    if (listValue.isEmpty) {
+      return Container(
+        padding: EdgeInsets.symmetric(
+          horizontal: 12.w,
+          vertical: 10.h,
+        ),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(15.r),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+              spreadRadius: 1,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: Text(
+          'No items available',
+          style: AppTextStyles.font12GraySemiBold.copyWith(
+            color: AppColors.darkblue,
+          ),
+        ),
+      );
+    }
+
     return BlocProvider(
       create: (_) => ListCubit(initialValue ?? listValue[0]),
       child: Builder(

@@ -3040,6 +3040,266 @@ class S {
     );
   }
 
+  /// `Forum`
+  String get forum {
+    return Intl.message('Forum', name: 'forum', desc: '', args: []);
+  }
+
+  /// `Change the status of the lecture`
+  String get Changethestatusofthelecture {
+    return Intl.message(
+      'Change the status of the lecture',
+      name: 'Changethestatusofthelecture',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Course`
+  String get course {
+    return Intl.message('Course', name: 'course', desc: '', args: []);
+  }
+
+  /// `Hall`
+  String get hall {
+    return Intl.message('Hall', name: 'hall', desc: '', args: []);
+  }
+
+  /// `Postponed Lecture Details`
+  String get postponed_lecture_details {
+    return Intl.message(
+      'Postponed Lecture Details',
+      name: 'postponed_lecture_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `📅 This lecture has been postponed. Here are the original details:`
+  String get postponed_lecture_info {
+    return Intl.message(
+      '📅 This lecture has been postponed. Here are the original details:',
+      name: 'postponed_lecture_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Original Date`
+  String get original_date {
+    return Intl.message(
+      'Original Date',
+      name: 'original_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Original Day`
+  String get original_day {
+    return Intl.message(
+      'Original Day',
+      name: 'original_day',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `From`
+  String get original_time_from {
+    return Intl.message('From', name: 'original_time_from', desc: '', args: []);
+  }
+
+  /// `To`
+  String get original_time_to {
+    return Intl.message('To', name: 'original_time_to', desc: '', args: []);
+  }
+
+  /// `Hall Details`
+  String get hall_details {
+    return Intl.message(
+      'Hall Details',
+      name: 'hall_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Attendance Type`
+  String get attendance_type {
+    return Intl.message(
+      'Attendance Type',
+      name: 'attendance_type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Postponed Reason`
+  String get postponed_reason {
+    return Intl.message(
+      'Postponed Reason',
+      name: 'postponed_reason',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No reason provided`
+  String get no_reason_provided {
+    return Intl.message(
+      'No reason provided',
+      name: 'no_reason_provided',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lecture Details`
+  String get lecture_details {
+    return Intl.message(
+      'Lecture Details',
+      name: 'lecture_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change`
+  String get change {
+    return Intl.message('Change', name: 'change', desc: '', args: []);
+  }
+
+  /// `Edit Session Details`
+  String get edit_session_details {
+    return Intl.message(
+      'Edit Session Details',
+      name: 'edit_session_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `📝 Modify the session details and save changes`
+  String get edit_session_info {
+    return Intl.message(
+      '📝 Modify the session details and save changes',
+      name: 'edit_session_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Day`
+  String get select_day {
+    return Intl.message('Select Day', name: 'select_day', desc: '', args: []);
+  }
+
+  /// `Select Date`
+  String get select_date {
+    return Intl.message('Select Date', name: 'select_date', desc: '', args: []);
+  }
+
+  /// `Start Time`
+  String get start_time {
+    return Intl.message('Start Time', name: 'start_time', desc: '', args: []);
+  }
+
+  /// `End Time`
+  String get end_time {
+    return Intl.message('End Time', name: 'end_time', desc: '', args: []);
+  }
+
+  /// `Select Hall`
+  String get select_hall {
+    return Intl.message('Select Hall', name: 'select_hall', desc: '', args: []);
+  }
+
+  /// `Online`
+  String get online {
+    return Intl.message('Online', name: 'online', desc: '', args: []);
+  }
+
+  /// `Offline`
+  String get offline {
+    return Intl.message('Offline', name: 'offline', desc: '', args: []);
+  }
+
+  /// `Session updated successfully`
+  String get session_updated_successfully {
+    return Intl.message(
+      'Session updated successfully',
+      name: 'session_updated_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please fill all required fields`
+  String get please_fill_all_fields {
+    return Intl.message(
+      'Please fill all required fields',
+      name: 'please_fill_all_fields',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `End time must be after start time`
+  String get invalid_time_range {
+    return Intl.message(
+      'End time must be after start time',
+      name: 'invalid_time_range',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `YYYY-MM-DD`
+  String get date_format_hint {
+    return Intl.message(
+      'YYYY-MM-DD',
+      name: 'date_format_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `HH:MM`
+  String get time_format_hint {
+    return Intl.message('HH:MM', name: 'time_format_hint', desc: '', args: []);
+  }
+
+  /// `Hall ID`
+  String get hall_id_hint {
+    return Intl.message('Hall ID', name: 'hall_id_hint', desc: '', args: []);
+  }
+
+  /// `An error occurred while deleting the question`
+  String get error_occurred_deleting_question {
+    return Intl.message(
+      'An error occurred while deleting the question',
+      name: 'error_occurred_deleting_question',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An error occurred while deleting the answer`
+  String get error_occurred_deleting_answer {
+    return Intl.message(
+      'An error occurred while deleting the answer',
+      name: 'error_occurred_deleting_answer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Doctor`
+  String get doctor {
+    return Intl.message('Doctor', name: 'doctor', desc: '', args: []);
+  }
+
   /// `Smart Assistant`
   String get smart_assistant {
     return Intl.message(

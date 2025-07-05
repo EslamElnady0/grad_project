@@ -12,7 +12,9 @@ import 'flutter_map_with_layers.dart';
 import 'recenter_button.dart';
 
 class InternalMapRebuildBody extends StatefulWidget {
-  const InternalMapRebuildBody({super.key});
+  const InternalMapRebuildBody({
+    super.key,
+  });
 
   @override
   State<InternalMapRebuildBody> createState() => _InternalMapRebuildBodyState();
@@ -22,7 +24,6 @@ class _InternalMapRebuildBodyState extends State<InternalMapRebuildBody> {
   final mapController = MapController();
   MapState? _previousState;
 
-  @override
   @override
   void dispose() {
     mapController.dispose();

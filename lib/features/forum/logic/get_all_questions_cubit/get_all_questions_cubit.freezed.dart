@@ -22,6 +22,7 @@ mixin _$GetAllQuestionsState<T> {
     required TResult Function() getAllQuestionsLoading,
     required TResult Function(T data) getAllQuestionsSuccess,
     required TResult Function(String error) getAllQuestionsFailure,
+    required TResult Function() loadingMoreQuestions,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$GetAllQuestionsState<T> {
     TResult? Function()? getAllQuestionsLoading,
     TResult? Function(T data)? getAllQuestionsSuccess,
     TResult? Function(String error)? getAllQuestionsFailure,
+    TResult? Function()? loadingMoreQuestions,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$GetAllQuestionsState<T> {
     TResult Function()? getAllQuestionsLoading,
     TResult Function(T data)? getAllQuestionsSuccess,
     TResult Function(String error)? getAllQuestionsFailure,
+    TResult Function()? loadingMoreQuestions,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -50,6 +53,8 @@ mixin _$GetAllQuestionsState<T> {
         getAllQuestionsSuccess,
     required TResult Function(GetAllQuestionsFailure<T> value)
         getAllQuestionsFailure,
+    required TResult Function(GetAllQuestionsLoadingMore<T> value)
+        loadingMoreQuestions,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,6 +63,8 @@ mixin _$GetAllQuestionsState<T> {
     TResult? Function(GetAllQuestionsLoading<T> value)? getAllQuestionsLoading,
     TResult? Function(GetAllQuestionsSuccess<T> value)? getAllQuestionsSuccess,
     TResult? Function(GetAllQuestionsFailure<T> value)? getAllQuestionsFailure,
+    TResult? Function(GetAllQuestionsLoadingMore<T> value)?
+        loadingMoreQuestions,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,6 +73,7 @@ mixin _$GetAllQuestionsState<T> {
     TResult Function(GetAllQuestionsLoading<T> value)? getAllQuestionsLoading,
     TResult Function(GetAllQuestionsSuccess<T> value)? getAllQuestionsSuccess,
     TResult Function(GetAllQuestionsFailure<T> value)? getAllQuestionsFailure,
+    TResult Function(GetAllQuestionsLoadingMore<T> value)? loadingMoreQuestions,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -138,6 +146,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() getAllQuestionsLoading,
     required TResult Function(T data) getAllQuestionsSuccess,
     required TResult Function(String error) getAllQuestionsFailure,
+    required TResult Function() loadingMoreQuestions,
   }) {
     return initial();
   }
@@ -149,6 +158,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? getAllQuestionsLoading,
     TResult? Function(T data)? getAllQuestionsSuccess,
     TResult? Function(String error)? getAllQuestionsFailure,
+    TResult? Function()? loadingMoreQuestions,
   }) {
     return initial?.call();
   }
@@ -160,6 +170,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? getAllQuestionsLoading,
     TResult Function(T data)? getAllQuestionsSuccess,
     TResult Function(String error)? getAllQuestionsFailure,
+    TResult Function()? loadingMoreQuestions,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -178,6 +189,8 @@ class _$InitialImpl<T> implements _Initial<T> {
         getAllQuestionsSuccess,
     required TResult Function(GetAllQuestionsFailure<T> value)
         getAllQuestionsFailure,
+    required TResult Function(GetAllQuestionsLoadingMore<T> value)
+        loadingMoreQuestions,
   }) {
     return initial(this);
   }
@@ -189,6 +202,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(GetAllQuestionsLoading<T> value)? getAllQuestionsLoading,
     TResult? Function(GetAllQuestionsSuccess<T> value)? getAllQuestionsSuccess,
     TResult? Function(GetAllQuestionsFailure<T> value)? getAllQuestionsFailure,
+    TResult? Function(GetAllQuestionsLoadingMore<T> value)?
+        loadingMoreQuestions,
   }) {
     return initial?.call(this);
   }
@@ -200,6 +215,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(GetAllQuestionsLoading<T> value)? getAllQuestionsLoading,
     TResult Function(GetAllQuestionsSuccess<T> value)? getAllQuestionsSuccess,
     TResult Function(GetAllQuestionsFailure<T> value)? getAllQuestionsFailure,
+    TResult Function(GetAllQuestionsLoadingMore<T> value)? loadingMoreQuestions,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -262,6 +278,7 @@ class _$GetAllQuestionsLoadingImpl<T> implements GetAllQuestionsLoading<T> {
     required TResult Function() getAllQuestionsLoading,
     required TResult Function(T data) getAllQuestionsSuccess,
     required TResult Function(String error) getAllQuestionsFailure,
+    required TResult Function() loadingMoreQuestions,
   }) {
     return getAllQuestionsLoading();
   }
@@ -273,6 +290,7 @@ class _$GetAllQuestionsLoadingImpl<T> implements GetAllQuestionsLoading<T> {
     TResult? Function()? getAllQuestionsLoading,
     TResult? Function(T data)? getAllQuestionsSuccess,
     TResult? Function(String error)? getAllQuestionsFailure,
+    TResult? Function()? loadingMoreQuestions,
   }) {
     return getAllQuestionsLoading?.call();
   }
@@ -284,6 +302,7 @@ class _$GetAllQuestionsLoadingImpl<T> implements GetAllQuestionsLoading<T> {
     TResult Function()? getAllQuestionsLoading,
     TResult Function(T data)? getAllQuestionsSuccess,
     TResult Function(String error)? getAllQuestionsFailure,
+    TResult Function()? loadingMoreQuestions,
     required TResult orElse(),
   }) {
     if (getAllQuestionsLoading != null) {
@@ -302,6 +321,8 @@ class _$GetAllQuestionsLoadingImpl<T> implements GetAllQuestionsLoading<T> {
         getAllQuestionsSuccess,
     required TResult Function(GetAllQuestionsFailure<T> value)
         getAllQuestionsFailure,
+    required TResult Function(GetAllQuestionsLoadingMore<T> value)
+        loadingMoreQuestions,
   }) {
     return getAllQuestionsLoading(this);
   }
@@ -313,6 +334,8 @@ class _$GetAllQuestionsLoadingImpl<T> implements GetAllQuestionsLoading<T> {
     TResult? Function(GetAllQuestionsLoading<T> value)? getAllQuestionsLoading,
     TResult? Function(GetAllQuestionsSuccess<T> value)? getAllQuestionsSuccess,
     TResult? Function(GetAllQuestionsFailure<T> value)? getAllQuestionsFailure,
+    TResult? Function(GetAllQuestionsLoadingMore<T> value)?
+        loadingMoreQuestions,
   }) {
     return getAllQuestionsLoading?.call(this);
   }
@@ -324,6 +347,7 @@ class _$GetAllQuestionsLoadingImpl<T> implements GetAllQuestionsLoading<T> {
     TResult Function(GetAllQuestionsLoading<T> value)? getAllQuestionsLoading,
     TResult Function(GetAllQuestionsSuccess<T> value)? getAllQuestionsSuccess,
     TResult Function(GetAllQuestionsFailure<T> value)? getAllQuestionsFailure,
+    TResult Function(GetAllQuestionsLoadingMore<T> value)? loadingMoreQuestions,
     required TResult orElse(),
   }) {
     if (getAllQuestionsLoading != null) {
@@ -414,6 +438,7 @@ class _$GetAllQuestionsSuccessImpl<T> implements GetAllQuestionsSuccess<T> {
     required TResult Function() getAllQuestionsLoading,
     required TResult Function(T data) getAllQuestionsSuccess,
     required TResult Function(String error) getAllQuestionsFailure,
+    required TResult Function() loadingMoreQuestions,
   }) {
     return getAllQuestionsSuccess(data);
   }
@@ -425,6 +450,7 @@ class _$GetAllQuestionsSuccessImpl<T> implements GetAllQuestionsSuccess<T> {
     TResult? Function()? getAllQuestionsLoading,
     TResult? Function(T data)? getAllQuestionsSuccess,
     TResult? Function(String error)? getAllQuestionsFailure,
+    TResult? Function()? loadingMoreQuestions,
   }) {
     return getAllQuestionsSuccess?.call(data);
   }
@@ -436,6 +462,7 @@ class _$GetAllQuestionsSuccessImpl<T> implements GetAllQuestionsSuccess<T> {
     TResult Function()? getAllQuestionsLoading,
     TResult Function(T data)? getAllQuestionsSuccess,
     TResult Function(String error)? getAllQuestionsFailure,
+    TResult Function()? loadingMoreQuestions,
     required TResult orElse(),
   }) {
     if (getAllQuestionsSuccess != null) {
@@ -454,6 +481,8 @@ class _$GetAllQuestionsSuccessImpl<T> implements GetAllQuestionsSuccess<T> {
         getAllQuestionsSuccess,
     required TResult Function(GetAllQuestionsFailure<T> value)
         getAllQuestionsFailure,
+    required TResult Function(GetAllQuestionsLoadingMore<T> value)
+        loadingMoreQuestions,
   }) {
     return getAllQuestionsSuccess(this);
   }
@@ -465,6 +494,8 @@ class _$GetAllQuestionsSuccessImpl<T> implements GetAllQuestionsSuccess<T> {
     TResult? Function(GetAllQuestionsLoading<T> value)? getAllQuestionsLoading,
     TResult? Function(GetAllQuestionsSuccess<T> value)? getAllQuestionsSuccess,
     TResult? Function(GetAllQuestionsFailure<T> value)? getAllQuestionsFailure,
+    TResult? Function(GetAllQuestionsLoadingMore<T> value)?
+        loadingMoreQuestions,
   }) {
     return getAllQuestionsSuccess?.call(this);
   }
@@ -476,6 +507,7 @@ class _$GetAllQuestionsSuccessImpl<T> implements GetAllQuestionsSuccess<T> {
     TResult Function(GetAllQuestionsLoading<T> value)? getAllQuestionsLoading,
     TResult Function(GetAllQuestionsSuccess<T> value)? getAllQuestionsSuccess,
     TResult Function(GetAllQuestionsFailure<T> value)? getAllQuestionsFailure,
+    TResult Function(GetAllQuestionsLoadingMore<T> value)? loadingMoreQuestions,
     required TResult orElse(),
   }) {
     if (getAllQuestionsSuccess != null) {
@@ -574,6 +606,7 @@ class _$GetAllQuestionsFailureImpl<T> implements GetAllQuestionsFailure<T> {
     required TResult Function() getAllQuestionsLoading,
     required TResult Function(T data) getAllQuestionsSuccess,
     required TResult Function(String error) getAllQuestionsFailure,
+    required TResult Function() loadingMoreQuestions,
   }) {
     return getAllQuestionsFailure(error);
   }
@@ -585,6 +618,7 @@ class _$GetAllQuestionsFailureImpl<T> implements GetAllQuestionsFailure<T> {
     TResult? Function()? getAllQuestionsLoading,
     TResult? Function(T data)? getAllQuestionsSuccess,
     TResult? Function(String error)? getAllQuestionsFailure,
+    TResult? Function()? loadingMoreQuestions,
   }) {
     return getAllQuestionsFailure?.call(error);
   }
@@ -596,6 +630,7 @@ class _$GetAllQuestionsFailureImpl<T> implements GetAllQuestionsFailure<T> {
     TResult Function()? getAllQuestionsLoading,
     TResult Function(T data)? getAllQuestionsSuccess,
     TResult Function(String error)? getAllQuestionsFailure,
+    TResult Function()? loadingMoreQuestions,
     required TResult orElse(),
   }) {
     if (getAllQuestionsFailure != null) {
@@ -614,6 +649,8 @@ class _$GetAllQuestionsFailureImpl<T> implements GetAllQuestionsFailure<T> {
         getAllQuestionsSuccess,
     required TResult Function(GetAllQuestionsFailure<T> value)
         getAllQuestionsFailure,
+    required TResult Function(GetAllQuestionsLoadingMore<T> value)
+        loadingMoreQuestions,
   }) {
     return getAllQuestionsFailure(this);
   }
@@ -625,6 +662,8 @@ class _$GetAllQuestionsFailureImpl<T> implements GetAllQuestionsFailure<T> {
     TResult? Function(GetAllQuestionsLoading<T> value)? getAllQuestionsLoading,
     TResult? Function(GetAllQuestionsSuccess<T> value)? getAllQuestionsSuccess,
     TResult? Function(GetAllQuestionsFailure<T> value)? getAllQuestionsFailure,
+    TResult? Function(GetAllQuestionsLoadingMore<T> value)?
+        loadingMoreQuestions,
   }) {
     return getAllQuestionsFailure?.call(this);
   }
@@ -636,6 +675,7 @@ class _$GetAllQuestionsFailureImpl<T> implements GetAllQuestionsFailure<T> {
     TResult Function(GetAllQuestionsLoading<T> value)? getAllQuestionsLoading,
     TResult Function(GetAllQuestionsSuccess<T> value)? getAllQuestionsSuccess,
     TResult Function(GetAllQuestionsFailure<T> value)? getAllQuestionsFailure,
+    TResult Function(GetAllQuestionsLoadingMore<T> value)? loadingMoreQuestions,
     required TResult orElse(),
   }) {
     if (getAllQuestionsFailure != null) {
@@ -656,4 +696,139 @@ abstract class GetAllQuestionsFailure<T> implements GetAllQuestionsState<T> {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAllQuestionsFailureImplCopyWith<T, _$GetAllQuestionsFailureImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetAllQuestionsLoadingMoreImplCopyWith<T, $Res> {
+  factory _$$GetAllQuestionsLoadingMoreImplCopyWith(
+          _$GetAllQuestionsLoadingMoreImpl<T> value,
+          $Res Function(_$GetAllQuestionsLoadingMoreImpl<T>) then) =
+      __$$GetAllQuestionsLoadingMoreImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetAllQuestionsLoadingMoreImplCopyWithImpl<T, $Res>
+    extends _$GetAllQuestionsStateCopyWithImpl<T, $Res,
+        _$GetAllQuestionsLoadingMoreImpl<T>>
+    implements _$$GetAllQuestionsLoadingMoreImplCopyWith<T, $Res> {
+  __$$GetAllQuestionsLoadingMoreImplCopyWithImpl(
+      _$GetAllQuestionsLoadingMoreImpl<T> _value,
+      $Res Function(_$GetAllQuestionsLoadingMoreImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GetAllQuestionsState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$GetAllQuestionsLoadingMoreImpl<T>
+    implements GetAllQuestionsLoadingMore<T> {
+  const _$GetAllQuestionsLoadingMoreImpl();
+
+  @override
+  String toString() {
+    return 'GetAllQuestionsState<$T>.loadingMoreQuestions()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetAllQuestionsLoadingMoreImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getAllQuestionsLoading,
+    required TResult Function(T data) getAllQuestionsSuccess,
+    required TResult Function(String error) getAllQuestionsFailure,
+    required TResult Function() loadingMoreQuestions,
+  }) {
+    return loadingMoreQuestions();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getAllQuestionsLoading,
+    TResult? Function(T data)? getAllQuestionsSuccess,
+    TResult? Function(String error)? getAllQuestionsFailure,
+    TResult? Function()? loadingMoreQuestions,
+  }) {
+    return loadingMoreQuestions?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getAllQuestionsLoading,
+    TResult Function(T data)? getAllQuestionsSuccess,
+    TResult Function(String error)? getAllQuestionsFailure,
+    TResult Function()? loadingMoreQuestions,
+    required TResult orElse(),
+  }) {
+    if (loadingMoreQuestions != null) {
+      return loadingMoreQuestions();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetAllQuestionsLoading<T> value)
+        getAllQuestionsLoading,
+    required TResult Function(GetAllQuestionsSuccess<T> value)
+        getAllQuestionsSuccess,
+    required TResult Function(GetAllQuestionsFailure<T> value)
+        getAllQuestionsFailure,
+    required TResult Function(GetAllQuestionsLoadingMore<T> value)
+        loadingMoreQuestions,
+  }) {
+    return loadingMoreQuestions(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetAllQuestionsLoading<T> value)? getAllQuestionsLoading,
+    TResult? Function(GetAllQuestionsSuccess<T> value)? getAllQuestionsSuccess,
+    TResult? Function(GetAllQuestionsFailure<T> value)? getAllQuestionsFailure,
+    TResult? Function(GetAllQuestionsLoadingMore<T> value)?
+        loadingMoreQuestions,
+  }) {
+    return loadingMoreQuestions?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetAllQuestionsLoading<T> value)? getAllQuestionsLoading,
+    TResult Function(GetAllQuestionsSuccess<T> value)? getAllQuestionsSuccess,
+    TResult Function(GetAllQuestionsFailure<T> value)? getAllQuestionsFailure,
+    TResult Function(GetAllQuestionsLoadingMore<T> value)? loadingMoreQuestions,
+    required TResult orElse(),
+  }) {
+    if (loadingMoreQuestions != null) {
+      return loadingMoreQuestions(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetAllQuestionsLoadingMore<T>
+    implements GetAllQuestionsState<T> {
+  const factory GetAllQuestionsLoadingMore() =
+      _$GetAllQuestionsLoadingMoreImpl<T>;
 }

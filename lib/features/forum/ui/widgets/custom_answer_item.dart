@@ -26,6 +26,9 @@ class CustomAnswerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String specialization = answerModel?.user?.semester == null
+        ? S.of(context).doctor
+        : "${answerModel?.user?.department} ${S.of(context).semester} ${answerModel?.user?.semester}";
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.0.w),
       child: Row(
@@ -39,8 +42,8 @@ class CustomAnswerItem extends StatelessWidget {
                   borderRadius: BorderRadius.circular(18.r),
                 ),
                 child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 20.0, vertical: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -49,8 +52,7 @@ class CustomAnswerItem extends StatelessWidget {
                           Expanded(
                             child: DoctorInfoSection(
                               name: answerModel?.user?.name ?? "",
-                              specialization:
-                                  "${answerModel?.user?.department} ${S.of(context).semester} ${answerModel?.user?.semester}",
+                              specialization: specialization,
                             ),
                           ),
                           FutureBuilder<bool>(
@@ -82,7 +84,9 @@ class CustomAnswerItem extends StatelessWidget {
                                           hGap(8),
                                           Text(
                                             S.of(context).delete,
-                                            style: AppTextStyles.font12BlackMedium.copyWith(
+                                            style: AppTextStyles
+                                                .font12BlackMedium
+                                                .copyWith(
                                               color: AppColors.redDark,
                                             ),
                                           ),
@@ -136,7 +140,8 @@ class CustomAnswerItem extends StatelessWidget {
 
   Future<bool> _canShowDeleteButton() async {
     if (answerModel?.user?.id == null) return false;
-    return await getIt<DeleteContentService>().canDeleteContent(answerModel!.user!.id!.toString());
+    return await getIt<DeleteContentService>()
+        .canDeleteContent(answerModel!.user!.id!.toString());
   }
 
   void _handleDeleteAnswer(BuildContext context) {
@@ -149,7 +154,9 @@ class CustomAnswerItem extends StatelessWidget {
           // Refresh the question and answers after successful deletion
           if (questionId != null) {
             try {
-              context.read<QuestionAndAnswersCubit>().getQuestionAndAnswers(questionId!);
+              context
+                  .read<QuestionAndAnswersCubit>()
+                  .getQuestionAndAnswers(questionId!);
             } catch (e) {
               // If cubit is not available in the context, ignore the error
               // This can happen if the widget is used in different contexts

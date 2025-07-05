@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:grad_project/features/map/presentation/views/internal_map_view.dart';
 import 'package:grad_project/features/weekly_schedule/data/models/get_table_response_model.dart';
+import 'package:grad_project/features/weekly_schedule/ui/widgets/status_table_cell.dart';
+import 'package:latlong2/latlong.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/helpers/localizationa.dart';
 import '../../../../core/theme/app_colors.dart';
@@ -98,17 +102,17 @@ class ScheduleCard extends StatelessWidget {
                 ...dayData.map((lecture) {
                   return TableRow(
                     children: [
-                      _buildTableCell(lecture.course, rowHeight),
-                      _buildTableCell(lecture.from, rowHeight),
-                      _buildTableCell(lecture.to, rowHeight),
-                      _buildTableCell(
-                          "${lecture.hall.building} (${lecture.hall.hallName})",
+                      _buildTableCell(context, lecture.course, rowHeight),
+                      _buildTableCell(context, lecture.from, rowHeight),
+                      _buildTableCell(context, lecture.to, rowHeight),
+                      _buildTableCell(context,
+                          "${lecture.hall.building} (${lecture.hall.hallName})(${lecture.hall.hallCode})",
                           rowHeight),
-                      _buildTableCell(S.of(context).showDirections, rowHeight,
+                      _buildTableCell(context, S.of(context).showDirections, rowHeight,
                           isButton: true, hallResponse: lecture.hall),
-                      _buildTableCell(lecture.type, rowHeight),
-                      _buildTableCell(lecture.attendance, rowHeight),
-                      _buildTableCell(lecture.status, rowHeight),
+                      _buildTableCell(context, lecture.type, rowHeight),
+                      _buildTableCell(context, lecture.attendance, rowHeight),
+                      StatusTableCell(status: lecture.status, height: rowHeight, lecture: lecture, context: context),
                     ],
                   );
                 })
@@ -120,12 +124,23 @@ class ScheduleCard extends StatelessWidget {
     );
   }
 
-  Widget _buildTableCell(String text, double height,
+  Widget _buildTableCell(BuildContext context, String text, double height,
       {bool isButton = false, HallResponse? hallResponse}) {
     return GestureDetector(
       onTap: () {
-        if (isButton) {
-          print("${hallResponse!.latitude} ${hallResponse.longitude}");
+        if (isButton && hallResponse != null) {
+          // تحويل coordinates من String إلى double
+          final double latitude = double.tryParse(hallResponse.latitude) ?? 0.0;
+          final double longitude = double.tryParse(hallResponse.longitude) ?? 0.0;
+          
+          // الانتقال إلى الخريطة مع تمرير الوجهة باستخدام GoRouter
+          context.push(
+            InternalMapView.routeName,
+            extra: {
+              'destinationCoordinates': LatLng(latitude, longitude),
+              'destinationName': "${hallResponse.building} - ${hallResponse.hallName}",
+            },
+          );
         }
       },
       child: SizedBox(
@@ -153,4 +168,5 @@ class ScheduleCard extends StatelessWidget {
       ),
     );
   }
+
 }

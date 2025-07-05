@@ -31,7 +31,7 @@ class MapCubit extends Cubit<MapState> {
     });
   }
 
-  void init() async {
+  void init({LatLng? destinationCoordinates, String? destinationName}) async {
     emit(const MapState.loading());
     try {
       final location = await _mapRepo.getCurrentLocation();
@@ -70,6 +70,10 @@ class MapCubit extends Cubit<MapState> {
           ],
         ));
       });
+      // If destination coordinates are provided, add the destination
+      if (destinationCoordinates != null && destinationName != null) {
+        addDestination(destinationCoordinates, destinationName);
+      }
     } catch (e) {
       emit(MapState.error(e.toString()));
     }
@@ -79,7 +83,6 @@ class MapCubit extends Cubit<MapState> {
     if (state.currentLocation == null) return;
 
     emit(state.copyWith(isLoading: true));
-
     final routeResponse =
         await _mapRepo.getRoute(state.currentLocation!, destination);
 

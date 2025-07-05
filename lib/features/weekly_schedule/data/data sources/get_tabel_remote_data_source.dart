@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:grad_project/features/weekly_schedule/data/models/get_table_response_model.dart';
+import 'package:grad_project/features/weekly_schedule/data/models/update_session_request_model.dart';
+import 'package:grad_project/features/weekly_schedule/data/models/update_session_response_model.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../../../core/networking/api_constants.dart';
@@ -18,5 +20,12 @@ abstract class GetTabelRemoteDataSource {
   Future<GetTableResponseModel> getTable(
     @Path() String path,
   );
+
+    @PUT('teachers/table/session/{sessionId}')
+  Future<UpdateSessionResponseModel> updateSession(
+    @Path() int sessionId,
+    @Body() UpdateSessionRequestModel updateSessionRequestBody,
+  );
+ 
 }
  
