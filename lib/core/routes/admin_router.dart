@@ -24,6 +24,9 @@ import 'package:grad_project/features/quizes/ui/views/quiz_view.dart';
 import 'package:grad_project/features/quizes/ui/views/update_quiz_view.dart';
 import 'package:grad_project/features/profile/presentation/views/edit_profile_view.dart';
 import 'package:grad_project/features/subjects/ui/views/add_lecture_view.dart';
+import 'package:grad_project/features/time_schedule/presentation/views/time_schedule_view.dart';
+import 'package:grad_project/features/weekly_schedule/data/models/get_table_response_model.dart';
+import 'package:grad_project/features/weekly_schedule/ui/screens/postponed_lecture_details_view.dart';
 import 'package:grad_project/features/weekly_schedule/ui/screens/weekly_schedule_view.dart';
 import '../../features/auth/ui/views/auth_view.dart';
 import '../../features/chat/ui/views/chat_view.dart';
@@ -38,8 +41,10 @@ import '../../features/subjects/ui/views/materials_view.dart';
 abstract class AdminRouter {
   static GoRouter getRouter(bool isLogin) {
     return GoRouter(
-      initialLocation: isLogin ? HomeView.routeName : AuthView.routeName,
-      // initialLocation: ParkingView.routeName,
+      initialLocation: 
+   
+      isLogin ? HomeView.routeName : AuthView.routeName,
+    
       routes: [
         GoRoute(
           path: HomeView.routeName,
@@ -170,6 +175,16 @@ abstract class AdminRouter {
           builder: (context, state) => FullScreenImageView(
             imageUrl: state.extra as String,
           ),
+        ),
+        GoRoute(
+          path: PostponedLectureDetailsView.routeName,
+          builder: (context, state) {
+            final args = state.extra as Map<String, dynamic>;
+            return PostponedLectureDetailsView(
+              lecture: args['lecture'] as SessionResponse,
+              postponedData: args['postponedData'] as Map<String, dynamic>,
+            );
+          },
         )
       ],
     );

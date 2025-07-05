@@ -53,6 +53,7 @@ class SessionResponse {
   final String from;
   final String to;
   final String status;
+  final Map<String, dynamic>? postponed;
 
   SessionResponse({
     required this.id,
@@ -64,6 +65,7 @@ class SessionResponse {
     required this.from,
     required this.to,
     required this.status,
+    this.postponed,
   });
 
   factory SessionResponse.fromJson(Map<String, dynamic> json) =>

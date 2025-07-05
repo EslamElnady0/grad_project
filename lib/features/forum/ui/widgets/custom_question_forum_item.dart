@@ -63,8 +63,12 @@ class CustomQuestionForumItem extends StatelessWidget {
                 builder: (context, snapshot) {
                   if (snapshot.hasData && snapshot.data == true) {
                     return PopupMenuButton<String>(
+
+                      padding: EdgeInsets.zero,
                       icon: Icon(
+                      
                         Icons.more_vert,
+                       
                         color: AppColors.gray,
                         size: 20.sp,
                       ),
@@ -102,7 +106,7 @@ class CustomQuestionForumItem extends StatelessWidget {
                       },
                     );
                   }
-                  return const SizedBox.shrink();
+                  return hGap(8);
                 },
               ),
             ],

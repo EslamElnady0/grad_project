@@ -4,6 +4,7 @@ import 'package:grad_project/core/helpers/shared_pref_helper.dart';
 import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
+import 'package:grad_project/core/widgets/custom_modal_progress.dart';
 import 'package:grad_project/generated/l10n.dart';
 import 'package:grad_project/features/forum/data/repos/questions_repo.dart';
 
@@ -74,6 +75,23 @@ class DeleteContentService {
       return;
     }
 
+    // Show loading modal
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext dialogContext) {
+        return CustomModalProgress(
+          isLoading: true,
+          child: Container(
+            color: Colors.transparent,
+            child: const Center(
+              child: SizedBox.shrink(),
+            ),
+          ),
+        );
+      },
+    );
+
     try {
       final result = await _questionsRepo.deleteQuestion(
         questionId: questionId,
@@ -82,27 +100,39 @@ class DeleteContentService {
 
       result.when(
         success: (data) {
-          _showSnackBar(
-            context,
-            S.of(context).deleted_successfully,
-          );
+          // Hide loading modal
+          if (context.mounted) {
+            Navigator.of(context).pop();
+            _showSnackBar(
+              context,
+              S.of(context).deleted_successfully,
+            );
+          }
           // Call the success callback to refresh UI
           onSuccess?.call();
         },
         failure: (error) {
-          _showSnackBar(
-            context,
-            error.getAllMessages(),
-            isSuccess: false,
-          );
+          // Hide loading modal
+          if (context.mounted) {
+            Navigator.of(context).pop();
+            _showSnackBar(
+              context,
+              error.getAllMessages(),
+              isSuccess: false,
+            );
+          }
         },
       );
     } catch (e) {
-      _showSnackBar(
-        context,
-        'An error occurred while deleting the question',
-        isSuccess: false,
-      );
+      // Hide loading modal
+      if (context.mounted) {
+        Navigator.of(context).pop();
+        _showSnackBar(
+          context,
+          S.of(context).error_occurred_deleting_question,
+          isSuccess: false,
+        );
+      }
     }
   }
 
@@ -125,6 +155,23 @@ class DeleteContentService {
       return;
     }
 
+    // Show loading modal
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext dialogContext) {
+        return CustomModalProgress(
+          isLoading: true,
+          child: Container(
+            color: Colors.transparent,
+            child: const Center(
+              child: SizedBox.shrink(),
+            ),
+          ),
+        );
+      },
+    );
+
     try {
       final result = await _questionsRepo.deleteAnswer(
         answerId: answerId,
@@ -133,27 +180,39 @@ class DeleteContentService {
 
       result.when(
         success: (data) {
-          _showSnackBar(
-            context,
-            S.of(context).deleted_successfully,
-          );
+          // Hide loading modal
+          if (context.mounted) {
+            Navigator.of(context).pop();
+            _showSnackBar(
+              context,
+              S.of(context).deleted_successfully,
+            );
+          }
           // Call the success callback to refresh UI
           onSuccess?.call();
         },
         failure: (error) {
-          _showSnackBar(
-            context,
-            error.getAllMessages(),
-            isSuccess: false,
-          );
+          // Hide loading modal
+          if (context.mounted) {
+            Navigator.of(context).pop();
+            _showSnackBar(
+              context,
+              error.getAllMessages(),
+              isSuccess: false,
+            );
+          }
         },
       );
     } catch (e) {
-      _showSnackBar(
-        context,
-        'An error occurred while deleting the answer',
-        isSuccess: false,
-      );
+      // Hide loading modal
+      if (context.mounted) {
+        Navigator.of(context).pop();
+        _showSnackBar(
+          context,
+          S.of(context).error_occurred_deleting_answer,
+          isSuccess: false,
+        );
+      }
     }
   }
 }

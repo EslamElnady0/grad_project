@@ -27,6 +27,8 @@ class ForumViewBodyBlocBuilder extends StatelessWidget {
       ],
       child: BlocBuilder<GetAllQuestionsCubit, GetAllQuestionsState>(
         builder: (context, getAllQuestionsState) {
+          final cubit = context.read<GetAllQuestionsCubit>();
+          
           return BlocBuilder<FilterQuestionsCubit, FilterQuestionsState>(
             builder: (context, filterQuestionsState) {
               // Determine which state to use - filtered results take priority
@@ -41,19 +43,35 @@ class ForumViewBodyBlocBuilder extends StatelessWidget {
                       QuestionModel(),
                     ],
                     totalQuestions: 0,
+                    isLoadingMore: false,
                   ),
                 ),
                 filterQuestionsSuccess: (data) => ForumViewsBody(
                   questions: data.questions,
                   totalQuestions: data.totalQuestions,
-                  
+                  isLoadingMore: false, // Filter results don't have loading more state
                 ),
                 filterQuestionsFailure: (error) => Center(child: Text(error)),
                 orElse: () => getAllQuestionsState.maybeWhen(
                   getAllQuestionsSuccess: (data) => ForumViewsBody(
                     questions: data.questions,
                     totalQuestions: data.totalQuestions,
+                    isLoadingMore: cubit.isLoadingMore,
                   ),
+                  loadingMoreQuestions: () {
+                    // خلال تحميل المزيد، احتفظ بالبيانات الموجودة
+                    return getAllQuestionsState.whenOrNull(
+                      getAllQuestionsSuccess: (previousData) => ForumViewsBody(
+                        questions: previousData.questions,
+                        totalQuestions: previousData.totalQuestions,
+                        isLoadingMore: true,
+                      ),
+                    ) ?? ForumViewsBody(
+                      questions: cubit.questions, // استخدم البيانات من الـ cubit
+                      totalQuestions: null,
+                      isLoadingMore: true,
+                    );
+                  },
                   getAllQuestionsFailure: (error) => Center(child: Text(error)),
                   orElse: () => const Skeletonizer(
                     enabled: true,
@@ -65,6 +83,7 @@ class ForumViewBodyBlocBuilder extends StatelessWidget {
                         QuestionModel(),
                       ],
                       totalQuestions: 0,
+                      isLoadingMore: false,
                     ),
                   ),
                 ),

@@ -8,7 +8,7 @@ import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/features/quizes/ui/widgets/custom_quiz_widget.dart';
 import 'package:grad_project/features/time_schedule/data/models/activity_response_model.dart';
-import 'package:grad_project/features/time_schedule/presentation/views/widgets/custom_student_assignment_button.dart';
+import 'package:grad_project/features/time_schedule/presentation/widgets/custom_student_assignment_button.dart';
 import 'package:grad_project/generated/l10n.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 

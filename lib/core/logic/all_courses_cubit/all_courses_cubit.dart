@@ -15,11 +15,22 @@ class AllCoursesCubit extends Cubit<AllCoursesState> {
     final result = await _repo.getAllCourses();
     result.when(
       success: (data) {
-        data.when(teacher: (data) {
-          emit(AllCoursesState.allTeacherCoursesSuccess(data));
-        }, student: (data) {
-          emit(AllCoursesState.allStudentCoursesSuccess(data));
-        });
+        data.when(
+          teacher: (data) {
+            if (data.data.isEmpty) {
+              emit(AllCoursesState.allCoursesFailure('No courses available'));
+            } else {
+              emit(AllCoursesState.allTeacherCoursesSuccess(data));
+            }
+          },
+          student: (data) {
+            if (data.data.isEmpty) {
+              emit(AllCoursesState.allCoursesFailure('No courses available'));
+            } else {
+              emit(AllCoursesState.allStudentCoursesSuccess(data));
+            }
+          },
+        );
       },
       failure: (error) {
         emit(AllCoursesState.allCoursesFailure(error.getAllMessages()));

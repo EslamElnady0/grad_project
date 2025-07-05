@@ -5,7 +5,7 @@ import 'package:grad_project/core/widgets/custom_scaffold.dart';
 import 'package:grad_project/features/time_schedule/logic/activity_filter_cubit/activity_filter_cubit.dart';
 import 'package:grad_project/features/time_schedule/logic/get_students_assignments_cubit/get_students_assignments_cubit.dart';
 import 'package:grad_project/features/time_schedule/logic/get_students_quizzes_cubit/get_students_quizzes_cubit.dart';
-import 'package:grad_project/features/time_schedule/presentation/views/widgets/time_schedule_view_body.dart';
+import 'package:grad_project/features/time_schedule/presentation/widgets/time_schedule_view_body.dart';
 
 class TimeScheduleView extends StatelessWidget {
   const TimeScheduleView({super.key});

@@ -55,6 +55,7 @@ SessionResponse _$SessionResponseFromJson(Map<String, dynamic> json) =>
       from: json['from'] as String,
       to: json['to'] as String,
       status: json['status'] as String,
+      postponed: json['postponed'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$SessionResponseToJson(SessionResponse instance) =>
@@ -68,6 +69,7 @@ Map<String, dynamic> _$SessionResponseToJson(SessionResponse instance) =>
       'from': instance.from,
       'to': instance.to,
       'status': instance.status,
+      'postponed': instance.postponed,
     };
 
 HallResponse _$HallResponseFromJson(Map<String, dynamic> json) => HallResponse(
