@@ -1,13 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:grad_project/core/widgets/show_error_dialog.dart';
+import 'package:grad_project/core/widgets/failure_state_widget.dart';
 import 'package:grad_project/features/weekly_schedule/data/models/get_table_response_model.dart';
 import 'package:grad_project/features/weekly_schedule/logic/get_tabel_cubit/get_tabel_cubit.dart';
 import 'package:grad_project/features/weekly_schedule/ui/widgets/weekly_schedule_view_body.dart';
+import 'package:grad_project/generated/l10n.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class WeeklyScheduleBlocBuilder extends StatelessWidget {
   const WeeklyScheduleBlocBuilder({super.key});
+
+  Widget _buildFailureState(BuildContext context, String error) {
+    return Center(
+      child: FailureStateWidget(
+        errorMessage: error,
+        title: S.of(context).weeklySchedule,
+        icon: Icons.calendar_today_outlined,
+        onRetry: () {
+          context.read<GetTabelCubit>().getTable();
+        },
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,15 +48,7 @@ class WeeklyScheduleBlocBuilder extends StatelessWidget {
         );
       },
     getTabelFailure: (error) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        showErrorDialog(
-         context,
-       error,
-      doublePop: true,
-        );
-       
-      });
-      return const SizedBox.shrink();
+      return _buildFailureState(context, error);
     },
     );
   },

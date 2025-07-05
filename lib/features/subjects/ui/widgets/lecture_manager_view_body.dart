@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/logic/all_courses_cubit/all_courses_cubit.dart';
+import 'package:grad_project/core/widgets/failure_state_widget.dart';
 import 'package:grad_project/features/subjects/ui/widgets/lecture_manager_item.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/helpers/spacing.dart';
@@ -12,6 +13,17 @@ import '../../../home/ui/widgets/title_text_widget.dart';
 
 class LectureManagerViewBody extends StatelessWidget {
   const LectureManagerViewBody({super.key});
+
+  Widget _buildFailureState(BuildContext context, String error) {
+    return FailureStateWidget(
+      errorMessage: error,
+      title: S.of(context).failedToLoadCourses,
+      icon: Icons.school_outlined,
+      onRetry: () {
+        context.read<AllCoursesCubit>().get();
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +49,11 @@ class LectureManagerViewBody extends StatelessWidget {
           BlocConsumer<AllCoursesCubit, AllCoursesState>(
             listener: (context, state) {},
             builder: (context, state) {
-              if (state is AllTeacherCoursesSuccess ) {
+              if (state is AllTeacherCoursesSuccess) {
                 final allCoursesResponseModel = state.data;
-
                 return _buildCourseList(allCoursesResponseModel);
+              } else if (state is AllCoursesFailure) {
+                return _buildFailureState(context, state.error);
               } else {
                 return _buildSkeletonList();
               }

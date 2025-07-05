@@ -34,4 +34,8 @@ class FilterQuestionsCubit extends Cubit<FilterQuestionsState> {
       },
     );
   }
+
+  void resetFilter() {
+    emit(const FilterQuestionsState.initial());
+  }
 }

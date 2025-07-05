@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/di/dependency_injection.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_scaffold.dart';
+import 'package:grad_project/core/widgets/failure_state_widget.dart';
 import 'package:grad_project/features/chat/ui/cubit/file_picker_cubit.dart';
 import 'package:grad_project/features/forum/data/models/question_and_answers_response_model.dart';
 import 'package:grad_project/features/forum/logic/add_answer/add_answer_cubit.dart';
@@ -20,6 +21,19 @@ class AnswersView extends StatelessWidget {
   const AnswersView({super.key, required this.questionId});
   final String questionId;
   static const routeName = '/answers-view';
+
+  Widget _buildFailureState(BuildContext context, String error) {
+    return FailureStateWidget(
+      errorMessage: error,
+      title: S.of(context).view_answers,
+      icon: Icons.quiz_outlined,
+      onRetry: () {
+        context
+            .read<QuestionAndAnswersCubit>()
+            .getQuestionAndAnswers(questionId);
+      },
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -55,7 +69,7 @@ class AnswersView extends StatelessWidget {
                 );
               },
               failure: (error) {
-                return Center(child: Text(error));
+                return _buildFailureState(context, error);
               },
             );
           },

@@ -106,4 +106,8 @@ data.fields.add(MapEntry('type', typeWord));
       },
     );
   }
+
+  void resetState() {
+    emit(const AddMaterialsState.initial());
+  }
 }
