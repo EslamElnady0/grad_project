@@ -1,15 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/di/dependency_injection.dart';
+import 'package:grad_project/core/widgets/failure_state_widget.dart';
 import 'package:grad_project/features/forum/data/models/get_all_questions_response_model.dart';
 import 'package:grad_project/features/forum/logic/get_all_questions_cubit/get_all_questions_cubit.dart';
 import 'package:grad_project/features/forum/logic/filter_questions_cubit/filter_questions_cubit.dart';
 import 'package:grad_project/features/forum/logic/toggle_like_cubit/toggle_like_cubit.dart';
 import 'package:grad_project/features/forum/ui/widgets/forum_view_body.dart';
+import 'package:grad_project/generated/l10n.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class ForumViewBodyBlocBuilder extends StatelessWidget {
   const ForumViewBodyBlocBuilder({super.key});
+
+  Widget _buildFailureState(BuildContext context, String error) {
+    return FailureStateWidget(
+      errorMessage: error,
+      title: S.of(context).filter_questions,
+      icon: Icons.forum_outlined,
+      onRetry: () {
+        context.read<GetAllQuestionsCubit>().getAllQuestions();
+        context.read<FilterQuestionsCubit>().resetFilter();
+      },
+    );
+  }
+
+  Widget _buildGetAllQuestionsFailureState(BuildContext context, String error) {
+    return FailureStateWidget(
+      errorMessage: error,
+      title: S.of(context).questions,
+      icon: Icons.forum_outlined,
+      onRetry: () {
+        context.read<GetAllQuestionsCubit>().getAllQuestions();
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +76,7 @@ class ForumViewBodyBlocBuilder extends StatelessWidget {
                   totalQuestions: data.totalQuestions,
                   isLoadingMore: false, // Filter results don't have loading more state
                 ),
-                filterQuestionsFailure: (error) => Center(child: Text(error)),
+                filterQuestionsFailure: (error) => _buildFailureState(context, error),
                 orElse: () => getAllQuestionsState.maybeWhen(
                   getAllQuestionsSuccess: (data) => ForumViewsBody(
                     questions: data.questions,
@@ -72,7 +97,7 @@ class ForumViewBodyBlocBuilder extends StatelessWidget {
                       isLoadingMore: true,
                     );
                   },
-                  getAllQuestionsFailure: (error) => Center(child: Text(error)),
+                  getAllQuestionsFailure: (error) => _buildGetAllQuestionsFailureState(context, error),
                   orElse: () => const Skeletonizer(
                     enabled: true,
                     child: ForumViewsBody(
