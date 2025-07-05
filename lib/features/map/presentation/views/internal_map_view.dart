@@ -10,21 +10,23 @@ import '../widgets/internal_map_view_body.dart';
 
 class InternalMapView extends StatelessWidget {
   static const String routeName = '/interbal-map-view';
-  
+
   const InternalMapView({super.key});
 
   @override
   Widget build(BuildContext context) {
     final extra = GoRouterState.of(context).extra as Map<String, dynamic>?;
-    final LatLng? destinationCoordinates = extra?['destinationCoordinates'] as LatLng?;
+    final LatLng? destinationCoordinates =
+        extra?['destinationCoordinates'] as LatLng?;
     final String? destinationName = extra?['destinationName'] as String?;
     return CustomScaffold(
       body: BlocProvider(
-        create: (context) => getIt<MapCubit>()..init(),
-        child: InternalMapViewBody(
-          destinationCoordinates: destinationCoordinates,
-          destinationName: destinationName,
-        ),
+        create: (context) => getIt<MapCubit>()
+          ..init(
+            destinationCoordinates: destinationCoordinates,
+            destinationName: destinationName,
+          ),
+        child: const InternalMapViewBody(),
       ),
     );
   }

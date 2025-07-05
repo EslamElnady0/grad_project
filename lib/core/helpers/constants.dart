@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/helpers/shared_pref_helper.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
-import 'package:grad_project/features/academic_progress/presentation/views/academic_progress_view.dart';
 import 'package:grad_project/features/annoucements/ui/views/annoucements_body.dart';
 import 'package:grad_project/features/assignments/presentation/views/assignment_home_view.dart';
 import 'package:grad_project/features/auth/ui/views/auth_view.dart';
