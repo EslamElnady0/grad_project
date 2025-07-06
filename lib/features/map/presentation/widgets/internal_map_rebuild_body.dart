@@ -4,7 +4,9 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
+import 'package:grad_project/core/widgets/failure_state_widget.dart';
 import 'package:grad_project/features/map/presentation/widgets/custom_draggable_bottom_sheet.dart';
+import 'package:grad_project/generated/l10n.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../view models/map cubit/map_cubit.dart';
 import 'custom_map_action_button.dart';
@@ -75,16 +77,32 @@ class _InternalMapRebuildBodyState extends State<InternalMapRebuildBody> {
         }
 
         if (state.error != null && state.currentLocation == null) {
-          return Center(child: Text(state.error!));
+          return FailureStateWidget(
+            errorMessage: state.error!,
+            title: "Failed to load map",
+            icon: Icons.map_outlined,
+            onRetry: () {
+              context.read<MapCubit>().init();
+            },
+          );
         }
 
         if (state.currentLocation == null) {
-          return const Center(child: Text('Unable to load location'));
+          return FailureStateWidget(
+            errorMessage: state.error ?? "No current location available",
+            title: S.of(context).failedToLoadMap,
+            icon: Icons.location_off_outlined,
+            onRetry: () {
+              context.read<MapCubit>().init();
+            },
+          );
         }
+
         if (state.recenter) {
           mapController.move(state.currentLocation!, 17.0);
           context.read<MapCubit>().clearRecenter();
         }
+
         return Stack(
           children: [
             FlutterMapWithLayers(

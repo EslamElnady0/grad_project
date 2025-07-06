@@ -63,7 +63,7 @@ class CustomDashboardCourseContainer extends StatelessWidget {
                   onTap: () {
                     GoRouter.of(context).push(
                       RegisteredStudentsView.routeName,
-                      extra: course,
+                      extra: course.id,
                     );
                   }),
             ),
@@ -75,9 +75,8 @@ class CustomDashboardCourseContainer extends StatelessWidget {
               child: CustomRedCourseButton(
                   text: S.of(context).view_curriculum,
                   onTap: () {
-
-                    GoRouter.of(context).push(MaterialsView.routeName , 
-                        extra: course.id);
+                    GoRouter.of(context)
+                        .push(MaterialsView.routeName, extra: course.id);
                   }),
             ),
           ),

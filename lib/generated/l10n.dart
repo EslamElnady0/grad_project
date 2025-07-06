@@ -3449,6 +3449,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Failed to load students`
+  String get failedToLoadStudents {
+    return Intl.message(
+      'Failed to load students',
+      name: 'failedToLoadStudents',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try adjusting your search terms`
+  String get tryAdjustingSearchTerms {
+    return Intl.message(
+      'Try adjusting your search terms',
+      name: 'tryAdjustingSearchTerms',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load profile`
+  String get failedToLoadProfile {
+    return Intl.message(
+      'Failed to load profile',
+      name: 'failedToLoadProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load map`
+  String get failedToLoadMap {
+    return Intl.message(
+      'Failed to load map',
+      name: 'failedToLoadMap',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unable to load location`
+  String get unableToLoadLocation {
+    return Intl.message(
+      'Unable to load location',
+      name: 'unableToLoadLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please check your internet connection and try again`
+  String get checkInternetConnection {
+    return Intl.message(
+      'Please check your internet connection and try again',
+      name: 'checkInternetConnection',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

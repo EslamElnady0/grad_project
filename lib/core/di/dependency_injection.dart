@@ -22,6 +22,9 @@ import 'package:grad_project/features/assignments/logic/cubits/get_assignment_as
 import 'package:grad_project/features/assignments/logic/cubits/get_assignments_answers_cubit/get_assignments_answers_cubit.dart';
 import 'package:grad_project/features/assignments/logic/cubits/get_assignments_cubit/get_assignments_cubit.dart';
 import 'package:grad_project/features/chat/logic/inner_chat_cubit/inner_chat_cubit.dart';
+import 'package:grad_project/features/dashboard/data/data%20sources/dashboard_remote_data_source.dart';
+import 'package:grad_project/features/dashboard/data/repos/dashboard_repo.dart';
+import 'package:grad_project/features/dashboard/logic/dashboard_cubit/dashboard_cubit.dart';
 import 'package:grad_project/features/forum/data/data%20sources/questions_local_data_source.dart';
 import 'package:grad_project/features/forum/data/data%20sources/questions_remote_data_source.dart';
 import 'package:grad_project/features/forum/data/repos/questions_repo.dart';
@@ -136,10 +139,14 @@ Future<void> setupGetIt() async {
   //toDo:------------------------------ Courses API ------------------------------//
   getIt.registerLazySingleton<AllCoursesRemoteDataSource>(
       () => AllCoursesRemoteDataSource(dio));
-  getIt.registerLazySingleton<AllCoursesRepo>(() => AllCoursesRepo(
-        remoteDataSource: getIt(),
-      ));
+  getIt.registerLazySingleton<DashboardRemoteDataSource>(
+      () => DashboardRemoteDataSource(dio));
+  getIt.registerLazySingleton<AllCoursesRepo>(
+      () => AllCoursesRepo(remoteDataSource: getIt()));
+  getIt.registerLazySingleton<DashboardRepo>(
+      () => DashboardRepo(remoteDataSource: getIt()));
   getIt.registerFactory<AllCoursesCubit>(() => AllCoursesCubit(getIt()));
+  getIt.registerFactory<DashboardCubit>(() => DashboardCubit(getIt()));
   //toDo:------------------------------ Courses Materials ------------------------------//
   getIt.registerLazySingleton<GetCourseMaterialsRemoteDataSource>(
       () => GetCourseMaterialsRemoteDataSource(dio));

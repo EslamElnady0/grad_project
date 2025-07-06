@@ -133,6 +133,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "chatConnectionError": MessageLookupByLibrary.simpleMessage(
       "خطأ في اتصال الدردشة",
     ),
+    "checkInternetConnection": MessageLookupByLibrary.simpleMessage(
+      "يرجى التحقق من اتصال الإنترنت والمحاولة مرة أخرى",
+    ),
     "choose_assignment_deadline": MessageLookupByLibrary.simpleMessage(
       "⏰ حدد الموعد النهائي لتسليم الأسايمنت وتوقيت إغلاقه.",
     ),
@@ -269,14 +272,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "failedToLoadCourses": MessageLookupByLibrary.simpleMessage(
       "فشل تحميل المواد الدراسية",
     ),
+    "failedToLoadMap": MessageLookupByLibrary.simpleMessage(
+      "فشل تحميل الخريطة",
+    ),
     "failedToLoadMessages": MessageLookupByLibrary.simpleMessage(
       "فشل تحميل الرسائل",
     ),
     "failedToLoadParkingSlots": MessageLookupByLibrary.simpleMessage(
       "فشل تحميل مواقف السيارات",
     ),
+    "failedToLoadProfile": MessageLookupByLibrary.simpleMessage(
+      "فشل تحميل الملف الشخصي",
+    ),
     "failedToLoadQuizzes": MessageLookupByLibrary.simpleMessage(
       "فشل تحميل الكويزات",
+    ),
+    "failedToLoadStudents": MessageLookupByLibrary.simpleMessage(
+      "فشل تحميل الطلاب",
     ),
     "failedToLoadTasks": MessageLookupByLibrary.simpleMessage(
       "فشل تحميل المهام",
@@ -717,8 +729,14 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "to": MessageLookupByLibrary.simpleMessage("إلى"),
     "total": MessageLookupByLibrary.simpleMessage("المجموع"),
+    "tryAdjustingSearchTerms": MessageLookupByLibrary.simpleMessage(
+      "حاول تعديل مصطلحات البحث",
+    ),
     "tuesday": MessageLookupByLibrary.simpleMessage("الثلاثاء"),
     "type": MessageLookupByLibrary.simpleMessage("النوع"),
+    "unableToLoadLocation": MessageLookupByLibrary.simpleMessage(
+      "تعذر تحميل الموقع",
+    ),
     "understandBeforeAnswering": MessageLookupByLibrary.simpleMessage(
       "تأكد من فهم السؤال جيدًا قبل البدء بالإجابة.",
     ),

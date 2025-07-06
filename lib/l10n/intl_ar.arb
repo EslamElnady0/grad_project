@@ -428,5 +428,11 @@
   "failedToLoadQuizzes": "فشل تحميل الكويزات",
   "failedToLoadParkingSlots": "فشل تحميل مواقف السيارات",
   "failedToLoadTasks": "فشل تحميل المهام",
-  "failedToLoadAssignments": "فشل تحميل الأسايمنتات"
+  "failedToLoadAssignments": "فشل تحميل الأسايمنتات",
+  "failedToLoadStudents": "فشل تحميل الطلاب",
+  "tryAdjustingSearchTerms": "حاول تعديل مصطلحات البحث",
+  "failedToLoadProfile": "فشل تحميل الملف الشخصي",
+  "failedToLoadMap": "فشل تحميل الخريطة",
+  "unableToLoadLocation": "تعذر تحميل الموقع",
+  "checkInternetConnection": "يرجى التحقق من اتصال الإنترنت والمحاولة مرة أخرى"
 }

@@ -145,6 +145,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "chatConnectionError": MessageLookupByLibrary.simpleMessage(
       "Chat connection error",
     ),
+    "checkInternetConnection": MessageLookupByLibrary.simpleMessage(
+      "Please check your internet connection and try again",
+    ),
     "choose_assignment_deadline": MessageLookupByLibrary.simpleMessage(
       "⏰ Specify the assignment submission deadline and closing time.",
     ),
@@ -285,14 +288,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "failedToLoadCourses": MessageLookupByLibrary.simpleMessage(
       "Failed to load courses",
     ),
+    "failedToLoadMap": MessageLookupByLibrary.simpleMessage(
+      "Failed to load map",
+    ),
     "failedToLoadMessages": MessageLookupByLibrary.simpleMessage(
       "Failed to load messages",
     ),
     "failedToLoadParkingSlots": MessageLookupByLibrary.simpleMessage(
       "Failed to load parking slots",
     ),
+    "failedToLoadProfile": MessageLookupByLibrary.simpleMessage(
+      "Failed to load profile",
+    ),
     "failedToLoadQuizzes": MessageLookupByLibrary.simpleMessage(
       "Failed to load quizzes",
+    ),
+    "failedToLoadStudents": MessageLookupByLibrary.simpleMessage(
+      "Failed to load students",
     ),
     "failedToLoadTasks": MessageLookupByLibrary.simpleMessage(
       "Failed to load tasks",
@@ -754,8 +766,14 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "to": MessageLookupByLibrary.simpleMessage("To"),
     "total": MessageLookupByLibrary.simpleMessage("Total"),
+    "tryAdjustingSearchTerms": MessageLookupByLibrary.simpleMessage(
+      "Try adjusting your search terms",
+    ),
     "tuesday": MessageLookupByLibrary.simpleMessage("Tuesday"),
     "type": MessageLookupByLibrary.simpleMessage("Type"),
+    "unableToLoadLocation": MessageLookupByLibrary.simpleMessage(
+      "Unable to load location",
+    ),
     "understandBeforeAnswering": MessageLookupByLibrary.simpleMessage(
       "Make sure you fully understand the question before answering.",
     ),

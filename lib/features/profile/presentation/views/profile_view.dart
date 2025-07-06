@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grad_project/core/di/dependency_injection.dart';
 import 'package:grad_project/core/widgets/custom_scaffold.dart';
+import 'package:grad_project/core/widgets/failure_state_widget.dart';
 import 'package:grad_project/features/profile/logic/get_profile_cubit/get_profile_cubit.dart';
 import 'package:grad_project/features/profile/logic/get_profile_cubit/get_profile_state.dart';
 import 'package:grad_project/features/profile/presentation/views/widgets/profile_view_body.dart';
+import 'package:grad_project/generated/l10n.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
@@ -21,10 +23,20 @@ class ProfileView extends StatelessWidget {
             if (state is GetProfileLoading) {
               return const Center(child: CircularProgressIndicator());
             } else if (state is GetProfileFailure) {
-              print(state.error);
-              return Center(child: Text(state.error));
+              return Center(
+                child: FailureStateWidget(
+                  errorMessage: state.error,
+                  title: S.of(context).failedToLoadProfile,
+                  icon: Icons.person_outline,
+                  onRetry: () {
+                    context.read<GetProfileCubit>().getProfile();
+                  },
+                ),
+              );
             } else if (state is GetProfileSuccess) {
-              return ProfileViewBody(profileModel: state.data.data,);
+              return ProfileViewBody(
+                profileModel: state.data.data,
+              );
             }
             return const Center(child: Text('Unknown state'));
           },

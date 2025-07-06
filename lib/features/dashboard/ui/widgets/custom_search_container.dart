@@ -1,16 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
-import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
-import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_text_form_field.dart';
-import 'package:grad_project/core/widgets/green_grad_container.dart';
+import 'package:grad_project/features/dashboard/ui/cubit/students_search_cubit.dart';
 import 'package:grad_project/generated/l10n.dart';
 
-class CustomSearchContainer extends StatelessWidget {
+class CustomSearchContainer extends StatefulWidget {
   const CustomSearchContainer({super.key});
+
+  @override
+  State<CustomSearchContainer> createState() => _CustomSearchContainerState();
+}
+
+class _CustomSearchContainerState extends State<CustomSearchContainer> {
+  final TextEditingController _searchController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _searchController.addListener(_onSearchChanged);
+  }
+
+  @override
+  void dispose() {
+    _searchController.removeListener(_onSearchChanged);
+    _searchController.dispose();
+    super.dispose();
+  }
+
+  void _onSearchChanged() {
+    final query = _searchController.text;
+    context.read<StudentsSearchCubit>().searchStudents(query);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +54,7 @@ class CustomSearchContainer extends StatelessWidget {
         children: [
           Expanded(
             child: CustomTextFormField(
+              controller: _searchController,
               fillColor: AppColors.veryLightGray,
               prefixIcon: Padding(
                 padding: const EdgeInsets.all(10),
@@ -42,13 +67,6 @@ class CustomSearchContainer extends StatelessWidget {
               hintText: S.of(context).search_placeholder,
               textInputType: TextInputType.text,
             ),
-          ),
-          hGap(8),
-          GreenGradButton(
-            padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 8.h),
-            onTap: () {},
-            style: AppTextStyles.font12WhiteMedium,
-            title: S.of(context).search,
           ),
         ],
       ),

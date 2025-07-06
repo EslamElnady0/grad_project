@@ -4,9 +4,11 @@ import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/custom_white_drop_shadowed_container.dart';
+import '../../data/models/students_response.dart';
 
 class CustomSingleStudentContainer extends StatelessWidget {
-  const CustomSingleStudentContainer({super.key});
+  final Student student;
+  const CustomSingleStudentContainer({super.key, required this.student});
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +23,15 @@ class CustomSingleStudentContainer extends StatelessWidget {
             width: 30,
           ),
           hGap(10),
-          Text(
-            "اسلام ايهاب محمد لطفي",
-            style: AppTextStyles.font11BlackMedium,
+          Expanded(
+            child: Text(
+              student.name,
+              style: AppTextStyles.font11BlackMedium,
+              overflow: TextOverflow.ellipsis,
+            ),
           ),
-          const Spacer(),
           Text(
-            "6",
+            student.group.toString(),
             style: AppTextStyles.font11BlackMedium,
           ),
           hGap(24),

@@ -428,5 +428,11 @@
   "failedToLoadQuizzes": "Failed to load quizzes",
   "failedToLoadParkingSlots": "Failed to load parking slots",
   "failedToLoadTasks": "Failed to load tasks",
-  "failedToLoadAssignments": "Failed to load assignments"
+  "failedToLoadAssignments": "Failed to load assignments",
+  "failedToLoadStudents": "Failed to load students",
+  "tryAdjustingSearchTerms": "Try adjusting your search terms",
+  "failedToLoadProfile": "Failed to load profile",
+  "failedToLoadMap": "Failed to load map",
+  "unableToLoadLocation": "Unable to load location",
+  "checkInternetConnection": "Please check your internet connection and try again"
 }

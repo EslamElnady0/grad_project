@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/data/models/students_courses_response.dart';
 import 'package:grad_project/core/logic/all_courses_cubit/all_courses_cubit.dart';
+import 'package:grad_project/core/widgets/failure_state_widget.dart';
 import 'package:grad_project/features/subjects/ui/widgets/custom_subject_card.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/helpers/spacing.dart';
@@ -41,6 +42,15 @@ class SubjectsViewBody extends StatelessWidget {
                 final allCourses = state.data;
 
                 return _buildCourseList(allCourses);
+              } else if (state is AllCoursesFailure) {
+                return FailureStateWidget(
+                  errorMessage: state.error,
+                  title: S.of(context).failedToLoadCourses,
+                  icon: Icons.school_outlined,
+                  onRetry: () {
+                    context.read<AllCoursesCubit>().get();
+                  },
+                );
               } else {
                 return _buildSkeletonList();
               }
