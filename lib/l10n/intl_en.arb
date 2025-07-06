@@ -426,5 +426,7 @@
   "noMessagesAvailable": "No messages available",
   "failedToLoadCourses": "Failed to load courses",
   "failedToLoadQuizzes": "Failed to load quizzes",
-  "failedToLoadParkingSlots": "Failed to load parking slots"
+  "failedToLoadParkingSlots": "Failed to load parking slots",
+  "failedToLoadTasks": "Failed to load tasks",
+  "failedToLoadAssignments": "Failed to load assignments"
 }

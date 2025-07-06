@@ -276,6 +276,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "failedToLoadAnnouncements": MessageLookupByLibrary.simpleMessage(
       "Failed to load announcements",
     ),
+    "failedToLoadAssignments": MessageLookupByLibrary.simpleMessage(
+      "Failed to load assignments",
+    ),
     "failedToLoadChats": MessageLookupByLibrary.simpleMessage(
       "Failed to load chat groups",
     ),
@@ -290,6 +293,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "failedToLoadQuizzes": MessageLookupByLibrary.simpleMessage(
       "Failed to load quizzes",
+    ),
+    "failedToLoadTasks": MessageLookupByLibrary.simpleMessage(
+      "Failed to load tasks",
     ),
     "failedToSendMessage": MessageLookupByLibrary.simpleMessage(
       "Failed to send message",

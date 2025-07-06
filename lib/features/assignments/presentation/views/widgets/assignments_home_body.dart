@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/logic/all_courses_cubit/all_courses_cubit.dart';
+import 'package:grad_project/core/widgets/failure_state_widget.dart';
 import 'package:grad_project/features/assignments/presentation/views/widgets/assignment_manager_item_list_view.dart';
 import 'package:grad_project/features/assignments/presentation/views/widgets/skeleton_courses_list_view.dart';
 import 'package:grad_project/features/home/ui/widgets/home_screens_header_row.dart';
@@ -41,6 +42,9 @@ class AssignmentsHomeBody extends StatelessWidget {
                     allCoursesResponseModel: allCoursesResponseModel,
                   ),
                 );
+              }
+              if (state is AllCoursesFailure) {
+                return _buildFailureState(context, state.error);
               } else {
                 return const Expanded(child: SkeletonCoursesListView());
               }
@@ -50,4 +54,15 @@ class AssignmentsHomeBody extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget _buildFailureState(BuildContext context, String error) {
+  return FailureStateWidget(
+    errorMessage: error,
+    title: S.of(context).failedToLoadCourses,
+    icon: Icons.menu_book_outlined,
+    onRetry: () {
+      context.read<AllCoursesCubit>().get();
+    },
+  );
 }
