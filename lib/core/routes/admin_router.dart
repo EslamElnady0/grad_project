@@ -15,7 +15,6 @@ import 'package:grad_project/features/auth/ui/views/confirm_account_view.dart';
 import 'package:grad_project/features/dashboard/ui/views/registered_students_view.dart';
 import 'package:grad_project/features/forum/ui/views/answers_view.dart';
 import 'package:grad_project/features/forum/ui/views/forum_views.dart';
-import 'package:grad_project/features/subjects/ui/views/qr_attendance_view.dart';
 import 'package:grad_project/features/map/presentation/views/internal_map_view.dart';
 import 'package:grad_project/features/profile/presentation/views/profile_view.dart';
 import 'package:grad_project/features/quizes/ui/views/add_quiz_view.dart';
@@ -101,9 +100,6 @@ abstract class AdminRouter {
         GoRoute(
             path: AddAnnoucementView.routeName,
             builder: (context, state) => const AddAnnoucementView()),
-        GoRoute(
-            path: QrAttendanceView.routeName,
-            builder: (context, state) => const QrAttendanceView()),
         GoRoute(
             path: AddLectureView.routeName,
             builder: (context, state) {
