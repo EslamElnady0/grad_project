@@ -5,22 +5,22 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.0018077">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.0015554">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.0016362">
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.0008981">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: flutter build apk --flavor student --target ./lib/grad_project_students_main.dart" time="12.503808">
+      <testcase classname="fastlane.lanes" name="2: shorebird release android --flavor student --target ./lib/grad_project_students_main.dart --artifact=apk" time="704.6065411">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: firebase_app_distribution" time="119.8225139">
+      <testcase classname="fastlane.lanes" name="3: firebase_app_distribution" time="247.4526181">
         
       </testcase>
     

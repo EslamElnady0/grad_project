@@ -18,8 +18,8 @@ platform :android do
 
     desc "this lane uploads doctor build to app testers"
     lane :uploadDoctor do |options|
-       # sh "shorebird release android --flavor doctor --target ./lib/grad_project_admin_main.dart --artifact=apk"
-        sh "flutter build apk --flavor doctor --target ./lib/grad_project_admin_main.dart"
+        sh "shorebird release android --flavor doctor --target ./lib/grad_project_admin_main.dart --artifact=apk"
+       # sh "flutter build apk --flavor doctor --target ./lib/grad_project_admin_main.dart"
         firebase_app_distribution(
             service_credentials_file: "grad-proj-doctor-firebase-adminsdk-fbsvc-d59d52f0b7.json",
             app: "1:759640137262:android:9d9cb5bd7b6c528c8809bf",
@@ -37,8 +37,8 @@ platform :android do
 
     desc "this lane uploads student build to app testers"
     lane :uploadStudent do |options|
-        sh "flutter build apk --flavor student --target ./lib/grad_project_students_main.dart"
-       # sh "shorebird release android --flavor student --target ./lib/grad_project_students_main.dart --artifact=apk"
+       # sh "flutter build apk --flavor student --target ./lib/grad_project_students_main.dart"
+        sh "shorebird release android --flavor student --target ./lib/grad_project_students_main.dart --artifact=apk"
         firebase_app_distribution(
             service_credentials_file: "grad-proj-doctor-firebase-adminsdk-fbsvc-d59d52f0b7.json",
             app: "1:759640137262:android:5b0ddcab071f1c648809bf",
