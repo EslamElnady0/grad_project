@@ -426,5 +426,7 @@
   "noMessagesAvailable": "لا توجد رسائل متاحة",
   "failedToLoadCourses": "فشل تحميل المواد الدراسية",
   "failedToLoadQuizzes": "فشل تحميل الكويزات",
-  "failedToLoadParkingSlots": "فشل تحميل مواقف السيارات"
+  "failedToLoadParkingSlots": "فشل تحميل مواقف السيارات",
+  "failedToLoadTasks": "فشل تحميل المهام",
+  "failedToLoadAssignments": "فشل تحميل الأسايمنتات"
 }

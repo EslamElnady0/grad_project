@@ -3429,6 +3429,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Failed to load tasks`
+  String get failedToLoadTasks {
+    return Intl.message(
+      'Failed to load tasks',
+      name: 'failedToLoadTasks',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load assignments`
+  String get failedToLoadAssignments {
+    return Intl.message(
+      'Failed to load assignments',
+      name: 'failedToLoadAssignments',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

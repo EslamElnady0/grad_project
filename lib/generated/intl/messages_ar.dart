@@ -260,6 +260,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "failedToLoadAnnouncements": MessageLookupByLibrary.simpleMessage(
       "فشل تحميل الاخبار",
     ),
+    "failedToLoadAssignments": MessageLookupByLibrary.simpleMessage(
+      "فشل تحميل الأسايمنتات",
+    ),
     "failedToLoadChats": MessageLookupByLibrary.simpleMessage(
       "فشل تحميل مجموعات الدردشة",
     ),
@@ -274,6 +277,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "failedToLoadQuizzes": MessageLookupByLibrary.simpleMessage(
       "فشل تحميل الكويزات",
+    ),
+    "failedToLoadTasks": MessageLookupByLibrary.simpleMessage(
+      "فشل تحميل المهام",
     ),
     "failedToSendMessage": MessageLookupByLibrary.simpleMessage(
       "فشل إرسال الرسالة",

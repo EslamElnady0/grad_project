@@ -6,6 +6,7 @@ import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/widgets/custom_drop_down_button.dart';
 import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
 import 'package:grad_project/core/widgets/custom_search_text_field.dart';
+import 'package:grad_project/core/widgets/failure_state_widget.dart';
 import 'package:grad_project/features/home/ui/widgets/title_text_widget.dart';
 import 'package:grad_project/features/time_schedule/data/models/activity_response_model.dart';
 import 'package:grad_project/features/time_schedule/logic/activity_filter_cubit/activity_filter_cubit.dart';
@@ -27,35 +28,21 @@ class TimeScheduleViewBody extends StatefulWidget {
 }
 
 class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
-  List<ActivityModel> activities = [];
-
-  String selectedType = '';
-  String selectedStatus = '';
-
-  bool _isFirstLoad = true;
   final TextEditingController searchController = TextEditingController();
 
-  List<ActivityModel> _mergeAndSortActivities(GetStudentsQuizzesState quizState,
-      GetStudentsAssignmentsState assignmentState) {
-    if (quizState is GetStudentsQuizzesSuccess &&
-        assignmentState is GetStudentsAssignmentsSuccess) {
-      final quizzes = quizState.data;
-      final assignments = assignmentState.data;
+  String _currentType = '';
+  String _currentStatus = '';
 
-      final combined = <ActivityModel>[
-        ...quizzes,
-        ...assignments,
-      ];
-      setState(() {
-        activities = combined;
-        activities.sort((a, b) {
-          final aDate = DateTime.parse(a.date);
-          final bDate = DateTime.parse(b.date);
-          return aDate.compareTo(bDate);
-        });
-      });
-    }
-    return activities;
+  @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _currentStatus = S.of(context).scheduled;
+      _currentType = S.of(context).all;
+      setState(() {});
+      _onRefresh();
+    });
   }
 
   Future<void> _onRefresh() async {
@@ -63,45 +50,87 @@ class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
     final assignmentCubit = context.read<GetStudentsAssignmentsCubit>();
     final filterCubit = context.read<ActivityFilterCubit>();
 
-    await Future.wait([
-      quizCubit.getStudentsQuizzes(),
-      assignmentCubit.getStudentsAssignments(),
-    ]);
+    try {
+      await Future.wait([
+        quizCubit.getStudentsQuizzes(),
+        assignmentCubit.getStudentsAssignments(),
+      ]);
 
-    final quizState = quizCubit.state;
-    final assignmentState = assignmentCubit.state;
+      final quizState = quizCubit.state;
+      final assignmentState = assignmentCubit.state;
 
-    final refreshedActivities =
-        _mergeAndSortActivities(quizState, assignmentState);
+      if (quizState is GetStudentsQuizzesFailure ||
+          assignmentState is GetStudentsAssignmentsFailure) {
+        String errorMessage = quizState is GetStudentsQuizzesFailure
+            ? quizState.error
+            : (assignmentState as GetStudentsAssignmentsFailure).error;
+        filterCubit.emit(ActivityFilterErrorState(errorMessage));
+        return;
+      }
 
-    filterCubit.filterActivities(
-        refreshedActivities, selectedType, selectedStatus);
+      if (quizState is GetStudentsQuizzesSuccess &&
+          assignmentState is GetStudentsAssignmentsSuccess) {
+        final activities =
+            filterCubit.mergeAndSortActivities(quizState, assignmentState);
+        filterCubit.filterActivities(activities, _currentType, _currentStatus);
+      }
 
-    searchController.clear();
+      searchController.clear();
+    } catch (e) {}
+  }
+
+  Future<void> _handleFilterChange(String? newType, String? newStatus) async {
+    setState(() {
+      if (newType != null) {
+        _currentType = newType;
+      }
+      if (newStatus != null) {
+        _currentStatus = newStatus;
+      }
+    });
+
+    final quizCubit = context.read<GetStudentsQuizzesCubit>();
+    final assignmentCubit = context.read<GetStudentsAssignmentsCubit>();
+    final filterCubit = context.read<ActivityFilterCubit>();
+
+    try {
+      await Future.wait([
+        quizCubit.getStudentsQuizzes(),
+        assignmentCubit.getStudentsAssignments(),
+      ]);
+
+      final quizState = quizCubit.state;
+      final assignmentState = assignmentCubit.state;
+
+      if (quizState is GetStudentsQuizzesFailure ||
+          assignmentState is GetStudentsAssignmentsFailure) {
+        String errorMessage = quizState is GetStudentsQuizzesFailure
+            ? quizState.error
+            : (assignmentState as GetStudentsAssignmentsFailure).error;
+        filterCubit.emit(ActivityFilterErrorState(errorMessage));
+        return;
+      }
+
+      if (quizState is GetStudentsQuizzesSuccess &&
+          assignmentState is GetStudentsAssignmentsSuccess) {
+        final activities =
+            filterCubit.mergeAndSortActivities(quizState, assignmentState);
+        filterCubit.filterActivities(activities, _currentType, _currentStatus);
+      }
+
+      searchController.clear();
+    } catch (e) {
+      filterCubit.emit(ActivityFilterErrorState(e.toString()));
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    if (selectedStatus.isEmpty) {
-      selectedStatus = S.of(context).scheduled;
+    if (_currentStatus.isEmpty) {
+      _currentStatus = S.of(context).scheduled;
     }
-    if (selectedType.isEmpty) {
-      selectedType = S.of(context).all;
-    }
-
-    final quizState = context.watch<GetStudentsQuizzesCubit>().state;
-    final assignmentState = context.watch<GetStudentsAssignmentsCubit>().state;
-
-    List<ActivityModel> activities =
-        _mergeAndSortActivities(quizState, assignmentState);
-
-    if (_isFirstLoad &&
-        quizState is GetStudentsQuizzesSuccess &&
-        assignmentState is GetStudentsAssignmentsSuccess) {
-      _isFirstLoad = false;
-      final filterCubit = context.read<ActivityFilterCubit>();
-      filterCubit.setFullActivityList(activities); // 💡 Important
-      filterCubit.filterActivities(activities, selectedType, selectedStatus);
+    if (_currentType.isEmpty) {
+      _currentType = S.of(context).all;
     }
 
     return Padding(
@@ -130,106 +159,142 @@ class _TimeScheduleViewBodyState extends State<TimeScheduleViewBody> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               CustomDropDownButton(
-                value: selectedStatus,
+                value: _currentStatus,
                 values: [S.of(context).scheduled, S.of(context).previous],
                 onChanged: (value) {
-                  setState(() {
-                    if (value != null) {
-                      selectedStatus = value;
-                    }
-                    context.read<ActivityFilterCubit>().filterActivities(
-                        activities, selectedType, selectedStatus);
-                  });
-                  searchController.clear();
+                  _handleFilterChange(null, value);
                 },
               ),
               CustomDropDownButton(
-                  value: selectedType,
-                  values: [
-                    S.of(context).quizzes,
-                    S.of(context).assignments,
-                    S.of(context).all
-                  ],
-                  onChanged: (value) {
-                    setState(() {
-                      if (value != null) {
-                        selectedType = value;
-                      }
-                      context.read<ActivityFilterCubit>().filterActivities(
-                          activities, selectedType, selectedStatus);
-                    });
-                    searchController.clear();
-                  }),
+                value: _currentType,
+                values: [
+                  S.of(context).quizzes,
+                  S.of(context).assignments,
+                  S.of(context).all
+                ],
+                onChanged: (value) {
+                  _handleFilterChange(value, null);
+                },
+              ),
             ],
           ),
           vGap(15),
-
           Expanded(
-            child: BlocBuilder<ActivityFilterCubit, ActivityFilterState>(
-              builder: (context, state) {
-                return state.maybeWhen(
-                  orElse: () => _buildLoadingState(),
-                  success: (data) {
-                    return _buildSuccessState(
-                      data,
-                      _onRefresh,
+            child:
+                BlocConsumer<GetStudentsQuizzesCubit, GetStudentsQuizzesState>(
+              listener: (context, quizState) {
+                _handleDataChange();
+              },
+              builder: (context, quizState) {
+                return BlocConsumer<GetStudentsAssignmentsCubit,
+                    GetStudentsAssignmentsState>(
+                  listener: (context, assignmentState) {
+                    _handleDataChange();
+                  },
+                  builder: (context, assignmentState) {
+                    return BlocBuilder<ActivityFilterCubit,
+                        ActivityFilterState>(
+                      builder: (context, filterState) {
+                        if (quizState is GetStudentsQuizzesLoading ||
+                            assignmentState is GetStudentsAssignmentsLoading) {
+                          return _buildLoadingState();
+                        }
+
+                        return filterState.maybeWhen(
+                          orElse: () => _buildLoadingState(),
+                          success: (data) {
+                            return _buildSuccessState(data, _onRefresh);
+                          },
+                          error: (error) {
+                            return _buildFailureState(
+                                context, error, _onRefresh);
+                          },
+                        );
+                      },
                     );
                   },
                 );
               },
             ),
           ),
-          // quizState.maybeWhen(
-          //   orElse: () => _buildLoadingState(),
-          //   getStudentsQuizzesSuccess: (data) {
-          //     return assignmentState.maybeWhen(
-          //       orElse: () => _buildLoadingState(),
-          //       getStudentsAssignmentsSuccess: (data) {
-          //         return _buildSuccessState(activities);
-          //       },
-          //     );
-          //   },
-          // ),
         ],
       ),
     );
   }
-}
 
-Widget _buildSuccessState(
-    List<ActivityModel> data, Future<void> Function() onRefresh) {
-  return RefreshIndicator(
-    onRefresh: onRefresh,
-    color: AppColors.primaryColorlight,
-    child: ListView.separated(
-      shrinkWrap: true,
-      physics: const AlwaysScrollableScrollPhysics(),
-      padding: EdgeInsets.only(top: 10.h),
-      itemBuilder: (context, index) {
-        return data[index] is StudentQuizModel
-            ? CustomStudentQuizWidget(
-                quizModel: data[index] as StudentQuizModel)
-            : CustomStudentAssignmentWidget(
-                assignmentModel: data[index] as StudentAssignmentModel);
-      },
-      separatorBuilder: (context, index) => vGap(12),
-      itemCount: data.length,
-    ),
-  );
-}
+  void _handleDataChange() {
+    final quizState = context.read<GetStudentsQuizzesCubit>().state;
+    final assignmentState = context.read<GetStudentsAssignmentsCubit>().state;
+    final filterCubit = context.read<ActivityFilterCubit>();
 
-Widget _buildLoadingState() {
-  return Skeletonizer(
-    enabled: true,
-    child: ListView.separated(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      padding: EdgeInsets.only(top: 10.h),
-      itemBuilder: (context, index) {
-        return const CustomStudentQuizWidgetSkeleton();
-      },
-      separatorBuilder: (context, index) => vGap(12),
-      itemCount: 5,
-    ),
-  );
+    if ((quizState is GetStudentsQuizzesSuccess ||
+            quizState is GetStudentsQuizzesFailure) &&
+        (assignmentState is GetStudentsAssignmentsSuccess ||
+            assignmentState is GetStudentsAssignmentsFailure)) {
+      if (quizState is GetStudentsQuizzesFailure ||
+          assignmentState is GetStudentsAssignmentsFailure) {
+        return;
+      }
+      if (quizState is GetStudentsQuizzesSuccess &&
+          assignmentState is GetStudentsAssignmentsSuccess) {
+        filterCubit.initializeFilters(
+          quizState,
+          assignmentState,
+          _currentType,
+          _currentStatus,
+        );
+      }
+    }
+  }
+
+  Widget _buildSuccessState(
+      List<ActivityModel> data, Future<void> Function() onRefresh) {
+    return RefreshIndicator(
+      onRefresh: onRefresh,
+      color: AppColors.primaryColorlight,
+      child: ListView.separated(
+        physics: const AlwaysScrollableScrollPhysics(),
+        padding: EdgeInsets.only(top: 10.h),
+        itemBuilder: (context, index) {
+          return data[index] is StudentQuizModel
+              ? CustomStudentQuizWidget(
+                  quizModel: data[index] as StudentQuizModel)
+              : CustomStudentAssignmentWidget(
+                  assignmentModel: data[index] as StudentAssignmentModel);
+        },
+        separatorBuilder: (context, index) => vGap(12),
+        itemCount: data.length,
+      ),
+    );
+  }
+
+  Widget _buildLoadingState() {
+    return Skeletonizer(
+      enabled: true,
+      child: ListView.separated(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        padding: EdgeInsets.only(top: 10.h),
+        itemBuilder: (context, index) {
+          return const CustomStudentQuizWidgetSkeleton();
+        },
+        separatorBuilder: (context, index) => vGap(12),
+        itemCount: 5,
+      ),
+    );
+  }
+
+  Widget _buildFailureState(
+      BuildContext context, String error, Future<void> Function() onRefresh) {
+    return RefreshIndicator(
+      onRefresh: onRefresh,
+      color: AppColors.primaryColorlight,
+      child: FailureStateWidget(
+        errorMessage: error,
+        title: S.of(context).failedToLoadTasks,
+        icon: Icons.task_alt_outlined,
+        onRetry: onRefresh,
+      ),
+    );
+  }
 }

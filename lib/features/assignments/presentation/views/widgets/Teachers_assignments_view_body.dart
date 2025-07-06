@@ -1,9 +1,10 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
 import 'package:grad_project/core/widgets/custom_search_text_field.dart';
+import 'package:grad_project/core/widgets/failure_state_widget.dart';
 import 'package:grad_project/features/assignments/data/models/get_assignments_request_query_params_model.dart';
 import 'package:grad_project/features/assignments/data/models/get_assignments_response_model.dart';
 import 'package:grad_project/features/assignments/logic/cubits/get_assignments_cubit/get_assignments_cubit.dart';
@@ -90,6 +91,8 @@ class _TeachersAssignmentsViewBodyState
                 return _buildSuccessState(_filteredAssignments);
               },
               orElse: () => _buildLoadingState(),
+              getAssignmentsFailure: (error) =>
+                  _buildFailureState(context, error, widget.queryParamsModel),
             );
           }),
         )
@@ -119,6 +122,7 @@ Widget _buildLoadingState() {
   return Skeletonizer(
     enabled: true,
     child: ListView.separated(
+      physics: const AlwaysScrollableScrollPhysics(),
       padding: EdgeInsets.only(top: 10.h),
       itemBuilder: (context, index) {
         return Padding(
@@ -129,5 +133,20 @@ Widget _buildLoadingState() {
       separatorBuilder: (context, index) => vGap(12),
       itemCount: 5,
     ),
+  );
+}
+
+Widget _buildFailureState(BuildContext context, String error,
+    GetAssignmentsRequestQueryParamsModel queryParamsModel) {
+  return FailureStateWidget(
+    errorMessage: error,
+    title: S.of(context).failedToLoadAssignments,
+    icon: Icons.assignment_outlined,
+    onRetry: () {
+      context.read<GetAssignmentsCubit>().getAssignments(
+          courseId: queryParamsModel.courseId,
+          assignmentStatus: queryParamsModel.assignmentStatus,
+          fromDate: queryParamsModel.fromDate);
+    },
   );
 }
