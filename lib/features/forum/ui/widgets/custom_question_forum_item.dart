@@ -55,7 +55,7 @@ class CustomQuestionForumItem extends StatelessWidget {
                   from: timeInfo.from,
                   date: timeInfo.date,
                   name: questionModel?.user?.name ?? "",
-                  specialization: "${questionModel?.user?.department} ${S.of(context).semester} ${questionModel?.user?.semester}",
+                  specialization: "${questionModel?.user?.department?.name} ${S.of(context).semester} ${questionModel?.user?.semester}",
                 ),
               ),
               FutureBuilder<bool>(

@@ -557,7 +557,7 @@ mixin _$UserModel {
   int? get id => throw _privateConstructorUsedError;
   String? get avatar => throw _privateConstructorUsedError;
   int? get semester => throw _privateConstructorUsedError;
-  String? get department => throw _privateConstructorUsedError;
+  DepartmentModel? get department => throw _privateConstructorUsedError;
   bool? get liked => throw _privateConstructorUsedError;
 
   /// Serializes this UserModel to a JSON map.
@@ -580,8 +580,10 @@ abstract class $UserModelCopyWith<$Res> {
       int? id,
       String? avatar,
       int? semester,
-      String? department,
+      DepartmentModel? department,
       bool? liked});
+
+  $DepartmentModelCopyWith<$Res>? get department;
 }
 
 /// @nodoc
@@ -626,12 +628,26 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
       department: freezed == department
           ? _value.department
           : department // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as DepartmentModel?,
       liked: freezed == liked
           ? _value.liked
           : liked // ignore: cast_nullable_to_non_nullable
               as bool?,
     ) as $Val);
+  }
+
+  /// Create a copy of UserModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $DepartmentModelCopyWith<$Res>? get department {
+    if (_value.department == null) {
+      return null;
+    }
+
+    return $DepartmentModelCopyWith<$Res>(_value.department!, (value) {
+      return _then(_value.copyWith(department: value) as $Val);
+    });
   }
 }
 
@@ -648,8 +664,11 @@ abstract class _$$UserModelImplCopyWith<$Res>
       int? id,
       String? avatar,
       int? semester,
-      String? department,
+      DepartmentModel? department,
       bool? liked});
+
+  @override
+  $DepartmentModelCopyWith<$Res>? get department;
 }
 
 /// @nodoc
@@ -692,7 +711,7 @@ class __$$UserModelImplCopyWithImpl<$Res>
       department: freezed == department
           ? _value.department
           : department // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as DepartmentModel?,
       liked: freezed == liked
           ? _value.liked
           : liked // ignore: cast_nullable_to_non_nullable
@@ -724,7 +743,7 @@ class _$UserModelImpl implements _UserModel {
   @override
   final int? semester;
   @override
-  final String? department;
+  final DepartmentModel? department;
   @override
   final bool? liked;
 
@@ -775,7 +794,7 @@ abstract class _UserModel implements UserModel {
       final int? id,
       final String? avatar,
       final int? semester,
-      final String? department,
+      final DepartmentModel? department,
       final bool? liked}) = _$UserModelImpl;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
@@ -790,7 +809,7 @@ abstract class _UserModel implements UserModel {
   @override
   int? get semester;
   @override
-  String? get department;
+  DepartmentModel? get department;
   @override
   bool? get liked;
 
@@ -799,5 +818,172 @@ abstract class _UserModel implements UserModel {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UserModelImplCopyWith<_$UserModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+DepartmentModel _$DepartmentModelFromJson(Map<String, dynamic> json) {
+  return _DepartmentModel.fromJson(json);
+}
+
+/// @nodoc
+mixin _$DepartmentModel {
+  int? get id => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+
+  /// Serializes this DepartmentModel to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of DepartmentModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $DepartmentModelCopyWith<DepartmentModel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DepartmentModelCopyWith<$Res> {
+  factory $DepartmentModelCopyWith(
+          DepartmentModel value, $Res Function(DepartmentModel) then) =
+      _$DepartmentModelCopyWithImpl<$Res, DepartmentModel>;
+  @useResult
+  $Res call({int? id, String? name});
+}
+
+/// @nodoc
+class _$DepartmentModelCopyWithImpl<$Res, $Val extends DepartmentModel>
+    implements $DepartmentModelCopyWith<$Res> {
+  _$DepartmentModelCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of DepartmentModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$DepartmentModelImplCopyWith<$Res>
+    implements $DepartmentModelCopyWith<$Res> {
+  factory _$$DepartmentModelImplCopyWith(_$DepartmentModelImpl value,
+          $Res Function(_$DepartmentModelImpl) then) =
+      __$$DepartmentModelImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int? id, String? name});
+}
+
+/// @nodoc
+class __$$DepartmentModelImplCopyWithImpl<$Res>
+    extends _$DepartmentModelCopyWithImpl<$Res, _$DepartmentModelImpl>
+    implements _$$DepartmentModelImplCopyWith<$Res> {
+  __$$DepartmentModelImplCopyWithImpl(
+      _$DepartmentModelImpl _value, $Res Function(_$DepartmentModelImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of DepartmentModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+  }) {
+    return _then(_$DepartmentModelImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$DepartmentModelImpl implements _DepartmentModel {
+  const _$DepartmentModelImpl({this.id, this.name});
+
+  factory _$DepartmentModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DepartmentModelImplFromJson(json);
+
+  @override
+  final int? id;
+  @override
+  final String? name;
+
+  @override
+  String toString() {
+    return 'DepartmentModel(id: $id, name: $name)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DepartmentModelImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name);
+
+  /// Create a copy of DepartmentModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DepartmentModelImplCopyWith<_$DepartmentModelImpl> get copyWith =>
+      __$$DepartmentModelImplCopyWithImpl<_$DepartmentModelImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$DepartmentModelImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _DepartmentModel implements DepartmentModel {
+  const factory _DepartmentModel({final int? id, final String? name}) =
+      _$DepartmentModelImpl;
+
+  factory _DepartmentModel.fromJson(Map<String, dynamic> json) =
+      _$DepartmentModelImpl.fromJson;
+
+  @override
+  int? get id;
+  @override
+  String? get name;
+
+  /// Create a copy of DepartmentModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DepartmentModelImplCopyWith<_$DepartmentModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

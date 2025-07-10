@@ -56,7 +56,10 @@ _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
       id: (json['id'] as num?)?.toInt(),
       avatar: json['avatar'] as String?,
       semester: (json['semester'] as num?)?.toInt(),
-      department: json['department'] as String?,
+      department: json['department'] == null
+          ? null
+          : DepartmentModel.fromJson(
+              json['department'] as Map<String, dynamic>),
       liked: json['liked'] as bool?,
     );
 
@@ -68,4 +71,18 @@ Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
       'semester': instance.semester,
       'department': instance.department,
       'liked': instance.liked,
+    };
+
+_$DepartmentModelImpl _$$DepartmentModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$DepartmentModelImpl(
+      id: (json['id'] as num?)?.toInt(),
+      name: json['name'] as String?,
+    );
+
+Map<String, dynamic> _$$DepartmentModelImplToJson(
+        _$DepartmentModelImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
     };
