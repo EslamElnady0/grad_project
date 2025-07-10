@@ -29,13 +29,7 @@ class CustomSubjectCard extends StatelessWidget {
             topLeft: Radius.circular(22.r),
             topRight: Radius.circular(22.r),
           )),
-          child: Stack(children: [
-            Image.asset(Assets.imagesSubject),
-            Positioned(
-                top: 20.h,
-                right: 18.w,
-                child: SvgPicture.asset(Assets.imagesSvgsStarIcon))
-          ]),
+          child:    Image.asset(Assets.imagesSubject),
         ),
         Container(
           decoration: BoxDecoration(

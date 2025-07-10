@@ -36,8 +36,8 @@ class _FilterQuestionsBottomSheetState extends State<FilterQuestionsBottomSheet>
   }
 
   Map<int, String> departmentsArabic = {
-    1: 'عام',
-    2: 'هندسة الحاسبات والنظم',
+   
+    12: 'هندسة الحاسبات والنظم',
     3: 'الهندسة المدنية',
     4: 'الهندسة الميكانيكية',
     5: 'الهندسة الكهربية',
@@ -49,8 +49,8 @@ class _FilterQuestionsBottomSheetState extends State<FilterQuestionsBottomSheet>
     11: 'الهندسة الصناعية',
   };
   Map<int, String> departmentsEnglish = {
-    1: 'General',
-    2: 'Computer Science',
+  
+    12: 'Computer Science',
     3: 'Civil Engineering',
     4: 'Mechanical Engineering',
     5: 'Electrical Engineering',
