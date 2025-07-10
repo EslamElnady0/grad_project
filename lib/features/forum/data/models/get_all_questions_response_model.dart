@@ -40,10 +40,21 @@ class UserModel with _$UserModel {
     int? id,
     String? avatar,
     int? semester,
-    String? department,
+     DepartmentModel? department,
     bool? liked,
   }) = _UserModel;
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>
       _$UserModelFromJson(json);
+}
+
+@freezed
+class DepartmentModel with _$DepartmentModel {
+  const factory DepartmentModel({
+    int? id,
+    String? name,
+  }) = _DepartmentModel;
+
+  factory DepartmentModel.fromJson(Map<String, dynamic> json) =>
+      _$DepartmentModelFromJson(json);
 }

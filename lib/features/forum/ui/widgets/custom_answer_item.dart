@@ -28,7 +28,7 @@ class CustomAnswerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final String specialization = answerModel?.user?.semester == null
         ? S.of(context).doctor
-        : "${answerModel?.user?.department} ${S.of(context).semester} ${answerModel?.user?.semester}";
+        : "${answerModel?.user?.department?.name} ${S.of(context).semester} ${answerModel?.user?.semester}";
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.0.w),
       child: Row(
