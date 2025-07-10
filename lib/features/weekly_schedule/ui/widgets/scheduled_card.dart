@@ -145,27 +145,25 @@ class ScheduleCard extends StatelessWidget {
       },
       child: SizedBox(
         height: height,
-        child: Flexible(
-          child: FittedBox(
-            fit: BoxFit.scaleDown,
-            child: Center(
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                decoration: isButton
-                    ? BoxDecoration(
-                        color: AppColors.primaryColordark.withOpacity(0.1),
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: AppColors.primaryColordark),
-                      )
-                    : null,
-                child: Text(
-                  text,
-                  style: AppTextStyles.font11BlackSemiBold.copyWith(
-                    color:
-                        isButton ? AppColors.primaryColordark : AppColors.darkblue,
-                  ),
-                  textAlign: TextAlign.center,
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Center(
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              decoration: isButton
+                  ? BoxDecoration(
+                      color: AppColors.primaryColordark.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: AppColors.primaryColordark),
+                    )
+                  : null,
+              child: Text(
+                text,
+                style: AppTextStyles.font11BlackSemiBold.copyWith(
+                  color:
+                      isButton ? AppColors.primaryColordark : AppColors.darkblue,
                 ),
+                textAlign: TextAlign.center,
               ),
             ),
           ),
