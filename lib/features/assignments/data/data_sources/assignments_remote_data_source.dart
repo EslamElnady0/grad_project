@@ -6,6 +6,7 @@ import 'package:grad_project/features/assignments/data/models/assignment_answer_
 import 'package:grad_project/features/assignments/data/models/assignment_answers_model.dart';
 import 'package:grad_project/features/assignments/data/models/assignments_solution_response_model.dart';
 import 'package:grad_project/features/assignments/data/models/create_assignment_response_model.dart';
+import 'package:grad_project/features/assignments/data/models/delete_assignment_response_model.dart';
 import 'package:grad_project/features/assignments/data/models/edit_assignment_response_model.dart';
 import 'package:grad_project/features/assignments/data/models/get_assignments_response_model.dart';
 import 'package:grad_project/features/time_schedule/data/models/activity_response_model.dart';
@@ -76,6 +77,11 @@ abstract class AssignmentsRemoteDataSource {
 
    @GET("${ApiConstants.assignments}/{id}")
   Future<StudentAssignmentAnswerModel> getAssignmentDetails(
+    @Path("id") int assignmentId,
+  );
+
+  @DELETE("${ApiConstants.teachers}${ApiConstants.assignments}/{id}")
+  Future<DeleteAssignmentResponseModel> deleteAssignment(
     @Path("id") int assignmentId,
   );
 }

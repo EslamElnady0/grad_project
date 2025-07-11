@@ -9,6 +9,7 @@ import 'package:grad_project/features/assignments/data/models/assignment_answers
 import 'package:grad_project/features/assignments/data/models/assignments_solution_response_model.dart';
 import 'package:grad_project/features/assignments/data/models/create_assignment_request_model.dart';
 import 'package:grad_project/features/assignments/data/models/create_assignment_response_model.dart';
+import 'package:grad_project/features/assignments/data/models/delete_assignment_response_model.dart';
 import 'package:grad_project/features/assignments/data/models/edit_assignment_request_model.dart';
 import 'package:grad_project/features/assignments/data/models/edit_assignment_response_model.dart';
 import 'package:grad_project/features/assignments/data/models/get_assignments_request_query_params_model.dart';
@@ -125,6 +126,16 @@ class AssignmentsRepo {
       int assignmentId) async {
     try {
       final response = await remoteDataSource.getAssignmentDetails(assignmentId);
+      return ApiResult.success(response);
+    } catch (e) {
+      return ApiResult.failure(ApiErrorHandler.handle(e));
+    }
+  }
+
+  Future<ApiResult<DeleteAssignmentResponseModel>> deleteAssignment(
+      int assignmentId) async {
+    try {
+      final response = await remoteDataSource.deleteAssignment(assignmentId);
       return ApiResult.success(response);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));

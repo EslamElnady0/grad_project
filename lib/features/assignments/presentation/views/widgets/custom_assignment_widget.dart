@@ -1,20 +1,28 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:grad_project/core/helpers/app_assets.dart';
 import 'package:grad_project/core/helpers/constants.dart';
 import 'package:grad_project/core/helpers/format_date_and_time_helpers.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
+import 'package:grad_project/features/assignments/data/models/get_assignments_request_query_params_model.dart';
 import 'package:grad_project/features/assignments/data/models/get_assignments_response_model.dart';
+import 'package:grad_project/features/assignments/logic/cubits/delete_assignment_cubit/delete_assignment_cubit.dart';
+import 'package:grad_project/features/assignments/logic/cubits/get_assignments_cubit/get_assignments_cubit.dart';
+import 'package:grad_project/features/assignments/presentation/views/edit_assignment_view.dart';
 import 'package:grad_project/features/assignments/presentation/views/widgets/custom_assignment_button.dart';
+import 'package:grad_project/features/quizes/ui/widgets/activity_pop_up_menu.dart';
 import 'package:grad_project/generated/l10n.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class CustomAssignmentWidget extends StatelessWidget {
-  const CustomAssignmentWidget({super.key, required this.assignmentModel});
+  const CustomAssignmentWidget({super.key, required this.assignmentModel, required this.queryParamsModel});
 
   final AssignmentModel assignmentModel;
+  final GetAssignmentsRequestQueryParamsModel queryParamsModel;
   @override
   Widget build(BuildContext context) {
     String time = FormatDateAndTimeHelpers.convertTo12HourFormat(
@@ -38,10 +46,36 @@ String timePeriod = FormatDateAndTimeHelpers.convertTo12HourFormat(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            FormatDateAndTimeHelpers.formatDateToDayFullMonthAndYear(
-                assignmentModel.date, context),
-            style: AppTextStyles.font16DarkerBlueBold,
+          Row(
+            children: [
+              Text(
+                FormatDateAndTimeHelpers.formatDateToDayFullMonthAndYear(
+                    assignmentModel.date, context),
+                style: AppTextStyles.font16DarkerBlueBold,
+              ),
+              const Spacer(),
+              ActivityPopUpMenu(
+                onEditPressed: () {
+                  context.push(
+                    EditAssignmentView.routeName,
+                    extra: assignmentModel,
+                  );
+                },
+                onDeletePressed: ()async{
+                  context.read<DeleteAssignmentCubit>().deleteAssignment(
+                         assignmentModel.id,
+                      );
+
+                      if (context.mounted) {
+                    await context.read<GetAssignmentsCubit>().getAssignments(
+                          courseId: queryParamsModel.courseId,
+                          assignmentStatus: queryParamsModel.assignmentStatus,
+                          fromDate: queryParamsModel.fromDate,
+                        );
+                  }
+                },
+              ),
+            ],
           ),
           vGap(10),
           Row(

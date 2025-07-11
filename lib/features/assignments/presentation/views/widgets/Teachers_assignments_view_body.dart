@@ -88,7 +88,8 @@ class _TeachersAssignmentsViewBodyState
                 if (_searchController.text.isEmpty) {
                   _filteredAssignments = _allAssignments;
                 }
-                return _buildSuccessState(_filteredAssignments);
+                return _buildSuccessState(
+                    _filteredAssignments, widget.queryParamsModel);
               },
               orElse: () => _buildLoadingState(),
               getAssignmentsFailure: (error) =>
@@ -101,13 +102,15 @@ class _TeachersAssignmentsViewBodyState
   }
 }
 
-Widget _buildSuccessState(List<AssignmentModel> data) {
+Widget _buildSuccessState(List<AssignmentModel> data,
+    GetAssignmentsRequestQueryParamsModel queryParamsModel) {
   return ListView.separated(
     padding: EdgeInsets.only(top: 10.h),
     itemBuilder: (context, index) {
       return Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: CustomAssignmentWidget(
+          queryParamsModel: queryParamsModel,
           assignmentModel: data[index],
         ),
       );

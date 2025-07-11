@@ -5,6 +5,7 @@ import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
 import 'package:grad_project/core/widgets/custom_scaffold.dart';
 import 'package:grad_project/generated/l10n.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:open_file/open_file.dart'; // To open downloaded files
 
 class PdfWebViewPage extends StatefulWidget {
   static const String routeName = '/pdfWebView';
@@ -20,32 +21,39 @@ class _PdfWebViewPageState extends State<PdfWebViewPage> {
   bool isLoading = true;
   bool _initialized = false;
 
+  late String fileUrl;
+  late String fileExtension;
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-
-    // Prevent multiple initializations when dependencies change
     if (_initialized) return;
     _initialized = true;
 
-    final pdfUrl = GoRouterState.of(context).extra as String;
-    final fullUrl = 'https://$pdfUrl';
-    final viewerUrl =
-        'https://docs.google.com/gview?embedded=true&url=$fullUrl';
+    fileUrl = GoRouterState.of(context).extra as String;
+    fileExtension = fileUrl.split('.').last.toLowerCase();
 
-    controller = WebViewController()
-      ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..setNavigationDelegate(
-        NavigationDelegate(
-          onPageStarted: (_) {
-            setState(() => isLoading = true);
-          },
-          onPageFinished: (_) {
-            setState(() => isLoading = false);
-          },
-        ),
-      )
-      ..loadRequest(Uri.parse(viewerUrl));
+    if (_isOfficeFile(fileExtension)) {
+      final viewerUrl =
+          'https://docs.google.com/gview?embedded=true&url=https://$fileUrl';
+      controller = WebViewController()
+        ..setJavaScriptMode(JavaScriptMode.unrestricted)
+        ..setNavigationDelegate(
+          NavigationDelegate(
+            onPageStarted: (_) => setState(() => isLoading = true),
+            onPageFinished: (_) => setState(() => isLoading = false),
+          ),
+        )
+        ..loadRequest(Uri.parse(viewerUrl));
+    }
+  }
+
+  bool _isOfficeFile(String ext) {
+    return ['pdf', 'doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx'].contains(ext);
+  }
+
+  bool _isImageFile(String ext) {
+    return ['jpg', 'jpeg', 'png', 'gif', 'webp'].contains(ext);
   }
 
   @override
@@ -57,20 +65,51 @@ class _PdfWebViewPageState extends State<PdfWebViewPage> {
           children: [
             CustomInnerScreensAppBar(title: S.of(context).assignment_preview),
             Expanded(
-              child: Stack(
-                children: [
-                  if (_initialized)
-                    WebViewWidget(controller: controller),
-                  if (isLoading)
-                    const Center(
-                      child: CircularProgressIndicator(),
-                    ),
-                ],
-              ),
+              child: _buildFilePreview(),
             ),
           ],
         ),
       ),
     );
+  }
+
+  Widget _buildFilePreview() {
+    if (_isOfficeFile(fileExtension)) {
+      return Stack(
+        children: [
+          if (_initialized) WebViewWidget(controller: controller),
+          if (isLoading) const Center(child: CircularProgressIndicator()),
+        ],
+      );
+    } else if (_isImageFile(fileExtension)) {
+      return Center(
+        child: Image.network(
+          'https://$fileUrl',
+          fit: BoxFit.contain,
+          loadingBuilder: (context, child, loadingProgress) {
+            if (loadingProgress == null) return child;
+            return const Center(child: CircularProgressIndicator());
+          },
+          errorBuilder: (context, error, stackTrace) {
+            return const Center(child: Text('Failed to load image.'));
+          },
+        ),
+      );
+    } else {
+      return Center(
+        child: ElevatedButton.icon(
+          onPressed: () async {
+            final result = await OpenFile.open(fileUrl);
+            if (result.type != ResultType.done) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Unable to open file')),
+              );
+            }
+          },
+          icon: const Icon(Icons.download),
+          label: const Text('Download & Open File'),
+        ),
+      );
+    }
   }
 }
