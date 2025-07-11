@@ -5,7 +5,7 @@ import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
 import 'package:grad_project/core/widgets/custom_scaffold.dart';
 import 'package:grad_project/generated/l10n.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'package:open_file/open_file.dart'; // To open downloaded files
+import 'package:open_file/open_file.dart';
 
 class PdfWebViewPage extends StatefulWidget {
   static const String routeName = '/pdfWebView';
