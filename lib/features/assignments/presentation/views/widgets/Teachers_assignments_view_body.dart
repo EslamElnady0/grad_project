@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/helpers/spacing.dart';
+import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
 import 'package:grad_project/core/widgets/custom_search_text_field.dart';
 import 'package:grad_project/core/widgets/failure_state_widget.dart';
@@ -88,7 +89,8 @@ class _TeachersAssignmentsViewBodyState
                 if (_searchController.text.isEmpty) {
                   _filteredAssignments = _allAssignments;
                 }
-                return _buildSuccessState(_filteredAssignments);
+                return _buildSuccessState(
+                    _filteredAssignments, widget.queryParamsModel, context);
               },
               orElse: () => _buildLoadingState(),
               getAssignmentsFailure: (error) =>
@@ -101,20 +103,34 @@ class _TeachersAssignmentsViewBodyState
   }
 }
 
-Widget _buildSuccessState(List<AssignmentModel> data) {
-  return ListView.separated(
-    padding: EdgeInsets.only(top: 10.h),
-    itemBuilder: (context, index) {
-      return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.w),
-        child: CustomAssignmentWidget(
-          assignmentModel: data[index],
-        ),
-      );
+Widget _buildSuccessState(
+    List<AssignmentModel> data,
+    GetAssignmentsRequestQueryParamsModel queryParamsModel,
+    BuildContext context) {
+  return RefreshIndicator(
+    color: AppColors.primaryColorlight,
+    onRefresh: () async {
+      context.read<GetAssignmentsCubit>().getAssignments(
+            courseId: queryParamsModel.courseId,
+            assignmentStatus: queryParamsModel.assignmentStatus,
+            fromDate: queryParamsModel.fromDate,
+          );
     },
-    separatorBuilder: (context, index) => vGap(12),
-    itemCount: data.length,
-    physics: const BouncingScrollPhysics(),
+    child: ListView.separated(
+      padding: EdgeInsets.only(top: 10.h),
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          child: CustomAssignmentWidget(
+            queryParamsModel: queryParamsModel,
+            assignmentModel: data[index],
+          ),
+        );
+      },
+      separatorBuilder: (context, index) => vGap(12),
+      itemCount: data.length,
+      physics: const AlwaysScrollableScrollPhysics(),
+    ),
   );
 }
 

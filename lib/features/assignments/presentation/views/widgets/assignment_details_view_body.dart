@@ -9,7 +9,6 @@ import 'package:grad_project/core/helpers/spacing.dart';
 import 'package:grad_project/core/widgets/custom_inner_screens_app_bar.dart';
 import 'package:grad_project/features/assignments/logic/cubits/get_assignment_asnwer_status/get_assignment_answer_status_cubit.dart';
 import 'package:grad_project/features/assignments/logic/cubits/get_assignment_asnwer_status/get_assignment_answer_status_state.dart';
-import 'package:grad_project/features/assignments/presentation/views/edit_assignment_view.dart';
 import 'package:grad_project/features/assignments/presentation/views/pdf_web_view.dart';
 import 'package:grad_project/features/assignments/presentation/views/widgets/assignment_desc_section.dart';
 import 'package:grad_project/features/assignments/presentation/views/widgets/assignment_details_section.dart';
@@ -105,14 +104,7 @@ class AssignmentDetailsViewBody extends StatelessWidget {
                               assignmentModel: assignmentModel,
                             )
                           : const SizedBox()
-                      : CustomButton(
-                          onTap: () {
-                            GoRouter.of(context).push(
-                              EditAssignmentView.routeName,
-                              extra: assignmentModel,
-                            );
-                          },
-                          text: S.of(context).edit)
+                      : const SizedBox()
                 ],
               ),
             ),
