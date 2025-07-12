@@ -6,7 +6,6 @@ import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/theme/app_text_styles.dart';
 import 'package:grad_project/core/widgets/svg_icon_button.dart';
 import '../../../../../core/helpers/app_assets.dart';
-import '../../../../../generated/l10n.dart';
 import '../../../data/models/chat_groups_response.dart';
 
 class ChatViewAppBar extends StatelessWidget {
@@ -46,15 +45,15 @@ class ChatViewAppBar extends StatelessWidget {
                 chatGroupData.name,
                 style: AppTextStyles.font16BlackSemiBold,
               ),
-              Text.rich(TextSpan(
-                  text: "45 ",
-                  style: AppTextStyles.font10greenMedium,
-                  children: [
-                    TextSpan(
-                        text: S.of(context).studentsOnlineNow,
-                        style: AppTextStyles.font10greenMedium
-                            .copyWith(color: AppColors.gray)),
-                  ]))
+              // Text.rich(TextSpan(
+              //     text: "45 ",
+              //     style: AppTextStyles.font10greenMedium,
+              //     children: [
+              //       TextSpan(
+              //           text: S.of(context).studentsOnlineNow,
+              //           style: AppTextStyles.font10greenMedium
+              //               .copyWith(color: AppColors.gray)),
+              //     ]))
             ],
           ),
           const Spacer(),
