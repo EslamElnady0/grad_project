@@ -50,9 +50,9 @@ class CustomCourseQuizWidget extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.only(start: 15.w),
+            padding: EdgeInsetsDirectional.only(start: 15.w, end: 15.w),
             child: Text(
-              "${S.of(context).registered_students_count} 0",
+              course.description ?? "وصف مادة افتراضي",
               style: AppTextStyles.font12GraySemiBold,
             ),
           ),

@@ -12,8 +12,10 @@ import '../../../../core/widgets/item_header.dart';
 import 'annoucement_pop_up_menu.dart';
 
 class AnnoucementItem extends StatelessWidget {
+  final String userId;
   final Announcement announcementModel;
-  const AnnoucementItem({super.key, required this.announcementModel});
+  const AnnoucementItem(
+      {super.key, required this.announcementModel, required this.userId});
 
   @override
   Widget build(BuildContext context) {
@@ -47,27 +49,36 @@ class AnnoucementItem extends StatelessWidget {
                   specialization: announcementModel.course.name,
                 ),
               ),
-              FlavorsFunctions.isAdmin()
+              (FlavorsFunctions.isAdmin() &&
+                      announcementModel.user.id.toString() == userId)
                   ? BlocProvider(
                       create: (context) => getIt<DeleteAnnoucementCubit>(),
                       child: AnnoucementPopUpMenu(
                         announcement: announcementModel,
                       ),
                     )
-                  : const SizedBox.shrink(),
+                  : FlavorsFunctions.isAdmin()
+                      ? hGap(16)
+                      : const SizedBox(),
             ],
           ),
           vGap(12),
-          Text(
-            announcementModel.title ?? "",
-            style: AppTextStyles.font10greenMedium
-                .copyWith(color: AppColors.black),
+          Padding(
+            padding: EdgeInsetsDirectional.only(end: 16.w),
+            child: Text(
+              announcementModel.title ?? "",
+              style: AppTextStyles.font10greenMedium
+                  .copyWith(color: AppColors.black),
+            ),
           ),
           vGap(20),
-          Text(
-            announcementModel.body,
-            style: AppTextStyles.font10greenMedium
-                .copyWith(color: AppColors.black),
+          Padding(
+            padding: EdgeInsetsDirectional.only(end: 16.w),
+            child: Text(
+              announcementModel.body,
+              style: AppTextStyles.font10greenMedium
+                  .copyWith(color: AppColors.black),
+            ),
           ),
           vGap(12),
           Row(
@@ -79,16 +90,16 @@ class AnnoucementItem extends StatelessWidget {
                     .copyWith(color: AppColors.black),
               ),
               const Spacer(),
-              Text(
-                "126",
-                style: AppTextStyles.font9GraySemiBold,
-              ),
-              hGap(3),
-              Icon(
-                Icons.visibility,
-                size: 17.r,
-                color: AppColors.gray,
-              ),
+              // Text(
+              //   "126",
+              //   style: AppTextStyles.font9GraySemiBold,
+              // ),
+              // hGap(3),
+              // Icon(
+              //   Icons.visibility,
+              //   size: 17.r,
+              //   color: AppColors.gray,
+              // ),
               FlavorsFunctions.isAdmin() ? hGap(16) : const SizedBox(),
             ],
           )

@@ -1,17 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grad_project/core/helpers/shared_pref_helper.dart';
 import 'package:grad_project/core/logic/all_courses_cubit/all_courses_cubit.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/core/widgets/failure_state_widget.dart';
 import 'package:grad_project/features/annoucements/data/models/paginated_announcements_response.dart';
 import 'package:grad_project/features/annoucements/logic/get_announcement_cubit/get_announcement_cubit.dart';
 import 'package:skeletonizer/skeletonizer.dart';
+import '../../../../core/helpers/constants.dart';
 import '../../../../generated/l10n.dart';
 import '../ui cubit/announcement_filter_cubit.dart';
 import 'annoucement_item.dart';
 
-class AnnoucementsListView extends StatelessWidget {
+class AnnoucementsListView extends StatefulWidget {
   const AnnoucementsListView({super.key});
+
+  @override
+  State<AnnoucementsListView> createState() => _AnnoucementsListViewState();
+}
+
+class _AnnoucementsListViewState extends State<AnnoucementsListView> {
+  String? userId;
+  void getUserId() async {
+    userId = await SharedPrefHelper.getString(Constants.userId);
+    print(userId);
+  }
+
+  @override
+  void initState() {
+    getUserId();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,6 +101,7 @@ class AnnoucementsListView extends StatelessWidget {
         itemCount: filteredItems.length,
         itemBuilder: (context, index) {
           return AnnoucementItem(
+            userId: userId ?? "",
             announcementModel: filteredItems[index],
           );
         },
