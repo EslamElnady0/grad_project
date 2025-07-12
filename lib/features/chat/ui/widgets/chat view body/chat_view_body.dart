@@ -175,9 +175,11 @@ class _ChatViewBodyState extends State<ChatViewBody> {
         padding: EdgeInsets.symmetric(horizontal: 10.w),
         itemBuilder: (context, index) {
           final msg = Constants.dummyMessages[index];
-          return ChatMessageFactory(
-            message: msg,
-            userId: userId,
+          return Skeleton.leaf(
+            child: ChatMessageFactory(
+              message: msg,
+              userId: userId,
+            ),
           );
         },
         separatorBuilder: (context, index) => vGap(12),
