@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/events/message%20events/messages_events.dart';
+import 'package:grad_project/core/helpers/extensions.dart';
 import 'package:grad_project/core/helpers/font_weight_helper.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:grad_project/features/chat/logic/chat_cubit/chat_cubit.dart';
@@ -45,15 +46,18 @@ class ChatLevelsItem extends StatelessWidget {
                       : const AssetImage(Assets.imagesAvatarDoc),
                 ),
                 hGap(15),
-                Text(
-                  title,
-                  style: AppTextStyles.font20DarkerBlueBold.copyWith(
-                      fontWeight: isMyChat
-                          ? FontWeightHelper.bold
-                          : FontWeightHelper.semiBold,
-                      color: isMyChat
-                          ? AppColors.primaryColordark
-                          : AppColors.darkerBlue),
+                SizedBox(
+                  width: context.width * 0.5,
+                  child: Text(
+                    title,
+                    style: AppTextStyles.font20DarkerBlueBold.copyWith(
+                        fontWeight: isMyChat
+                            ? FontWeightHelper.bold
+                            : FontWeightHelper.semiBold,
+                        color: isMyChat
+                            ? AppColors.primaryColordark
+                            : AppColors.darkerBlue),
+                  ),
                 ),
                 const Spacer(),
                 !isMyChat
